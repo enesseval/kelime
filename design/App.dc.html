@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"></helmet>
+<div style="--bg: {{ v.bg }}; --surf: {{ v.surf }}; --surf2: {{ v.surf2 }}; --ink: {{ v.ink }}; --ink2: {{ v.ink2 }}; --line: {{ v.line }}; --acc: {{ v.acc }}; --accSoft: {{ v.accSoft }}; --onAcc: {{ v.onAcc }}; --amber: {{ v.amber }}; --amberBg: {{ v.amberBg }}; --amberInk: {{ v.amberInk }}; --green: {{ v.green }}; --greenBg: {{ v.greenBg }}; --greenInk: {{ v.greenInk }}; width:393px; height:852px; position:relative; overflow:hidden; border-radius:52px; background:var(--bg); color:var(--ink); font-family:'Hanken Grotesk',system-ui,sans-serif; display:flex; flex-direction:column; box-shadow:0 0 0 10px #0d0d0c, 0 0 0 11px #3a3936, 0 30px 60px rgba(0,0,0,.25);">
+  <div style="height:54px; flex:none; display:flex; align-items:center; justify-content:space-between; padding:0 34px 0 44px; font-size:16px; font-weight:600; position:relative;">
+    <span>9:41</span>
+    <div style="position:absolute; left:50%; top:11px; transform:translateX(-50%); width:124px; height:36px; border-radius:20px; background:#000;"></div>
+    <div style="display:flex; gap:5px; align-items:center;"><div style="width:17px; height:11px; border-radius:2px; background:linear-gradient(90deg,var(--ink) 25%,transparent 25% 33%,var(--ink) 33% 58%,transparent 58% 66%,var(--ink) 66%);"></div><div style="width:25px; height:12px; border-radius:4px; border:1.5px solid var(--ink); padding:1.5px; box-sizing:border-box;"><div style="width:70%; height:100%; background:var(--ink); border-radius:1.5px;"></div></div></div>
+  </div>
+
+  <div style="flex:1; min-height:0; overflow-y:auto; position:relative; display:flex; flex-direction:column;">
+
+    <sc-if value="{{ is.bugun }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:6px 20px 24px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+          <div><div style="font-size:13px; color:var(--ink2); font-weight:500;">13 Ekim, Salı</div><div style="font-size:32px; font-weight:700; letter-spacing:-0.02em;">Bugün</div></div>
+          <div style="font-size:12px; font-weight:600; color:var(--ink2); padding:7px 11px; border:1px solid var(--line); border-radius:99px; margin-bottom:4px;">YDS'ye 34 gün</div>
+        </div>
+        <sc-if value="{{ bannerOpen }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; align-items:center; gap:12px; background:var(--accSoft); border-radius:16px; padding:6px 6px 6px 16px;">
+            <div onClick="{{ openGuide }}" style="flex:1; font-size:14px; line-height:1.35; cursor:pointer; padding:6px 0;"><b style="font-weight:600;">Widget'ı henüz eklemedin.</b> 30 saniye sürer.</div>
+            <div onClick="{{ closeBanner }}" style="width:44px; height:44px; display:grid; place-items:center; cursor:pointer; color:var(--ink2); font-size:18px;">×</div>
+          </div>
+        </sc-if>
+        <div onClick="{{ openHero }}" style="cursor:pointer; background:var(--surf); border-radius:26px; padding:20px 22px 22px; border:1px solid var(--line); display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; color:var(--ink2); font-weight:600; letter-spacing:.08em;">
+            <span>ŞU AN WIDGET'INDA</span>
+            <div style="display:flex; gap:8px; align-items:center;"><span style="padding:3px 7px; border-radius:6px; background:var(--surf2); letter-spacing:.02em;">B2</span><span style="width:10px; height:10px; border-radius:50%; box-sizing:border-box; border:1.5px solid var(--amber); background:linear-gradient(90deg,var(--amber) 50%,transparent 50%);"></span></div>
+          </div>
+          <div style="font-family:'Newsreader',serif; font-size:58px; line-height:.95; letter-spacing:-0.025em;">reluctant</div>
+          <div style="font-size:17px; line-height:1.3;"><span style="font-family:'Newsreader',serif; font-style:italic; color:var(--ink2);">adj.</span>  isteksiz, gönülsüz</div>
+          <div style="height:1px; background:var(--line);"></div>
+          <div style="display:flex; flex-direction:column; gap:3px;"><div style="font-family:'Newsreader',serif; font-size:19px; font-style:italic;">She was reluctant to leave.</div><div style="font-size:14px; color:var(--ink2);">Ayrılmaya gönülsüzdü.</div></div>
+        </div>
+        <div style="background:var(--surf); border:1px solid var(--line); border-radius:22px; padding:18px; display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline;"><div style="font-size:17px; font-weight:600;">Hızlı Tekrar</div><div style="font-size:12px; color:var(--ink2);">10 kelime</div></div>
+          <sc-if value="{{ reviewOpen }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <div style="font-size:15px; color:var(--ink2); line-height:1.35;"><span style="color:var(--amberInk); font-weight:600;">5 zorlandığın kelime</span> seni bekliyor</div>
+              <div onClick="{{ startQuiz }}" style="height:50px; border-radius:14px; background:var(--acc); color:var(--onAcc); display:grid; place-items:center; font-weight:600; font-size:16px; cursor:pointer;" style-active="transform:scale(.98)">Başla · 2 dk</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ reviewUsed }}">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+              <div style="font-size:15px; color:var(--ink2); line-height:1.35;">Yarın tekrar · ya da Pro ile sınırsız</div>
+              <div onClick="{{ openPaywallReview }}" style="height:44px; padding:0 16px; border-radius:12px; border:1px solid var(--line); display:grid; place-items:center; font-weight:600; font-size:14px; cursor:pointer; white-space:nowrap;">Pro'ya bak</div>
+            </div>
+          </sc-if>
+        </div>
+        <div style="background:var(--surf); border:1px solid var(--line); border-radius:22px; padding:16px; display:flex; gap:16px; align-items:center;">
+          <div style="display:grid; grid-template-columns:repeat(8,7px); gap:1.5px; flex:none;">
+            <sc-for list="{{ thumb }}" as="t" hint-placeholder-count="80"><div style="width:7px; height:7px; border-radius:1.5px; background:{{ t.bg }};"></div></sc-for>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+            <div style="font-size:17px; font-weight:600;">Günün Bulmacası</div>
+            <div style="font-size:13px; color:var(--ink2);">{{ solvedCount }}/5 kelime · B1</div>
+            <div style="height:4px; border-radius:2px; background:var(--surf2);"><div style="height:100%; width:{{ solvedPct }}; background:var(--green); border-radius:2px;"></div></div>
+            <div onClick="{{ openPuzzle }}" style="align-self:flex-start; height:44px; padding:0 18px; border-radius:12px; background:var(--surf2); display:grid; place-items:center; font-weight:600; font-size:14px; cursor:pointer; margin-top:4px;">Devam et</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1.4fr; gap:1px; background:var(--line); border-radius:18px; overflow:hidden; border:1px solid var(--line);">
+          <div style="background:var(--surf); padding:14px;"><div style="font-size:24px; font-weight:600;">{{ learnedCount }}</div><div style="font-size:12px; color:var(--ink2);">öğrenildi</div></div>
+          <div style="background:var(--surf); padding:14px;"><div style="font-size:24px; font-weight:600; color:var(--amberInk);">{{ strugglingCount }}</div><div style="font-size:12px; color:var(--ink2);">zorlanılan</div></div>
+          <div style="background:var(--surf); padding:14px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div style="display:flex; gap:5px;"><sc-for list="{{ week }}" as="d" hint-placeholder-count="7"><div style="display:flex; flex-direction:column; align-items:center; gap:4px;"><div style="width:11px; height:11px; border-radius:50%; background:{{ d.bg }}; box-sizing:border-box; border:1.5px solid var(--green);"></div><div style="font-size:9px; color:var(--ink2);">{{ d.l }}</div></div></sc-for></div>
+            <div style="font-size:12px; color:var(--ink2);">bu hafta</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.oyna }}">
+      <div style="padding:6px 20px 24px; display:flex; flex-direction:column; gap:14px;">
+        <div style="font-size:32px; font-weight:700; letter-spacing:-0.02em;">Oyna</div>
+        <div onClick="{{ startQuiz }}" style="cursor:pointer; background:var(--surf); border:1px solid var(--line); border-radius:22px; padding:20px; display:flex; flex-direction:column; gap:6px;">
+          <div style="font-family:'Newsreader',serif; font-size:30px; letter-spacing:-0.01em;">Hızlı Tekrar</div>
+          <div style="font-size:14px; color:var(--ink2);">10 kelime · yaklaşık 2 dakika</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;"><span style="font-size:13px; font-weight:600; color:var(--ink2);">Bugün {{ sessionsLeft }} ücretsiz tur kaldı</span><span style="height:44px; padding:0 18px; border-radius:12px; background:var(--acc); color:var(--onAcc); display:grid; place-items:center; font-weight:600; font-size:14px;">Başla</span></div>
+        </div>
+        <div style="background:var(--surf); border:1px solid var(--line); border-radius:22px; overflow:hidden;">
+          <div onClick="{{ openPuzzle }}" style="cursor:pointer; padding:20px; display:flex; gap:18px; align-items:center;">
+            <div style="display:grid; grid-template-columns:repeat(8,8px); gap:2px; flex:none;"><sc-for list="{{ thumb }}" as="t" hint-placeholder-count="80"><div style="width:8px; height:8px; border-radius:2px; background:{{ t.bg }};"></div></sc-for></div>
+            <div style="flex:1;"><div style="font-family:'Newsreader',serif; font-size:30px; line-height:1.05;">Günün Bulmacası</div><div style="font-size:14px; color:var(--ink2); margin-top:6px;">{{ solvedCount }}/5 kelime · ipuçları Türkçe</div></div>
+          </div>
+          <div onClick="{{ openPaywallArchive }}" style="cursor:pointer; border-top:1px solid var(--line); height:52px; padding:0 20px; display:flex; align-items:center; justify-content:space-between; font-size:15px;"><span>Arşiv</span><span style="font-size:11px; font-weight:700; letter-spacing:.06em; padding:4px 8px; border-radius:6px; background:var(--surf2); color:var(--ink2);">PRO</span></div>
+        </div>
+        <div onClick="{{ openPaywallYds }}" style="cursor:pointer; border:1px dashed var(--line); border-radius:22px; padding:18px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <div><div style="font-size:16px; font-weight:600;">Sınav Destesi Tekrarı</div><div style="font-size:13px; color:var(--ink2); margin-top:3px;">YDS · 1.200 kelime</div></div>
+          <span style="font-size:11px; font-weight:700; letter-spacing:.06em; padding:4px 8px; border-radius:6px; background:var(--surf2); color:var(--ink2);">PRO</span>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.words }}">
+      <div style="padding:6px 20px 24px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+          <div style="font-size:32px; font-weight:700; letter-spacing:-0.02em;">Kelimelerim</div>
+          <div onClick="{{ toggleDecks }}" style="height:44px; padding:0 14px; border-radius:12px; background:var(--surf2); display:grid; place-items:center; font-size:14px; font-weight:600; cursor:pointer;">{{ decksLabel }}</div>
+        </div>
+        <sc-if value="{{ listView }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:13px; color:var(--ink2);">Bu hafta <b style="color:var(--greenInk);">{{ learnedCount }} öğrenildi</b> · şu an <b style="color:var(--amberInk);">{{ strugglingCount }} zorlanılan</b></div>
+            <input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Kelime ya da anlam ara" style="height:44px; border-radius:12px; border:none; background:var(--surf2); color:var(--ink); padding:0 14px; font:inherit; font-size:16px; outline:none;">
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); background:var(--surf2); border-radius:11px; padding:3px; gap:2px;">
+              <sc-for list="{{ segs }}" as="s" hint-placeholder-count="4"><div onClick="{{ s.pick }}" style="height:34px; border-radius:8px; display:grid; place-items:center; font-size:13px; font-weight:600; cursor:pointer; background:{{ s.bg }}; color:{{ s.fg }}; box-shadow:{{ s.sh }};">{{ s.label }}</div></sc-for>
+            </div>
+            <div style="background:var(--surf); border:1px solid var(--line); border-radius:18px; overflow:hidden;">
+              <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+                <div onClick="{{ r.open }}" style="cursor:pointer; min-height:62px; padding:10px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--line);">
+                  <div style="flex:1; min-width:0;"><div style="font-family:'Newsreader',serif; font-size:21px;">{{ r.w }}</div><div style="font-size:13px; color:var(--ink2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ r.tr }}</div></div>
+                  <span style="font-size:11px; font-weight:600; padding:4px 8px; border-radius:99px; background:{{ r.cbg }}; color:{{ r.cfg }};">{{ r.state }}</span>
+                  <span style="font-size:11px; font-weight:600; padding:4px 7px; border-radius:6px; background:var(--surf2); color:var(--ink2);">{{ r.l }}</span>
+                </div>
+              </sc-for>
+              <sc-if value="{{ emptyList }}">
+                <div style="padding:36px 24px; display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center;">
+                  <div style="width:14px; height:14px; border-radius:50%; border:1.5px solid var(--ink2);"></div>
+                  <div style="font-size:15px; color:var(--ink2); line-height:1.4; text-wrap:pretty;">{{ emptyText }}</div>
+                  <div onClick="{{ startQuiz }}" style="height:44px; padding:0 18px; border-radius:12px; background:var(--acc); color:var(--onAcc); display:grid; place-items:center; font-weight:600; font-size:14px; cursor:pointer;">Hızlı Tekrar</div>
+                </div>
+              </sc-if>
+            </div>
+            <div style="font-size:12px; color:var(--ink2); text-align:center;">Satırı sola kaydır: Biliyorum · Zorlanıyorum</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ decksView }}">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <sc-for list="{{ decks }}" as="d" hint-placeholder-count="8">
+              <div onClick="{{ d.tap }}" style="cursor:pointer; background:var(--surf); border:1px solid var(--line); border-radius:18px; padding:14px; display:flex; flex-direction:column; gap:10px; opacity:{{ d.op }};">
+                <div style="display:flex; justify-content:space-between; align-items:center;"><span style="font-family:'Newsreader',serif; font-size:24px;">{{ d.name }}</span><span style="font-size:10px; font-weight:700; letter-spacing:.06em; color:var(--ink2);">{{ d.badge }}</span></div>
+                <div style="font-size:12px; color:var(--ink2);">{{ d.count }}</div>
+                <div style="height:4px; border-radius:2px; background:var(--surf2);"><div style="height:100%; width:{{ d.pct }}; background:var(--green); border-radius:2px;"></div></div>
+                <div style="display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--ink2);"><span>Widget'ta</span><div style="width:36px; height:22px; border-radius:11px; background:{{ d.tbg }}; padding:2px; box-sizing:border-box; display:flex; justify-content:{{ d.tj }};"><div style="width:18px; height:18px; border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.2);"></div></div></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.settings }}">
+      <div style="padding:6px 20px 24px; display:flex; flex-direction:column; gap:20px;">
+        <div style="font-size:32px; font-weight:700; letter-spacing:-0.02em;">Ayarlar</div>
+        <div style="display:flex; flex-direction:column; gap:6px;"><div style="font-size:12px; font-weight:600; color:var(--ink2); letter-spacing:.06em; padding-left:4px;">SEVİYE VE HEDEF</div>
+          <div style="background:var(--surf); border:1px solid var(--line); border-radius:16px; overflow:hidden;">
+            <div style="min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); font-size:15px;"><span>Seviye</span><span style="color:var(--ink2);">B1 ›</span></div>
+            <div style="min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; font-size:15px;"><span>Hedef</span><span style="color:var(--ink2);">YDS · 16 Kasım ›</span></div>
+          </div></div>
+        <div style="display:flex; flex-direction:column; gap:6px;"><div style="font-size:12px; font-weight:600; color:var(--ink2); letter-spacing:.06em; padding-left:4px;">WIDGET</div>
+          <div style="background:var(--surf); border:1px solid var(--line); border-radius:16px; overflow:hidden;">
+            <div style="min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); font-size:15px;"><span>Değişim sıklığı</span><span style="color:var(--ink2);">3 saat ›</span></div>
+            <div style="padding:12px 16px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:10px; font-size:15px;"><span>Görünüm modu</span>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); background:var(--surf2); border-radius:11px; padding:3px; gap:2px;"><sc-for list="{{ modes }}" as="m" hint-placeholder-count="3"><div onClick="{{ m.pick }}" style="height:34px; border-radius:8px; display:grid; place-items:center; font-size:13px; font-weight:600; cursor:pointer; background:{{ m.bg }}; color:{{ m.fg }}; box-shadow:{{ m.sh }};">{{ m.label }}</div></sc-for></div>
+            </div>
+            <div style="min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); font-size:15px;"><span>Tema</span><span style="color:var(--ink2);">Kâğıt ›</span></div>
+            <div onClick="{{ openGuide }}" style="cursor:pointer; min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; font-size:15px; color:var(--acc);"><span>Widget nasıl eklenir?</span></div>
+          </div></div>
+        <div style="display:flex; flex-direction:column; gap:6px;"><div style="font-size:12px; font-weight:600; color:var(--ink2); letter-spacing:.06em; padding-left:4px;">HATIRLATMA VE TELAFFUZ</div>
+          <div style="background:var(--surf); border:1px solid var(--line); border-radius:16px; overflow:hidden;">
+            <div onClick="{{ toggleRemind }}" style="cursor:pointer; min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); font-size:15px;"><span>Günlük hatırlatma</span><div style="width:51px; height:31px; border-radius:16px; background:{{ remindBg }}; padding:2px; box-sizing:border-box; display:flex; justify-content:{{ remindJ }};"><div style="width:27px; height:27px; border-radius:50%; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,.2);"></div></div></div>
+            <div style="min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); font-size:15px;"><span>Saat</span><span style="color:var(--ink2);">20:30 ›</span></div>
+            <div style="min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; font-size:15px;"><span>Ses ve hız</span><span style="color:var(--ink2);">Samantha · 0.9× ›</span></div>
+          </div></div>
+        <div style="display:flex; flex-direction:column; gap:6px;"><div style="font-size:12px; font-weight:600; color:var(--ink2); letter-spacing:.06em; padding-left:4px;">PRO</div>
+          <div style="background:var(--surf); border:1px solid var(--line); border-radius:16px; overflow:hidden;">
+            <div onClick="{{ openPaywallBase }}" style="cursor:pointer; min-height:50px; padding:0 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); font-size:15px;"><span>Mevcut plan</span><span style="color:var(--ink2);">Ücretsiz ›</span></div>
+            <div style="min-height:50px; padding:0 16px; display:flex; align-items:center; font-size:15px; color:var(--acc);">Satın alımları geri yükle</div>
+          </div></div>
+        <div style="font-size:12px; color:var(--ink2); line-height:1.6; padding:0 4px;">Kelime listesi: New General Service List, CC BY-SA 4.0<br>İçerik yapay zekâ ile üretildi ve kontrol edildi<br>Gizlilik · Koşullar</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.word }}">
+      <div style="padding:0 20px 24px; display:flex; flex-direction:column; gap:18px; flex:1;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin:0 -8px;">
+          <div onClick="{{ goBack }}" style="height:44px; padding:0 8px; display:flex; align-items:center; font-size:16px; color:var(--acc); cursor:pointer;">‹ Geri</div>
+          <div style="display:flex;">
+            <div onClick="{{ toggleFav }}" style="width:44px; height:44px; display:grid; place-items:center; font-size:20px; cursor:pointer; color:{{ favColor }};">{{ favGlyph }}</div>
+            <div onClick="{{ shareWord }}" style="width:44px; height:44px; display:grid; place-items:center; font-size:13px; font-weight:600; cursor:pointer; color:var(--acc);">Paylaş</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+            <span style="font-size:12px; font-weight:600; padding:5px 10px; border-radius:99px; background:{{ wd.cbg }}; color:{{ wd.cfg }};">{{ wd.state }}</span>
+            <span style="font-size:12px; font-weight:600; padding:5px 8px; border-radius:6px; background:var(--surf2); color:var(--ink2);">{{ wd.l }}</span>
+            <span style="font-size:12px; font-weight:600; padding:5px 8px; border-radius:6px; border:1px solid var(--line); color:var(--ink2);">{{ wd.deck }}</span>
+          </div>
+          <div style="font-family:'Newsreader',serif; font-size:64px; line-height:.95; letter-spacing:-0.025em; overflow-wrap:anywhere;">{{ wd.w }}</div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div onClick="{{ speak }}" style="height:44px; padding:0 16px 0 12px; border-radius:22px; background:var(--surf2); display:flex; align-items:center; gap:8px; font-size:14px; font-weight:600; cursor:pointer;"><span style="width:0; height:0; border-left:9px solid var(--ink); border-top:6px solid transparent; border-bottom:6px solid transparent;"></span>Dinle</div>
+            <span style="font-family:'Newsreader',serif; font-style:italic; font-size:18px; color:var(--ink2);">{{ wd.t }}</span>
+          </div>
+        </div>
+        <div style="height:1px; background:var(--line);"></div>
+        <div style="display:flex; flex-direction:column; gap:6px;"><div style="font-size:11px; font-weight:600; letter-spacing:.08em; color:var(--ink2);">ANLAMI</div><div style="font-size:22px; font-weight:500;">{{ wd.tr }}</div></div>
+        <div style="display:flex; flex-direction:column; gap:6px;"><div style="font-size:11px; font-weight:600; letter-spacing:.08em; color:var(--ink2);">ÖRNEK</div><div style="font-family:'Newsreader',serif; font-size:22px; font-style:italic; line-height:1.25;">{{ wd.en }}</div><div style="font-size:15px; color:var(--ink2);">{{ wd.ts }}</div></div>
+        <div style="flex:1;"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div onClick="{{ markKnow }}" style="height:52px; border-radius:14px; background:var(--greenBg); color:var(--greenInk); display:grid; place-items:center; font-weight:600; font-size:16px; cursor:pointer;">Biliyorum</div>
+          <div onClick="{{ markHard }}" style="height:52px; border-radius:14px; background:var(--amberBg); color:var(--amberInk); display:grid; place-items:center; font-weight:600; font-size:16px; cursor:pointer;">Zorlanıyorum</div>
+        </div>
+        <div onClick="{{ openReport }}" style="align-self:center; height:44px; display:grid; place-items:center; font-size:13px; color:var(--ink2); cursor:pointer;">Hata bildir</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.quiz }}">
+      <div style="display:flex; flex-direction:column; flex:1; min-height:0;">
+        <div style="display:flex; align-items:center; gap:10px; padding:0 12px 0 8px;">
+          <div onClick="{{ goHome }}" style="width:44px; height:44px; display:grid; place-items:center; font-size:22px; color:var(--ink2); cursor:pointer;">×</div>
+          <div style="flex:1; height:4px; border-radius:2px; background:var(--surf2);"><div style="height:100%; width:{{ q.pct }}; background:var(--acc); border-radius:2px; transition:width .3s;"></div></div>
+          <div style="font-size:13px; color:var(--ink2); font-weight:600; width:36px; text-align:right;">{{ q.num }}</div>
+        </div>
+        <div style="padding:28px 20px 0; display:flex; flex-direction:column; gap:8px;">
+          <div style="font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--ink2);">{{ q.kicker }}</div>
+          <div style="font-size:30px; font-weight:600; letter-spacing:-0.015em; line-height:1.15;">{{ q.tr }}</div>
+        </div>
+        <sc-if value="{{ q.isMc }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:24px 20px; display:flex; flex-direction:column; gap:10px;">
+            <sc-for list="{{ q.opts }}" as="o" hint-placeholder-count="4">
+              <div onClick="{{ o.pick }}" style="cursor:pointer; min-height:60px; border-radius:16px; padding:0 18px; display:flex; align-items:center; justify-content:space-between; background:{{ o.bg }}; box-shadow:inset 0 0 0 1.5px {{ o.bd }}; opacity:{{ o.op }}; font-family:'Newsreader',serif; font-size:24px; transition:all .2s;"><span>{{ o.text }}</span><span style="font-family:'Hanken Grotesk',sans-serif; font-size:16px; font-weight:700; color:{{ o.mc }};">{{ o.mark }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ q.isWrite }}">
+          <div style="padding:20px; display:flex; flex-direction:column; gap:22px;">
+            <div style="font-family:'Newsreader',serif; font-size:22px; font-style:italic; color:var(--ink2);">{{ q.blank }}</div>
+            <div style="display:flex; gap:5px;">
+              <sc-for list="{{ q.boxes }}" as="b" hint-placeholder-count="8"><div style="width:38px; height:48px; border-radius:10px; display:grid; place-items:center; font-size:22px; font-weight:600; background:{{ b.bg }}; color:{{ b.fg }}; box-shadow:inset 0 0 0 1.5px {{ b.bd }};">{{ b.ch }}</div></sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <div style="flex:1;"></div>
+        <sc-if value="{{ q.showFeedback }}">
+          <div style="margin:0 12px 12px; padding:18px; border-radius:22px; background:{{ q.fbBg }}; display:flex; flex-direction:column; gap:10px;">
+            <div style="font-size:16px; font-weight:700; color:{{ q.fbInk }};">{{ q.fbTitle }}</div>
+            <div><div style="font-family:'Newsreader',serif; font-size:19px; font-style:italic;">{{ q.en }}</div><div style="font-size:14px; color:var(--ink2); margin-top:2px;">{{ q.ts }}</div></div>
+            <sc-if value="{{ q.wrong }}"><div style="font-size:13px; color:var(--amberInk); line-height:1.35;">Bu kelimeyi widget'ında daha sık göreceksin</div></sc-if>
+            <div onClick="{{ nextQ }}" style="height:50px; border-radius:14px; background:var(--ink); color:var(--bg); display:grid; place-items:center; font-weight:600; font-size:16px; cursor:pointer; margin-top:4px;">Devam</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ q.showCheck }}">
+          <div style="padding:0 12px 10px;"><div onClick="{{ checkWrite }}" style="height:50px; border-radius:14px; background:{{ q.checkBg }}; color:var(--onAcc); display:grid; place-items:center; font-weight:600; font-size:16px; cursor:pointer;">Kontrol et</div></div>
+        </sc-if>
+        <sc-if value="{{ q.showKeys }}">
+          <div style="background:var(--surf2); padding:8px 4px 26px; display:flex; flex-direction:column; gap:9px;">
+            <sc-for list="{{ keyRows }}" as="row" hint-placeholder-count="3"><div style="display:flex; justify-content:center; gap:5px;"><sc-for list="{{ row }}" as="k"><div onClick="{{ k.press }}" style="cursor:pointer; width:{{ k.w }}; height:44px; border-radius:6px; background:var(--surf); box-shadow:0 1px 0 rgba(0,0,0,.18); display:grid; place-items:center; font-size:19px;" style-active="background:var(--line)">{{ k.label }}</div></sc-for></div></sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.summary }}">
+      <div style="padding:30px 20px 24px; display:flex; flex-direction:column; gap:22px; flex:1;">
+        <div style="font-size:13px; font-weight:600; color:var(--ink2); letter-spacing:.08em;">TUR BİTTİ</div>
+        <div style="display:flex; align-items:baseline; gap:8px;"><span style="font-family:'Newsreader',serif; font-size:96px; line-height:.9; letter-spacing:-0.03em;">{{ sum.score }}</span><span style="font-size:20px; color:var(--ink2);">/ {{ sum.total }}</span></div>
+        <div style="display:flex; flex-direction:column; gap:10px;"><div style="font-size:14px; font-weight:600; color:var(--greenInk);">Öğrenildi</div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px;"><sc-for list="{{ sum.learned }}" as="w"><span style="font-family:'Newsreader',serif; font-size:18px; padding:6px 12px; border-radius:99px; background:var(--greenBg);">{{ w }}</span></sc-for></div></div>
+        <div style="display:flex; flex-direction:column; gap:10px;"><div style="font-size:14px; font-weight:600; color:var(--amberInk);">Zorlanılan</div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px;"><sc-for list="{{ sum.hard }}" as="w"><span style="font-family:'Newsreader',serif; font-size:18px; padding:6px 12px; border-radius:99px; background:var(--amberBg);">{{ w }}</span></sc-for></div>
+          <div style="font-size:13px; color:var(--ink2);">Bunlar gün boyu kilit ekranında</div></div>
+        <div style="flex:1;"></div>
+        <div onClick="{{ finishReview }}" style="height:52px; border-radius:14px; background:var(--acc); color:var(--onAcc); display:grid; place-items:center; font-weight:600; font-size:16px; cursor:pointer;">Bitti</div>
+        <div onClick="{{ openPaywallReview }}" style="height:48px; border-radius:14px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:15px; cursor:pointer;">Bir tur daha <span style="font-size:10px; font-weight:700; padding:3px 6px; border-radius:5px; background:var(--surf2); color:var(--ink2);">PRO</span></div>
+        <div style="text-align:center; font-size:13px; color:var(--ink2);">ya da yarın devam</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.puzzle }}">
+      <div style="display:flex; flex-direction:column; flex:1; min-height:0;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:0 12px 0 8px;">
+          <div onClick="{{ closePuzzle }}" style="width:44px; height:44px; display:grid; place-items:center; font-size:22px; color:var(--ink2); cursor:pointer;">×</div>
+          <div style="font-size:15px; font-weight:600;">Günün Bulmacası</div>
+          <div style="font-size:13px; color:var(--ink2); width:44px; text-align:right; font-variant-numeric:tabular-nums;">3:42</div>
+        </div>
+        <div style="display:flex; justify-content:center; gap:6px; padding:2px 0 10px;">
+          <div onClick="{{ revealLetter }}" style="height:34px; padding:0 12px; border-radius:17px; border:1px solid var(--line); display:grid; place-items:center; font-size:13px; font-weight:600; cursor:pointer;">Harf aç</div>
+          <div onClick="{{ checkWord }}" style="height:34px; padding:0 12px; border-radius:17px; border:1px solid var(--line); display:grid; place-items:center; font-size:13px; font-weight:600; cursor:pointer;">Kelimeyi kontrol et</div>
+          <div onClick="{{ showWord }}" style="height:34px; padding:0 12px; border-radius:17px; border:1px solid var(--line); display:grid; place-items:center; font-size:13px; font-weight:600; cursor:pointer;">Kelimeyi göster</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(8,36px); gap:3px; justify-content:center;">
+          <sc-for list="{{ cells }}" as="c" hint-placeholder-count="80">
+            <div onClick="{{ c.tap }}" style="width:36px; height:36px; border-radius:7px; position:relative; display:grid; place-items:center; font-size:19px; font-weight:600; background:{{ c.bg }}; color:{{ c.fg }}; box-shadow:{{ c.bd }}; cursor:{{ c.cur }}; transition:background .15s;">
+              <span style="position:absolute; top:2px; left:4px; font-size:9px; font-weight:600; opacity:.7;">{{ c.num }}</span>{{ c.ch }}
+              <sc-if value="{{ c.hint }}"><span style="position:absolute; right:3px; bottom:3px; width:5px; height:5px; border-radius:50%; background:var(--amber);"></span></sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="flex:1;"></div>
+        <div style="display:flex; align-items:center; gap:4px; margin:0 8px 8px; padding:0 4px; border-radius:14px; background:var(--accSoft); box-shadow:inset 0 0 0 1.5px {{ clue.bd }};">
+          <div onClick="{{ prevWord }}" style="width:44px; height:48px; display:grid; place-items:center; font-size:20px; cursor:pointer;">‹</div>
+          <div onClick="{{ openClues }}" style="flex:1; text-align:center; font-size:15px; cursor:pointer;"><b style="font-weight:600;">{{ clue.head }}</b> · {{ clue.text }}</div>
+          <div onClick="{{ nextWord }}" style="width:44px; height:48px; display:grid; place-items:center; font-size:20px; cursor:pointer;">›</div>
+        </div>
+        <div style="background:var(--surf2); padding:8px 4px 26px; display:flex; flex-direction:column; gap:9px;">
+          <sc-for list="{{ keyRows }}" as="row" hint-placeholder-count="3"><div style="display:flex; justify-content:center; gap:5px;"><sc-for list="{{ row }}" as="k"><div onClick="{{ k.press }}" style="cursor:pointer; width:{{ k.w }}; height:44px; border-radius:6px; background:var(--surf); box-shadow:0 1px 0 rgba(0,0,0,.18); display:grid; place-items:center; font-size:19px;" style-active="background:var(--line)">{{ k.label }}</div></sc-for></div></sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.done }}">
+      <div style="padding:30px 20px 24px; display:flex; flex-direction:column; gap:22px; flex:1;">
+        <div style="font-size:13px; font-weight:600; color:var(--ink2); letter-spacing:.08em;">BULMACA TAMAM</div>
+        <div style="font-family:'Newsreader',serif; font-size:52px; line-height:1; letter-spacing:-0.02em;">5 kelime,<br>4 dakika.</div>
+        <div style="display:flex; gap:24px; font-size:14px; color:var(--ink2);"><span><b style="color:var(--ink); font-size:20px;">4:12</b><br>süre</span><span><b style="color:var(--ink); font-size:20px;">{{ helpedCount }}</b><br>ipucu</span></div>
+        <div style="display:flex; flex-direction:column; gap:10px;"><div style="font-size:14px; font-weight:600;">Widget'ına eklenen kelimeler</div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px;"><sc-for list="{{ helpedWords }}" as="w"><span style="font-family:'Newsreader',serif; font-size:18px; padding:6px 12px; border-radius:99px; background:var(--amberBg);">{{ w }}</span></sc-for></div></div>
+        <div style="display:grid; grid-template-columns:repeat(8,14px); gap:3px;"><sc-for list="{{ shareGrid }}" as="t"><div style="width:14px; height:14px; border-radius:3px; background:{{ t.bg }};"></div></sc-for></div>
+        <div style="flex:1;"></div>
+        <div style="height:52px; border-radius:14px; background:var(--acc); color:var(--onAcc); display:grid; place-items:center; font-weight:600; font-size:16px; cursor:pointer;">Sonucu paylaş</div>
+        <div onClick="{{ goHome }}" style="text-align:center; font-size:14px; color:var(--ink2); height:44px; display:grid; place-items:center; cursor:pointer;">Yarın yeni bulmaca</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ is.paywall }}">
+      <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:20px; flex:1;">
+        <div style="display:flex; justify-content:flex-end; margin-right:-8px;"><div onClick="{{ goBack }}" style="width:44px; height:44px; border-radius:22px; background:var(--surf2); display:grid; place-items:center; font-size:20px; cursor:pointer;">×</div></div>
+        <div style="display:flex; flex-direction:column; gap:8px;"><div style="font-size:12px; font-weight:700; letter-spacing:.1em; color:var(--acc);">KELİME WIDGET PRO</div><div style="font-family:'Newsreader',serif; font-size:44px; line-height:1; letter-spacing:-0.02em;">{{ pw.title }}</div><div style="font-size:15px; color:var(--ink2); line-height:1.4;">{{ pw.sub }}</div></div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="5"><div style="display:flex; gap:12px; align-items:center; font-size:16px;"><span style="width:22px; height:22px; border-radius:50%; background:var(--accSoft); color:var(--acc); display:grid; place-items:center; font-size:12px; font-weight:700;">✓</span>{{ b }}</div></sc-for>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div onClick="{{ pickLife }}" style="cursor:pointer; border-radius:18px; padding:16px; box-shadow:inset 0 0 0 {{ plan.lifeBw }} {{ plan.lifeBd }}; background:var(--surf); position:relative;">
+            <span style="position:absolute; top:-10px; right:14px; font-size:11px; font-weight:700; padding:4px 8px; border-radius:6px; background:var(--acc); color:var(--onAcc);">Önerilen</span>
+            <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:17px; font-weight:600;">Ömür boyu</span><span style="font-size:22px; font-weight:700;">₺249</span></div>
+            <div style="font-size:13px; color:var(--ink2); margin-top:4px;">Tek seferlik ödeme, abonelik yok</div>
+          </div>
+          <div onClick="{{ pickYear }}" style="cursor:pointer; border-radius:18px; padding:16px; box-shadow:inset 0 0 0 {{ plan.yearBw }} {{ plan.yearBd }}; background:var(--surf);">
+            <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:17px; font-weight:600;">Yıllık</span><span style="font-size:22px; font-weight:700;">₺149</span></div>
+            <div style="font-size:13px; color:var(--ink2); margin-top:4px;">7 gün ücretsiz dene</div>
+          </div>
+        </div>
+        <div style="flex:1;"></div>
+        <div style="height:54px; border-radius:16px; background:var(--acc); color:var(--onAcc); display:grid; place-items:center; font-weight:600; font-size:17px; cursor:pointer;">{{ plan.cta }}</div>
+        <div style="text-align:center; font-size:13px; color:var(--ink2);">Reklam yok. Hesap yok. İnternetsiz çalışır.</div>
+        <div style="display:flex; justify-content:center; gap:18px; font-size:12px; color:var(--ink2);"><span>Geri yükle</span><span>Koşullar</span><span>Gizlilik</span></div>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ showTabs }}" hint-placeholder-val="{{ true }}">
+    <div style="flex:none; display:grid; grid-template-columns:repeat(4,1fr); padding:6px 8px 28px; border-top:1px solid var(--line); background:var(--bg);">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+        <div onClick="{{ t.go }}" style="height:50px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; color:{{ t.fg }};">
+          <div style="width:22px; height:22px; display:grid; place-items:center;"><div style="width:{{ t.iw }}; height:{{ t.ih }}; border-radius:{{ t.ir }}; border:2px solid currentColor; box-sizing:border-box; background:{{ t.ibg }};"></div></div>
+          <span style="font-size:10.5px; font-weight:600;">{{ t.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ sheetOpen }}">
+    <div onClick="{{ closeSheet }}" style="position:absolute; inset:0; background:rgba(0,0,0,.35);"></div>
+    <div style="position:absolute; left:0; right:0; bottom:0; background:var(--surf); border-radius:28px 28px 0 0; padding:10px 20px 34px; display:flex; flex-direction:column; gap:6px; max-height:70%; overflow-y:auto;">
+      <div style="width:36px; height:5px; border-radius:3px; background:var(--line); align-self:center; margin-bottom:10px;"></div>
+      <div style="font-size:20px; font-weight:700; margin-bottom:6px;">{{ sheet.title }}</div>
+      <sc-for list="{{ sheet.items }}" as="it">
+        <div onClick="{{ it.tap }}" style="cursor:pointer; min-height:50px; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:0 14px; border-radius:12px; background:var(--bg); box-shadow:inset 0 0 0 1.5px {{ it.bd }}; font-size:15px;"><span><b style="font-weight:600;">{{ it.head }}</b>{{ it.text }}</span><span style="color:var(--greenInk); font-weight:700;">{{ it.mark }}</span></div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ toastOpen }}">
+    <div style="position:absolute; left:50%; bottom:110px; transform:translateX(-50%); background:var(--ink); color:var(--bg); padding:12px 18px; border-radius:14px; font-size:14px; font-weight:500; white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.2);">{{ toast }}</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:413,&quot;height&quot;:872},&quot;screen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;bugun&quot;,&quot;oyna&quot;,&quot;words&quot;,&quot;settings&quot;,&quot;word&quot;,&quot;quiz&quot;,&quot;puzzle&quot;,&quot;paywall&quot;],&quot;default&quot;:&quot;bugun&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;trigger&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;base&quot;,&quot;review&quot;,&quot;yds&quot;,&quot;archive&quot;],&quot;default&quot;:&quot;base&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const W = {
+  reluctant:{w:'reluctant',t:'adj.',l:'B2',tr:'isteksiz, gönülsüz',en:'She was reluctant to leave.',ts:'Ayrılmaya gönülsüzdü.',deck:'Genel'},
+  reliable:{w:'reliable',t:'adj.',l:'B1',tr:'güvenilir',en:'He is a reliable friend.',ts:'O, güvenilir bir arkadaş.',deck:'Genel'},
+  borrow:{w:'borrow',t:'v.',l:'A2',tr:'ödünç almak',en:'Can I borrow your pen?',ts:'Kalemini ödünç alabilir miyim?',deck:'Genel'},
+  hesitate:{w:'hesitate',t:'v.',l:'B2',tr:'tereddüt etmek',en:"Don't hesitate to ask.",ts:'Sormaktan çekinme.',deck:'Genel'},
+  obvious:{w:'obvious',t:'adj.',l:'B1',tr:'açık, belli',en:'The answer was obvious.',ts:'Cevap belliydi.',deck:'Genel'},
+  achieve:{w:'achieve',t:'v.',l:'B1',tr:'başarmak',en:'You can achieve your goals.',ts:'Hedeflerine ulaşabilirsin.',deck:'Genel'},
+  ancient:{w:'ancient',t:'adj.',l:'B1',tr:'antik, çok eski',en:'We visited an ancient city.',ts:'Antik bir şehri ziyaret ettik.',deck:'Genel'},
+  significant:{w:'significant',t:'adj.',l:'B2',tr:'önemli, kayda değer',en:'There was a significant increase in prices.',ts:'Fiyatlarda kayda değer bir artış oldu.',deck:'YDS'},
+  consequence:{w:'consequence',t:'n.',l:'B2',tr:'sonuç',en:'Every choice has a consequence.',ts:'Her seçimin bir sonucu vardır.',deck:'YDS'}
+};
+const ORDER = Object.keys(W);
+const ST = {y:{label:'Yeni',bg:'var(--surf2)',fg:'var(--ink2)'},z:{label:'Zorlanılan',bg:'var(--amberBg)',fg:'var(--amberInk)'},o:{label:'Öğrenildi',bg:'var(--greenBg)',fg:'var(--greenInk)'}};
+const THEMES = {
+  light:{bg:'#F4F1EB',surf:'#FFFFFF',surf2:'#EAE6DE',ink:'#1B1916',ink2:'#6A6359',line:'rgba(27,25,22,.11)',acc:'oklch(0.48 0.13 262)',accSoft:'oklch(0.94 0.025 262)',onAcc:'#FFFFFF',amber:'oklch(0.74 0.14 68)',amberBg:'oklch(0.95 0.045 80)',amberInk:'oklch(0.50 0.11 58)',green:'oklch(0.62 0.10 155)',greenBg:'oklch(0.95 0.03 155)',greenInk:'oklch(0.44 0.08 155)'},
+  dark:{bg:'#121110',surf:'#1C1B19',surf2:'#2A2825',ink:'#F2EEE7',ink2:'#A39C91',line:'rgba(242,238,231,.11)',acc:'oklch(0.76 0.11 262)',accSoft:'oklch(0.28 0.05 262)',onAcc:'#121110',amber:'oklch(0.79 0.13 72)',amberBg:'oklch(0.31 0.06 68)',amberInk:'oklch(0.86 0.11 76)',green:'oklch(0.74 0.10 155)',greenBg:'oklch(0.29 0.04 155)',greenInk:'oklch(0.84 0.08 155)'}
+};
+const CW = [
+  {n:1,dir:'a',ans:'BORROW',clue:'ödünç almak',r:0,c:2},
+  {n:2,dir:'d',ans:'OBVIOUS',clue:'açık, belli',r:0,c:3},
+  {n:3,dir:'a',ans:'HESITATE',clue:'tereddüt etmek',r:3,c:0},
+  {n:4,dir:'d',ans:'ACHIEVE',clue:'başarmak',r:3,c:5},
+  {n:5,dir:'a',ans:'ANCIENT',clue:'antik, çok eski',r:9,c:1}
+];
+CW.forEach(w => w.cells = [...w.ans].map((_, i) => w.dir === 'a' ? [w.r, w.c + i] : [w.r + i, w.c]));
+const SOL = {}, NUM = {};
+CW.forEach(w => { NUM[w.r + ',' + w.c] = w.n; w.cells.forEach(([r, c], i) => SOL[r + ',' + c] = w.ans[i]); });
+const K = (r, c) => r + ',' + c;
+function initGrid() {
+  const g = {};
+  [0, 1].forEach(i => CW[i].cells.forEach(([r, c]) => g[K(r, c)] = {ch: SOL[K(r, c)], k: 'done'}));
+  [[3,0],[3,1],[3,2]].forEach(([r, c]) => g[K(r, c)] = {ch: SOL[K(r, c)], k: 'typed'});
+  g['3,6'] = {ch: 'T', k: 'typed', h: true};
+  return g;
+}
+const QS = [
+  {type:'mc',word:'reluctant',opts:['reluctant','reliable','relevant','remote']},
+  {type:'write',word:'hesitate',blank:"Don't ________ to ask."},
+  {type:'mc',word:'reliable',opts:['ancient','reliable','reluctant','significant']},
+  {type:'mc',word:'consequence',opts:['achieve','significant','consequence','obvious']}
+];
+const TABS = [['bugun','Bugün','20px','20px','50%'],['oyna','Oyna','18px','18px','5px'],['words','Kelimelerim','16px','20px','3px'],['settings','Ayarlar','20px','20px','6px']];
+const PW = {
+  base:{title:'Daha çok kelime, daha sık.',sub:'Tek seferlik ödeme. Widget\'ın tüm destelerle çalışır.'},
+  review:{title:'Sınırsız tekrar',sub:'Bugünkü ücretsiz turunu bitirdin. Pro ile istediğin kadar tekrar et.'},
+  yds:{title:'YDS destesini aç',sub:'Sınavda çıkan 1.200 kelime, gün boyu kilit ekranında.'},
+  archive:{title:'Bulmaca arşivi',sub:'Geçmiş bulmacaların hepsi, her seviye için.'}
+};
+
+class Component extends DCLogic {
+  state = {
+    screen: null, prev: 'bugun', bannerOpen: true, reviewUsed: false,
+    ws: {reluctant:'z',hesitate:'z',significant:'z',consequence:'z',reliable:'o',borrow:'o',obvious:'o',achieve:'y',ancient:'y'},
+    fav: {}, cur: 'reluctant', seg: 0, query: '', decks: false, mode: 0, remind: true,
+    qi: 0, picked: null, answered: null, wtyped: '', results: [],
+    grid: initGrid(), wi: 2, ac: [3, 4], helped: {2: true}, solved: {0: true, 1: true},
+    sheet: null, toast: null, plan: 'life', trigger: null
+  };
+  scr() { return this.state.screen || this.props.screen || 'bugun'; }
+  go(screen, extra) { this.setState({prev: this.scr(), screen, ...(extra || {})}); }
+  flash(t) { this.setState({toast: t}); clearTimeout(this._t); this._t = setTimeout(() => this.setState({toast: null}), 1800); }
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  setWs(w, s) { this.setState(st => ({ws: {...st.ws, [w]: s}})); }
+  pickMc(opt) {
+    if (this.state.answered) return;
+    const q = QS[this.state.qi], ok = opt === q.word;
+    this.setWs(q.word, ok ? 'o' : 'z');
+    this.setState(s => ({picked: opt, answered: ok ? 'right' : 'wrong', results: [...s.results, {w: q.word, ok}]}));
+  }
+  checkWrite() {
+    const q = QS[this.state.qi]; if (this.state.answered) return;
+    const full = (q.word[0] + this.state.wtyped).toLowerCase();
+    if (full.length < q.word.length) return;
+    const ok = full === q.word;
+    this.setWs(q.word, ok ? 'o' : 'z');
+    this.setState(s => ({answered: ok ? 'right' : 'wrong', results: [...s.results, {w: q.word, ok}]}));
+  }
+  nextQ() {
+    if (this.state.qi >= QS.length - 1) return this.go('summary');
+    this.setState(s => ({qi: s.qi + 1, picked: null, answered: null, wtyped: ''}));
+  }
+  press(L) {
+    const s = this.scr();
+    if (s === 'quiz') {
+      const q = QS[this.state.qi]; if (q.type !== 'write' || this.state.answered) return;
+      if (L === '⌫') return this.setState(st => ({wtyped: st.wtyped.slice(0, -1)}));
+      if (this.state.wtyped.length < q.word.length - 1) this.setState(st => ({wtyped: st.wtyped + L}));
+      return;
+    }
+    if (s !== 'puzzle') return;
+    const {grid, wi, ac} = this.state, w = CW[wi];
+    const idx = w.cells.findIndex(([r, c]) => r === ac[0] && c === ac[1]);
+    const g = {...grid};
+    const editable = i => { const x = g[K(...w.cells[i])]; return !x || x.k !== 'done'; };
+    if (L === '⌫') {
+      const k0 = K(...ac);
+      if (g[k0] && g[k0].k !== 'done') { delete g[k0]; return this.setState({grid: g}); }
+      for (let i = idx - 1; i >= 0; i--) if (editable(i)) { delete g[K(...w.cells[i])]; return this.setState({grid: g, ac: w.cells[i]}); }
+      return;
+    }
+    if (editable(idx)) g[K(...ac)] = {ch: L, k: 'typed', h: (g[K(...ac)] || {}).h};
+    this.advance(g, idx);
+  }
+  advance(g, idx) {
+    const {wi} = this.state, w = CW[wi];
+    let nac = this.state.ac;
+    for (let i = idx + 1; i < w.cells.length; i++) { const x = g[K(...w.cells[i])]; if (!x || x.k !== 'done') { nac = w.cells[i]; break; } }
+    this.finish(g, wi, {ac: nac});
+  }
+  finish(g, wi, extra) {
+    const w = CW[wi];
+    const ok = w.cells.every(([r, c]) => g[K(r, c)] && g[K(r, c)].ch === SOL[K(r, c)]);
+    const solved = {...this.state.solved};
+    if (ok) { w.cells.forEach(([r, c]) => g[K(r, c)] = {...g[K(r, c)], k: 'done'}); solved[wi] = true; }
+    const all = Object.keys(solved).length === CW.length;
+    let next = {grid: g, solved, ...extra};
+    if (ok && !all) { const nwi = CW.findIndex((_, i) => !solved[i]); next = {...next, ...this.focusWord(nwi, g)}; }
+    this.setState(next);
+    if (all) setTimeout(() => this.go('done'), 500);
+  }
+  focusWord(wi, g) {
+    g = g || this.state.grid; const w = CW[wi];
+    const free = w.cells.find(([r, c]) => !g[K(r, c)] || g[K(r, c)].k !== 'done') || w.cells[0];
+    return {wi, ac: free};
+  }
+  tapCell(r, c) {
+    if (!SOL[K(r, c)]) return;
+    const owners = CW.map((w, i) => w.cells.some(([a, b]) => a === r && b === c) ? i : -1).filter(i => i >= 0);
+    let wi = owners.find(i => CW[i].dir === 'a'); if (wi === undefined) wi = owners[0];
+    if (this.state.ac[0] === r && this.state.ac[1] === c && owners.length > 1) wi = owners.find(i => i !== this.state.wi);
+    else if (owners.includes(this.state.wi)) wi = this.state.wi;
+    this.setState({wi, ac: [r, c]});
+  }
+  revealLetter() {
+    const {ac, wi} = this.state, k = K(...ac), g = {...this.state.grid};
+    if (g[k] && g[k].k === 'done') return;
+    g[k] = {ch: SOL[k], k: 'typed', h: true};
+    this.setState(s => ({helped: {...s.helped, [wi]: true}}));
+    const idx = CW[wi].cells.findIndex(([r, c]) => r === ac[0] && c === ac[1]);
+    this.advance(g, idx);
+  }
+  checkWord() {
+    const {wi} = this.state, g = {...this.state.grid};
+    CW[wi].cells.forEach(([r, c]) => { const x = g[K(r, c)]; if (x && x.k === 'typed' && x.ch !== SOL[K(r, c)]) g[K(r, c)] = {...x, k: 'wrong'}; });
+    this.setState(s => ({grid: g, helped: {...s.helped, [wi]: true}}));
+  }
+  showWord() {
+    const {wi} = this.state, g = {...this.state.grid};
+    CW[wi].cells.forEach(([r, c]) => { const x = g[K(r, c)]; if (!x || x.k !== 'done') g[K(r, c)] = {ch: SOL[K(r, c)], k: 'typed', h: true}; });
+    this.setState(s => ({helped: {...s.helped, [wi]: true}}));
+    this.finish(g, wi, {});
+  }
+  openPaywall(trigger) { this.go('paywall', {trigger}); }
+
+  renderVals() {
+    const S = this.state, scr = this.scr(), dark = !!this.props.dark;
+    const v = THEMES[dark ? 'dark' : 'light'];
+    const is = {}; ['bugun','oyna','words','settings','word','quiz','summary','puzzle','done','paywall'].forEach(k => is[k] = scr === k);
+    const solvedCount = Object.keys(S.solved).length;
+    const counts = {z: 0, o: 0}; ORDER.forEach(w => { if (counts[S.ws[w]] !== undefined) counts[S.ws[w]]++; });
+    const thumb = []; for (let r = 0; r < 10; r++) for (let c = 0; c < 8; c++) { const k = K(r, c), x = S.grid[k]; thumb.push({bg: !SOL[k] ? 'transparent' : x && x.k === 'done' ? 'var(--green)' : x ? 'var(--ink2)' : 'var(--surf2)'}); }
+    const shareGrid = []; for (let r = 0; r < 10; r++) for (let c = 0; c < 8; c++) { const k = K(r, c); const wi = CW.findIndex(w => w.cells.some(([a, b]) => K(a, b) === k)); shareGrid.push({bg: !SOL[k] ? 'transparent' : S.helped[wi] ? 'var(--amber)' : 'var(--green)'}); }
+    const week = ['P','S','Ç','P','C','C','P'].map((l, i) => ({l, bg: [0, 1, 3].includes(i) ? 'var(--green)' : 'transparent'}));
+    const tabs = TABS.map(([id, label, iw, ih, ir]) => ({label, iw, ih, ir, fg: scr === id ? 'var(--acc)' : 'var(--ink2)', ibg: scr === id ? 'currentColor' : 'transparent', go: () => this.setState({screen: id, decks: false})}));
+    const chip = w => ({...W[w], state: ST[S.ws[w]].label, cbg: ST[S.ws[w]].bg, cfg: ST[S.ws[w]].fg});
+    const segKeys = ['z','o','f','all'], segLabels = ['Zorlanılan','Öğrenildi','Favoriler','Tümü'];
+    const sk = segKeys[S.seg], ql = S.query.trim().toLocaleLowerCase('tr');
+    const rows = ORDER.filter(w => sk === 'all' || (sk === 'f' ? S.fav[w] : S.ws[w] === sk))
+      .filter(w => !ql || w.includes(ql) || W[w].tr.toLocaleLowerCase('tr').includes(ql))
+      .map(w => ({...chip(w), open: () => this.go('word', {cur: w})}));
+    const emptyText = ql ? 'Bu aramayla eşleşen kelime yok.' : sk === 'z' ? 'Zorlandığın kelime yok. Bir Hızlı Tekrar ile başla.' : sk === 'f' ? 'Henüz favori kelimen yok.' : 'Henüz öğrenilen kelime yok.';
+    const segs = segLabels.map((label, i) => ({label, pick: () => this.setState({seg: i}), bg: S.seg === i ? 'var(--surf)' : 'transparent', fg: S.seg === i ? 'var(--ink)' : 'var(--ink2)', sh: S.seg === i ? '0 1px 3px rgba(0,0,0,.12)' : 'none'}));
+    const deckData = [['A1','420',0.9,false,true],['A2','640',0.62,true,false],['B1','880',0.31,true,false],['B2','960',0,false,true],['C1','720',0,false,true],['YDS','1.200',0,false,true],['YÖKDİL','1.050',0,false,true],['IELTS','900',0,false,true]];
+    const decks = deckData.map(([name, n, p, on, pro]) => ({name, count: n + ' kelime · %' + Math.round(p * 100), pct: (p * 100) + '%', badge: pro ? 'PRO' : '', op: pro ? 0.7 : 1, tbg: on ? 'var(--green)' : 'var(--surf2)', tj: on ? 'flex-end' : 'flex-start', tap: pro ? () => this.openPaywall(name === 'YDS' ? 'yds' : 'base') : () => {}}));
+    const modes = ['Kart','Cümle','Kendini sına'].map((label, i) => ({label, pick: () => this.setState({mode: i}), bg: S.mode === i ? 'var(--surf)' : 'transparent', fg: S.mode === i ? 'var(--ink)' : 'var(--ink2)', sh: S.mode === i ? '0 1px 3px rgba(0,0,0,.12)' : 'none'}));
+
+    const qd = QS[S.qi], qw = W[qd.word], ans = S.answered;
+    const q = {
+      num: (S.qi + 1) + '/10', pct: ((S.qi + (ans ? 1 : 0)) * 10) + '%', tr: qw.tr,
+      kicker: qd.type === 'mc' ? 'BU KELİMENİN İNGİLİZCESİ' : 'KELİMEYİ YAZ',
+      isMc: qd.type === 'mc', isWrite: qd.type === 'write', blank: qd.blank,
+      opts: (qd.opts || []).map(o => {
+        const right = o === qd.word, picked = o === S.picked;
+        return {text: o, pick: () => this.pickMc(o),
+          bg: ans && right ? 'var(--greenBg)' : ans && picked ? 'var(--amberBg)' : 'var(--surf)',
+          bd: ans && right ? 'var(--green)' : ans && picked ? 'var(--amber)' : 'var(--line)',
+          op: ans && !right && !picked ? 0.45 : 1, mark: ans && right ? '✓' : '', mc: 'var(--greenInk)'};
+      }),
+      boxes: qd.type === 'write' ? [...qd.word].map((ch, i) => {
+        const val = i === 0 ? ch.toUpperCase() : (S.wtyped[i - 1] || '');
+        const curB = !ans && i === S.wtyped.length + 1;
+        return {ch: ans === 'wrong' ? ch.toUpperCase() : val, bg: i === 0 ? 'var(--surf2)' : ans === 'right' ? 'var(--greenBg)' : ans === 'wrong' ? 'var(--amberBg)' : 'var(--surf)', fg: i === 0 ? 'var(--ink2)' : 'var(--ink)', bd: curB ? 'var(--acc)' : 'var(--line)'};
+      }) : [],
+      showFeedback: !!ans, wrong: ans === 'wrong', fbBg: ans === 'right' ? 'var(--greenBg)' : 'var(--amberBg)', fbInk: ans === 'right' ? 'var(--greenInk)' : 'var(--amberInk)',
+      fbTitle: ans === 'right' ? 'Doğru' : 'Doğru cevap: ' + qd.word, en: qw.en, ts: qw.ts,
+      showCheck: qd.type === 'write' && !ans, showKeys: qd.type === 'write' && !ans,
+      checkBg: S.wtyped.length === qd.word.length - 1 ? 'var(--acc)' : 'var(--ink2)'
+    };
+    const sum = {score: S.results.filter(r => r.ok).length, total: S.results.length || QS.length, learned: S.results.filter(r => r.ok).map(r => r.w), hard: S.results.filter(r => !r.ok).map(r => r.w)};
+    if (!S.results.length) { sum.score = 3; sum.learned = ['reliable','consequence','reluctant']; sum.hard = ['hesitate']; }
+
+    const kw = '33px';
+    const keyRows = ['QWERTYUIOP','ASDFGHJKL','ZXCVBNM'].map((row, i) => {
+      const ks = [...row].map(L => ({label: L, w: kw, press: () => this.press(L)}));
+      if (i === 2) ks.push({label: '⌫', w: '50px', press: () => this.press('⌫')});
+      return ks;
+    });
+    const aw = CW[S.wi], inWord = {}; aw.cells.forEach(([r, c]) => inWord[K(r, c)] = 1);
+    const cells = [];
+    for (let r = 0; r < 10; r++) for (let c = 0; c < 8; c++) {
+      const k = K(r, c), open = !!SOL[k], x = S.grid[k] || {}, isAc = S.ac[0] === r && S.ac[1] === c;
+      cells.push(open ? {
+        num: NUM[k] || '', ch: x.ch || '', hint: !!x.h, cur: 'pointer', tap: () => this.tapCell(r, c),
+        bg: isAc ? 'var(--acc)' : x.k === 'wrong' ? 'var(--amberBg)' : inWord[k] ? 'var(--accSoft)' : x.k === 'done' ? 'var(--greenBg)' : 'var(--surf)',
+        fg: isAc ? 'var(--onAcc)' : x.k === 'wrong' ? 'var(--amberInk)' : x.k === 'done' && !inWord[k] ? 'var(--greenInk)' : 'var(--ink)',
+        bd: x.k === 'wrong' && !isAc ? 'inset 0 0 0 1.5px var(--amber)' : 'inset 0 0 0 1px var(--line)'
+      } : {num: '', ch: '', hint: false, cur: 'default', tap: () => {}, bg: 'transparent', fg: 'transparent', bd: 'none'});
+    }
+    const clue = {head: aw.n + ' ' + (aw.dir === 'a' ? 'Yatay' : 'Dikey'), text: aw.clue + ' (' + aw.ans.length + ')', bd: S.helped[S.wi] ? 'var(--amber)' : 'transparent'};
+    const step = d => { let i = S.wi; for (let n = 0; n < CW.length; n++) { i = (i + d + CW.length) % CW.length; if (!S.solved[i]) break; } this.setState(this.focusWord(i)); };
+
+    let sheet = {title: '', items: []};
+    if (S.sheet === 'report') sheet = {title: 'Hata bildir', items: ['Anlam yanlış','Cümle yanlış','Çeviri doğal değil','Diğer'].map(t => ({head: '', text: t, mark: '', bd: 'transparent', tap: () => { this.setState({sheet: null}); this.flash('Teşekkürler, inceleyeceğiz'); }}))};
+    if (S.sheet === 'clues') sheet = {title: 'İpuçları', items: CW.map((w, i) => ({head: w.n + ' ' + (w.dir === 'a' ? 'Yatay' : 'Dikey') + '  ', text: w.clue + ' (' + w.ans.length + ')', mark: S.solved[i] ? '✓' : '', bd: S.helped[i] ? 'var(--amber)' : 'transparent', tap: () => this.setState({sheet: null, ...this.focusWord(i)})}))};
+    if (S.sheet === 'guide') sheet = {title: 'Widget nasıl eklenir?', items: ['Kilit ekranına basılı tut','Özelleştir’e dokun','Widget ekle’yi seç','Kelime Widget’ı seç'].map((t, i) => ({head: (i + 1) + '  ', text: t, mark: '', bd: 'transparent', tap: () => {}}))};
+
+    const trig = S.trigger || this.props.trigger || 'base';
+    const wd = chip(S.cur); wd.deck = W[S.cur].deck;
+    return {
+      v, is, bannerOpen: S.bannerOpen, reviewOpen: !S.reviewUsed, reviewUsed: S.reviewUsed, sessionsLeft: S.reviewUsed ? 0 : 1,
+      thumb, shareGrid, week, solvedCount, solvedPct: (solvedCount * 20) + '%', learnedCount: counts.o, strugglingCount: counts.z,
+      tabs, showTabs: ['bugun','oyna','words','settings'].includes(scr),
+      openHero: () => this.go('word', {cur: 'reluctant'}), openGuide: () => this.setState({sheet: 'guide'}), closeBanner: () => this.setState({bannerOpen: false}),
+      startQuiz: () => { if (S.reviewUsed) return this.openPaywall('review'); this.go('quiz', {qi: 0, picked: null, answered: null, wtyped: '', results: []}); },
+      openPuzzle: () => this.go(Object.keys(S.solved).length === 5 ? 'done' : 'puzzle'), closePuzzle: () => this.setState({screen: 'oyna'}),
+      openPaywallReview: () => this.openPaywall('review'), openPaywallArchive: () => this.openPaywall('archive'), openPaywallYds: () => this.openPaywall('yds'), openPaywallBase: () => this.openPaywall('base'),
+      goBack: () => this.setState({screen: ['word','paywall','quiz','summary','puzzle','done'].includes(S.prev) ? 'bugun' : S.prev}), goHome: () => this.setState({screen: 'bugun'}),
+      listView: !S.decks, decksView: S.decks, decksLabel: S.decks ? 'Kelimeler' : 'Desteler', toggleDecks: () => this.setState(s => ({decks: !s.decks})),
+      query: S.query, onQuery: e => this.setState({query: e.target.value}), segs, rows, emptyList: rows.length === 0, emptyText, decks,
+      modes, remindBg: S.remind ? 'var(--green)' : 'var(--surf2)', remindJ: S.remind ? 'flex-end' : 'flex-start', toggleRemind: () => this.setState(s => ({remind: !s.remind})),
+      wd, favGlyph: S.fav[S.cur] ? '★' : '☆', favColor: S.fav[S.cur] ? 'var(--amber)' : 'var(--ink2)',
+      toggleFav: () => this.setState(s => ({fav: {...s.fav, [s.cur]: !s.fav[s.cur]}})),
+      shareWord: () => this.flash('Hikâye görseli hazırlandı'),
+      speak: () => { try { const u = new SpeechSynthesisUtterance(S.cur); u.lang = 'en-US'; u.rate = 0.9; speechSynthesis.speak(u); } catch (e) {} },
+      markKnow: () => { this.setWs(S.cur, 'o'); this.flash('Öğrenildi olarak işaretlendi'); },
+      markHard: () => { this.setWs(S.cur, 'z'); this.flash('Widget’ında daha sık gelecek'); },
+      openReport: () => this.setState({sheet: 'report'}),
+      q, nextQ: () => this.nextQ(), checkWrite: () => this.checkWrite(), keyRows, sum,
+      finishReview: () => this.setState({screen: 'bugun', reviewUsed: true}),
+      cells, clue, prevWord: () => step(-1), nextWord: () => step(1), openClues: () => this.setState({sheet: 'clues'}),
+      revealLetter: () => this.revealLetter(), checkWord: () => this.checkWord(), showWord: () => this.showWord(),
+      helpedCount: Object.keys(S.helped).length, helpedWords: Object.keys(S.helped).map(i => CW[i].ans.toLowerCase()),
+      pw: PW[trig], benefits: ['Sınırsız Hızlı Tekrar','YDS · YÖKDİL · IELTS desteleri','B2–C1 kelimeler','Bulmaca arşivi','Tüm temalar ve 30 dk değişim'],
+      plan: {lifeBd: S.plan === 'life' ? 'var(--acc)' : 'var(--line)', yearBd: S.plan === 'year' ? 'var(--acc)' : 'var(--line)', lifeBw: S.plan === 'life' ? '2px' : '1px', yearBw: S.plan === 'year' ? '2px' : '1px', cta: S.plan === 'life' ? '₺249 · Bir kez öde' : '7 gün ücretsiz başla'},
+      pickLife: () => this.setState({plan: 'life'}), pickYear: () => this.setState({plan: 'year'}),
+      sheetOpen: !!S.sheet, sheet, closeSheet: () => this.setState({sheet: null}),
+      toastOpen: !!S.toast, toast: S.toast
+    };
+  }
+}
+</script>
+</body>
+</html>
