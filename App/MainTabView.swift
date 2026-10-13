@@ -6,6 +6,29 @@ import SwiftUI
 struct MainTabView: View {
     let database: AppDatabase
 
+    init(database: AppDatabase) {
+        self.database = database
+        Self.configureTabBarAppearance()
+    }
+
+    /// Flat bar from the design: page background, hairline on top, accent for the selected tab.
+    private static func configureTabBarAppearance() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(Palette.background)
+        appearance.shadowColor = UIColor(Palette.line)
+        let normal = UIColor(Palette.ink2)
+        let selected = UIColor(Palette.accent)
+        for item in [appearance.stackedLayoutAppearance, appearance.inlineLayoutAppearance, appearance.compactInlineLayoutAppearance] {
+            item.normal.iconColor = normal
+            item.normal.titleTextAttributes = [.foregroundColor: normal]
+            item.selected.iconColor = selected
+            item.selected.titleTextAttributes = [.foregroundColor: selected]
+        }
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+
     var body: some View {
         TabView {
             PlaceholderScreen(title: "Bugün", database: database)
