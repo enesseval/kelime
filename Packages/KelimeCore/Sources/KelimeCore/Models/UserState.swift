@@ -65,12 +65,15 @@ public struct WidgetQueueEntry: Codable, Sendable, Hashable, FetchableRecord, Pe
     public var quizOptions: [String]
     /// The option the user tapped, kept until the next slot.
     public var quizAnswer: String?
+    /// True once this slot has been counted as shown in `card_state`.
+    public var counted: Bool
 
-    public init(slotStart: Date, cardID: String, quizOptions: [String], quizAnswer: String? = nil) {
+    public init(slotStart: Date, cardID: String, quizOptions: [String], quizAnswer: String? = nil, counted: Bool = false) {
         self.slotStart = slotStart
         self.cardID = cardID
         self.quizOptions = quizOptions
         self.quizAnswer = quizAnswer
+        self.counted = counted
     }
 
     enum CodingKeys: String, CodingKey {
@@ -78,10 +81,13 @@ public struct WidgetQueueEntry: Codable, Sendable, Hashable, FetchableRecord, Pe
         case cardID = "card_id"
         case quizOptions = "quiz_options"
         case quizAnswer = "quiz_answer"
+        case counted
     }
 
     public enum Columns {
         public static let slotStart = Column(CodingKeys.slotStart)
+        public static let cardID = Column(CodingKeys.cardID)
+        public static let counted = Column(CodingKeys.counted)
     }
 }
 

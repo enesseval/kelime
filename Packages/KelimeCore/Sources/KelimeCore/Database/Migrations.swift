@@ -65,6 +65,13 @@ enum Migrations {
             }
         }
 
+        migrator.registerMigration("v2") { db in
+            // Marks queue slots already counted in card_state.times_shown / last_shown_at.
+            try db.alter(table: "widget_queue") { t in
+                t.add(column: "counted", .boolean).notNull().defaults(to: false)
+            }
+        }
+
         return migrator
     }
 }
