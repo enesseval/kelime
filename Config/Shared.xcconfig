@@ -1,0 +1,18 @@
+// Shared build settings for the app and the widget extension.
+// Both targets read their version from here, so app and extension can never drift apart.
+
+APP_BUNDLE_ID = com.enesseval.kelime
+APP_DISPLAY_NAME = Kelime Widget
+
+MARKETING_VERSION = 1.0
+CURRENT_PROJECT_VERSION = 1
+
+// Apple Developer Team ID. Leave empty for simulator builds.
+DEVELOPMENT_TEAM =
+
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+TARGETED_DEVICE_FAMILY = 1
+SUPPORTS_MACCATALYST = NO
+SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO
+SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO
+SWIFT_VERSION = 6.0
