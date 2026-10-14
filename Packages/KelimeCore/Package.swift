@@ -29,6 +29,10 @@ let package = Package(
             name: "KelimeCoreTests",
             dependencies: ["KelimeCore"]
         ),
+        .testTarget(
+            name: "KelimeUITests",
+            dependencies: ["KelimeUI"]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )

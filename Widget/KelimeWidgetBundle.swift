@@ -5,5 +5,7 @@ import WidgetKit
 struct KelimeWidgetBundle: WidgetBundle {
     var body: some Widget {
         WordWidget()
+        QuizWidget()
+        ReviewRingWidget()
     }
 }

@@ -12,6 +12,11 @@
 		<string>com.apple.widgetkit-extension</string>
 	</dict>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>Fonts/Newsreader.ttf</string>
+		<string>Fonts/Newsreader-Italic.ttf</string>
+		<string>Fonts/HankenGrotesk.ttf</string>
+		<string>Fonts/JetBrainsMono.ttf</string>
+	</array>
 </dict>
 </plist>

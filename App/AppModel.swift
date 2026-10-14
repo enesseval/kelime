@@ -19,6 +19,11 @@ final class AppModel {
         if case .ready(let db) = phase { db } else { nil }
     }
 
+    /// Called when the app comes to the foreground.
+    func becameActive() async {
+        if let database { await WidgetRefresher.refresh(database) }
+    }
+
     func start() async {
         if case .ready = phase { return }
         phase = .launching(step: .openDatabase, progress: 0)
@@ -31,6 +36,7 @@ final class AppModel {
                 }
             })
             phase = .ready(db)
+            await WidgetRefresher.refresh(db)
         } catch {
             phase = .failed(error)
         }

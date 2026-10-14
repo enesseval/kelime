@@ -6,10 +6,26 @@
 	<string>tr</string>
 	<key>CFBundleDisplayName</key>
 	<string>$(APP_DISPLAY_NAME)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.enesseval.kelime</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kelime</string>
+			</array>
+		</dict>
+	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>Fonts/Newsreader.ttf</string>
+		<string>Fonts/Newsreader-Italic.ttf</string>
+		<string>Fonts/HankenGrotesk.ttf</string>
+		<string>Fonts/JetBrainsMono.ttf</string>
+	</array>
 	<key>UIDesignRequiresCompatibility</key>
 	<true/>
 	<key>UILaunchScreen</key>

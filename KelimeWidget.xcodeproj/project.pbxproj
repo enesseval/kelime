@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA0000000000000000000060 /* Content in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000012 /* Content */; };
+		AA0000000000000000000066 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000001A /* Fonts */; };
+		AA0000000000000000000067 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000001A /* Fonts */; };
 		AA0000000000000000000061 /* KelimeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000031 /* KelimeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA0000000000000000000062 /* KelimeCore in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000070 /* KelimeCore */; };
 		AA0000000000000000000063 /* KelimeUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000071 /* KelimeUI */; };
@@ -41,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		AA0000000000000000000012 /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Content; sourceTree = "<group>"; };
+		AA000000000000000000001A /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		AA0000000000000000000014 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		AA0000000000000000000015 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		AA0000000000000000000016 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 				AA0000000000000000000011 /* Widget */,
 				AA0000000000000000000019 /* KelimeCore */,
 				AA0000000000000000000012 /* Content */,
+				AA000000000000000000001A /* Fonts */,
 				AA0000000000000000000013 /* Config */,
 				AA0000000000000000000003 /* Products */,
 			);
@@ -211,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0000000000000000000060 /* Content in Resources */,
+				AA0000000000000000000066 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0000000000000000000067 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
