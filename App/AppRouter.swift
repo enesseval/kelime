@@ -11,6 +11,7 @@ enum AppTab: Hashable {
 enum Route: Hashable {
     case word(String)
     case puzzleArchive
+    case themePicker
 }
 
 struct PuzzleRequest: Identifiable {
@@ -31,6 +32,7 @@ final class AppRouter {
     var todayPath: [Route] = []
     var playPath: [Route] = []
     var wordsPath: [Route] = []
+    var settingsPath: [Route] = []
     var paywall: PaywallRequest?
     /// Presents a Quick Review session full screen.
     var reviewPresented = false

@@ -1,8 +1,8 @@
 import KelimeUI
 import SwiftUI
 
-/// "Widget nasıl eklenir?": numbered steps for the lock screen and the home screen.
-struct WidgetGuideView: View {
+/// Numbered steps for adding the widget, with Kilit ekranı / Ana ekran tabs.
+struct WidgetGuideSteps: View {
     enum Place: String, CaseIterable {
         case lock = "Kilit ekranı"
         case home = "Ana ekran"
@@ -17,26 +17,34 @@ struct WidgetGuideView: View {
         }
     }
 
-    @Environment(\.dismiss) private var dismiss
     @State private var place: Place = .lock
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            SegmentedPicker(options: Place.allCases, selection: $place) { $0.rawValue }
+            ForEach(Array(place.steps.enumerated()), id: \.offset) { index, step in
+                HStack(alignment: .firstTextBaseline, spacing: 14) {
+                    Text("\(index + 1)")
+                        .font(KelimeFont.ui(15, weight: .bold, relativeTo: .body))
+                        .foregroundStyle(Palette.onAccent)
+                        .frame(width: 28, height: 28)
+                        .background(Palette.accent, in: Circle())
+                    Text(step).font(KelimeFont.ui(16, relativeTo: .body))
+                }
+                .surfaceCard(radius: 16, padding: 14)
+            }
+        }
+    }
+}
+
+/// "Widget nasıl eklenir?" sheet, from the Bugün banner and Ayarlar.
+struct WidgetGuideView: View {
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 20) {
-                SegmentedPicker(options: Place.allCases, selection: $place) { $0.rawValue }
-                VStack(alignment: .leading, spacing: 12) {
-                    ForEach(Array(place.steps.enumerated()), id: \.offset) { index, step in
-                        HStack(alignment: .firstTextBaseline, spacing: 14) {
-                            Text("\(index + 1)")
-                                .font(KelimeFont.ui(15, weight: .bold, relativeTo: .body))
-                                .foregroundStyle(Palette.onAccent)
-                                .frame(width: 28, height: 28)
-                                .background(Palette.accent, in: Circle())
-                            Text(step).font(KelimeFont.ui(16, relativeTo: .body))
-                        }
-                        .surfaceCard(radius: 16, padding: 14)
-                    }
-                }
+                WidgetGuideSteps()
                 Spacer()
                 Button("Ekledim") { dismiss() }.buttonStyle(PrimaryButtonStyle())
             }

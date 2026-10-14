@@ -17,6 +17,8 @@ final class AppModel {
 
     /// Bumped after every write, so screens reload what they show.
     private(set) var dataVersion = 0
+    /// True until the user finishes onboarding.
+    private(set) var showOnboarding = false
 
     let router = AppRouter()
     let purchases = PurchaseManager()
@@ -44,8 +46,10 @@ final class AppModel {
                     self.phase = .launching(step: step, progress: progress)
                 }
             })
+            showOnboarding = !((try? await db.reader.read { db in try Settings.bool(.onboardingDone, in: db) }) ?? false)
             phase = .ready(db)
             purchases.start(app: self)
+            await applySpeechRate()
             await WidgetRefresher.refresh(db)
         } catch {
             phase = .failed(error)
@@ -100,6 +104,31 @@ final class AppModel {
         await write(rebuildQueue: true) { db in
             try DeckQueries.setEnabled(enabled, deck: deck, db: db)
         }
+    }
+
+    func completeOnboarding(_ choices: OnboardingChoices) async {
+        await write(rebuildQueue: true) { db in try choices.save(db: db) }
+        if let minutes = choices.reminderMinutes { await Reminder.schedule(minutes: minutes) }
+        showOnboarding = false
+    }
+
+    /// Updates preferences that change the widget's card pool, rhythm, mode or theme.
+    func updatePreferences(_ change: @escaping @Sendable (inout Preferences) -> Void) async {
+        await write(rebuildQueue: true) { db in
+            var prefs = try Preferences.load(db)
+            change(&prefs)
+            try prefs.save(db)
+        }
+    }
+
+    func setSetting(_ key: SettingKey, _ value: String?) async {
+        await write(rebuildQueue: false) { db in try Settings.set(key, value, in: db) }
+        if key == .speechRate { await applySpeechRate() }
+    }
+
+    func applySpeechRate() async {
+        let raw = await read { db in try Settings.string(.speechRate, in: db) } ?? nil
+        Speaker.shared.rateMultiplier = raw.flatMap(Float.init) ?? 0.9
     }
 
     func dismissWidgetBanner() async {

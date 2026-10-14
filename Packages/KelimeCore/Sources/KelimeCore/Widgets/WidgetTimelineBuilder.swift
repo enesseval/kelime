@@ -59,7 +59,8 @@ public enum WidgetTimelineBuilder {
                 puzzleProgress: puzzle.flatMap { summary in
                     summary.day == LocalDate(entry.slotStart, calendar: calendar)
                         ? WidgetSnapshot.PuzzleCount(solved: summary.solved, total: summary.total) : nil
-                }
+                },
+                theme: prefs.effectiveTheme
             )
             snapshots.append(base)
             if resolvedMode == .selfTest {

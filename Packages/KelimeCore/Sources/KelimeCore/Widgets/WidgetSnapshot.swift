@@ -27,6 +27,8 @@ public struct WidgetSnapshot: Sendable, Equatable {
     public var struggling: [Card]
     /// Today's crossword progress (solved, total), nil before the puzzle is opened.
     public var puzzleProgress: PuzzleCount?
+    /// Home-screen theme, already resolved for the user's entitlement.
+    public var theme: WidgetThemeID
 
     public struct PuzzleCount: Sendable, Equatable {
         public var solved: Int
@@ -46,7 +48,8 @@ public struct WidgetSnapshot: Sendable, Equatable {
         reviewedToday: Int = 0,
         dailyTarget: Int = WidgetTimelineBuilder.dailyTarget,
         struggling: [Card] = [],
-        puzzleProgress: PuzzleCount? = nil
+        puzzleProgress: PuzzleCount? = nil,
+        theme: WidgetThemeID = .paper
     ) {
         self.date = date
         self.slotStart = slotStart ?? date
@@ -60,6 +63,7 @@ public struct WidgetSnapshot: Sendable, Equatable {
         self.dailyTarget = dailyTarget
         self.struggling = struggling
         self.puzzleProgress = puzzleProgress
+        self.theme = theme
     }
 
     public var isEmpty: Bool { card == nil }

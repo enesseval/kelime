@@ -5,19 +5,23 @@ import SwiftUI
 public struct LevelChip: View {
     public var level: CEFRLevel
     public var size: CGFloat
+    public var foreground: Color
+    public var background: Color
 
-    public init(_ level: CEFRLevel, size: CGFloat = 11) {
+    public init(_ level: CEFRLevel, size: CGFloat = 11, foreground: Color = Palette.ink2, background: Color = Palette.surface2) {
         self.level = level
         self.size = size
+        self.foreground = foreground
+        self.background = background
     }
 
     public var body: some View {
         Text(level.rawValue)
             .font(KelimeFont.ui(size, weight: .semibold))
-            .foregroundStyle(Palette.ink2)
+            .foregroundStyle(foreground)
             .padding(.vertical, size * 0.27)
             .padding(.horizontal, size * 0.55)
-            .background(Palette.surface2, in: RoundedRectangle(cornerRadius: size * 0.45, style: .continuous))
+            .background(background, in: RoundedRectangle(cornerRadius: size * 0.45, style: .continuous))
             .accessibilityLabel(Text("Seviye \(level.rawValue)"))
     }
 }

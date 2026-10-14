@@ -34,6 +34,11 @@ extension View {
     public func paperBackground() -> some View {
         containerBackground(Palette.paper, for: .widget)
     }
+
+    /// The theme's background for a home-screen widget.
+    public func themeBackground(_ theme: WidgetThemeID) -> some View {
+        containerBackground(theme.colors.background, for: .widget)
+    }
 }
 
 /// First launch / no data, for every home family.
@@ -59,6 +64,7 @@ public struct WidgetEmptyStateView: View {
 /// systemSmall: level chip, state dot, the word and its meaning. Tapping opens the word.
 public struct SmallWidgetView: View {
     let entry: WidgetSnapshot
+    private var c: WidgetColors { entry.theme.colors }
 
     /// 32 pt for most words; long words step down toward the design's 21 pt for 16 letters.
     static func wordSize(for word: String) -> CGFloat {
@@ -77,25 +83,26 @@ public struct SmallWidgetView: View {
         if let card = entry.card {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
-                    LevelChip(card.level)
+                    LevelChip(card.level, foreground: c.ink2, background: c.chip)
                     Spacer()
                     StateDot(entry.state, size: 10).widgetAccentable()
                 }
                 Spacer(minLength: 4)
                 Text(card.word)
-                    .font(KelimeFont.english(Self.wordSize(for: card.word)))
-                    .foregroundStyle(Palette.ink)
+                    .font(entry.theme.wordFont(Self.wordSize(for: card.word)))
+                    .foregroundStyle(c.word)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
                     .widgetAccentable()
                 Text(card.meaning)
                     .font(KelimeFont.ui(14))
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(c.ink2)
                     .lineLimit(2)
                     .padding(.top, 6)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .paperBackground()
+            .themeBackground(entry.theme)
+            .themeColorScheme(entry.theme)
             .widgetURL(WidgetLink.word(card))
             .accessibilityElement(children: .combine)
         } else {
@@ -110,20 +117,23 @@ public struct CardHeader: View {
     let state: LearningState
     var wordSize: CGFloat
     var showLevel: Bool
+    var theme: WidgetThemeID
+    private var c: WidgetColors { theme.colors }
 
-    public init(card: Card, state: LearningState, wordSize: CGFloat = 34, showLevel: Bool = true) {
+    public init(card: Card, state: LearningState, wordSize: CGFloat = 34, showLevel: Bool = true, theme: WidgetThemeID = .paper) {
         self.card = card
         self.state = state
         self.wordSize = wordSize
         self.showLevel = showLevel
+        self.theme = theme
     }
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(alignment: .firstTextBaseline) {
                 Text(card.word)
-                    .font(KelimeFont.english(wordSize))
-                    .foregroundStyle(Palette.ink)
+                    .font(theme.wordFont(wordSize))
+                    .foregroundStyle(c.word)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
                     .widgetAccentable()
@@ -131,13 +141,13 @@ public struct CardHeader: View {
                 if showLevel {
                     Text(card.level.rawValue)
                         .font(KelimeFont.ui(11, weight: .semibold))
-                        .foregroundStyle(Palette.ink2)
+                        .foregroundStyle(c.ink2)
                 } else {
                     StateDot(state, size: 10).widgetAccentable()
                 }
             }
-            (Text(card.pos.abbreviation).font(KelimeFont.english(14, italic: true)).foregroundStyle(Palette.ink2)
-                + Text("  ") + Text(card.meaning).font(KelimeFont.ui(14)).foregroundStyle(Palette.ink))
+            (Text(card.pos.abbreviation).font(KelimeFont.english(14, italic: true)).foregroundStyle(c.ink2)
+                + Text("  ") + Text(card.meaning).font(KelimeFont.ui(14)).foregroundStyle(c.ink))
                 .lineLimit(1)
         }
     }
@@ -146,6 +156,7 @@ public struct CardHeader: View {
 /// systemMedium card with "Biliyorum" / "Zorlanıyorum" buttons that work without opening the app.
 public struct MediumCardWidgetView: View {
     let entry: WidgetSnapshot
+    private var c: WidgetColors { entry.theme.colors }
     let makeButton: WidgetButtonMaker
 
     public init(entry: WidgetSnapshot, makeButton: @escaping WidgetButtonMaker = plainWidgetButton) {
@@ -156,9 +167,9 @@ public struct MediumCardWidgetView: View {
     public var body: some View {
         if let card = entry.card {
             VStack(alignment: .leading, spacing: 4) {
-                CardHeader(card: card, state: entry.state)
-                (Text(card.exampleEN).font(KelimeFont.english(14, italic: true)).foregroundStyle(Palette.ink.opacity(0.85))
-                    + Text("  ") + Text(card.exampleTR).font(KelimeFont.ui(12)).foregroundStyle(Palette.ink2))
+                CardHeader(card: card, state: entry.state, theme: entry.theme)
+                (Text(card.exampleEN).font(KelimeFont.english(14, italic: true)).foregroundStyle(c.ink.opacity(0.85))
+                    + Text("  ") + Text(card.exampleTR).font(KelimeFont.ui(12)).foregroundStyle(c.ink2))
                     .lineLimit(2)
                     .padding(.top, 2)
                 Spacer(minLength: 6)
@@ -172,7 +183,8 @@ public struct MediumCardWidgetView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .paperBackground()
+            .themeBackground(entry.theme)
+            .themeColorScheme(entry.theme)
             .widgetURL(WidgetLink.word(card))
         } else {
             WidgetEmptyStateView()
@@ -198,6 +210,7 @@ private struct ActionLabel: View {
 /// systemMedium quiz: unanswered, correct and wrong states.
 public struct MediumQuizWidgetView: View {
     let entry: WidgetSnapshot
+    private var c: WidgetColors { entry.theme.colors }
     let makeButton: WidgetButtonMaker
 
     public init(entry: WidgetSnapshot, makeButton: @escaping WidgetButtonMaker = plainWidgetButton) {
@@ -215,7 +228,8 @@ public struct MediumQuizWidgetView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .paperBackground()
+            .themeBackground(entry.theme)
+            .themeColorScheme(entry.theme)
         } else {
             WidgetEmptyStateView()
         }
@@ -226,10 +240,10 @@ public struct MediumQuizWidgetView: View {
             Text("HANGİSİ?")
                 .font(KelimeFont.ui(12, weight: .semibold))
                 .tracking(0.7)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(c.ink2)
             Text(card.meaning)
                 .font(KelimeFont.ui(24, weight: .semibold))
-                .foregroundStyle(Palette.ink)
+                .foregroundStyle(c.ink)
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
             Spacer(minLength: 0)
@@ -238,7 +252,7 @@ public struct MediumQuizWidgetView: View {
                     makeButton(.answer(cardID: card.id, option: option), AnyView(
                         Text(option)
                             .font(KelimeFont.english(20))
-                            .foregroundStyle(Palette.ink)
+                            .foregroundStyle(c.ink)
                             .lineLimit(1)
                             .minimumScaleFactor(0.6)
                             .frame(maxWidth: .infinity, minHeight: 44)
@@ -254,8 +268,8 @@ public struct MediumQuizWidgetView: View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .firstTextBaseline) {
                 Text(card.word)
-                    .font(KelimeFont.english(32))
-                    .foregroundStyle(Palette.ink)
+                    .font(entry.theme.wordFont(32))
+                    .foregroundStyle(c.word)
                     .widgetAccentable()
                 Spacer()
                 Text("✓ Doğru")
@@ -264,11 +278,11 @@ public struct MediumQuizWidgetView: View {
             }
             Text(card.meaning)
                 .font(KelimeFont.ui(14))
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(c.ink2)
             Spacer(minLength: 0)
             VStack(alignment: .leading, spacing: 2) {
-                Text(card.exampleEN).font(KelimeFont.english(16, italic: true)).foregroundStyle(Palette.ink)
-                Text(card.exampleTR).font(KelimeFont.ui(12)).foregroundStyle(Palette.ink2)
+                Text(card.exampleEN).font(KelimeFont.english(16, italic: true)).foregroundStyle(c.ink)
+                Text(card.exampleTR).font(KelimeFont.ui(12)).foregroundStyle(c.ink2)
             }
             .lineLimit(1)
             .padding(.vertical, 10)
@@ -286,11 +300,11 @@ public struct MediumQuizWidgetView: View {
                 .foregroundStyle(Palette.amberInk)
             Text(card.word)
                 .font(KelimeFont.english(32))
-                .foregroundStyle(Palette.ink)
+                .foregroundStyle(c.ink)
                 .widgetAccentable()
             (Text(card.meaning + " · ") + Text(entry.quizAnswer ?? "").strikethrough())
                 .font(KelimeFont.ui(14))
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(c.ink2)
                 .lineLimit(1)
             Spacer(minLength: 0)
             Text("Bu kelime sık gelecek")
@@ -308,6 +322,7 @@ public struct MediumQuizWidgetView: View {
 /// systemLarge: current card, today's struggling words, daily crossword teaser.
 public struct LargeWidgetView: View {
     let entry: WidgetSnapshot
+    private var c: WidgetColors { entry.theme.colors }
     let makeButton: WidgetButtonMaker
 
     public init(entry: WidgetSnapshot, makeButton: @escaping WidgetButtonMaker = plainWidgetButton) {
@@ -319,25 +334,25 @@ public struct LargeWidgetView: View {
         if let card = entry.card {
             VStack(alignment: .leading, spacing: 12) {
                 makeButton(.open(WidgetLink.word(card)), AnyView(
-                    CardHeader(card: card, state: entry.state, wordSize: 38, showLevel: false)
+                    CardHeader(card: card, state: entry.state, wordSize: 38, showLevel: false, theme: entry.theme)
                 ))
                 Rectangle().fill(Palette.line).frame(height: 1)
                 Text("BUGÜN ZORLANDIKLARIN")
                     .font(KelimeFont.ui(11, weight: .semibold))
                     .tracking(0.9)
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(c.ink2)
                 if entry.struggling.isEmpty {
                     Text("Zorlandığın kelime yok. Bir Hızlı Tekrar ile başla.")
                         .font(KelimeFont.ui(14))
-                        .foregroundStyle(Palette.ink2)
+                        .foregroundStyle(c.ink2)
                 } else {
                     VStack(spacing: 7) {
                         ForEach(entry.struggling, id: \.id) { word in
                             makeButton(.open(WidgetLink.word(word)), AnyView(
                                 HStack(alignment: .firstTextBaseline) {
-                                    Text(word.word).font(KelimeFont.english(18)).foregroundStyle(Palette.ink)
+                                    Text(word.word).font(KelimeFont.english(18)).foregroundStyle(c.ink)
                                     Spacer()
-                                    Text(word.primaryMeaning).font(KelimeFont.ui(14)).foregroundStyle(Palette.ink2)
+                                    Text(word.primaryMeaning).font(KelimeFont.ui(14)).foregroundStyle(c.ink2)
                                 }
                                 .lineLimit(1)
                             ))
@@ -348,17 +363,18 @@ public struct LargeWidgetView: View {
                 makeButton(.open(WidgetLink.puzzle), AnyView(
                     HStack(spacing: 12) {
                         MiniGrid()
-                        (Text("Günün Bulmacası").font(KelimeFont.ui(14, weight: .semibold)).foregroundStyle(Palette.ink)
-                            + Text(puzzleText).font(KelimeFont.ui(14, weight: .medium)).foregroundStyle(Palette.ink2))
+                        (Text("Günün Bulmacası").font(KelimeFont.ui(14, weight: .semibold)).foregroundStyle(c.ink)
+                            + Text(puzzleText).font(KelimeFont.ui(14, weight: .medium)).foregroundStyle(c.ink2))
                         Spacer(minLength: 0)
                     }
                     .padding(.vertical, 10)
                     .padding(.horizontal, 12)
-                    .background(Palette.surface2.opacity(0.6), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(c.chip, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 ))
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .paperBackground()
+            .themeBackground(entry.theme)
+            .themeColorScheme(entry.theme)
         } else {
             WidgetEmptyStateView()
         }

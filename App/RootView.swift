@@ -14,7 +14,11 @@ struct RootView: View {
                 Task { await model.start() }
             }
         case .ready:
-            MainTabView()
+            if model.showOnboarding {
+                OnboardingView()
+            } else {
+                MainTabView()
+            }
         }
     }
 }

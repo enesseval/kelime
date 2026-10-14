@@ -31,8 +31,8 @@ struct MainTabView: View {
             .tabItem { Label("Kelimelerim", systemImage: "text.book.closed") }
             .tag(AppTab.words)
 
-            NavigationStack {
-                SettingsPlaceholderView()
+            NavigationStack(path: $router.settingsPath) {
+                SettingsView().withRoutes()
             }
             .tabItem { Label("Ayarlar", systemImage: "gearshape") }
             .tag(AppTab.settings)
@@ -76,6 +76,7 @@ extension View {
             switch route {
             case .word(let id): WordDetailView(cardID: id)
             case .puzzleArchive: PuzzleArchiveView()
+            case .themePicker: ThemePickerView()
             }
         }
     }
@@ -87,6 +88,7 @@ struct PlayView: View {
     @State private var remaining: Int?
     @State private var puzzle: DailyPuzzleInfo?
     @State private var isPro = false
+    @State private var examDeckCount: Int?
 
     var body: some View {
         ScrollView {
@@ -149,6 +151,31 @@ struct PlayView: View {
                 .foregroundStyle(Palette.ink)
                 .surfaceCard(padding: 0)
 
+                if let examDeckCount {
+                    Button {
+                        if isPro {
+                            Task { await model.startQuickReview() }
+                        } else {
+                            model.router.showPaywall(.proDeck, deck: .yds)
+                        }
+                    } label: {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text("Sınav Destesi Tekrarı").font(KelimeFont.ui(16, weight: .semibold, relativeTo: .headline))
+                                Text("YDS · \(examDeckCount) kelime").font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
+                            }
+                            Spacer()
+                            if !isPro { ProBadge() }
+                        }
+                        .foregroundStyle(Palette.ink)
+                        .padding(.vertical, 18)
+                        .padding(.horizontal, 20)
+                        .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Palette.line, style: StrokeStyle(lineWidth: 1, dash: isPro ? [] : [4, 4])))
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                }
+
                 Button { model.router.openPersonalPuzzle(isPro: isPro) } label: {
                     HStack {
                         VStack(alignment: .leading, spacing: 3) {
@@ -178,6 +205,10 @@ struct PlayView: View {
             remaining = await model.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } ?? nil
             puzzle = await model.read { db in try DailyPuzzleInfo.load(db: db, clock: clock) } ?? nil
             isPro = await model.read { db in try Settings.bool(.isPro, in: db) } ?? false
+            examDeckCount = await model.read { db -> Int? in
+                guard try Settings.string(.goal, in: db) == LearningGoal.yds.rawValue else { return nil }
+                return try DeckQueries.progress(db: db).first { $0.deck == .yds }?.total
+            } ?? nil
         }
     }
 
@@ -195,22 +226,3 @@ struct PlayView: View {
     }
 }
 
-/// Ayarlar arrives in milestone 8.
-struct SettingsPlaceholderView: View {
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 14) {
-                ScreenTitle(title: "Ayarlar")
-                Text("Kelime listesi: New General Service List, CC BY-SA 4.0\nİçerik yapay zekâ ile üretildi ve kontrol edildi")
-                    .font(KelimeFont.ui(12, relativeTo: .caption))
-                    .foregroundStyle(Palette.ink2)
-                    .lineSpacing(4)
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 6)
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .screenBackground()
-        .hiddenNavigationBar()
-    }
-}

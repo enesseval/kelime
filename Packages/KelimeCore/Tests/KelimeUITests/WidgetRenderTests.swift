@@ -31,7 +31,7 @@ struct WidgetRenderTests {
     enum Surface { case home, lock }
 
     @discardableResult
-    func render<V: View>(_ name: String, _ view: V, size: CGSize, surface: Surface = .home, dark: Bool = false) throws -> CGImage {
+    func render<V: View>(_ name: String, _ view: V, size: CGSize, surface: Surface = .home, dark: Bool = false, background: Color = Palette.paper) throws -> CGImage {
         #expect(Self.fontsRegistered)
         let framed = Group {
             switch surface {
@@ -39,7 +39,7 @@ struct WidgetRenderTests {
                 view
                     .padding(16)
                     .frame(width: size.width, height: size.height)
-                    .background(Palette.paper)
+                    .background(background)
                     .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
             case .lock:
                 view
@@ -80,6 +80,14 @@ struct WidgetRenderTests {
         try render("lock-rect-selftest-long", RectangularWidgetView(entry: s.snapshot(s.longest, mode: .selfTest, phase: .question)), size: rect, surface: .lock)
         try render("lock-rect-empty", RectangularWidgetView(entry: .empty(at: .now)), size: rect, surface: .lock)
         try render("lock-circular", ReviewRingWidgetView(entry: s.snapshot()), size: CGSize(width: 76, height: 76), surface: .lock)
+    }
+
+    @Test(arguments: WidgetThemeID.allCases)
+    func themes(_ theme: WidgetThemeID) throws {
+        var entry = s.snapshot()
+        entry.theme = theme
+        try render("theme-\(theme.rawValue)-medium", MediumCardWidgetView(entry: entry), size: CGSize(width: 364, height: 170), background: theme.colors.background)
+        try render("theme-\(theme.rawValue)-small", SmallWidgetView(entry: entry), size: CGSize(width: 170, height: 170), background: theme.colors.background)
     }
 
     @Test(arguments: [false, true])

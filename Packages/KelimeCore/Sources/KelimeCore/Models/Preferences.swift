@@ -43,6 +43,7 @@ public struct Preferences: Sendable, Equatable {
     public var enabledDecks: [DeckID]
     public var rotationInterval: RotationInterval
     public var defaultWidgetMode: WidgetMode
+    public var theme: WidgetThemeID
     public var isPro: Bool
 
     public init(
@@ -50,12 +51,14 @@ public struct Preferences: Sendable, Equatable {
         enabledDecks: [DeckID] = DeckID.freeDecks,
         rotationInterval: RotationInterval = .default,
         defaultWidgetMode: WidgetMode = .card,
+        theme: WidgetThemeID = .paper,
         isPro: Bool = false
     ) {
         self.level = level
         self.enabledDecks = enabledDecks
         self.rotationInterval = rotationInterval
         self.defaultWidgetMode = defaultWidgetMode
+        self.theme = theme
         self.isPro = isPro
     }
 
@@ -63,6 +66,7 @@ public struct Preferences: Sendable, Equatable {
     public var entitledDecks: [DeckID] { DeckID.entitled(enabled: enabledDecks, isPro: isPro) }
 
     public var effectiveRotation: RotationInterval { rotationInterval.effective(isPro: isPro) }
+    public var effectiveTheme: WidgetThemeID { theme.effective(isPro: isPro) }
 
     public static func load(_ db: Database) throws -> Preferences {
         var p = Preferences()
@@ -78,6 +82,9 @@ public struct Preferences: Sendable, Equatable {
         if let raw = try Settings.string(.defaultWidgetMode, in: db), let mode = WidgetMode(rawValue: raw) {
             p.defaultWidgetMode = mode
         }
+        if let raw = try Settings.string(.theme, in: db), let theme = WidgetThemeID(rawValue: raw) {
+            p.theme = theme
+        }
         p.isPro = try Settings.bool(.isPro, in: db)
         return p
     }
@@ -87,6 +94,7 @@ public struct Preferences: Sendable, Equatable {
         try Settings.set(.enabledDecks, enabledDecks.map(\.rawValue).joined(separator: ","), in: db)
         try Settings.set(.rotationInterval, rotationInterval.minutes, in: db)
         try Settings.set(.defaultWidgetMode, defaultWidgetMode.rawValue, in: db)
+        try Settings.set(.theme, theme.rawValue, in: db)
         try Settings.set(.isPro, isPro, in: db)
     }
 }
