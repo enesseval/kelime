@@ -349,7 +349,7 @@ public struct LargeWidgetView: View {
                     HStack(spacing: 12) {
                         MiniGrid()
                         (Text("Günün Bulmacası").font(KelimeFont.ui(14, weight: .semibold)).foregroundStyle(Palette.ink)
-                            + Text(" · yeni bulmaca").font(KelimeFont.ui(14, weight: .medium)).foregroundStyle(Palette.ink2))
+                            + Text(puzzleText).font(KelimeFont.ui(14, weight: .medium)).foregroundStyle(Palette.ink2))
                         Spacer(minLength: 0)
                     }
                     .padding(.vertical, 10)
@@ -362,6 +362,13 @@ public struct LargeWidgetView: View {
         } else {
             WidgetEmptyStateView()
         }
+    }
+}
+
+extension LargeWidgetView {
+    var puzzleText: String {
+        guard let progress = entry.puzzleProgress else { return " · yeni bulmaca" }
+        return progress.solved == progress.total ? " · tamamlandı" : " · \(progress.solved)/\(progress.total) kelime"
     }
 }
 

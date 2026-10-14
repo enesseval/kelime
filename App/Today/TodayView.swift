@@ -13,6 +13,7 @@ struct TodayData: Sendable {
     var examName: String
     var bannerDismissed: Bool
     var level: CEFRLevel
+    var puzzle: DailyPuzzleInfo?
 
     static func load(db: Database, clock: AppClock) throws -> TodayData {
         let prefs = try Preferences.load(db)
@@ -31,7 +32,8 @@ struct TodayData: Sendable {
             examDays: examDays,
             examName: "YDS",
             bannerDismissed: try Settings.bool(.widgetBannerDismissed, in: db),
-            level: prefs.level
+            level: prefs.level,
+            puzzle: try DailyPuzzleInfo.load(db: db, clock: clock)
         )
     }
 }
@@ -55,7 +57,7 @@ struct TodayView: View {
                             .buttonStyle(.plain)
                     }
                     QuickReviewCard(strugglingCount: data.strugglingCount, remaining: data.reviewsRemaining)
-                    PuzzleCard(level: data.level)
+                    PuzzleCard(level: data.level, info: data.puzzle)
                     WeekStatsRow(stats: data.stats)
                 }
             }
@@ -217,15 +219,18 @@ struct OutlineButtonStyle: ButtonStyle {
 struct PuzzleCard: View {
     @Environment(AppModel.self) private var model
     let level: CEFRLevel
+    let info: DailyPuzzleInfo?
 
     var body: some View {
         HStack(spacing: 16) {
-            PuzzleThumbnail(cell: 7, gap: 1.5)
+            PuzzleThumbnail(cell: 7, gap: 1.5, cells: info?.thumbnail ?? PuzzleThumbnail.sample)
             VStack(alignment: .leading, spacing: 8) {
                 Text("Günün Bulmacası").font(KelimeFont.ui(17, weight: .semibold, relativeTo: .headline))
-                Text("0/5 kelime · \(level.rawValue)").font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
-                ThinProgressBar(fraction: 0)
-                Button("Devam et") { model.router.openPuzzle() }
+                Text("\(info?.solved ?? 0)/\(info?.total ?? 5) kelime · \((info?.level ?? level).rawValue)")
+                    .font(KelimeFont.ui(13, relativeTo: .footnote))
+                    .foregroundStyle(Palette.ink2)
+                ThinProgressBar(fraction: info.map { Double($0.solved) / Double(max($0.total, 1)) } ?? 0)
+                Button(info?.completed == true ? "Sonucu gör" : (info?.solved ?? 0) > 0 ? "Devam et" : "Başla") { model.router.openPuzzle() }
                     .buttonStyle(TintedButtonStyle(fullWidth: false))
                     .padding(.top, 4)
             }

@@ -25,6 +25,14 @@ public struct WidgetSnapshot: Sendable, Equatable {
     public var dailyTarget: Int
     /// Up to three struggling words for the large widget, most recent first.
     public var struggling: [Card]
+    /// Today's crossword progress (solved, total), nil before the puzzle is opened.
+    public var puzzleProgress: PuzzleCount?
+
+    public struct PuzzleCount: Sendable, Equatable {
+        public var solved: Int
+        public var total: Int
+        public init(solved: Int, total: Int) { self.solved = solved; self.total = total }
+    }
 
     public init(
         date: Date,
@@ -37,7 +45,8 @@ public struct WidgetSnapshot: Sendable, Equatable {
         quizAnswer: String? = nil,
         reviewedToday: Int = 0,
         dailyTarget: Int = WidgetTimelineBuilder.dailyTarget,
-        struggling: [Card] = []
+        struggling: [Card] = [],
+        puzzleProgress: PuzzleCount? = nil
     ) {
         self.date = date
         self.slotStart = slotStart ?? date
@@ -50,6 +59,7 @@ public struct WidgetSnapshot: Sendable, Equatable {
         self.reviewedToday = reviewedToday
         self.dailyTarget = dailyTarget
         self.struggling = struggling
+        self.puzzleProgress = puzzleProgress
     }
 
     public var isEmpty: Bool { card == nil }

@@ -15,6 +15,8 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case onboardingDone = "onboarding_done"
     case contentVersion = "content_version"
     case widgetBannerDismissed = "widget_banner_dismissed"
+    /// "YYYY-MM-DD|solved|total" for today's daily puzzle; the large widget shows it.
+    case dailyPuzzleSummary = "daily_puzzle_summary"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

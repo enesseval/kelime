@@ -31,6 +31,7 @@ public enum WidgetTimelineBuilder {
         let cards = Dictionary(uniqueKeysWithValues: try Card.fetchAll(db, keys: ids).map { ($0.id, $0) })
         let states = Dictionary(uniqueKeysWithValues: try CardState.fetchAll(db, keys: ids).map { ($0.cardID, $0.state) })
         let struggling = try strugglingCards(db: db, limit: 3)
+        let puzzle = try DailyPuzzleSummary.load(db: db)
         var reviewsByDay: [LocalDate: Int] = [:]
         func reviews(on date: Date) throws -> Int {
             let day = LocalDate(date, calendar: calendar)
@@ -54,7 +55,11 @@ public enum WidgetTimelineBuilder {
                 quizOptions: entry.quizOptions,
                 quizAnswer: entry.quizAnswer,
                 reviewedToday: try reviews(on: entry.slotStart),
-                struggling: struggling
+                struggling: struggling,
+                puzzleProgress: puzzle.flatMap { summary in
+                    summary.day == LocalDate(entry.slotStart, calendar: calendar)
+                        ? WidgetSnapshot.PuzzleCount(solved: summary.solved, total: summary.total) : nil
+                }
             )
             snapshots.append(base)
             if resolvedMode == .selfTest {

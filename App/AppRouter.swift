@@ -10,6 +10,17 @@ enum AppTab: Hashable {
 /// Screens pushed onto a tab's navigation stack.
 enum Route: Hashable {
     case word(String)
+    case puzzleArchive
+}
+
+struct PuzzleRequest: Identifiable {
+    let source: PuzzleSource
+    var id: String {
+        switch source {
+        case .daily(let day): "daily-\(day.string)"
+        case .personal: "personal"
+        }
+    }
 }
 
 /// Tab selection, per-tab navigation paths, sheets and deep links.
@@ -23,6 +34,8 @@ final class AppRouter {
     var paywall: PaywallRequest?
     /// Presents a Quick Review session full screen.
     var reviewPresented = false
+    /// Presents a crossword full screen.
+    var puzzle: PuzzleRequest?
 
     struct PaywallRequest: Identifiable {
         let trigger: PaywallTrigger
@@ -49,9 +62,28 @@ final class AppRouter {
         }
     }
 
-    /// Opens today's crossword (milestone 6; for now the Oyna hub).
-    func openPuzzle() {
-        tab = .play
+    /// Opens a daily crossword (today by default).
+    func openPuzzle(day: LocalDate = AppClock.system.today) {
+        puzzle = PuzzleRequest(source: .daily(day))
+    }
+
+    /// The Pro personal puzzle; free users see the paywall.
+    func openPersonalPuzzle(isPro: Bool) {
+        if isPro {
+            puzzle = PuzzleRequest(source: .personal)
+        } else {
+            showPaywall(.personalPuzzle)
+        }
+    }
+
+    /// The Pro archive; free users see the paywall.
+    func openArchive(isPro: Bool) {
+        if isPro {
+            tab = .play
+            playPath.append(.puzzleArchive)
+        } else {
+            showPaywall(.archive)
+        }
     }
 
     func showPaywall(_ trigger: PaywallTrigger, deck: DeckID? = nil) {
@@ -63,6 +95,7 @@ final class AppRouter {
         guard url.scheme == "kelime" else { return }
         paywall = nil
         reviewPresented = false
+        puzzle = nil
         switch url.host() {
         case "word":
             let id = url.lastPathComponent
@@ -72,6 +105,7 @@ final class AppRouter {
         case "puzzle":
             tab = .play
             playPath = []
+            openPuzzle()
         default:
             break
         }

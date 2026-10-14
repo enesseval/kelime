@@ -27,7 +27,8 @@ public enum SampleContent {
             quizOptions: [card.word, card.id == reliable.id ? reluctant.word : reliable.word],
             quizAnswer: quizAnswer,
             reviewedToday: 7,
-            struggling: [reluctant, significant, consequence]
+            struggling: [reluctant, significant, consequence],
+            puzzleProgress: .init(solved: 2, total: 5)
         )
     }
 }
