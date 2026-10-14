@@ -21,6 +21,8 @@ final class AppRouter {
     var playPath: [Route] = []
     var wordsPath: [Route] = []
     var paywall: PaywallRequest?
+    /// Presents a Quick Review session full screen.
+    var reviewPresented = false
 
     struct PaywallRequest: Identifiable {
         let trigger: PaywallTrigger
@@ -38,9 +40,13 @@ final class AppRouter {
         }
     }
 
-    /// Opens a Quick Review session (milestone 5 presents it; for now the Oyna hub).
-    func startQuickReview() {
-        tab = .play
+    /// Opens a Quick Review session; the free daily limit sends free users to the paywall.
+    func startQuickReview(remaining: Int?) {
+        if remaining == 0 {
+            showPaywall(.reviewLimit)
+        } else {
+            reviewPresented = true
+        }
     }
 
     /// Opens today's crossword (milestone 6; for now the Oyna hub).
@@ -56,6 +62,7 @@ final class AppRouter {
     func handle(_ url: URL) {
         guard url.scheme == "kelime" else { return }
         paywall = nil
+        reviewPresented = false
         switch url.host() {
         case "word":
             let id = url.lastPathComponent

@@ -57,6 +57,13 @@ final class AppModel {
         return try? await database.reader.read(body)
     }
 
+    /// Starts a Quick Review, or shows the paywall when today's free session is used.
+    func startQuickReview() async {
+        let clock = clock
+        let remaining = await read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } ?? nil
+        router.startQuickReview(remaining: remaining)
+    }
+
     // MARK: - Writes (each one refreshes widgets)
 
     func record(_ event: LearningEvent, cardID: String, source: ReviewSource) async {
@@ -64,6 +71,21 @@ final class AppModel {
         await write(rebuildQueue: false) { db in
             try LearningStore.record(event, cardID: cardID, source: source, clock: clock, db: db)
         }
+    }
+
+    /// Records a Quick Review answer and returns the card's state before and after it.
+    func answerReview(cardID: String, correct: Bool, sessionID: String) async -> (before: LearningState, after: LearningState)? {
+        guard let database else { return nil }
+        let clock = clock
+        let result = try? await database.writer.write { db in
+            let before = try LearningStore.state(of: cardID, db: db).state
+            let after = try LearningStore.record(.answered(correct: correct), cardID: cardID, source: .quickReview, clock: clock, sessionID: sessionID, db: db).state
+            return (before, after)
+        }
+        guard let result else { return nil }
+        dataVersion += 1
+        await WidgetRefresher.refresh(database)
+        return result
     }
 
     func setFavorite(_ favorite: Bool, cardID: String) async {

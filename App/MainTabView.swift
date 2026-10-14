@@ -42,6 +42,9 @@ struct MainTabView: View {
         .sheet(item: $router.paywall) { request in
             PaywallPlaceholderView(request: request)
         }
+        .fullScreenCover(isPresented: $router.reviewPresented) {
+            QuickReviewView().environment(model)
+        }
     }
 
     /// Flat bar from the design: page background, hairline on top, accent for the selected tab.
@@ -74,22 +77,88 @@ extension View {
     }
 }
 
-/// Oyna hub. Quick Review (milestone 5) and the crossword (milestone 6) plug in here.
+/// Oyna hub: Quick Review, today's crossword (milestone 6) and the Pro archive.
 struct PlayView: View {
+    @Environment(AppModel.self) private var model
+    @State private var remaining: Int?
+    @State private var level: CEFRLevel = .b1
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 ScreenTitle(title: "Oyna")
-                Text("Hızlı Tekrar ve Günün Bulmacası burada olacak.")
-                    .font(KelimeFont.ui(15, relativeTo: .body))
-                    .foregroundStyle(Palette.ink2)
+                Button { Task { await model.startQuickReview() } } label: {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Hızlı Tekrar").font(KelimeFont.english(30, relativeTo: .title))
+                        Text("10 kelime · yaklaşık 2 dakika").font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
+                        HStack {
+                            Text(remainingText)
+                                .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
+                                .foregroundStyle(Palette.ink2)
+                            Spacer()
+                            Text("Başla")
+                                .font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
+                                .foregroundStyle(Palette.onAccent)
+                                .padding(.horizontal, 18)
+                                .frame(minHeight: 44)
+                                .background(Palette.accent, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        }
+                        .padding(.top, 12)
+                    }
+                    .foregroundStyle(Palette.ink)
+                    .surfaceCard(padding: 20)
+                }
+                .buttonStyle(.plain)
+
+                VStack(spacing: 0) {
+                    Button { model.router.openPuzzle() } label: {
+                        HStack(spacing: 18) {
+                            PuzzleThumbnail(cell: 8, gap: 2)
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text("Günün Bulmacası").font(KelimeFont.english(30, relativeTo: .title))
+                                Text("0/5 kelime · ipuçları Türkçe").font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
+                            }
+                            Spacer(minLength: 0)
+                        }
+                        .padding(20)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    Rectangle().fill(Palette.line).frame(height: 1)
+                    Button { model.router.showPaywall(.archive) } label: {
+                        HStack {
+                            Text("Arşiv").font(KelimeFont.ui(15, relativeTo: .body))
+                            Spacer()
+                            ProBadge()
+                        }
+                        .padding(.horizontal, 20)
+                        .frame(minHeight: 52)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                }
+                .foregroundStyle(Palette.ink)
+                .surfaceCard(padding: 0)
             }
             .padding(.horizontal, 20)
             .padding(.top, 6)
+            .padding(.bottom, 24)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .screenBackground()
         .hiddenNavigationBar()
+        .task(id: model.dataVersion) {
+            let clock = model.clock
+            remaining = await model.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } ?? nil
+        }
+    }
+
+    private var remainingText: String {
+        switch remaining {
+        case nil: "Sınırsız tur"
+        case 0?: "Bugünkü ücretsiz tur bitti"
+        case let n?: "Bugün \(n) ücretsiz tur kaldı"
+        }
     }
 }
 

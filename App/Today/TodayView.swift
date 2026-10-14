@@ -193,7 +193,7 @@ struct QuickReviewCard: View {
                     }
                 }
                 .font(KelimeFont.ui(15, relativeTo: .subheadline))
-                Button("Başla · 2 dk") { model.router.startQuickReview() }
+                Button("Başla · 2 dk") { Task { await model.startQuickReview() } }
                     .buttonStyle(PrimaryButtonStyle())
             }
         }
@@ -279,10 +279,10 @@ struct WeekStatsRow: View {
     let stats: WeekStats
 
     var body: some View {
-        HStack(spacing: 1) {
+        ProportionalHStack(weights: [1, 1, 1.4], spacing: 1) {
             stat("\(stats.learnedThisWeek)", "öğrenildi", color: Palette.ink)
             stat("\(stats.strugglingNow)", "zorlanılan", color: Palette.amberInk)
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 5) {
                     ForEach(stats.days, id: \.date) { day in
                         VStack(spacing: 4) {
@@ -294,17 +294,15 @@ struct WeekStatsRow: View {
                         }
                     }
                 }
-                Spacer(minLength: 4)
+                Spacer(minLength: 0)
                 Text("bu hafta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
             }
             .padding(14)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .layoutPriority(1.4)
             .background(Palette.surface)
             .accessibilityElement(children: .ignore)
             .accessibilityLabel(Text("Bu hafta \(stats.days.filter(\.reviewed).count) gün tekrar"))
         }
-        .fixedSize(horizontal: false, vertical: true)
         .background(Palette.line)
         .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(Palette.line))
@@ -314,10 +312,40 @@ struct WeekStatsRow: View {
         VStack(alignment: .leading, spacing: 2) {
             Text(value).font(KelimeFont.ui(24, weight: .semibold, relativeTo: .title2)).foregroundStyle(color)
             Text(label).font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
+            Spacer(minLength: 0)
         }
         .padding(14)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .background(Palette.surface)
         .accessibilityElement(children: .combine)
+    }
+}
+
+/// Lays children side by side with widths proportional to `weights` and a shared height
+/// (the tallest child's), like CSS `grid-template-columns: 1fr 1fr 1.4fr`.
+struct ProportionalHStack: Layout {
+    var weights: [CGFloat]
+    var spacing: CGFloat = 0
+
+    private func widths(total: CGFloat, count: Int) -> [CGFloat] {
+        let w = (0..<count).map { $0 < weights.count ? weights[$0] : 1 }
+        let sum = w.reduce(0, +)
+        let available = max(total - spacing * CGFloat(count - 1), 0)
+        return w.map { available * $0 / sum }
+    }
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let total = proposal.width ?? 360
+        let ws = widths(total: total, count: subviews.count)
+        let height = zip(subviews, ws).map { $0.sizeThatFits(ProposedViewSize(width: $1, height: nil)).height }.max() ?? 0
+        return CGSize(width: total, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var x = bounds.minX
+        for (view, w) in zip(subviews, widths(total: bounds.width, count: subviews.count)) {
+            view.place(at: CGPoint(x: x, y: bounds.minY), proposal: ProposedViewSize(width: w, height: bounds.height))
+            x += w + spacing
+        }
     }
 }

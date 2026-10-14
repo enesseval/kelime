@@ -131,7 +131,7 @@ struct WordsView: View {
                 .foregroundStyle(Palette.ink2)
                 .multilineTextAlignment(.center)
             if search.isEmpty && segment != .favorites {
-                Button("Hızlı Tekrar") { model.router.startQuickReview() }
+                Button("Hızlı Tekrar") { Task { await model.startQuickReview() } }
                     .buttonStyle(PrimaryButtonStyle(height: 44))
                     .frame(maxWidth: 180)
             }

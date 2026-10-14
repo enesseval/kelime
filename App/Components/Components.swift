@@ -17,6 +17,15 @@ extension View {
         self
             .background(Palette.background.ignoresSafeArea())
             .foregroundStyle(Palette.ink)
+            // Keeps scrolled content from showing through the status bar.
+            .overlay(alignment: .top) {
+                GeometryReader { proxy in
+                    Palette.background
+                        .frame(height: proxy.safeAreaInsets.top)
+                        .offset(y: -proxy.safeAreaInsets.top)
+                }
+                .allowsHitTesting(false)
+            }
     }
 
     /// Transient message at the bottom of the screen.
