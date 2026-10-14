@@ -19,6 +19,8 @@
 	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Paylaşım görselini fotoğraflarına kaydedebilmen için.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fonts/Newsreader.ttf</string>

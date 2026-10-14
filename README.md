@@ -15,7 +15,7 @@ Swift 6, SwiftUI, iOS 17+, Xcode 26.3. Everything runs offline.
 | `Config/` | `Shared.xcconfig` (bundle id, display name, versions, team), Info.plists, entitlements |
 | `tools/` | Python content tools (any OS) |
 | `design/` | Final designs, the visual source of truth. Open `design/Kelime Widget.dc.html` in a browser. |
-| `docs/` | Design brief and build spec |
+| `docs/` | Design brief, build spec and `STATUS.md` (what's verified, what still needs a device or account) |
 
 Bundle id, display name, version and team live only in `Config/Shared.xcconfig`. The App Group is
 `group.<bundle id>`; `KelimeCore.AppConfig` holds the same id, and a test keeps them in sync.
