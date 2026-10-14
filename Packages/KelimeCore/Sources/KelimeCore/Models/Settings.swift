@@ -14,6 +14,7 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case isPro = "is_pro"
     case onboardingDone = "onboarding_done"
     case contentVersion = "content_version"
+    case widgetBannerDismissed = "widget_banner_dismissed"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

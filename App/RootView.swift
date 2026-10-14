@@ -13,8 +13,8 @@ struct RootView: View {
             StartupErrorView(error: error) {
                 Task { await model.start() }
             }
-        case .ready(let db):
-            MainTabView(database: db)
+        case .ready:
+            MainTabView()
         }
     }
 }
