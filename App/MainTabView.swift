@@ -40,7 +40,7 @@ struct MainTabView: View {
         .tint(Palette.accent)
         .onOpenURL { router.handle($0) }
         .sheet(item: $router.paywall) { request in
-            PaywallPlaceholderView(request: request)
+            PaywallView(request: request).environment(model)
         }
         .fullScreenCover(isPresented: $router.reviewPresented) {
             QuickReviewView().environment(model)
@@ -212,32 +212,5 @@ struct SettingsPlaceholderView: View {
         }
         .screenBackground()
         .hiddenNavigationBar()
-    }
-}
-
-/// Stand-in until StoreKit and the real paywall land in milestone 7.
-struct PaywallPlaceholderView: View {
-    @Environment(\.dismiss) private var dismiss
-    let request: AppRouter.PaywallRequest
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Spacer()
-                Button { dismiss() } label: {
-                    Image(systemName: "xmark").font(.system(size: 16, weight: .semibold)).frame(width: 44, height: 44)
-                }
-                .accessibilityLabel("Kapat")
-            }
-            Text(request.trigger.headline(deck: request.deck))
-                .font(KelimeFont.english(34, relativeTo: .largeTitle))
-            Text("Reklam yok. Hesap yok. İnternetsiz çalışır.")
-                .font(KelimeFont.ui(15, relativeTo: .body))
-                .foregroundStyle(Palette.ink2)
-            Spacer()
-        }
-        .padding(20)
-        .screenBackground()
-        .tint(Palette.ink)
     }
 }

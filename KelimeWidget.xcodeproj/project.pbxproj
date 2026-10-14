@@ -48,6 +48,7 @@
 		AA0000000000000000000015 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		AA0000000000000000000016 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		AA0000000000000000000017 /* App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; sourceTree = "<group>"; };
+		AA000000000000000000001B /* KelimeWidget.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = KelimeWidget.storekit; sourceTree = "<group>"; };
 		AA0000000000000000000018 /* Widget-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Widget-Info.plist"; sourceTree = "<group>"; };
 		AA0000000000000000000019 /* KelimeCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = KelimeCore; path = Packages/KelimeCore; sourceTree = "<group>"; };
 		AA0000000000000000000030 /* KelimeWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KelimeWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +112,7 @@
 				AA0000000000000000000015 /* App.entitlements */,
 				AA0000000000000000000018 /* Widget-Info.plist */,
 				AA0000000000000000000016 /* Widget.entitlements */,
+				AA000000000000000000001B /* KelimeWidget.storekit */,
 			);
 			path = Config;
 			sourceTree = "<group>";

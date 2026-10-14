@@ -19,6 +19,7 @@ final class AppModel {
     private(set) var dataVersion = 0
 
     let router = AppRouter()
+    let purchases = PurchaseManager()
     let clock = AppClock.system
 
     var database: AppDatabase? {
@@ -44,6 +45,7 @@ final class AppModel {
                 }
             })
             phase = .ready(db)
+            purchases.start(app: self)
             await WidgetRefresher.refresh(db)
         } catch {
             phase = .failed(error)
