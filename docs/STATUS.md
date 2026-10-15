@@ -17,8 +17,8 @@ verified and what still needs a human, a device or an account.
 
 ## Needs you (account, device or decision)
 
-1. **Team ID and App Group.** Set `DEVELOPMENT_TEAM` in `Config/Shared.xcconfig`, then let Xcode register
-   `group.com.enesseval.kelime` for both targets (Signing & Capabilities).
+1. ~~Team ID and App Group~~ — done: team `82S9ART43D`; a signed device build provisions
+   `com.enesseval.kelime` and `.widget` with `group.com.enesseval.kelime` in both profiles.
 2. **Widgets on a real device.** The iOS 26 widget gallery doesn't render on the Intel simulator, so these were
    checked only through renders and tests: adding each widget, the Biliyorum/Zorlanıyorum and quiz buttons,
    the self-test A→B switch, lock-screen vibrant and iOS 18 tinted rendering.

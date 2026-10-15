@@ -7,8 +7,8 @@ APP_DISPLAY_NAME = Kelime Widget
 MARKETING_VERSION = 1.0
 CURRENT_PROJECT_VERSION = 1
 
-// Apple Developer Team ID. Leave empty for simulator builds.
-DEVELOPMENT_TEAM =
+// Apple Developer Team ID (automatic signing).
+DEVELOPMENT_TEAM = 82S9ART43D
 
 IPHONEOS_DEPLOYMENT_TARGET = 17.0
 TARGETED_DEVICE_FAMILY = 1
