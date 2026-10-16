@@ -101,15 +101,10 @@ struct SettingsView: View {
                 } label: { valueLabel(data.prefs.effectiveRotation.label) }
             }
             Divider().overlay(Palette.line)
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Görünüm modu").font(KelimeFont.ui(15, relativeTo: .body))
-                SegmentedPicker(options: WidgetMode.allCases, selection: Binding(
-                    get: { data.prefs.defaultWidgetMode },
-                    set: { mode in Task { await app.updatePreferences { $0.defaultWidgetMode = mode } } }
-                )) { $0.label }
+            NavigationLink(value: Route.widgetMode) {
+                SettingsRowLabel("Kilit ekranı görünümü", value: data.prefs.defaultWidgetMode.label)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .buttonStyle(.plain)
             Divider().overlay(Palette.line)
             NavigationLink(value: Route.themePicker) {
                 SettingsRowLabel("Tema", value: data.prefs.effectiveTheme.name)

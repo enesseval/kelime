@@ -6,21 +6,27 @@ import WidgetKit
 enum WidgetModeOption: String, AppEnum {
     case appSetting
     case card
+    case dictionary
+    case wordAndSentence
     case sentence
     case selfTest
 
-    static let typeDisplayRepresentation: TypeDisplayRepresentation = "Görünüm modu"
+    static let typeDisplayRepresentation: TypeDisplayRepresentation = "Görünüm"
     static let caseDisplayRepresentations: [WidgetModeOption: DisplayRepresentation] = [
-        .appSetting: "Uygulama ayarı",
-        .card: "Kart",
-        .sentence: "Cümle",
-        .selfTest: "Kendini sına",
+        .appSetting: DisplayRepresentation(title: "Uygulamadaki seçim", subtitle: "Ayarlar › Görünüm"),
+        .card: DisplayRepresentation(title: "Kart", subtitle: "Kelime, türü ve Türkçe anlamı"),
+        .dictionary: DisplayRepresentation(title: "Sözlük", subtitle: "Arka plansız: KELİME (tür) ve anlamı"),
+        .wordAndSentence: DisplayRepresentation(title: "Kelime ve cümle", subtitle: "Kelime ve İngilizce örnek cümle"),
+        .sentence: DisplayRepresentation(title: "Örnek cümle", subtitle: "İngilizce cümle ve Türkçesi"),
+        .selfTest: DisplayRepresentation(title: "Kendini sına", subtitle: "Önce soru, sonra cevap"),
     ]
 
     var mode: WidgetMode? {
         switch self {
         case .appSetting: nil
         case .card: .card
+        case .dictionary: .dictionary
+        case .wordAndSentence: .wordAndSentence
         case .sentence: .sentence
         case .selfTest: .selfTest
         }
@@ -31,7 +37,7 @@ struct WordWidgetIntent: WidgetConfigurationIntent {
     static let title: LocalizedStringResource = "Kelime widget'ı"
     static let description = IntentDescription("Widget'ın görünüm modunu seç.")
 
-    @Parameter(title: "Görünüm modu", default: .appSetting)
+    @Parameter(title: "Görünüm", default: .appSetting)
     var mode: WidgetModeOption
 
     init() {}

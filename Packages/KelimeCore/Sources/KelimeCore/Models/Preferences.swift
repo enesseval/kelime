@@ -25,14 +25,30 @@ public enum RotationInterval: Int, Codable, Sendable, CaseIterable {
 /// Display mode of the rectangular lock-screen widget.
 public enum WidgetMode: String, Codable, Sendable, CaseIterable {
     case card
+    case dictionary
+    case wordAndSentence
     case sentence
     case selfTest
 
+    /// Short name, e.g. for the widget's edit menu.
     public var label: String {
         switch self {
         case .card: "Kart"
-        case .sentence: "Cümle"
+        case .dictionary: "Sözlük"
+        case .wordAndSentence: "Kelime ve cümle"
+        case .sentence: "Örnek cümle"
         case .selfTest: "Kendini sına"
+        }
+    }
+
+    /// What the mode shows, in one line.
+    public var detail: String {
+        switch self {
+        case .card: "Büyük kelime, altında türü ve Türkçe anlamı"
+        case .dictionary: "Arka plansız, sözlük gibi: KELİME (tür) ve anlamı"
+        case .wordAndSentence: "Kelime ve İngilizce örnek cümlesi"
+        case .sentence: "İngilizce cümle, altında Türkçesi"
+        case .selfTest: "Önce anlam ve ilk harf, yarım saat içinde cevap"
         }
     }
 }

@@ -74,6 +74,10 @@ struct WidgetRenderTests {
         }
         try render("lock-rect-card-long", RectangularWidgetView(entry: s.snapshot(s.longest, mode: .card)), size: rect, surface: .lock)
         try render("lock-rect-sentence", RectangularWidgetView(entry: s.snapshot(mode: .sentence)), size: rect, surface: .lock)
+        try render("lock-rect-dictionary", RectangularWidgetView(entry: s.snapshot(mode: .dictionary)), size: rect, surface: .lock)
+        try render("lock-rect-dictionary-long", RectangularWidgetView(entry: s.snapshot(s.longest, mode: .dictionary)), size: rect, surface: .lock)
+        try render("lock-rect-wordsentence", RectangularWidgetView(entry: s.snapshot(mode: .wordAndSentence)), size: rect, surface: .lock)
+        try render("lock-rect-wordsentence-long", RectangularWidgetView(entry: s.snapshot(s.longest, mode: .wordAndSentence)), size: rect, surface: .lock)
         try render("lock-rect-sentence-long", RectangularWidgetView(entry: s.snapshot(s.longest, mode: .sentence)), size: rect, surface: .lock)
         try render("lock-rect-selftest-question", RectangularWidgetView(entry: s.snapshot(mode: .selfTest, phase: .question)), size: rect, surface: .lock)
         try render("lock-rect-selftest-answer", RectangularWidgetView(entry: s.snapshot(mode: .selfTest, phase: .answer)), size: rect, surface: .lock)

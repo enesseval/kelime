@@ -77,6 +77,7 @@ extension View {
             case .word(let id): WordDetailView(cardID: id)
             case .puzzleArchive: PuzzleArchiveView()
             case .themePicker: ThemePickerView()
+            case .widgetMode: WidgetModePickerView()
             }
         }
     }

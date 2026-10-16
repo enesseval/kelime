@@ -12,6 +12,7 @@ enum Route: Hashable {
     case word(String)
     case puzzleArchive
     case themePicker
+    case widgetMode
 }
 
 struct PuzzleRequest: Identifiable {
