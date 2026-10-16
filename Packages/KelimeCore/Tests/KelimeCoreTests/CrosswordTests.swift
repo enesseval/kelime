@@ -64,8 +64,13 @@ struct CrosswordTests {
                 #expect(problems.isEmpty, "\(puzzle.id): \(problems)")
                 #expect(puzzle.width <= 10 && puzzle.height <= 10)
                 #expect(puzzle.entries.count >= 6)
+                var seenMeanings = Set<String>()
                 for entry in puzzle.entries {
                     let card = try #require(cards[entry.cardID], "\(puzzle.id): unknown card \(entry.cardID)")
+                    // Two answers with the same meaning would get the same clue.
+                    let meanings = Card.normalizedMeanings(card.tr)
+                    #expect(seenMeanings.isDisjoint(with: meanings), "\(puzzle.id): \(card.word) repeats a clue")
+                    seenMeanings.formUnion(meanings)
                     #expect(entry.answer == ReviewQuestion.asciiUpper(card.word))
                     #expect(card.level.rawValue == file.level)
                     // The clue is the card's meaning plus the letter count.
@@ -202,11 +207,25 @@ struct CrosswordTests {
 
     // MARK: - Generator
 
+    @Test func generatorSkipsWordsWithTheSameMeaning() throws {
+        // develop and improve are both "geliştirmek": they must never share a grid.
+        let cards = try Self.cards()
+        let develop = CrosswordGenerator.Word(card: try #require(cards["b1-develop"]))
+        let improve = CrosswordGenerator.Word(card: try #require(cards["b1-improve"]))
+        #expect(!develop.meanings.isDisjoint(with: improve.meanings))
+        let fillers = cards.values.filter { $0.level == .b1 && $0.word.count <= 10 }.sorted { $0.id < $1.id }.map(CrosswordGenerator.Word.init(card:))
+        for seed in UInt64(0)..<200 {
+            let puzzle = try #require(CrosswordGenerator.generate(id: "x", seeds: [develop, improve], fillers: fillers, seed: seed))
+            let ids = Set(puzzle.entries.map(\.cardID))
+            #expect(!(ids.contains("b1-develop") && ids.contains("b1-improve")))
+        }
+    }
+
     @Test func generatorIsDeterministicAndValid() throws {
         let words = try Self.cards().values
             .filter { $0.level == .b1 && $0.word.count <= 10 }
             .sorted { $0.id < $1.id }
-            .map { CrosswordGenerator.Word(answer: ReviewQuestion.asciiUpper($0.word), cardID: $0.id) }
+            .map(CrosswordGenerator.Word.init(card:))
         let seeds = Array(words.prefix(4))
         let a = CrosswordGenerator.generate(id: "x", seeds: seeds, fillers: words, seed: 99)
         let b = CrosswordGenerator.generate(id: "x", seeds: seeds, fillers: words, seed: 99)
@@ -223,7 +242,8 @@ struct CrosswordTests {
         let all = try Self.cards().values
             .filter { $0.word.count <= 10 }
             .sorted { $0.id < $1.id }
-            .map { CrosswordGenerator.Word(answer: ReviewQuestion.asciiUpper($0.word), cardID: $0.id) }
+            .map(CrosswordGenerator.Word.init(card:))
+        let meaningsByID = Dictionary(uniqueKeysWithValues: all.map { ($0.cardID, $0.meanings) })
         var rng = SeededGenerator(seed: 2026)
         var withFourSeeds = 0
         let runs = 10_000
@@ -238,6 +258,8 @@ struct CrosswordTests {
             )
             #expect(CrosswordValidator.isValid(puzzle), "run \(run) produced an invalid grid")
             #expect(puzzle.width <= 10 && puzzle.height <= 10 && puzzle.entries.count >= 6)
+            let meanings = puzzle.entries.map { meaningsByID[$0.cardID] ?? [] }
+            #expect(meanings.reduce(0) { $0 + $1.count } == Set(meanings.flatMap { $0 }).count, "run \(run) repeats a clue")
             if Set(seeds.map(\.cardID)).isSubset(of: Set(puzzle.entries.map(\.cardID))) {
                 withFourSeeds += 1
             }

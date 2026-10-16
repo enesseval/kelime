@@ -46,13 +46,13 @@ public enum PersonalPuzzle {
         let prefs = try Preferences.load(db)
         let struggling = try WidgetTimelineBuilder.strugglingCards(db: db, limit: 12)
             .filter { (3...CrosswordGenerator.maxSize).contains($0.word.count) }
-        let seeds = struggling.prefix(4).map { CrosswordGenerator.Word(answer: ReviewQuestion.asciiUpper($0.word), cardID: $0.id) }
+        let seeds = struggling.prefix(4).map(CrosswordGenerator.Word.init(card:))
         let levelDeck = DeckID.allCases.first { $0.level == prefs.level }
         let decks = prefs.entitledDecks + (levelDeck.map { [$0] } ?? [])
         let ids = try CardQueries.candidates(in: decks, db: db).map(\.cardID)
         let fillers = try Card.fetchAll(db, keys: ids)
             .filter { $0.word.count <= CrosswordGenerator.maxSize }
-            .map { CrosswordGenerator.Word(answer: ReviewQuestion.asciiUpper($0.word), cardID: $0.id) }
+            .map(CrosswordGenerator.Word.init(card:))
         return CrosswordGenerator.generate(
             id: "personal-\(clock.today.string)-\(seed)",
             seeds: Array(seeds),

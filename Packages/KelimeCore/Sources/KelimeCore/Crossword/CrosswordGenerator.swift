@@ -16,10 +16,18 @@ public enum CrosswordGenerator {
     public struct Word: Sendable, Hashable {
         public var answer: String
         public var cardID: String
+        /// Normalized Turkish meanings. Two words sharing one would get the same clue, so a puzzle
+        /// never holds both (e.g. develop and improve, both "geliştirmek").
+        public var meanings: Set<String>
 
-        public init(answer: String, cardID: String) {
+        public init(answer: String, cardID: String, meanings: Set<String> = []) {
             self.answer = answer
             self.cardID = cardID
+            self.meanings = meanings
+        }
+
+        public init(card: Card) {
+            self.init(answer: ReviewQuestion.asciiUpper(card.word), cardID: card.id, meanings: Card.normalizedMeanings(card.tr))
         }
     }
 
@@ -55,6 +63,7 @@ public enum CrosswordGenerator {
         let seedOrder = seeds.shuffled(using: &rng).sorted { $0.answer.count > $1.answer.count }
         var placedIDs = Set<String>()
         var placedAnswers = Set<String>()
+        var placedMeanings = Set<String>()
 
         // First word: across, roughly centered.
         guard let first = seedOrder.first ?? fillers.randomElement(using: &rng) else { return nil }
@@ -63,9 +72,14 @@ public enum CrosswordGenerator {
         board.place(first, row: startRow, col: startCol, direction: .across)
         placedIDs.insert(first.cardID)
         placedAnswers.insert(first.answer)
+        placedMeanings.formUnion(first.meanings)
 
         // Seeds that can't cross anything yet wait for fillers to give them a letter to hang on.
-        var pending = Array(seedOrder.dropFirst())
+        // A seed whose meaning duplicates an earlier seed is dropped rather than failing the puzzle.
+        var pending: [Word] = []
+        for seed in seedOrder.dropFirst() where seed.meanings.isDisjoint(with: placedMeanings.union(pending.flatMap(\.meanings))) {
+            pending.append(seed)
+        }
         func placePending() {
             var progress = true
             while progress {
@@ -75,6 +89,7 @@ public enum CrosswordGenerator {
                         board.place(word, row: spot.row, col: spot.col, direction: spot.direction)
                         placedIDs.insert(word.cardID)
                         placedAnswers.insert(word.answer)
+                        placedMeanings.formUnion(word.meanings)
                         pending.remove(at: i)
                         progress = true
                         break
@@ -87,11 +102,15 @@ public enum CrosswordGenerator {
         for word in fillers.shuffled(using: &rng) {
             if pending.isEmpty && board.placed.count >= targetWords { break }
             if board.placed.count >= maxWords { break }
-            guard !placedIDs.contains(word.cardID), !placedAnswers.contains(word.answer) else { continue }
+            guard !placedIDs.contains(word.cardID), !placedAnswers.contains(word.answer),
+                  word.meanings.isDisjoint(with: placedMeanings),
+                  word.meanings.isDisjoint(with: pending.flatMap(\.meanings))
+            else { continue }
             if let spot = board.bestPlacement(for: word, using: &rng) {
                 board.place(word, row: spot.row, col: spot.col, direction: spot.direction)
                 placedIDs.insert(word.cardID)
                 placedAnswers.insert(word.answer)
+                placedMeanings.formUnion(word.meanings)
                 placePending()
             }
         }

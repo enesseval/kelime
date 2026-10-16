@@ -170,6 +170,24 @@ struct WidgetQueueTests {
         }
     }
 
+    @Test func distractorsNeverShareTheAnswersMeaning() throws {
+        // convince and persuade are both "ikna etmek": one can't be a wrong option for the other.
+        let db = try makeDatabase()
+        try db.reader.read { db throws in
+            let convince = try #require(try Card.fetchOne(db, key: "b2-convince"))
+            let all = try Card.fetchAll(db)
+            for seed in UInt64(0)..<200 {
+                var rng = SeededGenerator(seed: seed)
+                let options = try CardQueries.quizOptions(for: convince, optionCount: 4, db: db, using: &rng)
+                #expect(!options.contains("persuade"))
+                for word in options where word != convince.word {
+                    let other = try #require(all.first { $0.word == word })
+                    #expect(Card.normalizedMeanings(other.tr).isDisjoint(with: Card.normalizedMeanings(convince.tr)))
+                }
+            }
+        }
+    }
+
     @Test func clearFutureKeepsTheCurrentSlot() throws {
         let db = try makeDatabase()
         let entries = try refill(db, at: clock())

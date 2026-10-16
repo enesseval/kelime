@@ -45,14 +45,24 @@ struct WordsView: View {
                     ForEach(items) { item in
                         WordRow(item: item)
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                Button("Zorlanıyorum") {
-                                    Task { await model.record(.markedStruggling, cardID: item.id, source: .wordDetail) }
+                                // Messages-style actions: icon over a short label. The action that
+                                // matches the word's current state is left out.
+                                if item.state != .struggling {
+                                    Button {
+                                        Task { await model.record(.markedStruggling, cardID: item.id, source: .wordDetail) }
+                                    } label: {
+                                        Label("Zorlanıyorum", systemImage: "arrow.uturn.backward")
+                                    }
+                                    .tint(Palette.amber)
                                 }
-                                .tint(Palette.amber)
-                                Button("Biliyorum") {
-                                    Task { await model.record(.markedKnown, cardID: item.id, source: .wordDetail) }
+                                if item.state != .learned {
+                                    Button {
+                                        Task { await model.record(.markedKnown, cardID: item.id, source: .wordDetail) }
+                                    } label: {
+                                        Label("Biliyorum", systemImage: "checkmark")
+                                    }
+                                    .tint(Palette.green)
                                 }
-                                .tint(Palette.green)
                             }
                     }
                     .listRowBackground(Palette.surface)
@@ -147,7 +157,10 @@ struct WordRow: View {
     let item: WordItem
 
     var body: some View {
-        Button { model.router.openWord(item.id) } label: {
+        // A NavigationLink (not a Button) lets the List tell a swipe from a tap; a Button fired
+        // when a swipe ended and opened the word. The hidden link keeps the row free of a chevron.
+        ZStack {
+            NavigationLink(value: Route.word(item.id)) { EmptyView() }.opacity(0)
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 1) {
                     Text(item.card.word).font(KelimeFont.english(21, relativeTo: .title3))
@@ -164,8 +177,8 @@ struct WordRow: View {
             .frame(minHeight: 62)
             .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
         .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(.isButton)
     }
 }
 

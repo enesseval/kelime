@@ -10,6 +10,8 @@ Rules (same as the on-device generator in KelimeCore/CrosswordGenerator.swift):
 - free-form layout within 10 x 10, at least 6 words, aiming for 7
 - words cross only on matching letters
 - no letter cells touch unless they cross; the cells right before and after a word are empty
+- no two words share a Turkish meaning, since their clues would be identical
+  (e.g. develop and improve are both "geliştirmek")
 
 Usage: python3 tools/build_puzzles.py [--count 400] [--seed 20261013]
 Runs on any OS with Python 3.9+.
@@ -93,22 +95,35 @@ def attempt(words, rng, pid):
     first = pool[0]
     board.place(first[0], first[1], rng.randint(3, 6), rng.randint(0, SIZE - len(first[0])), "a")
     used = {first[0]}
-    for answer, card_id in pool[1:]:
+    used_meanings = set(first[2])
+    for answer, card_id, meanings in pool[1:]:
         if len(board.placed) >= TARGET_WORDS:
             break
-        if answer in used:
+        if answer in used or used_meanings & meanings:
             continue
         spot = board.best_placement(answer, rng)
         if spot:
             _, r, c, d = spot
             board.place(answer, card_id, r, c, d)
             used.add(answer)
+            used_meanings |= meanings
     return board.to_puzzle(pid) if len(board.placed) >= MIN_WORDS else None
 
 
-def validate(p):
+def meanings_of(card):
+    return {t.strip().replace("I", "ı").replace("İ", "i").lower() for t in card["tr"]}
+
+
+def validate(p, meanings=None):
     """Returns a list of problems (empty when valid)."""
     problems, letters, owners = [], {}, {}
+    if meanings is not None:
+        seen = set()
+        for e in p["entries"]:
+            m = meanings[e["card_id"]]
+            if seen & m:
+                problems.append(f"{e['n']}{e['dir']} repeats a meaning: {sorted(seen & m)}")
+            seen |= m
     for e in p["entries"]:
         dr, dc = (0, 1) if e["dir"] == "a" else (1, 0)
         if not e["answer"].isascii() or not e["answer"].isalpha() or not e["answer"].isupper():
@@ -147,13 +162,14 @@ def main():
     args = parser.parse_args()
 
     cards = json.loads((ROOT / "Content" / "cards.json").read_text(encoding="utf-8"))["cards"]
+    meanings = {c["id"]: meanings_of(c) for c in cards}
     out_dir = ROOT / "Content" / "puzzles"
     out_dir.mkdir(parents=True, exist_ok=True)
     rng = random.Random(args.seed)
     failures = 0
 
     for level in ["A1", "A2", "B1", "B2", "C1"]:
-        words = [(c["word"].upper(), c["id"]) for c in cards
+        words = [(c["word"].upper(), c["id"], meanings[c["id"]]) for c in cards
                  if c["level"] == level and "general" in c["decks"] and 3 <= len(c["word"]) <= SIZE]
         if len(words) < 20:
             print(f"{level}: skipped ({len(words)} words)")
@@ -168,7 +184,7 @@ def main():
             else:
                 failures += 1
                 continue
-            problems = validate(p)
+            problems = validate(p, meanings)
             if problems:
                 print(f"invalid {pid}: {problems}", file=sys.stderr)
                 sys.exit(1)

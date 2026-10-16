@@ -85,6 +85,12 @@ extension Card {
         (String(word.prefix(1)), String(repeating: "_", count: max(word.count - 1, 0)))
     }
 
+    /// Meanings lowercased with Turkish rules, for spotting cards that would share a clue or an
+    /// answer (e.g. convince and persuade, both "ikna etmek").
+    public static func normalizedMeanings(_ tr: [String]) -> Set<String> {
+        Set(tr.map { $0.trimmingCharacters(in: .whitespaces).lowercased(with: Locale(identifier: "tr_TR")) })
+    }
+
     /// First Turkish meaning, used in compact places like the inline widget.
     public var primaryMeaning: String { tr.first ?? "" }
 }

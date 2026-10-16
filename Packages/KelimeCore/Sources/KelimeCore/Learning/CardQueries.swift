@@ -39,6 +39,7 @@ public enum CardQueries {
     /// Up to `count` distinct English words to use as wrong options for `card`.
     ///
     /// Prefers the same level and part of speech, then the same part of speech, then anything.
+    /// Words that share a Turkish meaning with `card` are never offered: both would be right.
     public static func distractors(
         for card: Card,
         count: Int,
@@ -47,16 +48,18 @@ public enum CardQueries {
     ) throws -> [String] {
         var chosen: [String] = []
         var seen: Set<String> = [card.word]
+        let meanings = Card.normalizedMeanings(card.tr)
         let tiers: [SQL] = [
             "level = \(card.level) AND pos = \(card.pos.rawValue)",
             "pos = \(card.pos.rawValue)",
             "1",
         ]
         for tier in tiers where chosen.count < count {
-            let words = try String.fetchAll(db, SQLRequest<String>("SELECT word FROM card WHERE \(tier) AND id <> \(card.id) ORDER BY id"))
-            for word in words.shuffled(using: &rng) where chosen.count < count && !seen.contains(word) {
-                chosen.append(word)
-                seen.insert(word)
+            let cards = try Card.fetchAll(db, SQLRequest<Card>("SELECT * FROM card WHERE \(tier) AND id <> \(card.id) ORDER BY id"))
+            for other in cards.shuffled(using: &rng) where chosen.count < count && !seen.contains(other.word) {
+                guard Card.normalizedMeanings(other.tr).isDisjoint(with: meanings) else { continue }
+                chosen.append(other.word)
+                seen.insert(other.word)
             }
         }
         return chosen
