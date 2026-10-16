@@ -205,6 +205,34 @@ struct CrosswordTests {
         #expect(try db.reader.read { db in try LearningStore.state(of: "a2-borrow", db: db).state } == .learned)
     }
 
+    @Test func progressSavedForAnotherGridIsIgnored() throws {
+        // Regenerated puzzles keep their ids; old letters must not land on the new grid.
+        let db = try AppDatabase.inMemory()
+        var game = CrosswordGame(puzzle: Self.sample)
+        game.focus(Self.sample.entries[0])
+        game.revealWord()
+        try db.writer.write { db in
+            try PuzzleStore.save(key: "k", game: game, seconds: 90, completedAt: nil, db: db)
+        }
+        var moved = Self.sample
+        moved.entries[0].answer = String(moved.entries[0].answer.reversed())
+        let other = try db.reader.read { db in try PuzzleStore.load(key: "k", puzzle: moved, db: db) }
+        #expect(other.game.typed.isEmpty && other.game.revealed.isEmpty && other.seconds == 0)
+        let same = try db.reader.read { db in try PuzzleStore.load(key: "k", puzzle: Self.sample, db: db) }
+        #expect(same.game.revealed.count == Self.sample.entries[0].length && same.seconds == 90)
+
+        // Saves from before the fingerprint existed start over too.
+        try db.writer.write { db in
+            try db.execute(sql: "UPDATE puzzle_progress SET cells = ? WHERE puzzle_key = 'k'",
+                           arguments: [#"{"typed":{"0,0":"X"},"revealed":["0,0"],"wrong":[],"helped":[],"hintsUsed":1}"#])
+        }
+        let legacy = try db.reader.read { db in try PuzzleStore.load(key: "k", puzzle: Self.sample, db: db) }
+        #expect(legacy.game.typed.isEmpty)
+
+        try db.writer.write { db in try PuzzleStore.reset(key: "k", db: db) }
+        #expect(try db.reader.read { db in try PuzzleProgress.fetchCount(db) } == 0)
+    }
+
     // MARK: - Generator
 
     @Test func generatorSkipsWordsWithTheSameMeaning() throws {

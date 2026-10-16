@@ -104,7 +104,7 @@ final class PurchaseManager {
                 active.append(transaction.productID)
             }
         }
-        let pro = ProEntitlement.isPro(activeProductIDs: active)
+        let pro = ProEntitlement.isPro(activeProductIDs: active) || DevTools.forcePro
         isPro = pro
         guard let app, let database = app.database else { return }
         let changed = (try? await database.writer.write { db in try ProEntitlement.cache(pro, db: db) }) ?? false
@@ -116,6 +116,6 @@ final class PurchaseManager {
     /// Current plan label for Ayarlar.
     var planLabel: String {
         guard isPro else { return "Ücretsiz" }
-        return "Pro"
+        return DevTools.forcePro ? "Pro (geliştirici)" : "Pro"
     }
 }

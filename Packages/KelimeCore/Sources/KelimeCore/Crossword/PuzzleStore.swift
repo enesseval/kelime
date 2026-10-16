@@ -9,11 +9,19 @@ public enum PuzzleStore {
         public var completedAt: Date?
     }
 
+    /// Saved progress for `key`, or a fresh game when there is none or it was saved for a
+    /// different grid.
     public static func load(key: String, puzzle: Crossword, db: Database) throws -> Saved {
         guard let row = try PuzzleProgress.fetchOne(db, key: key),
-              let snapshot = try? CrosswordGame.decodeSnapshot(row.cells)
+              let snapshot = try? CrosswordGame.decodeSnapshot(row.cells),
+              snapshot.grid == puzzle.fingerprint
         else { return Saved(game: CrosswordGame(puzzle: puzzle), seconds: 0, completedAt: nil) }
         return Saved(game: CrosswordGame(puzzle: puzzle, snapshot: snapshot), seconds: row.seconds, completedAt: row.completedAt)
+    }
+
+    /// Forgets progress for `key` (and a stored personal grid), so the puzzle starts over.
+    public static func reset(key: String, db: Database) throws {
+        _ = try PuzzleProgress.deleteAll(db, keys: [key, key + "-grid"])
     }
 
     public static func save(key: String, game: CrosswordGame, seconds: Int, completedAt: Date?, db: Database) throws {

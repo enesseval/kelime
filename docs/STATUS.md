@@ -42,3 +42,11 @@ verified and what still needs a human, a device or an account.
   UserDefaults); GRDB ships its own manifest. `NSPhotoLibraryAddUsageDescription` is set because the share
   sheet offers "Save Image".
 - **Android widgets** from the design brief are out of scope for this iOS build.
+
+## Developer tools (build 3)
+
+TestFlight and Debug builds show **Ayarlar › Geliştirici**: Pro without purchase (on by default),
+reset today's puzzles, reset the free Quick Review limit, show onboarding again.
+They come from `SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) DEV_TOOLS` in
+`Config/Shared.xcconfig`. **Remove that line before the App Store submission**: App Review also
+runs with a sandbox receipt and must see the real paywall.

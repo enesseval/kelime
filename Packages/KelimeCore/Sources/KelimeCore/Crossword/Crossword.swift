@@ -72,6 +72,12 @@ public struct Crossword: Codable, Sendable, Hashable, Identifiable {
         self.entries = entries
     }
 
+    /// Identifies the grid layout, so saved progress is never applied to a different grid
+    /// (e.g. after the bundled puzzles are regenerated under the same id).
+    public var fingerprint: String {
+        entries.map { "\($0.row),\($0.col)\($0.direction.rawValue)\($0.answer)" }.sorted().joined(separator: ";")
+    }
+
     /// Solution letter for every open cell.
     public var solution: [GridPoint: Character] {
         var grid: [GridPoint: Character] = [:]

@@ -5,6 +5,7 @@ import SwiftUI
 struct PuzzleCompletionView: View {
     let model: PuzzleModel
     let onDone: () -> Void
+    let onRestart: () -> Void
 
     var body: some View {
         if let game = model.game {
@@ -42,10 +43,21 @@ struct PuzzleCompletionView: View {
                     }
                     .buttonStyle(PrimaryButtonStyle(height: 52))
                 }
-                Button(model.isDaily ? "Yarın yeni bulmaca" : "Kapat", action: onDone)
-                    .font(KelimeFont.ui(14, relativeTo: .subheadline))
-                    .foregroundStyle(Palette.ink2)
-                    .frame(maxWidth: .infinity, minHeight: 44)
+                HStack {
+                    Button("Yeniden çöz", action: onRestart)
+                    Spacer()
+                    Button("Kapat", action: onDone)
+                        .fontWeight(.semibold)
+                }
+                .font(KelimeFont.ui(15, relativeTo: .subheadline))
+                .foregroundStyle(Palette.ink2)
+                .frame(minHeight: 44)
+                if model.isDaily {
+                    Text("Yarın yeni bulmaca seni bekliyor.")
+                        .font(KelimeFont.ui(13, relativeTo: .footnote))
+                        .foregroundStyle(Palette.ink2)
+                        .frame(maxWidth: .infinity)
+                }
             }
             .padding(.horizontal, 20)
             .padding(.top, 30)

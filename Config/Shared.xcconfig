@@ -5,7 +5,7 @@ APP_BUNDLE_ID = com.enesseval.kelime
 APP_DISPLAY_NAME = Kelime Widget
 
 MARKETING_VERSION = 1.0
-CURRENT_PROJECT_VERSION = 2
+CURRENT_PROJECT_VERSION = 3
 
 // Apple Developer Team ID (automatic signing).
 DEVELOPMENT_TEAM = 82S9ART43D
@@ -16,3 +16,8 @@ SUPPORTS_MACCATALYST = NO
 SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO
 SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO
 SWIFT_VERSION = 6.0
+
+// Developer tools (Ayarlar › Geliştirici: Pro unlock, puzzle and limit resets) in TestFlight
+// builds. Debug builds always have them. REMOVE THIS LINE before submitting to the App Store:
+// App Review also runs with a sandbox receipt and must see the real paywall.
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) DEV_TOOLS

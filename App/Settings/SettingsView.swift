@@ -36,6 +36,7 @@ struct SettingsView: View {
                     widgetSection(data)
                     reminderSection(data)
                     proSection
+                    if DevTools.isAvailable { developerSection }
                     about
                 }
             }
@@ -185,6 +186,57 @@ struct SettingsView: View {
             }
             .buttonStyle(.plain)
         }
+    }
+
+    /// Debug and TestFlight only (see DevTools).
+    private var developerSection: some View {
+        SettingsSection("GELİŞTİRİCİ") {
+            Toggle(isOn: Binding(
+                get: { DevTools.forcePro },
+                set: { on in
+                    DevTools.forcePro = on
+                    Task {
+                        await app.purchases.refreshEntitlement()
+                        toast = on ? "Tüm Pro özellikleri açık" : "Ücretsiz sürüm gibi davranıyor"
+                    }
+                }
+            )) {
+                Text("Pro'yu aç (satın almadan)")
+                    .font(KelimeFont.ui(15, relativeTo: .body))
+                    .foregroundStyle(Palette.ink)
+            }
+            .tint(Palette.accent)
+            .padding(.horizontal, 16)
+            .frame(minHeight: 50)
+            Divider().overlay(Palette.line)
+            devButton("Bugünün bulmacalarını sıfırla") {
+                let clock = app.clock
+                await app.write(rebuildQueue: false) { db in try DevTools.resetTodaysPuzzles(db: db, clock: clock) }
+                toast = "Bulmacalar sıfırlandı"
+            }
+            Divider().overlay(Palette.line)
+            devButton("Hızlı tekrar hakkını sıfırla") {
+                let clock = app.clock
+                await app.write(rebuildQueue: false) { db in try DevTools.resetQuickReviewLimit(db: db, clock: clock) }
+                toast = "Hızlı tekrar hakkı yenilendi"
+            }
+            Divider().overlay(Palette.line)
+            devButton("Tanıtımı yeniden göster") {
+                await app.restartOnboarding()
+            }
+        }
+    }
+
+    private func devButton(_ title: String, action: @escaping () async -> Void) -> some View {
+        Button { Task { await action() } } label: {
+            Text(title)
+                .font(KelimeFont.ui(15, relativeTo: .body))
+                .foregroundStyle(Palette.accent)
+                .padding(.horizontal, 16)
+                .frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
     }
 
     private var about: some View {

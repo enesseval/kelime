@@ -112,6 +112,12 @@ final class AppModel {
         showOnboarding = false
     }
 
+    /// Developer tool: shows onboarding again (choices are kept until it is completed).
+    func restartOnboarding() async {
+        await write(rebuildQueue: false) { db in try Settings.set(.onboardingDone, false, in: db) }
+        showOnboarding = true
+    }
+
     /// Updates preferences that change the widget's card pool, rhythm, mode or theme.
     func updatePreferences(_ change: @escaping @Sendable (inout Preferences) -> Void) async {
         await write(rebuildQueue: true) { db in

@@ -127,7 +127,7 @@ public struct CrosswordGame: Sendable, Equatable {
         return !errors.isEmpty
     }
 
-    /// "Kelimeyi göster": fills the whole word.
+    /// "Kelimeyi göster": fills the whole word and moves on to the next unsolved one.
     @discardableResult
     public mutating func revealWord() -> CrosswordEntry {
         let entry = activeEntry
@@ -137,6 +137,7 @@ public struct CrosswordGame: Sendable, Equatable {
             wrong.remove(cell)
         }
         markHelped(entry)
+        if !isComplete { step(1) }
         return entry
     }
 
@@ -169,6 +170,8 @@ public struct CrosswordGame: Sendable, Equatable {
         public var wrong: [String]
         public var helped: [String]
         public var hintsUsed: Int
+        /// `Crossword.fingerprint` of the grid this was saved for. Nil in saves from build 2 and earlier.
+        public var grid: String?
     }
 
     private static func key(_ p: GridPoint) -> String { "\(p.row),\(p.col)" }
@@ -183,7 +186,8 @@ public struct CrosswordGame: Sendable, Equatable {
             revealed: revealed.map(Self.key).sorted(),
             wrong: wrong.map(Self.key).sorted(),
             helped: helped.sorted(),
-            hintsUsed: hintsUsed
+            hintsUsed: hintsUsed,
+            grid: puzzle.fingerprint
         )
     }
 
@@ -192,8 +196,8 @@ public struct CrosswordGame: Sendable, Equatable {
         for (k, v) in snapshot.typed {
             if let p = Self.point(k), let ch = v.first, solution[p] != nil { typed[p] = ch }
         }
-        revealed = Set(snapshot.revealed.compactMap(Self.point))
-        wrong = Set(snapshot.wrong.compactMap(Self.point))
+        revealed = Set(snapshot.revealed.compactMap(Self.point).filter { solution[$0] != nil })
+        wrong = Set(snapshot.wrong.compactMap(Self.point).filter { solution[$0] != nil })
         helped = Set(snapshot.helped)
         hintsUsed = snapshot.hintsUsed
         if let next = puzzle.orderedEntries.first(where: { !isSolved($0) }) { focus(next) }

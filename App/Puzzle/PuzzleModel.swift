@@ -142,6 +142,21 @@ final class PuzzleModel {
         seconds = saved.seconds
         completedAt = saved.completedAt
         if !isDaily { await storePersonalGrid(puzzle) }
+        // A save that already solves the grid but was never marked done (e.g. the app closed
+        // on the last letter) finishes now instead of showing a full, unplayable grid.
+        if saved.game.isComplete && completedAt == nil { afterChange() }
+    }
+
+    /// Clears this puzzle's progress and starts it over with an empty grid.
+    func restart() async {
+        guard let app, let database = app.database, let puzzle = game?.puzzle else { return }
+        let key = key
+        try? await database.writer.write { db in
+            _ = try PuzzleProgress.deleteAll(db, keys: [key])
+        }
+        game = CrosswordGame(puzzle: puzzle)
+        seconds = 0
+        completedAt = nil
     }
 
     /// The personal puzzle is generated once per day and kept, so reopening shows the same grid.

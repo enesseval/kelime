@@ -8,6 +8,7 @@ struct CrosswordView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var model: PuzzleModel
     @State private var showClues = false
+    @State private var confirmRestart = false
 
     init(source: PuzzleSource) {
         _model = State(initialValue: PuzzleModel(source: source))
@@ -17,7 +18,7 @@ struct CrosswordView: View {
         Group {
             if let game = model.game {
                 if model.isComplete {
-                    PuzzleCompletionView(model: model) { dismiss() }
+                    PuzzleCompletionView(model: model, onDone: close) { Task { await model.restart() } }
                 } else {
                     playScreen(game)
                 }
@@ -25,7 +26,7 @@ struct CrosswordView: View {
                 ContentUnavailableView {
                     Label("Bulmaca hazırlanamadı", systemImage: "square.grid.3x3")
                 } actions: {
-                    Button("Kapat") { dismiss() }
+                    Button("Kapat", action: close)
                 }
             } else {
                 ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -43,6 +44,13 @@ struct CrosswordView: View {
             if phase != .active { Task { await model.save() } }
         }
         .onDisappear { Task { await model.save() } }
+    }
+
+    /// Closes through the router as well as `dismiss`, so the cover always goes away.
+    private func close() {
+        Task { await model.save() }
+        app.router.puzzle = nil
+        dismiss()
     }
 
     private func playScreen(_ game: CrosswordGame) -> some View {
@@ -66,13 +74,22 @@ struct CrosswordView: View {
 
     private var header: some View {
         HStack {
-            Button { dismiss() } label: {
+            Button(action: close) {
                 Image(systemName: "xmark")
                     .font(.system(size: 17, weight: .semibold))
                     .foregroundStyle(Palette.ink2)
                     .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .accessibilityLabel("Kapat")
+            Button { confirmRestart = true } label: {
+                Image(systemName: "arrow.counterclockwise")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(Palette.ink2)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .accessibilityLabel("Baştan başla")
             Spacer()
             Text(model.title).font(KelimeFont.ui(15, weight: .semibold, relativeTo: .headline))
             Spacer()
@@ -80,8 +97,14 @@ struct CrosswordView: View {
                 .font(KelimeFont.ui(13, relativeTo: .footnote))
                 .foregroundStyle(Palette.ink2)
                 .monospacedDigit()
-                .frame(width: 44, alignment: .trailing)
+                .frame(width: 88, alignment: .trailing)
                 .accessibilityLabel("Süre \(model.timeText)")
+        }
+        .confirmationDialog("Bulmaca baştan başlasın mı?", isPresented: $confirmRestart, titleVisibility: .visible) {
+            Button("Baştan başla", role: .destructive) { Task { await model.restart() } }
+            Button("Vazgeç", role: .cancel) {}
+        } message: {
+            Text("Yazdığın harfler ve süre silinir.")
         }
         .padding(.leading, 8)
         .padding(.trailing, 12)
