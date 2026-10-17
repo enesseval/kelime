@@ -66,12 +66,12 @@ struct WordsView: View {
     private func actions(for item: WordItem) -> [SwipeRow<WordRow>.Action] {
         var actions: [SwipeRow<WordRow>.Action] = []
         if item.state != .learned {
-            actions.append(.init(title: "Biliyorum", systemImage: "checkmark", color: Palette.green) {
+            actions.append(.init(title: "Biliyorum", systemImage: "checkmark", ink: Palette.greenInk, background: Palette.greenBackground) {
                 Task { await model.record(.markedKnown, cardID: item.id, source: .wordDetail) }
             })
         }
         if item.state != .struggling {
-            actions.append(.init(title: "Zorlanıyorum", systemImage: "arrow.uturn.backward", color: Palette.amber) {
+            actions.append(.init(title: "Zorlanıyorum", systemImage: "arrow.uturn.backward", ink: Palette.amberInk, background: Palette.amberBackground) {
                 Task { await model.record(.markedStruggling, cardID: item.id, source: .wordDetail) }
             })
         }

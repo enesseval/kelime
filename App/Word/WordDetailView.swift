@@ -9,7 +9,6 @@ struct WordDetailView: View {
     @State private var item: WordItem?
     @State private var missing = false
     @State private var shareImage: Image?
-    @State private var showReport = false
     @State private var toast: String?
 
     var body: some View {
@@ -49,15 +48,6 @@ struct WordDetailView: View {
             item = await model.read { db in try WordQueries.item(id: id, db: db) } ?? nil
             missing = item == nil
             if let item { shareImage = ShareCardRenderer.image(for: item.card) }
-        }
-        .sheet(isPresented: $showReport) {
-            if let item {
-                ReportSheet(card: item.card) { sent in
-                    showReport = false
-                    if sent { toast = "Teşekkürler, bildirimin alındı" }
-                }
-                .presentationDetents([.medium])
-            }
         }
         .toast($toast)
     }
@@ -107,11 +97,6 @@ struct WordDetailView: View {
                     Text(item.card.exampleEN).font(KelimeFont.english(22, relativeTo: .title2, italic: true))
                     Text(item.card.exampleTR).font(KelimeFont.ui(15, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
                 }
-                Button("Hata bildir") { showReport = true }
-                    .font(KelimeFont.ui(13, relativeTo: .footnote))
-                    .foregroundStyle(Palette.ink2)
-                    .frame(maxWidth: .infinity, minHeight: 44)
-                    .padding(.top, 8)
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 24)
