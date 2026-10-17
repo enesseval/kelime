@@ -16,7 +16,7 @@ struct WidgetLogView: View {
     @State private var toast: String?
 
     /// A timeline this soon after one of our own reloads was requested by us, not by iOS.
-    private static let triggerWindow: TimeInterval = 15
+    private static let triggerWindow: TimeInterval = 120
 
     var body: some View {
         ScrollView {

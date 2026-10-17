@@ -207,17 +207,22 @@ struct QuickReviewView: View {
     }
 
     private func feedback(_ question: ReviewQuestion, correct: Bool) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
             Text(correct ? "Doğru" : "Doğru cevap: \(question.card.word)")
-                .font(KelimeFont.ui(16, weight: .bold, relativeTo: .headline))
+                .font(KelimeFont.ui(20, weight: .bold, relativeTo: .title3))
                 .foregroundStyle(correct ? Palette.greenInk : Palette.amberInk)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(question.card.exampleEN).font(KelimeFont.english(19, relativeTo: .body, italic: true))
-                Text(question.card.exampleTR).font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(question.card.exampleEN)
+                    .font(KelimeFont.english(23, relativeTo: .title3, italic: true))
+                    .foregroundStyle(Palette.ink)
+                Text(question.card.exampleTR)
+                    .font(KelimeFont.ui(17, relativeTo: .body))
+                    .foregroundStyle(Palette.ink.opacity(0.75))
             }
+            .fixedSize(horizontal: false, vertical: true)
             if !correct {
                 Text("Bu kelimeyi widget'ında daha sık göreceksin")
-                    .font(KelimeFont.ui(13, relativeTo: .footnote))
+                    .font(KelimeFont.ui(16, weight: .medium, relativeTo: .callout))
                     .foregroundStyle(Palette.amberInk)
             }
             Button("Devam") { next() }

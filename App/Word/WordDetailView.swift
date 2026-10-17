@@ -107,31 +107,44 @@ struct WordDetailView: View {
                     Text(item.card.exampleEN).font(KelimeFont.english(22, relativeTo: .title2, italic: true))
                     Text(item.card.exampleTR).font(KelimeFont.ui(15, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
                 }
-                Spacer(minLength: 24)
-                HStack(spacing: 10) {
-                    Button("Biliyorum") {
-                        Task {
-                            await model.record(.markedKnown, cardID: item.id, source: .wordDetail)
-                            toast = "Öğrenildi olarak işaretlendi"
-                        }
-                    }
-                    .buttonStyle(TintedButtonStyle(ink: Palette.greenInk, background: Palette.greenBackground, height: 52))
-                    Button("Zorlanıyorum") {
-                        Task {
-                            await model.record(.markedStruggling, cardID: item.id, source: .wordDetail)
-                            toast = "Bu kelimeyi widget'ında daha sık göreceksin"
-                        }
-                    }
-                    .buttonStyle(TintedButtonStyle(ink: Palette.amberInk, background: Palette.amberBackground, height: 52))
-                }
                 Button("Hata bildir") { showReport = true }
                     .font(KelimeFont.ui(13, relativeTo: .footnote))
                     .foregroundStyle(Palette.ink2)
                     .frame(maxWidth: .infinity, minHeight: 44)
+                    .padding(.top, 8)
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 24)
         }
+        // The two answers stay on the bottom edge, so the screen reads as one page that ends
+        // in its actions instead of stopping halfway down.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            actions(item)
+        }
+    }
+
+    private func actions(_ item: WordItem) -> some View {
+        HStack(spacing: 10) {
+            Button("Biliyorum") {
+                Task {
+                    await model.record(.markedKnown, cardID: item.id, source: .wordDetail)
+                    toast = "Öğrenildi olarak işaretlendi"
+                }
+            }
+            .buttonStyle(TintedButtonStyle(ink: Palette.greenInk, background: Palette.greenBackground, height: 56))
+            Button("Zorlanıyorum") {
+                Task {
+                    await model.record(.markedStruggling, cardID: item.id, source: .wordDetail)
+                    toast = "Bu kelimeyi widget'ında daha sık göreceksin"
+                }
+            }
+            .buttonStyle(TintedButtonStyle(ink: Palette.amberInk, background: Palette.amberBackground, height: 56))
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 12)
+        .padding(.bottom, 8)
+        .background(Palette.background)
+        .overlay(alignment: .top) { Rectangle().fill(Palette.line).frame(height: 1) }
     }
 
     private func section<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {

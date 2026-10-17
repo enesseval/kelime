@@ -10,23 +10,26 @@ struct WordsView: View {
     @State private var items: [WordItem] = []
     @State private var stats: WeekStats?
     @State private var decks: [DeckProgress] = []
+    @State private var openRow: String?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            header
-            if showDecks {
-                ScrollView {
-                    DecksGrid(decks: decks).padding(.bottom, 24)
+        // One page: title, controls and words scroll together on the same background.
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
+                header.padding(.horizontal, 20)
+                if showDecks {
+                    DecksGrid(decks: decks)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 24)
+                } else {
+                    listControls.padding(.horizontal, 20)
+                    wordList
                 }
-                .scrollIndicators(.hidden)
-            } else {
-                listControls
-                wordList
             }
+            .padding(.top, 6)
         }
-        .padding(.horizontal, 20)
-        .padding(.top, 6)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .scrollIndicators(.hidden)
+        .scrollDismissesKeyboard(.immediately)
         .screenBackground()
         .hiddenNavigationBar()
         .task(id: ReloadKey(version: model.dataVersion, segment: segment, search: search, decks: showDecks)) {
@@ -37,52 +40,42 @@ struct WordsView: View {
     @ViewBuilder
     private var wordList: some View {
         if items.isEmpty {
-            emptyState
-            Spacer()
+            emptyState.padding(.horizontal, 20)
         } else {
-            List {
-                Section {
-                    ForEach(items) { item in
+            LazyVStack(spacing: 0) {
+                ForEach(items) { item in
+                    SwipeRow(id: item.id, actions: actions(for: item), openRow: $openRow) {
+                        model.router.openWord(item.id)
+                    } content: {
                         WordRow(item: item)
-                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                // Messages-style actions: icon over a short label. The action that
-                                // matches the word's current state is left out.
-                                if item.state != .struggling {
-                                    Button {
-                                        Task { await model.record(.markedStruggling, cardID: item.id, source: .wordDetail) }
-                                    } label: {
-                                        Label("Zorlanıyorum", systemImage: "arrow.uturn.backward")
-                                    }
-                                    .tint(Palette.amber)
-                                }
-                                if item.state != .learned {
-                                    Button {
-                                        Task { await model.record(.markedKnown, cardID: item.id, source: .wordDetail) }
-                                    } label: {
-                                        Label("Biliyorum", systemImage: "checkmark")
-                                    }
-                                    .tint(Palette.green)
-                                }
-                            }
                     }
-                    .listRowBackground(Palette.surface)
-                    .listRowSeparatorTint(Palette.line)
-                    .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-                } footer: {
-                    Text("Satırı sola kaydır: Biliyorum · Zorlanıyorum")
-                        .font(KelimeFont.ui(12, relativeTo: .caption))
-                        .foregroundStyle(Palette.ink2)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 8)
+                    Rectangle().fill(Palette.line).frame(height: 1).padding(.leading, 20)
                 }
             }
-            .listStyle(.insetGrouped)
-            .scrollContentBackground(.hidden)
-            .contentMargins(.horizontal, 0, for: .scrollContent)
-            .contentMargins(.top, 0, for: .scrollContent)
-            .listSectionSpacing(0)
-            .environment(\.defaultMinListHeaderHeight, 0)
+            .animation(.snappy, value: items.map(\.id))
+            Text("Satırı sola kaydır: Biliyorum · Zorlanıyorum")
+                .font(KelimeFont.ui(12, relativeTo: .caption))
+                .foregroundStyle(Palette.ink2)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 10)
+                .padding(.bottom, 24)
         }
+    }
+
+    /// The action that matches the word's current state is left out.
+    private func actions(for item: WordItem) -> [SwipeRow<WordRow>.Action] {
+        var actions: [SwipeRow<WordRow>.Action] = []
+        if item.state != .learned {
+            actions.append(.init(title: "Biliyorum", systemImage: "checkmark", color: Palette.green) {
+                Task { await model.record(.markedKnown, cardID: item.id, source: .wordDetail) }
+            })
+        }
+        if item.state != .struggling {
+            actions.append(.init(title: "Zorlanıyorum", systemImage: "arrow.uturn.backward", color: Palette.amber) {
+                Task { await model.record(.markedStruggling, cardID: item.id, source: .wordDetail) }
+            })
+        }
+        return actions
     }
 
     private struct ReloadKey: Equatable {
@@ -153,32 +146,25 @@ struct WordsView: View {
 }
 
 struct WordRow: View {
-    @Environment(AppModel.self) private var model
     let item: WordItem
 
     var body: some View {
-        // A NavigationLink (not a Button) lets the List tell a swipe from a tap; a Button fired
-        // when a swipe ended and opened the word. The hidden link keeps the row free of a chevron.
-        ZStack {
-            NavigationLink(value: Route.word(item.id)) { EmptyView() }.opacity(0)
-            HStack(spacing: 12) {
-                VStack(alignment: .leading, spacing: 1) {
-                    Text(item.card.word).font(KelimeFont.english(21, relativeTo: .title3))
-                    Text(item.card.meaning)
-                        .font(KelimeFont.ui(13, relativeTo: .footnote))
-                        .foregroundStyle(Palette.ink2)
-                        .lineLimit(1)
-                }
-                Spacer(minLength: 8)
-                StateChip(item.state)
-                LevelChip(item.card.level)
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(item.card.word).font(KelimeFont.english(22, relativeTo: .title3))
+                Text(item.card.meaning)
+                    .font(KelimeFont.ui(14, relativeTo: .subheadline))
+                    .foregroundStyle(Palette.ink2)
+                    .lineLimit(1)
             }
-            .foregroundStyle(Palette.ink)
-            .frame(minHeight: 62)
-            .contentShape(Rectangle())
+            Spacer(minLength: 8)
+            StateChip(item.state)
+            LevelChip(item.card.level)
         }
-        .accessibilityElement(children: .combine)
-        .accessibilityAddTraits(.isButton)
+        .foregroundStyle(Palette.ink)
+        .padding(.horizontal, 20)
+        .frame(minHeight: 66)
+        .background(Palette.background)
     }
 }
 
