@@ -14,6 +14,7 @@ enum Route: Hashable {
     case themePicker
     case widgetMode
     case proAudit
+    case widgetLog
 }
 
 struct PuzzleRequest: Identifiable {

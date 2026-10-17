@@ -64,6 +64,7 @@ struct MarkKnownIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         let db = try AppDatabase.openShared()
         try await db.writer.write { [cardID] db in
+            try WidgetLog.recordTap(kind: .button, source: "home", cardID: cardID, slot: nil, detail: "Biliyorum", db: db, clock: .system)
             try WidgetActions.markKnown(cardID: cardID, db: db, clock: .system)
         }
         WidgetCenter.shared.reloadAllTimelines()
@@ -88,6 +89,7 @@ struct MarkStrugglingIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         let db = try AppDatabase.openShared()
         try await db.writer.write { [cardID] db in
+            try WidgetLog.recordTap(kind: .button, source: "home", cardID: cardID, slot: nil, detail: "Zorlanıyorum", db: db, clock: .system)
             try WidgetActions.markStruggling(cardID: cardID, db: db, clock: .system)
         }
         WidgetCenter.shared.reloadAllTimelines()
@@ -116,6 +118,7 @@ struct AnswerQuizIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         let db = try AppDatabase.openShared()
         try await db.writer.write { [cardID, option] db in
+            try WidgetLog.recordTap(kind: .button, source: "quiz", cardID: cardID, slot: nil, detail: "Cevap: \(option)", db: db, clock: .system)
             _ = try WidgetActions.answerQuiz(cardID: cardID, option: option, db: db, clock: .system)
         }
         WidgetCenter.shared.reloadAllTimelines()

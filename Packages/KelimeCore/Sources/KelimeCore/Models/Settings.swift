@@ -19,6 +19,9 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case dailyPuzzleSummary = "daily_puzzle_summary"
     /// Speech rate multiplier for pronunciation, e.g. "0.9".
     case speechRate = "speech_rate"
+    /// Developer measurement mode: the widget gets one entry at a time and asks again at the
+    /// next slot, so WidgetLog shows how often iOS really reloads it.
+    case widgetProbe = "widget_probe"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

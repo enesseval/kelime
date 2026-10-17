@@ -11,6 +11,17 @@ import WidgetKit
 
 public enum WidgetLink {
     public static func word(_ card: Card) -> URL { URL(string: "kelime://word/\(card.id)")! }
+
+    /// The word a widget entry shows, tagged with the widget (`source`) and the entry's slot,
+    /// so the app can log which entry iOS had on screen (Geliştirici › Widget günlüğü).
+    public static func shown(_ entry: WidgetSnapshot, card: Card, source: String) -> URL {
+        var components = URLComponents(string: "kelime://word/\(card.id)")!
+        components.queryItems = [
+            URLQueryItem(name: "src", value: source),
+            URLQueryItem(name: "slot", value: String(Int(entry.slotStart.timeIntervalSince1970))),
+        ]
+        return components.url!
+    }
     public static let puzzle = URL(string: "kelime://puzzle")!
 }
 
@@ -103,7 +114,7 @@ public struct SmallWidgetView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .themeBackground(entry.theme)
             .themeColorScheme(entry.theme)
-            .widgetURL(WidgetLink.word(card))
+            .widgetURL(WidgetLink.shown(entry, card: card, source: "home"))
             .accessibilityElement(children: .combine)
         } else {
             WidgetEmptyStateView()
@@ -185,7 +196,7 @@ public struct MediumCardWidgetView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .themeBackground(entry.theme)
             .themeColorScheme(entry.theme)
-            .widgetURL(WidgetLink.word(card))
+            .widgetURL(WidgetLink.shown(entry, card: card, source: "home"))
         } else {
             WidgetEmptyStateView()
         }
@@ -333,7 +344,7 @@ public struct LargeWidgetView: View {
     public var body: some View {
         if let card = entry.card {
             VStack(alignment: .leading, spacing: 12) {
-                makeButton(.open(WidgetLink.word(card)), AnyView(
+                makeButton(.open(WidgetLink.shown(entry, card: card, source: "home")), AnyView(
                     CardHeader(card: card, state: entry.state, wordSize: 38, showLevel: false, theme: entry.theme)
                 ))
                 Rectangle().fill(Palette.line).frame(height: 1)

@@ -16,6 +16,28 @@ enum WidgetData {
         }
     }
 
+    /// The timeline handed to iOS: 24 hours of entries, or in measurement mode only the
+    /// current slot with a reload request for the next one. Every request is logged.
+    static func timeline(mode: WidgetMode?, source: String) -> Timeline<WidgetSnapshot> {
+        do {
+            let db = try AppDatabase.openShared()
+            var rng = SystemRandomNumberGenerator()
+            return try db.writer.write { db in
+                let all = try WidgetTimelineBuilder.build(db: db, clock: .system, mode: mode, using: &rng)
+                let probe = try Settings.bool(.widgetProbe, in: db)
+                var entries = all
+                var reloadAt: Date?
+                if probe {
+                    (entries, reloadAt) = WidgetLog.probeTimeline(all, now: .now)
+                }
+                try WidgetLog.recordTimeline(source: source, entries: entries.count, probe: probe, reloadAt: reloadAt, db: db, clock: .system)
+                return Timeline(entries: entries, policy: reloadAt.map { TimelineReloadPolicy.after($0) } ?? .atEnd)
+            }
+        } catch {
+            return Timeline(entries: [.empty(at: .now)], policy: .after(.now.addingTimeInterval(15 * 60)))
+        }
+    }
+
     static func ring() -> [WidgetSnapshot] {
         do {
             let db = try AppDatabase.openShared()
@@ -44,7 +66,7 @@ struct WordProvider: AppIntentTimelineProvider {
     }
 
     func timeline(for configuration: WordWidgetIntent, in context: Context) async -> Timeline<WidgetSnapshot> {
-        Timeline(entries: WidgetData.snapshots(mode: configuration.mode.mode), policy: .atEnd)
+        WidgetData.timeline(mode: configuration.mode.mode, source: context.family.logName)
     }
 }
 
@@ -58,7 +80,7 @@ struct QuizProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetSnapshot>) -> Void) {
-        completion(Timeline(entries: WidgetData.snapshots(mode: .card), policy: .atEnd))
+        completion(WidgetData.timeline(mode: .card, source: "quiz"))
     }
 }
 
@@ -73,5 +95,20 @@ struct RingProvider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetSnapshot>) -> Void) {
         completion(Timeline(entries: WidgetData.ring(), policy: .atEnd))
+    }
+}
+
+extension WidgetFamily {
+    /// Short name for the widget log.
+    var logName: String {
+        switch self {
+        case .accessoryInline: "lock-inline"
+        case .accessoryRectangular: "lock"
+        case .accessoryCircular: "lock-circle"
+        case .systemSmall: "home-small"
+        case .systemMedium: "home-medium"
+        case .systemLarge: "home-large"
+        default: "other"
+        }
     }
 }

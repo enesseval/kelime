@@ -38,7 +38,10 @@ struct MainTabView: View {
             .tag(AppTab.settings)
         }
         .tint(Palette.accent)
-        .onOpenURL { router.handle($0) }
+        .onOpenURL { url in
+            Task { await model.logWidgetOpen(url) }
+            router.handle(url)
+        }
         .sheet(item: $router.paywall) { request in
             PaywallView(request: request).environment(model)
         }
@@ -79,6 +82,7 @@ extension View {
             case .themePicker: ThemePickerView()
             case .widgetMode: WidgetModePickerView()
             case .proAudit: ProAuditView()
+            case .widgetLog: WidgetLogView()
             }
         }
     }

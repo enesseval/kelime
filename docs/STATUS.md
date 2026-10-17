@@ -50,3 +50,16 @@ reset today's puzzles, reset the free Quick Review limit, show onboarding again.
 They come from `SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) DEV_TOOLS` in
 `Config/Shared.xcconfig`. **Remove that line before the App Store submission**: App Review also
 runs with a sandbox receipt and must see the real paywall.
+
+## Widget log and measurement mode (build 5)
+
+Geliştirici › Widget günlüğü records, in the shared `widget_log` table (migration v3):
+- every timeline iOS requests from the extension (`timeline`), and every reload the app triggers
+  (`appReload`), so iOS-scheduled reloads can be told apart from ours;
+- every tap on the widget: widget links carry `src` and the entry's `slot`, so a tap shows which
+  entry iOS had on screen versus the one scheduled for that moment (on time, or how late);
+- widget buttons (Biliyorum / Zorlanıyorum / quiz).
+
+Measurement mode (`settings.widget_probe = 1`) gives the widget only the current slot with
+`.after(nextSlot)`, so every change needs an iOS reload. Off by default and for everyone else:
+normal mode hands iOS 24 hours of entries. Optional :00/:30 reminders ask the tester to tap the widget.

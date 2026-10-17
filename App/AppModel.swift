@@ -112,6 +112,20 @@ final class AppModel {
         showOnboarding = false
     }
 
+    /// Logs a widget tap (`kelime://word/<id>?src=…&slot=…`) for Geliştirici › Widget günlüğü.
+    func logWidgetOpen(_ url: URL) async {
+        guard url.scheme == "kelime", url.host() == "word" else { return }
+        let id = url.lastPathComponent
+        let items = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems ?? []
+        let source = items.first { $0.name == "src" }?.value ?? "eski link"
+        let slot = items.first { $0.name == "slot" }?.value.flatMap(TimeInterval.init).map(Date.init(timeIntervalSince1970:))
+        let clock = clock
+        // Written directly: a tap must not reload the widget, or the log would record our own reload.
+        try? await database?.writer.write { db in
+            try WidgetLog.recordTap(source: source, cardID: id, slot: slot, db: db, clock: clock)
+        }
+    }
+
     /// Developer tool: shows onboarding again (choices are kept until it is completed).
     func restartOnboarding() async {
         await write(rebuildQueue: false) { db in try Settings.set(.onboardingDone, false, in: db) }

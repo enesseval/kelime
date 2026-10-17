@@ -9,6 +9,7 @@ enum WidgetRefresher {
             try await database.writer.write { db in
                 var rng = SystemRandomNumberGenerator()
                 try WidgetQueue.refill(db: db, clock: .system, using: &rng)
+                try WidgetLog.recordAppReload(reason: "Uygulamada değişiklik", db: db, clock: .system)
             }
         } catch {
             // The widget refills on its own next reload; nothing to surface here.

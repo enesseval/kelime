@@ -214,6 +214,11 @@ struct SettingsView: View {
             }
             .buttonStyle(.plain)
             Divider().overlay(Palette.line)
+            NavigationLink(value: Route.widgetLog) {
+                SettingsRowLabel("Widget günlüğü ve ölçüm modu", value: "")
+            }
+            .buttonStyle(.plain)
+            Divider().overlay(Palette.line)
             devButton("Bugünün bulmacalarını sıfırla") {
                 let clock = app.clock
                 await app.write(rebuildQueue: false) { db in try DevTools.resetTodaysPuzzles(db: db, clock: clock) }

@@ -58,6 +58,8 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
     }
 
     nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        // Developer check reminders only ask the user to tap the widget; they open nothing.
+        if response.notification.request.identifier.hasPrefix(DevTools.checkReminderPrefix) { return }
         let key = response.notification.request.identifier + "|" + String(response.notification.date.timeIntervalSince1970)
         await MainActor.run {
             guard !handled.contains(key) else { return }

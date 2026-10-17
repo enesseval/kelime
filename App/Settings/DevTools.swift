@@ -1,5 +1,6 @@
 import Foundation
 import KelimeCore
+import UserNotifications
 
 /// Developer switches for Debug and TestFlight builds. Never available in App Store builds:
 /// Release needs the `DEV_TOOLS` flag (Config/Shared.xcconfig) and a sandbox receipt.
@@ -38,5 +39,39 @@ enum DevTools {
             sql: "UPDATE review_log SET session_id = NULL WHERE source = ? AND answered_on = ?",
             arguments: [ReviewSource.quickReview, clock.today]
         )
+    }
+
+    // MARK: - Widget check reminders
+
+    static let checkReminderPrefix = "dev.check."
+    private static let checkRemindersKey = "dev.checkReminders"
+
+    static var checkRemindersOn: Bool {
+        UserDefaults.standard.bool(forKey: checkRemindersKey)
+    }
+
+    /// A notification at :00 and :30 asking to tap the widget, so the log collects a tap
+    /// right after every 30-minute change.
+    static func setCheckReminders(_ on: Bool) async -> Bool {
+        let center = UNUserNotificationCenter.current()
+        let ids = ["00", "30"].map { checkReminderPrefix + $0 }
+        center.removePendingNotificationRequests(withIdentifiers: ids)
+        UserDefaults.standard.set(false, forKey: checkRemindersKey)
+        guard on else { return true }
+        var allowed = await Reminder.isAuthorized()
+        if !allowed { allowed = await Reminder.requestAuthorization() }
+        guard allowed else { return false }
+        for (id, minute) in zip(ids, [0, 30]) {
+            let content = UNMutableNotificationContent()
+            content.title = "Widget kontrolü"
+            content.body = "Kelime az önce değişmiş olmalı. Kilit ekranındaki widget'a dokun."
+            content.sound = .default
+            var components = DateComponents()
+            components.minute = minute
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+            try? await center.add(UNNotificationRequest(identifier: id, content: content, trigger: trigger))
+        }
+        UserDefaults.standard.set(true, forKey: checkRemindersKey)
+        return true
     }
 }

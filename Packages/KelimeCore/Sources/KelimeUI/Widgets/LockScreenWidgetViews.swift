@@ -16,6 +16,7 @@ public struct InlineWidgetView: View {
     public var body: some View {
         if let card = entry.card {
             Text("\(card.word) · \(card.primaryMeaning)")
+                .widgetURL(WidgetLink.shown(entry, card: card, source: "lock"))
         } else {
             Text("Kelime Widget'ı aç")
         }
@@ -51,6 +52,7 @@ public struct RectangularWidgetView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
+        .widgetURL(entry.card.map { WidgetLink.shown(entry, card: $0, source: "lock") })
         .containerBackground(for: .widget) {
             // Sözlük sits straight on the wallpaper, like a line of text under the clock.
             if entry.mode == .dictionary { Color.clear } else { AccessoryWidgetBackground() }

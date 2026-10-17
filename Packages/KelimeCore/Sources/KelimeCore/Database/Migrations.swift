@@ -72,6 +72,23 @@ enum Migrations {
             }
         }
 
+        migrator.registerMigration("v3") { db in
+            // Developer diagnostics: when iOS asks for a widget timeline, and which entry the
+            // widget showed when it was tapped. See WidgetLog.
+            try db.create(table: "widget_log") { t in
+                t.autoIncrementedPrimaryKey("id")
+                t.column("at", .datetime).notNull().indexed()
+                t.column("kind", .text).notNull()
+                t.column("source", .text).notNull()
+                t.column("detail", .text).notNull().defaults(to: "")
+                t.column("shown_card_id", .text)
+                t.column("shown_slot", .datetime)
+                t.column("expected_card_id", .text)
+                t.column("expected_slot", .datetime)
+                t.column("reload_at", .datetime)
+            }
+        }
+
         return migrator
     }
 }
