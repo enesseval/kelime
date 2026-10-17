@@ -209,6 +209,11 @@ struct SettingsView: View {
             .padding(.horizontal, 16)
             .frame(minHeight: 50)
             Divider().overlay(Palette.line)
+            NavigationLink(value: Route.proAudit) {
+                SettingsRowLabel("Pro vaatlerini kontrol et", value: "")
+            }
+            .buttonStyle(.plain)
+            Divider().overlay(Palette.line)
             devButton("Bugünün bulmacalarını sıfırla") {
                 let clock = app.clock
                 await app.write(rebuildQueue: false) { db in try DevTools.resetTodaysPuzzles(db: db, clock: clock) }

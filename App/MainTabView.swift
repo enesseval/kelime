@@ -78,6 +78,7 @@ extension View {
             case .puzzleArchive: PuzzleArchiveView()
             case .themePicker: ThemePickerView()
             case .widgetMode: WidgetModePickerView()
+            case .proAudit: ProAuditView()
             }
         }
     }
