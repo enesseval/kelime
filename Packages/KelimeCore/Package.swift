@@ -6,6 +6,7 @@ let package = Package(
     defaultLocalization: "tr",
     platforms: [
         .iOS(.v17),
+        .watchOS(.v10),
         // macOS is only here so `swift test` can run the logic tests on the build Mac.
         .macOS(.v14),
     ],

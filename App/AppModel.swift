@@ -49,6 +49,7 @@ final class AppModel {
             showOnboarding = !((try? await db.reader.read { db in try Settings.bool(.onboardingDone, in: db) }) ?? false)
             phase = .ready(db)
             purchases.start(app: self)
+            PhoneWatchSync.shared.start(database: db)
             await applySpeechRate()
             await WidgetRefresher.refresh(db)
         } catch {

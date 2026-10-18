@@ -40,7 +40,10 @@ public enum Palette {
 extension Color {
     /// A color that resolves to `light` or `dark` hex RGB with the color scheme.
     public init(light: UInt32, dark: UInt32) {
-        #if canImport(UIKit)
+        #if os(watchOS)
+        // The watch is always dark.
+        self.init(uiColor: UIColor(rgb: dark))
+        #elseif canImport(UIKit)
         self.init(uiColor: UIColor { traits in
             UIColor(rgb: traits.userInterfaceStyle == .dark ? dark : light)
         })

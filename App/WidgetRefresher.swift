@@ -15,6 +15,7 @@ enum WidgetRefresher {
             // The widget refills on its own next reload; nothing to surface here.
         }
         WidgetCenter.shared.reloadAllTimelines()
+        await PhoneWatchSync.shared.push()
     }
 
     /// After a settings change that alters the slot grid or the card pool.

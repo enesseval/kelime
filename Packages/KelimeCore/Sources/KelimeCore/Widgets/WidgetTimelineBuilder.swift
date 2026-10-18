@@ -128,4 +128,19 @@ public enum WidgetActions {
         try LearningStore.record(.answered(correct: correct), cardID: cardID, source: .widget, clock: clock, db: db)
         return correct
     }
+
+    /// A quiz answer from the Apple Watch, for the slot it was shown in. Watch messages can
+    /// arrive after that slot is over, so this matches the slot instead of the current one.
+    /// The answer still counts for learning if the slot has already left the queue.
+    @discardableResult
+    public static func answerQuiz(cardID: String, option: String, slotStart: Date, db: Database, clock: AppClock) throws -> Bool? {
+        guard let card = try Card.fetchOne(db, key: cardID) else { return nil }
+        if let entry = try WidgetQueueEntry.fetchOne(db, key: slotStart) {
+            guard entry.cardID == cardID, entry.quizAnswer == nil else { return nil }
+            try WidgetQueue.recordQuizAnswer(option, slotStart: slotStart, db: db)
+        }
+        let correct = option == card.word
+        try LearningStore.record(.answered(correct: correct), cardID: cardID, source: .widget, clock: clock, db: db)
+        return correct
+    }
 }

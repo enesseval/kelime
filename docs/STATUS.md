@@ -63,3 +63,22 @@ Geliştirici › Widget günlüğü records, in the shared `widget_log` table (m
 Measurement mode (`settings.widget_probe = 1`) gives the widget only the current slot with
 `.after(nextSlot)`, so every change needs an iOS reload. Off by default and for everyone else:
 normal mode hands iOS 24 hours of entries. Optional :00/:30 reminders ask the tester to tap the widget.
+
+## Apple Watch (build 9)
+
+Targets `KelimeWatch` (watchOS 10+ app, embedded in the iPhone app under `Watch/`) and
+`KelimeWatchWidgetsExtension` (complications and Smart Stack).
+
+- The watch has no database. The iPhone sends a `WatchPayload` (the widget queue's next
+  24 hours, card data, today's review count, widget mode) over WatchConnectivity after every
+  change: `updateApplicationContext` always, and `transferCurrentComplicationUserInfo` (about
+  50 a day, spaced 25 min) when a Kelime complication is on the face. `PhoneWatchSync`.
+- The watch stores it in its own App Group container (`watch-payload.json`); the app and the
+  complications read it. `WatchSession`, `WatchPayloadStore`.
+- Taps on the watch (Biliyorum, Zorlanıyorum, mini review answers) apply locally at once and
+  go to the phone with `transferUserInfo`, recorded like widget buttons (`WatchAction`).
+- If the phone app is not opened for a day, the watch repeats the last day's words rather
+  than going blank. The iPhone widget extension cannot use WatchConnectivity.
+- Complications reuse the lock-screen views: rectangular (also Smart Stack), inline,
+  corner, and the circular review ring.
+- Not tested on a simulator (no watchOS simulator verification on this Mac); verify on device.
