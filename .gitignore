@@ -15,3 +15,9 @@ build/
 # Python
 __pycache__/
 *.pyc
+
+# Local secrets (Gemini API key for tools/gemini_review.py)
+.env.local
+
+# graphify output
+graphify-out/
