@@ -125,11 +125,10 @@ struct WordDetailView: View {
             }
             .buttonStyle(TintedButtonStyle(ink: Palette.amberInk, background: Palette.amberBackground, height: 56))
         }
-        .padding(.horizontal, 20)
-        .padding(.top, 12)
-        .padding(.bottom, 8)
-        .background(Palette.background)
-        .overlay(alignment: .top) { Rectangle().fill(Palette.line).frame(height: 1) }
+        .padding(10)
+        .floatingGlass(in: RoundedRectangle(cornerRadius: 28, style: .continuous), fallback: Palette.background)
+        .padding(.horizontal, 12)
+        .padding(.bottom, 4)
     }
 
     private func section<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {

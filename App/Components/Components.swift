@@ -28,17 +28,28 @@ extension View {
             }
     }
 
+    /// Liquid Glass on iOS 26 and later, for controls that float above the content
+    /// (bottom action bars, toolbar pills, toasts). Earlier systems get `fallback`.
+    @ViewBuilder
+    func floatingGlass<S: Shape>(in shape: S, fallback: Color = Palette.surface) -> some View {
+        if #available(iOS 26, *) {
+            glassEffect(.regular, in: shape)
+        } else {
+            background(fallback, in: shape)
+        }
+    }
+
     /// Transient message at the bottom of the screen.
     func toast(_ message: Binding<String?>) -> some View {
         overlay(alignment: .bottom) {
             if let text = message.wrappedValue {
                 Text(text)
                     .font(KelimeFont.ui(14, weight: .medium, relativeTo: .subheadline))
-                    .foregroundStyle(Palette.background)
+                    .foregroundStyle(Palette.ink)
                     .padding(.vertical, 12)
                     .padding(.horizontal, 18)
-                    .background(Palette.ink, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    .shadow(color: .black.opacity(0.2), radius: 12, y: 8)
+                    .floatingGlass(in: Capsule())
+                    .shadow(color: .black.opacity(0.12), radius: 12, y: 6)
                     .padding(.bottom, 24)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                     .task(id: text) {

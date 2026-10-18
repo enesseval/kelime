@@ -128,7 +128,7 @@ struct CrosswordView: View {
                 .lineLimit(1)
                 .padding(.horizontal, 12)
                 .frame(minHeight: 34)
-                .overlay(Capsule().strokeBorder(Palette.line))
+                .floatingGlass(in: Capsule())
                 .contentShape(Capsule())
         }
         .buttonStyle(.plain)

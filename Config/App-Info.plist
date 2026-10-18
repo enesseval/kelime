@@ -28,8 +28,6 @@
 		<string>Fonts/HankenGrotesk.ttf</string>
 		<string>Fonts/JetBrainsMono.ttf</string>
 	</array>
-	<key>UIDesignRequiresCompatibility</key>
-	<true/>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

@@ -38,6 +38,7 @@ struct MainTabView: View {
             .tag(AppTab.settings)
         }
         .tint(Palette.accent)
+        .modifier(GlassTabBarBehavior())
         .onOpenURL { url in
             Task { await model.logWidgetOpen(url) }
             router.handle(url)
@@ -53,8 +54,10 @@ struct MainTabView: View {
         }
     }
 
-    /// Flat bar from the design: page background, hairline on top, accent for the selected tab.
+    /// Before iOS 26: the flat bar from the design (page background, hairline, accent for the
+    /// selected tab). On iOS 26 and later the system's Liquid Glass bar is used as is.
     private static func configureTabBarAppearance() {
+        if #available(iOS 26, *) { return }
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(Palette.background)
@@ -69,6 +72,17 @@ struct MainTabView: View {
         }
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+}
+
+/// On iOS 26 the glass tab bar shrinks while scrolling down, leaving more room for content.
+private struct GlassTabBarBehavior: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 26, *) {
+            content.tabBarMinimizeBehavior(.onScrollDown)
+        } else {
+            content
+        }
     }
 }
 
