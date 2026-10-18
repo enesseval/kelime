@@ -23,6 +23,12 @@ named .env.local in the repo root (git ignores it):
 The key is only sent to Google's API. A Gemini app subscription (Gemini Pro) does not
 include API access; the AI Studio key is separate and has its own free tier.
 
+Without an API key (AI Studio chat, free):
+  python3 tools/gemini_review.py --export 40           # writes Content/review/prompts/batch-NN.md
+  Paste each prompt into https://aistudio.google.com (a Pro model), save Gemini's answer
+  as Content/review/responses/batch-NN.json, then:
+  python3 tools/gemini_review.py --import              # merges the answers, writes the report
+
 Usage:
   python3 tools/gemini_review.py                       # reviews Content/cards.json
   python3 tools/gemini_review.py path/to/cards.json --batch 15 --model gemini-2.5-pro
@@ -132,7 +138,7 @@ def card_hash(card):
 
 
 def review_batch(cards, key, model):
-    payload = [{k: c[k] for k in ("id", "word", "pos", "level", "tr", "example_en", "example_tr")} for c in cards]
+    payload = payload_of(cards)
     body = {
         "systemInstruction": {"parts": [{"text": SYSTEM}]},
         "contents": [{"role": "user", "parts": [{"text":
@@ -190,6 +196,63 @@ def write_report(cards, results, path):
     return counts
 
 
+def payload_of(cards):
+    return [{k: c[k] for k in ("id", "word", "pos", "level", "tr", "example_en", "example_tr")} for c in cards]
+
+
+OUTPUT_FORMAT = """Answer with ONLY a JSON array, one object per card, same ids, same order. Each object:
+{"id": "...", "verdict": "ok" | "fix" | "unsure", "issues": ["kısa Türkçe açıklama"],
+ "fix_tr": [], "fix_example_en": "", "fix_example_tr": "", "fix_level": "",
+ "other_senses": [{"pos": "v", "tr": ["..."], "example_en": "...", "example_tr": "..."}],
+ "confidence": "high" | "medium" | "low"}
+Fill fix_* only for fields you change; otherwise leave them empty. No text before or after the array."""
+
+
+def export_prompts(cards, size, out_dir):
+    """Prompts for the AI Studio chat: the brief, the cards, and the answer format."""
+    prompts = out_dir / "prompts"
+    responses = out_dir / "responses"
+    prompts.mkdir(parents=True, exist_ok=True)
+    responses.mkdir(parents=True, exist_ok=True)
+    for old in prompts.glob("batch-*.md"):
+        old.unlink()
+    batches = [cards[i: i + size] for i in range(0, len(cards), size)]
+    for n, batch in enumerate(batches, 1):
+        text = (SYSTEM + "\n\n" + OUTPUT_FORMAT + "\n\nCards:\n"
+                + json.dumps(payload_of(batch), ensure_ascii=False, indent=1) + "\n")
+        (prompts / f"batch-{n:02d}.md").write_text(text, encoding="utf-8")
+    print(f"{len(batches)} prompts in {prompts.relative_to(ROOT)}; save each answer as "
+          f"{responses.relative_to(ROOT)}/batch-NN.json")
+
+
+def extract_json(text):
+    """Gemini's chat answer, with or without a ```json fence."""
+    start, end = text.find("["), text.rfind("]")
+    if start < 0 or end < start:
+        raise ValueError("no JSON array found")
+    return json.loads(text[start: end + 1])
+
+
+def import_responses(cards, saved, out_dir):
+    by_id = {c["id"]: c for c in cards}
+    files = sorted((out_dir / "responses").glob("batch-*"))
+    if not files:
+        sys.exit(f"No answers in {(out_dir / 'responses').relative_to(ROOT)}.")
+    for f in files:
+        try:
+            items = extract_json(f.read_text(encoding="utf-8"))
+        except (ValueError, json.JSONDecodeError) as e:
+            print(f"  {f.name}: unreadable ({e}), skipped")
+            continue
+        known = [i for i in items if isinstance(i, dict) and i.get("id") in by_id and i.get("verdict") in ("ok", "fix", "unsure")]
+        for item in known:
+            saved[item["id"]] = {**item, "_hash": card_hash(by_id[item["id"]]), "_model": "aistudio-chat"}
+        print(f"  {f.name}: {len(known)} results" + (f", {len(items) - len(known)} ignored" if len(known) < len(items) else ""))
+    missing = [c["id"] for c in cards if c["id"] not in saved]
+    if missing:
+        print(f"  {len(missing)} cards still without a review, e.g. {missing[:5]}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("cards", nargs="?", default=str(ROOT / "Content" / "cards.json"))
@@ -197,11 +260,9 @@ def main():
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--limit", type=int, default=0, help="review at most N cards (for a pilot)")
     parser.add_argument("--list-models", action="store_true")
+    parser.add_argument("--export", type=int, metavar="N", help="write AI Studio chat prompts of N cards each")
+    parser.add_argument("--import", dest="import_", action="store_true", help="merge saved AI Studio answers")
     args = parser.parse_args()
-
-    key = load_key()
-    if args.list_models:
-        return list_models(key)
 
     src = Path(args.cards)
     cards = json.loads(src.read_text(encoding="utf-8"))["cards"]
@@ -211,6 +272,18 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / f"{src.stem}.review.json"
     saved = json.loads(out.read_text(encoding="utf-8")) if out.exists() else {}
+
+    if args.export:
+        return export_prompts(cards, args.export, out_dir)
+    if args.import_:
+        import_responses(cards, saved, out_dir)
+        out.write_text(json.dumps(saved, ensure_ascii=False, indent=1), encoding="utf-8")
+        counts = write_report(cards, saved, out_dir / f"{src.stem}.review.md")
+        return print(f"done: ok {counts['ok']}, fix {counts['fix']}, unsure {counts['unsure']} -> {out_dir.relative_to(ROOT)}")
+
+    key = load_key()
+    if args.list_models:
+        return list_models(key)
 
     todo = [c for c in cards if saved.get(c["id"], {}).get("_hash") != card_hash(c)]
     print(f"{len(cards)} cards, {len(cards) - len(todo)} already reviewed, {len(todo)} to go, model {args.model}")
