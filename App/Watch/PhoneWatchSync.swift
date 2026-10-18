@@ -16,8 +16,12 @@ final class PhoneWatchSync: NSObject {
 
     private var database: AppDatabase?
     private var lastComplicationPush: Date?
-    /// Complication pushes are spaced out so the daily budget lasts the whole day.
-    private static let complicationInterval: TimeInterval = 25 * 60
+    /// Complication pushes wake the watch to redraw the face; iOS allows about 50 a day.
+    /// While plenty are left they go out a minute apart, so a tap on the phone shows on the
+    /// wrist right away; when few are left they are spaced out to last the day.
+    private static func complicationInterval(remaining: Int) -> TimeInterval {
+        remaining > 20 ? 60 : 25 * 60
+    }
 
     private var session: WCSession? { WCSession.isSupported() ? WCSession.default : nil }
 
@@ -43,8 +47,13 @@ final class PhoneWatchSync: NSObject {
             return
         }
         try? session.updateApplicationContext([WatchKeys.payload: data])
-        if session.isComplicationEnabled, session.remainingComplicationUserInfoTransfers > 0,
-           lastComplicationPush.map({ Date().timeIntervalSince($0) > Self.complicationInterval }) ?? true {
+        // The watch app is open: deliver now instead of waiting for the context.
+        if session.isReachable {
+            session.sendMessage([WatchKeys.payload: data], replyHandler: nil, errorHandler: nil)
+        }
+        let remaining = session.remainingComplicationUserInfoTransfers
+        if session.isComplicationEnabled, remaining > 0,
+           lastComplicationPush.map({ Date().timeIntervalSince($0) > Self.complicationInterval(remaining: remaining) }) ?? true {
             session.transferCurrentComplicationUserInfo([WatchKeys.payload: data])
             lastComplicationPush = Date()
         }

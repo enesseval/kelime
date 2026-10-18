@@ -14,14 +14,9 @@
  },
  "a2-answer": {
   "id": "a2-answer",
-  "verdict": "fix",
-  "issues": [
-   "Örnek cümlede kullanılan 'cevaplamak' anlamı tr listesine eklenmeli."
-  ],
-  "fix_tr": [
-   "cevap vermek",
-   "cevaplamak"
-  ],
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
   "fix_example_en": "",
   "fix_example_tr": "",
   "fix_level": "",
@@ -208,8 +203,8 @@
      "tamir",
      "onarım"
     ],
-    "example_en": "The bridge is under repair.",
-    "example_tr": "Köprü tamirde."
+    "example_en": "The car needs repair.",
+    "example_tr": "Arabanın tamire ihtiyacı var."
    }
   ],
   "confidence": "high",
@@ -260,28 +255,20 @@
   "fix_example_en": "",
   "fix_example_tr": "",
   "fix_level": "",
-  "other_senses": [
-   {
-    "pos": "n",
-    "tr": [
-     "bekleyiş",
-     "bekleme"
-    ],
-    "example_en": "It was a long wait.",
-    "example_tr": "Uzun bir bekleyişti."
-   }
-  ],
+  "other_senses": [],
   "confidence": "high",
   "_hash": "7008bface3a359f2",
   "_model": "aistudio-chat"
  },
  "a2-worry": {
   "id": "a2-worry",
-  "verdict": "ok",
-  "issues": [],
+  "verdict": "fix",
+  "issues": [
+   "'Bunun için endişelenme' doğal değil; Türkçede 'Bunu dert etme' veya 'Merak etme' denir."
+  ],
   "fix_tr": [],
   "fix_example_en": "",
-  "fix_example_tr": "",
+  "fix_example_tr": "Bunu dert etme.",
   "fix_level": "",
   "other_senses": [
    {
@@ -291,7 +278,7 @@
      "kaygı"
     ],
     "example_en": "Money is a big worry.",
-    "example_tr": "Para büyük bir endişe kaynağı."
+    "example_tr": "Para büyük bir endişe."
    }
   ],
   "confidence": "high",
@@ -302,7 +289,7 @@
   "id": "a2-busy",
   "verdict": "fix",
   "issues": [
-   "Mekanlar ve trafik için çok sık kullanılan 'yoğun/kalabalık' anlamı eksik."
+   "Mekanlar ve trafik için çok sık kullanılan 'yoğun, kalabalık' anlamı eksik."
   ],
   "fix_tr": [
    "meşgul",
@@ -402,16 +389,13 @@
  },
  "a2-friendly": {
   "id": "a2-friendly",
-  "verdict": "fix",
+  "verdict": "ok",
   "issues": [
-   "En yaygın ve temel karşılık olan 'arkadaş canlısı' ilk sırada yer almalı."
+   "Öneri: 'arkadaş canlısı' anlamı da eklenebilir."
   ],
-  "fix_tr": [
-   "arkadaş canlısı",
-   "samimi"
-  ],
+  "fix_tr": [],
   "fix_example_en": "",
-  "fix_example_tr": "Komşularımız çok samimi.",
+  "fix_example_tr": "",
   "fix_level": "",
   "other_senses": [],
   "confidence": "high",
@@ -485,14 +469,9 @@
  },
  "a2-angry": {
   "id": "a2-angry",
-  "verdict": "fix",
-  "issues": [
-   "Çok yaygın kullanılan 'öfkeli' anlamı da eklenmeli."
-  ],
-  "fix_tr": [
-   "kızgın",
-   "öfkeli"
-  ],
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
   "fix_example_en": "",
   "fix_example_tr": "",
   "fix_level": "",
@@ -570,7 +549,7 @@
   "id": "a2-weather",
   "verdict": "fix",
   "issues": [
-   "Kelimenin tek başına en yaygın karşılığı 'hava'dır (örnek cümlede olduğu gibi)."
+   "Tek başına en yaygın karşılığı 'hava'dır (örnek cümlede olduğu gibi)."
   ],
   "fix_tr": [
    "hava",
@@ -631,6 +610,2358 @@
   ],
   "confidence": "high",
   "_hash": "ad813e87807d57a8",
+  "_model": "aistudio-chat"
+ },
+ "a2-money": {
+  "id": "a2-money",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "6bc85c7ae7639596",
+  "_model": "aistudio-chat"
+ },
+ "a2-gift": {
+  "id": "a2-gift",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "f9f2efa671161913",
+  "_model": "aistudio-chat"
+ },
+ "a2-mistake": {
+  "id": "a2-mistake",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: İngilizcede 'Everyone makes mistakes' kullanımı daha doğaldır."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "2cf1562dad94a597",
+  "_model": "aistudio-chat"
+ },
+ "a2-habit": {
+  "id": "a2-habit",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "c10a7b798ba922b5",
+  "_model": "aistudio-chat"
+ },
+ "a2-price": {
+  "id": "a2-price",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "1564031136647606",
+  "_model": "aistudio-chat"
+ },
+ "a2-reason": {
+  "id": "a2-reason",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "915cbfb2bf655b11",
+  "_model": "aistudio-chat"
+ },
+ "a2-village": {
+  "id": "a2-village",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "86210653edd2cb99",
+  "_model": "aistudio-chat"
+ },
+ "a2-often": {
+  "id": "a2-often",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'İşe sık sık yürüyerek giderim' daha doğal bir Türkçe olurdu."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "dd5a7c667922885b",
+  "_model": "aistudio-chat"
+ },
+ "a2-already": {
+  "id": "a2-already",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "69544f1a12d6a61e",
+  "_model": "aistudio-chat"
+ },
+ "a2-almost": {
+  "id": "a2-almost",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "35d125946254cd6d",
+  "_model": "aistudio-chat"
+ },
+ "a2-together": {
+  "id": "a2-together",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "74ba51625c7b3c34",
+  "_model": "aistudio-chat"
+ },
+ "b1-reliable": {
+  "id": "b1-reliable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "a250e49e197b5b38",
+  "_model": "aistudio-chat"
+ },
+ "b1-obvious": {
+  "id": "b1-obvious",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "646cc1c1c2ef6325",
+  "_model": "aistudio-chat"
+ },
+ "b1-achieve": {
+  "id": "b1-achieve",
+  "verdict": "fix",
+  "issues": [
+   "Örnekteki yaygın 'ulaşmak, elde etmek' anlamı tr listesinde eksik."
+  ],
+  "fix_tr": [
+   "başarmak",
+   "ulaşmak",
+   "elde etmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "7201f1cc25cb57bc",
+  "_model": "aistudio-chat"
+ },
+ "b1-ancient": {
+  "id": "b1-ancient",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "0c55a40bc7e09684",
+  "_model": "aistudio-chat"
+ },
+ "b1-avoid": {
+  "id": "b1-avoid",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'Şekerden uzak durmaya çalış' daha doğal bir kullanım olur."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "a5e860974533c587",
+  "_model": "aistudio-chat"
+ },
+ "b1-compare": {
+  "id": "b1-compare",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "05bf2d5c5e829ce4",
+  "_model": "aistudio-chat"
+ },
+ "b1-complain": {
+  "id": "b1-complain",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "12c4f1d18a93092f",
+  "_model": "aistudio-chat"
+ },
+ "b1-develop": {
+  "id": "b1-develop",
+  "verdict": "fix",
+  "issues": [
+   "Geçişsiz yaygın anlamı olan 'gelişmek' tr listesinde eksik."
+  ],
+  "fix_tr": [
+   "geliştirmek",
+   "gelişmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "2cefbe0d25801920",
+  "_model": "aistudio-chat"
+ },
+ "b1-discover": {
+  "id": "b1-discover",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "fdd024c6e617ea42",
+  "_model": "aistudio-chat"
+ },
+ "b1-encourage": {
+  "id": "b1-encourage",
+  "verdict": "fix",
+  "issues": [
+   "Çok yaygın kullanılan 'teşvik etmek' anlamı eksik."
+  ],
+  "fix_tr": [
+   "teşvik etmek",
+   "cesaretlendirmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "ae9b44d8ab4abfde",
+  "_model": "aistudio-chat"
+ },
+ "b1-explain": {
+  "id": "b1-explain",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "f68ed79e53ec3bc2",
+  "_model": "aistudio-chat"
+ },
+ "b1-improve": {
+  "id": "b1-improve",
+  "verdict": "fix",
+  "issues": [
+   "Geçişsiz anlamı olan 'gelişmek, iyiye gitmek' eksik."
+  ],
+  "fix_tr": [
+   "geliştirmek",
+   "gelişmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "ab1e5c16235e5727",
+  "_model": "aistudio-chat"
+ },
+ "b1-include": {
+  "id": "b1-include",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "707f933ae91e8367",
+  "_model": "aistudio-chat"
+ },
+ "b1-increase": {
+  "id": "b1-increase",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "artış"
+    ],
+    "example_en": "There is an increase in sales.",
+    "example_tr": "Satışlarda bir artış var."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "388aa39f8ffd17b9",
+  "_model": "aistudio-chat"
+ },
+ "b1-manage": {
+  "id": "b1-manage",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "0a0567152d7d3c56",
+  "_model": "aistudio-chat"
+ },
+ "b1-mention": {
+  "id": "b1-mention",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "34a9ccfbb345c0dd",
+  "_model": "aistudio-chat"
+ },
+ "b1-notice": {
+  "id": "b1-notice",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "duyuru",
+     "ilan"
+    ],
+    "example_en": "Read the notice on the wall.",
+    "example_tr": "Duvardaki duyuruyu oku."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "daa8649ef72a96e8",
+  "_model": "aistudio-chat"
+ },
+ "b1-offer": {
+  "id": "b1-offer",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "teklif"
+    ],
+    "example_en": "He accepted the job offer.",
+    "example_tr": "İş teklifini kabul etti."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "d1b6ca021c1cbd24",
+  "_model": "aistudio-chat"
+ },
+ "b1-protect": {
+  "id": "b1-protect",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "64268f922cc34749",
+  "_model": "aistudio-chat"
+ },
+ "b1-realize": {
+  "id": "b1-realize",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "0b0baa38c8bda40c",
+  "_model": "aistudio-chat"
+ },
+ "b1-reduce": {
+  "id": "b1-reduce",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "32d4c2f3c727cafd",
+  "_model": "aistudio-chat"
+ },
+ "b1-refuse": {
+  "id": "b1-refuse",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "e45e13fa5fcfde16",
+  "_model": "aistudio-chat"
+ },
+ "b1-replace": {
+  "id": "b1-replace",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "7bb5b7e33e8a92f7",
+  "_model": "aistudio-chat"
+ },
+ "b1-succeed": {
+  "id": "b1-succeed",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "8fa1e3f4326bf2df",
+  "_model": "aistudio-chat"
+ },
+ "b1-suggest": {
+  "id": "b1-suggest",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "740fdb6891a243e9",
+  "_model": "aistudio-chat"
+ },
+ "b1-support": {
+  "id": "b1-support",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "destek"
+    ],
+    "example_en": "Thank you for your support.",
+    "example_tr": "Desteğin için teşekkürler."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "a90476b0e2d8582a",
+  "_model": "aistudio-chat"
+ },
+ "b1-apologize": {
+  "id": "b1-apologize",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "e91c3c458f27564f",
+  "_model": "aistudio-chat"
+ },
+ "b1-afford": {
+  "id": "b1-afford",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'maddi gücü yetmek' anlamı daha net ifade eder."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "bedc60cb12613d56",
+  "_model": "aistudio-chat"
+ },
+ "b1-argue": {
+  "id": "b1-argue",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "ba5a75b3d6f52fe8",
+  "_model": "aistudio-chat"
+ },
+ "b1-accurate": {
+  "id": "b1-accurate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "6bfc1bf00d973cb6",
+  "_model": "aistudio-chat"
+ },
+ "b1-available": {
+  "id": "b1-available",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: Örnek cümledeki 'boş' anlamı veya tr'deki 'müsait' eşleştirilebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "78b153a92e249c8b",
+  "_model": "aistudio-chat"
+ },
+ "b1-aware": {
+  "id": "b1-aware",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "2744f91c7128bcf2",
+  "_model": "aistudio-chat"
+ },
+ "b1-confident": {
+  "id": "b1-confident",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "eae90fb2ec3cc61f",
+  "_model": "aistudio-chat"
+ },
+ "b1-curious": {
+  "id": "b1-curious",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "b0c6fc3391d2b65a",
+  "_model": "aistudio-chat"
+ },
+ "b1-efficient": {
+  "id": "b1-efficient",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "1e1210fe0d81c009",
+  "_model": "aistudio-chat"
+ },
+ "b1-familiar": {
+  "id": "b1-familiar",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "a02a7efed79feb18",
+  "_model": "aistudio-chat"
+ },
+ "b1-honest": {
+  "id": "b1-honest",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "a688fef7a17a9c3d",
+  "_model": "aistudio-chat"
+ },
+ "b1-necessary": {
+  "id": "b1-necessary",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "a8130c7237baa04c",
+  "_model": "aistudio-chat"
+ },
+ "b1-patient": {
+  "id": "b1-patient",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "hasta"
+    ],
+    "example_en": "The doctor saw the patient.",
+    "example_tr": "Doktor hastayı gördü."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "bcfaaa7bf8d21601",
+  "_model": "aistudio-chat"
+ },
+ "b1-polite": {
+  "id": "b1-polite",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "e70d60b26ae6015c",
+  "_model": "aistudio-chat"
+ },
+ "b1-proud": {
+  "id": "b1-proud",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "322523570f8b839b",
+  "_model": "aistudio-chat"
+ },
+ "b1-similar": {
+  "id": "b1-similar",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "4a54757146f75977",
+  "_model": "aistudio-chat"
+ },
+ "b1-suitable": {
+  "id": "b1-suitable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "05c4a45147db3e6d",
+  "_model": "aistudio-chat"
+ },
+ "b1-various": {
+  "id": "b1-various",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "21dfb7ec799666f6",
+  "_model": "aistudio-chat"
+ },
+ "b1-opportunity": {
+  "id": "b1-opportunity",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "1b787643b5e3e502",
+  "_model": "aistudio-chat"
+ },
+ "b1-advantage": {
+  "id": "b1-advantage",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "0b2163730f5ec29e",
+  "_model": "aistudio-chat"
+ },
+ "b1-attitude": {
+  "id": "b1-attitude",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "17e10b2491903981",
+  "_model": "aistudio-chat"
+ },
+ "b1-challenge": {
+  "id": "b1-challenge",
+  "verdict": "fix",
+  "issues": [
+   "Çok yaygın olan 'meydan okuma' anlamı eksik."
+  ],
+  "fix_tr": [
+   "zorluk",
+   "meydan okuma"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "meydan okumak"
+    ],
+    "example_en": "He challenged me to a race.",
+    "example_tr": "Yarış için bana meydan okudu."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "2dc57a87ede907c9",
+  "_model": "aistudio-chat"
+ },
+ "b1-decision": {
+  "id": "b1-decision",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "6fdddf309feb92ee",
+  "_model": "aistudio-chat"
+ },
+ "b1-environment": {
+  "id": "b1-environment",
+  "verdict": "fix",
+  "issues": [
+   "Çok yaygın kullanılan 'ortam' anlamı eksik."
+  ],
+  "fix_tr": [
+   "çevre",
+   "ortam"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "5836678e235d762e",
+  "_model": "aistudio-chat"
+ },
+ "b1-experience": {
+  "id": "b1-experience",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "deneyimlemek",
+     "yaşamak"
+    ],
+    "example_en": "Everyone experiences stress.",
+    "example_tr": "Herkes stres yaşar."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "efac70384cf6871f",
+  "_model": "aistudio-chat"
+ },
+ "b1-knowledge": {
+  "id": "b1-knowledge",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "4d21d27239af9217",
+  "_model": "aistudio-chat"
+ },
+ "b1-purpose": {
+  "id": "b1-purpose",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "8e7f89827cff3f1a",
+  "_model": "aistudio-chat"
+ },
+ "b1-skill": {
+  "id": "b1-skill",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "4cff0766d160cc14",
+  "_model": "aistudio-chat"
+ },
+ "b1-solution": {
+  "id": "b1-solution",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "87a49f32eea8596b",
+  "_model": "aistudio-chat"
+ },
+ "b1-success": {
+  "id": "b1-success",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "14a67e83243d1a6e",
+  "_model": "aistudio-chat"
+ },
+ "b1-argument": {
+  "id": "b1-argument",
+  "verdict": "fix",
+  "issues": [
+   "Önemli ve yaygın 'argüman, sav' anlamı eksik; örnek çeviride 'Tartıştılar' daha doğal."
+  ],
+  "fix_tr": [
+   "tartışma",
+   "argüman",
+   "sav"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Aralarında bir tartışma geçti.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "180cdd7b1fc06337",
+  "_model": "aistudio-chat"
+ },
+ "b1-community": {
+  "id": "b1-community",
+  "verdict": "fix",
+  "issues": [
+   "Yaygın 'toplum, halk, camia' anlamı eksik."
+  ],
+  "fix_tr": [
+   "topluluk",
+   "toplum"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "02b8c5bfab13114b",
+  "_model": "aistudio-chat"
+ },
+ "b1-recently": {
+  "id": "b1-recently",
+  "verdict": "fix",
+  "issues": [
+   "Tek seferlik geçmiş eylemlerde 'son zamanlarda' yerine 'yakın zamanda / geçenlerde' denir."
+  ],
+  "fix_tr": [
+   "son zamanlarda",
+   "yakın zamanda"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Buraya yakın zamanda taşındım.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "ead5d6b8cea5ca2c",
+  "_model": "aistudio-chat"
+ },
+ "b1-probably": {
+  "id": "b1-probably",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "39ca12ae83c1e7da",
+  "_model": "aistudio-chat"
+ },
+ "b2-reluctant": {
+  "id": "b2-reluctant",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "18519255f0c2323a",
+  "_model": "aistudio-chat"
+ },
+ "b2-hesitate": {
+  "id": "b2-hesitate",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: Örnekte geçen 'çekinmek' anlamı tr listesine eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "d451ea7b5ad85aa8",
+  "_model": "aistudio-chat"
+ },
+ "b2-significant": {
+  "id": "b2-significant",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "9e6a3d16fb793795",
+  "_model": "aistudio-chat"
+ },
+ "b2-consequence": {
+  "id": "b2-consequence",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "0ecd0c2e6c3f6711",
+  "_model": "aistudio-chat"
+ },
+ "b2-abandon": {
+  "id": "b2-abandon",
+  "verdict": "fix",
+  "issues": [
+   "Plan, fikir vb. için çok yaygın olan 'vazgeçmek, bırakmak' anlamı eksik."
+  ],
+  "fix_tr": [
+   "terk etmek",
+   "vazgeçmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "db7d039bf54cbc18",
+  "_model": "aistudio-chat"
+ },
+ "b2-acquire": {
+  "id": "b2-acquire",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "5850737fbe7f5995",
+  "_model": "aistudio-chat"
+ },
+ "b2-adapt": {
+  "id": "b2-adapt",
+  "verdict": "fix",
+  "issues": [
+   "Geçişli 'uyarlamak' anlamı eksik."
+  ],
+  "fix_tr": [
+   "uyum sağlamak",
+   "uyarlamak"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "bdbfbbd605e80e00",
+  "_model": "aistudio-chat"
+ },
+ "b2-anticipate": {
+  "id": "b2-anticipate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "985c9b19aa49e100",
+  "_model": "aistudio-chat"
+ },
+ "b2-assume": {
+  "id": "b2-assume",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: Sorumluluk/rol için 'üstlenmek' anlamı da B2'de yaygındır."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "4eb7a81c301af2a2",
+  "_model": "aistudio-chat"
+ },
+ "b2-attempt": {
+  "id": "b2-attempt",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "girişim",
+     "deneme"
+    ],
+    "example_en": "She passed on her first attempt.",
+    "example_tr": "İlk denemesinde geçti."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "a125a83d8377d8ef",
+  "_model": "aistudio-chat"
+ },
+ "b2-claim": {
+  "id": "b2-claim",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "iddia",
+     "talep"
+    ],
+    "example_en": "His claim was false.",
+    "example_tr": "İddiası asılsızdı."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "0c22ecc18dc35dab",
+  "_model": "aistudio-chat"
+ },
+ "b2-concern": {
+  "id": "b2-concern",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'Güvenlik öncelikli endişemiz' veya tr'ye 'mesele, ilgi' eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "endişelendirmek",
+     "ilgilendirmek"
+    ],
+    "example_en": "This issue concerns everyone.",
+    "example_tr": "Bu konu herkesi ilgilendiriyor."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "6f540f9026204648",
+  "_model": "aistudio-chat"
+ },
+ "b2-consist": {
+  "id": "b2-consist",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "86f96cf97cd2dd68",
+  "_model": "aistudio-chat"
+ },
+ "b2-convince": {
+  "id": "b2-convince",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "e08905c50cdc9c83",
+  "_model": "aistudio-chat"
+ },
+ "b2-decline": {
+  "id": "b2-decline",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "düşüş",
+     "gerileme"
+    ],
+    "example_en": "There is a decline in sales.",
+    "example_tr": "Satışlarda düşüş var."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "804a1a0d0e737320",
+  "_model": "aistudio-chat"
+ },
+ "b2-demonstrate": {
+  "id": "b2-demonstrate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "6318be649e080f40",
+  "_model": "aistudio-chat"
+ },
+ "b2-emphasize": {
+  "id": "b2-emphasize",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "9754762606ccbc22",
+  "_model": "aistudio-chat"
+ },
+ "b2-enhance": {
+  "id": "b2-enhance",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "98229aa62af7959b",
+  "_model": "aistudio-chat"
+ },
+ "b2-establish": {
+  "id": "b2-establish",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'belirlemek, ortaya koymak' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "3f2cfe6cc594c8b6",
+  "_model": "aistudio-chat"
+ },
+ "b2-evaluate": {
+  "id": "b2-evaluate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "9c67cd1fb1e6acde",
+  "_model": "aistudio-chat"
+ },
+ "b2-ignore": {
+  "id": "b2-ignore",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "bddb16398ab63c95",
+  "_model": "aistudio-chat"
+ },
+ "b2-indicate": {
+  "id": "b2-indicate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "5246c83a7ac08fcb",
+  "_model": "aistudio-chat"
+ },
+ "b2-maintain": {
+  "id": "b2-maintain",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'bakım yapmak' ve 'iddia etmek' anlamları da yaygındır."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "1ae38be90341cd70",
+  "_model": "aistudio-chat"
+ },
+ "b2-obtain": {
+  "id": "b2-obtain",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "eb36d7b70a34e5ff",
+  "_model": "aistudio-chat"
+ },
+ "b2-persuade": {
+  "id": "b2-persuade",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "5da86f0f78698a28",
+  "_model": "aistudio-chat"
+ },
+ "b2-pursue": {
+  "id": "b2-pursue",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'sürdürmek, takip etmek' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "c8b80a8a47cf18b2",
+  "_model": "aistudio-chat"
+ },
+ "b2-require": {
+  "id": "b2-require",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "22b53b3d4a6a4050",
+  "_model": "aistudio-chat"
+ },
+ "b2-reveal": {
+  "id": "b2-reveal",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'açıklamak, ifşa etmek' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "8d49a645caaa347e",
+  "_model": "aistudio-chat"
+ },
+ "b2-tend": {
+  "id": "b2-tend",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "6044774940a36fe2",
+  "_model": "aistudio-chat"
+ },
+ "b2-undergo": {
+  "id": "b2-undergo",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "1df38f35cefbdb34",
+  "_model": "aistudio-chat"
+ },
+ "b2-adequate": {
+  "id": "b2-adequate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "813b88387b92172d",
+  "_model": "aistudio-chat"
+ },
+ "b2-apparent": {
+  "id": "b2-apparent",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "17d6255591f27ef9",
+  "_model": "aistudio-chat"
+ },
+ "b2-considerable": {
+  "id": "b2-considerable",
+  "verdict": "fix",
+  "issues": [
+   "'Önemli ölçüde' zarftır; sıfat olarak 'hatırı sayılır, önemli, büyük' olmalı."
+  ],
+  "fix_tr": [
+   "hatırı sayılır",
+   "önemli"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Hatırı sayılır bir tutara mal oluyor.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "cb76ff8e9c29f5b1",
+  "_model": "aistudio-chat"
+ },
+ "b2-crucial": {
+  "id": "b2-crucial",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "ca49059cd511a04a",
+  "_model": "aistudio-chat"
+ },
+ "b2-essential": {
+  "id": "b2-essential",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'elzem, şart' anlamı kelimenin gücünü daha iyi yansıtır."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "45c11c0c63b81180",
+  "_model": "aistudio-chat"
+ },
+ "b2-evident": {
+  "id": "b2-evident",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "9ead867f03336cb3",
+  "_model": "aistudio-chat"
+ },
+ "b2-inevitable": {
+  "id": "b2-inevitable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "3121b172a7d41723",
+  "_model": "aistudio-chat"
+ },
+ "b2-reasonable": {
+  "id": "b2-reasonable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "d3ebdbbf1693fab5",
+  "_model": "aistudio-chat"
+ },
+ "b2-sufficient": {
+  "id": "b2-sufficient",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "269b1d8c1a41734a",
+  "_model": "aistudio-chat"
+ },
+ "b2-vast": {
+  "id": "b2-vast",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "32be4b5f4da40486",
+  "_model": "aistudio-chat"
+ },
+ "b2-vulnerable": {
+  "id": "b2-vulnerable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "eb20c9924e39a431",
+  "_model": "aistudio-chat"
+ },
+ "b2-anxious": {
+  "id": "b2-anxious",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "d6c51ac31bf2cd39",
+  "_model": "aistudio-chat"
+ },
+ "b2-genuine": {
+  "id": "b2-genuine",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "63ac8383b5d2bc6d",
+  "_model": "aistudio-chat"
+ },
+ "b2-rapid": {
+  "id": "b2-rapid",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "9a0cedef155ca213",
+  "_model": "aistudio-chat"
+ },
+ "b2-approach": {
+  "id": "b2-approach",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "yaklaşmak"
+    ],
+    "example_en": "Winter is approaching.",
+    "example_tr": "Kış yaklaşıyor."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "8d65f6ddd8a892e9",
+  "_model": "aistudio-chat"
+ },
+ "b2-assessment": {
+  "id": "b2-assessment",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "0cfffddde0a0fdd4",
+  "_model": "aistudio-chat"
+ },
+ "b2-evidence": {
+  "id": "b2-evidence",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "c8c0572ef0976459",
+  "_model": "aistudio-chat"
+ },
+ "b2-feature": {
+  "id": "b2-feature",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "yer vermek",
+     "içermek"
+    ],
+    "example_en": "The film features a famous actor.",
+    "example_tr": "Filmde ünlü bir oyuncu yer alıyor."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "eb3c9e68ea7eb3a5",
+  "_model": "aistudio-chat"
+ },
+ "b2-impact": {
+  "id": "b2-impact",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "etkilemek"
+    ],
+    "example_en": "The storm impacted flights.",
+    "example_tr": "Fırtına uçuşları etkiledi."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "2a392bb2216b3ad5",
+  "_model": "aistudio-chat"
+ },
+ "b2-outcome": {
+  "id": "b2-outcome",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "178c4b0e3335e15b",
+  "_model": "aistudio-chat"
+ },
+ "b2-priority": {
+  "id": "b2-priority",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "639344cf0b8400a1",
+  "_model": "aistudio-chat"
+ },
+ "b2-resource": {
+  "id": "b2-resource",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "7b920fbb3cc92ce0",
+  "_model": "aistudio-chat"
+ },
+ "b2-strategy": {
+  "id": "b2-strategy",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "dc72d938075477c9",
+  "_model": "aistudio-chat"
+ },
+ "b2-tendency": {
+  "id": "b2-tendency",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "7015a3903cbe2a72",
+  "_model": "aistudio-chat"
+ },
+ "b2-threat": {
+  "id": "b2-threat",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "312fda4ecd0ce4ae",
+  "_model": "aistudio-chat"
+ },
+ "b2-burden": {
+  "id": "b2-burden",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "da365e2005b9a86f",
+  "_model": "aistudio-chat"
+ },
+ "b2-shortage": {
+  "id": "b2-shortage",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "89ecd1ebc1dfc789",
+  "_model": "aistudio-chat"
+ },
+ "b2-eventually": {
+  "id": "b2-eventually",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "eb3b508f59b4f193",
+  "_model": "aistudio-chat"
+ },
+ "b2-merely": {
+  "id": "b2-merely",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "f67dc8191b5a8c38",
+  "_model": "aistudio-chat"
+ },
+ "b2-nevertheless": {
+  "id": "b2-nevertheless",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "3c2ef5180443e786",
+  "_model": "aistudio-chat"
+ },
+ "c1-ambiguous": {
+  "id": "c1-ambiguous",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "65feb342fdc76287",
+  "_model": "aistudio-chat"
+ },
+ "c1-arbitrary": {
+  "id": "c1-arbitrary",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "46e1d27dd2ecc041",
+  "_model": "aistudio-chat"
+ },
+ "c1-coherent": {
+  "id": "c1-coherent",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "66975edfb67a9c06",
+  "_model": "aistudio-chat"
+ },
+ "c1-comprehensive": {
+  "id": "c1-comprehensive",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "3bcaed44861d3e1c",
+  "_model": "aistudio-chat"
+ },
+ "c1-explicit": {
+  "id": "c1-explicit",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "cef994f2c6fa8767",
+  "_model": "aistudio-chat"
+ },
+ "c1-feasible": {
+  "id": "c1-feasible",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "1670705e1e080a42",
+  "_model": "aistudio-chat"
+ },
+ "c1-inherent": {
+  "id": "c1-inherent",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "43cb74eaf613bcd3",
+  "_model": "aistudio-chat"
+ },
+ "c1-meticulous": {
+  "id": "c1-meticulous",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "6ffe9174a8867cd3",
+  "_model": "aistudio-chat"
+ },
+ "c1-plausible": {
+  "id": "c1-plausible",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "d5c7241231f33ff2",
+  "_model": "aistudio-chat"
+ },
+ "c1-profound": {
+  "id": "c1-profound",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "fc6ce085e3491a56",
+  "_model": "aistudio-chat"
+ },
+ "c1-redundant": {
+  "id": "c1-redundant",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "9d31317f7038f78b",
+  "_model": "aistudio-chat"
+ },
+ "c1-subtle": {
+  "id": "c1-subtle",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "31030a511840d348",
+  "_model": "aistudio-chat"
+ },
+ "c1-tedious": {
+  "id": "c1-tedious",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "49c79fa57868de1e",
+  "_model": "aistudio-chat"
+ },
+ "c1-undermine": {
+  "id": "c1-undermine",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'zayıflatmak, sarsmak' anlamı da eklenebilir ('güveni sarsar' daha doğaldır)."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "f9de40d4ba558672",
+  "_model": "aistudio-chat"
+ },
+ "c1-alleviate": {
+  "id": "c1-alleviate",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'Bu, ağrıyı hafifletecek' (virgül ve 'ağrı' seçimi) daha doğal olur."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "809a5547f5309a08",
+  "_model": "aistudio-chat"
+ },
+ "c1-compensate": {
+  "id": "c1-compensate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "802cc03df048f8e8",
+  "_model": "aistudio-chat"
+ },
+ "c1-deteriorate": {
+  "id": "c1-deteriorate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "fa214b5ec9144ff2",
+  "_model": "aistudio-chat"
+ },
+ "c1-exacerbate": {
+  "id": "c1-exacerbate",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'kötüleştirmek, ağırlaştırmak' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "93f4f13d516ef0f5",
+  "_model": "aistudio-chat"
+ },
+ "c1-facilitate": {
+  "id": "c1-facilitate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "45b964ea21b9d068",
+  "_model": "aistudio-chat"
+ },
+ "c1-hinder": {
+  "id": "c1-hinder",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'zorlaştırmak, ket vurmak' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "7348f86c5894f302",
+  "_model": "aistudio-chat"
+ },
+ "c1-mitigate": {
+  "id": "c1-mitigate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "0385460e2b74769b",
+  "_model": "aistudio-chat"
+ },
+ "c1-scrutinize": {
+  "id": "c1-scrutinize",
+  "verdict": "fix",
+  "issues": [
+   "Sadece 'incelemek' yetersizdir; 'titizlikle/dikkatle incelemek, didik didik etmek' demektir."
+  ],
+  "fix_tr": [
+   "titizlikle incelemek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Her ayrıntıyı titizlikle incelerler.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "90bf96572ca41bd6",
+  "_model": "aistudio-chat"
+ },
+ "c1-advocate": {
+  "id": "c1-advocate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "savunucu"
+    ],
+    "example_en": "She is an advocate for peace.",
+    "example_tr": "O bir barış savunucusu."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "d772fcc2ca373b08",
+  "_model": "aistudio-chat"
+ },
+ "c1-discrepancy": {
+  "id": "c1-discrepancy",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'uyuşmazlık, çelişki' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "b8cc2c33f8d722a0",
+  "_model": "aistudio-chat"
+ },
+ "c1-dilemma": {
+  "id": "c1-dilemma",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "53dab1ef615a9437",
+  "_model": "aistudio-chat"
+ },
+ "c1-hypothesis": {
+  "id": "c1-hypothesis",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'varsayım' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "5a1a76316dd9dcc4",
+  "_model": "aistudio-chat"
+ },
+ "c1-paradigm": {
+  "id": "c1-paradigm",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "98a33e936964cbe2",
+  "_model": "aistudio-chat"
+ },
+ "c1-scarcity": {
+  "id": "c1-scarcity",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "8da29d13e48a1e66",
+  "_model": "aistudio-chat"
+ },
+ "c1-consensus": {
+  "id": "c1-consensus",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "01c12d15220c870f",
+  "_model": "aistudio-chat"
+ },
+ "c1-predominantly": {
+  "id": "c1-predominantly",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "1870bbe29223a81d",
+  "_model": "aistudio-chat"
+ },
+ "c1-inevitably": {
+  "id": "c1-inevitably",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "a6776178ec37ad8e",
   "_model": "aistudio-chat"
  }
 }

@@ -25,8 +25,9 @@ struct WatchProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetSnapshot>) -> Void) {
         let entries = entries()
         if entries.isEmpty {
-            // Nothing from the phone yet: ask again in an hour.
-            completion(Timeline(entries: [.empty(at: .now)], policy: .after(.now.addingTimeInterval(3600))))
+            // Nothing from the phone yet. The watch app reloads the timelines as soon as words
+            // arrive; this is only a fallback.
+            completion(Timeline(entries: [.empty(at: .now)], policy: .after(.now.addingTimeInterval(15 * 60))))
         } else {
             completion(Timeline(entries: entries, policy: .atEnd))
         }
@@ -76,12 +77,18 @@ struct WatchWordView: View {
         }
     }
 
+    /// The watch draws a small center and curves the label along the corner, so the word goes
+    /// in the label (system font, the only one that curves well) and the center keeps the
+    /// state dot: ○ new, ◐ struggling, ● learned.
     private var corner: some View {
-        Text(entry.card?.word ?? "kelime")
-            .font(KelimeFont.english(16))
-            .widgetCurvesContent()
+        StateDot(entry.state, size: 14, color: .white)
+            .widgetAccentable()
             .widgetLabel {
-                Text(entry.card?.primaryMeaning ?? "")
+                if let card = entry.card {
+                    Text("\(card.word) · \(card.primaryMeaning)")
+                } else {
+                    Text("iPhone'da uygulamayı aç")
+                }
             }
             .containerBackground(for: .widget) { Color.clear }
     }

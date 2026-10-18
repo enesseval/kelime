@@ -1,0 +1,2563 @@
+[
+ {
+  "id": "a2-borrow",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-answer",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "cevap",
+     "yanıt"
+    ],
+    "example_en": "I don't know the answer.",
+    "example_tr": "Cevabı bilmiyorum."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-arrive",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-believe",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-carry",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-choose",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-decide",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-forget",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-invite",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-laugh",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "gülüş",
+     "kahkaha"
+    ],
+    "example_en": "She has a nice laugh.",
+    "example_tr": "Güzel bir gülüşü var."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-lose",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-prefer",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-remember",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-repair",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "tamir",
+     "onarım"
+    ],
+    "example_en": "The car needs repair.",
+    "example_tr": "Arabanın tamire ihtiyacı var."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-send",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-travel",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "seyahat",
+     "yolculuk"
+    ],
+    "example_en": "I love air travel.",
+    "example_tr": "Hava yolculuğunu severim."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-wait",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-worry",
+  "verdict": "fix",
+  "issues": [
+   "'Bunun için endişelenme' doğal değil; Türkçede 'Bunu dert etme' veya 'Merak etme' denir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "Bunu dert etme.",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "endişe",
+     "kaygı"
+    ],
+    "example_en": "Money is a big worry.",
+    "example_tr": "Para büyük bir endişe."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-busy",
+  "verdict": "fix",
+  "issues": [
+   "Mekanlar ve trafik için çok sık kullanılan 'yoğun, kalabalık' anlamı eksik."
+  ],
+  "fix_tr": [
+   "meşgul",
+   "yoğun",
+   "işlek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-cheap",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-clean",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "temizlemek"
+    ],
+    "example_en": "I need to clean my room.",
+    "example_tr": "Odamı temizlemem gerek."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-dangerous",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-empty",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "boşaltmak"
+    ],
+    "example_en": "Please empty the trash.",
+    "example_tr": "Lütfen çöpü boşalt."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-famous",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-friendly",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'arkadaş canlısı' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-heavy",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-hungry",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-quiet",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-tired",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-useful",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-angry",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-strange",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-healthy",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-lucky",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-journey",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-advice",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-weather",
+  "verdict": "fix",
+  "issues": [
+   "Tek başına en yaygın karşılığı 'hava'dır (örnek cümlede olduğu gibi)."
+  ],
+  "fix_tr": [
+   "hava",
+   "hava durumu"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-neighbor",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-ticket",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-future",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "adj",
+    "tr": [
+     "gelecek",
+     "müstakbel"
+    ],
+    "example_en": "What are your future plans?",
+    "example_tr": "Gelecek planların neler?"
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-money",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-gift",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-mistake",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: İngilizcede 'Everyone makes mistakes' kullanımı daha doğaldır."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-habit",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-price",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-reason",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-village",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-often",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'İşe sık sık yürüyerek giderim' daha doğal bir Türkçe olurdu."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-already",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-almost",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "a2-together",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-reliable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-obvious",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-achieve",
+  "verdict": "fix",
+  "issues": [
+   "Örnekteki yaygın 'ulaşmak, elde etmek' anlamı tr listesinde eksik."
+  ],
+  "fix_tr": [
+   "başarmak",
+   "ulaşmak",
+   "elde etmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-ancient",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-avoid",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'Şekerden uzak durmaya çalış' daha doğal bir kullanım olur."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-compare",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-complain",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-develop",
+  "verdict": "fix",
+  "issues": [
+   "Geçişsiz yaygın anlamı olan 'gelişmek' tr listesinde eksik."
+  ],
+  "fix_tr": [
+   "geliştirmek",
+   "gelişmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-discover",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-encourage",
+  "verdict": "fix",
+  "issues": [
+   "Çok yaygın kullanılan 'teşvik etmek' anlamı eksik."
+  ],
+  "fix_tr": [
+   "teşvik etmek",
+   "cesaretlendirmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-explain",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-improve",
+  "verdict": "fix",
+  "issues": [
+   "Geçişsiz anlamı olan 'gelişmek, iyiye gitmek' eksik."
+  ],
+  "fix_tr": [
+   "geliştirmek",
+   "gelişmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-include",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-increase",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "artış"
+    ],
+    "example_en": "There is an increase in sales.",
+    "example_tr": "Satışlarda bir artış var."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-manage",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-mention",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-notice",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "duyuru",
+     "ilan"
+    ],
+    "example_en": "Read the notice on the wall.",
+    "example_tr": "Duvardaki duyuruyu oku."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-offer",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "teklif"
+    ],
+    "example_en": "He accepted the job offer.",
+    "example_tr": "İş teklifini kabul etti."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-protect",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-realize",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-reduce",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-refuse",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-replace",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-succeed",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-suggest",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-support",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "destek"
+    ],
+    "example_en": "Thank you for your support.",
+    "example_tr": "Desteğin için teşekkürler."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-apologize",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-afford",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'maddi gücü yetmek' anlamı daha net ifade eder."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-argue",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-accurate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-available",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: Örnek cümledeki 'boş' anlamı veya tr'deki 'müsait' eşleştirilebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-aware",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-confident",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-curious",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-efficient",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-familiar",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-honest",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-necessary",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-patient",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "hasta"
+    ],
+    "example_en": "The doctor saw the patient.",
+    "example_tr": "Doktor hastayı gördü."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-polite",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-proud",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-similar",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-suitable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-various",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-opportunity",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-advantage",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-attitude",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-challenge",
+  "verdict": "fix",
+  "issues": [
+   "Çok yaygın olan 'meydan okuma' anlamı eksik."
+  ],
+  "fix_tr": [
+   "zorluk",
+   "meydan okuma"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "meydan okumak"
+    ],
+    "example_en": "He challenged me to a race.",
+    "example_tr": "Yarış için bana meydan okudu."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-decision",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-environment",
+  "verdict": "fix",
+  "issues": [
+   "Çok yaygın kullanılan 'ortam' anlamı eksik."
+  ],
+  "fix_tr": [
+   "çevre",
+   "ortam"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-experience",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "deneyimlemek",
+     "yaşamak"
+    ],
+    "example_en": "Everyone experiences stress.",
+    "example_tr": "Herkes stres yaşar."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-knowledge",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-purpose",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-skill",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-solution",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-success",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-argument",
+  "verdict": "fix",
+  "issues": [
+   "Önemli ve yaygın 'argüman, sav' anlamı eksik; örnek çeviride 'Tartıştılar' daha doğal."
+  ],
+  "fix_tr": [
+   "tartışma",
+   "argüman",
+   "sav"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Aralarında bir tartışma geçti.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-community",
+  "verdict": "fix",
+  "issues": [
+   "Yaygın 'toplum, halk, camia' anlamı eksik."
+  ],
+  "fix_tr": [
+   "topluluk",
+   "toplum"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-recently",
+  "verdict": "fix",
+  "issues": [
+   "Tek seferlik geçmiş eylemlerde 'son zamanlarda' yerine 'yakın zamanda / geçenlerde' denir."
+  ],
+  "fix_tr": [
+   "son zamanlarda",
+   "yakın zamanda"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Buraya yakın zamanda taşındım.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b1-probably",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-reluctant",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-hesitate",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: Örnekte geçen 'çekinmek' anlamı tr listesine eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-significant",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-consequence",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-abandon",
+  "verdict": "fix",
+  "issues": [
+   "Plan, fikir vb. için çok yaygın olan 'vazgeçmek, bırakmak' anlamı eksik."
+  ],
+  "fix_tr": [
+   "terk etmek",
+   "vazgeçmek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-acquire",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-adapt",
+  "verdict": "fix",
+  "issues": [
+   "Geçişli 'uyarlamak' anlamı eksik."
+  ],
+  "fix_tr": [
+   "uyum sağlamak",
+   "uyarlamak"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-anticipate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-assume",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: Sorumluluk/rol için 'üstlenmek' anlamı da B2'de yaygındır."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-attempt",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "girişim",
+     "deneme"
+    ],
+    "example_en": "She passed on her first attempt.",
+    "example_tr": "İlk denemesinde geçti."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-claim",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "iddia",
+     "talep"
+    ],
+    "example_en": "His claim was false.",
+    "example_tr": "İddiası asılsızdı."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-concern",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'Güvenlik öncelikli endişemiz' veya tr'ye 'mesele, ilgi' eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "endişelendirmek",
+     "ilgilendirmek"
+    ],
+    "example_en": "This issue concerns everyone.",
+    "example_tr": "Bu konu herkesi ilgilendiriyor."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-consist",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-convince",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-decline",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "düşüş",
+     "gerileme"
+    ],
+    "example_en": "There is a decline in sales.",
+    "example_tr": "Satışlarda düşüş var."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-demonstrate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-emphasize",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-enhance",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-establish",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'belirlemek, ortaya koymak' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-evaluate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-ignore",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-indicate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-maintain",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'bakım yapmak' ve 'iddia etmek' anlamları da yaygındır."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-obtain",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-persuade",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-pursue",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'sürdürmek, takip etmek' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-require",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-reveal",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'açıklamak, ifşa etmek' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-tend",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-undergo",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-adequate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-apparent",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-considerable",
+  "verdict": "fix",
+  "issues": [
+   "'Önemli ölçüde' zarftır; sıfat olarak 'hatırı sayılır, önemli, büyük' olmalı."
+  ],
+  "fix_tr": [
+   "hatırı sayılır",
+   "önemli"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Hatırı sayılır bir tutara mal oluyor.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-crucial",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-essential",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'elzem, şart' anlamı kelimenin gücünü daha iyi yansıtır."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-evident",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-inevitable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-reasonable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-sufficient",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-vast",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-vulnerable",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-anxious",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-genuine",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-rapid",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-approach",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "yaklaşmak"
+    ],
+    "example_en": "Winter is approaching.",
+    "example_tr": "Kış yaklaşıyor."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-assessment",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-evidence",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-feature",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "yer vermek",
+     "içermek"
+    ],
+    "example_en": "The film features a famous actor.",
+    "example_tr": "Filmde ünlü bir oyuncu yer alıyor."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-impact",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "etkilemek"
+    ],
+    "example_en": "The storm impacted flights.",
+    "example_tr": "Fırtına uçuşları etkiledi."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-outcome",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-priority",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-resource",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-strategy",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-tendency",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-threat",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-burden",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-shortage",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-eventually",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-merely",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "b2-nevertheless",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-ambiguous",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-arbitrary",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-coherent",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-comprehensive",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-explicit",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-feasible",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-inherent",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-meticulous",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-plausible",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-profound",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-redundant",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-subtle",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-tedious",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-undermine",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'zayıflatmak, sarsmak' anlamı da eklenebilir ('güveni sarsar' daha doğaldır)."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-alleviate",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'Bu, ağrıyı hafifletecek' (virgül ve 'ağrı' seçimi) daha doğal olur."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-compensate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-deteriorate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-exacerbate",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'kötüleştirmek, ağırlaştırmak' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-facilitate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-hinder",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'zorlaştırmak, ket vurmak' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-mitigate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-scrutinize",
+  "verdict": "fix",
+  "issues": [
+   "Sadece 'incelemek' yetersizdir; 'titizlikle/dikkatle incelemek, didik didik etmek' demektir."
+  ],
+  "fix_tr": [
+   "titizlikle incelemek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Her ayrıntıyı titizlikle incelerler.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-advocate",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "savunucu"
+    ],
+    "example_en": "She is an advocate for peace.",
+    "example_tr": "O bir barış savunucusu."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-discrepancy",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'uyuşmazlık, çelişki' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-dilemma",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-hypothesis",
+  "verdict": "ok",
+  "issues": [
+   "Öneri: 'varsayım' anlamı da eklenebilir."
+  ],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-paradigm",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-scarcity",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-consensus",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-predominantly",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ },
+ {
+  "id": "c1-inevitably",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high"
+ }
+]

@@ -54,6 +54,12 @@ extension WatchSession: WCSessionDelegate {
         Task { @MainActor in self.receive(data) }
     }
 
+    /// Sent while the watch app is open, for an immediate update.
+    nonisolated func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
+        guard let data = message[WatchKeys.payload] as? Data else { return }
+        Task { @MainActor in self.receive(data) }
+    }
+
     /// Complication updates from the phone arrive as user info.
     nonisolated func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
         guard let data = userInfo[WatchKeys.payload] as? Data else { return }
