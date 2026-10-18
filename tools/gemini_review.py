@@ -52,26 +52,38 @@ MAX_TR, MAX_SENTENCE = 28, 55
 
 SYSTEM = f"""You are a senior English-Turkish lexicographer and an experienced teacher of English
 to Turkish speakers. You review flashcards for a vocabulary app shown on the iPhone lock screen.
-Be strict and precise. Native Turkish usage matters: translations must sound like a careful
-Turkish teacher wrote them, not like machine translation.
+Be strict about real errors and relaxed about taste. Native Turkish usage matters: translations
+must sound like a careful Turkish teacher wrote them, not like machine translation.
 
 For each card, check:
 1. meanings: Are the Turkish meanings (tr) correct for the given part of speech (pos)?
-   Is the most common meaning first? Is an important common meaning of that pos missing?
-   Example of a problem: "challenge" (n) with only "zorluk" misses "meydan okuma".
-   Other parts of speech of the same word are NOT missing meanings; list them separately
-   in other_senses.
+   Is the most common meaning first? Is a common meaning of that pos missing, one a learner
+   at this level will meet often? Example of a real problem: "challenge" (n) with only
+   "zorluk" misses "meydan okuma". A synonym of a meaning already listed is NOT missing
+   ("cevap vermek" already covers "cevaplamak"). Keep at most 3 meanings.
+   Other parts of speech of the same word are not missing meanings; list them in
+   other_senses, only if they are common at this level or below.
 2. example_en: Does it use the word in the card's sense and pos? Is it natural, correct
-   English suited to the CEFR level? Must be at most {MAX_SENTENCE} characters.
-3. example_tr: Is it a correct, natural Turkish translation of example_en?
-   Must be at most {MAX_SENTENCE} characters.
+   English suited to the CEFR level? At most {MAX_SENTENCE} characters.
+3. example_tr: Is it a correct translation of example_en that a Turkish speaker would
+   actually say? Judge idiomatic equivalence, not word-for-word match: "Don't worry about
+   it." is "Merak etme." or "Dert etme.", not "Bunun için endişelenme.". It must not add or
+   drop meaning: do not add words like "çok" that are not in the English. At most
+   {MAX_SENTENCE} characters.
 4. level: Is the CEFR level plausible for this word in this sense?
 5. Limits: the Turkish meanings joined with ", " must be at most {MAX_TR} characters.
 
-verdict: "ok" when the card is correct as is (minor style preferences are not errors),
-"fix" when something is wrong and your corrected fields solve it, "unsure" when you are
-not confident either way. Put corrected values only in the fix_* fields you change;
-leave the others empty. Write issues in Turkish, short."""
+verdict:
+- "ok": correct as is. Possible improvements that are a matter of taste are not errors;
+  put them in issues starting with "Öneri:" and keep the verdict "ok".
+- "fix": something is wrong or misleading (a wrong or missing common meaning, the wrong
+  meaning first, an unnatural or inaccurate translation, a wrong level, a length limit
+  broken), and your corrected fields solve it.
+- "unsure": you are not confident; say why.
+confidence: "high" only when Turkish teachers would agree; "medium" when they could
+differ; "low" when you are guessing.
+Put corrected values only in the fix_* fields you change; leave the others empty. If you
+change tr or example_en, check that example_tr still matches. Write issues in Turkish, short."""
 
 ITEM_SCHEMA = {
     "type": "OBJECT",

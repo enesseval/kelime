@@ -1,0 +1,636 @@
+{
+ "a2-borrow": {
+  "id": "a2-borrow",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "cca0d43eac866eee",
+  "_model": "aistudio-chat"
+ },
+ "a2-answer": {
+  "id": "a2-answer",
+  "verdict": "fix",
+  "issues": [
+   "Örnek cümlede kullanılan 'cevaplamak' anlamı tr listesine eklenmeli."
+  ],
+  "fix_tr": [
+   "cevap vermek",
+   "cevaplamak"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "cevap",
+     "yanıt"
+    ],
+    "example_en": "I don't know the answer.",
+    "example_tr": "Cevabı bilmiyorum."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "99c136ca6f013eac",
+  "_model": "aistudio-chat"
+ },
+ "a2-arrive": {
+  "id": "a2-arrive",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "2251ab0e41674c47",
+  "_model": "aistudio-chat"
+ },
+ "a2-believe": {
+  "id": "a2-believe",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "4ad153437adf960b",
+  "_model": "aistudio-chat"
+ },
+ "a2-carry": {
+  "id": "a2-carry",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "f16fd2971182f960",
+  "_model": "aistudio-chat"
+ },
+ "a2-choose": {
+  "id": "a2-choose",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "f7f99a87ef1bb49c",
+  "_model": "aistudio-chat"
+ },
+ "a2-decide": {
+  "id": "a2-decide",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "d3bb7519f9affdfc",
+  "_model": "aistudio-chat"
+ },
+ "a2-forget": {
+  "id": "a2-forget",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "653bec4c0d4216e5",
+  "_model": "aistudio-chat"
+ },
+ "a2-invite": {
+  "id": "a2-invite",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "220456258b2e7475",
+  "_model": "aistudio-chat"
+ },
+ "a2-laugh": {
+  "id": "a2-laugh",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "gülüş",
+     "kahkaha"
+    ],
+    "example_en": "She has a nice laugh.",
+    "example_tr": "Güzel bir gülüşü var."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "030c057e142f441c",
+  "_model": "aistudio-chat"
+ },
+ "a2-lose": {
+  "id": "a2-lose",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "8c3edf2b4e60d774",
+  "_model": "aistudio-chat"
+ },
+ "a2-prefer": {
+  "id": "a2-prefer",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "508f72f91bb0b21e",
+  "_model": "aistudio-chat"
+ },
+ "a2-remember": {
+  "id": "a2-remember",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "134ee7ba5d556e08",
+  "_model": "aistudio-chat"
+ },
+ "a2-repair": {
+  "id": "a2-repair",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "tamir",
+     "onarım"
+    ],
+    "example_en": "The bridge is under repair.",
+    "example_tr": "Köprü tamirde."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "2a95edbaa24280be",
+  "_model": "aistudio-chat"
+ },
+ "a2-send": {
+  "id": "a2-send",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "0851b7e37c633072",
+  "_model": "aistudio-chat"
+ },
+ "a2-travel": {
+  "id": "a2-travel",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "seyahat",
+     "yolculuk"
+    ],
+    "example_en": "I love air travel.",
+    "example_tr": "Hava yolculuğunu severim."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "5594b667817f62b4",
+  "_model": "aistudio-chat"
+ },
+ "a2-wait": {
+  "id": "a2-wait",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "bekleyiş",
+     "bekleme"
+    ],
+    "example_en": "It was a long wait.",
+    "example_tr": "Uzun bir bekleyişti."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "7008bface3a359f2",
+  "_model": "aistudio-chat"
+ },
+ "a2-worry": {
+  "id": "a2-worry",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "n",
+    "tr": [
+     "endişe",
+     "kaygı"
+    ],
+    "example_en": "Money is a big worry.",
+    "example_tr": "Para büyük bir endişe kaynağı."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "a62e792a8a454db3",
+  "_model": "aistudio-chat"
+ },
+ "a2-busy": {
+  "id": "a2-busy",
+  "verdict": "fix",
+  "issues": [
+   "Mekanlar ve trafik için çok sık kullanılan 'yoğun/kalabalık' anlamı eksik."
+  ],
+  "fix_tr": [
+   "meşgul",
+   "yoğun",
+   "işlek"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "a1cfea02cfcf3be6",
+  "_model": "aistudio-chat"
+ },
+ "a2-cheap": {
+  "id": "a2-cheap",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "fd1b697ca4ed9457",
+  "_model": "aistudio-chat"
+ },
+ "a2-clean": {
+  "id": "a2-clean",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "temizlemek"
+    ],
+    "example_en": "I need to clean my room.",
+    "example_tr": "Odamı temizlemem gerek."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "926e39841f58453b",
+  "_model": "aistudio-chat"
+ },
+ "a2-dangerous": {
+  "id": "a2-dangerous",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "aa3fa04c10779ac1",
+  "_model": "aistudio-chat"
+ },
+ "a2-empty": {
+  "id": "a2-empty",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "v",
+    "tr": [
+     "boşaltmak"
+    ],
+    "example_en": "Please empty the trash.",
+    "example_tr": "Lütfen çöpü boşalt."
+   }
+  ],
+  "confidence": "high",
+  "_hash": "eba262f9906e38e1",
+  "_model": "aistudio-chat"
+ },
+ "a2-famous": {
+  "id": "a2-famous",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "57d17cea6e55157d",
+  "_model": "aistudio-chat"
+ },
+ "a2-friendly": {
+  "id": "a2-friendly",
+  "verdict": "fix",
+  "issues": [
+   "En yaygın ve temel karşılık olan 'arkadaş canlısı' ilk sırada yer almalı."
+  ],
+  "fix_tr": [
+   "arkadaş canlısı",
+   "samimi"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "Komşularımız çok samimi.",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "7c798881aaea9998",
+  "_model": "aistudio-chat"
+ },
+ "a2-heavy": {
+  "id": "a2-heavy",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "bf8b5dc8f79783b3",
+  "_model": "aistudio-chat"
+ },
+ "a2-hungry": {
+  "id": "a2-hungry",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "aac8c18668ea69bb",
+  "_model": "aistudio-chat"
+ },
+ "a2-quiet": {
+  "id": "a2-quiet",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "025940dc80bb989c",
+  "_model": "aistudio-chat"
+ },
+ "a2-tired": {
+  "id": "a2-tired",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "2ce2f4bce3afdbcd",
+  "_model": "aistudio-chat"
+ },
+ "a2-useful": {
+  "id": "a2-useful",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "bff5c408a026ba4d",
+  "_model": "aistudio-chat"
+ },
+ "a2-angry": {
+  "id": "a2-angry",
+  "verdict": "fix",
+  "issues": [
+   "Çok yaygın kullanılan 'öfkeli' anlamı da eklenmeli."
+  ],
+  "fix_tr": [
+   "kızgın",
+   "öfkeli"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "3391e1a7079aee03",
+  "_model": "aistudio-chat"
+ },
+ "a2-strange": {
+  "id": "a2-strange",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "621d7471612103d0",
+  "_model": "aistudio-chat"
+ },
+ "a2-healthy": {
+  "id": "a2-healthy",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "4f12b3ebbebe5833",
+  "_model": "aistudio-chat"
+ },
+ "a2-lucky": {
+  "id": "a2-lucky",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "b071e1f7e23388a5",
+  "_model": "aistudio-chat"
+ },
+ "a2-journey": {
+  "id": "a2-journey",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "2430667de4bd9f8c",
+  "_model": "aistudio-chat"
+ },
+ "a2-advice": {
+  "id": "a2-advice",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "6e89d6e6a5f6e95c",
+  "_model": "aistudio-chat"
+ },
+ "a2-weather": {
+  "id": "a2-weather",
+  "verdict": "fix",
+  "issues": [
+   "Kelimenin tek başına en yaygın karşılığı 'hava'dır (örnek cümlede olduğu gibi)."
+  ],
+  "fix_tr": [
+   "hava",
+   "hava durumu"
+  ],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "f9c151bf04618d16",
+  "_model": "aistudio-chat"
+ },
+ "a2-neighbor": {
+  "id": "a2-neighbor",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "af7c854c2ad70d6e",
+  "_model": "aistudio-chat"
+ },
+ "a2-ticket": {
+  "id": "a2-ticket",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [],
+  "confidence": "high",
+  "_hash": "a12d27bd7feb9dff",
+  "_model": "aistudio-chat"
+ },
+ "a2-future": {
+  "id": "a2-future",
+  "verdict": "ok",
+  "issues": [],
+  "fix_tr": [],
+  "fix_example_en": "",
+  "fix_example_tr": "",
+  "fix_level": "",
+  "other_senses": [
+   {
+    "pos": "adj",
+    "tr": [
+     "gelecek",
+     "müstakbel"
+    ],
+    "example_en": "What are your future plans?",
+    "example_tr": "Gelecek planların neler?"
+   }
+  ],
+  "confidence": "high",
+  "_hash": "ad813e87807d57a8",
+  "_model": "aistudio-chat"
+ }
+}
