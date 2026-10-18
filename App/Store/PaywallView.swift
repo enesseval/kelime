@@ -199,6 +199,6 @@ struct PaywallView: View {
 
 /// Legal links. Placeholders until the real pages exist.
 enum Legal {
-    static let termsURL = URL(string: "https://example.com/kelime/kosullar")!
-    static let privacyURL = URL(string: "https://example.com/kelime/gizlilik")!
+    static let termsURL = URL(string: "https://enesseval.github.io/kelime/kosullar.html")!
+    static let privacyURL = URL(string: "https://enesseval.github.io/kelime/gizlilik.html")!
 }
