@@ -230,8 +230,9 @@ def export_prompts(cards, size, out_dir):
         old.unlink()
     batches = [cards[i: i + size] for i in range(0, len(cards), size)]
     for n, batch in enumerate(batches, 1):
-        text = (SYSTEM + "\n\n" + OUTPUT_FORMAT + "\n\nCards:\n"
-                + json.dumps(payload_of(batch), ensure_ascii=False, indent=1) + "\n")
+        # One card per line keeps the prompt short enough to copy from a phone.
+        lines = ",\n".join(json.dumps(c, ensure_ascii=False, separators=(",", ":")) for c in payload_of(batch))
+        text = SYSTEM + "\n\n" + OUTPUT_FORMAT + "\n\nCards:\n[\n" + lines + "\n]\n"
         (prompts / f"batch-{n:02d}.md").write_text(text, encoding="utf-8")
     print(f"{len(batches)} prompts in {prompts.relative_to(ROOT)}; save each answer as "
           f"{responses.relative_to(ROOT)}/batch-NN.json")
