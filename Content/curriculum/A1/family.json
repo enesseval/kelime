@@ -1,0 +1,611 @@
+{
+ "id": "a1-family",
+ "level": "A1",
+ "title": "Ailem",
+ "placement": "any",
+ "goal": "Ailesini tanıtır, kimin kim olduğunu söyler, yaş sorar ve söyler, ailesini kısaca tarif eder.",
+ "names": [
+  "Selin",
+  "Turkey"
+ ],
+ "words": [
+  {
+   "id": "a1-family",
+   "word": "family",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "aile"
+     ],
+     "example_en": "I have a big family.",
+     "example_tr": "Büyük bir ailem var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-mother",
+   "word": "mother",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "anne"
+     ],
+     "example_en": "My mother is a good woman.",
+     "example_tr": "Annem iyi bir kadın."
+    }
+   ],
+   "note": "Günlük dilde 'mom' veya 'mum' çok yaygındır."
+  },
+  {
+   "id": "a1-father",
+   "word": "father",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "baba"
+     ],
+     "example_en": "Where is your father?",
+     "example_tr": "Baban nerede?"
+    }
+   ],
+   "note": "Günlük dilde 'dad' çok yaygındır."
+  },
+  {
+   "id": "a1-parents",
+   "word": "parents",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "anne baba",
+      "ebeveyn"
+     ],
+     "example_en": "My parents live here.",
+     "example_tr": "Annemle babam burada yaşıyor."
+    }
+   ],
+   "note": "Tekili 'parent' (anne veya baba)."
+  },
+  {
+   "id": "a1-brother",
+   "word": "brother",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "erkek kardeş",
+      "abi"
+     ],
+     "example_en": "I have two brothers.",
+     "example_tr": "İki erkek kardeşim var."
+    }
+   ],
+   "note": "İngilizcede abi ve erkek kardeş için aynı kelime kullanılır."
+  },
+  {
+   "id": "a1-sister",
+   "word": "sister",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "kız kardeş",
+      "abla"
+     ],
+     "example_en": "My sister is twenty.",
+     "example_tr": "Kız kardeşim yirmi yaşında."
+    }
+   ],
+   "note": "İngilizcede abla ve kız kardeş için aynı kelime kullanılır."
+  },
+  {
+   "id": "a1-son",
+   "word": "son",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "oğul"
+     ],
+     "example_en": "They have one son.",
+     "example_tr": "Bir oğulları var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-daughter",
+   "word": "daughter",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "kız",
+      "kız evlat"
+     ],
+     "example_en": "Her daughter is seven.",
+     "example_tr": "Kızı yedi yaşında."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-husband",
+   "word": "husband",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "eş",
+      "koca"
+     ],
+     "example_en": "This is my husband.",
+     "example_tr": "Bu benim eşim."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-wife",
+   "word": "wife",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "eş",
+      "hanım"
+     ],
+     "example_en": "His wife is from Turkey.",
+     "example_tr": "Eşi Türkiyeli."
+    }
+   ],
+   "note": "Çoğulu düzensizdir: 'wives'."
+  },
+  {
+   "id": "a1-baby",
+   "word": "baby",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "bebek"
+     ],
+     "example_en": "The baby is very small.",
+     "example_tr": "Bebek çok küçük."
+    }
+   ],
+   "note": "Çoğulu: 'babies'."
+  },
+  {
+   "id": "a1-grandmother",
+   "word": "grandmother",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "büyükanne"
+     ],
+     "example_en": "My grandmother is old.",
+     "example_tr": "Büyükannem yaşlı."
+    }
+   ],
+   "note": "Türkçedeki anneanne/babaanne ayrımı yok; ikisi de grandmother. Günlük dilde 'grandma'."
+  },
+  {
+   "id": "a1-grandfather",
+   "word": "grandfather",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "büyükbaba",
+      "dede"
+     ],
+     "example_en": "We see our grandfather today.",
+     "example_tr": "Bugün dedemizi görüyoruz."
+    }
+   ],
+   "note": "Dedenin anne ya da baba tarafı ayrılmaz. Günlük dilde 'grandpa'."
+  },
+  {
+   "id": "a1-love",
+   "word": "love",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "sevmek",
+      "çok sevmek"
+     ],
+     "example_en": "I love my mother and father.",
+     "example_tr": "Annemi ve babamı çok seviyorum."
+    },
+    {
+     "pos": "n",
+     "tr": [
+      "sevgi",
+      "aşk"
+     ],
+     "example_en": "Children need love.",
+     "example_tr": "Çocukların sevgiye ihtiyacı var."
+    }
+   ],
+   "note": "'like'tan güçlüdür. 'I love you.' = Seni seviyorum."
+  },
+  {
+   "id": "a1-young",
+   "word": "young",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "genç"
+     ],
+     "example_en": "Your parents are very young.",
+     "example_tr": "Annenle baban çok genç."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-tall",
+   "word": "tall",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "uzun boylu",
+      "uzun"
+     ],
+     "example_en": "My brother is very tall.",
+     "example_tr": "Abim çok uzun boylu."
+    }
+   ],
+   "note": "İnsan, ağaç ve bina boyu için 'long' değil 'tall' kullanılır."
+  },
+  {
+   "id": "a1-beautiful",
+   "word": "beautiful",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "güzel"
+     ],
+     "example_en": "You have a beautiful family.",
+     "example_tr": "Güzel bir ailen var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-year",
+   "word": "year",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "yıl",
+      "sene"
+     ],
+     "example_en": "My son is three years old.",
+     "example_tr": "Oğlum üç yaşında."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-twenty",
+   "word": "twenty",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "yirmi"
+     ],
+     "example_en": "She is twenty years old.",
+     "example_tr": "O yirmi yaşında."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-thirty",
+   "word": "thirty",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "otuz"
+     ],
+     "example_en": "My brother is thirty now.",
+     "example_tr": "Abim şimdi otuz yaşında."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-forty",
+   "word": "forty",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "kırk"
+     ],
+     "example_en": "My mother is forty.",
+     "example_tr": "Annem kırk yaşında."
+    }
+   ],
+   "note": "Yazımına dikkat: 'fourty' değil, 'forty'."
+  },
+  {
+   "id": "a1-fifty",
+   "word": "fifty",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "elli"
+     ],
+     "example_en": "My father is fifty years old.",
+     "example_tr": "Babam elli yaşında."
+    }
+   ],
+   "note": ""
+  }
+ ],
+ "phrases": [
+  {
+   "id": "a1-p-how-old",
+   "text": "How old are you?",
+   "tr": "Kaç yaşındasın?",
+   "example_en": "How old are you? I'm twenty.",
+   "example_tr": "Kaç yaşındasın? Yirmi yaşındayım.",
+   "note": "İngilizcede yaş 'have' ile değil, 'be' (am/is/are) ile söylenir."
+  },
+  {
+   "id": "a1-p-years-old",
+   "text": "I'm … years old.",
+   "tr": "… yaşındayım.",
+   "example_en": "I'm thirty years old.",
+   "example_tr": "Otuz yaşındayım.",
+   "note": "Sadece sayıyı söylemek de yeterlidir: 'I'm thirty.'"
+  },
+  {
+   "id": "a1-p-brothers-or-sisters",
+   "text": "Any brothers or sisters?",
+   "tr": "Kardeşin var mı?",
+   "example_en": "Any brothers or sisters? Yes, one brother.",
+   "example_tr": "Kardeşin var mı? Evet, bir erkek kardeşim var.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-this-is-my",
+   "text": "This is my…",
+   "tr": "Bu benim…",
+   "example_en": "This is my sister, Selin.",
+   "example_tr": "Bu kız kardeşim Selin.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-love-family",
+   "text": "I love my family.",
+   "tr": "Ailemi çok seviyorum.",
+   "example_en": "We are happy. I love my family.",
+   "example_tr": "Mutluyuz. Ailemi çok seviyorum.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-looks-like",
+   "text": "She looks like her mother.",
+   "tr": "Annesine benziyor.",
+   "example_en": "She is tall. She looks like her mother.",
+   "example_tr": "Uzun boylu. Annesine benziyor.",
+   "note": ""
+  }
+ ],
+ "stories": [
+  {
+   "id": "a1-family-1",
+   "title": "Yeni arkadaş",
+   "names": [
+    "Mert",
+    "Emma",
+    "London"
+   ],
+   "lines": [
+    {
+     "en": "Hello! My name is Mert. What's your name?",
+     "tr": "Merhaba! Benim adım Mert. Senin adın ne?"
+    },
+    {
+     "en": "Hi Mert! I'm Emma. Nice to meet you.",
+     "tr": "Selam Mert! Ben Emma. Tanıştığımıza memnun oldum."
+    },
+    {
+     "en": "Where are you from, Emma?",
+     "tr": "Nerelisin, Emma?"
+    },
+    {
+     "en": "I'm from London. How old are you?",
+     "tr": "Londralıyım. Kaç yaşındasın?"
+    },
+    {
+     "en": "I'm twenty years old. And you?",
+     "tr": "Yirmi yaşındayım. Ya sen?"
+    },
+    {
+     "en": "I'm twenty, too! Any brothers or sisters?",
+     "tr": "Ben de yirmi yaşındayım! Kardeşin var mı?"
+    },
+    {
+     "en": "Yes, I have one brother and two sisters.",
+     "tr": "Evet, bir erkek ve iki kız kardeşim var."
+    }
+   ]
+  },
+  {
+   "id": "a1-family-2",
+   "title": "Kerem ve ailesi",
+   "names": [
+    "Kerem",
+    "Zeynep",
+    "Ali",
+    "Defne",
+    "İzmir"
+   ],
+   "lines": [
+    {
+     "en": "Kerem and his wife Zeynep live in İzmir.",
+     "tr": "Kerem ve eşi Zeynep İzmir'de yaşıyor."
+    },
+    {
+     "en": "Kerem is forty, and Zeynep is thirty-eight.",
+     "tr": "Kerem kırk, Zeynep otuz sekiz yaşında."
+    },
+    {
+     "en": "They have a son, Ali, and a baby daughter, Defne.",
+     "tr": "Ali adında bir oğulları ve Defne adında bir bebekleri var."
+    },
+    {
+     "en": "Ali is six years old. He is very tall.",
+     "tr": "Ali altı yaşında. Çok uzun boylu."
+    },
+    {
+     "en": "The baby is one year old. She is very beautiful.",
+     "tr": "Bebek bir yaşında. Çok güzel."
+    },
+    {
+     "en": "She looks like her mother.",
+     "tr": "Annesine benziyor."
+    },
+    {
+     "en": "Kerem is very happy. He loves his family.",
+     "tr": "Kerem çok mutlu. Ailesini çok seviyor."
+    }
+   ]
+  },
+  {
+   "id": "a1-family-3",
+   "title": "Tanışma",
+   "names": [
+    "Seda",
+    "Burak",
+    "Jack"
+   ],
+   "lines": [
+    {
+     "en": "Hi Jack! How are you today?",
+     "tr": "Selam Jack! Bugün nasılsın?"
+    },
+    {
+     "en": "I'm fine, thanks, Seda. Who is this tall man?",
+     "tr": "İyiyim, teşekkürler Seda. Bu uzun boylu adam kim?"
+    },
+    {
+     "en": "This is my husband, Burak.",
+     "tr": "Bu eşim, Burak."
+    },
+    {
+     "en": "Hello, Burak! Nice to meet you.",
+     "tr": "Merhaba Burak! Tanıştığımıza memnun oldum."
+    },
+    {
+     "en": "Nice to meet you, too, Jack. Do you have children?",
+     "tr": "Ben de memnun oldum, Jack. Çocuğunuz var mı?"
+    },
+    {
+     "en": "Yes, my wife and I have two daughters.",
+     "tr": "Evet, eşimle iki kızımız var."
+    },
+    {
+     "en": "That's nice! We have a small baby.",
+     "tr": "Ne güzel! Bizim küçük bir bebeğimiz var."
+    }
+   ]
+  },
+  {
+   "id": "a1-family-4",
+   "title": "Büyük aile",
+   "names": [
+    "Bora",
+    "Ankara"
+   ],
+   "lines": [
+    {
+     "en": "Bora has a big family in Ankara.",
+     "tr": "Bora'nın Ankara'da büyük bir ailesi var."
+    },
+    {
+     "en": "He lives with his parents, his brother, and his grandmother.",
+     "tr": "Annesi, babası, kardeşi ve büyükannesiyle yaşıyor."
+    },
+    {
+     "en": "His father is fifty-two, and his mother is forty-nine.",
+     "tr": "Babası elli iki, annesi kırk dokuz yaşında."
+    },
+    {
+     "en": "His parents work, but his grandmother doesn't work.",
+     "tr": "Annesiyle babası çalışıyor ama büyükannesi çalışmıyor."
+    },
+    {
+     "en": "His grandmother and grandfather are old, but they are very happy.",
+     "tr": "Büyükannesi ve büyükbabası yaşlı ama çok mutlular."
+    },
+    {
+     "en": "Today, the family sits and eats.",
+     "tr": "Bugün aile oturmuş, yemek yiyor."
+    },
+    {
+     "en": "Bora is very happy. \"I love my family!\"",
+     "tr": "Bora çok mutlu. \"Ailemi çok seviyorum!\""
+    }
+   ]
+  },
+  {
+   "id": "a1-family-5",
+   "title": "Kız kardeşim",
+   "names": [
+    "Ece",
+    "Kate",
+    "Nil",
+    "English"
+   ],
+   "lines": [
+    {
+     "en": "Kate sees her friend Ece with a young woman.",
+     "tr": "Kate, arkadaşı Ece'yi genç bir kadınla görüyor."
+    },
+    {
+     "en": "Hello Ece! Is this your sister?",
+     "tr": "Merhaba Ece! Bu senin kız kardeşin mi?"
+    },
+    {
+     "en": "Yes! This is my sister, Nil.",
+     "tr": "Evet! Bu kız kardeşim Nil."
+    },
+    {
+     "en": "Hi Nil! You are very tall and beautiful.",
+     "tr": "Selam Nil! Çok uzun boylu ve güzelsin."
+    },
+    {
+     "en": "Thank you, Kate! How old are you?",
+     "tr": "Teşekkür ederim, Kate! Kaç yaşındasın?"
+    },
+    {
+     "en": "I'm thirty years old. And how old is Nil, Ece?",
+     "tr": "Otuz yaşındayım. Peki Nil kaç yaşında, Ece?"
+    },
+    {
+     "en": "She is twenty-three. She is young, and she speaks good English!",
+     "tr": "Yirmi üç yaşında. Genç ve iyi İngilizce konuşuyor!"
+    }
+   ]
+  }
+ ]
+}

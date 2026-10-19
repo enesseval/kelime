@@ -45,8 +45,13 @@ IRREGULAR = {
 }
 
 
+def lower(text):
+    """Lowercase that keeps Turkish İ intact (İzmir -> izmir, not i̇zmir)."""
+    return text.replace("İ", "I").lower()
+
+
 def tokens(text):
-    return re.findall(r"[^\W\d_]+(?:'[^\W\d_]+)?", text.lower())
+    return re.findall(r"[^\W\d_]+(?:'[^\W\d_]+)?", lower(text))
 
 
 def lemmas(word):
@@ -86,7 +91,7 @@ def check(level):
     problems, seen = [], {}
 
     for name, unit in units.items():
-        unit_names = {n.lower() for n in unit.get("names", [])}
+        unit_names = {t for n in unit.get("names", []) for t in tokens(n)}
         # The bridge unit comes last, so it may use the whole level.
         base = level_vocab if unit.get("placement") == "last" else core_vocab | vocabulary(unit)
         allowed = FUNCTION_WORDS | base | unit_names
@@ -130,7 +135,7 @@ def check(level):
             if bad := unknown(p["example_en"]):
                 problems.append(f"{name}: {p['id']} example uses {bad}: {p['example_en']}")
         for story in unit.get("stories", []):
-            names = {n.lower() for n in story.get("names", [])}
+            names = {t for n in story.get("names", []) for t in tokens(n)}
             for line in story["lines"]:
                 if bad := unknown(line["en"], names):
                     problems.append(f"{name}: story {story['id']} uses {bad}: {line['en']}")
