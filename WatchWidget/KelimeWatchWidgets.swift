@@ -64,6 +64,7 @@ struct ReviewRingComplication: Widget {
 
 struct WatchWordView: View {
     @Environment(\.widgetFamily) private var family
+    @Environment(\.isLuminanceReduced) private var wristDown
     let entry: WidgetSnapshot
 
     var body: some View {
@@ -77,17 +78,18 @@ struct WatchWordView: View {
         }
     }
 
-    /// The watch draws a small center and curves the label along the corner, so the word goes
-    /// in the label (system font, the only one that curves well) and the center keeps the
-    /// state dot: ○ new, ◐ struggling, ● learned.
+    /// The curved label has room for a few words only, and widgets can't scroll text. So the
+    /// corner shows the word while the wrist is down (the dimmed always-on face) and its
+    /// meaning when the wrist is raised: guess first, then look. The center keeps the state
+    /// dot: ○ new, ◐ struggling, ● learned.
     private var corner: some View {
         StateDot(entry.state, size: 14, color: .white)
             .widgetAccentable()
             .widgetLabel {
                 if let card = entry.card {
-                    Text("\(card.word) · \(card.primaryMeaning)")
+                    Text(wristDown ? card.word : card.primaryMeaning)
                 } else {
-                    Text("iPhone'da uygulamayı aç")
+                    Text("iPhone'u aç")
                 }
             }
             .containerBackground(for: .widget) { Color.clear }

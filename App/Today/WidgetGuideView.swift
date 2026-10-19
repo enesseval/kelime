@@ -6,6 +6,7 @@ struct WidgetGuideSteps: View {
     enum Place: String, CaseIterable {
         case lock = "Kilit ekranı"
         case home = "Ana ekran"
+        case watch = "Apple Watch"
 
         var steps: [String] {
             switch self {
@@ -13,6 +14,11 @@ struct WidgetGuideSteps: View {
                 ["Kilit ekranına basılı tut", "Özelleştir › Kilit Ekranı'na dokun", "Widget ekle'ye dokun", "Listeden Kelime Widget'ı seç"]
             case .home:
                 ["Ana ekranda boş bir yere basılı tut", "Sol üstteki Düzenle › Widget ekle'ye dokun", "Kelime Widget'ı ara", "Boyut seç ve Widget ekle'ye dokun"]
+            case .watch:
+                ["Saatte kadrana basılı tut, Düzenle'ye dokun",
+                 "Komplikasyonlar sayfasına kaydır, bir alana dokun",
+                 "Listeden Kelime'yi seç",
+                 "Köşede: bileğin aşağıdayken kelime görünür, bileğini kaldırınca anlamı. Önce tahmin et, sonra bak."]
             }
         }
     }

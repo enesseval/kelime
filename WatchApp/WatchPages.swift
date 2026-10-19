@@ -158,6 +158,13 @@ struct WatchUpcomingPage: View {
                 Text("Bugün \(payload.reviewed(on: LocalDate(now, calendar: .current))) / \(payload.dailyTarget) tekrar")
                     .font(KelimeFont.ui(13))
             }
+            Section {
+                Text("Köşe komplikasyonunda bileğin aşağıdayken kelime, kaldırınca anlamı görünür. Önce tahmin et, sonra bak.")
+                    .font(KelimeFont.ui(12))
+                    .foregroundStyle(Palette.ink2)
+            } header: {
+                Text("İpucu")
+            }
         }
     }
 }
