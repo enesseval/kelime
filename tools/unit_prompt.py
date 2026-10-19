@@ -61,8 +61,13 @@ VOCABULARY RULE
 - Core words: {core_words}
 - Core phrases: {core_phrases}
 - Inflected forms are fine (works, sitting, coffees, children).
+- Words of OTHER units are not allowed, however common: no tea or coffee outside the café
+  unit, no house outside the home unit, no family words outside the family unit.
+- No reporting verbs (says, asks, tells): write dialogue lines directly.
 - Names: list every person, city, country or language you use in the story's "names" (stories)
-  or the unit's "names" (card examples). Use varied Turkish and English first names.
+  or the unit's "names" (card examples), countries and languages too (Turkey, English).
+  Use varied Turkish and English first names, but not names that are also English words
+  (Can, May, Bill, Rose): learners read them as words.
 
 CARDS
 - senses: the meanings an A1-A2 learner meets, most common first, at most 3. A sense is one part
@@ -74,7 +79,9 @@ CARDS
   {GRAMMAR[spec["placement"]]}
 - example_tr: what a Turkish speaker actually says for example_en: idiomatic, not word for word
   ("I'm cold." is "Üşüyorum.", "Don't worry about it." is "Merak etme."). Nothing added, nothing
-  dropped. At most {MAX_SENTENCE} characters.
+  dropped: do not add what English leaves open (brother is "kardeş", not "abi", unless the
+  sentence says older; grandmother is "büyükanne", not "anneanne"). Avoid crude or dated words
+  ("karı"). At most {MAX_SENTENCE} characters.
 - note: optional, short Turkish, only for a real trap (irregular plural, false friend, a second
   meaning the learner will meet). Otherwise "".
 - Phrase cards: text at most {MAX_TEXT} characters (use "…" for the slot), tr at most {MAX_TR}
@@ -88,7 +95,8 @@ should use most of the unit's words and every phrase. The learner should finish 
 "I can read this".
 
 OUTPUT
-Answer with ONLY one JSON object, no text before or after, in exactly this shape (this is a
+Answer with ONLY one valid JSON object, no text before or after. Inside strings, write quotes
+as \\" or use ‘ ’. Use exactly this shape (this is a
 finished unit; copy its structure, not its content):
 {compact(example)}
 
