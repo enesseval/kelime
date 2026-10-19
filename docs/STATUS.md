@@ -117,9 +117,14 @@ Moving to the next level keeps earlier units started, so their struggling cards 
 keeping content, the purchase and the widget log, and sets A1 until onboarding picks a level.
 It runs once per `ProgressReset.epoch` at launch (epoch 1: everyone starts over for the unit
 model) and from Ayarlar › Baştan başla › İlerlemeyi sıfırla. Onboarding and Ayarlar offer only
-levels with units (`Curriculum.levels`; now A1), the others show "Yakında". A1 has its own 400
-daily puzzles (tools/build_puzzles.py --levels A1, single A-Z words only). Samples in
+levels with units (`Curriculum.levels`; now A1), the others show "Yakında". Samples in
 onboarding, settings previews and the widget gallery are A1 words.
+
+Daily puzzles at a level with units come from `CoursePuzzle` (build 15): single words of the
+started units, with up to four struggling ones placed first, one grid per day seeded by the
+date. Today's grid is kept at the first widget refresh (`<daily key>-grid` in
+puzzle_progress), and an archive day's grid is kept when it is opened, so a grid never changes
+under saved progress. Levels without units keep the bundled Content/puzzles files.
 
 ## Content updates (build 13)
 

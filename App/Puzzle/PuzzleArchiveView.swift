@@ -47,7 +47,7 @@ struct PuzzleArchiveView: View {
                 let prefs = try Preferences.load(db)
                 return try (1...30).compactMap { offset -> Row? in
                     let day = clock.today.adding(days: -offset)
-                    guard let (level, puzzle) = PuzzleLibrary.daily(for: prefs.level, on: day) else { return nil }
+                    guard let (level, puzzle) = try PuzzleLibrary.daily(for: prefs.level, on: day, db: db) else { return nil }
                     let saved = try PuzzleStore.load(key: DailyPuzzle.key(level: level, day: day), puzzle: puzzle, db: db)
                     return Row(day: day, level: level, solved: saved.game.solvedCount, total: puzzle.entries.count, completed: saved.completedAt != nil)
                 }

@@ -31,8 +31,17 @@ enum PuzzleLibrary {
         return file.puzzles
     }
 
-    /// The daily puzzle for `day` at the user's level (or the nearest level with puzzles).
-    static func daily(for preferred: CEFRLevel, on day: LocalDate) -> (level: CEFRLevel, puzzle: Crossword)? {
+    /// The daily puzzle for `day` at the user's level. A level with units gets its puzzle from
+    /// the started units (`CoursePuzzle`, kept once made or opened); other levels use the
+    /// bundled puzzles of their level, or the nearest level with puzzles.
+    static func daily(for preferred: CEFRLevel, on day: LocalDate, db: Database) throws -> (level: CEFRLevel, puzzle: Crossword)? {
+        if try Curriculum.levels(db: db).contains(preferred) {
+            return try CoursePuzzle.daily(level: preferred, day: day, db: db).map { (preferred, $0) }
+        }
+        return bundled(for: preferred, on: day)
+    }
+
+    static func bundled(for preferred: CEFRLevel, on day: LocalDate) -> (level: CEFRLevel, puzzle: Crossword)? {
         guard let level = DailyPuzzle.level(for: preferred, available: availableLevels),
               let puzzle = DailyPuzzle.pick(from: puzzles(for: level), on: day)
         else { return nil }
@@ -51,7 +60,7 @@ struct DailyPuzzleInfo: Sendable {
 
     static func load(db: Database, clock: AppClock) throws -> DailyPuzzleInfo? {
         let prefs = try Preferences.load(db)
-        guard let (level, puzzle) = PuzzleLibrary.daily(for: prefs.level, on: clock.today) else { return nil }
+        guard let (level, puzzle) = try PuzzleLibrary.daily(for: prefs.level, on: clock.today, db: db) else { return nil }
         let saved = try PuzzleStore.load(key: DailyPuzzle.key(level: level, day: clock.today), puzzle: puzzle, db: db)
         var cells: [Int: Bool] = [:]
         let columns = 8
@@ -111,7 +120,7 @@ final class PuzzleModel {
             let puzzle: Crossword
             switch source {
             case .daily(let day):
-                guard let (level, daily) = PuzzleLibrary.daily(for: prefs.level, on: day) else { return nil }
+                guard let (level, daily) = try PuzzleLibrary.daily(for: prefs.level, on: day, db: db) else { return nil }
                 key = DailyPuzzle.key(level: level, day: day)
                 puzzle = daily
             case .personal:
@@ -141,7 +150,8 @@ final class PuzzleModel {
         game = saved.game
         seconds = saved.seconds
         completedAt = saved.completedAt
-        if !isDaily { await storePersonalGrid(puzzle) }
+        // Generated grids (personal, and daily ones made from the units) are kept once opened.
+        if !isDaily || puzzle.id.hasPrefix("course-") { await storeGrid(puzzle) }
         // A save that already solves the grid but was never marked done (e.g. the app closed
         // on the last letter) finishes now instead of showing a full, unplayable grid.
         if saved.game.isComplete && completedAt == nil { afterChange() }
@@ -159,8 +169,8 @@ final class PuzzleModel {
         completedAt = nil
     }
 
-    /// The personal puzzle is generated once per day and kept, so reopening shows the same grid.
-    private func storePersonalGrid(_ puzzle: Crossword) async {
+    /// Generated puzzles are kept, so reopening shows the same grid.
+    private func storeGrid(_ puzzle: Crossword) async {
         guard let app, let data = try? JSONEncoder().encode(puzzle) else { return }
         let key = key + "-grid"
         let text = String(decoding: data, as: UTF8.self)

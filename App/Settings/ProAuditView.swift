@@ -90,7 +90,7 @@ struct ProAuditView: View {
         let clock = app.clock
         let days = await app.read { db -> (count: Int, distinct: Int) in
             let prefs = try Preferences.load(db)
-            let ids = (1...30).compactMap { PuzzleLibrary.daily(for: prefs.level, on: clock.today.adding(days: -$0))?.puzzle.id }
+            let ids = try (1...30).compactMap { try PuzzleLibrary.daily(for: prefs.level, on: clock.today.adding(days: -$0), db: db)?.puzzle.id }
             return (ids.count, Set(ids).count)
         }
         let ok = days?.count == 30 && days?.distinct == 30

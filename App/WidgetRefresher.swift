@@ -9,6 +9,7 @@ enum WidgetRefresher {
             try await database.writer.write { db in
                 // A nearly learned unit hands over to the next one before the queue fills.
                 try Curriculum.advance(db: db)
+                try CoursePuzzle.keepToday(clock: .system, db: db)
                 var rng = SystemRandomNumberGenerator()
                 try WidgetQueue.refill(db: db, clock: .system, using: &rng)
                 try WidgetLog.recordAppReload(reason: "Uygulamada değişiklik", db: db, clock: .system)
