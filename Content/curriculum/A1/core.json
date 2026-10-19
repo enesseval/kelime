@@ -1,0 +1,868 @@
+{
+ "id": "a1-core",
+ "level": "A1",
+ "title": "Çekirdek",
+ "placement": "first",
+ "goal": "Selamlaşır, kendini tanıtır, nereli olduğunu söyler, sayıları 1-10 kullanır, en temel fiillerle basit cümle kurar.",
+ "names": [
+  "Ali",
+  "Zeynep",
+  "Sam",
+  "Turkey",
+  "Turkish"
+ ],
+ "words": [
+  {
+   "id": "a1-have",
+   "word": "have",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "sahip olmak",
+      "-sı olmak"
+     ],
+     "example_en": "I have two friends.",
+     "example_tr": "İki arkadaşım var."
+    }
+   ],
+   "note": "'I have…' Türkçede çoğu zaman '…m var' olur."
+  },
+  {
+   "id": "a1-like",
+   "word": "like",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "sevmek",
+      "hoşlanmak"
+     ],
+     "example_en": "I like this.",
+     "example_tr": "Bunu seviyorum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-want",
+   "word": "want",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "istemek"
+     ],
+     "example_en": "Do you want one?",
+     "example_tr": "Bir tane ister misin?"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-need",
+   "word": "need",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "ihtiyacı olmak"
+     ],
+     "example_en": "I need a friend.",
+     "example_tr": "Bir arkadaşa ihtiyacım var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-go",
+   "word": "go",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "gitmek"
+     ],
+     "example_en": "Let's go!",
+     "example_tr": "Hadi gidelim!"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-come",
+   "word": "come",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "gelmek"
+     ],
+     "example_en": "Come here, please.",
+     "example_tr": "Lütfen buraya gel."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-see",
+   "word": "see",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "görmek"
+     ],
+     "example_en": "Can you see it?",
+     "example_tr": "Onu görebiliyor musun?"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-know",
+   "word": "know",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "bilmek",
+      "tanımak"
+     ],
+     "example_en": "I know his name.",
+     "example_tr": "Onun adını biliyorum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-live",
+   "word": "live",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "yaşamak",
+      "oturmak"
+     ],
+     "example_en": "I live here.",
+     "example_tr": "Burada yaşıyorum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-work",
+   "word": "work",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "çalışmak"
+     ],
+     "example_en": "She works here.",
+     "example_tr": "Burada çalışıyor."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-speak",
+   "word": "speak",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "konuşmak"
+     ],
+     "example_en": "Do you speak Turkish?",
+     "example_tr": "Türkçe konuşuyor musun?"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-understand",
+   "word": "understand",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "anlamak"
+     ],
+     "example_en": "I understand you.",
+     "example_tr": "Seni anlıyorum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-name",
+   "word": "name",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "ad",
+      "isim"
+     ],
+     "example_en": "What is your name?",
+     "example_tr": "Adın ne?"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-friend",
+   "word": "friend",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "arkadaş"
+     ],
+     "example_en": "This is my friend.",
+     "example_tr": "Bu benim arkadaşım."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-people",
+   "word": "people",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "insanlar",
+      "kişiler"
+     ],
+     "example_en": "The people here are nice.",
+     "example_tr": "Buradaki insanlar iyi."
+    }
+   ],
+   "note": "Tekili: person. 'two people' = iki kişi."
+  },
+  {
+   "id": "a1-man",
+   "word": "man",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "adam",
+      "erkek"
+     ],
+     "example_en": "Who is that man?",
+     "example_tr": "O adam kim?"
+    }
+   ],
+   "note": "Çoğulu: men."
+  },
+  {
+   "id": "a1-woman",
+   "word": "woman",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "kadın"
+     ],
+     "example_en": "The woman is happy.",
+     "example_tr": "Kadın mutlu."
+    }
+   ],
+   "note": "Çoğulu: women."
+  },
+  {
+   "id": "a1-child",
+   "word": "child",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "çocuk"
+     ],
+     "example_en": "I have one child.",
+     "example_tr": "Bir çocuğum var."
+    }
+   ],
+   "note": "Çoğulu: children."
+  },
+  {
+   "id": "a1-day",
+   "word": "day",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "gün"
+     ],
+     "example_en": "Have a good day!",
+     "example_tr": "İyi günler!"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-time",
+   "word": "time",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "zaman",
+      "vakit"
+     ],
+     "example_en": "I have no time.",
+     "example_tr": "Hiç vaktim yok."
+    }
+   ],
+   "note": "'What time is it?' = Saat kaç?"
+  },
+  {
+   "id": "a1-good",
+   "word": "good",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "iyi",
+      "güzel"
+     ],
+     "example_en": "This is very good.",
+     "example_tr": "Bu çok iyi."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-new",
+   "word": "new",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "yeni"
+     ],
+     "example_en": "I have a new friend.",
+     "example_tr": "Yeni bir arkadaşım var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-happy",
+   "word": "happy",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "mutlu"
+     ],
+     "example_en": "I am happy today.",
+     "example_tr": "Bugün mutluyum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-nice",
+   "word": "nice",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "hoş",
+      "iyi",
+      "kibar"
+     ],
+     "example_en": "She is very nice.",
+     "example_tr": "O çok iyi biri."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-today",
+   "word": "today",
+   "senses": [
+    {
+     "pos": "adv",
+     "tr": [
+      "bugün"
+     ],
+     "example_en": "Today is a good day.",
+     "example_tr": "Bugün güzel bir gün."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-now",
+   "word": "now",
+   "senses": [
+    {
+     "pos": "adv",
+     "tr": [
+      "şimdi",
+      "şu an"
+     ],
+     "example_en": "I am here now.",
+     "example_tr": "Şu an buradayım."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-eat",
+   "word": "eat",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "yemek yemek",
+      "yemek"
+     ],
+     "example_en": "What do you want to eat?",
+     "example_tr": "Ne yemek istersin?"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-drink",
+   "word": "drink",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "içmek"
+     ],
+     "example_en": "What do you want to drink?",
+     "example_tr": "Ne içmek istersin?"
+    },
+    {
+     "pos": "n",
+     "tr": [
+      "içecek"
+     ],
+     "example_en": "A cold drink, please.",
+     "example_tr": "Soğuk bir içecek, lütfen."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-sit",
+   "word": "sit",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "oturmak"
+     ],
+     "example_en": "Please sit here.",
+     "example_tr": "Lütfen buraya oturun."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-big",
+   "word": "big",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "büyük"
+     ],
+     "example_en": "This is a big day.",
+     "example_tr": "Bu büyük bir gün."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-small",
+   "word": "small",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "küçük"
+     ],
+     "example_en": "I have a small child.",
+     "example_tr": "Küçük bir çocuğum var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-hot",
+   "word": "hot",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "sıcak"
+     ],
+     "example_en": "It's very hot today.",
+     "example_tr": "Bugün hava çok sıcak."
+    }
+   ],
+   "note": "Yemek için 'acı' anlamına da gelir."
+  },
+  {
+   "id": "a1-cold",
+   "word": "cold",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "soğuk"
+     ],
+     "example_en": "I'm cold.",
+     "example_tr": "Üşüyorum."
+    }
+   ],
+   "note": "'I'm cold' Türkçede 'Üşüyorum' olur."
+  },
+  {
+   "id": "a1-old",
+   "word": "old",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "yaşlı"
+     ],
+     "example_en": "The man is very old.",
+     "example_tr": "Adam çok yaşlı."
+    },
+    {
+     "pos": "adj",
+     "tr": [
+      "eski"
+     ],
+     "example_en": "This is my old friend.",
+     "example_tr": "Bu benim eski arkadaşım."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-one",
+   "word": "one",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "bir"
+     ],
+     "example_en": "I have one friend here.",
+     "example_tr": "Burada bir arkadaşım var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-two",
+   "word": "two",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "iki"
+     ],
+     "example_en": "Two people come.",
+     "example_tr": "İki kişi geliyor."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-three",
+   "word": "three",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "üç"
+     ],
+     "example_en": "I know three people here.",
+     "example_tr": "Burada üç kişi tanıyorum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-four",
+   "word": "four",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "dört"
+     ],
+     "example_en": "She has four children.",
+     "example_tr": "Dört çocuğu var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-five",
+   "word": "five",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "beş"
+     ],
+     "example_en": "I work five days.",
+     "example_tr": "Beş gün çalışıyorum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-six",
+   "word": "six",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "altı"
+     ],
+     "example_en": "Six people live here.",
+     "example_tr": "Burada altı kişi yaşıyor."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-seven",
+   "word": "seven",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "yedi"
+     ],
+     "example_en": "I have seven friends.",
+     "example_tr": "Yedi arkadaşım var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-eight",
+   "word": "eight",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "sekiz"
+     ],
+     "example_en": "It's eight now.",
+     "example_tr": "Şu an saat sekiz."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-nine",
+   "word": "nine",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "dokuz"
+     ],
+     "example_en": "Nine people work here.",
+     "example_tr": "Burada dokuz kişi çalışıyor."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-ten",
+   "word": "ten",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "on"
+     ],
+     "example_en": "Come at ten.",
+     "example_tr": "Saat onda gel."
+    }
+   ],
+   "note": ""
+  }
+ ],
+ "phrases": [
+  {
+   "id": "a1-p-hello",
+   "text": "Hello! / Hi!",
+   "tr": "Merhaba! / Selam!",
+   "example_en": "Hi! I'm Ali.",
+   "example_tr": "Selam! Ben Ali.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-nice-to-meet-you",
+   "text": "Nice to meet you.",
+   "tr": "Tanıştığımıza memnun oldum.",
+   "example_en": "Hi, Ali. Nice to meet you.",
+   "example_tr": "Merhaba Ali, memnun oldum.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-my-name-is",
+   "text": "My name is…",
+   "tr": "Benim adım…",
+   "example_en": "My name is Zeynep.",
+   "example_tr": "Benim adım Zeynep.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-how-are-you",
+   "text": "How are you?",
+   "tr": "Nasılsın?",
+   "example_en": "Hi! How are you today?",
+   "example_tr": "Selam! Bugün nasılsın?",
+   "note": ""
+  },
+  {
+   "id": "a1-p-fine-thanks",
+   "text": "I'm fine, thanks.",
+   "tr": "İyiyim, teşekkürler.",
+   "example_en": "I'm fine, thanks. And you?",
+   "example_tr": "İyiyim, teşekkürler. Ya sen?",
+   "note": ""
+  },
+  {
+   "id": "a1-p-where-from",
+   "text": "Where are you from?",
+   "tr": "Nerelisin?",
+   "example_en": "Where are you from, Sam?",
+   "example_tr": "Nerelisin, Sam?",
+   "note": ""
+  },
+  {
+   "id": "a1-p-im-from",
+   "text": "I'm from…",
+   "tr": "…lıyım / …den geliyorum",
+   "example_en": "I'm from Turkey.",
+   "example_tr": "Türkiyeliyim.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-thank-you",
+   "text": "Thank you.",
+   "tr": "Teşekkür ederim.",
+   "example_en": "Thank you very much!",
+   "example_tr": "Çok teşekkür ederim!",
+   "note": ""
+  },
+  {
+   "id": "a1-p-excuse-me",
+   "text": "Excuse me.",
+   "tr": "Affedersiniz.",
+   "example_en": "Excuse me, is this your name?",
+   "example_tr": "Affedersiniz, bu sizin adınız mı?",
+   "note": ""
+  },
+  {
+   "id": "a1-p-dont-understand",
+   "text": "Sorry, I don't understand.",
+   "tr": "Pardon, anlamadım.",
+   "example_en": "Sorry, I don't understand you.",
+   "example_tr": "Pardon, seni anlamadım.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-see-you",
+   "text": "See you! / Goodbye.",
+   "tr": "Görüşürüz! / Hoşça kal.",
+   "example_en": "See you today at ten!",
+   "example_tr": "Bugün saat onda görüşürüz!",
+   "note": ""
+  }
+ ],
+ "stories": [
+  {
+   "id": "a1-core-1",
+   "title": "Tanışma",
+   "names": [
+    "Zeynep",
+    "Sam",
+    "Turkey",
+    "London",
+    "Turkish"
+   ],
+   "lines": [
+    {
+     "en": "Hello! My name is Zeynep. I'm from Turkey.",
+     "tr": "Merhaba! Benim adım Zeynep. Türkiyeliyim."
+    },
+    {
+     "en": "Hi, Zeynep. I'm Sam. Nice to meet you.",
+     "tr": "Selam Zeynep. Ben Sam. Memnun oldum."
+    },
+    {
+     "en": "Nice to meet you too. Where are you from?",
+     "tr": "Ben de memnun oldum. Nerelisin?"
+    },
+    {
+     "en": "I'm from London. I live here now.",
+     "tr": "Londralıyım. Şimdi burada yaşıyorum."
+    },
+    {
+     "en": "Do you speak Turkish?",
+     "tr": "Türkçe konuşuyor musun?"
+    },
+    {
+     "en": "No, sorry. I don't understand Turkish.",
+     "tr": "Hayır, kusura bakma. Türkçe anlamıyorum."
+    }
+   ]
+  },
+  {
+   "id": "a1-core-2",
+   "title": "Yeni arkadaş",
+   "names": [
+    "Ece",
+    "Mert"
+   ],
+   "lines": [
+    {
+     "en": "This is my friend Ece. She works here.",
+     "tr": "Bu benim arkadaşım Ece. Burada çalışıyor."
+    },
+    {
+     "en": "Hello, Ece! How are you?",
+     "tr": "Merhaba Ece! Nasılsın?"
+    },
+    {
+     "en": "I'm fine, thanks. And you, Mert?",
+     "tr": "İyiyim, teşekkürler. Ya sen Mert?"
+    },
+    {
+     "en": "I'm very happy today. I have a new friend!",
+     "tr": "Bugün çok mutluyum. Yeni bir arkadaşım var!"
+    },
+    {
+     "en": "Have a good day!",
+     "tr": "İyi günler!"
+    },
+    {
+     "en": "See you!",
+     "tr": "Görüşürüz!"
+    }
+   ]
+  }
+ ]
+}
