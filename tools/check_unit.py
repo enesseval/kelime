@@ -41,7 +41,9 @@ IRREGULAR = {
     "children": "child", "people": "people", "men": "man", "women": "woman",
     "has": "have", "had": "have", "goes": "go", "went": "go", "does": "do",
     "came": "come", "saw": "see", "knew": "know", "ate": "eat", "drank": "drink",
-    "sat": "sit", "paid": "pay", "spoke": "speak",
+    "sat": "sit", "paid": "pay", "spoke": "speak", "swam": "swim", "bought": "buy",
+    "sang": "sing", "slept": "sleep", "sold": "sell", "made": "make", "got": "get",
+    "took": "take", "felt": "feel", "met": "meet", "left": "left", "understood": "understand",
 }
 
 
@@ -120,7 +122,8 @@ def check(level):
                 limit(", ".join(s["tr"]), MAX_TR, f"{w['id']} tr")
                 limit(s["example_en"], MAX_SENTENCE, f"{w['id']} example_en")
                 limit(s["example_tr"], MAX_SENTENCE, f"{w['id']} example_tr")
-                if not set(tokens(w["word"])) & {l for t in tokens(s["example_en"]) for l in lemmas(t)}:
+                used = {l for t in tokens(s["example_en"]) for l in lemmas(t) | {t}}
+                if not set(tokens(w["word"])) & used:
                     problems.append(f"{name}: {w['id']} example does not use the word: {s['example_en']}")
                 if bad := unknown(s["example_en"]):
                     problems.append(f"{name}: {w['id']} example uses {bad}: {s['example_en']}")

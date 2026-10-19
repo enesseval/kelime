@@ -1,0 +1,509 @@
+{
+ "id": "a1-bridge",
+ "level": "A1",
+ "title": "Dün ve yarın",
+ "placement": "last",
+ "goal": "Geçmişte yaptıklarını (was/were, did, went) ve planlarını (going to) basitçe anlatır. A2'ye köprü.",
+ "names": [],
+ "words": [
+  {
+   "id": "a1-yesterday",
+   "word": "yesterday",
+   "senses": [
+    {
+     "pos": "adv",
+     "tr": [
+      "dün"
+     ],
+     "example_en": "Yesterday I was at home.",
+     "example_tr": "Dün evdeydim."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-last",
+   "word": "last",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "geçen",
+      "son"
+     ],
+     "example_en": "Last week I was in the city.",
+     "example_tr": "Geçen hafta şehirdeydim."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-next",
+   "word": "next",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "gelecek",
+      "önümüzdeki"
+     ],
+     "example_en": "Next week I'm going to travel.",
+     "example_tr": "Önümüzdeki hafta seyahat edeceğim."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-ago",
+   "word": "ago",
+   "senses": [
+    {
+     "pos": "adv",
+     "tr": [
+      "önce"
+     ],
+     "example_en": "Two days ago I saw a film.",
+     "example_tr": "İki gün önce bir film izledim."
+    }
+   ],
+   "note": "Süreden sonra gelir: 'two days ago'."
+  },
+  {
+   "id": "a1-was",
+   "word": "was",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "idi",
+      "-dı / -di"
+     ],
+     "example_en": "I was tired yesterday.",
+     "example_tr": "Dün yorgundum."
+    }
+   ],
+   "note": "'be'nin geçmişi: I/he/she/it was."
+  },
+  {
+   "id": "a1-were",
+   "word": "were",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "idi",
+      "-dık / -dınız / -dılar"
+     ],
+     "example_en": "We were at the hotel.",
+     "example_tr": "Oteldeydik."
+    }
+   ],
+   "note": "'be'nin geçmişi: we/you/they were."
+  },
+  {
+   "id": "a1-did",
+   "word": "did",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "yaptı"
+     ],
+     "example_en": "What did you do yesterday?",
+     "example_tr": "Dün ne yaptın?"
+    }
+   ],
+   "note": "'do'nun geçmişi; geçmiş zaman sorularında da kullanılır."
+  },
+  {
+   "id": "a1-went",
+   "word": "went",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "gitti"
+     ],
+     "example_en": "Yesterday I went to the park.",
+     "example_tr": "Dün parka gittim."
+    }
+   ],
+   "note": "'go' fiilinin geçmişi."
+  },
+  {
+   "id": "a1-saw",
+   "word": "saw",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "gördü"
+     ],
+     "example_en": "I saw my friend at the station.",
+     "example_tr": "Arkadaşımı istasyonda gördüm."
+    }
+   ],
+   "note": "'see' fiilinin geçmişi."
+  },
+  {
+   "id": "a1-had",
+   "word": "had",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "vardı",
+      "-dı (yemek, vakit)"
+     ],
+     "example_en": "We had a good time.",
+     "example_tr": "İyi vakit geçirdik."
+    }
+   ],
+   "note": "'have' fiilinin geçmişi: 'had lunch' = öğle yemeği yedi."
+  },
+  {
+   "id": "a1-plan",
+   "word": "plan",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "plan"
+     ],
+     "example_en": "What is your plan for today?",
+     "example_tr": "Bugün için planın ne?"
+    },
+    {
+     "pos": "v",
+     "tr": [
+      "planlamak"
+     ],
+     "example_en": "We plan a trip.",
+     "example_tr": "Bir gezi planlıyoruz."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-holiday",
+   "word": "holiday",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "tatil"
+     ],
+     "example_en": "The holiday was very nice.",
+     "example_tr": "Tatil çok güzeldi."
+    }
+   ],
+   "note": "Amerikan İngilizcesinde 'vacation' denir."
+  },
+  {
+   "id": "a1-visit",
+   "word": "visit",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "ziyaret etmek"
+     ],
+     "example_en": "I visit my parents every week.",
+     "example_tr": "Her hafta annemle babamı ziyaret ederim."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-stay",
+   "word": "stay",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "kalmak"
+     ],
+     "example_en": "We stay at a hotel.",
+     "example_tr": "Bir otelde kalıyoruz."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-ticket",
+   "word": "ticket",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "bilet"
+     ],
+     "example_en": "I have a train ticket.",
+     "example_tr": "Tren biletim var."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-trip",
+   "word": "trip",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "gezi",
+      "yolculuk"
+     ],
+     "example_en": "The trip was very nice.",
+     "example_tr": "Gezi çok güzeldi."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-before",
+   "word": "before",
+   "senses": [
+    {
+     "pos": "prep",
+     "tr": [
+      "-den önce"
+     ],
+     "example_en": "I have a shower before breakfast.",
+     "example_tr": "Kahvaltıdan önce duş alırım."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-after",
+   "word": "after",
+   "senses": [
+    {
+     "pos": "prep",
+     "tr": [
+      "-den sonra"
+     ],
+     "example_en": "After lunch we went to the park.",
+     "example_tr": "Öğle yemeğinden sonra parka gittik."
+    }
+   ],
+   "note": ""
+  }
+ ],
+ "phrases": [
+  {
+   "id": "a1-p-what-did-you-do",
+   "text": "What did you do?",
+   "tr": "Ne yaptın?",
+   "example_en": "What did you do yesterday?",
+   "example_tr": "Dün ne yaptın?",
+   "note": ""
+  },
+  {
+   "id": "a1-p-yesterday-i-went",
+   "text": "Yesterday I went to…",
+   "tr": "Dün …'a gittim.",
+   "example_en": "Yesterday I went to the park.",
+   "example_tr": "Dün parka gittim.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-im-going-to",
+   "text": "I'm going to…",
+   "tr": "…acağım / …eceğim.",
+   "example_en": "I'm going to visit my friend.",
+   "example_tr": "Arkadaşımı ziyaret edeceğim.",
+   "note": "Plan için: 'be going to' + fiil."
+  },
+  {
+   "id": "a1-p-next-week",
+   "text": "Next week I'm…",
+   "tr": "Önümüzdeki hafta…",
+   "example_en": "Next week I'm going to travel.",
+   "example_tr": "Önümüzdeki hafta seyahat edeceğim.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-last-year",
+   "text": "Last year…",
+   "tr": "Geçen yıl…",
+   "example_en": "Last year we had a holiday.",
+   "example_tr": "Geçen yıl tatile çıktık.",
+   "note": ""
+  }
+ ],
+ "stories": [
+  {
+   "id": "a1-bridge-1",
+   "title": "Dünkü gezi",
+   "names": [
+    "Ahmet",
+    "İzmir",
+    "Turkey"
+   ],
+   "lines": [
+    {
+     "en": "Ahmet is from Turkey. Yesterday he was in İzmir.",
+     "tr": "Ahmet Türkiyeli. Dün İzmir'deydi."
+    },
+    {
+     "en": "What did you do yesterday?",
+     "tr": "Dün ne yaptın?"
+    },
+    {
+     "en": "Yesterday I went to the park.",
+     "tr": "Dün parka gittim."
+    },
+    {
+     "en": "I saw my friends there.",
+     "tr": "Orada arkadaşlarımı gördüm."
+    },
+    {
+     "en": "The weather was very good.",
+     "tr": "Hava çok güzeldi."
+    },
+    {
+     "en": "We had a nice time.",
+     "tr": "Güzel vakit geçirdik."
+    }
+   ]
+  },
+  {
+   "id": "a1-bridge-2",
+   "title": "Gelecek hafta",
+   "names": [
+    "Zeynep",
+    "Ankara"
+   ],
+   "lines": [
+    {
+     "en": "Zeynep lives in Ankara. She has a train ticket.",
+     "tr": "Zeynep Ankara'da yaşıyor. Tren bileti var."
+    },
+    {
+     "en": "Next week I'm going to travel.",
+     "tr": "Önümüzdeki hafta seyahat edeceğim."
+    },
+    {
+     "en": "I'm going to visit my grandmother.",
+     "tr": "Büyükannemi ziyaret edeceğim."
+    },
+    {
+     "en": "Are you going to stay at a hotel?",
+     "tr": "Otelde mi kalacaksın?"
+    },
+    {
+     "en": "No, I'm going to stay at her house.",
+     "tr": "Hayır, onun evinde kalacağım."
+    },
+    {
+     "en": "Zeynep is very happy.",
+     "tr": "Zeynep çok mutlu."
+    }
+   ]
+  },
+  {
+   "id": "a1-bridge-3",
+   "title": "Geçen yılın tatili",
+   "names": [
+    "Kerem",
+    "Mert"
+   ],
+   "lines": [
+    {
+     "en": "Last year Kerem and his friend Mert had a holiday.",
+     "tr": "Geçen yıl Kerem ve arkadaşı Mert tatile çıktı."
+    },
+    {
+     "en": "They went to the beach.",
+     "tr": "Plaja gittiler."
+    },
+    {
+     "en": "The sun was hot and the water was blue.",
+     "tr": "Güneş sıcaktı, deniz masmaviydi."
+    },
+    {
+     "en": "Before lunch, they swam.",
+     "tr": "Öğle yemeğinden önce yüzdüler."
+    },
+    {
+     "en": "After lunch, they sat and read their books.",
+     "tr": "Öğle yemeğinden sonra oturup kitaplarını okudular."
+    },
+    {
+     "en": "They were very happy.",
+     "tr": "Çok mutluydular."
+    }
+   ]
+  },
+  {
+   "id": "a1-bridge-4",
+   "title": "İki gün önce",
+   "names": [
+    "Selin",
+    "İstanbul"
+   ],
+   "lines": [
+    {
+     "en": "Two days ago Selin was in İstanbul.",
+     "tr": "İki gün önce Selin İstanbul'daydı."
+    },
+    {
+     "en": "She went to a market.",
+     "tr": "Bir pazara gitti."
+    },
+    {
+     "en": "She saw cheap shoes and a red dress.",
+     "tr": "Ucuz ayakkabılar ve kırmızı bir elbise gördü."
+    },
+    {
+     "en": "What did you buy?",
+     "tr": "Ne aldın?"
+    },
+    {
+     "en": "I bought a small bag.",
+     "tr": "Küçük bir çanta aldım."
+    },
+    {
+     "en": "The price was good.",
+     "tr": "Fiyatı iyiydi."
+    }
+   ]
+  },
+  {
+   "id": "a1-bridge-5",
+   "title": "Yarın",
+   "names": [
+    "Murat",
+    "English"
+   ],
+   "lines": [
+    {
+     "en": "Murat is a young man. He speaks English.",
+     "tr": "Murat genç bir adam. İngilizce konuşuyor."
+    },
+    {
+     "en": "Today he is at home.",
+     "tr": "Bugün evde."
+    },
+    {
+     "en": "What is your plan for tomorrow?",
+     "tr": "Yarın için planın ne?"
+    },
+    {
+     "en": "Tomorrow I'm going to work.",
+     "tr": "Yarın çalışacağım."
+    },
+    {
+     "en": "After work I'm going to watch a film.",
+     "tr": "İşten sonra film izleyeceğim."
+    },
+    {
+     "en": "I'm happy.",
+     "tr": "Mutluyum."
+    }
+   ]
+  }
+ ]
+}

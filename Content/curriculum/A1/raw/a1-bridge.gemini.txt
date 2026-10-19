@@ -1,0 +1,1 @@
+(Gemini draft of the bridge unit was rewritten by hand; see bridge.json and the commit message.)
