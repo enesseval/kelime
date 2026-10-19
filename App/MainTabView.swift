@@ -97,6 +97,9 @@ extension View {
             case .widgetMode: WidgetModePickerView()
             case .proAudit: ProAuditView()
             case .widgetLog: WidgetLogView()
+            case .course(let level): CourseView(level: level)
+            case .unit(let id): UnitView(unitID: id)
+            case .story(let unit, let story): StoryView(unitID: unit, storyID: story)
             }
         }
     }
@@ -109,11 +112,15 @@ struct PlayView: View {
     @State private var puzzle: DailyPuzzleInfo?
     @State private var isPro = false
     @State private var examDeckCount: Int?
+    @State private var course: [UnitProgress] = []
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 ScreenTitle(title: "Oyna")
+                if !course.isEmpty {
+                    CourseCard(level: .a1, units: course)
+                }
                 Button { Task { await model.startQuickReview() } } label: {
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Hızlı Tekrar").font(KelimeFont.english(30, relativeTo: .title))
@@ -225,6 +232,7 @@ struct PlayView: View {
             remaining = await model.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } ?? nil
             puzzle = await model.read { db in try DailyPuzzleInfo.load(db: db, clock: clock) } ?? nil
             isPro = await model.read { db in try Settings.bool(.isPro, in: db) } ?? false
+            course = await model.read { db in try Curriculum.progress(level: .a1, db: db) } ?? []
             examDeckCount = await model.read { db -> Int? in
                 guard try Settings.string(.goal, in: db) == LearningGoal.yds.rawValue else { return nil }
                 return try DeckQueries.progress(db: db).first { $0.deck == .yds }?.total

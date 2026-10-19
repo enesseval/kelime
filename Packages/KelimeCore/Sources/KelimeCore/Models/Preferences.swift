@@ -64,7 +64,7 @@ public struct Preferences: Sendable, Equatable {
 
     public init(
         level: CEFRLevel = .b1,
-        enabledDecks: [DeckID] = DeckID.freeDecks,
+        enabledDecks: [DeckID] = DeckID.basicDecks,
         rotationInterval: RotationInterval = .default,
         defaultWidgetMode: WidgetMode = .card,
         theme: WidgetThemeID = .paper,

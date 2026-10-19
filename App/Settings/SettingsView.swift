@@ -59,7 +59,7 @@ struct SettingsView: View {
         SettingsSection("SEVİYE VE HEDEF") {
             SettingsRow("Seviye") {
                 Menu {
-                    ForEach([CEFRLevel.a2, .b1, .b2, .c1], id: \.self) { level in
+                    ForEach(CEFRLevel.allCases, id: \.self) { level in
                         Button(level.rawValue) { Task { await setLevel(level) } }
                     }
                 } label: { valueLabel(data.prefs.level.rawValue) }

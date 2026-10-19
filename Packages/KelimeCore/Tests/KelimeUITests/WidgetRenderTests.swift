@@ -82,6 +82,9 @@ struct WidgetRenderTests {
         try render("lock-rect-selftest-question", RectangularWidgetView(entry: s.snapshot(mode: .selfTest, phase: .question)), size: rect, surface: .lock)
         try render("lock-rect-selftest-answer", RectangularWidgetView(entry: s.snapshot(mode: .selfTest, phase: .answer)), size: rect, surface: .lock)
         try render("lock-rect-selftest-long", RectangularWidgetView(entry: s.snapshot(s.longest, mode: .selfTest, phase: .question)), size: rect, surface: .lock)
+        try render("lock-rect-phrase", RectangularWidgetView(entry: s.snapshot(s.phrase, mode: .card)), size: rect, surface: .lock)
+        try render("lock-rect-phrase-dictionary", RectangularWidgetView(entry: s.snapshot(s.phrase, mode: .dictionary)), size: rect, surface: .lock)
+        try render("lock-inline-phrase", InlineWidgetView(entry: s.snapshot(s.phrase)), size: CGSize(width: 260, height: 24), surface: .lock)
         try render("lock-rect-empty", RectangularWidgetView(entry: .empty(at: .now)), size: rect, surface: .lock)
         try render("lock-circular", ReviewRingWidgetView(entry: s.snapshot()), size: CGSize(width: 76, height: 76), surface: .lock)
     }
@@ -104,6 +107,8 @@ struct WidgetRenderTests {
         try render("small-long\(suffix)", SmallWidgetView(entry: s.snapshot(s.longest, state: .new)), size: small, dark: dark)
         try render("small-empty\(suffix)", SmallWidgetView(entry: .empty(at: .now)), size: small, dark: dark)
         try render("medium-card\(suffix)", MediumCardWidgetView(entry: s.snapshot()), size: medium, dark: dark)
+        try render("small-phrase\(suffix)", SmallWidgetView(entry: s.snapshot(s.phrase)), size: small, dark: dark)
+        try render("medium-card-phrase\(suffix)", MediumCardWidgetView(entry: s.snapshot(s.phrase)), size: medium, dark: dark)
         try render("medium-card-long\(suffix)", MediumCardWidgetView(entry: s.snapshot(s.longest)), size: medium, dark: dark)
         try render("medium-quiz\(suffix)", MediumQuizWidgetView(entry: s.snapshot()), size: medium, dark: dark)
         try render("medium-quiz-correct\(suffix)", MediumQuizWidgetView(entry: s.snapshot(quizAnswer: s.reluctant.word)), size: medium, dark: dark)

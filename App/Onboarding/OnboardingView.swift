@@ -156,7 +156,7 @@ struct OnboardingView: View {
     private var level: some View {
         page(title: "Seviyen hangisi?", subtitle: "Örnek kelimelere bakıp seç. Sonra Ayarlar'dan değiştirebilirsin.") {
             VStack(spacing: 10) {
-                ForEach([CEFRLevel.a2, .b1, .b2, .c1], id: \.self) { level in
+                ForEach(CEFRLevel.allCases, id: \.self) { level in
                     Button { choices.level = level } label: {
                         HStack(alignment: .firstTextBaseline, spacing: 14) {
                             Text(level.rawValue).font(KelimeFont.english(28, relativeTo: .title))

@@ -54,11 +54,12 @@ public enum QuickReview {
     ) throws -> [ReviewQuestion] {
         let prefs = try Preferences.load(db)
         guard let filter = CardQueries.deckFilter(prefs.entitledDecks) else { return [] }
+        let started = try Curriculum.startedFilter(db: db)
         let rows = try Row.fetchAll(db, SQLRequest<Row>("""
             SELECT c.id, COALESCE(s.state, 'new') AS state, COALESCE(s.times_shown, 0) AS shown,
                    s.last_answered_on AS answered
             FROM card c LEFT JOIN card_state s ON s.card_id = c.id
-            WHERE \(filter)
+            WHERE \(filter) AND \(started)
             """))
 
         var struggling: [(String, String)] = [], shownNew: [String] = [], otherNew: [String] = [], learned: [(String, String)] = []
@@ -82,7 +83,7 @@ public enum QuickReview {
         var questions: [ReviewQuestion] = []
         for (index, id) in ids.enumerated() {
             guard let card = cards[id] else { continue }
-            if index % 3 == 1 && card.word.count <= maxWriteLength {
+            if index % 3 == 1 && card.isSingleWord && card.word.count <= maxWriteLength {
                 questions.append(ReviewQuestion(card: card, kind: .write))
             } else {
                 let options = try CardQueries.quizOptions(for: card, optionCount: optionCount, db: db, using: &rng)

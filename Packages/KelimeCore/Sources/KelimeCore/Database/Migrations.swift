@@ -89,6 +89,30 @@ enum Migrations {
             }
         }
 
+        migrator.registerMigration("v4") { db in
+            // Course content: card notes and extra senses, units with their stories, and
+            // which cards belong to which unit (a card may sit in several).
+            try db.alter(table: "card") { t in
+                t.add(column: "note", .text)
+                t.add(column: "senses", .text)
+            }
+            try db.create(table: "unit") { t in
+                t.primaryKey("id", .text)
+                t.column("level", .text).notNull().indexed()
+                t.column("title", .text).notNull()
+                t.column("goal", .text).notNull()
+                t.column("placement", .text).notNull()
+                t.column("position", .integer).notNull()
+                t.column("stories", .text).notNull()
+            }
+            try db.create(table: "unit_card") { t in
+                t.column("unit_id", .text).notNull().references("unit", onDelete: .cascade)
+                t.column("card_id", .text).notNull().indexed()
+                t.column("position", .integer).notNull()
+                t.primaryKey(["unit_id", "card_id"])
+            }
+        }
+
         return migrator
     }
 }

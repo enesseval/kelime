@@ -1,0 +1,98 @@
+import Foundation
+import GRDB
+import Testing
+@testable import KelimeCore
+
+struct CurriculumTests {
+    let clock = AppClock.fixed(try! Date("2026-10-13T07:20:00Z", strategy: .iso8601), timeZone: TimeZone(identifier: "Europe/Istanbul")!)
+
+    func makeDatabase(_ prefs: Preferences = Preferences(level: .a1, enabledDecks: [.a1])) throws -> AppDatabase {
+        let db = try AppDatabase.inMemory()
+        let file = try ContentImporter.decode(Data(contentsOf: TestSupport.bundledCardsURL))
+        try db.writer.write { db in
+            try ContentImporter.apply(file, in: db, progress: { _ in })
+            try prefs.save(db)
+        }
+        return db
+    }
+
+    @Test func importsTheA1Course() throws {
+        let db = try makeDatabase()
+        try db.reader.read { db throws in
+            let units = try Curriculum.units(level: .a1, db: db)
+            #expect(units.count == 10)
+            #expect(units.first?.placement == .first && units.last?.placement == .last)
+            let allHaveStories = units.allSatisfy { !$0.stories.isEmpty }
+            #expect(allHaveStories)
+            let cafe = try Curriculum.cards(of: "a1-cafe", db: db)
+            #expect(cafe.first?.word == "café")
+            #expect(cafe.contains { $0.isPhrase && $0.word == "Here you are." })
+            // A shared card sits in both units, stored once.
+            #expect(try Curriculum.cards(of: "a1-home", db: db).contains { $0.id == "a1-table" })
+            #expect(try Card.filter(key: "a1-table").fetchCount(db) == 1)
+            let old = try #require(try Card.fetchOne(db, key: "a1-old"))
+            #expect(old.senses?.first?.tr == ["eski"])
+            #expect(try Card.fetchOne(db, key: "a1-child")?.note == "Çoğulu: children.")
+        }
+    }
+
+    @Test func onlyStartedUnitsReachTheWidget() throws {
+        let db = try makeDatabase()
+        let coreIDs = try db.reader.read { db in Set(try Curriculum.cards(of: "a1-core", db: db).map(\.id)) }
+        let cafeOnly = try db.reader.read { db in
+            Set(try Curriculum.cards(of: "a1-cafe", db: db).map(\.id)).subtracting(coreIDs)
+        }
+        var ids = try db.reader.read { db in Set(try CardQueries.candidates(in: [.a1], db: db).map(\.cardID)) }
+        #expect(ids == coreIDs) // the core counts as started
+        try db.writer.write { db in try Curriculum.start("a1-cafe", db: db) }
+        ids = try db.reader.read { db in Set(try CardQueries.candidates(in: [.a1], db: db).map(\.cardID)) }
+        #expect(ids == coreIDs.union(cafeOnly))
+        let progress = try db.reader.read { db in try Curriculum.progress(level: .a1, db: db) }
+        #expect(progress.filter(\.started).map(\.unit.id).sorted() == ["a1-cafe", "a1-core"])
+    }
+
+    @Test func startingAUnitSwitchesItsDeckOn() throws {
+        let db = try makeDatabase(Preferences(level: .b1))
+        try db.writer.write { db in try Curriculum.start("a1-family", db: db) }
+        #expect(try db.reader.read { db in try Preferences.load(db).enabledDecks }.contains(.a1))
+    }
+
+    @Test func otherLevelsAreUnaffected() throws {
+        let db = try makeDatabase(Preferences())
+        let ids = try db.reader.read { db in try CardQueries.candidates(in: DeckID.basicDecks, db: db) }
+        #expect(ids.count == 111)
+        #expect(!DeckID.basicDecks.contains(.a1) && !DeckID.a1.isPro)
+    }
+
+    @Test func phrasesStayOutOfWritingAndPuzzles() throws {
+        let db = try makeDatabase()
+        try db.writer.write { db in
+            for unit in try Curriculum.units(level: .a1, db: db) { try Curriculum.start(unit.id, db: db) }
+        }
+        for seed in UInt64(0)..<30 {
+            var rng = SeededGenerator(seed: seed)
+            let questions = try db.reader.read { db in try QuickReview.makeQuestions(db: db, using: &rng) }
+            for q in questions {
+                if case .write = q.kind {
+                    #expect(q.card.isSingleWord)
+                }
+                if case .meaning(let options) = q.kind, q.card.isPhrase {
+                    let words = try db.reader.read { db in try Card.filter(options.contains(Card.Columns.word)).fetchAll(db) }
+                    let allPhrases = words.allSatisfy { $0.isPhrase }
+                    #expect(allPhrases)
+                }
+            }
+        }
+        let card = try #require(try db.reader.read { db in try Card.fetchOne(db, key: "a1-café") })
+        #expect(!card.isSingleWord)
+    }
+}
+
+struct PhrasePatternTests {
+    @Test func selfTestKeepsThePhraseShape() {
+        let pattern = SampleContent.phrase.selfTestPattern
+        #expect(pattern.first == "Make")
+        #expect(pattern.blanks == " ________ __ ____.")
+        #expect(SampleContent.reluctant.selfTestPattern == ("r", "________"))
+    }
+}

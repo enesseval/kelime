@@ -82,3 +82,19 @@ Targets `KelimeWatch` (watchOS 10+ app, embedded in the iPhone app under `Watch/
 - Complications reuse the lock-screen views: rectangular (also Smart Stack), inline,
   corner, and the circular review ring.
 - Not tested on a simulator (no watchOS simulator verification on this Mac); verify on device.
+
+## A1 course (build 11)
+
+Content/curriculum/A1/ holds the course: a core everyone studies first, eight units in any
+order, and a bridge unit to A2 last; 285 cards (228 words, 57 phrases) and 44 stories.
+tools/check_unit.py enforces that each unit's examples and stories use only the grammar words,
+the core and the unit itself; tools/build_curriculum.py merges the course into
+Content/cards.json (cards with optional `note` and extra `senses`, pos `phrase`/`prep`, and a
+top-level `units` list with card ids and stories).
+
+In the app: migration v4 adds card notes/senses, `unit` and `unit_card`. A1 cards reach the
+widget and Quick Review only from started units (`units_started`; the core counts as started).
+A1 is free; A2/B1 stay the default decks for everyone else (`DeckID.basicDecks`). Phrases are
+never write questions or crossword words, and only compete with phrases as quiz options.
+Oyna shows the A1 path; units have a start button, stories (Turkish on demand, tap to hear),
+phrases and words. Word detail shows extra senses and the note.

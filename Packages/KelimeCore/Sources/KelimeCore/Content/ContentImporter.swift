@@ -5,6 +5,8 @@ import GRDB
 public struct CardsFile: Codable, Sendable {
     public var contentVersion: Int
     public var cards: [ContentCard]
+    /// Course units (A1…), with their card ids and stories. Absent in older files.
+    public var units: [ContentUnit]?
 }
 
 /// A card as written in `cards.json`: the card plus its tag decks.
@@ -90,6 +92,7 @@ public enum ContentImporter {
             }
         }
 
+        try Curriculum.replace(with: file.units ?? [], db: db)
         try Settings.set(.contentVersion, file.contentVersion, in: db)
         progress(1)
     }

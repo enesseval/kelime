@@ -72,7 +72,10 @@ public struct OnboardingChoices: Sendable, Equatable {
         var decks: [DeckID] = []
         if let levelDeck = DeckID.allCases.first(where: { $0.level == level }) { decks.append(levelDeck) }
         if goal == .yds { decks.append(.yds) }
-        for free in DeckID.freeDecks where !decks.contains(free) && level <= .b1 { decks.append(free) }
+        // Beginners stay in the A1 course; others get the basic word decks as well.
+        if level > .a1 {
+            for basic in DeckID.basicDecks where !decks.contains(basic) && level <= .b1 { decks.append(basic) }
+        }
         return decks
     }
 

@@ -125,6 +125,42 @@
    ]
   },
   {
+   "id": "a1-cafe",
+   "title": "Kafede",
+   "placement": "any",
+   "goal": "Kafede sipariş verir, sıcak/soğuk ve büyük/küçük seçer, fiyat sorar, hesabı ister ve kartla öder.",
+   "words": [
+    "café",
+    "coffee",
+    "tea",
+    "water",
+    "milk",
+    "sugar",
+    "cake",
+    "sandwich",
+    "menu",
+    "bill",
+    "cup",
+    "glass",
+    "table",
+    "card",
+    "pay",
+    "order",
+    "juice",
+    "chocolate",
+    "bottle",
+    "waiter"
+   ],
+   "phrases": [
+    "I'd like a…, please.",
+    "How much is it?",
+    "Can I have the bill?",
+    "For here or to go?",
+    "Here you are.",
+    "Can I pay by card?"
+   ]
+  },
+  {
    "id": "a1-shopping",
    "title": "Alışveriş",
    "placement": "any",

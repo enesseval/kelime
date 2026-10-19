@@ -5,13 +5,15 @@ import GRDB
 /// inside the widget extension's memory limit.
 public enum CardQueries {
     /// Cards in any of `decks`, with their learning state. A card without a `card_state` row is new.
+    /// Course cards count only once their unit is started.
     public static func candidates(in decks: [DeckID], db: Database) throws -> [SchedulerCandidate] {
         guard let filter = deckFilter(decks) else { return [] }
+        let started = try Curriculum.startedFilter(db: db)
         let request: SQLRequest<Row> = """
             SELECT c.id, COALESCE(s.state, 'new') AS state, s.last_shown_at
             FROM card c
             LEFT JOIN card_state s ON s.card_id = c.id
-            WHERE \(filter)
+            WHERE \(filter) AND \(started)
             """
         return try request.fetchAll(db).map { row in
             SchedulerCandidate(
@@ -40,6 +42,7 @@ public enum CardQueries {
     ///
     /// Prefers the same level and part of speech, then the same part of speech, then anything.
     /// Words that share a Turkish meaning with `card` are never offered: both would be right.
+    /// Phrases are only compared with phrases, words only with words.
     public static func distractors(
         for card: Card,
         count: Int,
@@ -49,10 +52,11 @@ public enum CardQueries {
         var chosen: [String] = []
         var seen: Set<String> = [card.word]
         let meanings = Card.normalizedMeanings(card.tr)
+        let phrase = PartOfSpeech.phrase.rawValue
         let tiers: [SQL] = [
             "level = \(card.level) AND pos = \(card.pos.rawValue)",
             "pos = \(card.pos.rawValue)",
-            "1",
+            card.isPhrase ? "pos = \(phrase)" : "pos <> \(phrase)",
         ]
         for tier in tiers where chosen.count < count {
             let cards = try Card.fetchAll(db, SQLRequest<Card>("SELECT * FROM card WHERE \(tier) AND id <> \(card.id) ORDER BY id"))

@@ -22,6 +22,9 @@ public enum SettingKey: String, CaseIterable, Sendable {
     /// Developer measurement mode: the widget gets one entry at a time and asks again at the
     /// next slot, so WidgetLog shows how often iOS really reloads it.
     case widgetProbe = "widget_probe"
+    /// Course units the learner has started, comma-separated ids. Core units count as
+    /// started without being listed.
+    case unitsStarted = "units_started"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

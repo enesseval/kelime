@@ -82,7 +82,12 @@ public struct WidgetSnapshot: Sendable, Equatable {
 extension Card {
     /// Self-test prompt: the first letter, then one blank per remaining letter ("r________").
     public var selfTestPattern: (first: String, blanks: String) {
-        (String(word.prefix(1)), String(repeating: "_", count: max(word.count - 1, 0)))
+        guard isPhrase, let space = word.firstIndex(of: " ") else {
+            return (String(word.prefix(1)), String(repeating: "_", count: max(word.count - 1, 0)))
+        }
+        // Phrases keep their first word and their shape: "Make ________ __ _____."
+        let rest = word[space...].map { $0.isLetter ? "_" : String($0) }.joined()
+        return (String(word[..<space]), rest)
     }
 
     /// Meanings lowercased with Turkish rules, for spotting cards that would share a clue or an

@@ -5,6 +5,10 @@ Checks the schema, the length limits (word <= 16, joined Turkish meaning <= 28,
 sentences <= 55 characters), that the word appears in example_en, unique ids,
 and that every card has a level and at least one deck.
 
+Course cards (A1, built from Content/curriculum by tools/build_curriculum.py) may be
+phrases (pos "phrase", up to 28 characters), capitalised (Monday), have up to 3 meanings,
+a note and extra senses. Course units must list existing card ids.
+
 Usage: python3 tools/validate_cards.py [path/to/cards.json]
 Runs on any OS with Python 3.9+. Exits with status 1 on any error.
 """
@@ -14,9 +18,11 @@ import sys
 from pathlib import Path
 
 LEVELS = {"A1", "A2", "B1", "B2", "C1"}
-POS = {"adj", "n", "v", "adv"}
+POS = {"adj", "n", "v", "adv", "prep", "phrase"}
 DECKS = {"general", "yds", "yokdil", "ielts"}
 FIELDS = {"id", "word", "pos", "level", "tr", "example_en", "example_tr", "decks"}
+OPTIONAL = {"note", "senses"}
+COURSE_LEVELS = {"A1"}
 MAX_WORD, MAX_TR, MAX_SENTENCE = 16, 28, 55
 
 
@@ -32,7 +38,7 @@ def validate(data):
     for i, card in enumerate(cards):
         where = f"card {i} ({card.get('id', '?')})"
         missing = FIELDS - card.keys()
-        extra = card.keys() - FIELDS
+        extra = card.keys() - FIELDS - OPTIONAL
         if missing:
             errors.append(f"{where}: missing {sorted(missing)}")
             continue
@@ -40,23 +46,32 @@ def validate(data):
             errors.append(f"{where}: unknown fields {sorted(extra)}")
 
         cid, word = card["id"], card["word"]
+        course = card["level"] in COURSE_LEVELS
+        phrase = card["pos"] == "phrase"
         if cid in seen:
             errors.append(f"{where}: duplicate id")
         seen.add(cid)
         if card["level"] not in LEVELS:
             errors.append(f"{where}: bad level {card['level']!r}")
-        elif cid != f"{card['level'].lower()}-{word}":
+        elif not course and cid != f"{card['level'].lower()}-{word}":
             errors.append(f"{where}: id should be {card['level'].lower()}-{word}")
         if card["pos"] not in POS:
             errors.append(f"{where}: bad pos {card['pos']!r}")
-        if not re.fullmatch(r"[a-z]+", word):
-            errors.append(f"{where}: word must be lowercase ASCII letters only")
-        if len(word) > MAX_WORD:
-            errors.append(f"{where}: word longer than {MAX_WORD}")
+        if phrase:
+            if not course:
+                errors.append(f"{where}: phrases belong to the course levels")
+            if len(word) > MAX_TR:
+                errors.append(f"{where}: phrase longer than {MAX_TR}")
+        else:
+            if not re.fullmatch(r"[^\W\d_]+" if course else r"[a-z]+", word):
+                errors.append(f"{where}: word must be ASCII letters only")
+            if len(word) > MAX_WORD:
+                errors.append(f"{where}: word longer than {MAX_WORD}")
 
         tr = card["tr"]
-        if not isinstance(tr, list) or not 1 <= len(tr) <= 2 or not all(isinstance(t, str) and t.strip() for t in tr):
-            errors.append(f"{where}: tr must hold 1-2 non-empty strings")
+        most = 3 if course else 2
+        if not isinstance(tr, list) or not 1 <= len(tr) <= most or not all(isinstance(t, str) and t.strip() for t in tr):
+            errors.append(f"{where}: tr must hold 1-{most} non-empty strings")
         elif len(", ".join(tr)) > MAX_TR:
             errors.append(f"{where}: Turkish meaning longer than {MAX_TR}: {', '.join(tr)!r}")
 
@@ -66,14 +81,33 @@ def validate(data):
                 errors.append(f"{where}: {key} is empty")
             elif len(text) > MAX_SENTENCE:
                 errors.append(f"{where}: {key} longer than {MAX_SENTENCE} ({len(text)})")
-        if isinstance(card["example_en"], str) and word not in card["example_en"].lower():
+        if not phrase and isinstance(card["example_en"], str) and word.lower() not in card["example_en"].lower():
             errors.append(f"{where}: word does not appear in example_en")
+        for sense in card.get("senses") or []:
+            if sense.get("pos") not in POS or not sense.get("tr") or len(", ".join(sense["tr"])) > MAX_TR:
+                errors.append(f"{where}: bad extra sense {sense}")
+            for key in ("example_en", "example_tr"):
+                if not sense.get(key) or len(sense[key]) > MAX_SENTENCE:
+                    errors.append(f"{where}: extra sense {key} empty or too long")
 
         decks = card["decks"]
         if not isinstance(decks, list) or not decks:
             errors.append(f"{where}: decks must be a non-empty list")
         elif set(decks) - DECKS:
             errors.append(f"{where}: unknown decks {sorted(set(decks) - DECKS)}")
+
+    unit_ids = set()
+    for unit in data.get("units") or []:
+        if unit["id"] in unit_ids:
+            errors.append(f"unit {unit['id']}: duplicate id")
+        unit_ids.add(unit["id"])
+        for cid in unit["cards"]:
+            if cid not in seen:
+                errors.append(f"unit {unit['id']}: unknown card {cid}")
+        if unit.get("placement") not in ("first", "any", "last"):
+            errors.append(f"unit {unit['id']}: bad placement")
+        if not unit.get("stories"):
+            errors.append(f"unit {unit['id']}: no stories")
     return errors
 
 

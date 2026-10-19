@@ -6,9 +6,36 @@ public enum PartOfSpeech: String, Codable, Sendable, CaseIterable {
     case noun = "n"
     case verb = "v"
     case adverb = "adv"
+    case preposition = "prep"
+    /// A phrase card ("How much is it?"), not a single word.
+    case phrase
 
-    /// Short label shown on cards, e.g. "adj.".
-    public var abbreviation: String { rawValue + "." }
+    /// Short label shown on cards, e.g. "adj."; phrases show "kalıp".
+    public var abbreviation: String { self == .phrase ? "kalıp" : rawValue + "." }
+}
+
+/// A further meaning of a card's word in another part of speech or sense, shown on the word
+/// detail screen (the card's own fields hold the main sense).
+public struct CardSense: Codable, Sendable, Hashable {
+    public var pos: PartOfSpeech
+    public var tr: [String]
+    public var exampleEN: String
+    public var exampleTR: String
+
+    public init(pos: PartOfSpeech, tr: [String], exampleEN: String, exampleTR: String) {
+        self.pos = pos
+        self.tr = tr
+        self.exampleEN = exampleEN
+        self.exampleTR = exampleTR
+    }
+
+    public var meaning: String { tr.joined(separator: ", ") }
+
+    enum CodingKeys: String, CodingKey {
+        case pos, tr
+        case exampleEN = "example_en"
+        case exampleTR = "example_tr"
+    }
 }
 
 public enum CEFRLevel: String, Codable, Sendable, CaseIterable, Comparable, DatabaseValueConvertible {
@@ -41,8 +68,15 @@ public struct Card: Codable, Sendable, Hashable, Identifiable {
     public var tr: [String]
     public var exampleEN: String
     public var exampleTR: String
+    /// A short Turkish tip about a trap (irregular plural, false friend), or nil.
+    public var note: String?
+    /// Other senses beyond the main one, or nil.
+    public var senses: [CardSense]?
 
-    public init(id: String, word: String, pos: PartOfSpeech, level: CEFRLevel, tr: [String], exampleEN: String, exampleTR: String) {
+    public init(
+        id: String, word: String, pos: PartOfSpeech, level: CEFRLevel, tr: [String],
+        exampleEN: String, exampleTR: String, note: String? = nil, senses: [CardSense]? = nil
+    ) {
         self.id = id
         self.word = word
         self.pos = pos
@@ -50,13 +84,23 @@ public struct Card: Codable, Sendable, Hashable, Identifiable {
         self.tr = tr
         self.exampleEN = exampleEN
         self.exampleTR = exampleTR
+        self.note = note
+        self.senses = senses
     }
 
     /// Meanings joined for display: "isteksiz, gönülsüz".
     public var meaning: String { tr.joined(separator: ", ") }
 
+    public var isPhrase: Bool { pos == .phrase }
+
+    /// One word of plain A-Z letters, so it can go in a crossword or a letter-box answer
+    /// (not a phrase, not "café").
+    public var isSingleWord: Bool {
+        !isPhrase && !word.isEmpty && word.allSatisfy { $0.isASCII && $0.isLetter }
+    }
+
     enum CodingKeys: String, CodingKey {
-        case id, word, pos, level, tr
+        case id, word, pos, level, tr, note, senses
         case exampleEN = "example_en"
         case exampleTR = "example_tr"
     }

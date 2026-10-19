@@ -100,16 +100,17 @@ public struct SmallWidgetView: View {
                 }
                 Spacer(minLength: 4)
                 Text(card.word)
-                    .font(entry.theme.wordFont(Self.wordSize(for: card.word)))
+                    .font(entry.theme.wordFont(card.isPhrase ? 21 : Self.wordSize(for: card.word)))
                     .foregroundStyle(c.word)
-                    .lineLimit(1)
+                    // Phrases ("Make yourself at home.") take two lines instead of a cut.
+                    .lineLimit(card.isPhrase ? 2 : 1)
                     .minimumScaleFactor(0.8)
                     .widgetAccentable()
                 Text(card.meaning)
                     .font(KelimeFont.ui(14))
                     .foregroundStyle(c.ink2)
                     .lineLimit(2)
-                    .padding(.top, 6)
+                    .padding(.top, card.isPhrase ? 4 : 6)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .themeBackground(entry.theme)

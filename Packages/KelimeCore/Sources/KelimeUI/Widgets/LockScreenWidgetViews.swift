@@ -64,7 +64,7 @@ public struct RectangularWidgetView: View {
     private func dictionaryMode(_ card: Card) -> some View {
         VStack(alignment: .leading, spacing: 1) {
             (Text(ReviewQuestion.asciiUpper(card.word)).font(KelimeFont.ui(17, weight: .bold))
-                + Text(" (\(card.pos.rawValue))").font(KelimeFont.ui(15, weight: .semibold)))
+                + Text(card.isPhrase ? "" : " (\(card.pos.rawValue))").font(KelimeFont.ui(15, weight: .semibold)))
                 .lineLimit(1)
                 .minimumScaleFactor(0.6)
                 .widgetAccentable()

@@ -97,6 +97,29 @@ struct WordDetailView: View {
                     Text(item.card.exampleEN).font(KelimeFont.english(22, relativeTo: .title2, italic: true))
                     Text(item.card.exampleTR).font(KelimeFont.ui(15, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
                 }
+                if let senses = item.card.senses, !senses.isEmpty {
+                    section("DİĞER ANLAMLAR") {
+                        ForEach(senses, id: \.self) { sense in
+                            VStack(alignment: .leading, spacing: 3) {
+                                (Text(sense.pos.abbreviation + "  ").font(KelimeFont.english(16, relativeTo: .body, italic: true)).foregroundStyle(Palette.ink2)
+                                    + Text(sense.meaning).font(KelimeFont.ui(18, weight: .medium, relativeTo: .body)))
+                                Text(sense.exampleEN).font(KelimeFont.english(18, relativeTo: .body, italic: true))
+                                Text(sense.exampleTR).font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
+                            }
+                            .padding(.bottom, 6)
+                        }
+                    }
+                }
+                if let note = item.card.note, !note.isEmpty {
+                    section("DİKKAT") {
+                        Text(note)
+                            .font(KelimeFont.ui(15, relativeTo: .subheadline))
+                            .foregroundStyle(Palette.amberInk)
+                            .padding(12)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Palette.amberBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                }
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 24)

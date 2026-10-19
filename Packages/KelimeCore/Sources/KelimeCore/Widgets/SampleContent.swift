@@ -8,6 +8,8 @@ public enum SampleContent {
     public static let significant = Card(id: "b2-significant", word: "significant", pos: .adjective, level: .b2, tr: ["önemli", "kayda değer"], exampleEN: "There was a significant increase in prices.", exampleTR: "Fiyatlarda kayda değer bir artış oldu.")
     public static let consequence = Card(id: "b2-consequence", word: "consequence", pos: .noun, level: .b2, tr: ["sonuç"], exampleEN: "Every choice has a consequence.", exampleTR: "Her seçimin bir sonucu vardır.")
     /// Longest-content edge case: 16 + 26 + 52 characters.
+    /// The longest A1 phrase card, for checking that phrases fit the widgets.
+    public static let phrase = Card(id: "a1-p-at-home", word: "Make yourself at home.", pos: .phrase, level: .a1, tr: ["Kendi evin gibi rahat et."], exampleEN: "Come in! Make yourself at home.", exampleTR: "Buyurun! Kendi eviniz gibi rahat edin.")
     public static let longest = Card(id: "c1-misunderstanding", word: "misunderstanding", pos: .noun, level: .c1, tr: ["yanlış anlama", "anlaşmazlık"], exampleEN: "There was a significant increase in prices last year.", exampleTR: "Geçen yıl fiyatlarda kayda değer bir artış oldu.")
 
     public static func snapshot(

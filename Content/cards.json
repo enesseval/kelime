@@ -1,5 +1,5 @@
 {
- "contentVersion": 1,
+ "contentVersion": 2,
  "cards": [
   {
    "id": "a2-borrow",
@@ -2992,6 +2992,6326 @@
     "general",
     "yds",
     "yokdil"
+   ]
+  },
+  {
+   "id": "a1-have",
+   "word": "have",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "sahip olmak",
+    "-sı olmak"
+   ],
+   "example_en": "I have two friends.",
+   "example_tr": "İki arkadaşım var.",
+   "decks": [
+    "general"
+   ],
+   "note": "'I have…' Türkçede çoğu zaman '…m var' olur."
+  },
+  {
+   "id": "a1-like",
+   "word": "like",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "sevmek",
+    "hoşlanmak"
+   ],
+   "example_en": "I like this.",
+   "example_tr": "Bunu seviyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-want",
+   "word": "want",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "istemek"
+   ],
+   "example_en": "Do you want one?",
+   "example_tr": "Bir tane ister misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-need",
+   "word": "need",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "ihtiyacı olmak"
+   ],
+   "example_en": "I need a friend.",
+   "example_tr": "Bir arkadaşa ihtiyacım var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-go",
+   "word": "go",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "gitmek"
+   ],
+   "example_en": "Let's go!",
+   "example_tr": "Hadi gidelim!",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-come",
+   "word": "come",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "gelmek"
+   ],
+   "example_en": "Come here, please.",
+   "example_tr": "Lütfen buraya gel.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-see",
+   "word": "see",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "görmek"
+   ],
+   "example_en": "Can you see it?",
+   "example_tr": "Onu görebiliyor musun?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-know",
+   "word": "know",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "bilmek",
+    "tanımak"
+   ],
+   "example_en": "I know his name.",
+   "example_tr": "Onun adını biliyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-live",
+   "word": "live",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "yaşamak",
+    "oturmak"
+   ],
+   "example_en": "I live here.",
+   "example_tr": "Burada yaşıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-work",
+   "word": "work",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "çalışmak"
+   ],
+   "example_en": "She works here.",
+   "example_tr": "Burada çalışıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-speak",
+   "word": "speak",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "konuşmak"
+   ],
+   "example_en": "Do you speak Turkish?",
+   "example_tr": "Türkçe konuşuyor musun?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-understand",
+   "word": "understand",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "anlamak"
+   ],
+   "example_en": "I understand you.",
+   "example_tr": "Seni anlıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-name",
+   "word": "name",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "ad",
+    "isim"
+   ],
+   "example_en": "What is your name?",
+   "example_tr": "Adın ne?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-friend",
+   "word": "friend",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "arkadaş"
+   ],
+   "example_en": "This is my friend.",
+   "example_tr": "Bu benim arkadaşım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-people",
+   "word": "people",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "insanlar",
+    "kişiler"
+   ],
+   "example_en": "The people here are nice.",
+   "example_tr": "Buradaki insanlar iyi.",
+   "decks": [
+    "general"
+   ],
+   "note": "Tekili: person. 'two people' = iki kişi."
+  },
+  {
+   "id": "a1-man",
+   "word": "man",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "adam",
+    "erkek"
+   ],
+   "example_en": "Who is that man?",
+   "example_tr": "O adam kim?",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğulu: men."
+  },
+  {
+   "id": "a1-woman",
+   "word": "woman",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kadın"
+   ],
+   "example_en": "The woman is happy.",
+   "example_tr": "Kadın mutlu.",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğulu: women."
+  },
+  {
+   "id": "a1-child",
+   "word": "child",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "çocuk"
+   ],
+   "example_en": "I have one child.",
+   "example_tr": "Bir çocuğum var.",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğulu: children."
+  },
+  {
+   "id": "a1-day",
+   "word": "day",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "gün"
+   ],
+   "example_en": "Have a good day!",
+   "example_tr": "İyi günler!",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-time",
+   "word": "time",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "zaman",
+    "vakit"
+   ],
+   "example_en": "I have no time.",
+   "example_tr": "Hiç vaktim yok.",
+   "decks": [
+    "general"
+   ],
+   "note": "'What time is it?' = Saat kaç?"
+  },
+  {
+   "id": "a1-good",
+   "word": "good",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "iyi",
+    "güzel"
+   ],
+   "example_en": "This is very good.",
+   "example_tr": "Bu çok iyi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-new",
+   "word": "new",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "yeni"
+   ],
+   "example_en": "I have a new friend.",
+   "example_tr": "Yeni bir arkadaşım var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-happy",
+   "word": "happy",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "mutlu"
+   ],
+   "example_en": "I am happy today.",
+   "example_tr": "Bugün mutluyum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-nice",
+   "word": "nice",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "hoş",
+    "iyi",
+    "kibar"
+   ],
+   "example_en": "She is very nice.",
+   "example_tr": "O çok iyi biri.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-look",
+   "word": "look",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "bakmak"
+   ],
+   "example_en": "Look at me!",
+   "example_tr": "Bana bak!",
+   "decks": [
+    "general"
+   ],
+   "note": "Bir şeye bakarken 'look at' denir."
+  },
+  {
+   "id": "a1-together",
+   "word": "together",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "birlikte"
+   ],
+   "example_en": "Let's go together.",
+   "example_tr": "Hadi birlikte gidelim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-today",
+   "word": "today",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "bugün"
+   ],
+   "example_en": "Today is a good day.",
+   "example_tr": "Bugün güzel bir gün.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-now",
+   "word": "now",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "şimdi",
+    "şu an"
+   ],
+   "example_en": "I am here now.",
+   "example_tr": "Şu an buradayım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-eat",
+   "word": "eat",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "yemek yemek",
+    "yemek"
+   ],
+   "example_en": "What do you want to eat?",
+   "example_tr": "Ne yemek istersin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-drink",
+   "word": "drink",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "içmek"
+   ],
+   "example_en": "What do you want to drink?",
+   "example_tr": "Ne içmek istersin?",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "içecek"
+     ],
+     "example_en": "A cold drink, please.",
+     "example_tr": "Soğuk bir içecek, lütfen."
+    }
+   ]
+  },
+  {
+   "id": "a1-sit",
+   "word": "sit",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "oturmak"
+   ],
+   "example_en": "Please sit here.",
+   "example_tr": "Lütfen buraya oturun.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-big",
+   "word": "big",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "büyük"
+   ],
+   "example_en": "This is a big day.",
+   "example_tr": "Bu büyük bir gün.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-small",
+   "word": "small",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "küçük"
+   ],
+   "example_en": "I have a small child.",
+   "example_tr": "Küçük bir çocuğum var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-hot",
+   "word": "hot",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "sıcak"
+   ],
+   "example_en": "It's very hot today.",
+   "example_tr": "Bugün hava çok sıcak.",
+   "decks": [
+    "general"
+   ],
+   "note": "Yemek için 'acı' anlamına da gelir."
+  },
+  {
+   "id": "a1-cold",
+   "word": "cold",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "soğuk"
+   ],
+   "example_en": "I'm cold.",
+   "example_tr": "Üşüyorum.",
+   "decks": [
+    "general"
+   ],
+   "note": "'I'm cold' Türkçede 'Üşüyorum' olur."
+  },
+  {
+   "id": "a1-old",
+   "word": "old",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "yaşlı"
+   ],
+   "example_en": "The man is very old.",
+   "example_tr": "Adam çok yaşlı.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "eski"
+     ],
+     "example_en": "This is my old friend.",
+     "example_tr": "Bu benim eski arkadaşım."
+    }
+   ]
+  },
+  {
+   "id": "a1-one",
+   "word": "one",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "bir"
+   ],
+   "example_en": "I have one friend here.",
+   "example_tr": "Burada bir arkadaşım var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-two",
+   "word": "two",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "iki"
+   ],
+   "example_en": "Two people come.",
+   "example_tr": "İki kişi geliyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-three",
+   "word": "three",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "üç"
+   ],
+   "example_en": "I know three people here.",
+   "example_tr": "Burada üç kişi tanıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-four",
+   "word": "four",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "dört"
+   ],
+   "example_en": "She has four children.",
+   "example_tr": "Dört çocuğu var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-five",
+   "word": "five",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "beş"
+   ],
+   "example_en": "I work five days.",
+   "example_tr": "Beş gün çalışıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-six",
+   "word": "six",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "altı"
+   ],
+   "example_en": "Six people live here.",
+   "example_tr": "Burada altı kişi yaşıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-seven",
+   "word": "seven",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "yedi"
+   ],
+   "example_en": "I have seven friends.",
+   "example_tr": "Yedi arkadaşım var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-eight",
+   "word": "eight",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "sekiz"
+   ],
+   "example_en": "It's eight now.",
+   "example_tr": "Şu an saat sekiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-nine",
+   "word": "nine",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "dokuz"
+   ],
+   "example_en": "Nine people work here.",
+   "example_tr": "Burada dokuz kişi çalışıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-ten",
+   "word": "ten",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "on"
+   ],
+   "example_en": "Come at ten.",
+   "example_tr": "Saat onda gel.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-hello",
+   "word": "Hello! / Hi!",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Merhaba! / Selam!"
+   ],
+   "example_en": "Hi! I'm Ali.",
+   "example_tr": "Selam! Ben Ali.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-nice-to-meet-you",
+   "word": "Nice to meet you.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Tanıştığımıza memnun oldum."
+   ],
+   "example_en": "Hi, Ali. Nice to meet you.",
+   "example_tr": "Merhaba Ali, memnun oldum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-my-name-is",
+   "word": "My name is…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Benim adım…"
+   ],
+   "example_en": "My name is Zeynep.",
+   "example_tr": "Benim adım Zeynep.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-how-are-you",
+   "word": "How are you?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Nasılsın?"
+   ],
+   "example_en": "Hi! How are you today?",
+   "example_tr": "Selam! Bugün nasılsın?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-fine-thanks",
+   "word": "I'm fine, thanks.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "İyiyim, teşekkürler."
+   ],
+   "example_en": "I'm fine, thanks. And you?",
+   "example_tr": "İyiyim, teşekkürler. Ya sen?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-where-from",
+   "word": "Where are you from?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Nerelisin?"
+   ],
+   "example_en": "Where are you from, Sam?",
+   "example_tr": "Nerelisin, Sam?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-im-from",
+   "word": "I'm from…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "…lıyım / …den geliyorum"
+   ],
+   "example_en": "I'm from Turkey.",
+   "example_tr": "Türkiyeliyim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-thank-you",
+   "word": "Thank you.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Teşekkür ederim."
+   ],
+   "example_en": "Thank you very much!",
+   "example_tr": "Çok teşekkür ederim!",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-excuse-me",
+   "word": "Excuse me.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Affedersiniz."
+   ],
+   "example_en": "Excuse me, is this your name?",
+   "example_tr": "Affedersiniz, bu sizin adınız mı?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-dont-understand",
+   "word": "Sorry, I don't understand.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Pardon, anlamadım."
+   ],
+   "example_en": "Sorry, I don't understand you.",
+   "example_tr": "Pardon, seni anlamadım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-see-you",
+   "word": "See you! / Goodbye.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Görüşürüz! / Hoşça kal."
+   ],
+   "example_en": "See you today at ten!",
+   "example_tr": "Bugün saat onda görüşürüz!",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-family",
+   "word": "family",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "aile"
+   ],
+   "example_en": "I have a big family.",
+   "example_tr": "Büyük bir ailem var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-mother",
+   "word": "mother",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "anne"
+   ],
+   "example_en": "My mother is a good woman.",
+   "example_tr": "Annem iyi bir kadın.",
+   "decks": [
+    "general"
+   ],
+   "note": "Günlük dilde 'mom' veya 'mum' çok yaygındır."
+  },
+  {
+   "id": "a1-father",
+   "word": "father",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "baba"
+   ],
+   "example_en": "Where is your father?",
+   "example_tr": "Baban nerede?",
+   "decks": [
+    "general"
+   ],
+   "note": "Günlük dilde 'dad' çok yaygındır."
+  },
+  {
+   "id": "a1-parents",
+   "word": "parents",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "anne baba",
+    "ebeveyn"
+   ],
+   "example_en": "My parents live here.",
+   "example_tr": "Annemle babam burada yaşıyor.",
+   "decks": [
+    "general"
+   ],
+   "note": "Tekili 'parent' (anne veya baba)."
+  },
+  {
+   "id": "a1-brother",
+   "word": "brother",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "erkek kardeş",
+    "abi"
+   ],
+   "example_en": "I have two brothers.",
+   "example_tr": "İki erkek kardeşim var.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngilizcede abi ve erkek kardeş için aynı kelime kullanılır."
+  },
+  {
+   "id": "a1-sister",
+   "word": "sister",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kız kardeş",
+    "abla"
+   ],
+   "example_en": "My sister is twenty.",
+   "example_tr": "Kız kardeşim yirmi yaşında.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngilizcede abla ve kız kardeş için aynı kelime kullanılır."
+  },
+  {
+   "id": "a1-son",
+   "word": "son",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "oğul"
+   ],
+   "example_en": "They have one son.",
+   "example_tr": "Bir oğulları var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-daughter",
+   "word": "daughter",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kız",
+    "kız evlat"
+   ],
+   "example_en": "Her daughter is seven.",
+   "example_tr": "Kızı yedi yaşında.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-husband",
+   "word": "husband",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "eş",
+    "koca"
+   ],
+   "example_en": "This is my husband.",
+   "example_tr": "Bu benim eşim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-wife",
+   "word": "wife",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "eş",
+    "hanım"
+   ],
+   "example_en": "His wife is from Turkey.",
+   "example_tr": "Eşi Türkiyeli.",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğulu düzensizdir: 'wives'."
+  },
+  {
+   "id": "a1-baby",
+   "word": "baby",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "bebek"
+   ],
+   "example_en": "The baby is very small.",
+   "example_tr": "Bebek çok küçük.",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğulu: 'babies'."
+  },
+  {
+   "id": "a1-grandmother",
+   "word": "grandmother",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "büyükanne"
+   ],
+   "example_en": "My grandmother is old.",
+   "example_tr": "Büyükannem yaşlı.",
+   "decks": [
+    "general"
+   ],
+   "note": "Türkçedeki anneanne/babaanne ayrımı yok; ikisi de grandmother. Günlük dilde 'grandma'."
+  },
+  {
+   "id": "a1-grandfather",
+   "word": "grandfather",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "büyükbaba",
+    "dede"
+   ],
+   "example_en": "We see our grandfather today.",
+   "example_tr": "Bugün dedemizi görüyoruz.",
+   "decks": [
+    "general"
+   ],
+   "note": "Dedenin anne ya da baba tarafı ayrılmaz. Günlük dilde 'grandpa'."
+  },
+  {
+   "id": "a1-love",
+   "word": "love",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "sevmek",
+    "çok sevmek"
+   ],
+   "example_en": "I love my mother and father.",
+   "example_tr": "Annemi ve babamı çok seviyorum.",
+   "decks": [
+    "general"
+   ],
+   "note": "'like'tan güçlüdür. 'I love you.' = Seni seviyorum.",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "sevgi",
+      "aşk"
+     ],
+     "example_en": "Children need love.",
+     "example_tr": "Çocukların sevgiye ihtiyacı var."
+    }
+   ]
+  },
+  {
+   "id": "a1-young",
+   "word": "young",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "genç"
+   ],
+   "example_en": "Your parents are very young.",
+   "example_tr": "Annenle baban çok genç.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-tall",
+   "word": "tall",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "uzun boylu",
+    "uzun"
+   ],
+   "example_en": "My brother is very tall.",
+   "example_tr": "Abim çok uzun boylu.",
+   "decks": [
+    "general"
+   ],
+   "note": "İnsan, ağaç ve bina boyu için 'long' değil 'tall' kullanılır."
+  },
+  {
+   "id": "a1-beautiful",
+   "word": "beautiful",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "güzel"
+   ],
+   "example_en": "You have a beautiful family.",
+   "example_tr": "Güzel bir ailen var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-year",
+   "word": "year",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "yıl",
+    "sene"
+   ],
+   "example_en": "My son is three years old.",
+   "example_tr": "Oğlum üç yaşında.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-twenty",
+   "word": "twenty",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "yirmi"
+   ],
+   "example_en": "She is twenty years old.",
+   "example_tr": "O yirmi yaşında.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-thirty",
+   "word": "thirty",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "otuz"
+   ],
+   "example_en": "My brother is thirty now.",
+   "example_tr": "Abim şimdi otuz yaşında.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-forty",
+   "word": "forty",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kırk"
+   ],
+   "example_en": "My mother is forty.",
+   "example_tr": "Annem kırk yaşında.",
+   "decks": [
+    "general"
+   ],
+   "note": "Yazımına dikkat: 'fourty' değil, 'forty'."
+  },
+  {
+   "id": "a1-fifty",
+   "word": "fifty",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "elli"
+   ],
+   "example_en": "My father is fifty years old.",
+   "example_tr": "Babam elli yaşında.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-how-old",
+   "word": "How old are you?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Kaç yaşındasın?"
+   ],
+   "example_en": "How old are you? I'm twenty.",
+   "example_tr": "Kaç yaşındasın? Yirmi yaşındayım.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngilizcede yaş 'have' ile değil, 'be' (am/is/are) ile söylenir."
+  },
+  {
+   "id": "a1-p-years-old",
+   "word": "I'm … years old.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "… yaşındayım."
+   ],
+   "example_en": "I'm thirty years old.",
+   "example_tr": "Otuz yaşındayım.",
+   "decks": [
+    "general"
+   ],
+   "note": "Sadece sayıyı söylemek de yeterlidir: 'I'm thirty.'"
+  },
+  {
+   "id": "a1-p-brothers-or-sisters",
+   "word": "Any brothers or sisters?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Kardeşin var mı?"
+   ],
+   "example_en": "Any brothers or sisters? Yes, one brother.",
+   "example_tr": "Kardeşin var mı? Evet, bir erkek kardeşim var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-this-is-my",
+   "word": "This is my…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Bu benim…"
+   ],
+   "example_en": "This is my sister, Selin.",
+   "example_tr": "Bu kız kardeşim Selin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-love-family",
+   "word": "I love my family.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Ailemi çok seviyorum."
+   ],
+   "example_en": "We are happy. I love my family.",
+   "example_tr": "Mutluyuz. Ailemi çok seviyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-looks-like",
+   "word": "She looks like her mother.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Annesine benziyor."
+   ],
+   "example_en": "She is tall. She looks like her mother.",
+   "example_tr": "Uzun boylu. Annesine benziyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-house",
+   "word": "house",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "ev",
+    "müstakil ev"
+   ],
+   "example_en": "They live in a big house.",
+   "example_tr": "Büyük bir evde yaşıyorlar.",
+   "decks": [
+    "general"
+   ],
+   "note": "'house' bina olarak evdir; 'home' yuva ve ev ortamıdır."
+  },
+  {
+   "id": "a1-home",
+   "word": "home",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "ev",
+    "yuva"
+   ],
+   "example_en": "I am at home now.",
+   "example_tr": "Şimdi evdeyim.",
+   "decks": [
+    "general"
+   ],
+   "note": "'go home' derken araya 'to' gelmez.",
+   "senses": [
+    {
+     "pos": "adv",
+     "tr": [
+      "eve"
+     ],
+     "example_en": "I want to go home.",
+     "example_tr": "Eve gitmek istiyorum."
+    }
+   ]
+  },
+  {
+   "id": "a1-apartment",
+   "word": "apartment",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "daire",
+    "apartman dairesi"
+   ],
+   "example_en": "We have a small apartment.",
+   "example_tr": "Küçük bir dairemiz var.",
+   "decks": [
+    "general"
+   ],
+   "note": "Türkçedeki 'apartman' (bina) değildir; binadaki tek dairedir. İngiliz İngilizcesinde 'flat' denir."
+  },
+  {
+   "id": "a1-room",
+   "word": "room",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "oda"
+   ],
+   "example_en": "This room is very nice.",
+   "example_tr": "Bu oda çok hoş.",
+   "decks": [
+    "general"
+   ],
+   "note": "Sayılamayan anlamda 'yer, alan' için de kullanılır."
+  },
+  {
+   "id": "a1-kitchen",
+   "word": "kitchen",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "mutfak"
+   ],
+   "example_en": "She is in the kitchen.",
+   "example_tr": "O mutfakta.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-bathroom",
+   "word": "bathroom",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "banyo",
+    "tuvalet"
+   ],
+   "example_en": "Where is the bathroom?",
+   "example_tr": "Banyo nerede?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-bedroom",
+   "word": "bedroom",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "yatak odası"
+   ],
+   "example_en": "My bedroom is small.",
+   "example_tr": "Yatak odam küçük.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-door",
+   "word": "door",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kapı"
+   ],
+   "example_en": "Please close the door.",
+   "example_tr": "Lütfen kapıyı kapat.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-window",
+   "word": "window",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "pencere"
+   ],
+   "example_en": "Can you open the window?",
+   "example_tr": "Pencereyi açabilir misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-bed",
+   "word": "bed",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "yatak"
+   ],
+   "example_en": "This bed is very big.",
+   "example_tr": "Bu yatak çok büyük.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-chair",
+   "word": "chair",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "sandalye"
+   ],
+   "example_en": "Sit on this chair, please.",
+   "example_tr": "Bu sandalyeye otur lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-sofa",
+   "word": "sofa",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kanepe",
+    "koltuk"
+   ],
+   "example_en": "We sit on the sofa.",
+   "example_tr": "Kanepede oturuyoruz.",
+   "decks": [
+    "general"
+   ],
+   "note": "Günlük dilde 'couch' da çok yaygındır."
+  },
+  {
+   "id": "a1-table",
+   "word": "table",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "masa"
+   ],
+   "example_en": "We sit at a small table.",
+   "example_tr": "Küçük bir masaya oturuyoruz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-garden",
+   "word": "garden",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "bahçe"
+   ],
+   "example_en": "The children are in the garden.",
+   "example_tr": "Çocuklar bahçede.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-floor",
+   "word": "floor",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "yer",
+    "zemin",
+    "kat"
+   ],
+   "example_en": "The floor is clean.",
+   "example_tr": "Yer temiz.",
+   "decks": [
+    "general"
+   ],
+   "note": "Hem bastığımız 'zemin/yer' hem de binadaki 'kat' demektir."
+  },
+  {
+   "id": "a1-key",
+   "word": "key",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "anahtar"
+   ],
+   "example_en": "Do you have the key?",
+   "example_tr": "Anahtar sende mi?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-open",
+   "word": "open",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "açmak"
+   ],
+   "example_en": "Open the door, please.",
+   "example_tr": "Kapıyı aç lütfen.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "açık"
+     ],
+     "example_en": "The window is open.",
+     "example_tr": "Pencere açık."
+    }
+   ]
+  },
+  {
+   "id": "a1-close",
+   "word": "close",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "kapatmak"
+   ],
+   "example_en": "Close the window, please.",
+   "example_tr": "Pencereyi kapat lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-clean",
+   "word": "clean",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "temiz"
+   ],
+   "example_en": "The kitchen is very clean.",
+   "example_tr": "Mutfak çok temiz.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "temizlemek"
+     ],
+     "example_en": "I clean my room today.",
+     "example_tr": "Bugün odamı temizliyorum."
+    }
+   ]
+  },
+  {
+   "id": "a1-sleep",
+   "word": "sleep",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "uyumak"
+   ],
+   "example_en": "The child is sleeping now.",
+   "example_tr": "Çocuk şimdi uyuyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-there-is",
+   "word": "There is a…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Bir… var."
+   ],
+   "example_en": "There is a big garden.",
+   "example_tr": "Büyük bir bahçe var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-there-are",
+   "word": "There are two…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "İki… var."
+   ],
+   "example_en": "There are two bedrooms.",
+   "example_tr": "İki yatak odası var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-where-is",
+   "word": "Where is the…?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "… nerede?"
+   ],
+   "example_en": "Excuse me, where is my friend?",
+   "example_tr": "Affedersiniz, arkadaşım nerede?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-come-in",
+   "word": "Come in!",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "İçeri gel! / Buyurun!"
+   ],
+   "example_en": "Hello! Come in, please.",
+   "example_tr": "Merhaba! İçeri gel lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-at-home",
+   "word": "Make yourself at home.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Kendi evin gibi rahat et."
+   ],
+   "example_en": "Come in! Make yourself at home.",
+   "example_tr": "Buyurun! Kendi eviniz gibi rahat edin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-morning",
+   "word": "morning",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "sabah"
+   ],
+   "example_en": "I work in the morning.",
+   "example_tr": "Sabahları çalışırım.",
+   "decks": [
+    "general"
+   ],
+   "note": "'Sabahleyin / sabahları' için 'in the morning' denir."
+  },
+  {
+   "id": "a1-afternoon",
+   "word": "afternoon",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "öğleden sonra"
+   ],
+   "example_en": "I see my friends in the afternoon.",
+   "example_tr": "Öğleden sonra arkadaşlarımla görüşürüm.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-evening",
+   "word": "evening",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "akşam"
+   ],
+   "example_en": "We eat dinner in the evening.",
+   "example_tr": "Akşamları akşam yemeği yeriz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-night",
+   "word": "night",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "gece"
+   ],
+   "example_en": "I don't work at night.",
+   "example_tr": "Gece çalışmam.",
+   "decks": [
+    "general"
+   ],
+   "note": "'Geceleyin' derken 'in' değil, 'at night' kullanılır."
+  },
+  {
+   "id": "a1-breakfast",
+   "word": "breakfast",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kahvaltı"
+   ],
+   "example_en": "I have breakfast at eight.",
+   "example_tr": "Sekizde kahvaltı yaparım.",
+   "decks": [
+    "general"
+   ],
+   "note": "Genelde a/the almaz: 'have breakfast'. Sıfat gelirse alır: 'a big breakfast'."
+  },
+  {
+   "id": "a1-lunch",
+   "word": "lunch",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "öğle yemeği"
+   ],
+   "example_en": "We have lunch at one o'clock.",
+   "example_tr": "Saat birde öğle yemeği yeriz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-dinner",
+   "word": "dinner",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "akşam yemeği"
+   ],
+   "example_en": "When do you have dinner?",
+   "example_tr": "Ne zaman akşam yemeği yersin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-hour",
+   "word": "hour",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "saat"
+   ],
+   "example_en": "I work six hours a day.",
+   "example_tr": "Günde altı saat çalışırım.",
+   "decks": [
+    "general"
+   ],
+   "note": "Süre bildirir (60 dakika). Başına 'h' okunmadığı için 'an hour' gelir."
+  },
+  {
+   "id": "a1-week",
+   "word": "week",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "hafta"
+   ],
+   "example_en": "I work five days a week.",
+   "example_tr": "Haftada beş gün çalışırım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-weekend",
+   "word": "weekend",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "hafta sonu"
+   ],
+   "example_en": "I don't work at the weekend.",
+   "example_tr": "Hafta sonu çalışmam.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngiliz İngilizcesinde 'at the weekend', Amerikan İngilizcesinde 'on the weekend' denir."
+  },
+  {
+   "id": "a1-tomorrow",
+   "word": "tomorrow",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "yarın"
+   ],
+   "example_en": "I'm not here tomorrow.",
+   "example_tr": "Yarın burada değilim.",
+   "decks": [
+    "general"
+   ],
+   "note": "Önüne 'on' veya 'in' gelmez."
+  },
+  {
+   "id": "a1-shower",
+   "word": "shower",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "duş"
+   ],
+   "example_en": "I have a shower every morning.",
+   "example_tr": "Her sabah duş alırım.",
+   "decks": [
+    "general"
+   ],
+   "note": "'have a shower' duş almak demektir."
+  },
+  {
+   "id": "a1-start",
+   "word": "start",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "başlamak"
+   ],
+   "example_en": "I start work at nine.",
+   "example_tr": "İşe dokuzda başlarım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-finish",
+   "word": "finish",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "bitirmek",
+    "bitmek"
+   ],
+   "example_en": "When do you finish work?",
+   "example_tr": "İşi ne zaman bitiriyorsun?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-early",
+   "word": "early",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "erken"
+   ],
+   "example_en": "I get up early on Monday.",
+   "example_tr": "Pazartesi günü erken kalkarım.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "erken"
+     ],
+     "example_en": "We have an early breakfast.",
+     "example_tr": "Erken bir kahvaltı yapıyoruz."
+    }
+   ]
+  },
+  {
+   "id": "a1-late",
+   "word": "late",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "geç"
+   ],
+   "example_en": "She always comes late.",
+   "example_tr": "O hep geç gelir.",
+   "decks": [
+    "general"
+   ],
+   "note": "'be late' geç kalmak demektir.",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "geç"
+     ],
+     "example_en": "Sorry, I'm late.",
+     "example_tr": "Kusura bakmayın, geç kaldım."
+    }
+   ]
+  },
+  {
+   "id": "a1-always",
+   "word": "always",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "her zaman",
+    "hep"
+   ],
+   "example_en": "I always have breakfast.",
+   "example_tr": "Her zaman kahvaltı yaparım.",
+   "decks": [
+    "general"
+   ],
+   "note": "Sıklık zarfları asıl fiilden önce, 'am/is/are'dan sonra gelir."
+  },
+  {
+   "id": "a1-usually",
+   "word": "usually",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "genellikle"
+   ],
+   "example_en": "We usually eat at seven.",
+   "example_tr": "Genellikle yedide yemek yeriz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-sometimes",
+   "word": "sometimes",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "bazen"
+   ],
+   "example_en": "I sometimes work on Saturday.",
+   "example_tr": "Bazen cumartesi günü çalışırım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-never",
+   "word": "never",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "asla",
+    "hiç"
+   ],
+   "example_en": "He never eats breakfast.",
+   "example_tr": "O hiç kahvaltı yapmaz.",
+   "decks": [
+    "general"
+   ],
+   "note": "Olumlu fiille kullanılır, cümleye ayrıca 'not' eklenmez."
+  },
+  {
+   "id": "a1-every",
+   "word": "every",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "her"
+   ],
+   "example_en": "I see her every week.",
+   "example_tr": "Onu her hafta görürüm.",
+   "decks": [
+    "general"
+   ],
+   "note": "Sonrasında gelen isim her zaman tekildir: 'every day'."
+  },
+  {
+   "id": "a1-Monday",
+   "word": "Monday",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "pazartesi"
+   ],
+   "example_en": "I start work on Monday.",
+   "example_tr": "Pazartesi günü işe başlıyorum.",
+   "decks": [
+    "general"
+   ],
+   "note": "Gün isimleri büyük harfle başlar ve önlerine 'on' alır."
+  },
+  {
+   "id": "a1-Tuesday",
+   "word": "Tuesday",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "salı"
+   ],
+   "example_en": "Are you here on Tuesday?",
+   "example_tr": "Salı günü burada mısın?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-Wednesday",
+   "word": "Wednesday",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "çarşamba"
+   ],
+   "example_en": "We don't work on Wednesday.",
+   "example_tr": "Çarşamba günü çalışmıyoruz.",
+   "decks": [
+    "general"
+   ],
+   "note": "'Wenzdey' diye okunur; ortadaki d okunmaz."
+  },
+  {
+   "id": "a1-Thursday",
+   "word": "Thursday",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "perşembe"
+   ],
+   "example_en": "I see my friends on Thursday.",
+   "example_tr": "Perşembe günü arkadaşlarımla görüşürüm.",
+   "decks": [
+    "general"
+   ],
+   "note": "'Tuesday' (salı) ile karıştırma."
+  },
+  {
+   "id": "a1-Friday",
+   "word": "Friday",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "cuma"
+   ],
+   "example_en": "I'm always happy on Friday.",
+   "example_tr": "Cuma günü hep mutluyumdur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-Saturday",
+   "word": "Saturday",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "cumartesi"
+   ],
+   "example_en": "I get up late on Saturday.",
+   "example_tr": "Cumartesi günü geç kalkarım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-Sunday",
+   "word": "Sunday",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "pazar"
+   ],
+   "example_en": "We have a big breakfast on Sunday.",
+   "example_tr": "Pazar günü büyük bir kahvaltı yaparız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-what-time",
+   "word": "What time is it?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Saat kaç?"
+   ],
+   "example_en": "Excuse me, what time is it?",
+   "example_tr": "Affedersiniz, saat kaç?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-oclock",
+   "word": "It's … o'clock.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Saat …"
+   ],
+   "example_en": "It's four o'clock now.",
+   "example_tr": "Şu an saat dört.",
+   "decks": [
+    "general"
+   ],
+   "note": "Sadece tam saatlerde kullanılır."
+  },
+  {
+   "id": "a1-p-get-up",
+   "word": "I get up at…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Saat …'da kalkarım."
+   ],
+   "example_en": "I get up at seven every morning.",
+   "example_tr": "Her sabah yedide kalkarım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-see-tomorrow",
+   "word": "See you tomorrow.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Yarın görüşürüz."
+   ],
+   "example_en": "Goodbye! See you tomorrow.",
+   "example_tr": "Hoşça kal! Yarın görüşürüz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-every-day",
+   "word": "Every day I…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Her gün …"
+   ],
+   "example_en": "Every day I work eight hours.",
+   "example_tr": "Her gün sekiz saat çalışırım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-café",
+   "word": "café",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kafe"
+   ],
+   "example_en": "This café is very nice.",
+   "example_tr": "Bu kafe çok hoş.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-coffee",
+   "word": "coffee",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kahve"
+   ],
+   "example_en": "I'd like a coffee, please.",
+   "example_tr": "Bir kahve alayım, lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-tea",
+   "word": "tea",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "çay"
+   ],
+   "example_en": "Do you want tea?",
+   "example_tr": "Çay ister misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-water",
+   "word": "water",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "su"
+   ],
+   "example_en": "Can I have some water?",
+   "example_tr": "Biraz su alabilir miyim?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-milk",
+   "word": "milk",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "süt"
+   ],
+   "example_en": "I like coffee with milk.",
+   "example_tr": "Sütlü kahveyi severim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-sugar",
+   "word": "sugar",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "şeker"
+   ],
+   "example_en": "No sugar, please.",
+   "example_tr": "Şekersiz olsun, lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-cake",
+   "word": "cake",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kek",
+    "pasta"
+   ],
+   "example_en": "This cake is very good.",
+   "example_tr": "Bu kek çok güzel.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-sandwich",
+   "word": "sandwich",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "sandviç"
+   ],
+   "example_en": "I want a big sandwich.",
+   "example_tr": "Büyük bir sandviç istiyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-menu",
+   "word": "menu",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "menü"
+   ],
+   "example_en": "Can I see the menu?",
+   "example_tr": "Menüye bakabilir miyim?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-bill",
+   "word": "bill",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "hesap"
+   ],
+   "example_en": "The bill, please.",
+   "example_tr": "Hesap, lütfen.",
+   "decks": [
+    "general"
+   ],
+   "note": "Amerikan İngilizcesinde restoranda 'check' denir."
+  },
+  {
+   "id": "a1-cup",
+   "word": "cup",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "fincan"
+   ],
+   "example_en": "A cup of coffee, please.",
+   "example_tr": "Bir fincan kahve, lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-glass",
+   "word": "glass",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "bardak"
+   ],
+   "example_en": "A glass of water, please.",
+   "example_tr": "Bir bardak su, lütfen.",
+   "decks": [
+    "general"
+   ],
+   "note": "'glass' cam anlamına da gelir."
+  },
+  {
+   "id": "a1-card",
+   "word": "card",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kart"
+   ],
+   "example_en": "Can I pay by card?",
+   "example_tr": "Kartla ödeyebilir miyim?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-pay",
+   "word": "pay",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "ödemek"
+   ],
+   "example_en": "Can I pay now?",
+   "example_tr": "Şimdi ödeyebilir miyim?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-order",
+   "word": "order",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "sipariş vermek"
+   ],
+   "example_en": "Can we order now?",
+   "example_tr": "Şimdi sipariş verebilir miyiz?",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "sipariş"
+     ],
+     "example_en": "Here is your order.",
+     "example_tr": "Buyurun, siparişiniz."
+    }
+   ]
+  },
+  {
+   "id": "a1-juice",
+   "word": "juice",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "meyve suyu"
+   ],
+   "example_en": "A cold juice, please.",
+   "example_tr": "Soğuk bir meyve suyu, lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-chocolate",
+   "word": "chocolate",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "çikolata"
+   ],
+   "example_en": "I like hot chocolate.",
+   "example_tr": "Sıcak çikolatayı severim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-bottle",
+   "word": "bottle",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "şişe"
+   ],
+   "example_en": "A bottle of water, please.",
+   "example_tr": "Bir şişe su, lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-waiter",
+   "word": "waiter",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "garson"
+   ],
+   "example_en": "The waiter is very nice.",
+   "example_tr": "Garson çok kibar.",
+   "decks": [
+    "general"
+   ],
+   "note": "Bugün çoğu yerde 'server' da denir."
+  },
+  {
+   "id": "a1-p-id-like",
+   "word": "I'd like a…, please.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Bir… alayım, lütfen."
+   ],
+   "example_en": "I'd like a tea, please.",
+   "example_tr": "Bir çay alayım, lütfen.",
+   "decks": [
+    "general"
+   ],
+   "note": "'I want' de olur ama 'I'd like' daha kibar."
+  },
+  {
+   "id": "a1-p-how-much",
+   "word": "How much is it?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Ne kadar?"
+   ],
+   "example_en": "How much is the cake?",
+   "example_tr": "Kek ne kadar?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-the-bill",
+   "word": "Can I have the bill?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Hesabı alabilir miyim?"
+   ],
+   "example_en": "Can I have the bill, please?",
+   "example_tr": "Hesabı alabilir miyim, lütfen?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-for-here",
+   "word": "For here or to go?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Burada mı, paket mi?"
+   ],
+   "example_en": "For here or to go? To go, please.",
+   "example_tr": "Burada mı, paket mi? Paket, lütfen.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-here-you-are",
+   "word": "Here you are.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Buyurun."
+   ],
+   "example_en": "Here you are. One coffee.",
+   "example_tr": "Buyurun, bir kahve.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-by-card",
+   "word": "Can I pay by card?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Kartla ödeyebilir miyim?"
+   ],
+   "example_en": "Can I pay by card? Yes, you can.",
+   "example_tr": "Kartla ödeyebilir miyim? Evet, olur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-shop",
+   "word": "shop",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "mağaza",
+    "dükkân"
+   ],
+   "example_en": "This shop has nice shoes.",
+   "example_tr": "Bu mağazada güzel ayakkabılar var.",
+   "decks": [
+    "general"
+   ],
+   "note": "Amerikan İngilizcesinde mağaza için daha çok 'store' denir.",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "alışveriş yapmak"
+     ],
+     "example_en": "I like to shop here.",
+     "example_tr": "Burada alışveriş yapmayı severim."
+    }
+   ]
+  },
+  {
+   "id": "a1-market",
+   "word": "market",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "pazar",
+    "çarşı"
+   ],
+   "example_en": "The market is very big.",
+   "example_tr": "Pazar çok büyük.",
+   "decks": [
+    "general"
+   ],
+   "note": "Türkçedeki 'market' (bakkal/süpermarket) için İngilizcede 'supermarket' veya 'grocery store' denir."
+  },
+  {
+   "id": "a1-buy",
+   "word": "buy",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "satın almak",
+    "almak"
+   ],
+   "example_en": "I want to buy a new bag.",
+   "example_tr": "Yeni bir çanta almak istiyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-sell",
+   "word": "sell",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "satmak"
+   ],
+   "example_en": "Do you sell shoes here?",
+   "example_tr": "Burada ayakkabı satıyor musunuz?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-price",
+   "word": "price",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "fiyat"
+   ],
+   "example_en": "The price is very good.",
+   "example_tr": "Fiyatı çok iyi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-money",
+   "word": "money",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "para"
+   ],
+   "example_en": "I don't have much money.",
+   "example_tr": "Çok param yok.",
+   "decks": [
+    "general"
+   ],
+   "note": "'Money' sayılamaz; çoğul yapılmaz ve 'many' yerine 'much' ile kullanılır."
+  },
+  {
+   "id": "a1-cheap",
+   "word": "cheap",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "ucuz"
+   ],
+   "example_en": "These shirts are very cheap.",
+   "example_tr": "Bu gömlekler çok ucuz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-expensive",
+   "word": "expensive",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "pahalı"
+   ],
+   "example_en": "This dress is too expensive.",
+   "example_tr": "Bu elbise fazla pahalı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-colour",
+   "word": "colour",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "renk"
+   ],
+   "example_en": "What colour do you like?",
+   "example_tr": "Hangi rengi seversin?",
+   "decks": [
+    "general"
+   ],
+   "note": "Amerikan İngilizcesinde 'color' şeklinde yazılır."
+  },
+  {
+   "id": "a1-size",
+   "word": "size",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "beden",
+    "numara",
+    "boyut"
+   ],
+   "example_en": "What is your size?",
+   "example_tr": "Bedeniniz nedir?",
+   "decks": [
+    "general"
+   ],
+   "note": "Kıyafet için 'beden', ayakkabı için 'numara' anlamında kullanılır."
+  },
+  {
+   "id": "a1-shirt",
+   "word": "shirt",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "gömlek"
+   ],
+   "example_en": "He needs a white shirt.",
+   "example_tr": "Beyaz bir gömleğe ihtiyacı var.",
+   "decks": [
+    "general"
+   ],
+   "note": "Tişört için 'T-shirt' denir."
+  },
+  {
+   "id": "a1-shoes",
+   "word": "shoes",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "ayakkabı"
+   ],
+   "example_en": "I like your new shoes.",
+   "example_tr": "Yeni ayakkabılarını beğendim.",
+   "decks": [
+    "general"
+   ],
+   "note": "Tek bir teki için 'shoe' denir ama genelde çift olduğu için çoğul ('shoes') kullanılır."
+  },
+  {
+   "id": "a1-dress",
+   "word": "dress",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "elbise"
+   ],
+   "example_en": "She wants a red dress.",
+   "example_tr": "Kırmızı bir elbise istiyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-bag",
+   "word": "bag",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "çanta",
+    "poşet"
+   ],
+   "example_en": "Do you need a bag?",
+   "example_tr": "Poşet ister misiniz?",
+   "decks": [
+    "general"
+   ],
+   "note": "Hem kol/sırt çantası hem de alışveriş poşeti için kullanılır."
+  },
+  {
+   "id": "a1-red",
+   "word": "red",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "kırmızı"
+   ],
+   "example_en": "I like the red bag.",
+   "example_tr": "Kırmızı çantayı beğendim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-blue",
+   "word": "blue",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "mavi"
+   ],
+   "example_en": "Do you have a blue shirt?",
+   "example_tr": "Mavi gömleğiniz var mı?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-green",
+   "word": "green",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "yeşil"
+   ],
+   "example_en": "The green dress is nice.",
+   "example_tr": "Yeşil elbise hoş.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-black",
+   "word": "black",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "siyah"
+   ],
+   "example_en": "He wants black shoes.",
+   "example_tr": "Siyah ayakkabı istiyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-white",
+   "word": "white",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "beyaz"
+   ],
+   "example_en": "I have a small white bag.",
+   "example_tr": "Küçük beyaz bir çantam var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-how-much-this",
+   "word": "How much is this?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Bu ne kadar?"
+   ],
+   "example_en": "Excuse me, how much is this?",
+   "example_tr": "Bakar mısınız, bu ne kadar?",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğul şeyler (örneğin ayakkabı) için 'How much are these?' denir."
+  },
+  {
+   "id": "a1-p-try-on",
+   "word": "Can I try it on?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Deneyebilir miyim?"
+   ],
+   "example_en": "I like this dress. Can I try it on?",
+   "example_tr": "Bu elbiseyi beğendim. Deneyebilir miyim?",
+   "decks": [
+    "general"
+   ],
+   "note": "Ayakkabı gibi çoğul kelimelerle 'Can I try them on?' kullanılır."
+  },
+  {
+   "id": "a1-p-have-in",
+   "word": "Do you have it in…?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Bunun … olanı var mı?"
+   ],
+   "example_en": "Do you have it in blue?",
+   "example_tr": "Bunun mavisi var mı?",
+   "decks": [
+    "general"
+   ],
+   "note": "Renk veya beden sorarken çok kullanılır."
+  },
+  {
+   "id": "a1-p-just-looking",
+   "word": "I'm just looking.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Sadece bakıyorum."
+   ],
+   "example_en": "I'm just looking, thank you.",
+   "example_tr": "Sadece bakıyorum, teşekkürler.",
+   "decks": [
+    "general"
+   ],
+   "note": "Mağaza çalışanı yardım teklif ettiğinde kibarca reddetmek için söylenir."
+  },
+  {
+   "id": "a1-p-take-it",
+   "word": "I'll take it.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Bunu alıyorum."
+   ],
+   "example_en": "It's very nice. I'll take it.",
+   "example_tr": "Çok güzelmiş. Bunu alıyorum.",
+   "decks": [
+    "general"
+   ],
+   "note": "Karar verip satın alacağınızı belirtirken kullanılır; 'I want to buy it' demekten daha doğaldır."
+  },
+  {
+   "id": "a1-city",
+   "word": "city",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "şehir",
+    "kent"
+   ],
+   "example_en": "Ankara is a big city.",
+   "example_tr": "Ankara büyük bir şehir.",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğul hali: 'cities'."
+  },
+  {
+   "id": "a1-street",
+   "word": "street",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "sokak",
+    "cadde"
+   ],
+   "example_en": "Our hotel is on this street.",
+   "example_tr": "Otelimiz bu sokakta.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-station",
+   "word": "station",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "istasyon",
+    "gar"
+   ],
+   "example_en": "Where is the train station?",
+   "example_tr": "Tren istasyonu nerede?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-bus",
+   "word": "bus",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "otobüs"
+   ],
+   "example_en": "I go to work by bus.",
+   "example_tr": "İşe otobüsle gidiyorum.",
+   "decks": [
+    "general"
+   ],
+   "note": "'Otobüsle' derken 'by bus' kullanılır."
+  },
+  {
+   "id": "a1-train",
+   "word": "train",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "tren"
+   ],
+   "example_en": "The train to London is here.",
+   "example_tr": "Londra treni burada.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-taxi",
+   "word": "taxi",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "taksi"
+   ],
+   "example_en": "Let's go to the hotel by taxi.",
+   "example_tr": "Otele taksiyle gidelim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-car",
+   "word": "car",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "araba"
+   ],
+   "example_en": "They have a small car.",
+   "example_tr": "Küçük bir arabaları var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-airport",
+   "word": "airport",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "havaalanı",
+    "havalimanı"
+   ],
+   "example_en": "Is the airport far from here?",
+   "example_tr": "Havaalanı buradan uzak mı?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-hotel",
+   "word": "hotel",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "otel"
+   ],
+   "example_en": "This is a very good hotel.",
+   "example_tr": "Burası çok iyi bir otel.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-bank",
+   "word": "bank",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "banka"
+   ],
+   "example_en": "My friend works at a bank.",
+   "example_tr": "Arkadaşım bir bankada çalışıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-hospital",
+   "word": "hospital",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "hastane"
+   ],
+   "example_en": "Is there a hospital near here?",
+   "example_tr": "Buralarda hastane var mı?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-park",
+   "word": "park",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "park"
+   ],
+   "example_en": "The children are in the park.",
+   "example_tr": "Çocuklar parkta.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-map",
+   "word": "map",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "harita"
+   ],
+   "example_en": "Do you have a city map?",
+   "example_tr": "Şehir haritanız var mı?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-left",
+   "word": "left",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "sola",
+    "solda"
+   ],
+   "example_en": "Turn left at the bank.",
+   "example_tr": "Bankadan sola dönün.",
+   "decks": [
+    "general"
+   ],
+   "note": "'Solda' derken 'on the left' kullanılır.",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "sol"
+     ],
+     "example_en": "The hotel is on your left.",
+     "example_tr": "Otel solunuzda."
+    }
+   ]
+  },
+  {
+   "id": "a1-right",
+   "word": "right",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "sağa",
+    "sağda"
+   ],
+   "example_en": "Turn right at the park.",
+   "example_tr": "Parktan sağa dönün.",
+   "decks": [
+    "general"
+   ],
+   "note": "'right' doğru, haklı anlamına da gelir.",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "sağ"
+     ],
+     "example_en": "The bank is on the right.",
+     "example_tr": "Banka sağda."
+    }
+   ]
+  },
+  {
+   "id": "a1-near",
+   "word": "near",
+   "pos": "prep",
+   "level": "A1",
+   "tr": [
+    "yakın",
+    "yakınında"
+   ],
+   "example_en": "The station is near our hotel.",
+   "example_tr": "İstasyon otelimize yakın.",
+   "decks": [
+    "general"
+   ],
+   "note": "'near to' değil, doğrudan 'near' kullanılır."
+  },
+  {
+   "id": "a1-far",
+   "word": "far",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "uzak",
+    "uzakta"
+   ],
+   "example_en": "The airport is not very far.",
+   "example_tr": "Havaalanı çok uzak değil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-walk",
+   "word": "walk",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "yürümek"
+   ],
+   "example_en": "We walk in the park today.",
+   "example_tr": "Bugün parkta yürüyoruz.",
+   "decks": [
+    "general"
+   ],
+   "note": "'walk' telaffuz edilirken 'l' sesi okunmaz."
+  },
+  {
+   "id": "a1-turn",
+   "word": "turn",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "dönmek"
+   ],
+   "example_en": "Turn right at this street.",
+   "example_tr": "Bu sokaktan sağa dönün.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-stop",
+   "word": "stop",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "durak"
+   ],
+   "example_en": "Where is the bus stop?",
+   "example_tr": "Otobüs durağı nerede?",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "durmak"
+     ],
+     "example_en": "Does this bus stop at the park?",
+     "example_tr": "Bu otobüs parkta duruyor mu?"
+    }
+   ]
+  },
+  {
+   "id": "a1-p-go-straight",
+   "word": "Go straight on.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Düz gidin."
+   ],
+   "example_en": "Go straight on. It's on the left.",
+   "example_tr": "Düz gidin. Solda.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-turn-left",
+   "word": "Turn left.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Sola dönün."
+   ],
+   "example_en": "Turn left at the station.",
+   "example_tr": "İstasyondan sola dönün.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-is-it-far",
+   "word": "Is it far?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Uzak mı?"
+   ],
+   "example_en": "Is it far? No, you can walk.",
+   "example_tr": "Uzak mı? Hayır, yürüyebilirsiniz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-how-do-i-get",
+   "word": "How do I get to…?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "… nasıl giderim?"
+   ],
+   "example_en": "How do I get to the airport?",
+   "example_tr": "Havaalanına nasıl giderim?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-music",
+   "word": "music",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "müzik"
+   ],
+   "example_en": "I like good music.",
+   "example_tr": "İyi müziği severim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-film",
+   "word": "film",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "film"
+   ],
+   "example_en": "This is a very good film.",
+   "example_tr": "Bu çok güzel bir film.",
+   "decks": [
+    "general"
+   ],
+   "note": "Amerikan İngilizcesinde 'movie' de denir."
+  },
+  {
+   "id": "a1-book",
+   "word": "book",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kitap"
+   ],
+   "example_en": "I have a new book.",
+   "example_tr": "Yeni bir kitabım var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-game",
+   "word": "game",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "oyun",
+    "maç"
+   ],
+   "example_en": "The children play a game.",
+   "example_tr": "Çocuklar oyun oynuyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-sport",
+   "word": "sport",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "spor"
+   ],
+   "example_en": "Do you like sport?",
+   "example_tr": "Spor sever misin?",
+   "decks": [
+    "general"
+   ],
+   "note": "Amerikan İngilizcesinde çoğul kullanılır: 'sports'."
+  },
+  {
+   "id": "a1-football",
+   "word": "football",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "futbol"
+   ],
+   "example_en": "We play football today.",
+   "example_tr": "Bugün futbol oynuyoruz.",
+   "decks": [
+    "general"
+   ],
+   "note": "ABD'de 'football' Amerikan futboludur; futbola 'soccer' denir."
+  },
+  {
+   "id": "a1-swim",
+   "word": "swim",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "yüzmek"
+   ],
+   "example_en": "Can you swim?",
+   "example_tr": "Yüzebilir misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-play",
+   "word": "play",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "oynamak"
+   ],
+   "example_en": "They play football.",
+   "example_tr": "Futbol oynuyorlar.",
+   "decks": [
+    "general"
+   ],
+   "note": "Çalgılarla 'play the guitar' denir.",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "çalmak"
+     ],
+     "example_en": "She plays the guitar.",
+     "example_tr": "Gitar çalıyor."
+    }
+   ]
+  },
+  {
+   "id": "a1-read",
+   "word": "read",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "okumak"
+   ],
+   "example_en": "I read a book.",
+   "example_tr": "Kitap okuyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-watch",
+   "word": "watch",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "izlemek",
+    "seyretmek"
+   ],
+   "example_en": "We watch a film.",
+   "example_tr": "Film izliyoruz.",
+   "decks": [
+    "general"
+   ],
+   "note": "'watch' kol saati anlamına da gelir."
+  },
+  {
+   "id": "a1-listen",
+   "word": "listen",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "dinlemek"
+   ],
+   "example_en": "I listen to music.",
+   "example_tr": "Müzik dinliyorum.",
+   "decks": [
+    "general"
+   ],
+   "note": "Bir şeyi dinlerken 'listen to' kullanılır."
+  },
+  {
+   "id": "a1-dance",
+   "word": "dance",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "dans etmek"
+   ],
+   "example_en": "Do you want to dance?",
+   "example_tr": "Dans etmek ister misin?",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "dans"
+     ],
+     "example_en": "I like this dance.",
+     "example_tr": "Bu dansı seviyorum."
+    }
+   ]
+  },
+  {
+   "id": "a1-sing",
+   "word": "sing",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "şarkı söylemek"
+   ],
+   "example_en": "She likes to sing.",
+   "example_tr": "Şarkı söylemeyi seviyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-cook",
+   "word": "cook",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "yemek yapmak",
+    "yemek pişirmek"
+   ],
+   "example_en": "I can cook.",
+   "example_tr": "Yemek yapabilirim.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "aşçı"
+     ],
+     "example_en": "He is a good cook.",
+     "example_tr": "O iyi bir aşçı."
+    }
+   ]
+  },
+  {
+   "id": "a1-travel",
+   "word": "travel",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "seyahat etmek",
+    "gezmek"
+   ],
+   "example_en": "We like travelling.",
+   "example_tr": "Seyahat etmeyi severiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-photo",
+   "word": "photo",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "fotoğraf"
+   ],
+   "example_en": "Look at this photo.",
+   "example_tr": "Bu fotoğrafa bak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-beach",
+   "word": "beach",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "plaj",
+    "kumsal"
+   ],
+   "example_en": "We are at the beach.",
+   "example_tr": "Plajdayız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-guitar",
+   "word": "guitar",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "gitar"
+   ],
+   "example_en": "Can you play the guitar?",
+   "example_tr": "Gitar çalabilir misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-like-ing",
+   "word": "I like…ing.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "…mayı severim."
+   ],
+   "example_en": "I like reading books.",
+   "example_tr": "Kitap okumayı severim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-can-you",
+   "word": "Can you…?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "…abilir misin?"
+   ],
+   "example_en": "Can you swim?",
+   "example_tr": "Yüzebilir misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-lets",
+   "word": "Let's…!",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Hadi …alım!"
+   ],
+   "example_en": "Let's watch a film!",
+   "example_tr": "Hadi bir film izleyelim!",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-good-at",
+   "word": "I'm good at…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "…da iyiyim."
+   ],
+   "example_en": "I'm good at football.",
+   "example_tr": "Futbolda iyiyim.",
+   "decks": [
+    "general"
+   ],
+   "note": "Fiil gelirse -ing alır: 'good at cooking'."
+  },
+  {
+   "id": "a1-p-want-to-come",
+   "word": "Do you want to come?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Gelmek ister misin?"
+   ],
+   "example_en": "We go to the beach. Do you want to come?",
+   "example_tr": "Plaja gidiyoruz. Gelmek ister misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-weather",
+   "word": "weather",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "hava",
+    "hava durumu"
+   ],
+   "example_en": "The weather is very nice today.",
+   "example_tr": "Bugün hava çok güzel.",
+   "decks": [
+    "general"
+   ],
+   "note": "Sayılamaz; 'a weather' denmez."
+  },
+  {
+   "id": "a1-sun",
+   "word": "sun",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "güneş"
+   ],
+   "example_en": "I can see the sun now.",
+   "example_tr": "Şimdi güneşi görebiliyorum.",
+   "decks": [
+    "general"
+   ],
+   "note": "Tek olduğu için hep 'the sun' denir."
+  },
+  {
+   "id": "a1-rain",
+   "word": "rain",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "yağmur"
+   ],
+   "example_en": "I don't like cold rain.",
+   "example_tr": "Soğuk yağmuru sevmem.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "yağmur yağmak"
+     ],
+     "example_en": "Does it rain much here?",
+     "example_tr": "Burada çok yağmur yağar mı?"
+    }
+   ]
+  },
+  {
+   "id": "a1-snow",
+   "word": "snow",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "kar"
+   ],
+   "example_en": "The children like the snow.",
+   "example_tr": "Çocuklar karı seviyor.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "kar yağmak"
+     ],
+     "example_en": "It's snowing today.",
+     "example_tr": "Bugün kar yağıyor."
+    }
+   ]
+  },
+  {
+   "id": "a1-wind",
+   "word": "wind",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "rüzgar"
+   ],
+   "example_en": "The wind is very cold today.",
+   "example_tr": "Bugün rüzgar çok soğuk.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-warm",
+   "word": "warm",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "ılık",
+    "sıcak"
+   ],
+   "example_en": "It's nice and warm in here.",
+   "example_tr": "Burası sıcacık.",
+   "decks": [
+    "general"
+   ],
+   "note": "'hot' çok sıcak, 'warm' tatlı ve hoş sıcak demektir."
+  },
+  {
+   "id": "a1-tired",
+   "word": "tired",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "yorgun"
+   ],
+   "example_en": "I'm very tired today.",
+   "example_tr": "Bugün çok yorgunum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-hungry",
+   "word": "hungry",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "aç"
+   ],
+   "example_en": "Are you hungry? Let's eat.",
+   "example_tr": "Aç mısın? Hadi yiyelim.",
+   "decks": [
+    "general"
+   ],
+   "note": "'I'm hungry' (Acıktım) olarak kullanılır."
+  },
+  {
+   "id": "a1-thirsty",
+   "word": "thirsty",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "susamış"
+   ],
+   "example_en": "I'm very thirsty now.",
+   "example_tr": "Şu an çok susadım.",
+   "decks": [
+    "general"
+   ],
+   "note": "Türkçede 'Susadım' dense de İngilizcede sıfattır: 'I'm thirsty'."
+  },
+  {
+   "id": "a1-sick",
+   "word": "sick",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "hasta"
+   ],
+   "example_en": "She can't work. She is sick.",
+   "example_tr": "Çalışamaz. O hasta.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngiliz İngilizcesinde 'midesi bulanmak' anlamına da gelir."
+  },
+  {
+   "id": "a1-well",
+   "word": "well",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "iyi",
+    "sağlıklı"
+   ],
+   "example_en": "Are you well now?",
+   "example_tr": "Şimdi iyi misin?",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "adv",
+     "tr": [
+      "iyi (bir şekilde)"
+     ],
+     "example_en": "She speaks English very well.",
+     "example_tr": "İngilizceyi çok iyi konuşur."
+    }
+   ]
+  },
+  {
+   "id": "a1-head",
+   "word": "head",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "baş",
+    "kafa"
+   ],
+   "example_en": "My head is hot.",
+   "example_tr": "Başım sıcak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-doctor",
+   "word": "doctor",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "doktor"
+   ],
+   "example_en": "You need to see a doctor.",
+   "example_tr": "Bir doktora görünmen lazım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-medicine",
+   "word": "medicine",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "ilaç"
+   ],
+   "example_en": "Do you have your medicine?",
+   "example_tr": "İlacın yanında mı?",
+   "decks": [
+    "general"
+   ],
+   "note": "'tıp' anlamına da gelir."
+  },
+  {
+   "id": "a1-feel",
+   "word": "feel",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "hissetmek"
+   ],
+   "example_en": "I feel very good today.",
+   "example_tr": "Bugün çok iyi hissediyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-rest",
+   "word": "rest",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "dinlenmek"
+   ],
+   "example_en": "Sit here and rest.",
+   "example_tr": "Buraya otur ve dinlen.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "dinlenme"
+     ],
+     "example_en": "You need some rest today.",
+     "example_tr": "Bugün biraz dinlenmen lazım."
+    }
+   ]
+  },
+  {
+   "id": "a1-bad",
+   "word": "bad",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "kötü"
+   ],
+   "example_en": "The weather is very bad now.",
+   "example_tr": "Şu an hava çok kötü.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-fine",
+   "word": "fine",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "iyi"
+   ],
+   "example_en": "I'm fine now, thank you.",
+   "example_tr": "Şimdi iyiyim, teşekkürler.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-dont-feel-well",
+   "word": "I don't feel well.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "İyi hissetmiyorum."
+   ],
+   "example_en": "I can't come. I don't feel well.",
+   "example_tr": "Gelemem. İyi hissetmiyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-have-a-headache",
+   "word": "I have a headache.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Başım ağrıyor."
+   ],
+   "example_en": "I'm tired and I have a headache.",
+   "example_tr": "Yorgunum ve başım ağrıyor.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngilizcede 'a' ile söylenir: 'have a headache'."
+  },
+  {
+   "id": "a1-p-its-raining",
+   "word": "It's raining.",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Yağmur yağıyor."
+   ],
+   "example_en": "We can't go out. It's raining.",
+   "example_tr": "Dışarı çıkamayız. Yağmur yağıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-whats-weather-like",
+   "word": "What's the weather like?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Hava nasıl?"
+   ],
+   "example_en": "What's the weather like today?",
+   "example_tr": "Bugün hava nasıl?",
+   "decks": [
+    "general"
+   ],
+   "note": "Buradaki 'like' sevmek değil, 'nasıl' anlamı katar."
+  },
+  {
+   "id": "a1-p-take-care",
+   "word": "Take care!",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Kendine iyi bak!"
+   ],
+   "example_en": "See you! Take care!",
+   "example_tr": "Görüşürüz! Kendine iyi bak!",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-yesterday",
+   "word": "yesterday",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "dün"
+   ],
+   "example_en": "Yesterday I was at home.",
+   "example_tr": "Dün evdeydim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-last",
+   "word": "last",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "geçen",
+    "son"
+   ],
+   "example_en": "Last week I was in the city.",
+   "example_tr": "Geçen hafta şehirdeydim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-next",
+   "word": "next",
+   "pos": "adj",
+   "level": "A1",
+   "tr": [
+    "gelecek",
+    "önümüzdeki"
+   ],
+   "example_en": "Next week I'm going to travel.",
+   "example_tr": "Önümüzdeki hafta seyahat edeceğim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-ago",
+   "word": "ago",
+   "pos": "adv",
+   "level": "A1",
+   "tr": [
+    "önce"
+   ],
+   "example_en": "Two days ago I saw a film.",
+   "example_tr": "İki gün önce bir film izledim.",
+   "decks": [
+    "general"
+   ],
+   "note": "Süreden sonra gelir: 'two days ago'."
+  },
+  {
+   "id": "a1-was",
+   "word": "was",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "idi",
+    "-dı / -di"
+   ],
+   "example_en": "I was tired yesterday.",
+   "example_tr": "Dün yorgundum.",
+   "decks": [
+    "general"
+   ],
+   "note": "'be'nin geçmişi: I/he/she/it was."
+  },
+  {
+   "id": "a1-were",
+   "word": "were",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "idi",
+    "-dık / -dınız / -dılar"
+   ],
+   "example_en": "We were at the hotel.",
+   "example_tr": "Oteldeydik.",
+   "decks": [
+    "general"
+   ],
+   "note": "'be'nin geçmişi: we/you/they were."
+  },
+  {
+   "id": "a1-did",
+   "word": "did",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "yaptı"
+   ],
+   "example_en": "What did you do yesterday?",
+   "example_tr": "Dün ne yaptın?",
+   "decks": [
+    "general"
+   ],
+   "note": "'do'nun geçmişi; geçmiş zaman sorularında da kullanılır."
+  },
+  {
+   "id": "a1-went",
+   "word": "went",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "gitti"
+   ],
+   "example_en": "Yesterday I went to the park.",
+   "example_tr": "Dün parka gittim.",
+   "decks": [
+    "general"
+   ],
+   "note": "'go' fiilinin geçmişi."
+  },
+  {
+   "id": "a1-saw",
+   "word": "saw",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "gördü"
+   ],
+   "example_en": "I saw my friend at the station.",
+   "example_tr": "Arkadaşımı istasyonda gördüm.",
+   "decks": [
+    "general"
+   ],
+   "note": "'see' fiilinin geçmişi."
+  },
+  {
+   "id": "a1-had",
+   "word": "had",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "vardı",
+    "-dı (yemek, vakit)"
+   ],
+   "example_en": "We had a good time.",
+   "example_tr": "İyi vakit geçirdik.",
+   "decks": [
+    "general"
+   ],
+   "note": "'have' fiilinin geçmişi: 'had lunch' = öğle yemeği yedi."
+  },
+  {
+   "id": "a1-plan",
+   "word": "plan",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "plan"
+   ],
+   "example_en": "What is your plan for today?",
+   "example_tr": "Bugün için planın ne?",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "planlamak"
+     ],
+     "example_en": "We plan a trip.",
+     "example_tr": "Bir gezi planlıyoruz."
+    }
+   ]
+  },
+  {
+   "id": "a1-holiday",
+   "word": "holiday",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "tatil"
+   ],
+   "example_en": "The holiday was very nice.",
+   "example_tr": "Tatil çok güzeldi.",
+   "decks": [
+    "general"
+   ],
+   "note": "Amerikan İngilizcesinde 'vacation' denir."
+  },
+  {
+   "id": "a1-visit",
+   "word": "visit",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "ziyaret etmek"
+   ],
+   "example_en": "I visit my parents every week.",
+   "example_tr": "Her hafta annemle babamı ziyaret ederim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-stay",
+   "word": "stay",
+   "pos": "v",
+   "level": "A1",
+   "tr": [
+    "kalmak"
+   ],
+   "example_en": "We stay at a hotel.",
+   "example_tr": "Bir otelde kalıyoruz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-ticket",
+   "word": "ticket",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "bilet"
+   ],
+   "example_en": "I have a train ticket.",
+   "example_tr": "Tren biletim var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-trip",
+   "word": "trip",
+   "pos": "n",
+   "level": "A1",
+   "tr": [
+    "gezi",
+    "yolculuk"
+   ],
+   "example_en": "The trip was very nice.",
+   "example_tr": "Gezi çok güzeldi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-before",
+   "word": "before",
+   "pos": "prep",
+   "level": "A1",
+   "tr": [
+    "-den önce"
+   ],
+   "example_en": "I have a shower before breakfast.",
+   "example_tr": "Kahvaltıdan önce duş alırım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-after",
+   "word": "after",
+   "pos": "prep",
+   "level": "A1",
+   "tr": [
+    "-den sonra"
+   ],
+   "example_en": "After lunch we went to the park.",
+   "example_tr": "Öğle yemeğinden sonra parka gittik.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-what-did-you-do",
+   "word": "What did you do?",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Ne yaptın?"
+   ],
+   "example_en": "What did you do yesterday?",
+   "example_tr": "Dün ne yaptın?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-yesterday-i-went",
+   "word": "Yesterday I went to…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Dün …'a gittim."
+   ],
+   "example_en": "Yesterday I went to the park.",
+   "example_tr": "Dün parka gittim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-im-going-to",
+   "word": "I'm going to…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "…acağım / …eceğim."
+   ],
+   "example_en": "I'm going to visit my friend.",
+   "example_tr": "Arkadaşımı ziyaret edeceğim.",
+   "decks": [
+    "general"
+   ],
+   "note": "Plan için: 'be going to' + fiil."
+  },
+  {
+   "id": "a1-p-next-week",
+   "word": "Next week I'm…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Önümüzdeki hafta…"
+   ],
+   "example_en": "Next week I'm going to travel.",
+   "example_tr": "Önümüzdeki hafta seyahat edeceğim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "a1-p-last-year",
+   "word": "Last year…",
+   "pos": "phrase",
+   "level": "A1",
+   "tr": [
+    "Geçen yıl…"
+   ],
+   "example_en": "Last year we had a holiday.",
+   "example_tr": "Geçen yıl tatile çıktık.",
+   "decks": [
+    "general"
+   ]
+  }
+ ],
+ "units": [
+  {
+   "id": "a1-core",
+   "level": "A1",
+   "title": "Çekirdek",
+   "goal": "Selamlaşır, kendini tanıtır, nereli olduğunu söyler, sayıları 1-10 kullanır, en temel fiillerle basit cümle kurar.",
+   "placement": "first",
+   "position": 0,
+   "stories": [
+    {
+     "id": "a1-core-1",
+     "title": "Tanışma",
+     "lines": [
+      {
+       "en": "Hello! My name is Zeynep. I'm from Turkey.",
+       "tr": "Merhaba! Benim adım Zeynep. Türkiyeliyim."
+      },
+      {
+       "en": "Hi, Zeynep. I'm Sam. Nice to meet you.",
+       "tr": "Selam Zeynep. Ben Sam. Memnun oldum."
+      },
+      {
+       "en": "Nice to meet you too. Where are you from?",
+       "tr": "Ben de memnun oldum. Nerelisin?"
+      },
+      {
+       "en": "I'm from London. I live here now.",
+       "tr": "Londralıyım. Şimdi burada yaşıyorum."
+      },
+      {
+       "en": "Do you speak Turkish?",
+       "tr": "Türkçe konuşuyor musun?"
+      },
+      {
+       "en": "No, sorry. I don't understand Turkish.",
+       "tr": "Hayır, kusura bakma. Türkçe anlamıyorum."
+      }
+     ]
+    },
+    {
+     "id": "a1-core-2",
+     "title": "Yeni arkadaş",
+     "lines": [
+      {
+       "en": "This is my friend Ece. She works here.",
+       "tr": "Bu benim arkadaşım Ece. Burada çalışıyor."
+      },
+      {
+       "en": "Hello, Ece! How are you?",
+       "tr": "Merhaba Ece! Nasılsın?"
+      },
+      {
+       "en": "I'm fine, thanks. And you, Mert?",
+       "tr": "İyiyim, teşekkürler. Ya sen Mert?"
+      },
+      {
+       "en": "I'm very happy today. I have a new friend!",
+       "tr": "Bugün çok mutluyum. Yeni bir arkadaşım var!"
+      },
+      {
+       "en": "Have a good day!",
+       "tr": "İyi günler!"
+      },
+      {
+       "en": "See you!",
+       "tr": "Görüşürüz!"
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-have",
+    "a1-like",
+    "a1-want",
+    "a1-need",
+    "a1-go",
+    "a1-come",
+    "a1-see",
+    "a1-know",
+    "a1-live",
+    "a1-work",
+    "a1-speak",
+    "a1-understand",
+    "a1-name",
+    "a1-friend",
+    "a1-people",
+    "a1-man",
+    "a1-woman",
+    "a1-child",
+    "a1-day",
+    "a1-time",
+    "a1-good",
+    "a1-new",
+    "a1-happy",
+    "a1-nice",
+    "a1-look",
+    "a1-together",
+    "a1-today",
+    "a1-now",
+    "a1-eat",
+    "a1-drink",
+    "a1-sit",
+    "a1-big",
+    "a1-small",
+    "a1-hot",
+    "a1-cold",
+    "a1-old",
+    "a1-one",
+    "a1-two",
+    "a1-three",
+    "a1-four",
+    "a1-five",
+    "a1-six",
+    "a1-seven",
+    "a1-eight",
+    "a1-nine",
+    "a1-ten",
+    "a1-p-hello",
+    "a1-p-nice-to-meet-you",
+    "a1-p-my-name-is",
+    "a1-p-how-are-you",
+    "a1-p-fine-thanks",
+    "a1-p-where-from",
+    "a1-p-im-from",
+    "a1-p-thank-you",
+    "a1-p-excuse-me",
+    "a1-p-dont-understand",
+    "a1-p-see-you"
+   ]
+  },
+  {
+   "id": "a1-family",
+   "level": "A1",
+   "title": "Ailem",
+   "goal": "Ailesini tanıtır, kimin kim olduğunu söyler, yaş sorar ve söyler, ailesini kısaca tarif eder.",
+   "placement": "any",
+   "position": 1,
+   "stories": [
+    {
+     "id": "a1-family-1",
+     "title": "Yeni arkadaş",
+     "lines": [
+      {
+       "en": "Hello! My name is Mert. What's your name?",
+       "tr": "Merhaba! Benim adım Mert. Senin adın ne?"
+      },
+      {
+       "en": "Hi Mert! I'm Emma. Nice to meet you.",
+       "tr": "Selam Mert! Ben Emma. Tanıştığımıza memnun oldum."
+      },
+      {
+       "en": "Where are you from, Emma?",
+       "tr": "Nerelisin, Emma?"
+      },
+      {
+       "en": "I'm from London. How old are you?",
+       "tr": "Londralıyım. Kaç yaşındasın?"
+      },
+      {
+       "en": "I'm twenty years old. And you?",
+       "tr": "Yirmi yaşındayım. Ya sen?"
+      },
+      {
+       "en": "I'm twenty, too! Any brothers or sisters?",
+       "tr": "Ben de yirmi yaşındayım! Kardeşin var mı?"
+      },
+      {
+       "en": "Yes, I have one brother and two sisters.",
+       "tr": "Evet, bir erkek ve iki kız kardeşim var."
+      }
+     ]
+    },
+    {
+     "id": "a1-family-2",
+     "title": "Kerem ve ailesi",
+     "lines": [
+      {
+       "en": "Kerem and his wife Zeynep live in İzmir.",
+       "tr": "Kerem ve eşi Zeynep İzmir'de yaşıyor."
+      },
+      {
+       "en": "Kerem is forty, and Zeynep is thirty-eight.",
+       "tr": "Kerem kırk, Zeynep otuz sekiz yaşında."
+      },
+      {
+       "en": "They have a son, Ali, and a baby daughter, Defne.",
+       "tr": "Ali adında bir oğulları ve Defne adında bir bebekleri var."
+      },
+      {
+       "en": "Ali is six years old. He is very tall.",
+       "tr": "Ali altı yaşında. Çok uzun boylu."
+      },
+      {
+       "en": "The baby is one year old. She is very beautiful.",
+       "tr": "Bebek bir yaşında. Çok güzel."
+      },
+      {
+       "en": "She looks like her mother.",
+       "tr": "Annesine benziyor."
+      },
+      {
+       "en": "Kerem is very happy. He loves his family.",
+       "tr": "Kerem çok mutlu. Ailesini çok seviyor."
+      }
+     ]
+    },
+    {
+     "id": "a1-family-3",
+     "title": "Tanışma",
+     "lines": [
+      {
+       "en": "Hi Jack! How are you today?",
+       "tr": "Selam Jack! Bugün nasılsın?"
+      },
+      {
+       "en": "I'm fine, thanks, Seda. Who is this tall man?",
+       "tr": "İyiyim, teşekkürler Seda. Bu uzun boylu adam kim?"
+      },
+      {
+       "en": "This is my husband, Burak.",
+       "tr": "Bu eşim, Burak."
+      },
+      {
+       "en": "Hello, Burak! Nice to meet you.",
+       "tr": "Merhaba Burak! Tanıştığımıza memnun oldum."
+      },
+      {
+       "en": "Nice to meet you, too, Jack. Do you have children?",
+       "tr": "Ben de memnun oldum, Jack. Çocuğunuz var mı?"
+      },
+      {
+       "en": "Yes, my wife and I have two daughters.",
+       "tr": "Evet, eşimle iki kızımız var."
+      },
+      {
+       "en": "That's nice! We have a small baby.",
+       "tr": "Ne güzel! Bizim küçük bir bebeğimiz var."
+      }
+     ]
+    },
+    {
+     "id": "a1-family-4",
+     "title": "Büyük aile",
+     "lines": [
+      {
+       "en": "Bora has a big family in Ankara.",
+       "tr": "Bora'nın Ankara'da büyük bir ailesi var."
+      },
+      {
+       "en": "He lives with his parents, his brother, and his grandmother.",
+       "tr": "Annesi, babası, kardeşi ve büyükannesiyle yaşıyor."
+      },
+      {
+       "en": "His father is fifty-two, and his mother is forty-nine.",
+       "tr": "Babası elli iki, annesi kırk dokuz yaşında."
+      },
+      {
+       "en": "His parents work, but his grandmother doesn't work.",
+       "tr": "Annesiyle babası çalışıyor ama büyükannesi çalışmıyor."
+      },
+      {
+       "en": "His grandmother and grandfather are old, but they are very happy.",
+       "tr": "Büyükannesi ve büyükbabası yaşlı ama çok mutlular."
+      },
+      {
+       "en": "Today, the family sits and eats.",
+       "tr": "Bugün aile oturmuş, yemek yiyor."
+      },
+      {
+       "en": "Bora is very happy. \"I love my family!\"",
+       "tr": "Bora çok mutlu. \"Ailemi çok seviyorum!\""
+      }
+     ]
+    },
+    {
+     "id": "a1-family-5",
+     "title": "Kız kardeşim",
+     "lines": [
+      {
+       "en": "Kate sees her friend Ece with a young woman.",
+       "tr": "Kate, arkadaşı Ece'yi genç bir kadınla görüyor."
+      },
+      {
+       "en": "Hello Ece! Is this your sister?",
+       "tr": "Merhaba Ece! Bu senin kız kardeşin mi?"
+      },
+      {
+       "en": "Yes! This is my sister, Nil.",
+       "tr": "Evet! Bu kız kardeşim Nil."
+      },
+      {
+       "en": "Hi Nil! You are very tall and beautiful.",
+       "tr": "Selam Nil! Çok uzun boylu ve güzelsin."
+      },
+      {
+       "en": "Thank you, Kate! How old are you?",
+       "tr": "Teşekkür ederim, Kate! Kaç yaşındasın?"
+      },
+      {
+       "en": "I'm thirty years old. And how old is Nil, Ece?",
+       "tr": "Otuz yaşındayım. Peki Nil kaç yaşında, Ece?"
+      },
+      {
+       "en": "She is twenty-three. She is young, and she speaks good English!",
+       "tr": "Yirmi üç yaşında. Genç ve iyi İngilizce konuşuyor!"
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-family",
+    "a1-mother",
+    "a1-father",
+    "a1-parents",
+    "a1-brother",
+    "a1-sister",
+    "a1-son",
+    "a1-daughter",
+    "a1-husband",
+    "a1-wife",
+    "a1-baby",
+    "a1-grandmother",
+    "a1-grandfather",
+    "a1-love",
+    "a1-young",
+    "a1-tall",
+    "a1-beautiful",
+    "a1-year",
+    "a1-twenty",
+    "a1-thirty",
+    "a1-forty",
+    "a1-fifty",
+    "a1-p-how-old",
+    "a1-p-years-old",
+    "a1-p-brothers-or-sisters",
+    "a1-p-this-is-my",
+    "a1-p-love-family",
+    "a1-p-looks-like"
+   ]
+  },
+  {
+   "id": "a1-home",
+   "level": "A1",
+   "title": "Evim",
+   "goal": "Evini ve odalarını tarif eder, bir şeyin nerede olduğunu söyler ve sorar, misafir karşılar.",
+   "placement": "any",
+   "position": 2,
+   "stories": [
+    {
+     "id": "a1-home-1",
+     "title": "Yeni daire",
+     "lines": [
+      {
+       "en": "Selin lives in a new apartment in Ankara.",
+       "tr": "Selin Ankara'da yeni bir dairede yaşıyor."
+      },
+      {
+       "en": "Her friend Mert comes to see her home.",
+       "tr": "Arkadaşı Mert onun evini görmeye geliyor."
+      },
+      {
+       "en": "Hello, Mert! Come in! Make yourself at home.",
+       "tr": "Merhaba Mert! İçeri gel! Kendi evin gibi rahat et."
+      },
+      {
+       "en": "Thank you, Selin.",
+       "tr": "Teşekkürler, Selin."
+      },
+      {
+       "en": "Your apartment is very nice and clean.",
+       "tr": "Dairen çok hoş ve temiz."
+      },
+      {
+       "en": "Thank you. There are three rooms and a small kitchen.",
+       "tr": "Teşekkür ederim. Üç oda ve küçük bir mutfak var."
+      },
+      {
+       "en": "They sit on the big sofa and speak.",
+       "tr": "Büyük kanepeye oturup konuşuyorlar."
+      }
+     ]
+    },
+    {
+     "id": "a1-home-2",
+     "title": "Anahtar nerede?",
+     "lines": [
+      {
+       "en": "Burak and Emma live in a small house in London.",
+       "tr": "Burak ve Emma Londra'da küçük bir evde yaşıyorlar."
+      },
+      {
+       "en": "They want to go now, but Burak doesn't have his key.",
+       "tr": "Şimdi çıkmak istiyorlar ama Burak'ın anahtarı yok."
+      },
+      {
+       "en": "Emma, where is the key?",
+       "tr": "Emma, anahtar nerede?"
+      },
+      {
+       "en": "Is it on the table in the kitchen?",
+       "tr": "Mutfaktaki masanın üstünde mi?"
+      },
+      {
+       "en": "No, it is not there.",
+       "tr": "Hayır, orada değil."
+      },
+      {
+       "en": "Look, it is on the floor by the door!",
+       "tr": "Bak, kapının yanında yerde!"
+      },
+      {
+       "en": "Good! Now we can go.",
+       "tr": "Harika! Şimdi gidebiliriz."
+      }
+     ]
+    },
+    {
+     "id": "a1-home-3",
+     "title": "Bahçeli ev",
+     "lines": [
+      {
+       "en": "Kemal and Defne have an old house in İzmir.",
+       "tr": "Kemal ve Defne'nin İzmir'de eski bir evi var."
+      },
+      {
+       "en": "There is a big garden with four chairs and a table.",
+       "tr": "Dört sandalyeli ve bir masalı büyük bir bahçe var."
+      },
+      {
+       "en": "Today is hot, so the windows and doors are open.",
+       "tr": "Bugün hava sıcak, bu yüzden pencereler ve kapılar açık."
+      },
+      {
+       "en": "Their two children are in the garden.",
+       "tr": "İki çocukları bahçede."
+      },
+      {
+       "en": "Kemal cleans the kitchen, and Defne sits on a chair.",
+       "tr": "Kemal mutfağı temizliyor, Defne de bir sandalyede oturuyor."
+      },
+      {
+       "en": "They like their home very much.",
+       "tr": "Evlerini çok seviyorlar."
+      }
+     ]
+    },
+    {
+     "id": "a1-home-4",
+     "title": "Soğuk bir gün",
+     "lines": [
+      {
+       "en": "Zeynep is at home in Bursa today.",
+       "tr": "Zeynep bugün Bursa'da evde."
+      },
+      {
+       "en": "It is very cold, and the bedroom window is open.",
+       "tr": "Hava çok soğuk ve yatak odasının penceresi açık."
+      },
+      {
+       "en": "I am cold. Can you close the window, please?",
+       "tr": "Üşüyorum. Pencereyi kapatabilir misin lütfen?"
+      },
+      {
+       "en": "Yes, I can close it now.",
+       "tr": "Evet, şimdi kapatabilirim."
+      },
+      {
+       "en": "Where is the child?",
+       "tr": "Çocuk nerede?"
+      },
+      {
+       "en": "He is in his bedroom. He is sleeping in his bed.",
+       "tr": "Yatak odasında. Yatağında uyuyor."
+      },
+      {
+       "en": "Zeynep closes the bedroom door too.",
+       "tr": "Zeynep yatak odasının kapısını da kapatıyor."
+      }
+     ]
+    },
+    {
+     "id": "a1-home-5",
+     "title": "Misafir",
+     "lines": [
+      {
+       "en": "David comes to Hakan's house.",
+       "tr": "David, Hakan'ın evine geliyor."
+      },
+      {
+       "en": "Hi, David! Come in! Make yourself at home.",
+       "tr": "Selam David! İçeri gel! Kendi evin gibi rahat et."
+      },
+      {
+       "en": "Thank you, Hakan. You have a very nice house.",
+       "tr": "Teşekkürler Hakan. Çok güzel bir evin var."
+      },
+      {
+       "en": "There are two bedrooms, a big kitchen, and a garden.",
+       "tr": "İki yatak odası, büyük bir mutfak ve bir bahçe var."
+      },
+      {
+       "en": "Excuse me, where is the bathroom?",
+       "tr": "Affedersin, banyo nerede?"
+      },
+      {
+       "en": "It is there, by that door.",
+       "tr": "Şurada, şu kapının yanında."
+      },
+      {
+       "en": "They sit at the kitchen table and eat.",
+       "tr": "Mutfak masasına oturup yemek yiyorlar."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-house",
+    "a1-home",
+    "a1-apartment",
+    "a1-room",
+    "a1-kitchen",
+    "a1-bathroom",
+    "a1-bedroom",
+    "a1-door",
+    "a1-window",
+    "a1-bed",
+    "a1-chair",
+    "a1-sofa",
+    "a1-table",
+    "a1-garden",
+    "a1-floor",
+    "a1-key",
+    "a1-open",
+    "a1-close",
+    "a1-clean",
+    "a1-sleep",
+    "a1-p-there-is",
+    "a1-p-there-are",
+    "a1-p-where-is",
+    "a1-p-come-in",
+    "a1-p-at-home"
+   ]
+  },
+  {
+   "id": "a1-day",
+   "level": "A1",
+   "title": "Günüm",
+   "goal": "Günlük rutinini anlatır, saati sorar ve söyler, haftanın günlerini ve sıklık zarflarını kullanır.",
+   "placement": "any",
+   "position": 3,
+   "stories": [
+    {
+     "id": "a1-day-1",
+     "title": "Selin'in sabahı",
+     "lines": [
+      {
+       "en": "Selin lives in Ankara.",
+       "tr": "Selin Ankara'da yaşıyor."
+      },
+      {
+       "en": "Every day I get up at seven o'clock.",
+       "tr": "Her gün saat yedide kalkarım."
+      },
+      {
+       "en": "I always have a hot shower in the morning.",
+       "tr": "Sabahları her zaman sıcak bir duş alırım."
+      },
+      {
+       "en": "I have a small breakfast at eight.",
+       "tr": "Sekizde küçük bir kahvaltı yaparım."
+      },
+      {
+       "en": "I start work at nine and finish at five.",
+       "tr": "İşe dokuzda başlarım ve beşte bitiririm."
+      },
+      {
+       "en": "In the evening, I eat dinner and sit with my friends.",
+       "tr": "Akşamları akşam yemeği yerim ve arkadaşlarımla otururum."
+      }
+     ]
+    },
+    {
+     "id": "a1-day-2",
+     "title": "Saat kaç?",
+     "lines": [
+      {
+       "en": "Burak and Emma work in London.",
+       "tr": "Burak ve Emma Londra'da çalışıyorlar."
+      },
+      {
+       "en": "Excuse me, Emma. What time is it?",
+       "tr": "Affedersin Emma. Saat kaç?"
+      },
+      {
+       "en": "It's one o'clock.",
+       "tr": "Saat bir."
+      },
+      {
+       "en": "Good! It's lunch time. Do you want lunch now?",
+       "tr": "Güzel! Öğle yemeği vakti. Şimdi öğle yemeği ister misin?"
+      },
+      {
+       "en": "Yes, please! Let's go now.",
+       "tr": "Evet, lütfen! Hadi şimdi gidelim."
+      },
+      {
+       "en": "They go and eat lunch together.",
+       "tr": "Gidip birlikte öğle yemeği yiyorlar."
+      }
+     ]
+    },
+    {
+     "id": "a1-day-3",
+     "title": "Gece işi",
+     "lines": [
+      {
+       "en": "Mert is from Izmir. He works at night.",
+       "tr": "Mert İzmirli. O gece çalışıyor."
+      },
+      {
+       "en": "He starts work at ten in the evening.",
+       "tr": "İşe akşam onda başlıyor."
+      },
+      {
+       "en": "He finishes at six in the morning.",
+       "tr": "Sabah altıda bitiriyor."
+      },
+      {
+       "en": "He never works on Friday and Saturday.",
+       "tr": "Cuma ve cumartesi günü hiç çalışmaz."
+      },
+      {
+       "en": "In the afternoon, he usually gets up at two o'clock.",
+       "tr": "Öğleden sonra genellikle saat ikide kalkar."
+      },
+      {
+       "en": "He likes his work very much.",
+       "tr": "İşini çok seviyor."
+      }
+     ]
+    },
+    {
+     "id": "a1-day-4",
+     "title": "Yoğun bir hafta",
+     "lines": [
+      {
+       "en": "Hi David! How are you today?",
+       "tr": "Selam David! Bugün nasılsın?"
+      },
+      {
+       "en": "I'm fine, thanks. Do you work every day this week?",
+       "tr": "İyiyim, teşekkürler. Bu hafta her gün çalışıyor musun?"
+      },
+      {
+       "en": "I work on Monday, Tuesday, Wednesday, and Thursday.",
+       "tr": "Pazartesi, salı, çarşamba ve perşembe çalışıyorum."
+      },
+      {
+       "en": "What about Friday?",
+       "tr": "Peki ya cuma?"
+      },
+      {
+       "en": "No, I don't work on Friday, but I sometimes work on Sunday.",
+       "tr": "Hayır, cuma günü çalışmıyorum ama bazen pazar günü çalışırım."
+      },
+      {
+       "en": "Ok, see you tomorrow!",
+       "tr": "Tamam, yarın görüşürüz!"
+      },
+      {
+       "en": "See you tomorrow!",
+       "tr": "Yarın görüşürüz!"
+      }
+     ]
+    },
+    {
+     "id": "a1-day-5",
+     "title": "Güzel bir hafta sonu",
+     "lines": [
+      {
+       "en": "Kaan and Defne live in Istanbul.",
+       "tr": "Kaan ve Defne İstanbul'da yaşıyorlar."
+      },
+      {
+       "en": "From Monday to Friday, they get up early and work eight hours.",
+       "tr": "Pazartesiden cumaya kadar erken kalkıyor ve sekiz saat çalışıyorlar."
+      },
+      {
+       "en": "At the weekend, they never get up early.",
+       "tr": "Hafta sonu asla erken kalkmazlar."
+      },
+      {
+       "en": "On Saturday, they get up at ten and have a big breakfast.",
+       "tr": "Cumartesi günü onda kalkarlar ve büyük bir kahvaltı yaparlar."
+      },
+      {
+       "en": "On Sunday afternoon, they usually see their friends.",
+       "tr": "Pazar öğleden sonra genellikle arkadaşlarıyla görüşürler."
+      },
+      {
+       "en": "They are very happy at the weekend.",
+       "tr": "Hafta sonu çok mutlular."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-morning",
+    "a1-afternoon",
+    "a1-evening",
+    "a1-night",
+    "a1-breakfast",
+    "a1-lunch",
+    "a1-dinner",
+    "a1-hour",
+    "a1-week",
+    "a1-weekend",
+    "a1-tomorrow",
+    "a1-shower",
+    "a1-start",
+    "a1-finish",
+    "a1-early",
+    "a1-late",
+    "a1-always",
+    "a1-usually",
+    "a1-sometimes",
+    "a1-never",
+    "a1-every",
+    "a1-Monday",
+    "a1-Tuesday",
+    "a1-Wednesday",
+    "a1-Thursday",
+    "a1-Friday",
+    "a1-Saturday",
+    "a1-Sunday",
+    "a1-p-what-time",
+    "a1-p-oclock",
+    "a1-p-get-up",
+    "a1-p-see-tomorrow",
+    "a1-p-every-day"
+   ]
+  },
+  {
+   "id": "a1-cafe",
+   "level": "A1",
+   "title": "Kafede",
+   "goal": "Kafede sipariş verir, sıcak/soğuk ve büyük/küçük seçer, fiyat sorar, hesabı ister ve kartla öder.",
+   "placement": "any",
+   "position": 4,
+   "stories": [
+    {
+     "id": "a1-cafe-1",
+     "title": "Elif'in ilk kahvesi",
+     "lines": [
+      {
+       "en": "Elif is from Turkey. Today she is in a small café.",
+       "tr": "Elif Türkiyeli. Bugün küçük bir kafede."
+      },
+      {
+       "en": "Hello! I'd like a coffee, please.",
+       "tr": "Merhaba! Bir kahve alayım, lütfen."
+      },
+      {
+       "en": "Hot or cold?",
+       "tr": "Sıcak mı, soğuk mu?"
+      },
+      {
+       "en": "Hot, please. And a cake.",
+       "tr": "Sıcak, lütfen. Bir de kek."
+      },
+      {
+       "en": "For here or to go?",
+       "tr": "Burada mı, paket mi?"
+      },
+      {
+       "en": "For here, thank you.",
+       "tr": "Burada, teşekkürler."
+      },
+      {
+       "en": "She sits at a table. The coffee is very good.",
+       "tr": "Bir masaya oturuyor. Kahve çok güzel."
+      }
+     ]
+    },
+    {
+     "id": "a1-cafe-2",
+     "title": "Hesap lütfen",
+     "lines": [
+      {
+       "en": "Mehmet and his friend Tom are in a café.",
+       "tr": "Mehmet ve arkadaşı Tom bir kafedeler."
+      },
+      {
+       "en": "Tom drinks tea. Mehmet eats a sandwich.",
+       "tr": "Tom çay içiyor. Mehmet sandviç yiyor."
+      },
+      {
+       "en": "Can I have the bill, please?",
+       "tr": "Hesabı alabilir miyim, lütfen?"
+      },
+      {
+       "en": "Here you are.",
+       "tr": "Buyurun."
+      },
+      {
+       "en": "How much is it?",
+       "tr": "Ne kadar?"
+      },
+      {
+       "en": "It's nine.",
+       "tr": "Dokuz."
+      },
+      {
+       "en": "Can I pay by card?",
+       "tr": "Kartla ödeyebilir miyim?"
+      },
+      {
+       "en": "Yes, you can.",
+       "tr": "Evet, olur."
+      }
+     ]
+    },
+    {
+     "id": "a1-cafe-3",
+     "title": "Süt ve şeker",
+     "lines": [
+      {
+       "en": "A woman and her child sit at a big table.",
+       "tr": "Bir kadın ve çocuğu büyük bir masaya oturuyor."
+      },
+      {
+       "en": "The child wants a glass of milk.",
+       "tr": "Çocuk bir bardak süt istiyor."
+      },
+      {
+       "en": "The woman wants a cup of tea with sugar.",
+       "tr": "Kadın şekerli bir fincan çay istiyor."
+      },
+      {
+       "en": "Is the milk cold?",
+       "tr": "Süt soğuk mu?"
+      },
+      {
+       "en": "Yes, it is very cold.",
+       "tr": "Evet, çok soğuk."
+      },
+      {
+       "en": "The child is happy.",
+       "tr": "Çocuk mutlu."
+      }
+     ]
+    },
+    {
+     "id": "a1-cafe-4",
+     "title": "Kafede bir gün",
+     "lines": [
+      {
+       "en": "Deniz works in a café. Two people come in.",
+       "tr": "Deniz bir kafede çalışıyor. İki kişi içeri giriyor."
+      },
+      {
+       "en": "Hello! Here is the menu.",
+       "tr": "Merhaba! Buyurun, menü."
+      },
+      {
+       "en": "Thank you. We'd like two coffees and one sandwich.",
+       "tr": "Teşekkürler. İki kahve ve bir sandviç alalım."
+      },
+      {
+       "en": "Hot or cold coffee?",
+       "tr": "Sıcak mı, soğuk kahve mi?"
+      },
+      {
+       "en": "Cold, please.",
+       "tr": "Soğuk, lütfen."
+      },
+      {
+       "en": "Deniz likes her work.",
+       "tr": "Deniz işini seviyor."
+      }
+     ]
+    },
+    {
+     "id": "a1-cafe-5",
+     "title": "İki arkadaş",
+     "lines": [
+      {
+       "en": "Ayşe and her friend Leyla are at a café.",
+       "tr": "Ayşe ve arkadaşı Leyla bir kafedeler."
+      },
+      {
+       "en": "Do you want a cake?",
+       "tr": "Kek ister misin?"
+      },
+      {
+       "en": "No, thank you. I don't eat cake. I'd like a sandwich.",
+       "tr": "Hayır, teşekkürler. Kek yemem. Sandviç alayım."
+      },
+      {
+       "en": "And to drink?",
+       "tr": "İçecek olarak?"
+      },
+      {
+       "en": "Water, please. Cold water.",
+       "tr": "Su, lütfen. Soğuk su."
+      },
+      {
+       "en": "They eat and drink. Ayşe pays by card.",
+       "tr": "Yiyip içiyorlar. Ayşe kartla ödüyor."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-café",
+    "a1-coffee",
+    "a1-tea",
+    "a1-water",
+    "a1-milk",
+    "a1-sugar",
+    "a1-cake",
+    "a1-sandwich",
+    "a1-menu",
+    "a1-bill",
+    "a1-cup",
+    "a1-glass",
+    "a1-table",
+    "a1-card",
+    "a1-pay",
+    "a1-order",
+    "a1-juice",
+    "a1-chocolate",
+    "a1-bottle",
+    "a1-waiter",
+    "a1-p-id-like",
+    "a1-p-how-much",
+    "a1-p-the-bill",
+    "a1-p-for-here",
+    "a1-p-here-you-are",
+    "a1-p-by-card"
+   ]
+  },
+  {
+   "id": "a1-shopping",
+   "level": "A1",
+   "title": "Alışveriş",
+   "goal": "Mağazada fiyat sorar, renk ve beden seçer, deneyip satın alır.",
+   "placement": "any",
+   "position": 5,
+   "stories": [
+    {
+     "id": "a1-shopping-1",
+     "title": "Kırmızı elbise",
+     "lines": [
+      {
+       "en": "Zeynep is in a nice shop in İstanbul.",
+       "tr": "Zeynep İstanbul'da güzel bir mağazada."
+      },
+      {
+       "en": "She sees a red dress.",
+       "tr": "Kırmızı bir elbise görüyor."
+      },
+      {
+       "en": "Excuse me. Can I try it on?",
+       "tr": "Bakar mısınız? Deneyebilir miyim?"
+      },
+      {
+       "en": "Yes. What is your size?",
+       "tr": "Tabii. Bedeniniz nedir?"
+      },
+      {
+       "en": "Small, please.",
+       "tr": "Küçük beden, lütfen."
+      },
+      {
+       "en": "She looks very nice in the red dress.",
+       "tr": "Kırmızı elbiseyle çok güzel görünüyor."
+      },
+      {
+       "en": "How much is this?",
+       "tr": "Bu ne kadar?"
+      },
+      {
+       "en": "It's very cheap. I'll take it!",
+       "tr": "Çok ucuzmuş. Bunu alıyorum!"
+      }
+     ]
+    },
+    {
+     "id": "a1-shopping-2",
+     "title": "Pazarda",
+     "lines": [
+      {
+       "en": "Burak is from Turkey. He lives in London now.",
+       "tr": "Burak Türkiyeli. Şimdi Londra'da yaşıyor."
+      },
+      {
+       "en": "Today he is at an old market with his friend Emma.",
+       "tr": "Bugün arkadaşı Emma ile eski bir pazarda."
+      },
+      {
+       "en": "Hello! Do you need a bag?",
+       "tr": "Merhaba! Çanta lazım mı?"
+      },
+      {
+       "en": "I'm just looking, thank you.",
+       "tr": "Sadece bakıyorum, teşekkürler."
+      },
+      {
+       "en": "Burak sees a nice black shirt.",
+       "tr": "Burak güzel siyah bir gömlek görüyor."
+      },
+      {
+       "en": "Do you have it in green or blue?",
+       "tr": "Bunun yeşili veya mavisi var mı?"
+      },
+      {
+       "en": "Yes, here is a blue one.",
+       "tr": "Evet, buyurun mavi bir tane."
+      },
+      {
+       "en": "Burak likes the price and buys the shirt.",
+       "tr": "Burak fiyatı beğeniyor ve gömleği alıyor."
+      }
+     ]
+    },
+    {
+     "id": "a1-shopping-3",
+     "title": "Yeni ayakkabılar",
+     "lines": [
+      {
+       "en": "Mert works in a shop in İzmir. He sells shoes.",
+       "tr": "Mert İzmir'de bir mağazada çalışıyor. Ayakkabı satıyor."
+      },
+      {
+       "en": "A man and his child come in.",
+       "tr": "Bir adam ve çocuğu içeri giriyor."
+      },
+      {
+       "en": "Hello! We need new shoes for my child.",
+       "tr": "Merhaba! Çocuğum için yeni bir ayakkabıya ihtiyacımız var."
+      },
+      {
+       "en": "What colour do you want?",
+       "tr": "Hangi renk istiyorsunuz?"
+      },
+      {
+       "en": "White or black, please. Not expensive.",
+       "tr": "Beyaz ya da siyah, lütfen. Pahalı olmasın."
+      },
+      {
+       "en": "These white shoes are very good. The price is eight.",
+       "tr": "Bu beyaz ayakkabılar çok iyi. Fiyatı sekiz."
+      },
+      {
+       "en": "The child likes them. The man pays and they go.",
+       "tr": "Çocuk onları beğeniyor. Adam ödüyor ve gidiyorlar."
+      }
+     ]
+    },
+    {
+     "id": "a1-shopping-4",
+     "title": "Büyük çanta",
+     "lines": [
+      {
+       "en": "Selin and Defne are friends in Ankara.",
+       "tr": "Selin ve Defne Ankara'da iki arkadaş."
+      },
+      {
+       "en": "Selin wants a big bag for work.",
+       "tr": "Selin iş için büyük bir çanta istiyor."
+      },
+      {
+       "en": "Look at this green bag, Selin!",
+       "tr": "Şu yeşil çantaya bak, Selin!"
+      },
+      {
+       "en": "The colour is nice, but it's very small.",
+       "tr": "Rengi hoş ama çok küçük."
+      },
+      {
+       "en": "Excuse me, do you have this bag in a big size?",
+       "tr": "Bakar mısınız, bu çantanın büyük boyu var mı?"
+      },
+      {
+       "en": "No, we don't. But we have this big black bag.",
+       "tr": "Hayır, yok. Ama şu büyük siyah çantamız var."
+      },
+      {
+       "en": "How much is this?",
+       "tr": "Bu ne kadar?"
+      },
+      {
+       "en": "It's ten. Selin likes it and buys it.",
+       "tr": "On. Selin beğeniyor ve onu alıyor."
+      }
+     ]
+    },
+    {
+     "id": "a1-shopping-5",
+     "title": "Çok pahalı",
+     "lines": [
+      {
+       "en": "Kerem is in a big shop in New York.",
+       "tr": "Kerem New York'ta büyük bir mağazada."
+      },
+      {
+       "en": "He wants to buy a new shirt.",
+       "tr": "Yeni bir gömlek almak istiyor."
+      },
+      {
+       "en": "He sees a nice white shirt.",
+       "tr": "Güzel beyaz bir gömlek görüyor."
+      },
+      {
+       "en": "Excuse me. How much is this?",
+       "tr": "Bakar mısınız? Bu ne kadar?"
+      },
+      {
+       "en": "It's ten.",
+       "tr": "On."
+      },
+      {
+       "en": "That's very expensive. I don't have much money.",
+       "tr": "Çok pahalıymış. Fazla param yok."
+      },
+      {
+       "en": "We have cheap shirts here. Look at these.",
+       "tr": "Burada ucuz gömleklerimiz var. Bunlara bakın."
+      },
+      {
+       "en": "Thank you! This blue one is good. I'll take it.",
+       "tr": "Teşekkürler! Bu mavi olan iyiymiş. Bunu alıyorum."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-shop",
+    "a1-market",
+    "a1-buy",
+    "a1-sell",
+    "a1-price",
+    "a1-money",
+    "a1-cheap",
+    "a1-expensive",
+    "a1-colour",
+    "a1-size",
+    "a1-shirt",
+    "a1-shoes",
+    "a1-dress",
+    "a1-bag",
+    "a1-red",
+    "a1-blue",
+    "a1-green",
+    "a1-black",
+    "a1-white",
+    "a1-pay",
+    "a1-p-how-much-this",
+    "a1-p-try-on",
+    "a1-p-have-in",
+    "a1-p-just-looking",
+    "a1-p-take-it"
+   ]
+  },
+  {
+   "id": "a1-city",
+   "level": "A1",
+   "title": "Şehirde",
+   "goal": "Yol sorar ve tarif eder, toplu taşıma ve yerlerle ilgili basit sorular sorar.",
+   "placement": "any",
+   "position": 6,
+   "stories": [
+    {
+     "id": "a1-city-1",
+     "title": "Londra'da ilk gün",
+     "lines": [
+      {
+       "en": "Selin is from Turkey. Today she is in London.",
+       "tr": "Selin Türkiyeli. Bugün Londra'da."
+      },
+      {
+       "en": "She has a small map, but she doesn't see her hotel.",
+       "tr": "Küçük bir haritası var ama otelini göremiyor."
+      },
+      {
+       "en": "Excuse me. Where is the Park Hotel?",
+       "tr": "Affedersiniz. Park Otel nerede?"
+      },
+      {
+       "en": "Go straight on and turn left at the bank.",
+       "tr": "Düz gidin ve bankadan sola dönün."
+      },
+      {
+       "en": "Is it far?",
+       "tr": "Uzak mı?"
+      },
+      {
+       "en": "No, it's very near. You can walk.",
+       "tr": "Hayır, çok yakın. Yürüyebilirsiniz."
+      },
+      {
+       "en": "Thank you!",
+       "tr": "Teşekkür ederim!"
+      }
+     ]
+    },
+    {
+     "id": "a1-city-2",
+     "title": "Havaalanına gidiş",
+     "lines": [
+      {
+       "en": "Mert and his friend Emma are at the hotel.",
+       "tr": "Mert ve arkadaşı Emma oteldeler."
+      },
+      {
+       "en": "They need to go to the airport now.",
+       "tr": "Şimdi havaalanına gitmeleri gerekiyor."
+      },
+      {
+       "en": "Excuse me, how do I get to the airport?",
+       "tr": "Affedersiniz, havaalanına nasıl giderim?"
+      },
+      {
+       "en": "You can go by train or by bus.",
+       "tr": "Trenle ya da otobüsle gidebilirsiniz."
+      },
+      {
+       "en": "Where is the train station?",
+       "tr": "Tren istasyonu nerede?"
+      },
+      {
+       "en": "Turn right on this street. It's on your left.",
+       "tr": "Bu sokaktan sağa dönün. Solunuzda."
+      },
+      {
+       "en": "We don't have much time. Let's go by taxi!",
+       "tr": "Çok vaktimiz yok. Taksiyle gidelim!"
+      }
+     ]
+    },
+    {
+     "id": "a1-city-3",
+     "title": "Yeni hastane",
+     "lines": [
+      {
+       "en": "Hakan lives in Izmir. He works at a big hospital.",
+       "tr": "Hakan İzmir'de yaşıyor. Büyük bir hastanede çalışıyor."
+      },
+      {
+       "en": "Today his friend Defne comes to the hospital by car.",
+       "tr": "Bugün arkadaşı Defne arabayla hastaneye geliyor."
+      },
+      {
+       "en": "Hi Hakan! I am on your street now. Where is the hospital?",
+       "tr": "Selam Hakan! Şimdi senin sokağındayım. Hastane nerede?"
+      },
+      {
+       "en": "Do you see the big park?",
+       "tr": "Büyük parkı görüyor musun?"
+      },
+      {
+       "en": "Yes, the park is on my right.",
+       "tr": "Evet, park sağımda."
+      },
+      {
+       "en": "Go straight on and turn left. The hospital is there.",
+       "tr": "Düz git ve sola dön. Hastane orada."
+      },
+      {
+       "en": "I see it now! Thank you.",
+       "tr": "Şimdi görüyorum! Teşekkürler."
+      }
+     ]
+    },
+    {
+     "id": "a1-city-4",
+     "title": "Otobüs durağında",
+     "lines": [
+      {
+       "en": "David is new in Istanbul. He is at a bus stop.",
+       "tr": "David İstanbul'da yeni. Bir otobüs durağında."
+      },
+      {
+       "en": "Excuse me, do you speak English?",
+       "tr": "Affedersiniz, İngilizce biliyor musunuz?"
+      },
+      {
+       "en": "Yes, I do. My name is Zeynep.",
+       "tr": "Evet, biliyorum. Benim adım Zeynep."
+      },
+      {
+       "en": "Nice to meet you, Zeynep. Does this bus go to the station?",
+       "tr": "Memnun oldum Zeynep. Bu otobüs istasyona gider mi?"
+      },
+      {
+       "en": "No, it doesn't stop there. Bus four goes to the station.",
+       "tr": "Hayır, orada durmaz. İstasyona dört numaralı otobüs gider."
+      },
+      {
+       "en": "Look, bus four is coming now!",
+       "tr": "Bakın, dört numaralı otobüs şimdi geliyor!"
+      },
+      {
+       "en": "Thank you very much! Goodbye!",
+       "tr": "Çok teşekkür ederim! Hoşça kalın!"
+      }
+     ]
+    },
+    {
+     "id": "a1-city-5",
+     "title": "Parkta yürüyüş",
+     "lines": [
+      {
+       "en": "Kerem and Aslı live in Ankara.",
+       "tr": "Kerem ve Aslı Ankara'da yaşıyorlar."
+      },
+      {
+       "en": "Today is a nice day. They don't want to go by car.",
+       "tr": "Bugün güzel bir gün. Arabayla gitmek istemiyorlar."
+      },
+      {
+       "en": "They walk to a big park near their street.",
+       "tr": "Sokaklarının yakınındaki büyük bir parka yürüyorlar."
+      },
+      {
+       "en": "They sit in the park and see many people and children.",
+       "tr": "Parkta oturuyor ve birçok insan ve çocuk görüyorlar."
+      },
+      {
+       "en": "Excuse me, is there a bank near here?",
+       "tr": "Affedersiniz, buralarda bir banka var mı?"
+      },
+      {
+       "en": "Yes. Go to the street and turn right. It's near the bus stop.",
+       "tr": "Evet. Sokağa çıkın ve sağa dönün. Otobüs durağının yanında."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-city",
+    "a1-street",
+    "a1-station",
+    "a1-bus",
+    "a1-train",
+    "a1-taxi",
+    "a1-car",
+    "a1-airport",
+    "a1-hotel",
+    "a1-bank",
+    "a1-hospital",
+    "a1-park",
+    "a1-map",
+    "a1-left",
+    "a1-right",
+    "a1-near",
+    "a1-far",
+    "a1-walk",
+    "a1-turn",
+    "a1-stop",
+    "a1-p-where-is",
+    "a1-p-go-straight",
+    "a1-p-turn-left",
+    "a1-p-is-it-far",
+    "a1-p-how-do-i-get"
+   ]
+  },
+  {
+   "id": "a1-free-time",
+   "level": "A1",
+   "title": "Boş zaman",
+   "goal": "Neyi sevip sevmediğini, neyi yapabildiğini söyler; birini bir etkinliğe davet eder.",
+   "placement": "any",
+   "position": 7,
+   "stories": [
+    {
+     "id": "a1-free-time-1",
+     "title": "Plajda bir gün",
+     "lines": [
+      {
+       "en": "Selin and Mert live in Antalya. Today is a hot day.",
+       "tr": "Selin ve Mert Antalya'da yaşıyor. Bugün sıcak bir gün."
+      },
+      {
+       "en": "I go to the beach now. Do you want to come?",
+       "tr": "Şimdi plaja gidiyorum. Gelmek ister misin?"
+      },
+      {
+       "en": "Yes! I like swimming.",
+       "tr": "Evet! Yüzmeyi severim."
+      },
+      {
+       "en": "Can you play football?",
+       "tr": "Futbol oynayabilir misin?"
+      },
+      {
+       "en": "Yes, I'm good at football.",
+       "tr": "Evet, futbolda iyiyim."
+      },
+      {
+       "en": "At the beach, they swim and play a game.",
+       "tr": "Plajda yüzüyorlar ve oyun oynuyorlar."
+      },
+      {
+       "en": "They are very happy.",
+       "tr": "Çok mutlular."
+      }
+     ]
+    },
+    {
+     "id": "a1-free-time-2",
+     "title": "Müzik ve gitar",
+     "lines": [
+      {
+       "en": "Zeynep is from Turkey. Her friend Alex is from London.",
+       "tr": "Zeynep Türkiyeli. Arkadaşı Alex Londralı."
+      },
+      {
+       "en": "I like listening to music. Do you like music, Alex?",
+       "tr": "Müzik dinlemeyi severim. Sen müziği sever misin Alex?"
+      },
+      {
+       "en": "Yes, I do. I have a guitar.",
+       "tr": "Evet, severim. Gitarım var."
+      },
+      {
+       "en": "Can you play the guitar?",
+       "tr": "Gitar çalabilir misin?"
+      },
+      {
+       "en": "Yes, I can. Can you sing?",
+       "tr": "Evet, çalabilirim. Sen şarkı söyleyebilir misin?"
+      },
+      {
+       "en": "Yes! Let's sing and play now!",
+       "tr": "Evet! Hadi şimdi şarkı söyleyip çalalım!"
+      },
+      {
+       "en": "Alex plays the guitar and Zeynep sings.",
+       "tr": "Alex gitar çalıyor, Zeynep şarkı söylüyor."
+      }
+     ]
+    },
+    {
+     "id": "a1-free-time-3",
+     "title": "Yeni bir film",
+     "lines": [
+      {
+       "en": "Emre and Defne have time today.",
+       "tr": "Emre ve Defne'nin bugün vakti var."
+      },
+      {
+       "en": "I read a good book. What do you do, Emre?",
+       "tr": "Güzel bir kitap okuyorum. Sen ne yapıyorsun Emre?"
+      },
+      {
+       "en": "I want to watch a new film. Do you want to watch it with me?",
+       "tr": "Yeni bir film izlemek istiyorum. Benimle izlemek ister misin?"
+      },
+      {
+       "en": "Yes, I like watching films.",
+       "tr": "Evet, film izlemeyi severim."
+      },
+      {
+       "en": "Let's cook, too! Can you cook?",
+       "tr": "Hadi yemek de pişirelim! Yemek pişirebilir misin?"
+      },
+      {
+       "en": "Yes, I'm good at cooking.",
+       "tr": "Evet, yemek pişirmede iyiyim."
+      },
+      {
+       "en": "They cook, eat, and watch the film.",
+       "tr": "Yemek pişiriyor, yiyor ve filmi izliyorlar."
+      }
+     ]
+    },
+    {
+     "id": "a1-free-time-4",
+     "title": "Seyahat fotoğrafları",
+     "lines": [
+      {
+       "en": "Hakan and his friend Sara like travelling.",
+       "tr": "Hakan ve arkadaşı Sara seyahat etmeyi seviyor."
+      },
+      {
+       "en": "Look at my new photos from Italy.",
+       "tr": "İtalya'dan yeni fotoğraflarıma bak."
+      },
+      {
+       "en": "This photo is very nice! Who is this man?",
+       "tr": "Bu fotoğraf çok hoş! Bu adam kim?"
+      },
+      {
+       "en": "He is my friend Marco. He is a good cook.",
+       "tr": "O arkadaşım Marco. İyi bir aşçıdır."
+      },
+      {
+       "en": "And you dance in this photo!",
+       "tr": "Bu fotoğrafta da dans ediyorsun!"
+      },
+      {
+       "en": "Yes, I like dancing. People in Italy like music and dancing.",
+       "tr": "Evet, dans etmeyi severim. İtalya'daki insanlar müziği ve dans etmeyi seviyor."
+      }
+     ]
+    },
+    {
+     "id": "a1-free-time-5",
+     "title": "Spor zamanı",
+     "lines": [
+      {
+       "en": "Burak and Kaan meet their new friend David.",
+       "tr": "Burak ve Kaan yeni arkadaşları David ile buluşuyor."
+      },
+      {
+       "en": "David speaks English. He likes sport.",
+       "tr": "David İngilizce konuşuyor. Sporu seviyor."
+      },
+      {
+       "en": "We play football today. Do you want to come, David?",
+       "tr": "Bugün futbol oynuyoruz. Gelmek ister misin David?"
+      },
+      {
+       "en": "Yes, please! I like playing football.",
+       "tr": "Evet, lütfen! Futbol oynamayı severim."
+      },
+      {
+       "en": "Let's go now!",
+       "tr": "Hadi şimdi gidelim!"
+      },
+      {
+       "en": "They play a good game. Nine friends play with them.",
+       "tr": "Güzel bir maç yapıyorlar. Dokuz arkadaşı onlarla oynuyor."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-music",
+    "a1-film",
+    "a1-book",
+    "a1-game",
+    "a1-sport",
+    "a1-football",
+    "a1-swim",
+    "a1-play",
+    "a1-read",
+    "a1-watch",
+    "a1-listen",
+    "a1-dance",
+    "a1-sing",
+    "a1-cook",
+    "a1-travel",
+    "a1-photo",
+    "a1-beach",
+    "a1-guitar",
+    "a1-p-like-ing",
+    "a1-p-can-you",
+    "a1-p-lets",
+    "a1-p-good-at",
+    "a1-p-want-to-come"
+   ]
+  },
+  {
+   "id": "a1-feelings",
+   "level": "A1",
+   "title": "Nasılsın?",
+   "goal": "Havayı anlatır, nasıl hissettiğini söyler (yorgun, aç, hasta), basit sağlık sorunlarını anlatır.",
+   "placement": "any",
+   "position": 8,
+   "stories": [
+    {
+     "id": "a1-feelings-1",
+     "title": "Kars'ta soğuk bir gün",
+     "lines": [
+      {
+       "en": "Emre lives in Kars. It's snowing today.",
+       "tr": "Emre Kars'ta yaşıyor. Bugün kar yağıyor."
+      },
+      {
+       "en": "The wind is very cold.",
+       "tr": "Rüzgar çok soğuk."
+      },
+      {
+       "en": "Emre is at work. He doesn't feel well.",
+       "tr": "Emre işte. İyi hissetmiyor."
+      },
+      {
+       "en": "How are you, Emre?",
+       "tr": "Nasılsın Emre?"
+      },
+      {
+       "en": "I'm cold and I have a headache.",
+       "tr": "Üşüyorum ve başım ağrıyor."
+      },
+      {
+       "en": "You are sick. Go and rest now.",
+       "tr": "Hastasın. Şimdi git ve dinlen."
+      },
+      {
+       "en": "Thank you. See you!",
+       "tr": "Teşekkür ederim. Görüşürüz!"
+      },
+      {
+       "en": "Take care!",
+       "tr": "Kendine iyi bak!"
+      }
+     ]
+    },
+    {
+     "id": "a1-feelings-2",
+     "title": "Londra'dan telefon",
+     "lines": [
+      {
+       "en": "Selin is in Antalya. Her friend Jack is in London.",
+       "tr": "Selin Antalya'da. Arkadaşı Jack Londra'da."
+      },
+      {
+       "en": "Hi Jack! What's the weather like in London?",
+       "tr": "Selam Jack! Londra'da hava nasıl?"
+      },
+      {
+       "en": "It's bad. It's raining and cold today.",
+       "tr": "Kötü. Bugün yağmur yağıyor ve soğuk."
+      },
+      {
+       "en": "Here in Antalya, we have sun. It's very warm.",
+       "tr": "Burada, Antalya'da güneş var. Hava çok ılık."
+      },
+      {
+       "en": "That's very nice! How are you?",
+       "tr": "Bu çok güzel! Sen nasılsın?"
+      },
+      {
+       "en": "I'm fine, thanks. Come to Antalya!",
+       "tr": "İyiyim, teşekkürler. Antalya'ya gel!"
+      },
+      {
+       "en": "I want to come! Goodbye, take care!",
+       "tr": "Gelmek istiyorum! Hoşça kal, kendine iyi bak!"
+      }
+     ]
+    },
+    {
+     "id": "a1-feelings-3",
+     "title": "Doktorda",
+     "lines": [
+      {
+       "en": "Zeynep is a doctor. Burak comes in and sits down.",
+       "tr": "Zeynep doktor. Burak içeri girip oturuyor."
+      },
+      {
+       "en": "Hello, Burak. How do you feel today?",
+       "tr": "Merhaba Burak. Bugün nasıl hissediyorsun?"
+      },
+      {
+       "en": "I don't feel well. I have a bad headache.",
+       "tr": "İyi hissetmiyorum. Kötü bir baş ağrım var."
+      },
+      {
+       "en": "Are you tired too?",
+       "tr": "Yorgun da musun?"
+      },
+      {
+       "en": "Yes, I'm very tired. And my head is hot.",
+       "tr": "Evet, çok yorgunum. Başım da sıcak."
+      },
+      {
+       "en": "Here is some medicine for you.",
+       "tr": "İşte senin için biraz ilaç."
+      },
+      {
+       "en": "Rest well today.",
+       "tr": "Bugün iyi dinlen."
+      },
+      {
+       "en": "Thank you, doctor.",
+       "tr": "Teşekkür ederim, doktor."
+      }
+     ]
+    },
+    {
+     "id": "a1-feelings-4",
+     "title": "Uzun bir gün",
+     "lines": [
+      {
+       "en": "Hakan and Mert work in Izmir.",
+       "tr": "Hakan ve Mert İzmir'de çalışıyor."
+      },
+      {
+       "en": "The sun is very hot today.",
+       "tr": "Bugün güneş çok sıcak."
+      },
+      {
+       "en": "Mert, I'm very tired now.",
+       "tr": "Mert, şu an çok yorgunum."
+      },
+      {
+       "en": "Me too. And I'm very thirsty.",
+       "tr": "Ben de. Ayrıca çok susadım."
+      },
+      {
+       "en": "Are you hungry?",
+       "tr": "Aç mısın?"
+      },
+      {
+       "en": "Yes, I'm hungry. Let's sit here, eat and drink.",
+       "tr": "Evet, açım. Hadi buraya oturalım, yiyip içelim."
+      },
+      {
+       "en": "Good. We need some rest.",
+       "tr": "Güzel. Biraz dinlenmemiz lazım."
+      }
+     ]
+    },
+    {
+     "id": "a1-feelings-5",
+     "title": "Yağmurlu bir gün",
+     "lines": [
+      {
+       "en": "Seda and her child Nil live in Bursa.",
+       "tr": "Seda ve çocuğu Nil Bursa'da yaşıyor."
+      },
+      {
+       "en": "Can we go out today?",
+       "tr": "Bugün dışarı çıkabilir miyiz?"
+      },
+      {
+       "en": "No, Nil. Look, it's raining now.",
+       "tr": "Hayır Nil. Bak, şu an yağmur yağıyor."
+      },
+      {
+       "en": "And there is a cold wind.",
+       "tr": "Soğuk bir rüzgar da var."
+      },
+      {
+       "en": "You are sick. You need to rest.",
+       "tr": "Hastasın. Dinlenmen lazım."
+      },
+      {
+       "en": "But I feel fine today!",
+       "tr": "Ama bugün iyi hissediyorum!"
+      },
+      {
+       "en": "Good, Nil! Drink your medicine now.",
+       "tr": "Güzel, Nil! Şimdi ilacını iç."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-weather",
+    "a1-sun",
+    "a1-rain",
+    "a1-snow",
+    "a1-wind",
+    "a1-warm",
+    "a1-tired",
+    "a1-hungry",
+    "a1-thirsty",
+    "a1-sick",
+    "a1-well",
+    "a1-head",
+    "a1-doctor",
+    "a1-medicine",
+    "a1-feel",
+    "a1-rest",
+    "a1-bad",
+    "a1-fine",
+    "a1-p-dont-feel-well",
+    "a1-p-have-a-headache",
+    "a1-p-its-raining",
+    "a1-p-whats-weather-like",
+    "a1-p-take-care"
+   ]
+  },
+  {
+   "id": "a1-bridge",
+   "level": "A1",
+   "title": "Dün ve yarın",
+   "goal": "Geçmişte yaptıklarını (was/were, did, went) ve planlarını (going to) basitçe anlatır. A2'ye köprü.",
+   "placement": "last",
+   "position": 9,
+   "stories": [
+    {
+     "id": "a1-bridge-1",
+     "title": "Dünkü gezi",
+     "lines": [
+      {
+       "en": "Ahmet is from Turkey. Yesterday he was in İzmir.",
+       "tr": "Ahmet Türkiyeli. Dün İzmir'deydi."
+      },
+      {
+       "en": "What did you do yesterday?",
+       "tr": "Dün ne yaptın?"
+      },
+      {
+       "en": "Yesterday I went to the park.",
+       "tr": "Dün parka gittim."
+      },
+      {
+       "en": "I saw my friends there.",
+       "tr": "Orada arkadaşlarımı gördüm."
+      },
+      {
+       "en": "The weather was very good.",
+       "tr": "Hava çok güzeldi."
+      },
+      {
+       "en": "We had a nice time.",
+       "tr": "Güzel vakit geçirdik."
+      }
+     ]
+    },
+    {
+     "id": "a1-bridge-2",
+     "title": "Gelecek hafta",
+     "lines": [
+      {
+       "en": "Zeynep lives in Ankara. She has a train ticket.",
+       "tr": "Zeynep Ankara'da yaşıyor. Tren bileti var."
+      },
+      {
+       "en": "Next week I'm going to travel.",
+       "tr": "Önümüzdeki hafta seyahat edeceğim."
+      },
+      {
+       "en": "I'm going to visit my grandmother.",
+       "tr": "Büyükannemi ziyaret edeceğim."
+      },
+      {
+       "en": "Are you going to stay at a hotel?",
+       "tr": "Otelde mi kalacaksın?"
+      },
+      {
+       "en": "No, I'm going to stay at her house.",
+       "tr": "Hayır, onun evinde kalacağım."
+      },
+      {
+       "en": "Zeynep is very happy.",
+       "tr": "Zeynep çok mutlu."
+      }
+     ]
+    },
+    {
+     "id": "a1-bridge-3",
+     "title": "Geçen yılın tatili",
+     "lines": [
+      {
+       "en": "Last year Kerem and his friend Mert had a holiday.",
+       "tr": "Geçen yıl Kerem ve arkadaşı Mert tatile çıktı."
+      },
+      {
+       "en": "They went to the beach.",
+       "tr": "Plaja gittiler."
+      },
+      {
+       "en": "The sun was hot and the water was blue.",
+       "tr": "Güneş sıcaktı, deniz masmaviydi."
+      },
+      {
+       "en": "Before lunch, they swam.",
+       "tr": "Öğle yemeğinden önce yüzdüler."
+      },
+      {
+       "en": "After lunch, they sat and read their books.",
+       "tr": "Öğle yemeğinden sonra oturup kitaplarını okudular."
+      },
+      {
+       "en": "They were very happy.",
+       "tr": "Çok mutluydular."
+      }
+     ]
+    },
+    {
+     "id": "a1-bridge-4",
+     "title": "İki gün önce",
+     "lines": [
+      {
+       "en": "Two days ago Selin was in İstanbul.",
+       "tr": "İki gün önce Selin İstanbul'daydı."
+      },
+      {
+       "en": "She went to a market.",
+       "tr": "Bir pazara gitti."
+      },
+      {
+       "en": "She saw cheap shoes and a red dress.",
+       "tr": "Ucuz ayakkabılar ve kırmızı bir elbise gördü."
+      },
+      {
+       "en": "What did you buy?",
+       "tr": "Ne aldın?"
+      },
+      {
+       "en": "I bought a small bag.",
+       "tr": "Küçük bir çanta aldım."
+      },
+      {
+       "en": "The price was good.",
+       "tr": "Fiyatı iyiydi."
+      }
+     ]
+    },
+    {
+     "id": "a1-bridge-5",
+     "title": "Yarın",
+     "lines": [
+      {
+       "en": "Murat is a young man. He speaks English.",
+       "tr": "Murat genç bir adam. İngilizce konuşuyor."
+      },
+      {
+       "en": "Today he is at home.",
+       "tr": "Bugün evde."
+      },
+      {
+       "en": "What is your plan for tomorrow?",
+       "tr": "Yarın için planın ne?"
+      },
+      {
+       "en": "Tomorrow I'm going to work.",
+       "tr": "Yarın çalışacağım."
+      },
+      {
+       "en": "After work I'm going to watch a film.",
+       "tr": "İşten sonra film izleyeceğim."
+      },
+      {
+       "en": "I'm happy.",
+       "tr": "Mutluyum."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "a1-yesterday",
+    "a1-last",
+    "a1-next",
+    "a1-ago",
+    "a1-was",
+    "a1-were",
+    "a1-did",
+    "a1-went",
+    "a1-saw",
+    "a1-had",
+    "a1-plan",
+    "a1-holiday",
+    "a1-visit",
+    "a1-stay",
+    "a1-ticket",
+    "a1-trip",
+    "a1-before",
+    "a1-after",
+    "a1-p-what-did-you-do",
+    "a1-p-yesterday-i-went",
+    "a1-p-im-going-to",
+    "a1-p-next-week",
+    "a1-p-last-year"
    ]
   }
  ]

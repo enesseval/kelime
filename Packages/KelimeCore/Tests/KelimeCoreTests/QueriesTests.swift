@@ -79,7 +79,7 @@ struct QueriesTests {
             #expect(try WordQueries.list(segment: .learned, db: db).map(\.id) == ["b1-reliable"])
             #expect(try WordQueries.list(segment: .favorites, db: db).map(\.id) == ["a2-borrow"])
             let all = try WordQueries.list(segment: .all, db: db)
-            #expect(all.count == 202)
+            #expect(all.count == 487) // 202 words in A2-C1, 285 A1 course cards
             #expect(all.map(\.card.word) == all.map(\.card.word).sorted())
             // English word, Turkish meaning, Turkish casing and missing diacritics.
             #expect(try WordQueries.list(segment: .all, search: "relu", db: db).map(\.id) == ["b2-reluctant"])
@@ -110,7 +110,7 @@ struct QueriesTests {
         let byID = Dictionary(uniqueKeysWithValues: progress.map { ($0.deck, $0) })
         #expect(progress.map(\.deck) == DeckID.allCases)
         #expect(byID[.a2]?.total == 51 && byID[.a2]?.learned == 1)
-        #expect(byID[.a1]?.total == 0)
+        #expect(byID[.a1]?.total == 285 && byID[.a1]?.locked == false && byID[.a1]?.enabled == false)
         #expect(byID[.yds]?.total == 71 && byID[.yds]?.locked == true)
         #expect(byID[.b1]?.enabled == true && byID[.b1]?.locked == false)
 
