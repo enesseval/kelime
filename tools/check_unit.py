@@ -28,9 +28,9 @@ MAX_TEXT, MAX_TR, MAX_SENTENCE = 28, 28, 55
 FUNCTION_WORDS = set("""
 i you he she it we they me him her us them my your his its our their
 a an the this that these those some
-am is are be do does did don't doesn't not no yes ok
+am is are be do does did don't doesn't isn't aren't not no yes ok oh
 and but or so too very also
-in on at to from for with of by about
+in on at to from for with of by about out up down off
 here there what where who how when which
 can can't please
 i'm you're he's she's it's we're they're that's what's where's i'd we'd let's
@@ -99,9 +99,9 @@ def check(level):
         def unknown(text, extra=()):
             bad = []
             for t in tokens(text):
-                if t in extra or not (lemmas(t) & allowed):
-                    if t not in extra:
-                        bad.append(t)
+                forms = lemmas(t)
+                if not (forms & allowed) and not (forms & set(extra)):
+                    bad.append(t)
             return bad
 
         def limit(text, n, what):

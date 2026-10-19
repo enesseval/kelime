@@ -384,6 +384,36 @@
    "note": ""
   },
   {
+   "id": "a1-look",
+   "word": "look",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "bakmak"
+     ],
+     "example_en": "Look at me!",
+     "example_tr": "Bana bak!"
+    }
+   ],
+   "note": "Bir şeye bakarken 'look at' denir."
+  },
+  {
+   "id": "a1-together",
+   "word": "together",
+   "senses": [
+    {
+     "pos": "adv",
+     "tr": [
+      "birlikte"
+     ],
+     "example_en": "Let's go together.",
+     "example_tr": "Hadi birlikte gidelim."
+    }
+   ],
+   "note": ""
+  },
+  {
    "id": "a1-today",
    "word": "today",
    "senses": [

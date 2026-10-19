@@ -36,8 +36,13 @@ def build(level, spec, core, example):
     core_words = ", ".join(w["word"] for w in core["words"])
     core_phrases = " | ".join(p["text"] for p in core["phrases"])
     if spec["placement"] == "last":
-        vocab_rule = ("This is the last unit of the level. Examples and stories may use any A1 word: "
-                      "the core, every other unit's words, and this unit's words.")
+        folder = ROOT / "Content" / "curriculum" / level
+        others = sorted({w["word"] for f in folder.glob("*.json") if f.stem not in ("plan", "core")
+                         for w in json.loads(f.read_text(encoding="utf-8"))["words"]})
+        vocab_rule = ("This is the last unit of the level; learners have finished every other unit. "
+                      "Examples and stories may use the grammar words, the core, this unit's words and "
+                      "phrases, names, and these words from the other units: " + ", ".join(others) + ". "
+                      "Nothing else.")
     else:
         vocab_rule = ("Learners may study this unit before any other unit except the core. So every "
                       "example sentence and every story line may use ONLY: the grammar words, the core "

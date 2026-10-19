@@ -1,0 +1,564 @@
+{
+ "id": "a1-feelings",
+ "level": "A1",
+ "title": "Nasılsın?",
+ "placement": "any",
+ "goal": "Havayı anlatır, nasıl hissettiğini söyler (yorgun, aç, hasta), basit sağlık sorunlarını anlatır.",
+ "words": [
+  {
+   "id": "a1-weather",
+   "word": "weather",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "hava",
+      "hava durumu"
+     ],
+     "example_en": "The weather is very nice today.",
+     "example_tr": "Bugün hava çok güzel."
+    }
+   ],
+   "note": "Sayılamaz; 'a weather' denmez."
+  },
+  {
+   "id": "a1-sun",
+   "word": "sun",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "güneş"
+     ],
+     "example_en": "I can see the sun now.",
+     "example_tr": "Şimdi güneşi görebiliyorum."
+    }
+   ],
+   "note": "Tek olduğu için hep 'the sun' denir."
+  },
+  {
+   "id": "a1-rain",
+   "word": "rain",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "yağmur"
+     ],
+     "example_en": "I don't like cold rain.",
+     "example_tr": "Soğuk yağmuru sevmem."
+    },
+    {
+     "pos": "v",
+     "tr": [
+      "yağmur yağmak"
+     ],
+     "example_en": "Does it rain much here?",
+     "example_tr": "Burada çok yağmur yağar mı?"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-snow",
+   "word": "snow",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "kar"
+     ],
+     "example_en": "The children like the snow.",
+     "example_tr": "Çocuklar karı seviyor."
+    },
+    {
+     "pos": "v",
+     "tr": [
+      "kar yağmak"
+     ],
+     "example_en": "It's snowing today.",
+     "example_tr": "Bugün kar yağıyor."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-wind",
+   "word": "wind",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "rüzgar"
+     ],
+     "example_en": "The wind is very cold today.",
+     "example_tr": "Bugün rüzgar çok soğuk."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-warm",
+   "word": "warm",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "ılık",
+      "sıcak"
+     ],
+     "example_en": "It's nice and warm in here.",
+     "example_tr": "Burası sıcacık."
+    }
+   ],
+   "note": "'hot' çok sıcak, 'warm' tatlı ve hoş sıcak demektir."
+  },
+  {
+   "id": "a1-tired",
+   "word": "tired",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "yorgun"
+     ],
+     "example_en": "I'm very tired today.",
+     "example_tr": "Bugün çok yorgunum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-hungry",
+   "word": "hungry",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "aç"
+     ],
+     "example_en": "Are you hungry? Let's eat.",
+     "example_tr": "Aç mısın? Hadi yiyelim."
+    }
+   ],
+   "note": "'I'm hungry' (Acıktım) olarak kullanılır."
+  },
+  {
+   "id": "a1-thirsty",
+   "word": "thirsty",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "susamış"
+     ],
+     "example_en": "I'm very thirsty now.",
+     "example_tr": "Şu an çok susadım."
+    }
+   ],
+   "note": "Türkçede 'Susadım' dense de İngilizcede sıfattır: 'I'm thirsty'."
+  },
+  {
+   "id": "a1-sick",
+   "word": "sick",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "hasta"
+     ],
+     "example_en": "She can't work. She is sick.",
+     "example_tr": "Çalışamaz. O hasta."
+    }
+   ],
+   "note": "İngiliz İngilizcesinde 'midesi bulanmak' anlamına da gelir."
+  },
+  {
+   "id": "a1-well",
+   "word": "well",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "iyi",
+      "sağlıklı"
+     ],
+     "example_en": "Are you well now?",
+     "example_tr": "Şimdi iyi misin?"
+    },
+    {
+     "pos": "adv",
+     "tr": [
+      "iyi (bir şekilde)"
+     ],
+     "example_en": "She speaks English very well.",
+     "example_tr": "İngilizceyi çok iyi konuşur."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-head",
+   "word": "head",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "baş",
+      "kafa"
+     ],
+     "example_en": "My head is hot.",
+     "example_tr": "Başım sıcak."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-doctor",
+   "word": "doctor",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "doktor"
+     ],
+     "example_en": "You need to see a doctor.",
+     "example_tr": "Bir doktora görünmen lazım."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-medicine",
+   "word": "medicine",
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "ilaç"
+     ],
+     "example_en": "Do you have your medicine?",
+     "example_tr": "İlacın yanında mı?"
+    }
+   ],
+   "note": "'tıp' anlamına da gelir."
+  },
+  {
+   "id": "a1-feel",
+   "word": "feel",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "hissetmek"
+     ],
+     "example_en": "I feel very good today.",
+     "example_tr": "Bugün çok iyi hissediyorum."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-rest",
+   "word": "rest",
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "dinlenmek"
+     ],
+     "example_en": "Sit here and rest.",
+     "example_tr": "Buraya otur ve dinlen."
+    },
+    {
+     "pos": "n",
+     "tr": [
+      "dinlenme"
+     ],
+     "example_en": "You need some rest today.",
+     "example_tr": "Bugün biraz dinlenmen lazım."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-bad",
+   "word": "bad",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "kötü"
+     ],
+     "example_en": "The weather is very bad now.",
+     "example_tr": "Şu an hava çok kötü."
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "a1-fine",
+   "word": "fine",
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "iyi"
+     ],
+     "example_en": "I'm fine now, thank you.",
+     "example_tr": "Şimdi iyiyim, teşekkürler."
+    }
+   ],
+   "note": ""
+  }
+ ],
+ "phrases": [
+  {
+   "id": "a1-p-dont-feel-well",
+   "text": "I don't feel well.",
+   "tr": "İyi hissetmiyorum.",
+   "example_en": "I can't come. I don't feel well.",
+   "example_tr": "Gelemem. İyi hissetmiyorum.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-have-a-headache",
+   "text": "I have a headache.",
+   "tr": "Başım ağrıyor.",
+   "example_en": "I'm tired and I have a headache.",
+   "example_tr": "Yorgunum ve başım ağrıyor.",
+   "note": "İngilizcede 'a' ile söylenir: 'have a headache'."
+  },
+  {
+   "id": "a1-p-its-raining",
+   "text": "It's raining.",
+   "tr": "Yağmur yağıyor.",
+   "example_en": "We can't go out. It's raining.",
+   "example_tr": "Dışarı çıkamayız. Yağmur yağıyor.",
+   "note": ""
+  },
+  {
+   "id": "a1-p-whats-weather-like",
+   "text": "What's the weather like?",
+   "tr": "Hava nasıl?",
+   "example_en": "What's the weather like today?",
+   "example_tr": "Bugün hava nasıl?",
+   "note": "Buradaki 'like' sevmek değil, 'nasıl' anlamı katar."
+  },
+  {
+   "id": "a1-p-take-care",
+   "text": "Take care!",
+   "tr": "Kendine iyi bak!",
+   "example_en": "See you! Take care!",
+   "example_tr": "Görüşürüz! Kendine iyi bak!",
+   "note": ""
+  }
+ ],
+ "stories": [
+  {
+   "id": "a1-feelings-1",
+   "title": "Kars'ta soğuk bir gün",
+   "names": [
+    "Emre",
+    "Kars"
+   ],
+   "lines": [
+    {
+     "en": "Emre lives in Kars. It's snowing today.",
+     "tr": "Emre Kars'ta yaşıyor. Bugün kar yağıyor."
+    },
+    {
+     "en": "The wind is very cold.",
+     "tr": "Rüzgar çok soğuk."
+    },
+    {
+     "en": "Emre is at work. He doesn't feel well.",
+     "tr": "Emre işte. İyi hissetmiyor."
+    },
+    {
+     "en": "How are you, Emre?",
+     "tr": "Nasılsın Emre?"
+    },
+    {
+     "en": "I'm cold and I have a headache.",
+     "tr": "Üşüyorum ve başım ağrıyor."
+    },
+    {
+     "en": "You are sick. Go and rest now.",
+     "tr": "Hastasın. Şimdi git ve dinlen."
+    },
+    {
+     "en": "Thank you. See you!",
+     "tr": "Teşekkür ederim. Görüşürüz!"
+    },
+    {
+     "en": "Take care!",
+     "tr": "Kendine iyi bak!"
+    }
+   ]
+  },
+  {
+   "id": "a1-feelings-2",
+   "title": "Londra'dan telefon",
+   "names": [
+    "Selin",
+    "Antalya",
+    "Jack",
+    "London"
+   ],
+   "lines": [
+    {
+     "en": "Selin is in Antalya. Her friend Jack is in London.",
+     "tr": "Selin Antalya'da. Arkadaşı Jack Londra'da."
+    },
+    {
+     "en": "Hi Jack! What's the weather like in London?",
+     "tr": "Selam Jack! Londra'da hava nasıl?"
+    },
+    {
+     "en": "It's bad. It's raining and cold today.",
+     "tr": "Kötü. Bugün yağmur yağıyor ve soğuk."
+    },
+    {
+     "en": "Here in Antalya, we have sun. It's very warm.",
+     "tr": "Burada, Antalya'da güneş var. Hava çok ılık."
+    },
+    {
+     "en": "That's very nice! How are you?",
+     "tr": "Bu çok güzel! Sen nasılsın?"
+    },
+    {
+     "en": "I'm fine, thanks. Come to Antalya!",
+     "tr": "İyiyim, teşekkürler. Antalya'ya gel!"
+    },
+    {
+     "en": "I want to come! Goodbye, take care!",
+     "tr": "Gelmek istiyorum! Hoşça kal, kendine iyi bak!"
+    }
+   ]
+  },
+  {
+   "id": "a1-feelings-3",
+   "title": "Doktorda",
+   "names": [
+    "Zeynep",
+    "Burak"
+   ],
+   "lines": [
+    {
+     "en": "Zeynep is a doctor. Burak comes in and sits down.",
+     "tr": "Zeynep doktor. Burak içeri girip oturuyor."
+    },
+    {
+     "en": "Hello, Burak. How do you feel today?",
+     "tr": "Merhaba Burak. Bugün nasıl hissediyorsun?"
+    },
+    {
+     "en": "I don't feel well. I have a bad headache.",
+     "tr": "İyi hissetmiyorum. Kötü bir baş ağrım var."
+    },
+    {
+     "en": "Are you tired too?",
+     "tr": "Yorgun da musun?"
+    },
+    {
+     "en": "Yes, I'm very tired. And my head is hot.",
+     "tr": "Evet, çok yorgunum. Başım da sıcak."
+    },
+    {
+     "en": "Here is some medicine for you.",
+     "tr": "İşte senin için biraz ilaç."
+    },
+    {
+     "en": "Rest well today.",
+     "tr": "Bugün iyi dinlen."
+    },
+    {
+     "en": "Thank you, doctor.",
+     "tr": "Teşekkür ederim, doktor."
+    }
+   ]
+  },
+  {
+   "id": "a1-feelings-4",
+   "title": "Uzun bir gün",
+   "names": [
+    "Hakan",
+    "Mert",
+    "Izmir"
+   ],
+   "lines": [
+    {
+     "en": "Hakan and Mert work in Izmir.",
+     "tr": "Hakan ve Mert İzmir'de çalışıyor."
+    },
+    {
+     "en": "The sun is very hot today.",
+     "tr": "Bugün güneş çok sıcak."
+    },
+    {
+     "en": "Mert, I'm very tired now.",
+     "tr": "Mert, şu an çok yorgunum."
+    },
+    {
+     "en": "Me too. And I'm very thirsty.",
+     "tr": "Ben de. Ayrıca çok susadım."
+    },
+    {
+     "en": "Are you hungry?",
+     "tr": "Aç mısın?"
+    },
+    {
+     "en": "Yes, I'm hungry. Let's sit here, eat and drink.",
+     "tr": "Evet, açım. Hadi buraya oturalım, yiyip içelim."
+    },
+    {
+     "en": "Good. We need some rest.",
+     "tr": "Güzel. Biraz dinlenmemiz lazım."
+    }
+   ]
+  },
+  {
+   "id": "a1-feelings-5",
+   "title": "Yağmurlu bir gün",
+   "names": [
+    "Seda",
+    "Nil",
+    "Bursa"
+   ],
+   "lines": [
+    {
+     "en": "Seda and her child Nil live in Bursa.",
+     "tr": "Seda ve çocuğu Nil Bursa'da yaşıyor."
+    },
+    {
+     "en": "Can we go out today?",
+     "tr": "Bugün dışarı çıkabilir miyiz?"
+    },
+    {
+     "en": "No, Nil. Look, it's raining now.",
+     "tr": "Hayır Nil. Bak, şu an yağmur yağıyor."
+    },
+    {
+     "en": "And there is a cold wind.",
+     "tr": "Soğuk bir rüzgar da var."
+    },
+    {
+     "en": "You are sick. You need to rest.",
+     "tr": "Hastasın. Dinlenmen lazım."
+    },
+    {
+     "en": "But I feel fine today!",
+     "tr": "Ama bugün iyi hissediyorum!"
+    },
+    {
+     "en": "Good, Nil! Drink your medicine now.",
+     "tr": "Güzel, Nil! Şimdi ilacını iç."
+    }
+   ]
+  }
+ ],
+ "names": [
+  "English"
+ ]
+}
