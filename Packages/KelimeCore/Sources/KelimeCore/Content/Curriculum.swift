@@ -123,6 +123,12 @@ public struct CourseState: Sendable, Equatable {
 
 /// The course: units per level, which ones the learner started, and their cards.
 public enum Curriculum {
+    /// Levels that have units, the only ones a learner can pick (others come as they are built).
+    public static func levels(db: Database) throws -> [CEFRLevel] {
+        let raw = try String.fetchAll(db, sql: "SELECT DISTINCT level FROM unit")
+        return CEFRLevel.allCases.filter { raw.contains($0.rawValue) }
+    }
+
     /// Units of `level` in course order (core first, bridge last).
     public static func units(level: CEFRLevel, db: Database) throws -> [CurriculumUnit] {
         try CurriculumUnit.filter(Column("level") == level).order(Column("position")).fetchAll(db)

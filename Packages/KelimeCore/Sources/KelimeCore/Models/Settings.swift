@@ -29,6 +29,8 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case currentUnit = "current_unit"
     /// When the app last asked GitHub Pages for new content, seconds since 1970.
     case contentCheckedAt = "content_checked_at"
+    /// Last one-time progress reset this install went through (`ProgressReset.epoch`).
+    case progressEpoch = "progress_epoch"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

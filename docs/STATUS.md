@@ -111,6 +111,16 @@ in order). The goal orders the any-order units (`Curriculum.goalTopics`: travel 
 city, shopping first; work puts day, city, café first). "Bu bölüme geç" lets the learner pick.
 Moving to the next level keeps earlier units started, so their struggling cards stay.
 
+## Start over and A1 only (build 14)
+
+`ProgressReset` clears progress, reviews, puzzles, the widget queue and onboarding choices,
+keeping content, the purchase and the widget log, and sets A1 until onboarding picks a level.
+It runs once per `ProgressReset.epoch` at launch (epoch 1: everyone starts over for the unit
+model) and from Ayarlar › Baştan başla › İlerlemeyi sıfırla. Onboarding and Ayarlar offer only
+levels with units (`Curriculum.levels`; now A1), the others show "Yakında". A1 has its own 400
+daily puzzles (tools/build_puzzles.py --levels A1, single A-Z words only). Samples in
+onboarding, settings previews and the widget gallery are A1 words.
+
 ## Content updates (build 13)
 
 Content is bundled and works offline. The Pages workflow also publishes

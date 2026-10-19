@@ -35,7 +35,7 @@ struct ThemePickerView: View {
     private func themeCard(_ theme: WidgetThemeID) -> some View {
         let locked = theme.isPro && !(prefs?.isPro ?? false)
         let selected = prefs?.effectiveTheme == theme
-        var entry = SampleContent.snapshot(SampleContent.reluctant, state: .struggling)
+        var entry = SampleContent.snapshot(SampleContent.happy, state: .struggling)
         entry.theme = theme
         return Button {
             if locked {

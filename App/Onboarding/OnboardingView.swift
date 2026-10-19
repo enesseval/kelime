@@ -11,7 +11,9 @@ struct OnboardingView: View {
     }
 
     @State private var step: Step = .welcome
-    @State private var choices = OnboardingChoices()
+    @State private var choices = OnboardingChoices(level: .a1)
+    /// Levels with units; the others are shown as coming soon.
+    @State private var levels: [CEFRLevel] = [.a1]
     @State private var examDate = Calendar.current.date(byAdding: .month, value: 2, to: .now) ?? .now
     @State private var examUnknown = false
     @State private var reminderTime = Calendar.current.date(from: DateComponents(hour: 20, minute: 30)) ?? .now
@@ -34,6 +36,10 @@ struct OnboardingView: View {
         }
         .screenBackground()
         .animation(.snappy, value: step)
+        .task {
+            levels = await app.read { db in try Curriculum.levels(db: db) } ?? [.a1]
+            if !levels.contains(choices.level), let first = levels.first { choices.level = first }
+        }
     }
 
     // MARK: - Chrome
@@ -99,7 +105,7 @@ struct OnboardingView: View {
     private var welcome: some View {
         VStack(spacing: 28) {
             Spacer(minLength: 12)
-            LockScreenMockup(entry: SampleContent.snapshot(SampleContent.reluctant, state: .struggling))
+            LockScreenMockup(entry: SampleContent.snapshot(SampleContent.happy, state: .struggling))
                 .frame(height: 300)
             VStack(spacing: 10) {
                 Text("Telefonuna her baktığında bir kelime.")
@@ -154,16 +160,23 @@ struct OnboardingView: View {
     // MARK: - 3 Level
 
     private var level: some View {
-        page(title: "Seviyen hangisi?", subtitle: "Örnek kelimelere bakıp seç. Sonra Ayarlar'dan değiştirebilirsin.") {
+        page(title: "Seviyen hangisi?", subtitle: "Bölümler seviye seviye hazırlanıyor. Hazır olanlardan başla; sıradaki seviye gelince bitirdiğin yerden geçersin.") {
             VStack(spacing: 10) {
                 ForEach(CEFRLevel.allCases, id: \.self) { level in
+                    let available = levels.contains(level)
                     Button { choices.level = level } label: {
                         HStack(alignment: .firstTextBaseline, spacing: 14) {
                             Text(level.rawValue).font(KelimeFont.english(28, relativeTo: .title))
                             Text(LevelSamples.words(for: level).joined(separator: ", "))
                                 .font(KelimeFont.english(18, relativeTo: .body, italic: true))
                                 .foregroundStyle(Palette.ink2)
+                                .lineLimit(1)
                             Spacer()
+                            if !available {
+                                Text("Yakında")
+                                    .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
+                                    .foregroundStyle(Palette.ink2)
+                            }
                         }
                         .foregroundStyle(Palette.ink)
                         .padding(.horizontal, 18)
@@ -172,18 +185,13 @@ struct OnboardingView: View {
                         .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .strokeBorder(choices.level == level ? Palette.accent : Palette.line, lineWidth: choices.level == level ? 2 : 1))
                         .contentShape(Rectangle())
+                        .opacity(available ? 1 : 0.45)
                     }
                     .buttonStyle(.plain)
+                    .disabled(!available)
                     .accessibilityAddTraits(choices.level == level ? .isSelected : [])
                 }
             }
-            Button("Emin değilim, ortadan başlat") {
-                choices.level = .b1
-                go(1)
-            }
-            .font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
-            .foregroundStyle(Palette.accent)
-            .frame(maxWidth: .infinity, minHeight: 44)
         } footer: {
             Button("Devam") { go(1) }.buttonStyle(PrimaryButtonStyle(height: 54))
         }
@@ -386,7 +394,7 @@ enum Wallpaper: String, CaseIterable, Identifiable {
 struct RhythmPreview: View {
     let rotation: RotationInterval
     @State private var index = 0
-    private let cards = [SampleContent.reluctant, SampleContent.reliable, SampleContent.hesitate, SampleContent.significant]
+    private let cards = [SampleContent.happy, SampleContent.coffee, SampleContent.friend, SampleContent.hungry]
 
     var body: some View {
         VStack(spacing: 10) {

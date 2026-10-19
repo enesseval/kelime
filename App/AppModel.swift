@@ -48,6 +48,8 @@ final class AppModel {
                     self.phase = .launching(step: step, progress: progress)
                 }
             })
+            // An update that changes the content model starts everyone over once.
+            _ = try? await db.writer.write { db in try ProgressReset.resetIfNeeded(db: db) }
             showOnboarding = !((try? await db.reader.read { db in try Settings.bool(.onboardingDone, in: db) }) ?? false)
             phase = .ready(db)
             purchases.start(app: self)
@@ -139,6 +141,14 @@ final class AppModel {
         try? await database?.writer.write { db in
             try WidgetLog.recordTap(source: source, cardID: id, slot: slot, db: db, clock: clock)
         }
+    }
+
+    /// Ayarlar › İlerlemeyi sıfırla: forgets progress and choices, then shows onboarding.
+    func resetProgress() async {
+        Reminder.cancel()
+        await write(rebuildQueue: true) { db in try ProgressReset.reset(db: db) }
+        router.tab = .today
+        showOnboarding = true
     }
 
     /// Developer tool: shows onboarding again (choices are kept until it is completed).

@@ -13,7 +13,8 @@ Rules (same as the on-device generator in KelimeCore/CrosswordGenerator.swift):
 - no two words share a Turkish meaning, since their clues would be identical
   (e.g. develop and improve are both "geliştirmek")
 
-Usage: python3 tools/build_puzzles.py [--count 400] [--seed 20261013]
+Usage: python3 tools/build_puzzles.py [--count 400] [--seed 20261013] [--levels A1 A2 ...]
+Only single words of A-Z letters are used (no phrases, no café).
 Runs on any OS with Python 3.9+.
 """
 import argparse
@@ -159,6 +160,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--count", type=int, default=400)
     parser.add_argument("--seed", type=int, default=20261013)
+    parser.add_argument("--levels", nargs="+", default=["A1", "A2", "B1", "B2", "C1"])
     args = parser.parse_args()
 
     cards = json.loads((ROOT / "Content" / "cards.json").read_text(encoding="utf-8"))["cards"]
@@ -168,9 +170,10 @@ def main():
     rng = random.Random(args.seed)
     failures = 0
 
-    for level in ["A1", "A2", "B1", "B2", "C1"]:
+    for level in args.levels:
         words = [(c["word"].upper(), c["id"], meanings[c["id"]]) for c in cards
-                 if c["level"] == level and "general" in c["decks"] and 3 <= len(c["word"]) <= SIZE]
+                 if c["level"] == level and "general" in c["decks"] and 3 <= len(c["word"]) <= SIZE
+                 and c["word"].isascii() and c["word"].isalpha()]
         if len(words) < 20:
             print(f"{level}: skipped ({len(words)} words)")
             continue

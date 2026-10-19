@@ -32,7 +32,7 @@ struct WidgetModePickerView: View {
 
     private func row(_ mode: WidgetMode) -> some View {
         let isSelected = selected == mode
-        let entry = SampleContent.snapshot(SampleContent.reluctant, state: .struggling, mode: mode, phase: mode == .selfTest ? .question : .answer)
+        let entry = SampleContent.snapshot(SampleContent.happy, state: .struggling, mode: mode, phase: mode == .selfTest ? .question : .answer)
         return Button {
             selected = mode
             Task { await app.updatePreferences { $0.defaultWidgetMode = mode } }

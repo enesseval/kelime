@@ -4,6 +4,8 @@ import SwiftUI
 
 struct SettingsData: Sendable {
     var prefs: Preferences
+    /// Levels with units; the others come as they are built.
+    var levels: [CEFRLevel]
     var goal: LearningGoal
     var examDate: LocalDate?
     var reminderMinutes: Int?
@@ -12,6 +14,7 @@ struct SettingsData: Sendable {
     static func load(db: Database) throws -> SettingsData {
         SettingsData(
             prefs: try Preferences.load(db),
+            levels: try Curriculum.levels(db: db),
             goal: try Settings.string(.goal, in: db).flatMap(LearningGoal.init(rawValue:)) ?? .general,
             examDate: try Settings.date(.examDate, in: db),
             reminderMinutes: try Settings.int(.reminderTime, in: db),
@@ -26,6 +29,7 @@ struct SettingsView: View {
     @State private var data: SettingsData?
     @State private var showGuide = false
     @State private var toast: String?
+    @State private var confirmReset = false
 
     var body: some View {
         ScrollView {
@@ -36,6 +40,7 @@ struct SettingsView: View {
                     widgetSection(data)
                     reminderSection(data)
                     proSection
+                    resetSection
                     if DevTools.isAvailable { developerSection }
                     about
                 }
@@ -60,7 +65,11 @@ struct SettingsView: View {
             SettingsRow("Seviye") {
                 Menu {
                     ForEach(CEFRLevel.allCases, id: \.self) { level in
-                        Button(level.rawValue) { Task { await setLevel(level) } }
+                        if data.levels.contains(level) {
+                            Button(level.rawValue) { Task { await setLevel(level) } }
+                        } else {
+                            Button("\(level.rawValue) · yakında") {}.disabled(true)
+                        }
                     }
                 } label: { valueLabel(data.prefs.level.rawValue) }
             }
@@ -188,6 +197,26 @@ struct SettingsView: View {
         }
     }
 
+    private var resetSection: some View {
+        SettingsSection("BAŞTAN BAŞLA") {
+            Button { confirmReset = true } label: {
+                Text("İlerlemeyi sıfırla")
+                    .font(KelimeFont.ui(15, relativeTo: .body))
+                    .foregroundStyle(Palette.amberInk)
+                    .padding(.horizontal, 16)
+                    .frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .confirmationDialog("İlerlemen sıfırlansın mı?", isPresented: $confirmReset, titleVisibility: .visible) {
+                Button("Sıfırla ve baştan başla", role: .destructive) { Task { await app.resetProgress() } }
+                Button("Vazgeç", role: .cancel) {}
+            } message: {
+                Text("Öğrendiğin ve zorlandığın kelimeler, bölümler, bulmacalar ve seçimlerin silinir; seviyeni yeniden seçersin. Pro aboneliğin etkilenmez.")
+            }
+        }
+    }
+
     /// Debug and TestFlight only (see DevTools).
     private var developerSection: some View {
         SettingsSection("GELİŞTİRİCİ") {
@@ -269,12 +298,7 @@ struct SettingsView: View {
     // MARK: - Actions
 
     private func setLevel(_ level: CEFRLevel) async {
-        await app.updatePreferences { prefs in
-            prefs.level = level
-            if let deck = DeckID.allCases.first(where: { $0.level == level }), !prefs.enabledDecks.contains(deck) {
-                prefs.enabledDecks.append(deck)
-            }
-        }
+        await app.write(rebuildQueue: true) { db in try Curriculum.moveOn(to: level, db: db) }
     }
 
     private func setReminder(_ minutes: Int?) async {
