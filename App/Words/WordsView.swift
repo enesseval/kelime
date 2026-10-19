@@ -10,6 +10,7 @@ struct WordsView: View {
     @State private var items: [WordItem] = []
     @State private var stats: WeekStats?
     @State private var decks: [DeckProgress] = []
+    @State private var course: CourseState?
     @State private var openRow: String?
 
     var body: some View {
@@ -18,9 +19,24 @@ struct WordsView: View {
             VStack(alignment: .leading, spacing: 14) {
                 header.padding(.horizontal, 20)
                 if showDecks {
-                    DecksGrid(decks: decks)
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 24)
+                    VStack(alignment: .leading, spacing: 18) {
+                        if let course {
+                            UnitList(course: course)
+                            // Exam decks stay decks until they become courses.
+                            let exams = decks.filter { $0.deck.tag != nil }
+                            if !exams.isEmpty {
+                                Text("SINAV DESTELERİ")
+                                    .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
+                                    .tracking(0.7)
+                                    .foregroundStyle(Palette.ink2)
+                                DecksGrid(decks: exams)
+                            }
+                        } else {
+                            DecksGrid(decks: decks)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 24)
                 } else {
                     listControls.padding(.horizontal, 20)
                     wordList
@@ -87,6 +103,7 @@ struct WordsView: View {
 
     private func reload() async {
         let clock = model.clock
+        course = await model.read { db in try Curriculum.state(db: db) } ?? nil
         if showDecks {
             decks = await model.read { db in try DeckQueries.progress(db: db) } ?? []
         } else {
@@ -100,7 +117,7 @@ struct WordsView: View {
         HStack(alignment: .bottom) {
             ScreenTitle(title: "Kelimelerim")
             Spacer()
-            Button(showDecks ? "Kelimeler" : "Desteler") {
+            Button(showDecks ? "Kelimeler" : (course == nil ? "Desteler" : "Bölümler")) {
                 withAnimation(.snappy) { showDecks.toggle() }
             }
             .buttonStyle(TintedButtonStyle(fullWidth: false))

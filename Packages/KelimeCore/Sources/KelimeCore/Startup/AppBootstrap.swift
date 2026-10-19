@@ -28,11 +28,13 @@ public struct StartupError: Error, CustomStringConvertible, Sendable {
     public var description: String { "\(step.rawValue): \(message)" }
 }
 
-/// Opens the shared database and imports bundled content, off the main actor.
+/// Opens the shared database and imports content, off the main actor: the bundled file, or a
+/// newer one `ContentUpdater` downloaded earlier.
 public enum AppBootstrap {
     @concurrent
     public static func run(
         contentURL: URL?,
+        downloadedURL: URL? = nil,
         openDatabase: @Sendable () throws -> AppDatabase = { try AppDatabase.openShared() },
         progress: @escaping @Sendable (StartupStep, Double) -> Void = { _, _ in }
     ) async throws(StartupError) -> AppDatabase {
@@ -48,7 +50,7 @@ public enum AppBootstrap {
         let data: Data
         do {
             guard let contentURL else { throw CocoaError(.fileNoSuchFile) }
-            data = try Data(contentsOf: contentURL)
+            data = ContentUpdater.newest(bundled: try Data(contentsOf: contentURL), downloadedURL: downloadedURL)
         } catch {
             throw StartupError(step: .readContent, underlying: error)
         }

@@ -40,14 +40,14 @@ public enum ImportResult: Equatable, Sendable {
 
 /// Imports bundled cards into the shared database.
 ///
-/// Runs on first launch and whenever `contentVersion` changes. Cards are upserted by `id` in a
+/// Runs on first launch and whenever `contentVersion` goes up. Cards are upserted by `id` in a
 /// single transaction; user progress (`card_state`, logs, puzzles) is never touched.
 public enum ContentImporter {
     public static func decode(_ data: Data) throws -> CardsFile {
         try JSONDecoder().decode(CardsFile.self, from: data)
     }
 
-    /// Imports `data` unless the database already holds the same content version.
+    /// Imports `data` unless the database already holds this content version or a newer one.
     /// `progress` receives values from 0 to 1 and may be called from any thread.
     public static func importIfNeeded(
         _ data: Data,
@@ -58,7 +58,8 @@ public enum ContentImporter {
         let current = try await database.reader.read { db in
             try Settings.int(.contentVersion, in: db)
         }
-        if current == file.contentVersion, try database.hasContent() {
+        // Never steps back: a launch with older bundled content keeps a newer download.
+        if let current, current >= file.contentVersion, try database.hasContent() {
             progress(1)
             return .upToDate(version: file.contentVersion)
         }

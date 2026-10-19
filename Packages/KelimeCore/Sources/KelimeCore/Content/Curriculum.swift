@@ -107,6 +107,20 @@ public struct UnitProgress: Sendable, Equatable, Identifiable {
     public var isFinished: Bool { total > 0 && learned == total }
 }
 
+/// The learner's course at their level: units in the order they meet them, the unit they are
+/// on, and whether the next level is open to them.
+public struct CourseState: Sendable, Equatable {
+    public var level: CEFRLevel
+    /// Core first, then the rest in the learner's goal order, the bridge last.
+    public var units: [UnitProgress]
+    public var currentID: String?
+    /// Set when the level is nearly done and the next level has units of its own.
+    public var nextLevel: CEFRLevel?
+
+    public var current: UnitProgress? { units.first { $0.id == currentID } }
+    public var isComplete: Bool { !units.isEmpty && units.allSatisfy(\.isFinished) }
+}
+
 /// The course: units per level, which ones the learner started, and their cards.
 public enum Curriculum {
     /// Units of `level` in course order (core first, bridge last).
@@ -167,6 +181,88 @@ public enum Curriculum {
             (NOT EXISTS (SELECT 1 FROM unit_card uc WHERE uc.card_id = c.id)
              OR EXISTS (SELECT 1 FROM unit_card uc WHERE uc.card_id = c.id AND uc.unit_id IN \(started)))
             """
+    }
+
+    /// Share of a unit's cards learned at which the next unit starts, so new words arrive
+    /// before the current ones run out.
+    public static let advanceAt = 0.8
+
+    /// Topics each goal puts first, matched against unit ids without the level ("a1-cafe" is
+    /// "cafe"). Other units keep their plan order.
+    static let goalTopics: [LearningGoal: [String]] = [
+        .travel: ["cafe", "city", "shopping", "free-time", "feelings"],
+        .work: ["day", "city", "cafe", "feelings"],
+    ]
+
+    /// `units` in the order the learner meets them: core, the any-order units by goal, bridge.
+    public static func ordered<T>(_ units: [T], goal: LearningGoal?, unit: (T) -> CurriculumUnit) -> [T] {
+        let topics = goal.flatMap { goalTopics[$0] } ?? []
+        func key(_ item: T) -> (Int, Int, Int) {
+            let u = unit(item)
+            let placement = switch u.placement { case .first: 0; case .any: 1; case .last: 2 }
+            let topic = u.id.split(separator: "-", maxSplits: 1).last.map(String.init) ?? u.id
+            return (placement, topics.firstIndex(of: topic) ?? topics.count, u.position)
+        }
+        return units.sorted { key($0) < key($1) }
+    }
+
+    /// The course at the learner's level, or nil when that level has no units yet (it still
+    /// uses the old word decks).
+    public static func state(db: Database) throws -> CourseState? {
+        let level = try Preferences.load(db).level
+        let goal = try Settings.string(.goal, in: db).flatMap(LearningGoal.init(rawValue:))
+        let units = ordered(try progress(level: level, db: db), goal: goal) { $0.unit }
+        guard !units.isEmpty else { return nil }
+
+        let stored = try Settings.string(.currentUnit, in: db)
+        let current = units.first { $0.id == stored && !$0.isFinished }
+            ?? units.first { $0.started && $0.fraction < advanceAt }
+            ?? units.first { !$0.started }
+            ?? units.first { !$0.isFinished }
+
+        var nextLevel: CEFRLevel?
+        let nearlyDone = !units.contains { !$0.started } && (current.map { $0.fraction >= advanceAt } ?? true)
+        if nearlyDone, let next = CEFRLevel.allCases.first(where: { $0 > level }),
+           try CurriculumUnit.filter(Column("level") == next).fetchCount(db) > 0 {
+            nextLevel = next
+        }
+        return CourseState(level: level, units: units, currentID: current?.id, nextLevel: nextLevel)
+    }
+
+    /// Keeps the current unit started and, once it is nearly learned, starts the next one and
+    /// moves on to it. Runs whenever the widget queue is topped up. Returns the unit it moved to.
+    @discardableResult
+    public static func advance(db: Database) throws -> String? {
+        guard let state = try state(db: db), let current = state.current else { return nil }
+        if !current.started { try start(current.id, db: db) }
+        if try Settings.string(.currentUnit, in: db) != current.id {
+            try Settings.set(.currentUnit, current.id, in: db)
+        }
+        // A unit already started and still mostly unlearned comes first, so started units do not
+        // pile up; then the next one in order.
+        let open = state.units.filter { $0.id != current.id && $0.fraction < advanceAt }
+        guard current.fraction >= advanceAt, let next = open.first(where: \.started) ?? open.first else { return nil }
+        try makeCurrent(next.id, db: db)
+        return next.id
+    }
+
+    /// The learner picks the unit to study now: it starts and becomes current.
+    public static func makeCurrent(_ unitID: String, db: Database) throws {
+        try start(unitID, db: db)
+        try Settings.set(.currentUnit, unitID, in: db)
+    }
+
+    /// Moves the learner to `level` after its previous level. Earlier units stay started, so
+    /// their struggling cards keep coming back.
+    public static func moveOn(to level: CEFRLevel, db: Database) throws {
+        var prefs = try Preferences.load(db)
+        prefs.level = level
+        if let deck = DeckID.allCases.first(where: { $0.level == level }), !prefs.enabledDecks.contains(deck) {
+            prefs.enabledDecks.append(deck)
+        }
+        try prefs.save(db)
+        try Settings.set(.currentUnit, String?.none, in: db)
+        try advance(db: db)
     }
 
     /// Replaces every unit with `units` (part of a content import).

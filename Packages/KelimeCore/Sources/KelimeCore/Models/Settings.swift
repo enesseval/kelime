@@ -25,6 +25,10 @@ public enum SettingKey: String, CaseIterable, Sendable {
     /// Course units the learner has started, comma-separated ids. Core units count as
     /// started without being listed.
     case unitsStarted = "units_started"
+    /// The unit the learner is on now (Bugün's "Şu anki bölüm").
+    case currentUnit = "current_unit"
+    /// When the app last asked GitHub Pages for new content, seconds since 1970.
+    case contentCheckedAt = "content_checked_at"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

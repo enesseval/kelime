@@ -1,11 +1,12 @@
-# Publishes site/ (privacy policy, terms) to GitHub Pages:
+# Publishes site/ (privacy policy, terms) and the app's content (content/manifest.json,
+# content/cards.json from Content/cards.json) to GitHub Pages:
 # https://enesseval.github.io/kelime/
 name: Pages
 
 on:
   push:
     branches: [main]
-    paths: ["site/**", ".github/workflows/pages.yml"]
+    paths: ["site/**", "Content/cards.json", "tools/publish_content.py", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -26,6 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - run: python3 tools/publish_content.py site/content
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

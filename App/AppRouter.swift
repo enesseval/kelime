@@ -15,7 +15,6 @@ enum Route: Hashable {
     case widgetMode
     case proAudit
     case widgetLog
-    case course(CEFRLevel)
     case unit(String)
     case story(String, String)
 }

@@ -268,7 +268,7 @@ struct CrosswordTests {
     /// and every one succeeds once the fallback is allowed.
     @Test func tenThousandPersonalGenerations() throws {
         let all = try Self.cards().values
-            .filter { $0.word.count <= 10 }
+            .filter { $0.isSingleWord && $0.word.count <= 10 }
             .sorted { $0.id < $1.id }
             .map(CrosswordGenerator.Word.init(card:))
         let meaningsByID = Dictionary(uniqueKeysWithValues: all.map { ($0.cardID, $0.meanings) })

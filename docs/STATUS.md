@@ -96,5 +96,29 @@ In the app: migration v4 adds card notes/senses, `unit` and `unit_card`. A1 card
 widget and Quick Review only from started units (`units_started`; the core counts as started).
 A1 is free; A2/B1 stay the default decks for everyone else (`DeckID.basicDecks`). Phrases are
 never write questions or crossword words, and only compete with phrases as quiz options.
-Oyna shows the A1 path; units have a start button, stories (Turkish on demand, tap to hear),
-phrases and words. Word detail shows extra senses and the note.
+Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
+extra senses and the note.
+
+## Units replace decks (build 13)
+
+Where the learner's level has units, they are the content: no separate "A1 yolu" entry.
+Bugün shows "Şu anki bölüm" (progress, a story once half the unit is learned, and "A2
+seviyesine geç" once the bridge is nearly done and A2 has units). Kelimelerim's "Bölümler"
+lists the units in the learner's order plus the exam decks; levels without units still show
+the old deck cards. `Curriculum.advance` runs with every widget refresh: at 80% learned the
+next unit starts and becomes current (a started, mostly unlearned unit first, then the next
+in order). The goal orders the any-order units (`Curriculum.goalTopics`: travel puts café,
+city, shopping first; work puts day, city, café first). "Bu bölüme geç" lets the learner pick.
+Moving to the next level keeps earlier units started, so their struggling cards stay.
+
+## Content updates (build 13)
+
+Content is bundled and works offline. The Pages workflow also publishes
+`content/manifest.json` and `content/cards.json` (tools/publish_content.py) whenever
+Content/cards.json changes on main. The app checks the manifest at most every six hours
+(launch and foreground), downloads newer content, checks size and sha256, imports it and keeps
+it in the App Group; at launch the newer of bundled and downloaded content is used, and content
+never steps back to an older version. Bump `schema` in both the script and
+`ContentUpdater.schema` if cards.json changes shape in a way older apps cannot read. Pushing a
+new contentVersion to main ships it to every user: run the checks first. The privacy and terms
+pages now say the app fetches this file and sends nothing about the learner.

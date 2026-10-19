@@ -21,3 +21,4 @@ __pycache__/
 
 # graphify output
 graphify-out/
+site/content/

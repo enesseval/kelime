@@ -64,6 +64,73 @@ struct CurriculumTests {
         #expect(!DeckID.basicDecks.contains(.a1) && !DeckID.a1.isPro)
     }
 
+    func learn(_ fraction: Double, of unitID: String, in db: AppDatabase) throws {
+        try db.writer.write { db in
+            let cards = try Curriculum.cards(of: unitID, db: db)
+            for card in cards.prefix(Int((Double(cards.count) * fraction).rounded(.up))) {
+                try CardState(cardID: card.id, state: .learned).save(db)
+            }
+        }
+    }
+
+    @Test func goalOrdersTheUnits() throws {
+        let db = try makeDatabase()
+        try db.writer.write { db in try Settings.set(.goal, LearningGoal.travel.rawValue, in: db) }
+        let state = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
+        #expect(state.units.prefix(3).map(\.id) == ["a1-core", "a1-cafe", "a1-city"])
+        #expect(state.units.last?.id == "a1-bridge")
+        #expect(state.currentID == "a1-core")
+        #expect(state.nextLevel == nil)
+    }
+
+    @Test func aNearlyLearnedUnitHandsOver() throws {
+        let db = try makeDatabase()
+        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == nil)
+        try learn(0.85, of: "a1-core", in: db)
+        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == "a1-family")
+        let state = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
+        #expect(state.currentID == "a1-family")
+        #expect(state.units.filter(\.started).map(\.id) == ["a1-core", "a1-family"])
+        // Nothing more until the new unit is learned too.
+        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == nil)
+    }
+
+    @Test func travelHandsOverOnce() throws {
+        let db = try makeDatabase()
+        try db.writer.write { db in try Settings.set(.goal, LearningGoal.travel.rawValue, in: db) }
+        try db.writer.write { db in _ = try Curriculum.advance(db: db) }
+        try learn(0.85, of: "a1-core", in: db)
+        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == "a1-cafe")
+        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == nil)
+        #expect(try db.reader.read { db in try Curriculum.state(db: db)?.currentID } == "a1-cafe")
+    }
+
+    @Test func aStartedUnitIsPickedUpBeforeANewOne() throws {
+        let db = try makeDatabase()
+        try db.writer.write { db in _ = try Curriculum.advance(db: db) }
+        try db.writer.write { db in try Curriculum.start("a1-city", db: db) }
+        try learn(0.85, of: "a1-core", in: db)
+        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == "a1-city")
+        try learn(0.85, of: "a1-city", in: db)
+        try learn(0.85, of: "a1-family", in: db)
+        // family is nearly learned without being studied as a unit, so it is skipped.
+        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == "a1-home")
+    }
+
+    @Test func theLearnerCanPickTheNextUnit() throws {
+        let db = try makeDatabase()
+        try db.writer.write { db in try Curriculum.makeCurrent("a1-shopping", db: db) }
+        try learn(0.85, of: "a1-core", in: db)
+        try db.writer.write { db in _ = try Curriculum.advance(db: db) }
+        let state = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
+        #expect(state.currentID == "a1-shopping")
+    }
+
+    @Test func levelsWithoutUnitsKeepTheirDecks() throws {
+        let db = try makeDatabase(Preferences(level: .b1))
+        #expect(try db.reader.read { db in try Curriculum.state(db: db) } == nil)
+    }
+
     @Test func phrasesStayOutOfWritingAndPuzzles() throws {
         let db = try makeDatabase()
         try db.writer.write { db in

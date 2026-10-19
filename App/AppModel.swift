@@ -33,6 +33,7 @@ final class AppModel {
         guard let database else { return }
         await WidgetRefresher.refresh(database)
         dataVersion += 1
+        await updateContent()
     }
 
     func start() async {
@@ -40,7 +41,8 @@ final class AppModel {
         phase = .launching(step: .openDatabase, progress: 0)
         let contentURL = Bundle.main.url(forResource: "cards", withExtension: "json", subdirectory: "Content")
         do {
-            let db = try await AppBootstrap.run(contentURL: contentURL, progress: { step, progress in
+            let downloaded = (try? AppConfig.sharedContainerURL()).map(ContentUpdater.downloadedURL(in:))
+            let db = try await AppBootstrap.run(contentURL: contentURL, downloadedURL: downloaded, progress: { step, progress in
                 Task { @MainActor [weak self] in
                     guard let self, case .launching = self.phase else { return }
                     self.phase = .launching(step: step, progress: progress)
@@ -52,9 +54,21 @@ final class AppModel {
             PhoneWatchSync.shared.start(database: db)
             await applySpeechRate()
             await WidgetRefresher.refresh(db)
+            // The refresh may have moved the learner to the next unit.
+            dataVersion += 1
+            await updateContent()
         } catch {
             phase = .failed(error)
         }
+    }
+
+    /// Fetches newer content from GitHub Pages in the background. Offline or on any failure the
+    /// app keeps what it has.
+    func updateContent() async {
+        guard let database, let directory = try? AppConfig.sharedContainerURL() else { return }
+        guard case .updated = try? await ContentUpdater.update(database: database, directory: directory) else { return }
+        await WidgetRefresher.rebuild(database)
+        dataVersion += 1
     }
 
     // MARK: - Reads

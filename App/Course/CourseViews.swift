@@ -2,105 +2,140 @@ import KelimeCore
 import KelimeUI
 import SwiftUI
 
-/// "A1 yolu" on Oyna: how far the learner is in the course, and the way in.
-struct CourseCard: View {
-    let level: CEFRLevel
-    let units: [UnitProgress]
+/// Bugün's "Şu anki bölüm": the unit the learner is on, a story near its end, and the way on
+/// to the next level once this one is done.
+struct CurrentUnitCard: View {
+    @Environment(AppModel.self) private var model
+    let course: CourseState
 
     var body: some View {
-        let started = units.filter(\.started)
-        let finished = units.filter(\.isFinished)
-        // Average of the units, so a card shared by two units is not counted twice.
-        let fraction = units.isEmpty ? 0 : units.map(\.fraction).reduce(0, +) / Double(units.count)
-        NavigationLink(value: Route.course(level)) {
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    Text("\(level.rawValue) yolu").font(KelimeFont.english(30, relativeTo: .title))
-                    Spacer()
-                    Image(systemName: "chevron.right").foregroundStyle(Palette.ink2)
+        if let current = course.current {
+            VStack(alignment: .leading, spacing: 10) {
+                NavigationLink(value: Route.unit(current.id)) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Text("ŞU ANKİ BÖLÜM")
+                                .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
+                                .tracking(0.7)
+                                .foregroundStyle(Palette.ink2)
+                            Spacer()
+                            Text("\(course.level.rawValue) · \(position(of: current))/\(course.units.count)")
+                                .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
+                                .foregroundStyle(Palette.ink2)
+                        }
+                        HStack(alignment: .firstTextBaseline) {
+                            Text(current.unit.title).font(KelimeFont.english(28, relativeTo: .title))
+                            Spacer()
+                            Image(systemName: "chevron.right").foregroundStyle(Palette.ink2)
+                        }
+                        Text(current.unit.goal)
+                            .font(KelimeFont.ui(14, relativeTo: .subheadline))
+                            .foregroundStyle(Palette.ink2)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
+                        ThinProgressBar(fraction: current.fraction).padding(.top, 2)
+                        Text("\(current.learned)/\(current.total) kart öğrenildi")
+                            .font(KelimeFont.ui(12, relativeTo: .caption))
+                            .foregroundStyle(Palette.ink2)
+                    }
+                    .foregroundStyle(Palette.ink)
+                    .contentShape(Rectangle())
                 }
-                Text("\(units.count) bölüm · \(started.count) başladı · \(finished.count) bitti")
+                .buttonStyle(.plain)
+                // Near the end of the unit the words are known well enough to read a story.
+                if current.fraction >= 0.5, !current.unit.stories.isEmpty {
+                    let story = current.unit.stories[current.learned % current.unit.stories.count]
+                    NavigationLink(value: Route.story(current.id, story.id)) {
+                        Label("Hikâye oku: \(story.title)", systemImage: "book")
+                            .font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
+                    }
+                    .buttonStyle(TintedButtonStyle(height: 44))
+                }
+                if let next = course.nextLevel {
+                    Button("\(next.rawValue) seviyesine geç") {
+                        Task { await model.write(rebuildQueue: true) { db in try Curriculum.moveOn(to: next, db: db) } }
+                    }
+                    .buttonStyle(PrimaryButtonStyle(height: 48))
+                }
+            }
+            .surfaceCard(padding: 20)
+        } else if course.isComplete {
+            VStack(alignment: .leading, spacing: 6) {
+                Text("\(course.level.rawValue) bitti 🎉").font(KelimeFont.english(28, relativeTo: .title))
+                Text(course.nextLevel.map { "\($0.rawValue) bölümleri hazır." } ?? "Sonraki seviyenin bölümleri hazırlanıyor. Zorlandığın kartlar widget'ında kalır.")
                     .font(KelimeFont.ui(14, relativeTo: .subheadline))
                     .foregroundStyle(Palette.ink2)
-                ThinProgressBar(fraction: fraction)
-                    .padding(.top, 4)
+                if let next = course.nextLevel {
+                    Button("\(next.rawValue) seviyesine geç") {
+                        Task { await model.write(rebuildQueue: true) { db in try Curriculum.moveOn(to: next, db: db) } }
+                    }
+                    .buttonStyle(PrimaryButtonStyle(height: 48))
+                    .padding(.top, 6)
+                }
             }
             .foregroundStyle(Palette.ink)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .surfaceCard(padding: 20)
         }
-        .buttonStyle(.plain)
+    }
+
+    private func position(of unit: UnitProgress) -> Int {
+        (course.units.firstIndex { $0.id == unit.id } ?? 0) + 1
     }
 }
 
-/// The level's units: core first, the any-order units, the bridge last.
-struct CourseView: View {
-    @Environment(AppModel.self) private var model
-    let level: CEFRLevel
-    @State private var units: [UnitProgress] = []
+/// Kelimelerim's "Bölümler": the level's units in the learner's order.
+struct UnitList: View {
+    let course: CourseState
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
-                Text("Önce çekirdek, sonra istediğin bölüm. Başladığın bölümlerin kelimeleri widget'ına gelir.")
-                    .font(KelimeFont.ui(14, relativeTo: .subheadline))
-                    .foregroundStyle(Palette.ink2)
-                    .padding(.bottom, 4)
-                ForEach(units) { item in
-                    NavigationLink(value: Route.unit(item.unit.id)) { row(item) }
-                        .buttonStyle(.plain)
-                }
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Bölümler sırayla açılır; biri bitmeye yakınken sıradaki başlar. İstersen başka bir bölüme geçebilirsin.")
+                .font(KelimeFont.ui(13, relativeTo: .footnote))
+                .foregroundStyle(Palette.ink2)
+            ForEach(course.units) { item in
+                NavigationLink(value: Route.unit(item.unit.id)) { row(item) }
+                    .buttonStyle(.plain)
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 12)
-        }
-        .screenBackground()
-        .navigationTitle("\(level.rawValue) yolu")
-        .navigationBarTitleDisplayMode(.inline)
-        .task(id: model.dataVersion) {
-            let level = level
-            units = await model.read { db in try Curriculum.progress(level: level, db: db) } ?? []
         }
     }
 
     private func row(_ item: UnitProgress) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
+        let isCurrent = item.id == course.currentID
+        return VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .firstTextBaseline) {
                 Text(item.unit.title).font(KelimeFont.ui(17, weight: .semibold, relativeTo: .headline))
                 Spacer()
-                status(item)
+                status(item, isCurrent: isCurrent)
             }
             Text(item.unit.goal)
                 .font(KelimeFont.ui(13, relativeTo: .footnote))
                 .foregroundStyle(Palette.ink2)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
-            if let hint = placementHint(item.unit.placement) {
-                Text(hint).font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption)).foregroundStyle(Palette.accent)
-            }
             if item.started {
                 ThinProgressBar(fraction: item.fraction).padding(.top, 2)
             }
         }
         .foregroundStyle(Palette.ink)
         .surfaceCard(radius: 18, padding: 16)
+        .overlay {
+            if isCurrent {
+                RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(Palette.accent, lineWidth: 1.5)
+            }
+        }
     }
 
     @ViewBuilder
-    private func status(_ item: UnitProgress) -> some View {
+    private func status(_ item: UnitProgress, isCurrent: Bool) -> some View {
         if item.isFinished {
             Text("Bitti ✓").font(KelimeFont.ui(12, weight: .semibold)).foregroundStyle(Palette.greenInk)
+        } else if isCurrent {
+            Text("Şu an · \(item.learned)/\(item.total)").font(KelimeFont.ui(12, weight: .semibold)).foregroundStyle(Palette.accent)
         } else if item.started {
             Text("\(item.learned)/\(item.total)").font(KelimeFont.ui(12, weight: .semibold)).foregroundStyle(Palette.ink2)
         } else {
             Text("\(item.total) kart").font(KelimeFont.ui(12)).foregroundStyle(Palette.ink2)
-        }
-    }
-
-    private func placementHint(_ placement: UnitPlacement) -> String? {
-        switch placement {
-        case .first: "Herkes buradan başlar"
-        case .last: "Diğer bölümlerden sonra önerilir"
-        case .any: nil
         }
     }
 }
@@ -111,7 +146,8 @@ struct UnitView: View {
     let unitID: String
     @State private var unit: CurriculumUnit?
     @State private var cards: [Card] = []
-    @State private var started = false
+    @State private var isCurrent = false
+    @State private var finished = false
     @State private var toast: String?
 
     var body: some View {
@@ -135,28 +171,34 @@ struct UnitView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task(id: model.dataVersion) {
             let id = unitID
-            let loaded = await model.read { db -> (CurriculumUnit?, [Card], Bool) in
-                (try CurriculumUnit.fetchOne(db, key: id), try Curriculum.cards(of: id, db: db),
-                 try Curriculum.started(db: db).contains(id))
+            let loaded = await model.read { db -> (CurriculumUnit?, [Card], UnitProgress?, String?) in
+                let unit = try CurriculumUnit.fetchOne(db, key: id)
+                let progress = try unit.flatMap { u in try Curriculum.progress(level: u.level, db: db).first { $0.id == id } }
+                return (unit, try Curriculum.cards(of: id, db: db), progress, try Curriculum.state(db: db)?.currentID)
             }
             unit = loaded?.0
             cards = loaded?.1 ?? []
-            started = loaded?.2 ?? false
+            finished = loaded?.2?.isFinished ?? false
+            isCurrent = loaded?.3 == id
         }
         .toast($toast)
     }
 
     @ViewBuilder
     private func startButton(_ unit: CurriculumUnit) -> some View {
-        if started {
-            Label("Bu bölümün kartları widget'ında", systemImage: "checkmark.circle.fill")
+        if finished {
+            Label("Bu bölümü bitirdin", systemImage: "checkmark.circle.fill")
+                .font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
+                .foregroundStyle(Palette.greenInk)
+        } else if isCurrent {
+            Label("Şu an bu bölümdesin, kartları widget'ında", systemImage: "checkmark.circle.fill")
                 .font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
                 .foregroundStyle(Palette.greenInk)
         } else {
-            Button("Bu bölüme başla") {
+            Button("Bu bölüme geç") {
                 Task {
                     let id = unit.id
-                    await model.write(rebuildQueue: true) { db in try Curriculum.start(id, db: db) }
+                    await model.write(rebuildQueue: true) { db in try Curriculum.makeCurrent(id, db: db) }
                     toast = "Kelimeler widget'ına geliyor"
                 }
             }

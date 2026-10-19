@@ -14,6 +14,7 @@ struct TodayData: Sendable {
     var bannerDismissed: Bool
     var level: CEFRLevel
     var puzzle: DailyPuzzleInfo?
+    var course: CourseState?
 
     static func load(db: Database, clock: AppClock) throws -> TodayData {
         let prefs = try Preferences.load(db)
@@ -33,7 +34,8 @@ struct TodayData: Sendable {
             examName: "YDS",
             bannerDismissed: try Settings.bool(.widgetBannerDismissed, in: db),
             level: prefs.level,
-            puzzle: try DailyPuzzleInfo.load(db: db, clock: clock)
+            puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
+            course: try Curriculum.state(db: db)
         )
     }
 }
@@ -55,6 +57,9 @@ struct TodayView: View {
                     if let hero = data.hero {
                         Button { model.router.openWord(hero.id) } label: { HeroCard(item: hero) }
                             .buttonStyle(.plain)
+                    }
+                    if let course = data.course {
+                        CurrentUnitCard(course: course)
                     }
                     QuickReviewCard(strugglingCount: data.strugglingCount, remaining: data.reviewsRemaining)
                     PuzzleCard(level: data.level, info: data.puzzle)
