@@ -1,0 +1,539 @@
+{
+"id": "c1-ethics",
+"level": "C1",
+"title": "Hukuk ve etik",
+"placement": "any",
+"goal": "Etik ikilemleri ve hukuki sorumluluğu tartışır, gizlilik ve gözetim gibi hassas konularda dengeli bir görüş sunar.",
+"words": [
+{
+"id": "c1-ethical",
+"word": "ethical",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"ahlaki",
+"etik"
+],
+"example_en": "His decision was very ethical.",
+"example_tr": "Kararı çok ahlakiydi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-integrity",
+"word": "integrity",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"dürüstlük",
+"bütünlük"
+],
+"example_en": "We trust her integrity.",
+"example_tr": "Onun dürüstlüğüne güveniyoruz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-liability",
+"word": "liability",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"hukuki sorumluluk"
+],
+"example_en": "The company denied any liability for the damage.",
+"example_tr": "Şirket hasar için hiçbir sorumluluğu kabul etmedi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-compliance",
+"word": "compliance",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"uyum",
+"riayet"
+],
+"example_en": "Compliance with the new policy is essential.",
+"example_tr": "Yeni politikaya uyum şarttır."
+}
+],
+"note": ""
+},
+{
+"id": "c1-jurisdiction",
+"word": "jurisdiction",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yargı yetkisi"
+],
+"example_en": "The court has no jurisdiction over this issue.",
+"example_tr": "Mahkemenin bu konuda yargı yetkisi yoktur."
+}
+],
+"note": ""
+},
+{
+"id": "c1-legitimate",
+"word": "legitimate",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"meşru",
+"yasal"
+],
+"example_en": "They have a legitimate reason to complain.",
+"example_tr": "Şikayet etmek için meşru bir nedenleri var."
+}
+],
+"note": ""
+},
+{
+"id": "c1-unlawful",
+"word": "unlawful",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"yasadışı",
+"kanunsuz"
+],
+"example_en": "Their methods were deemed unlawful.",
+"example_tr": "Yöntemleri yasadışı sayıldı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-infringe",
+"word": "infringe",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"ihlal etmek",
+"çiğnemek"
+],
+"example_en": "Do not infringe on their rights.",
+"example_tr": "Onların haklarını ihlal etmeyin."
+}
+],
+"note": ""
+},
+{
+"id": "c1-consent",
+"word": "consent",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"rıza",
+"onay"
+],
+"example_en": "He did not give his consent for the surgery.",
+"example_tr": "Ameliyat için rızasını vermedi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-confidential",
+"word": "confidential",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"gizli",
+"mahrem"
+],
+"example_en": "This data is very confidential.",
+"example_tr": "Bu veriler çok gizlidir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-surveillance",
+"word": "surveillance",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"gözetim",
+"yakın takip"
+],
+"example_en": "The police kept the house under surveillance.",
+"example_tr": "Polis evi gözetim altında tuttu."
+}
+],
+"note": ""
+},
+{
+"id": "c1-whistleblower",
+"word": "whistleblower",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"bilgi sızdıran",
+"muhbir"
+],
+"example_en": "The whistleblower revealed the fraud.",
+"example_tr": "Bilgi sızdıran kişi yolsuzluğu ortaya çıkardı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-precedent",
+"word": "precedent",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"emsal",
+"örnek"
+],
+"example_en": "This decision will establish a dangerous precedent.",
+"example_tr": "Bu karar tehlikeli bir emsal oluşturacak."
+}
+],
+"note": ""
+},
+{
+"id": "c1-testimony",
+"word": "testimony",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tanıklık",
+"ifade"
+],
+"example_en": "Her testimony convinced the judge.",
+"example_tr": "İfadesi hakimi ikna etti."
+}
+],
+"note": ""
+},
+{
+"id": "c1-prosecute",
+"word": "prosecute",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"dava açmak",
+"yargılamak"
+],
+"example_en": "The government decided to prosecute the manager.",
+"example_tr": "Hükümet yöneticiye dava açmaya karar verdi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-acquit",
+"word": "acquit",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"beraat ettirmek"
+],
+"example_en": "The court will probably acquit him.",
+"example_tr": "Mahkeme muhtemelen onu beraat ettirecek."
+}
+],
+"note": ""
+},
+{
+"id": "c1-breach",
+"word": "breach",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ihlal",
+"bozulma"
+],
+"example_en": "It is an obvious breach of our contract.",
+"example_tr": "Bu, sözleşmemizin bariz bir ihlalidir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-loophole",
+"word": "loophole",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yasal boşluk",
+"açık kapı"
+],
+"example_en": "The lawyer found a loophole in the new law.",
+"example_tr": "Avukat yeni yasada bir boşluk buldu."
+}
+],
+"note": ""
+},
+{
+"id": "c1-accountable",
+"word": "accountable",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"sorumlu",
+"hesap verebilir"
+],
+"example_en": "They must be accountable to the public.",
+"example_tr": "Halka hesap verebilir olmalılar."
+}
+],
+"note": ""
+},
+{
+"id": "c1-impartial",
+"word": "impartial",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"tarafsız",
+"yansız"
+],
+"example_en": "A judge must be impartial.",
+"example_tr": "Bir hakim tarafsız olmalıdır."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c1-p-grey-area",
+"text": "It's a grey area.",
+"tr": "Bu gri bir alan.",
+"example_en": "Is this legitimate? – It's a grey area.",
+"example_tr": "Bu meşru mu? – Bu gri bir alan.",
+"note": ""
+},
+{
+"id": "c1-p-ignorance",
+"text": "Ignorance is no excuse.",
+"tr": "Bilmemek mazeret değildir.",
+"example_en": "I didn't know the rule! – Ignorance is no excuse.",
+"example_tr": "Kuralı bilmiyordum! – Bilmemek mazeret değildir.",
+"note": ""
+},
+{
+"id": "c1-p-slippery-slope",
+"text": "It's a slippery slope.",
+"tr": "Bu tehlikeli bir gidişat.",
+"example_en": "We shouldn't do this. It's a slippery slope.",
+"example_tr": "Bunu yapmamalıyız. Bu tehlikeli bir gidişat.",
+"note": ""
+},
+{
+"id": "c1-p-double-edged",
+"text": "It's a double-edged sword.",
+"tr": "İki ucu keskin kılıç.",
+"example_en": "The internet is a double-edged sword.",
+"example_tr": "İnternet iki ucu keskin bir kılıçtır.",
+"note": ""
+},
+{
+"id": "c1-p-matter-of-principle",
+"text": "It's a matter of principle.",
+"tr": "Bu bir prensip meselesi.",
+"example_en": "Why did you quit? – It's a matter of principle.",
+"example_tr": "Neden istifa ettin? – Bu bir prensip meselesi.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c1-ethics-1",
+"title": "Gizli Bilgi",
+"names": [
+"Leyla",
+"Murat"
+],
+"lines": [
+{
+"en": "Did you read the new data?",
+"tr": "Yeni verileri okudun mu?"
+},
+{
+"en": "Yes, but it is confidential.",
+"tr": "Evet, ama gizli."
+},
+{
+"en": "I know. The underlying issue is substantial.",
+"tr": "Biliyorum. Altta yatan sorun ciddi."
+},
+{
+"en": "If we reveal it, it's a breach of our contract.",
+"tr": "Eğer açıklarsak, bu sözleşmemizin ihlalidir."
+},
+{
+"en": "True. A whistleblower could be arrested.",
+"tr": "Doğru. Bilgi sızdıran biri tutuklanabilir."
+},
+{
+"en": "We must maintain our integrity.",
+"tr": "Dürüstlüğümüzü korumalıyız."
+}
+]
+},
+{
+"id": "c1-ethics-2",
+"title": "Kamera Gözetimi",
+"names": [
+"Ahmet",
+"Canan"
+],
+"lines": [
+{
+"en": "The company wants surveillance in the office.",
+"tr": "Şirket ofiste gözetim istiyor."
+},
+{
+"en": "They need our explicit consent for that.",
+"tr": "Bunun için açık rızamıza ihtiyaçları var."
+},
+{
+"en": "I think it will infringe on our privacy.",
+"tr": "Bence bu gizliliğimizi ihlal edecek."
+},
+{
+"en": "By and large, it's a slippery slope.",
+"tr": "Genel olarak, bu tehlikeli bir gidişat."
+},
+{
+"en": "We should complain to the manager.",
+"tr": "Yöneticiye şikayet etmeliyiz."
+}
+]
+},
+{
+"id": "c1-ethics-3",
+"title": "Hukuki Boşluk",
+"names": [
+"Emre"
+],
+"lines": [
+{
+"en": "Emre is a lawyer. He found a loophole.",
+"tr": "Emre bir avukattır. Bir boşluk buldu."
+},
+{
+"en": "His client wants to avoid tax.",
+"tr": "Müvekkili vergi ödemekten kaçınmak istiyor."
+},
+{
+"en": "This method is unlawful.",
+"tr": "Bu yöntem yasadışıdır."
+},
+{
+"en": "But we can use the loophole!",
+"tr": "Ama boşluğu kullanabiliriz!"
+},
+{
+"en": "No, I will not do it. It's a matter of principle.",
+"tr": "Hayır, bunu yapmayacağım. Bu bir prensip meselesi."
+},
+{
+"en": "He is very ethical.",
+"tr": "O çok etiktir."
+}
+]
+},
+{
+"id": "c1-ethics-4",
+"title": "Mahkemede",
+"names": [
+"Zeynep",
+"London"
+],
+"lines": [
+{
+"en": "Zeynep is at a court in London.",
+"tr": "Zeynep Londra'da bir mahkemede."
+},
+{
+"en": "The judge must be impartial.",
+"tr": "Hakim tarafsız olmalıdır."
+},
+{
+"en": "A witness gives testimony.",
+"tr": "Bir tanık ifade veriyor."
+},
+{
+"en": "Did you know the operation was unlawful?",
+"tr": "Operasyonun yasadışı olduğunu biliyor muydunuz?"
+},
+{
+"en": "I didn't know the law.",
+"tr": "Yasayı bilmiyordum."
+},
+{
+"en": "Ignorance is no excuse. We will prosecute you.",
+"tr": "Bilmemek mazeret değildir. Size dava açacağız."
+},
+{
+"en": "The court has jurisdiction here.",
+"tr": "Mahkemenin burada yargı yetkisi var."
+}
+]
+},
+{
+"id": "c1-ethics-5",
+"title": "Sorumluluk",
+"names": [
+"Berk",
+"Aslı"
+],
+"lines": [
+{
+"en": "Who is accountable for this online mistake?",
+"tr": "Bu çevrimiçi hatadan kim sorumlu?"
+},
+{
+"en": "The company has the liability.",
+"tr": "Hukuki sorumluluk şirkette."
+},
+{
+"en": "Will the court acquit them?",
+"tr": "Mahkeme onları beraat ettirecek mi?"
+},
+{
+"en": "It's a grey area. There is no obvious precedent.",
+"tr": "Bu gri bir alan. Bariz bir emsal yok."
+},
+{
+"en": "Their reason is not legitimate.",
+"tr": "Nedenleri meşru değil."
+},
+{
+"en": "Yes. The internet is a double-edged sword.",
+"tr": "Evet. İnternet iki ucu keskin bir kılıçtır."
+}
+]
+}
+]
+}
