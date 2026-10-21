@@ -142,6 +142,10 @@ CARDS
   Synonyms add nothing.
 - example_en: natural English that uses the card's word in that sense, at most {MAX_SENTENCE} characters.
   {GRAMMAR[level][spec["placement"]]}
+  Use each word in its natural collocations: every example and story line must be a sentence a
+  native speaker would really say (not "prevalent in my head", "a profound nuance", "arranged an
+  experiment for a hypothesis"). If the allowed words cannot make a natural sentence, choose a
+  simpler situation.
 - example_tr: what a Turkish speaker actually says for example_en: idiomatic, not word for word
   ("I'm cold." is "Üşüyorum.", "Don't worry about it." is "Merak etme."). Nothing added, nothing
   dropped: do not add what English leaves open (brother is "kardeş", not "abi", unless the

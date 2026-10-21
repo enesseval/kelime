@@ -1,0 +1,716 @@
+{
+  "id": "c1-core",
+  "level": "C1",
+  "title": "Çekirdek",
+  "placement": "first",
+  "goal": "Soyut ve akademik konularda ince ayrımlarla konuşur, varsayım ve çıkarımları açıkça ayırır, düşüncesini sıkı bağlaçlarla kurar.",
+  "words": [
+    {
+      "id": "c1-albeit",
+      "word": "albeit",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "gerçi",
+            "-mesine rağmen"
+          ],
+          "example_en": "He was a good colleague, albeit a nervous one.",
+          "example_tr": "Biraz gergin olsa da iyi bir iş arkadaşıydı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-whereby",
+      "word": "whereby",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "ki bu sayede",
+            "-ecek şekilde"
+          ],
+          "example_en": "We agreed a contract whereby they pay the debt.",
+          "example_tr": "Borcu ödeyecekleri bir sözleşme üzerinde anlaştık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-hence",
+      "word": "hence",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "bundan dolayı",
+            "bu yüzden"
+          ],
+          "example_en": "She lost the election; hence, her career is over.",
+          "example_tr": "Seçimi kaybetti; bu yüzden kariyeri bitti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-thereby",
+      "word": "thereby",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "böylece"
+          ],
+          "example_en": "She studied hard, thereby improving her grammar.",
+          "example_tr": "Çok çalıştı, böylece dilbilgisini geliştirdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-inherent",
+      "word": "inherent",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "doğasında olan"
+          ],
+          "example_en": "Risk is inherent in any investment.",
+          "example_tr": "Risk, herhangi bir yatırımın doğasında vardır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-explicit",
+      "word": "explicit",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "açık",
+            "belirgin"
+          ],
+          "example_en": "He gave explicit directions.",
+          "example_tr": "Açık talimatlar verdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-implicit",
+      "word": "implicit",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "üstü kapalı",
+            "örtük"
+          ],
+          "example_en": "There was an implicit threat in his message.",
+          "example_tr": "Mesajında üstü kapalı bir tehdit vardı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-coherent",
+      "word": "coherent",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tutarlı"
+          ],
+          "example_en": "Her argument was quite coherent.",
+          "example_tr": "Argümanı oldukça tutarlıydı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-comprehensive",
+      "word": "comprehensive",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kapsamlı"
+          ],
+          "example_en": "They made a comprehensive report about the economy.",
+          "example_tr": "Ekonomi hakkında kapsamlı bir rapor yaptılar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-plausible",
+      "word": "plausible",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "akla yatkın"
+          ],
+          "example_en": "That is a plausible reason.",
+          "example_tr": "Bu akla yatkın bir sebep."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-profound",
+      "word": "profound",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "derin",
+            "büyük"
+          ],
+          "example_en": "The book had a profound impact on her life.",
+          "example_tr": "Kitabın hayatında derin bir etkisi oldu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-subtle",
+      "word": "subtle",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ince",
+            "belli belirsiz"
+          ],
+          "example_en": "His polite attitude was a subtle warning.",
+          "example_tr": "Kibar tavrı ince bir uyarıydı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-arbitrary",
+      "word": "arbitrary",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "keyfi"
+          ],
+          "example_en": "The judge made an arbitrary decision.",
+          "example_tr": "Yargıç keyfi bir karar verdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-ambiguous",
+      "word": "ambiguous",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "belirsiz"
+          ],
+          "example_en": "The ending of the novel was ambiguous.",
+          "example_tr": "Romanın sonu belirsizdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-redundant",
+      "word": "redundant",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "gereksiz",
+            "işsiz"
+          ],
+          "example_en": "His job in the company was redundant.",
+          "example_tr": "Şirketteki işi gereksizdi."
+        }
+      ],
+      "note": "İngiliz İngilizcesinde 'be made redundant': işten çıkarılmak."
+    },
+    {
+      "id": "c1-predominantly",
+      "word": "predominantly",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "ağırlıklı olarak"
+          ],
+          "example_en": "The audience was predominantly young.",
+          "example_tr": "Seyirci ağırlıklı olarak gençti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-inevitably",
+      "word": "inevitably",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "kaçınılmaz olarak"
+          ],
+          "example_en": "Inevitably, the crisis will destroy the economy.",
+          "example_tr": "Kaçınılmaz olarak, kriz ekonomiyi mahvedecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-consensus",
+      "word": "consensus",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "fikir birliği"
+          ],
+          "example_en": "There is no consensus about the plan.",
+          "example_tr": "Plan hakkında bir fikir birliği yok."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-paradigm",
+      "word": "paradigm",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "paradigma"
+          ],
+          "example_en": "This breakthrough will change the academic paradigm.",
+          "example_tr": "Bu buluş akademik paradigmayı değiştirecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-hypothesis",
+      "word": "hypothesis",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hipotez"
+          ],
+          "example_en": "The experiment supports the hypothesis.",
+          "example_tr": "Deney hipotezi destekliyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-discrepancy",
+      "word": "discrepancy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tutarsızlık"
+          ],
+          "example_en": "There is a significant discrepancy in the data.",
+          "example_tr": "Verilerde belirgin bir tutarsızlık var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-notion",
+      "word": "notion",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "düşünce",
+            "kavram"
+          ],
+          "example_en": "I don't accept the notion that poverty is inevitable.",
+          "example_tr": "Yoksulluğun kaçınılmaz olduğu fikrini kabul etmiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-implication",
+      "word": "implication",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sonuç",
+            "ima"
+          ],
+          "example_en": "We must consider the financial implications.",
+          "example_tr": "Finansal sonuçlarını değerlendirmeliyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-underlying",
+      "word": "underlying",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "altında yatan"
+          ],
+          "example_en": "The underlying cause of the disease is genetic.",
+          "example_tr": "Hastalığın altında yatan sebep genetiktir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-substantial",
+      "word": "substantial",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "önemli",
+            "büyük"
+          ],
+          "example_en": "They made a substantial profit this year.",
+          "example_tr": "Bu yıl büyük bir kâr yaptılar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-prevalent",
+      "word": "prevalent",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yaygın"
+          ],
+          "example_en": "The custom is prevalent in the countryside.",
+          "example_tr": "Bu gelenek kırsalda yaygındır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-intrinsic",
+      "word": "intrinsic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "içsel",
+            "özünde olan"
+          ],
+          "example_en": "Freedom has intrinsic value.",
+          "example_tr": "Özgürlüğün içsel bir değeri vardır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-nuance",
+      "word": "nuance",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "nüans",
+            "incelik"
+          ],
+          "example_en": "He can't see the nuances of the language.",
+          "example_tr": "Dilin inceliklerini göremiyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-framework",
+      "word": "framework",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "çerçeve",
+            "yapı"
+          ],
+          "example_en": "We need a framework for the new policy.",
+          "example_tr": "Yeni politika için bir çerçeveye ihtiyacımız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-criteria",
+      "word": "criteria",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kriterler"
+          ],
+          "example_en": "What are your criteria for a good candidate?",
+          "example_tr": "İyi bir aday için kriterleriniz nelerdir?"
+        }
+      ],
+      "note": "Çoğuldur; tekili 'criterion'."
+    },
+    {
+      "id": "c1-deem",
+      "word": "deem",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "saymak",
+            "addetmek"
+          ],
+          "example_en": "The boss deemed the programme a success.",
+          "example_tr": "Patron programı bir başarı saydı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-entail",
+      "word": "entail",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "gerektirmek"
+          ],
+          "example_en": "The promotion will entail more travel.",
+          "example_tr": "Terfi daha fazla seyahat gerektirecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-constitute",
+      "word": "constitute",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "oluşturmak",
+            "teşkil etmek"
+          ],
+          "example_en": "These mistakes constitute an obvious offence.",
+          "example_tr": "Bu hatalar açık bir suç oluşturuyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-pertain",
+      "word": "pertain",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ile ilgili olmak"
+          ],
+          "example_en": "The rules pertain to all residents.",
+          "example_tr": "Kurallar tüm sakinlerle ilgilidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-warrant",
+      "word": "warrant",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "haklı kılmak"
+          ],
+          "example_en": "His bad attitude warrants a punishment.",
+          "example_tr": "Kötü tavrı bir cezayı haklı kılıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-foster",
+      "word": "foster",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "teşvik etmek",
+            "geliştirmek"
+          ],
+          "example_en": "The government wants to foster innovation.",
+          "example_tr": "Hükümet inovasyonu teşvik etmek istiyor."
+        }
+      ],
+      "note": "foster family: koruyucu aile."
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c1-p-by-and-large",
+      "text": "By and large…",
+      "tr": "Genel olarak…",
+      "example_en": "By and large, the weather is warm in spring.",
+      "example_tr": "Genel olarak, ilkbaharda hava sıcaktır.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-to-a-certain-extent",
+      "text": "To a certain extent…",
+      "tr": "Belirli bir dereceye kadar…",
+      "example_en": "To a certain extent, I agree with your assessment.",
+      "example_tr": "Belirli bir dereceye kadar değerlendirmene katılıyorum.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-goes-without-saying",
+      "text": "It goes without saying that…",
+      "tr": "Söylemeye gerek yok ki…",
+      "example_en": "It goes without saying that knowledge is important.",
+      "example_tr": "Bilginin önemli olduğunu söylemeye gerek bile yok.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-that-said",
+      "text": "That said,…",
+      "tr": "Bununla birlikte,…",
+      "example_en": "It is expensive. That said, it is worth the money.",
+      "example_tr": "Pahalı. Bununla birlikte, paraya değer.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-with-regard-to",
+      "text": "With regard to…",
+      "tr": "…ile ilgili olarak",
+      "example_en": "With regard to your email, I can't attend.",
+      "example_tr": "E-postan ile ilgili olarak, katılamam.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-be-that-as-it-may",
+      "text": "Be that as it may,…",
+      "tr": "Öyle olsa bile,…",
+      "example_en": "He was late. Be that as it may, he apologized.",
+      "example_tr": "Geç kaldı. Öyle olsa bile, özür diledi.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-in-the-light-of",
+      "text": "In the light of…",
+      "tr": "…ışığında",
+      "example_en": "In the light of the new evidence, he is innocent.",
+      "example_tr": "Yeni kanıtların ışığında, o masum.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c1-core-1",
+      "title": "Akademik Tartışma",
+      "names": [
+        "Ali",
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "There is an obvious discrepancy in your data.",
+          "tr": "Verilerinde belirgin bir tutarsızlık var."
+        },
+        {
+          "en": "By and large, the underlying hypothesis is plausible.",
+          "tr": "Genel olarak, altında yatan hipotez akla yatkın."
+        },
+        {
+          "en": "That said, you must consider the financial implications.",
+          "tr": "Bununla birlikte, finansal sonuçlarını da değerlendirmelisin."
+        },
+        {
+          "en": "I deem your criteria quite arbitrary.",
+          "tr": "Kriterlerini oldukça keyfi sayıyorum."
+        },
+        {
+          "en": "Be that as it may, this framework constitutes a breakthrough.",
+          "tr": "Öyle olsa bile, bu çerçeve bir buluş oluşturuyor."
+        }
+      ]
+    },
+    {
+      "id": "c1-core-2",
+      "title": "Yeni Politika",
+      "names": [
+        "David",
+        "Emre"
+      ],
+      "lines": [
+        {
+          "en": "With regard to the new policy, we need a consensus.",
+          "tr": "Yeni politika ile ilgili olarak, bir fikir birliğine ihtiyacımız var."
+        },
+        {
+          "en": "It will inevitably entail a substantial investment.",
+          "tr": "Kaçınılmaz olarak büyük bir yatırım gerektirecek."
+        },
+        {
+          "en": "We must foster innovation, albeit with a small budget.",
+          "tr": "İnovasyonu teşvik etmeliyiz, gerçi küçük bir bütçeyle."
+        },
+        {
+          "en": "It goes without saying that the risks are inherent.",
+          "tr": "Risklerin işin doğasında olduğunu söylemeye gerek bile yok."
+        },
+        {
+          "en": "Our explicit goal is to maintain our reputation, thereby getting more customers.",
+          "tr": "Açık hedefimiz itibarımızı korumak, böylece daha çok müşteri çekmek."
+        }
+      ]
+    },
+    {
+      "id": "c1-core-3",
+      "title": "Zor Karar",
+      "names": [
+        "Sara",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "The notion of quitting my job is always in my head.",
+          "tr": "İşimi bırakma düşüncesi hep aklımda."
+        },
+        {
+          "en": "To a certain extent, the situation warrants a dramatic change.",
+          "tr": "Belirli bir dereceye kadar, durum dramatik bir değişimi haklı kılıyor."
+        },
+        {
+          "en": "In the light of the crisis, my promotion is redundant.",
+          "tr": "Krizin ışığında terfim gereksiz kaldı."
+        },
+        {
+          "en": "There is a subtle nuance here.",
+          "tr": "Burada ince bir nüans var."
+        },
+        {
+          "en": "We must agree on a method whereby we can recover.",
+          "tr": "Toparlanabileceğimiz bir yöntem üzerinde anlaşmalıyız."
+        }
+      ]
+    }
+  ]
+}
