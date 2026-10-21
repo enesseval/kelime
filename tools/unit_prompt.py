@@ -146,6 +146,8 @@ CARDS
   native speaker would really say (not "prevalent in my head", "a profound nuance", "arranged an
   experiment for a hypothesis"). If the allowed words cannot make a natural sentence, choose a
   simpler situation.
+  Do not squeeze core words into sentences where they do not belong (no "a profound dilemma",
+  "a profound nostalgia", "a substantial discrepancy in our views"); simple words are fine.
 - example_tr: what a Turkish speaker actually says for example_en: idiomatic, not word for word
   ("I'm cold." is "Üşüyorum.", "Don't worry about it." is "Merak etme."). Nothing added, nothing
   dropped: do not add what English leaves open (brother is "kardeş", not "abi", unless the

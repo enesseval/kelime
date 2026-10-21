@@ -1,0 +1,532 @@
+{
+"id": "c1-society",
+"level": "C1",
+"title": "Toplumsal değişim",
+"placement": "any",
+"goal": "Toplumsal eşitsizliğin nedenlerini ve sonuçlarını ayrıntılı tartışır, politikaların etkisini değerlendirir, reform önerir.",
+"words": [
+{
+"id": "c1-alleviate",
+"word": "alleviate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"hafifletmek",
+"azaltmak"
+],
+"example_en": "We must alleviate the poverty in this area.",
+"example_tr": "Bu bölgedeki yoksulluğu hafifletmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-exacerbate",
+"word": "exacerbate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"kötüleştirmek"
+],
+"example_en": "The new policy will inevitably exacerbate inequality.",
+"example_tr": "Yeni politika eşitsizliği kesinlikle kötüleştirecek."
+}
+],
+"note": ""
+},
+{
+"id": "c1-mitigate",
+"word": "mitigate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"hafifletmek",
+"azaltmak"
+],
+"example_en": "They try to mitigate the impact of the crisis.",
+"example_tr": "Krizin etkisini hafifletmeye çalışıyorlar."
+}
+],
+"note": ""
+},
+{
+"id": "c1-deteriorate",
+"word": "deteriorate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"kötüleşmek"
+],
+"example_en": "The situation rapidly deteriorated in the poor area.",
+"example_tr": "Yoksul bölgede durum hızla kötüleşti."
+}
+],
+"note": ""
+},
+{
+"id": "c1-hinder",
+"word": "hinder",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"engellemek",
+"aksatmak"
+],
+"example_en": "Prejudice inevitably hinders community cohesion.",
+"example_tr": "Önyargı, toplumun uyumunu kaçınılmaz olarak engeller."
+}
+],
+"note": ""
+},
+{
+"id": "c1-compensate",
+"word": "compensate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"telafi etmek"
+],
+"example_en": "How can we compensate for this substantial disparity?",
+"example_tr": "Bu büyük uçurumu nasıl telafi edebiliriz?"
+}
+],
+"note": ""
+},
+{
+"id": "c1-scarcity",
+"word": "scarcity",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"kıtlık",
+"darlık"
+],
+"example_en": "The scarcity of cheap houses is a critical problem.",
+"example_tr": "Ucuz ev kıtlığı kritik bir problem."
+}
+],
+"note": ""
+},
+{
+"id": "c1-marginalized",
+"word": "marginalized",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"dışlanmış"
+],
+"example_en": "We must empower marginalized people in our community.",
+"example_tr": "Toplumumuzdaki dışlanmış insanları güçlendirmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-inequality",
+"word": "inequality",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"eşitsizlik"
+],
+"example_en": "Wealth inequality is a prevalent problem today.",
+"example_tr": "Servet eşitsizliği günümüzde yaygın bir sorundur."
+}
+],
+"note": ""
+},
+{
+"id": "c1-prejudice",
+"word": "prejudice",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"önyargı"
+],
+"example_en": "We must reduce prejudice to foster integration.",
+"example_tr": "Entegrasyonu teşvik etmek için önyargıyı azaltmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "c1-cohesion",
+"word": "cohesion",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"uyum",
+"bütünlük"
+],
+"example_en": "Community cohesion prevents unrest.",
+"example_tr": "Toplum uyumu huzursuzluğu önler."
+}
+],
+"note": ""
+},
+{
+"id": "c1-integration",
+"word": "integration",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"entegrasyon",
+"bütünleşme"
+],
+"example_en": "Their integration into the local culture was rapid.",
+"example_tr": "Yerel kültüre entegrasyonları hızlı oldu."
+}
+],
+"note": ""
+},
+{
+"id": "c1-displacement",
+"word": "displacement",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yerinden edilme"
+],
+"example_en": "The drought caused the displacement of many residents.",
+"example_tr": "Kuraklık birçok sakinin yerinden edilmesine neden oldu."
+}
+],
+"note": ""
+},
+{
+"id": "c1-unrest",
+"word": "unrest",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"huzursuzluk",
+"kargaşa"
+],
+"example_en": "The bad economy caused significant political unrest.",
+"example_tr": "Kötü ekonomi önemli bir siyasi kargaşaya neden oldu."
+}
+],
+"note": ""
+},
+{
+"id": "c1-reform",
+"word": "reform",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"reform",
+"ıslahat"
+],
+"example_en": "They demand a comprehensive tax reform.",
+"example_tr": "Kapsamlı bir vergi reformu talep ediyorlar."
+}
+],
+"note": ""
+},
+{
+"id": "c1-legislation",
+"word": "legislation",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"mevzuat",
+"yasa"
+],
+"example_en": "This environmental legislation is very important.",
+"example_tr": "Bu çevresel mevzuat çok önemli."
+}
+],
+"note": ""
+},
+{
+"id": "c1-empower",
+"word": "empower",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"güçlendirmek",
+"yetki vermek"
+],
+"example_en": "The new curriculum empowers young people.",
+"example_tr": "Yeni müfredat gençleri güçlendiriyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-disparity",
+"word": "disparity",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"eşitsizlik",
+"farklılık"
+],
+"example_en": "The income disparity between men and women is obvious.",
+"example_tr": "Kadın ve erkek arasındaki gelir eşitsizliği bariz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-affluent",
+"word": "affluent",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"zengin",
+"varlıklı"
+],
+"example_en": "Affluent citizens easily afford expensive hospitals.",
+"example_tr": "Zengin vatandaşlar pahalı hastaneleri kolayca karşılar."
+}
+],
+"note": ""
+},
+{
+"id": "c1-deprived",
+"word": "deprived",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"yoksun",
+"mahrum"
+],
+"example_en": "Deprived neighbourhoods need better schools.",
+"example_tr": "Yoksun mahallelerin daha iyi okullara ihtiyacı var."
+}
+],
+"note": ""
+},
+{
+"id": "c1-grassroots",
+"word": "grassroots",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"taban",
+"halk"
+],
+"example_en": "It started as a grassroots campaign.",
+"example_tr": "Bir taban kampanyası olarak başladı."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c1-p-vicious-circle",
+"text": "It's a vicious circle.",
+"tr": "Kısır döngüdür.",
+"example_en": "Poverty and crime exacerbate each other. It's a vicious circle.",
+"example_tr": "Yoksulluk ve suç birbirini kötüleştirir. Kısır döngüdür.",
+"note": ""
+},
+{
+"id": "c1-p-tip-iceberg",
+"text": "It's the tip of the iceberg.",
+"tr": "Buzdağının görünen kısmı.",
+"example_en": "This problem is merely the tip of the iceberg.",
+"example_tr": "Bu sorun buzdağının yalnızca görünen kısmı.",
+"note": ""
+},
+{
+"id": "c1-p-fine-line",
+"text": "There's a fine line between…",
+"tr": "… arasında ince bir çizgi var",
+"example_en": "There's a fine line between debate and conflict.",
+"example_tr": "Tartışma ve çatışma arasında ince bir çizgi var.",
+"note": ""
+},
+{
+"id": "c1-p-thorny-issue",
+"text": "It remains a thorny issue.",
+"tr": "Bu çetrefilli bir konu.",
+"example_en": "Tax reform is necessary, but it remains a thorny issue.",
+"example_tr": "Vergi reformu şart ama hala çetrefilli bir konu.",
+"note": ""
+},
+{
+"id": "c1-p-talk-cheap",
+"text": "Talk is cheap.",
+"tr": "Lafla peynir gemisi yürümez.",
+"example_en": "They promise reform, but talk is cheap.",
+"example_tr": "Reform sözü veriyorlar ama lafla peynir gemisi yürümez.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c1-society-1",
+"title": "Tabandan Gelen Güç",
+"names": [
+"Zeynep",
+"Ali"
+],
+"lines": [
+{
+"en": "Zeynep, this grassroots campaign is crucial for our neighbourhood.",
+"tr": "Zeynep, bu taban kampanyası mahallemiz için çok önemli."
+},
+{
+"en": "I agree, Ali. The scarcity of clean water here is a prevalent problem.",
+"tr": "Katılıyorum, Ali. Buradaki temiz su kıtlığı yaygın bir sorun."
+},
+{
+"en": "The local government promised a comprehensive reform last year.",
+"tr": "Yerel yönetim geçen yıl kapsamlı bir reform sözü verdi."
+},
+{
+"en": "Talk is cheap. We must empower the deprived residents ourselves.",
+"tr": "Lafla peynir gemisi yürümez. Yoksun sakinleri kendimiz güçlendirmeliyiz."
+},
+{
+"en": "True. Cohesion is our only advantage.",
+"tr": "Doğru. Uyum tek avantajımız."
+}
+]
+},
+{
+"id": "c1-society-2",
+"title": "Politika Tartışması",
+"names": [
+"Bora",
+"Elif"
+],
+"lines": [
+{
+"en": "Bora, will this legislation alleviate the wealth disparity?",
+"tr": "Bora, bu mevzuat servet eşitsizliğini hafifletecek mi?"
+},
+{
+"en": "I hope so, Elif. Inequality inevitably hinders economic progress.",
+"tr": "Umarım öyle olur Elif. Eşitsizlik, ekonomik ilerlemeyi kaçınılmaz olarak engeller."
+},
+{
+"en": "But affluent citizens might protest this new tax.",
+"tr": "Fakat varlıklı vatandaşlar bu yeni vergiyi protesto edebilir."
+},
+{
+"en": "That said, we must compensate for past mistakes.",
+"tr": "Yine de geçmiş hataları telafi etmeliyiz."
+},
+{
+"en": "It remains a thorny issue. The debate will be long.",
+"tr": "Bu çetrefilli bir konu olmaya devam ediyor. Tartışma uzun sürecek."
+}
+]
+},
+{
+"id": "c1-society-3",
+"title": "Kısır Döngü",
+"names": [
+"Kaan",
+"Deniz"
+],
+"lines": [
+{
+"en": "The situation in the city deteriorated rapidly after the flood.",
+"tr": "Selden sonra şehirdeki durum hızla kötüleşti."
+},
+{
+"en": "Yes, and the displacement of families exacerbates the crisis.",
+"tr": "Evet ve ailelerin yerinden edilmesi krizi daha da kötüleştiriyor."
+},
+{
+"en": "Without jobs, crime increases. It's a vicious circle.",
+"tr": "İşsiz kalınca suç artıyor. Bu bir kısır döngü."
+},
+{
+"en": "Poverty and prejudice always go together.",
+"tr": "Yoksulluk ve önyargı her zaman bir arada gider."
+},
+{
+"en": "We must mitigate these bad outcomes.",
+"tr": "Bu kötü sonuçları hafifletmeliyiz."
+}
+]
+},
+{
+"id": "c1-society-4",
+"title": "Buzdağının Görünmeyen Yüzü",
+"names": [
+"Aslı",
+"Cem"
+],
+"lines": [
+{
+"en": "The recent unrest in the city is very bad.",
+"tr": "Şehirdeki son huzursuzluk çok kötü."
+},
+{
+"en": "I agree. It's the tip of the iceberg.",
+"tr": "Katılıyorum. Bu, buzdağının görünen kısmı."
+},
+{
+"en": "Marginalized communities feel angry and frustrated.",
+"tr": "Dışlanmış topluluklar öfkeli ve bıkkın hissediyor."
+},
+{
+"en": "There's a fine line between a protest and a disaster.",
+"tr": "Protesto ile felaket arasında ince bir çizgi var."
+},
+{
+"en": "Integration is the only plausible solution.",
+"tr": "Entegrasyon tek akla yatkın çözüm."
+}
+]
+},
+{
+"id": "c1-society-5",
+"title": "Yeni Çerçeve",
+"names": [
+"Emre",
+"Canan"
+],
+"lines": [
+{
+"en": "Teacher Emre, does this paradigm foster community integration?",
+"tr": "Emre Hoca, bu paradigma toplum entegrasyonunu teşvik ediyor mu?"
+},
+{
+"en": "To a certain extent, Canan. However, it ignores underlying disparity.",
+"tr": "Belirli bir ölçüde, Canan. Ancak, altta yatan eşitsizliği göz ardı ediyor."
+},
+{
+"en": "Does it exacerbate the scarcity of resources?",
+"tr": "Kaynakların kıtlığını daha da kötüleştiriyor mu?"
+},
+{
+"en": "By and large, yes. Our hypothesis was a big mistake.",
+"tr": "Genel olarak, evet. Hipotezimiz büyük bir hataydı."
+},
+{
+"en": "In the light of this evidence, we must revise our framework.",
+"tr": "Bu kanıtların ışığında çerçevemizi revize etmeliyiz."
+}
+]
+}
+]
+}

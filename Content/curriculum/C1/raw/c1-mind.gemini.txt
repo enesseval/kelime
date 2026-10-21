@@ -1,0 +1,551 @@
+{
+"id": "c1-mind",
+"level": "C1",
+"title": "Psikoloji",
+"placement": "any",
+"goal": "Duygu ve davranışların arkasındaki psikolojik süreçleri anlatır, kişilik farklılıklarını ve ruh sağlığını hassasiyetle tartışır.",
+"words": [
+{
+"id": "c1-cognitive",
+"word": "cognitive",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"bilişsel",
+"zihinsel"
+],
+"example_en": "It entails a profound cognitive shift.",
+"example_tr": "Derin bir bilişsel değişimi gerektiriyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-perception",
+"word": "perception",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"algı"
+],
+"example_en": "Public perception is inevitably changing.",
+"example_tr": "Halkın algısı kaçınılmaz olarak değişiyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-resilience",
+"word": "resilience",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"direnç",
+"toparlanma gücü"
+],
+"example_en": "Her resilience is a substantial advantage.",
+"example_tr": "Onun direnci önemli bir avantaj."
+}
+],
+"note": ""
+},
+{
+"id": "c1-empathy",
+"word": "empathy",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"empati",
+"duygudaşlık"
+],
+"example_en": "We need to foster empathy in our community.",
+"example_tr": "Toplumumuzda empatiyi teşvik etmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-introvert",
+"word": "introvert",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"içe dönük"
+],
+"example_en": "As an introvert, I avoid crowded parties.",
+"example_tr": "İçe dönük biri olarak kalabalık partilerden kaçınırım."
+}
+],
+"note": ""
+},
+{
+"id": "c1-extrovert",
+"word": "extrovert",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"dışa dönük"
+],
+"example_en": "My partner is an extrovert who loves talking.",
+"example_tr": "Partnerim konuşmayı seven dışa dönük biridir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-subconscious",
+"word": "subconscious",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"bilinçaltı"
+],
+"example_en": "It was a subconscious decision.",
+"example_tr": "Bu bilinçaltı bir karardı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-trauma",
+"word": "trauma",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"travma",
+"sarsıntı"
+],
+"example_en": "The therapy helps you cope with past trauma.",
+"example_tr": "Terapi, geçmiş travmayla başa çıkmanıza yardım eder."
+}
+],
+"note": ""
+},
+{
+"id": "c1-anxiety",
+"word": "anxiety",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"kaygı",
+"endişe"
+],
+"example_en": "His anxiety is quite overwhelming.",
+"example_tr": "Kaygısı oldukça bunaltıcı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-intuition",
+"word": "intuition",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sezgi",
+"içgüdü"
+],
+"example_en": "I always trust my intuition.",
+"example_tr": "Sezgilerime her zaman güvenirim."
+}
+],
+"note": ""
+},
+{
+"id": "c1-dilemma",
+"word": "dilemma",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ikilem",
+"çıkmaz"
+],
+"example_en": "We have a profound dilemma.",
+"example_tr": "Derin bir ikilemimiz var."
+}
+],
+"note": ""
+},
+{
+"id": "c1-rational",
+"word": "rational",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"akılcı",
+"mantıklı"
+],
+"example_en": "We must find a rational solution.",
+"example_tr": "Akılcı bir çözüm bulmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "c1-impulsive",
+"word": "impulsive",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"dürtüsel",
+"fevri"
+],
+"example_en": "Buying that expensive car was impulsive.",
+"example_tr": "O pahalı arabayı almak fevri bir davranıştı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-apathy",
+"word": "apathy",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ilgisizlik",
+"kayıtsızlık"
+],
+"example_en": "Public apathy is a prevalent problem.",
+"example_tr": "Halkın ilgisizliği yaygın bir sorun."
+}
+],
+"note": ""
+},
+{
+"id": "c1-ambivalent",
+"word": "ambivalent",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kararsız",
+"çelişkili"
+],
+"example_en": "I feel ambivalent about this new policy.",
+"example_tr": "Bu yeni politika hakkında kararsızım."
+}
+],
+"note": ""
+},
+{
+"id": "c1-self-esteem",
+"word": "self-esteem",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"öz saygı",
+"öz güven"
+],
+"example_en": "Unemployment damages your self-esteem.",
+"example_tr": "İşsizlik öz saygınıza zarar verir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-denial",
+"word": "denial",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"inkar",
+"kabullenmeme"
+],
+"example_en": "It is obvious that he is in denial.",
+"example_tr": "İnkar içinde olduğu çok açık."
+}
+],
+"note": ""
+},
+{
+"id": "c1-compulsive",
+"word": "compulsive",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kompülsif",
+"takıntılı"
+],
+"example_en": "He has a compulsive need to buy shoes.",
+"example_tr": "Ayakkabı almak için takıntılı bir ihtiyacı var."
+}
+],
+"note": ""
+},
+{
+"id": "c1-nostalgia",
+"word": "nostalgia",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"nostalji",
+"geçmişe özlem"
+],
+"example_en": "Old photos bring a profound nostalgia.",
+"example_tr": "Eski fotoğraflar derin bir nostalji getirir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-insecure",
+"word": "insecure",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"güvensiz",
+"öz güvensiz"
+],
+"example_en": "Many young people feel insecure.",
+"example_tr": "Birçok genç güvensiz hissediyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-conscientious",
+"word": "conscientious",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"sorumluluk sahibi"
+],
+"example_en": "She is a conscientious and loyal colleague.",
+"example_tr": "Sorumluluk sahibi ve sadık bir meslektaştır."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c1-p-cant-put-finger",
+"text": "I can't put my finger on it.",
+"tr": "Adını koyamıyorum.",
+"example_en": "Is there a problem? – I can't put my finger on it.",
+"example_tr": "Bir sorun mu var? – Adını tam koyamıyorum.",
+"note": ""
+},
+{
+"id": "c1-p-all-in-mind",
+"text": "It's all in the mind.",
+"tr": "Her şey kafada bitiyor.",
+"example_en": "You are not sick. It's all in the mind.",
+"example_tr": "Hasta değilsin. Her şey kafada bitiyor.",
+"note": ""
+},
+{
+"id": "c1-p-rough-patch",
+"text": "It's a rough patch.",
+"tr": "Zor bir dönem.",
+"example_en": "We will overcome this. It's a rough patch.",
+"example_tr": "Bunu aşacağız. Sadece zor bir dönem.",
+"note": ""
+},
+{
+"id": "c1-p-open-book",
+"text": "… an open book.",
+"tr": "… içi dışı bir.",
+"example_en": "You can trust her. She's an open book.",
+"example_tr": "Ona güvenebilirsin. İçi dışı birdir.",
+"note": ""
+},
+{
+"id": "c1-p-old-habits",
+"text": "Old habits die hard.",
+"tr": "Eski huylar zor ölür.",
+"example_en": "He still smokes. Old habits die hard.",
+"example_tr": "Hâlâ sigara içiyor. Eski huylar zor terk edilir.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c1-mind-1",
+"title": "İkilem",
+"names": [
+"Ali",
+"Ozan"
+],
+"lines": [
+{
+"en": "Ali and doctor Ozan are talking.",
+"tr": "Ali ve doktor Ozan konuşuyorlar."
+},
+{
+"en": "I feel anxious, but I can't put my finger on it.",
+"tr": "Endişeli hissediyorum ama adını tam koyamıyorum."
+},
+{
+"en": "It is a profound dilemma. Tell me more.",
+"tr": "Bu derin bir ikilem. Bana daha fazlasını anlatın."
+},
+{
+"en": "I have a lot of anxiety.",
+"tr": "Çok fazla kaygım var."
+},
+{
+"en": "We can try cognitive therapy. Trust your intuition.",
+"tr": "Bilişsel terapiyi deneyebiliriz. Sezgilerinize güvenin."
+},
+{
+"en": "It is a good approach.",
+"tr": "Bu iyi bir yaklaşım."
+}
+]
+},
+{
+"id": "c1-mind-2",
+"title": "Kişilikler",
+"names": [
+"Zeynep",
+"Clara",
+"London"
+],
+"lines": [
+{
+"en": "Zeynep and Clara are flatmates in London.",
+"tr": "Zeynep ve Clara Londra'da ev arkadaşılar."
+},
+{
+"en": "Clara is an extrovert. She is an open book.",
+"tr": "Clara dışa dönük biri. İçi dışı birdir."
+},
+{
+"en": "Zeynep is an introvert. She is quite shy.",
+"tr": "Zeynep içe dönük biri. Oldukça utangaçtır."
+},
+{
+"en": "Let's go to a party tonight!",
+"tr": "Bu gece bir partiye gidelim!"
+},
+{
+"en": "I feel ambivalent about it. Parties are crowded.",
+"tr": "Bu konuda kararsız hissediyorum. Partiler kalabalık oluyor."
+},
+{
+"en": "Come on! It will be a good experience.",
+"tr": "Hadi ama! İyi bir deneyim olacak."
+}
+]
+},
+{
+"id": "c1-mind-3",
+"title": "Zor Dönem",
+"names": [
+"Mert",
+"David"
+],
+"lines": [
+{
+"en": "Mert lost his job recently.",
+"tr": "Mert yakın zamanda işini kaybetti."
+},
+{
+"en": "How are you, Mert?",
+"tr": "Nasılsın, Mert?"
+},
+{
+"en": "I have a lot of apathy. I feel empty.",
+"tr": "İçimde büyük bir kayıtsızlık var. Boşlukta hissediyorum."
+},
+{
+"en": "It's a rough patch. You have great resilience.",
+"tr": "Zor bir dönem. Harika bir toparlanma gücün var."
+},
+{
+"en": "The unemployment is a trauma for me.",
+"tr": "İşsizlik benim için bir travma."
+},
+{
+"en": "You will overcome this soon.",
+"tr": "Bunu yakında aşacaksın."
+}
+]
+},
+{
+"id": "c1-mind-4",
+"title": "Eski Alışkanlıklar",
+"names": [
+"Selin"
+],
+"lines": [
+{
+"en": "Selin has a compulsive tendency to spend money.",
+"tr": "Selin'in para harcamaya yönelik kompülsif bir eğilimi var."
+},
+{
+"en": "She bought an expensive bag yesterday.",
+"tr": "Dün pahalı bir çanta aldı."
+},
+{
+"en": "That was an impulsive decision.",
+"tr": "O fevri bir karardı."
+},
+{
+"en": "She knows she must be rational.",
+"tr": "Mantıklı olması gerektiğini biliyor."
+},
+{
+"en": "But she bought shoes today. Old habits die hard.",
+"tr": "Ama bugün de ayakkabı aldı. Eski alışkanlıklar zor ölür."
+}
+]
+},
+{
+"id": "c1-mind-5",
+"title": "Nostalji ve Algı",
+"names": [
+"Hasan",
+"Emma",
+"Paris"
+],
+"lines": [
+{
+"en": "Hasan looks at old photos from Paris.",
+"tr": "Hasan Paris'ten eski fotoğraflara bakıyor."
+},
+{
+"en": "He feels a profound nostalgia.",
+"tr": "Derin bir nostalji hissediyor."
+},
+{
+"en": "You were very insecure then.",
+"tr": "O zamanlar çok öz güvensizdin."
+},
+{
+"en": "I was in denial about my self-esteem.",
+"tr": "Öz saygım konusunda inkar içindeydim."
+},
+{
+"en": "Your subconscious perception was different.",
+"tr": "Bilinçaltı algın farklıydı."
+},
+{
+"en": "It's all in the mind. I am more conscientious now.",
+"tr": "Her şey kafada bitiyor. Artık daha sorumluluk sahibiyim."
+}
+]
+}
+]
+}
