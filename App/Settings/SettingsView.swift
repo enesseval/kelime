@@ -298,7 +298,7 @@ struct SettingsView: View {
     // MARK: - Actions
 
     private func setLevel(_ level: CEFRLevel) async {
-        await app.write(rebuildQueue: true) { db in try Curriculum.moveOn(to: level, db: db) }
+        await app.changeLevel(to: level)
     }
 
     private func setReminder(_ minutes: Int?) async {

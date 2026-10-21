@@ -16,6 +16,11 @@ final class PhoneWatchSync: NSObject {
 
     private var database: AppDatabase?
     private var lastComplicationPush: Date?
+    /// The payload (minus its timestamp) last sent to the complication, so an unchanged payload does not spend a push.
+    private var lastComplicationSlots: Data?
+    /// A push held back by the spacing below; it goes out when the spacing allows, so the
+    /// latest words always reach the face.
+    private var pendingComplicationPush: Task<Void, Never>?
     /// Complication pushes wake the watch to redraw the face; iOS allows about 50 a day.
     /// While plenty are left they go out a minute apart, so a tap on the phone shows on the
     /// wrist right away; when few are left they are spaced out to last the day.
@@ -51,12 +56,36 @@ final class PhoneWatchSync: NSObject {
         if session.isReachable {
             session.sendMessage([WatchKeys.payload: data], replyHandler: nil, errorHandler: nil)
         }
+        pushComplication(data, session: session)
+    }
+
+    /// Complication user info wakes the watch and redraws the face. It goes out only when the
+    /// words changed; inside the spacing window it is sent at the end of the window instead of
+    /// being dropped (a dropped push left the face on yesterday's list).
+    private func pushComplication(_ data: Data, session: WCSession) {
         let remaining = session.remainingComplicationUserInfoTransfers
-        if session.isComplicationEnabled, remaining > 0,
-           lastComplicationPush.map({ Date().timeIntervalSince($0) > Self.complicationInterval(remaining: remaining) }) ?? true {
-            session.transferCurrentComplicationUserInfo([WatchKeys.payload: data])
-            lastComplicationPush = Date()
+        guard session.isComplicationEnabled, remaining > 0 else { return }
+        // Everything the face shows, without the timestamp.
+        let slots = (try? WatchPayload.decode(data)).flatMap { payload -> Data? in
+            var payload = payload
+            payload.generatedAt = .distantPast
+            return try? payload.encoded()
         }
+        if let slots, slots == lastComplicationSlots { return }
+        let wait = lastComplicationPush.map { Self.complicationInterval(remaining: remaining) - Date().timeIntervalSince($0) } ?? 0
+        if wait > 0 {
+            guard pendingComplicationPush == nil else { return }
+            pendingComplicationPush = Task { [weak self] in
+                try? await Task.sleep(for: .seconds(wait))
+                guard let self else { return }
+                self.pendingComplicationPush = nil
+                await self.push()
+            }
+            return
+        }
+        session.transferCurrentComplicationUserInfo([WatchKeys.payload: data])
+        lastComplicationPush = Date()
+        lastComplicationSlots = slots
     }
 
     private func handle(_ actionData: Data) async {

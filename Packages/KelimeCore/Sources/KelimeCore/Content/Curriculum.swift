@@ -276,6 +276,17 @@ public enum Curriculum {
         try advance(db: db)
     }
 
+    /// The learner picks another level in Ayarlar: only that level's course (plus the exam
+    /// decks already on) feeds the widget and Quick Review from now on.
+    public static func switchLevel(to level: CEFRLevel, db: Database) throws {
+        var prefs = try Preferences.load(db)
+        prefs.level = level
+        prefs.enabledDecks = DeckID.allCases.filter { $0.level == level || ($0.tag != nil && prefs.enabledDecks.contains($0)) }
+        try prefs.save(db)
+        try Settings.set(.currentUnit, String?.none, in: db)
+        try advance(db: db)
+    }
+
     /// Replaces every unit with `units` (part of a content import).
     static func replace(with units: [ContentUnit], db: Database) throws {
         _ = try UnitCard.deleteAll(db)

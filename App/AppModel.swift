@@ -143,6 +143,14 @@ final class AppModel {
         }
     }
 
+    /// Ayarlar › Seviye: the widget, Quick Review, puzzle and current unit all move to `level`.
+    func changeLevel(to level: CEFRLevel) async {
+        guard let database else { return }
+        try? await database.writer.write { db in try Curriculum.switchLevel(to: level, db: db) }
+        await WidgetRefresher.rebuild(database, includingCurrent: true)
+        dataVersion += 1
+    }
+
     /// Ayarlar › İlerlemeyi sıfırla: forgets progress and choices, then shows onboarding.
     func resetProgress() async {
         Reminder.cancel()

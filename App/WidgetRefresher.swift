@@ -21,10 +21,15 @@ enum WidgetRefresher {
         await PhoneWatchSync.shared.push()
     }
 
-    /// After a settings change that alters the slot grid or the card pool.
-    static func rebuild(_ database: AppDatabase) async {
+    /// After a settings change that alters the slot grid or the card pool. `includingCurrent`
+    /// also replaces the word on screen now (a level change).
+    static func rebuild(_ database: AppDatabase, includingCurrent: Bool = false) async {
         try? await database.writer.write { db in
-            try WidgetQueue.clearFuture(db: db, clock: .system)
+            if includingCurrent {
+                try WidgetQueue.clearCurrentAndFuture(db: db, clock: .system)
+            } else {
+                try WidgetQueue.clearFuture(db: db, clock: .system)
+            }
         }
         await refresh(database)
     }

@@ -153,6 +153,26 @@ struct CurriculumTests {
         #expect(try db.reader.read { db in try CardQueries.candidates(in: [.a1], db: db).map(\.cardID) }.allSatisfy { $0.hasPrefix("a1-") })
     }
 
+    @Test func switchingLevelLeavesOnlyTheNewCourse() throws {
+        let db = try makeDatabase(Preferences(level: .a1, enabledDecks: [.a1, .yds], isPro: true))
+        try db.writer.write { db in
+            var rng = SeededGenerator(seed: 1)
+            _ = try WidgetQueue.refill(db: db, clock: clock, using: &rng)
+            try Curriculum.switchLevel(to: .b1, db: db)
+            try WidgetQueue.clearCurrentAndFuture(db: db, clock: clock)
+            _ = try WidgetQueue.refill(db: db, clock: clock, using: &rng)
+        }
+        try db.reader.read { db throws in
+            #expect(try Preferences.load(db).enabledDecks == [.b1, .yds])
+            #expect(try Curriculum.state(db: db)?.currentID == "b1-core")
+            let current = try #require(try WidgetQueue.current(db: db, clock: clock))
+            let card = try #require(try Card.fetchOne(db, key: current.cardID))
+            #expect(card.level == .b1 || card.id.hasPrefix("b") || card.id.hasPrefix("c"))
+            let levelCards = try CardQueries.candidates(in: [.b1], db: db).map(\.cardID)
+            #expect(levelCards.allSatisfy { $0.hasPrefix("b1-") })
+        }
+    }
+
     @Test func aFinishedA1OpensA2() throws {
         let db = try makeDatabase()
         try db.writer.write { db in

@@ -101,6 +101,14 @@ public enum WidgetQueue {
         _ = try WidgetQueueEntry.filter(WidgetQueueEntry.Columns.slotStart > clock.now).deleteAll(db)
     }
 
+    /// Like `clearFuture`, but the word on screen goes too, so the widget changes at once
+    /// (a level change). The next refill fills the current slot again.
+    public static func clearCurrentAndFuture(db: Database, clock: AppClock) throws {
+        try markShown(db: db, now: clock.now)
+        guard let current = try current(db: db, clock: clock) else { return }
+        _ = try WidgetQueueEntry.filter(WidgetQueueEntry.Columns.slotStart >= current.slotStart).deleteAll(db)
+    }
+
     static func pruneHistory(before currentSlot: Date, db: Database) throws {
         try db.execute(
             sql: """
