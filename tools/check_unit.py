@@ -3,6 +3,7 @@
 
 A unit may be studied in any order, so every example sentence and every story in it may use
 only:
+  - everything from earlier levels (an A2 learner knows all of A1),
   - the level's grammar words (FUNCTION_WORDS: pronouns, articles, be, can, prepositions...),
     which learners pick up inside the phrases rather than as cards,
   - the core unit's words and phrases (everyone studies the core first),
@@ -14,7 +15,9 @@ Words are matched after simple English inflection is stripped (works, coffees, s
 Also checks the lock-screen limits: word and phrase texts <= 28 characters, Turkish meanings
 joined <= 28, sentences <= 55.
 
-Usage: python3 tools/check_unit.py [A1]
+Also flags a word that already has a card at an earlier level (add a sense there instead).
+
+Usage: python3 tools/check_unit.py [A1|A2]
 Exits with status 1 on any problem.
 """
 import json
@@ -37,6 +40,19 @@ i'm you're he's she's it's we're they're that's what's where's i'd we'd let's
 much many one
 """.split())
 
+# Grammar words a level adds; a level may use its own and every earlier level's.
+LEVEL_FUNCTION_WORDS = {
+    "A2": set("""
+will won't would wouldn't should shouldn't could couldn't must mustn't
+if than more most any every all both each other another
+someone something anything nothing everyone everything somebody nobody
+into through over under between behind until since
+i've you've we've they've he'd she'd you'd they'd i'll you'll he'll she'll we'll they'll it'll
+wasn't weren't didn't hasn't haven't there's here's
+""".split()),
+}
+LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
+
 IRREGULAR = {
     "children": "child", "people": "people", "men": "man", "women": "woman",
     "has": "have", "had": "have", "goes": "go", "went": "go", "does": "do",
@@ -44,6 +60,17 @@ IRREGULAR = {
     "sat": "sit", "paid": "pay", "spoke": "speak", "swam": "swim", "bought": "buy",
     "sang": "sing", "slept": "sleep", "sold": "sell", "made": "make", "got": "get",
     "took": "take", "felt": "feel", "met": "meet", "left": "left", "understood": "understand",
+    "thought": "think", "said": "say", "told": "tell", "gave": "give", "brought": "bring",
+    "found": "find", "forgot": "forget", "chose": "choose", "grew": "grow", "stole": "steal",
+    "lost": "lose", "began": "begin", "became": "become", "broke": "break", "fell": "fall",
+    "flew": "fly", "wrote": "write", "won": "win", "ran": "run", "drove": "drive", "rode": "ride",
+    "wore": "wear", "kept": "keep", "sent": "send", "spent": "spend", "built": "build",
+    "taught": "teach", "caught": "catch", "heard": "hear", "held": "hold", "hurt": "hurt",
+    "put": "put", "cut": "cut", "let": "let", "woke": "wake", "forgotten": "forget",
+    "been": "be", "done": "do", "gone": "go", "seen": "see", "eaten": "eat", "written": "write",
+    "taken": "take", "given": "give", "known": "know", "flown": "fly", "chosen": "choose",
+    "grown": "grow", "stolen": "steal", "driven": "drive", "spoken": "speak", "got": "get",
+    "better": "better", "best": "best", "worse": "worse", "worst": "worse",
 }
 
 
@@ -64,7 +91,8 @@ def lemmas(word):
     if word.endswith("'s"):
         out.add(word[:-2])
     for suffix, repl in (("ies", "y"), ("es", ""), ("s", ""), ("ied", "y"), ("ed", ""), ("ed", "e"),
-                         ("ing", ""), ("ing", "e")):
+                         ("ing", ""), ("ing", "e"), ("ier", "y"), ("iest", "y"), ("er", ""),
+                         ("er", "e"), ("est", ""), ("est", "e"), ("ily", "y"), ("ly", "")):
         if word.endswith(suffix) and len(word) > len(suffix) + 2:
             out.add(word[: -len(suffix)] + repl)
     # doubled consonant: sitting -> sit, stopped -> stop
@@ -83,10 +111,27 @@ def vocabulary(unit):
     return vocab
 
 
-def check(level):
+def load_units(level):
     folder = ROOT / "Content" / "curriculum" / level
-    units = {p.stem: json.loads(p.read_text(encoding="utf-8"))
-             for p in sorted(folder.glob("*.json")) if p.stem != "plan"}
+    return {p.stem: json.loads(p.read_text(encoding="utf-8"))
+            for p in sorted(folder.glob("*.json")) if p.stem != "plan"}
+
+
+def earlier(level):
+    """Vocabulary, grammar words and card words of every level before `level`."""
+    vocab, function, words = set(), set(FUNCTION_WORDS), {}
+    for lower_level in LEVELS[: LEVELS.index(level)]:
+        function |= LEVEL_FUNCTION_WORDS.get(lower_level, set())
+        for unit in load_units(lower_level).values():
+            vocab |= vocabulary(unit)
+            for w in unit.get("words", []):
+                words[lower(w["word"])] = w["id"]
+    return vocab, function | LEVEL_FUNCTION_WORDS.get(level, set()), words
+
+
+def check(level):
+    units = load_units(level)
+    prior_vocab, function_words, prior_words = earlier(level)
     core = next((u for u in units.values() if u.get("placement") == "first"), None)
     core_vocab = vocabulary(core) if core else set()
     level_vocab = set().union(*(vocabulary(u) for u in units.values())) if units else set()
@@ -96,7 +141,7 @@ def check(level):
         unit_names = {t for n in unit.get("names", []) for t in tokens(n)}
         # The bridge unit comes last, so it may use the whole level.
         base = level_vocab if unit.get("placement") == "last" else core_vocab | vocabulary(unit)
-        allowed = FUNCTION_WORDS | base | unit_names
+        allowed = function_words | prior_vocab | base | unit_names
 
         def unknown(text, extra=()):
             bad = []
@@ -115,6 +160,8 @@ def check(level):
             if w["id"] in seen and seen[w["id"]] != w:
                 problems.append(f"{name}: {w['id']} differs from the card with the same id in another unit")
             seen[w["id"]] = w
+            if lower(w["word"]) in prior_words:
+                problems.append(f"{name}: {w['word']} already has a card ({prior_words[lower(w['word'])]}); add a sense there")
             limit(w["word"], MAX_TEXT, f"word {w['id']}")
             if not w.get("senses"):
                 problems.append(f"{name}: {w['id']} has no senses")
