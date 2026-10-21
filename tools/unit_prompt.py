@@ -57,10 +57,20 @@ GRAMMAR["B2"] = {
             "(What I need is…, It was … that…), not only … but also, would rather, and looking back on events.",
 }
 GRAMMAR["B2"]["first"] = GRAMMAR["B2"]["any"]
+GRAMMAR["C1"] = {
+    "any": "C1 grammar: everything from A1-B2, mixed conditionals, cleft sentences (What I need is…, It was … "
+           "that…), participle clauses (Having finished…), advanced passives (It is thought that…, He is said "
+           "to…), modal perfects, and a formal or neutral register as the context needs. Inversion only in "
+           "the bridge unit.",
+    "last": "C1 grammar plus the bridge to C2: inversion after negative adverbs (Seldom have I…, No sooner had… "
+            "than…, Under no circumstances…), conditional inversion (Were it not for…, Had I known…), and a "
+            "formal register for speeches and writing.",
+}
+GRAMMAR["C1"]["first"] = GRAMMAR["C1"]["any"]
 GRAMMAR["A1"]["first"] = GRAMMAR["A1"]["any"]
 GRAMMAR["A2"]["first"] = GRAMMAR["A2"]["any"]
-NAMES = {"A1": "beginner (A1)", "A2": "elementary (A2)", "B1": "intermediate (B1)", "B2": "upper-intermediate (B2)"}
-SENSE_LEVEL = {"A1": "A1-A2", "A2": "A2-B1", "B1": "B1-B2", "B2": "B2-C1"}
+NAMES = {"A1": "beginner (A1)", "A2": "elementary (A2)", "B1": "intermediate (B1)", "B2": "upper-intermediate (B2)", "C1": "advanced (C1)"}
+SENSE_LEVEL = {"A1": "A1-A2", "A2": "A2-B1", "B1": "B1-B2", "B2": "B2-C1", "C1": "C1-C2"}
 
 
 def compact(unit):
