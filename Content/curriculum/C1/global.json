@@ -1,0 +1,537 @@
+{
+  "id": "c1-global",
+  "level": "C1",
+  "title": "Küresel ekonomi",
+  "placement": "any",
+  "goal": "Ekonomi politikalarını ve küresel piyasaları açıklar, krizlerin nedenlerini ve etkilerini çok yönlü tartışır.",
+  "words": [
+    {
+      "id": "c1-fiscal",
+      "word": "fiscal",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "mali",
+            "finansal"
+          ],
+          "example_en": "The government announced a new fiscal policy.",
+          "example_tr": "Hükümet yeni bir mali politika duyurdu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-monetary",
+      "word": "monetary",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "parasal"
+          ],
+          "example_en": "Inflation is a monetary problem.",
+          "example_tr": "Enflasyon parasal bir sorundur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-austerity",
+      "word": "austerity",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kemer sıkma",
+            "tasarruf"
+          ],
+          "example_en": "Austerity is inevitable in a crisis.",
+          "example_tr": "Krizde kemer sıkma kaçınılmazdır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-deficit",
+      "word": "deficit",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "açık",
+            "eksiklik"
+          ],
+          "example_en": "We must reduce the budget deficit.",
+          "example_tr": "Bütçe açığını azaltmalıyız."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-surplus",
+      "word": "surplus",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "fazla",
+            "fazlalık"
+          ],
+          "example_en": "We have a budget surplus this year.",
+          "example_tr": "Bu yıl bütçe fazlamız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-tariff",
+      "word": "tariff",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gümrük vergisi",
+            "tarife"
+          ],
+          "example_en": "They will increase the tariff on plastic.",
+          "example_tr": "Plastikteki gümrük vergisini artıracaklar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-globalization",
+      "word": "globalization",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "küreselleşme"
+          ],
+          "example_en": "Globalization transforms local markets.",
+          "example_tr": "Küreselleşme yerel piyasaları dönüştürüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-outsource",
+      "word": "outsource",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "dışarıya vermek"
+          ],
+          "example_en": "Many companies outsource their work.",
+          "example_tr": "Çoğu şirket işini dışarıya veriyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-volatile",
+      "word": "volatile",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "dalgalı",
+            "istikrarsız"
+          ],
+          "example_en": "The currency market is very volatile.",
+          "example_tr": "Döviz piyasası çok dalgalı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-commodity",
+      "word": "commodity",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ticari mal",
+            "emtia"
+          ],
+          "example_en": "Coffee is a global commodity.",
+          "example_tr": "Kahve küresel bir emtiadır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-stagnation",
+      "word": "stagnation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "durgunluk"
+          ],
+          "example_en": "The economy is in stagnation.",
+          "example_tr": "Ekonomi durgunluk içinde."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-prosperity",
+      "word": "prosperity",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "refah",
+            "zenginlik"
+          ],
+          "example_en": "The new jobs brought prosperity to the city.",
+          "example_tr": "Yeni işler şehre refah getirdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-subsidy",
+      "word": "subsidy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sübvansiyon",
+            "devlet desteği"
+          ],
+          "example_en": "The government gives a fuel subsidy.",
+          "example_tr": "Hükümet yakıt desteği veriyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-revenue",
+      "word": "revenue",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gelir"
+          ],
+          "example_en": "Our tax revenue is declining.",
+          "example_tr": "Vergi gelirimiz düşüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-equity",
+      "word": "equity",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "öz sermaye",
+            "hisse"
+          ],
+          "example_en": "Selling equity is a risk.",
+          "example_tr": "Hisse satmak bir risktir."
+        }
+      ],
+      "note": "Eşitlik/adalet anlamı da yaygındır."
+    },
+    {
+      "id": "c1-liquidity",
+      "word": "liquidity",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "likidite",
+            "nakit akışı"
+          ],
+          "example_en": "The bank has a liquidity problem.",
+          "example_tr": "Bankanın likidite sorunu var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-bankrupt",
+      "word": "bankrupt",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "iflas etmiş",
+            "batık"
+          ],
+          "example_en": "The company went bankrupt yesterday.",
+          "example_tr": "Şirket dün iflas etti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-downturn",
+      "word": "downturn",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gerileme",
+            "düşüş"
+          ],
+          "example_en": "A market downturn is inevitable.",
+          "example_tr": "Piyasada düşüş kaçınılmazdır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-lucrative",
+      "word": "lucrative",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kazançlı",
+            "kârlı"
+          ],
+          "example_en": "This is a very lucrative investment.",
+          "example_tr": "Bu çok kazançlı bir yatırım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-sanction",
+      "word": "sanction",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yaptırım"
+          ],
+          "example_en": "They will apply a new sanction.",
+          "example_tr": "Yeni bir yaptırım uygulayacaklar."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c1-p-buyers-market",
+      "text": "It's a buyer's market.",
+      "tr": "Piyasa alıcıdan yana.",
+      "example_en": "Houses are cheap. It's a buyer's market.",
+      "example_tr": "Evler ucuz. Piyasa alıcıdan yana.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-in-the-red",
+      "text": "We're in the red.",
+      "tr": "Zarardayız.",
+      "example_en": "Our profits declined, so we're in the red.",
+      "example_tr": "Kârımız düştü, bu yüzden zarardayız.",
+      "note": "Banka hesabının eksiye düşmesinden gelir."
+    },
+    {
+      "id": "c1-p-down-the-drain",
+      "text": "It's money down the drain.",
+      "tr": "Sokağa atılan para.",
+      "example_en": "Buying a broken car is money down the drain.",
+      "example_tr": "Bozuk araba almak sokağa atılan paradır.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-bottom-line",
+      "text": "The bottom line is…",
+      "tr": "İşin özü…",
+      "example_en": "The bottom line is we need more money.",
+      "example_tr": "İşin özü, daha fazla paraya ihtiyacımız var.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-times-tough",
+      "text": "Times are tough.",
+      "tr": "Zor zamanlar.",
+      "example_en": "The economy is bad. Times are tough.",
+      "example_tr": "Ekonomi kötü. Zor zamanlardayız.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c1-global-1",
+      "title": "Kriz",
+      "names": [
+        "Ali",
+        "Istanbul"
+      ],
+      "lines": [
+        {
+          "en": "Ali works in a bank in Istanbul.",
+          "tr": "Ali İstanbul'da bir bankada çalışıyor."
+        },
+        {
+          "en": "The market downturn is a big problem.",
+          "tr": "Piyasadaki düşüş büyük bir sorun."
+        },
+        {
+          "en": "Are we bankrupt?",
+          "tr": "İflas mı ettik?"
+        },
+        {
+          "en": "No, but times are tough.",
+          "tr": "Hayır ama zor zamanlardayız."
+        },
+        {
+          "en": "We need an austerity policy.",
+          "tr": "Kemer sıkma politikasına ihtiyacımız var."
+        },
+        {
+          "en": "Yes, the bottom line is we have a deficit.",
+          "tr": "Evet, işin özü açığımız var."
+        }
+      ]
+    },
+    {
+      "id": "c1-global-2",
+      "title": "Kahve Piyasası",
+      "names": [
+        "Maria",
+        "Brazil"
+      ],
+      "lines": [
+        {
+          "en": "Maria buys and sells coffee in Brazil.",
+          "tr": "Maria Brezilya'da kahve alıp satıyor."
+        },
+        {
+          "en": "Coffee is a very lucrative commodity.",
+          "tr": "Kahve çok kazançlı bir emtiadır."
+        },
+        {
+          "en": "But the global market is volatile.",
+          "tr": "Ama küresel piyasa istikrarsız."
+        },
+        {
+          "en": "The price is going down.",
+          "tr": "Fiyat düşüyor."
+        },
+        {
+          "en": "We're in the red this week.",
+          "tr": "Bu hafta zarardayız."
+        },
+        {
+          "en": "Wait until next week.",
+          "tr": "Haftaya kadar bekle."
+        }
+      ]
+    },
+    {
+      "id": "c1-global-3",
+      "title": "Küresel Kararlar",
+      "names": [
+        "David",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "David has a company in London.",
+          "tr": "David'in Londra'da bir şirketi var."
+        },
+        {
+          "en": "Because of globalization, they outsource work.",
+          "tr": "Küreselleşme yüzünden işi dışarıya veriyorlar."
+        },
+        {
+          "en": "Can we outsource the work abroad?",
+          "tr": "İşi yurt dışına verebilir miyiz?"
+        },
+        {
+          "en": "No, there is a sanction.",
+          "tr": "Hayır, yaptırım var."
+        },
+        {
+          "en": "It's money down the drain if we try.",
+          "tr": "Denersek sokağa atılan para olur."
+        },
+        {
+          "en": "I agree, it is a bad strategy.",
+          "tr": "Katılıyorum, bu kötü bir strateji."
+        }
+      ]
+    },
+    {
+      "id": "c1-global-4",
+      "title": "Vergi ve Destek",
+      "names": [
+        "Elif",
+        "Ankara"
+      ],
+      "lines": [
+        {
+          "en": "Elif evaluates government policy in Ankara.",
+          "tr": "Elif Ankara'da hükümet politikasını değerlendiriyor."
+        },
+        {
+          "en": "We have a budget surplus this year.",
+          "tr": "Bu yıl bütçe fazlamız var."
+        },
+        {
+          "en": "Let's give a fuel subsidy to citizens.",
+          "tr": "Vatandaşlara yakıt desteği verelim."
+        },
+        {
+          "en": "And what about the tariff on plastic?",
+          "tr": "Peki ya plastikteki gümrük vergisi?"
+        },
+        {
+          "en": "We should cancel that tariff.",
+          "tr": "O gümrük vergisini iptal etmeliyiz."
+        },
+        {
+          "en": "This will help local companies.",
+          "tr": "Bu yerel şirketlere yardımcı olacak."
+        }
+      ]
+    },
+    {
+      "id": "c1-global-5",
+      "title": "Finansal Kriz",
+      "names": [
+        "Mert",
+        "New York"
+      ],
+      "lines": [
+        {
+          "en": "Mert evaluates monetary and fiscal policy.",
+          "tr": "Mert parasal ve mali politikayı değerlendiriyor."
+        },
+        {
+          "en": "The economy is in stagnation.",
+          "tr": "Ekonomi durgunluk içinde."
+        },
+        {
+          "en": "Our revenue is declining.",
+          "tr": "Gelirimiz düşüyor."
+        },
+        {
+          "en": "We need liquidity, or we will go bankrupt.",
+          "tr": "Likiditeye ihtiyacımız var yoksa iflas edeceğiz."
+        },
+        {
+          "en": "Should we sell equity? Not now, it's a buyer's market.",
+          "tr": "Hisse satalım mı? Şimdi değil, piyasa alıcıdan yana."
+        },
+        {
+          "en": "Austerity and monetary changes are inevitable.",
+          "tr": "Kemer sıkma ve parasal değişiklikler kaçınılmaz."
+        }
+      ]
+    }
+  ]
+}
