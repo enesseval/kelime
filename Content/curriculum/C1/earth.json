@@ -1,0 +1,519 @@
+{
+  "id": "c1-earth",
+  "level": "C1",
+  "title": "Gezegenin geleceği",
+  "placement": "any",
+  "goal": "Çevre krizinin bilimsel ve toplumsal boyutlarını ayrıntılı tartışır, uzun vadeli çözümleri ve bedellerini karşılaştırır.",
+  "words": [
+    {
+      "id": "c1-ecological",
+      "word": "ecological",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ekolojik"
+          ],
+          "example_en": "The ecological damage might be irreversible.",
+          "example_tr": "Ekolojik hasar geri döndürülemez olabilir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-depletion",
+      "word": "depletion",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tükenme",
+            "azalma"
+          ],
+          "example_en": "Resource depletion is a critical issue.",
+          "example_tr": "Kaynak tükenmesi kritik bir sorundur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-contamination",
+      "word": "contamination",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kirlenme",
+            "bulaşma"
+          ],
+          "example_en": "Water contamination makes animals ill.",
+          "example_tr": "Su kirliliği hayvanları hasta ediyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-arid",
+      "word": "arid",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kurak"
+          ],
+          "example_en": "The arid land cannot support local plants.",
+          "example_tr": "Kurak arazi yerel bitkileri destekleyemez."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-erosion",
+      "word": "erosion",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "erozyon",
+            "aşınma"
+          ],
+          "example_en": "Deforestation inevitably causes erosion.",
+          "example_tr": "Ormansızlaşma kaçınılmaz olarak erozyona neden olur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-irrigation",
+      "word": "irrigation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sulama"
+          ],
+          "example_en": "Good irrigation saves a lot of water.",
+          "example_tr": "İyi bir sulama çok su tasarrufu sağlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-resilient",
+      "word": "resilient",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "dirençli",
+            "esnek"
+          ],
+          "example_en": "We must develop a resilient food supply.",
+          "example_tr": "Dirençli bir gıda tedariki geliştirmeliyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-catastrophic",
+      "word": "catastrophic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "feci",
+            "yıkıcı"
+          ],
+          "example_en": "A flood here would have catastrophic consequences.",
+          "example_tr": "Burada bir selin feci sonuçları olur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-pristine",
+      "word": "pristine",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "bozulmamış",
+            "tertemiz"
+          ],
+          "example_en": "They want to protect this pristine forest.",
+          "example_tr": "Bu bozulmamış ormanı korumak istiyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-fossil",
+      "word": "fossil",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "fosil"
+          ],
+          "example_en": "We must abandon fossil fuel consumption.",
+          "example_tr": "Fosil yakıt tüketimini bırakmalıyız."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-hazardous",
+      "word": "hazardous",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tehlikeli",
+            "riskli"
+          ],
+          "example_en": "This toxic waste is very hazardous.",
+          "example_tr": "Bu zehirli atık çok tehlikeli."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-sustainability",
+      "word": "sustainability",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sürdürülebilirlik"
+          ],
+          "example_en": "Sustainability is crucial for our planet.",
+          "example_tr": "Sürdürülebilirlik gezegenimiz için çok önemlidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-toxic",
+      "word": "toxic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "zehirli",
+            "toksik"
+          ],
+          "example_en": "Toxic pollution destroys the river ecosystem.",
+          "example_tr": "Zehirli kirlilik nehir ekosistemini yok eder."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-degradation",
+      "word": "degradation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bozulma",
+            "kötüleşme"
+          ],
+          "example_en": "Habitat degradation hurts many animal species.",
+          "example_tr": "Habitat bozulması birçok hayvan türüne zarar verir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-scarce",
+      "word": "scarce",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kıt",
+            "nadir"
+          ],
+          "example_en": "Fresh water is very scarce here.",
+          "example_tr": "Burada tatlı su çok kıt."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-offset",
+      "word": "offset",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "dengelemek",
+            "telafi etmek"
+          ],
+          "example_en": "We plant trees to offset our carbon emissions.",
+          "example_tr": "Karbon emisyonlarımızı dengelemek için ağaç dikeriz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-adverse",
+      "word": "adverse",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "olumsuz",
+            "ters"
+          ],
+          "example_en": "Pollution has adverse effects on our bodies.",
+          "example_tr": "Kirliliğin vücudumuza olumsuz etkileri var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-landfill",
+      "word": "landfill",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "çöp sahası"
+          ],
+          "example_en": "The city sends all rubbish to a big landfill.",
+          "example_tr": "Şehir tüm çöpleri büyük bir çöp sahasına gönderir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-emit",
+      "word": "emit",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "yaymak",
+            "salmak"
+          ],
+          "example_en": "Old cars emit a lot of carbon.",
+          "example_tr": "Eski arabalar çok karbon salar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-flourish",
+      "word": "flourish",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "gelişmek",
+            "serpilmek"
+          ],
+          "example_en": "Without pollution, wildlife can flourish.",
+          "example_tr": "Kirlilik olmazsa yaban hayatı gelişebilir."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c1-p-race-against-time",
+      "text": "It's a race against time.",
+      "tr": "Zamana karşı bir yarış bu.",
+      "example_en": "We must stop the disaster; it's a race against time.",
+      "example_tr": "Felaketi durdurmalıyız; zamana karşı bir yarış bu.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-tipping-point",
+      "text": "It's a tipping point.",
+      "tr": "Kritik eşikteyiz.",
+      "example_en": "We can't wait any longer; it's a tipping point.",
+      "example_tr": "Daha fazla bekleyemeyiz; kritik eşikteyiz.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-no-quick-fix",
+      "text": "There's no quick fix.",
+      "tr": "Kısa yoldan çözümü yok.",
+      "example_en": "For ecological degradation, there's no quick fix.",
+      "example_tr": "Ekolojik bozulmanın kısa yoldan çözümü yok.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-drop-in-ocean",
+      "text": "It's a drop in the ocean.",
+      "tr": "Okyanusta bir damla.",
+      "example_en": "My money is merely a drop in the ocean.",
+      "example_tr": "Benim param okyanusta sadece bir damla.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-time-running-out",
+      "text": "Time is running out.",
+      "tr": "Zaman daralıyor.",
+      "example_en": "We must protect the forest. Time is running out.",
+      "example_tr": "Ormanı korumalıyız. Zaman daralıyor.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c1-earth-1",
+      "title": "Zor kararlar",
+      "names": [
+        "Defne",
+        "David"
+      ],
+      "lines": [
+        {
+          "en": "Defne and David are at a climate meeting.",
+          "tr": "Defne ve David bir iklim toplantısındalar."
+        },
+        {
+          "en": "If we had reduced fossil fuels earlier, we wouldn't be here.",
+          "tr": "Fosil yakıtları daha erken azaltsaydık, burada olmazdık."
+        },
+        {
+          "en": "It is said that the ecological damage will be catastrophic.",
+          "tr": "Ekolojik hasarın feci olacağı söyleniyor."
+        },
+        {
+          "en": "What we must do is offset our emissions.",
+          "tr": "Yapmamız gereken emisyonlarımızı dengelemektir."
+        },
+        {
+          "en": "Yes, it's a race against time.",
+          "tr": "Evet, zamana karşı bir yarış bu."
+        }
+      ]
+    },
+    {
+      "id": "c1-earth-2",
+      "title": "Kuruyan nehir",
+      "names": [
+        "Ali"
+      ],
+      "lines": [
+        {
+          "en": "The pristine river is gone. Ali looks at the arid land.",
+          "tr": "Tertemiz nehir artık yok. Ali kurak araziye bakıyor."
+        },
+        {
+          "en": "Water is very scarce today.",
+          "tr": "Su bugün çok kıt."
+        },
+        {
+          "en": "There's no quick fix.",
+          "tr": "Kısa yoldan çözümü yok."
+        },
+        {
+          "en": "If I had bought a solar irrigation device, the land would be resilient.",
+          "tr": "Güneş enerjili bir sulama cihazı alsaydım, arazi dirençli olurdu."
+        },
+        {
+          "en": "I shouldn't have ignored the drought.",
+          "tr": "Kuraklığı görmezden gelmemeliydim."
+        }
+      ]
+    },
+    {
+      "id": "c1-earth-3",
+      "title": "Şehrin atıkları",
+      "names": [
+        "Ayşe",
+        "Mark"
+      ],
+      "lines": [
+        {
+          "en": "Ayşe and Mark debate the new city landfill.",
+          "tr": "Ayşe ve Mark yeni şehir çöp sahasını tartışıyorlar."
+        },
+        {
+          "en": "The toxic waste has caused substantial contamination.",
+          "tr": "Zehirli atık büyük bir kirlenmeye yol açtı."
+        },
+        {
+          "en": "This is a tipping point for the local ecosystem.",
+          "tr": "Yerel ekosistem için kritik bir eşik bu."
+        },
+        {
+          "en": "What we need is a sustainable solution.",
+          "tr": "İhtiyacımız olan sürdürülebilir bir çözüm."
+        },
+        {
+          "en": "Otherwise, the disease will destroy the city.",
+          "tr": "Aksi takdirde, hastalık şehri yok edecek."
+        }
+      ]
+    },
+    {
+      "id": "c1-earth-4",
+      "title": "Kötü alışkanlıklar",
+      "names": [
+        "Canan",
+        "John"
+      ],
+      "lines": [
+        {
+          "en": "Canan visits John's company.",
+          "tr": "Canan John'un şirketini ziyaret eder."
+        },
+        {
+          "en": "It is obvious that your devices emit hazardous smoke.",
+          "tr": "Cihazlarınızın tehlikeli duman saldığı bariz."
+        },
+        {
+          "en": "We try to recycle, albeit reluctantly.",
+          "tr": "Gönülsüzce de olsa geri dönüşüm yapmaya çalışıyoruz."
+        },
+        {
+          "en": "Recycling a little plastic is a drop in the ocean.",
+          "tr": "Biraz plastik geri dönüştürmek okyanusta bir damla."
+        },
+        {
+          "en": "Resource depletion is a much worse problem.",
+          "tr": "Kaynak tükenmesi çok daha kötü bir sorun."
+        }
+      ]
+    },
+    {
+      "id": "c1-earth-5",
+      "title": "Ormanın umudu",
+      "names": [
+        "Emre"
+      ],
+      "lines": [
+        {
+          "en": "Emre explores the mountain.",
+          "tr": "Emre dağı keşfe çıkıyor."
+        },
+        {
+          "en": "Land erosion and habitat degradation are evident everywhere.",
+          "tr": "Arazi erozyonu ve habitat bozulması her yerde açıkça görülüyor."
+        },
+        {
+          "en": "To a certain extent, the adverse effects are irreversible.",
+          "tr": "Belirli bir dereceye kadar, olumsuz etkiler geri döndürülemez."
+        },
+        {
+          "en": "Yet, if we protect the trees, the forest could flourish.",
+          "tr": "Yine de, ağaçları korursak orman gelişebilir."
+        },
+        {
+          "en": "He plants a tree.",
+          "tr": "Bir ağaç dikiyor."
+        },
+        {
+          "en": "Time is running out.",
+          "tr": "Zaman daralıyor."
+        }
+      ]
+    }
+  ]
+}
