@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SCHEMA = 1
+SCHEMA = 2  # 2: pos "conj"
 
 
 def main():

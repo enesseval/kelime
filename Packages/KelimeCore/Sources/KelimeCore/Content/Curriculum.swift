@@ -196,8 +196,8 @@ public enum Curriculum {
     /// Topics each goal puts first, matched against unit ids without the level ("a1-cafe" is
     /// "cafe"). Other units keep their plan order.
     static let goalTopics: [LearningGoal: [String]] = [
-        .travel: ["cafe", "city", "shopping", "free-time", "feelings"],
-        .work: ["day", "city", "cafe", "feelings"],
+        .travel: ["cafe", "city", "shopping", "free-time", "feelings", "travel", "food", "plans", "nature"],
+        .work: ["day", "city", "cafe", "feelings", "work", "tech", "people"],
     ]
 
     /// `units` in the order the learner meets them: core, the any-order units by goal, bridge.

@@ -1,0 +1,797 @@
+{
+  "id": "a2-core",
+  "level": "A2",
+  "title": "Çekirdek",
+  "placement": "first",
+  "goal": "Fikrini söyler ve nedenini açıklar, karşılaştırır, bir şeyi rica eder ve önerir; A2'nin en sık fiil ve zarflarını kullanır.",
+  "words": [
+    {
+      "id": "a2-think",
+      "word": "think",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "düşünmek",
+            "sanmak"
+          ],
+          "example_en": "I think this is a good idea.",
+          "example_tr": "Bence bu iyi bir fikir."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'thought'."
+    },
+    {
+      "id": "a2-say",
+      "word": "say",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "söylemek",
+            "demek"
+          ],
+          "example_en": "What did you say to him?",
+          "example_tr": "Ona ne dedin?"
+        }
+      ],
+      "note": "Kime dendiğini verirken 'to' alır: say to me."
+    },
+    {
+      "id": "a2-tell",
+      "word": "tell",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "anlatmak",
+            "söylemek"
+          ],
+          "example_en": "Tell me about your family.",
+          "example_tr": "Bana ailenden bahset."
+        }
+      ],
+      "note": "Doğrudan kişi alır: tell me (to almaz)."
+    },
+    {
+      "id": "a2-ask",
+      "word": "ask",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "sormak",
+            "istemek"
+          ],
+          "example_en": "Can I ask you something?",
+          "example_tr": "Sana bir şey sorabilir miyim?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-answer",
+      "word": "answer",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "cevap vermek"
+          ],
+          "example_en": "Answer me, please!",
+          "example_tr": "Cevap ver, lütfen!"
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "cevap",
+            "yanıt"
+          ],
+          "example_en": "I don't know the answer.",
+          "example_tr": "Cevabı bilmiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-give",
+      "word": "give",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "vermek"
+          ],
+          "example_en": "Could you give me that book?",
+          "example_tr": "Şu kitabı bana verebilir misin?"
+        }
+      ],
+      "note": "Geçmiş zaman hali 'gave'."
+    },
+    {
+      "id": "a2-take",
+      "word": "take",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "almak",
+            "götürmek"
+          ],
+          "example_en": "Take a bottle of water with you.",
+          "example_tr": "Yanına bir şişe su al."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'took'."
+    },
+    {
+      "id": "a2-bring",
+      "word": "bring",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "getirmek"
+          ],
+          "example_en": "Can you bring some water?",
+          "example_tr": "Biraz su getirebilir misin?"
+        }
+      ],
+      "note": "Geçmiş zaman hali 'brought'."
+    },
+    {
+      "id": "a2-get",
+      "word": "get",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "almak",
+            "elde etmek"
+          ],
+          "example_en": "I will get the tickets today.",
+          "example_tr": "Biletleri bugün alacağım."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "ulaşmak",
+            "varmak"
+          ],
+          "example_en": "When did you get home?",
+          "example_tr": "Eve ne zaman vardın?"
+        }
+      ],
+      "note": "Geçmiş zaman hali 'got'."
+    },
+    {
+      "id": "a2-make",
+      "word": "make",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "yapmak"
+          ],
+          "example_en": "I want to make a cake.",
+          "example_tr": "Pasta yapmak istiyorum."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'made'."
+    },
+    {
+      "id": "a2-find",
+      "word": "find",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "bulmak"
+          ],
+          "example_en": "I can't find my keys.",
+          "example_tr": "Anahtarlarımı bulamıyorum."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'found'."
+    },
+    {
+      "id": "a2-use",
+      "word": "use",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kullanmak"
+          ],
+          "example_en": "Can I use your car?",
+          "example_tr": "Arabanı kullanabilir miyim?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-try",
+      "word": "try",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "denemek"
+          ],
+          "example_en": "Try this cake. It's very good.",
+          "example_tr": "Bu keki dene. Çok güzel."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-help",
+      "word": "help",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "yardım etmek"
+          ],
+          "example_en": "Can you help me, please?",
+          "example_tr": "Bana yardım eder misiniz?"
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "yardım"
+          ],
+          "example_en": "Thank you for your help.",
+          "example_tr": "Yardımın için teşekkürler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-leave",
+      "word": "leave",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ayrılmak",
+            "çıkmak"
+          ],
+          "example_en": "We leave the house at eight.",
+          "example_tr": "Evden sekizde çıkarız."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "bırakmak"
+          ],
+          "example_en": "Don't leave your bag here.",
+          "example_tr": "Çantanı burada bırakma."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'left'."
+    },
+    {
+      "id": "a2-wait",
+      "word": "wait",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "beklemek"
+          ],
+          "example_en": "Wait for me at the station.",
+          "example_tr": "Beni istasyonda bekle."
+        }
+      ],
+      "note": "Birini beklerken 'wait for' denir."
+    },
+    {
+      "id": "a2-remember",
+      "word": "remember",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "hatırlamak"
+          ],
+          "example_en": "Do you remember his name?",
+          "example_tr": "Onun adını hatırlıyor musun?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-forget",
+      "word": "forget",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "unutmak"
+          ],
+          "example_en": "Don't forget your key!",
+          "example_tr": "Anahtarını unutma!"
+        }
+      ],
+      "note": "Geçmiş zaman hali 'forgot'."
+    },
+    {
+      "id": "a2-decide",
+      "word": "decide",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "karar vermek"
+          ],
+          "example_en": "We must decide now.",
+          "example_tr": "Şimdi karar vermeliyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-hope",
+      "word": "hope",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ummak"
+          ],
+          "example_en": "I hope you feel better.",
+          "example_tr": "Umarım daha iyi hissedersin."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-because",
+      "word": "because",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "çünkü"
+          ],
+          "example_en": "I'm happy because you are here.",
+          "example_tr": "Mutluyum çünkü buradasın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-maybe",
+      "word": "maybe",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "belki"
+          ],
+          "example_en": "Maybe we can go tomorrow.",
+          "example_tr": "Belki yarın gidebiliriz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-already",
+      "word": "already",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "zaten",
+            "çoktan"
+          ],
+          "example_en": "I have already eaten dinner.",
+          "example_tr": "Akşam yemeğini çoktan yedim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-still",
+      "word": "still",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "hâlâ"
+          ],
+          "example_en": "Are you still tired?",
+          "example_tr": "Hâlâ yorgun musun?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-just",
+      "word": "just",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "az önce",
+            "yeni"
+          ],
+          "example_en": "I have just finished my lunch.",
+          "example_tr": "Öğle yemeğimi az önce bitirdim."
+        },
+        {
+          "pos": "adv",
+          "tr": [
+            "sadece"
+          ],
+          "example_en": "I just want a coffee.",
+          "example_tr": "Sadece bir kahve istiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-really",
+      "word": "really",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "gerçekten",
+            "çok"
+          ],
+          "example_en": "This city is really big.",
+          "example_tr": "Bu şehir gerçekten büyük."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-enough",
+      "word": "enough",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yeterli",
+            "yeteri kadar"
+          ],
+          "example_en": "Do we have enough time?",
+          "example_tr": "Yeterli vaktimiz var mı?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-same",
+      "word": "same",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "aynı"
+          ],
+          "example_en": "We live in the same house.",
+          "example_tr": "Aynı evde oturuyoruz."
+        }
+      ],
+      "note": "Genelde önünde 'the' kullanılır."
+    },
+    {
+      "id": "a2-different",
+      "word": "different",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "farklı"
+          ],
+          "example_en": "They are from different cities.",
+          "example_tr": "Farklı şehirlerdenler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-important",
+      "word": "important",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "önemli"
+          ],
+          "example_en": "This is an important day.",
+          "example_tr": "Bu önemli bir gün."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-easy",
+      "word": "easy",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kolay"
+          ],
+          "example_en": "This book is easy to read.",
+          "example_tr": "Bu kitabı okumak kolay."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-difficult",
+      "word": "difficult",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "zor"
+          ],
+          "example_en": "This game is very difficult.",
+          "example_tr": "Bu oyun çok zor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-better",
+      "word": "better",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "daha iyi"
+          ],
+          "example_en": "This tea is better than that.",
+          "example_tr": "Bu çay diğerinden daha iyi."
+        }
+      ],
+      "note": "'good' sözcüğünün karşılaştırma hali."
+    },
+    {
+      "id": "a2-worse",
+      "word": "worse",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "daha kötü"
+          ],
+          "example_en": "The weather is worse today.",
+          "example_tr": "Hava bugün daha kötü."
+        }
+      ],
+      "note": "'bad' sözcüğünün karşılaştırma hali."
+    },
+    {
+      "id": "a2-best",
+      "word": "best",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "en iyi"
+          ],
+          "example_en": "He is my best friend.",
+          "example_tr": "O benim en iyi arkadaşım."
+        }
+      ],
+      "note": "'good' sözcüğünün üstünlük hali."
+    },
+    {
+      "id": "a2-choose",
+      "word": "choose",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "seçmek"
+          ],
+          "example_en": "You can choose one book.",
+          "example_tr": "Bir kitap seçebilirsin."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'chose'."
+    },
+    {
+      "id": "a2-mistake",
+      "word": "mistake",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hata",
+            "yanlış"
+          ],
+          "example_en": "It was a small mistake.",
+          "example_tr": "Küçük bir hataydı."
+        }
+      ],
+      "note": "Hata yapmak: make a mistake."
+    },
+    {
+      "id": "a2-almost",
+      "word": "almost",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "neredeyse",
+            "hemen hemen"
+          ],
+          "example_en": "It is almost eight o'clock.",
+          "example_tr": "Saat neredeyse sekiz."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "a2-p-i-think",
+      "text": "I think…",
+      "tr": "Bence…",
+      "example_en": "I think this is good.",
+      "example_tr": "Bence bu iyi.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-dont-think-so",
+      "text": "I don't think so.",
+      "tr": "Sanmıyorum.",
+      "example_en": "Will it rain? – I don't think so.",
+      "example_tr": "Yağmur yağar mı? Sanmıyorum.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-me-too",
+      "text": "Me too.",
+      "tr": "Ben de.",
+      "example_en": "I'm hungry. – Me too!",
+      "example_tr": "Acıktım. – Ben de!",
+      "note": "Olumlu cümlelere katılırken söylenir."
+    },
+    {
+      "id": "a2-p-what-do-you-mean",
+      "text": "What do you mean?",
+      "tr": "Ne demek istiyorsun?",
+      "example_en": "What do you mean by that?",
+      "example_tr": "Bununla ne demek istiyorsun?",
+      "note": ""
+    },
+    {
+      "id": "a2-p-could-you-please",
+      "text": "Could you…, please?",
+      "tr": "…ebilir misiniz, lütfen?",
+      "example_en": "Could you help me, please?",
+      "example_tr": "Bana yardım edebilir misiniz, lütfen?",
+      "note": "Kibarca rica ederken kullanılır."
+    },
+    {
+      "id": "a2-p-it-depends",
+      "text": "It depends.",
+      "tr": "Duruma göre değişir.",
+      "example_en": "Can we go? – It depends.",
+      "example_tr": "Gidebilir miyiz? – Duruma göre.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-thats-a-good-idea",
+      "text": "That's a good idea.",
+      "tr": "İyi fikir.",
+      "example_en": "Let's eat! – That's a good idea.",
+      "example_tr": "Yemek yiyelim! – İyi fikir.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "a2-core-1",
+      "title": "İzmir'de bir akşam",
+      "names": [
+        "Selin",
+        "Kerem",
+        "İzmir"
+      ],
+      "lines": [
+        {
+          "en": "Selin and Kerem are in İzmir for a holiday.",
+          "tr": "Selin ile Kerem tatil için İzmir'deler."
+        },
+        {
+          "en": "Where should we go this evening?",
+          "tr": "Bu akşam nereye gidelim?"
+        },
+        {
+          "en": "Could you choose a good café, please?",
+          "tr": "İyi bir kafe seçebilir misin, lütfen?"
+        },
+        {
+          "en": "I think the café near the beach is the best.",
+          "tr": "Bence plajın yanındaki kafe en iyisi."
+        },
+        {
+          "en": "That's a good idea. I am hungry.",
+          "tr": "İyi fikir. Karnım acıktı."
+        },
+        {
+          "en": "Me too. Let's leave now because it is late.",
+          "tr": "Ben de. Geç olduğu için hemen çıkalım."
+        }
+      ]
+    },
+    {
+      "id": "a2-core-2",
+      "title": "Londra treni",
+      "names": [
+        "Emre",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Emre waited for the train to London.",
+          "tr": "Emre Londra trenini bekledi."
+        },
+        {
+          "en": "He wanted to buy a ticket, but he made a mistake.",
+          "tr": "Bir bilet almak istedi ama bir hata yaptı."
+        },
+        {
+          "en": "He couldn't find his bag with his money.",
+          "tr": "İçinde parası olan çantasını bulamadı."
+        },
+        {
+          "en": "Could you help me, please?",
+          "tr": "Bana yardım edebilir misiniz, lütfen?"
+        },
+        {
+          "en": "A woman found his bag and gave it to him.",
+          "tr": "Bir kadın çantasını buldu ve ona verdi."
+        },
+        {
+          "en": "Emre was happy and took the train.",
+          "tr": "Emre mutlu oldu ve trene bindi."
+        }
+      ]
+    },
+    {
+      "id": "a2-core-3",
+      "title": "Hafta sonu planı",
+      "names": [
+        "Burak",
+        "Deniz"
+      ],
+      "lines": [
+        {
+          "en": "Can we play football tomorrow?",
+          "tr": "Yarın futbol oynayabilir miyiz?"
+        },
+        {
+          "en": "It depends. The weather was worse yesterday.",
+          "tr": "Duruma göre. Dün hava daha kötüydü."
+        },
+        {
+          "en": "What do you mean? Is it raining?",
+          "tr": "Ne demek istiyorsun? Yağmur mu yağıyor?"
+        },
+        {
+          "en": "No, but it is almost cold enough to snow.",
+          "tr": "Hayır ama hava neredeyse kar yağacak kadar soğuk."
+        },
+        {
+          "en": "I don't think so. I hope it will be warm.",
+          "tr": "Sanmıyorum. Umarım hava ılık olur."
+        },
+        {
+          "en": "Maybe we can decide in the morning.",
+          "tr": "Belki sabah karar verebiliriz."
+        }
+      ]
+    }
+  ]
+}

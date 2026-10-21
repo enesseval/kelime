@@ -23,7 +23,7 @@ public struct ContentManifest: Codable, Sendable, Equatable {
 ///
 /// Nothing about the learner is sent: two plain GET requests, no cookies, no identifiers.
 public enum ContentUpdater {
-    public static let schema = 1
+    public static let schema = 2
     public static let baseURL = URL(string: "https://enesseval.github.io/kelime/content/")!
     public static let checkEvery: TimeInterval = 6 * 60 * 60
     static let fileName = "downloaded-cards.json"

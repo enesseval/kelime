@@ -61,9 +61,9 @@ def build(level, spec, core, example):
         core_lines = (f"- {level} core words: " + ", ".join(w["word"] for w in core["words"]) + "\n"
                       f"- {level} core phrases: " + " | ".join(p["text"] for p in core["phrases"]) + "\n")
     if spec["placement"] == "last":
-        folder = ROOT / "Content" / "curriculum" / level
-        others = sorted({w["word"] for f in folder.glob("*.json") if f.stem not in ("plan", "core")
-                         for w in json.loads(f.read_text(encoding="utf-8"))["words"]})
+        # From the plan, so the bridge prompt can be written before the other units come back.
+        plan = json.loads((ROOT / "Content" / "curriculum" / level / "plan.json").read_text(encoding="utf-8"))
+        others = sorted({w for u in plan["units"] if u["placement"] == "any" for w in u["words"]})
         vocab_rule = ("This is the last unit of the level; learners have finished every other unit. "
                       "Examples and stories may use the grammar words, earlier levels, the core, this unit's "
                       "words and phrases, names, and these words from the other units: " + ", ".join(others) + ". "
@@ -95,6 +95,8 @@ VOCABULARY RULE
 {vocab_rule}
 - Grammar words: {" ".join(sorted(function_words))}
 {known}{core_lines}- Inflected forms are fine (works, sitting, coffees, children, colder).
+- Check every word against the lists. Even very common words are not allowed unless they are
+  listed (question, food, minute, phone, umbrella, coat, sea, back): use a listed word instead.
 - Words of OTHER units of this level are not allowed, however common.
 - No reporting verbs in stories (says, asks, tells): write dialogue lines directly.
 - Names: list every person, city, country or language you use in the story's "names" (stories)
@@ -104,7 +106,7 @@ VOCABULARY RULE
 
 CARDS
 - senses: the meanings an {SENSE_LEVEL[level]} learner meets, most common first, at most 3. A sense is one
-  part of speech (n, v, adj, adv, prep) with its own meanings and example. Add another sense only if
+  part of speech (n, v, adj, adv, prep, conj) with its own meanings and example. Add another sense only if
   it is common at {SENSE_LEVEL[level]}.
 - tr: 1-3 Turkish meanings, most common first, joined with ", " at most {MAX_TR} characters.
   Synonyms add nothing.
@@ -117,7 +119,8 @@ CARDS
 - note: optional, short Turkish, only for a real trap (irregular past, false friend, a second
   meaning the learner will meet, a confusing pair like say/tell). Otherwise "".
 - Phrase cards: text at most {MAX_TEXT} characters (use "…" for the slot), tr at most {MAX_TR}
-  characters, one example that fills the slot.
+  characters, one example that fills the slot. When an example has two speakers, separate
+  them with " – " ("I'm hungry. – Me too!").
 
 STORIES
 Write {stories} short stories (5-8 lines each) that use this unit's words and phrases in real situations.

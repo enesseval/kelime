@@ -7,6 +7,7 @@ public enum PartOfSpeech: String, Codable, Sendable, CaseIterable {
     case verb = "v"
     case adverb = "adv"
     case preposition = "prep"
+    case conjunction = "conj"
     /// A phrase card ("How much is it?"), not a single word.
     case phrase
 

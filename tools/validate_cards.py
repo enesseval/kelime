@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 LEVELS = {"A1", "A2", "B1", "B2", "C1"}
-POS = {"adj", "n", "v", "adv", "prep", "phrase"}
+POS = {"adj", "n", "v", "adv", "prep", "conj", "phrase"}
 DECKS = {"general", "yds", "yokdil", "ielts"}
 FIELDS = {"id", "word", "pos", "level", "tr", "example_en", "example_tr", "decks"}
 OPTIONAL = {"note", "senses"}
