@@ -53,13 +53,12 @@ public enum QuickReview {
         using rng: inout some RandomNumberGenerator
     ) throws -> [ReviewQuestion] {
         let prefs = try Preferences.load(db)
-        guard let filter = CardQueries.deckFilter(prefs.entitledDecks) else { return [] }
-        let started = try Curriculum.startedFilter(db: db)
+        guard let filter = try CardQueries.deckFilter(prefs.entitledDecks, started: Curriculum.startedFilter(db: db)) else { return [] }
         let rows = try Row.fetchAll(db, SQLRequest<Row>("""
             SELECT c.id, COALESCE(s.state, 'new') AS state, COALESCE(s.times_shown, 0) AS shown,
                    s.last_answered_on AS answered
             FROM card c LEFT JOIN card_state s ON s.card_id = c.id
-            WHERE \(filter) AND \(started)
+            WHERE \(filter)
             """))
 
         var struggling: [(String, String)] = [], shownNew: [String] = [], otherNew: [String] = [], learned: [(String, String)] = []

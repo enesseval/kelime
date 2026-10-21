@@ -7,13 +7,12 @@ public enum CardQueries {
     /// Cards in any of `decks`, with their learning state. A card without a `card_state` row is new.
     /// Course cards count only once their unit is started.
     public static func candidates(in decks: [DeckID], db: Database) throws -> [SchedulerCandidate] {
-        guard let filter = deckFilter(decks) else { return [] }
-        let started = try Curriculum.startedFilter(db: db)
+        guard let filter = try deckFilter(decks, started: Curriculum.startedFilter(db: db)) else { return [] }
         let request: SQLRequest<Row> = """
             SELECT c.id, COALESCE(s.state, 'new') AS state, s.last_shown_at
             FROM card c
             LEFT JOIN card_state s ON s.card_id = c.id
-            WHERE \(filter) AND \(started)
+            WHERE \(filter)
             """
         return try request.fetchAll(db).map { row in
             SchedulerCandidate(
@@ -25,12 +24,14 @@ public enum CardQueries {
     }
 
     /// SQL condition matching cards that belong to any of `decks`. Nil when `decks` is empty.
-    static func deckFilter(_ decks: [DeckID]) -> SQL? {
+    /// `started` limits level decks to started course units; exam decks take their words from
+    /// every level, started or not.
+    static func deckFilter(_ decks: [DeckID], started: SQL = "1") -> SQL? {
         let levels = decks.compactMap(\.level)
         let tags = decks.compactMap(\.tag)
         var clauses: [SQL] = []
         if !levels.isEmpty {
-            clauses.append("(c.level IN \(levels) AND EXISTS (SELECT 1 FROM card_deck d WHERE d.card_id = c.id AND d.deck = \(DeckTag.general)))")
+            clauses.append("(c.level IN \(levels) AND EXISTS (SELECT 1 FROM card_deck d WHERE d.card_id = c.id AND d.deck = \(DeckTag.general)) AND \(started))")
         }
         if !tags.isEmpty {
             clauses.append("EXISTS (SELECT 1 FROM card_deck d WHERE d.card_id = c.id AND d.deck IN \(tags))")

@@ -143,6 +143,14 @@ struct CurriculumTests {
         #expect(try db.reader.read { db in try Preferences.load(db).enabledDecks } == [.a2, .yds])
     }
 
+    @Test func examDecksTakeCourseWordsWithoutStartingUnits() throws {
+        let db = try makeDatabase(Preferences(level: .a1, enabledDecks: [.a1, .yds], isPro: true))
+        let ids = try db.reader.read { db in try CardQueries.candidates(in: [.yds], db: db).map(\.cardID) }
+        // b1-claim is in the B1 bridge, which an A1 learner has not started.
+        #expect(ids.contains("b1-claim"))
+        #expect(try db.reader.read { db in try CardQueries.candidates(in: [.a1], db: db).map(\.cardID) }.allSatisfy { $0.hasPrefix("a1-") })
+    }
+
     @Test func aFinishedA1OpensA2() throws {
         let db = try makeDatabase()
         try db.writer.write { db in

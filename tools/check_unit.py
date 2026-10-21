@@ -55,6 +55,9 @@ why only lot inside outside back ok then first soon later as
 might may whose anyone anybody somewhere anywhere everywhere nowhere
 myself yourself himself herself itself ourselves themselves
 """.split()),
+    "B2": set("""
+whom nor neither whoever whichever wherever whenever
+""".split()),
 }
 LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
 

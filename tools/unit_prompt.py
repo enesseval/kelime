@@ -48,10 +48,19 @@ GRAMMAR["B1"] = {
             "reported speech (He told me that…), it is said that…, and the past perfect in stories.",
 }
 GRAMMAR["B1"]["first"] = GRAMMAR["B1"]["any"]
+GRAMMAR["B2"] = {
+    "any": "B2 grammar: everything from A1-B1, third conditional, wish/if only, reported speech, all common "
+           "passive forms, relative clauses with whose/whom, modal perfects (should have, might have, "
+           "must have), future continuous and future perfect, gerund and infinitive patterns. No "
+           "inversion, no cleft sentences.",
+    "last": "B2 grammar plus the bridge to C1: mixed conditionals (If I had…, I would be…), cleft sentences "
+            "(What I need is…, It was … that…), not only … but also, would rather, and looking back on events.",
+}
+GRAMMAR["B2"]["first"] = GRAMMAR["B2"]["any"]
 GRAMMAR["A1"]["first"] = GRAMMAR["A1"]["any"]
 GRAMMAR["A2"]["first"] = GRAMMAR["A2"]["any"]
-NAMES = {"A1": "beginner (A1)", "A2": "elementary (A2)", "B1": "intermediate (B1)"}
-SENSE_LEVEL = {"A1": "A1-A2", "A2": "A2-B1", "B1": "B1-B2"}
+NAMES = {"A1": "beginner (A1)", "A2": "elementary (A2)", "B1": "intermediate (B1)", "B2": "upper-intermediate (B2)"}
+SENSE_LEVEL = {"A1": "A1-A2", "A2": "A2-B1", "B1": "B1-B2", "B2": "B2-C1"}
 
 
 def compact(unit):

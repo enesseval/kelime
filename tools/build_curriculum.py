@@ -65,7 +65,24 @@ def main():
 
     path = ROOT / "Content" / "cards.json"
     data = json.loads(path.read_text(encoding="utf-8"))
+    # Exam decks (YDS, YÖKDİL, IELTS) are tags on cards. A course card keeps the tags its word
+    # had at this level; a tagged word that leaves the level passes its tags to the card with the
+    # same word at another level, so the exam decks keep their words.
+    tags = {}
+    for c in data["cards"]:
+        if c["level"] == level:
+            tags.setdefault(c["word"].lower(), set()).update(d for d in c["decks"] if d != "general")
+    for card in cards.values():
+        card["decks"] = ["general"] + sorted(tags.pop(card["word"].lower(), set()))
     data["cards"] = [c for c in data["cards"] if c["level"] != level] + list(cards.values())
+    for word, extra in tags.items():
+        if not extra:
+            continue
+        other = [c for c in data["cards"] if c["word"].lower() == word]
+        if other:
+            other[0]["decks"] = ["general"] + sorted(set(other[0]["decks"]) - {"general"} | extra)
+        else:
+            print(f"warning: {word} loses its exam decks {sorted(extra)}")
     data["units"] = [u for u in data.get("units", []) if u["level"] != level] + units
     data["contentVersion"] += 1
     path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
