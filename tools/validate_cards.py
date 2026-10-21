@@ -22,7 +22,7 @@ POS = {"adj", "n", "v", "adv", "prep", "conj", "phrase"}
 DECKS = {"general", "yds", "yokdil", "ielts"}
 FIELDS = {"id", "word", "pos", "level", "tr", "example_en", "example_tr", "decks"}
 OPTIONAL = {"note", "senses"}
-COURSE_LEVELS = {"A1", "A2"}
+COURSE_LEVELS = {"A1", "A2", "B1"}
 MAX_WORD, MAX_TR, MAX_SENTENCE = 16, 28, 55
 
 

@@ -60,7 +60,7 @@ struct CurriculumTests {
     @Test func otherLevelsAreUnaffected() throws {
         let db = try makeDatabase(Preferences())
         let ids = try db.reader.read { db in try CardQueries.candidates(in: DeckID.basicDecks, db: db) }
-        #expect(ids.count == 119) // A2 core (always started) and B1
+        #expect(ids.count == 109) // the A2 and B1 cores (always started)
         #expect(!DeckID.basicDecks.contains(.a1) && !DeckID.a1.isPro)
     }
 
@@ -159,7 +159,7 @@ struct CurriculumTests {
     }
 
     @Test func levelsWithoutUnitsKeepTheirDecks() throws {
-        let db = try makeDatabase(Preferences(level: .b1))
+        let db = try makeDatabase(Preferences(level: .b2))
         #expect(try db.reader.read { db in try Curriculum.state(db: db) } == nil)
     }
 

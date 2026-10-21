@@ -1,0 +1,537 @@
+{
+  "id": "b1-learning",
+  "level": "B1",
+  "title": "Öğrenme",
+  "placement": "any",
+  "goal": "Nasıl öğrendiğini ve zorlandığı yerleri anlatır, bir kursu tarif eder, ilerlemesini ve hedeflerini anlatır.",
+  "words": [
+    {
+      "id": "b1-course",
+      "word": "course",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kurs"
+          ],
+          "example_en": "Are you taking an English course?",
+          "example_tr": "İngilizce kursu alıyor musun?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-practise",
+      "word": "practise",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "pratik yapmak"
+          ],
+          "example_en": "I need to practise more.",
+          "example_tr": "Daha fazla pratik yapmalıyım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-revise",
+      "word": "revise",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "tekrar etmek"
+          ],
+          "example_en": "I need to revise for my exam.",
+          "example_tr": "Sınavım için tekrar yapmam lazım."
+        }
+      ],
+      "note": "İngiliz İngilizcesinde 'sınava çalışmak'; 'düzeltmek' anlamı da var."
+    },
+    {
+      "id": "b1-memorize",
+      "word": "memorize",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ezberlemek"
+          ],
+          "example_en": "It's difficult to memorize this text.",
+          "example_tr": "Bu metni ezberlemek zor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-concentrate",
+      "word": "concentrate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "odaklanmak"
+          ],
+          "example_en": "I can't concentrate when it's noisy.",
+          "example_tr": "Gürültülüyken odaklanamıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-progress",
+      "word": "progress",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ilerleme"
+          ],
+          "example_en": "She is making good progress.",
+          "example_tr": "İyi ilerleme kaydediyor."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "ilerlemek"
+          ],
+          "example_en": "We are progressing slowly.",
+          "example_tr": "Yavaş yavaş ilerliyoruz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-fluent",
+      "word": "fluent",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "akıcı"
+          ],
+          "example_en": "He is fluent in English.",
+          "example_tr": "İngilizcede akıcı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-grammar",
+      "word": "grammar",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "dil bilgisi",
+            "gramer"
+          ],
+          "example_en": "English grammar is sometimes difficult.",
+          "example_tr": "İngilizce dil bilgisi bazen zordur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-vocabulary",
+      "word": "vocabulary",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kelime dağarcığı"
+          ],
+          "example_en": "I want to learn new vocabulary.",
+          "example_tr": "Yeni kelimeler öğrenmek istiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-pronunciation",
+      "word": "pronunciation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "telaffuz"
+          ],
+          "example_en": "His pronunciation is very good.",
+          "example_tr": "Telaffuzu çok iyi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-translate",
+      "word": "translate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "çevirmek",
+            "tercüme etmek"
+          ],
+          "example_en": "Can you translate this text for me?",
+          "example_tr": "Bu metni benim için çevirebilir misin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-method",
+      "word": "method",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yöntem",
+            "metot"
+          ],
+          "example_en": "This is a good method for learning.",
+          "example_tr": "Bu, öğrenmek için iyi bir yöntem."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-motivation",
+      "word": "motivation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "motivasyon"
+          ],
+          "example_en": "You need motivation to study.",
+          "example_tr": "Çalışmak için motivasyona ihtiyacın var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-purpose",
+      "word": "purpose",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "amaç"
+          ],
+          "example_en": "What is the purpose of this course?",
+          "example_tr": "Bu kursun amacı ne?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-suitable",
+      "word": "suitable",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "uygun"
+          ],
+          "example_en": "Is this course suitable for children?",
+          "example_tr": "Bu kurs çocuklar için uygun mu?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-aware",
+      "word": "aware",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "farkında"
+          ],
+          "example_en": "I wasn't aware of the problem.",
+          "example_tr": "Sorunun farkında değildim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-attend",
+      "word": "attend",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "katılmak"
+          ],
+          "example_en": "I couldn't attend the lesson today.",
+          "example_tr": "Bugün derse katılamadım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-certificate",
+      "word": "certificate",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sertifika"
+          ],
+          "example_en": "You get a certificate.",
+          "example_tr": "Bir sertifika alıyorsun."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-familiar",
+      "word": "familiar",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tanıdık"
+          ],
+          "example_en": "This story is familiar to me.",
+          "example_tr": "Bu hikaye bana tanıdık geliyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-native",
+      "word": "native",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ana dili olan",
+            "yerli"
+          ],
+          "example_en": "My native language is Turkish.",
+          "example_tr": "Ana dilim Türkçe."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b1-p-getting-better",
+      "text": "I'm getting better at…",
+      "tr": "…da/de daha iyi oluyorum.",
+      "example_en": "I'm getting better at English.",
+      "example_tr": "İngilizcede daha iyi oluyorum.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-takes-time",
+      "text": "It takes time.",
+      "tr": "Zaman alır.",
+      "example_en": "Learning a language takes time.",
+      "example_tr": "Dil öğrenmek zaman alır.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-practice-makes",
+      "text": "Practice makes perfect.",
+      "tr": "İşleyen demir ışıldar.",
+      "example_en": "I speak every day. Practice makes perfect.",
+      "example_tr": "Her gün konuşuyorum. İşleyen demir ışıldar.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-keep-forgetting",
+      "text": "I keep forgetting…",
+      "tr": "…i sürekli unutuyorum.",
+      "example_en": "I keep forgetting this text.",
+      "example_tr": "Bu metni sürekli unutuyorum.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-explain-again",
+      "text": "Can you explain it again?",
+      "tr": "Tekrar açıklayabilir misin?",
+      "example_en": "I don't understand. Can you explain it again?",
+      "example_tr": "Anlamadım. Tekrar açıklayabilir misin?",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b1-learning-1",
+      "title": "Yeni Kurs",
+      "names": [
+        "Emre",
+        "English"
+      ],
+      "lines": [
+        {
+          "en": "Emre attends a new English course today.",
+          "tr": "Emre bugün yeni bir İngilizce kursuna katılıyor."
+        },
+        {
+          "en": "The teacher's native language is English.",
+          "tr": "Öğretmenin ana dili İngilizce."
+        },
+        {
+          "en": "Is this course suitable for me?",
+          "tr": "Bu kurs benim için uygun mu?"
+        },
+        {
+          "en": "Yes, the lessons are familiar.",
+          "tr": "Evet, dersler tanıdık."
+        },
+        {
+          "en": "I'm getting better at English.",
+          "tr": "İngilizcede daha iyi oluyorum."
+        },
+        {
+          "en": "But it takes time.",
+          "tr": "Ama zaman alıyor."
+        }
+      ]
+    },
+    {
+      "id": "b1-learning-2",
+      "title": "Sınava Hazırlık",
+      "names": [
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep is revising for her exam.",
+          "tr": "Zeynep sınavı için tekrar yapıyor."
+        },
+        {
+          "en": "She wants to memorize the text.",
+          "tr": "Metni ezberlemek istiyor."
+        },
+        {
+          "en": "I can't concentrate. It is very noisy outside.",
+          "tr": "Odaklanamıyorum. Dışarısı çok gürültülü."
+        },
+        {
+          "en": "I keep forgetting the new vocabulary.",
+          "tr": "Yeni kelimeleri sürekli unutuyorum."
+        },
+        {
+          "en": "You need more motivation.",
+          "tr": "Daha fazla motivasyona ihtiyacın var."
+        },
+        {
+          "en": "Let's drink some coffee first.",
+          "tr": "Önce biraz kahve içelim."
+        }
+      ]
+    },
+    {
+      "id": "b1-learning-3",
+      "title": "Akıcı Konuşma",
+      "names": [
+        "Ali",
+        "German"
+      ],
+      "lines": [
+        {
+          "en": "Ali is fluent in German.",
+          "tr": "Ali Almancada akıcı."
+        },
+        {
+          "en": "His grammar is very good.",
+          "tr": "Dil bilgisi çok iyi."
+        },
+        {
+          "en": "However, his pronunciation is bad.",
+          "tr": "Ancak telaffuzu kötü."
+        },
+        {
+          "en": "What is your purpose for learning?",
+          "tr": "Öğrenmekteki amacın ne?"
+        },
+        {
+          "en": "I want to live abroad.",
+          "tr": "Yurt dışında yaşamak istiyorum."
+        },
+        {
+          "en": "Well, practice makes perfect.",
+          "tr": "Eh, pratik mükemmelleştirir."
+        }
+      ]
+    },
+    {
+      "id": "b1-learning-4",
+      "title": "Anlaşılmayan Metin",
+      "names": [
+        "Anna",
+        "Cem"
+      ],
+      "lines": [
+        {
+          "en": "Anna and Cem are studying together.",
+          "tr": "Anna ve Cem birlikte ders çalışıyor."
+        },
+        {
+          "en": "I don't understand this text.",
+          "tr": "Bu metni anlamıyorum."
+        },
+        {
+          "en": "Can you translate it for me?",
+          "tr": "Benim için çevirebilir misin?"
+        },
+        {
+          "en": "Can you explain it again?",
+          "tr": "Tekrar açıklayabilir misin?"
+        },
+        {
+          "en": "This is a good method to learn.",
+          "tr": "Bu, öğrenmek için iyi bir yöntem."
+        },
+        {
+          "en": "Yes, we are making good progress.",
+          "tr": "Evet, iyi ilerleme kaydediyoruz."
+        }
+      ]
+    },
+    {
+      "id": "b1-learning-5",
+      "title": "Sertifika",
+      "names": [
+        "Leyla"
+      ],
+      "lines": [
+        {
+          "en": "Leyla, are you aware of the exam tomorrow?",
+          "tr": "Leyla, yarınki sınavın farkında mısın?"
+        },
+        {
+          "en": "Yes, I am. I want to get the certificate.",
+          "tr": "Evet, farkındayım. Sertifikayı almak istiyorum."
+        },
+        {
+          "en": "My vocabulary is much better now.",
+          "tr": "Kelime dağarcığım artık çok daha iyi."
+        },
+        {
+          "en": "I'm getting better at reading too.",
+          "tr": "Okumada da daha iyi oluyorum."
+        },
+        {
+          "en": "It is worth taking the exam.",
+          "tr": "Sınava girmeye değer."
+        },
+        {
+          "en": "I agree with you.",
+          "tr": "Sana katılıyorum."
+        }
+      ]
+    }
+  ],
+  "names": [
+    "English",
+    "Turkish"
+  ]
+}

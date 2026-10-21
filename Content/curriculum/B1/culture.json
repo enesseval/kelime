@@ -1,0 +1,542 @@
+{
+  "id": "b1-culture",
+  "level": "B1",
+  "title": "Kültür ve eğlence",
+  "placement": "any",
+  "goal": "Bir kitabı, filmi ya da diziyi anlatır ve önerir, gelenek ve görenekleri karşılaştırır, sanat etkinliklerinden söz eder.",
+  "words": [
+    {
+      "id": "b1-novel",
+      "word": "novel",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "roman"
+          ],
+          "example_en": "This novel is very popular.",
+          "example_tr": "Bu roman çok popüler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-author",
+      "word": "author",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yazar"
+          ],
+          "example_en": "She is a famous author.",
+          "example_tr": "O ünlü bir yazar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-plot",
+      "word": "plot",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "konu",
+            "olay örgüsü"
+          ],
+          "example_en": "The plot is quite interesting.",
+          "example_tr": "Olay örgüsü oldukça ilginç."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-character",
+      "word": "character",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "karakter"
+          ],
+          "example_en": "My favourite character is the doctor.",
+          "example_tr": "En sevdiğim karakter doktor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-scene",
+      "word": "scene",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sahne"
+          ],
+          "example_en": "The first scene is in a forest.",
+          "example_tr": "İlk sahne bir ormanda."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-series",
+      "word": "series",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "dizi",
+            "seri"
+          ],
+          "example_en": "We started a new series.",
+          "example_tr": "Yeni bir diziye başladık."
+        }
+      ],
+      "note": "Tekil ve çoğul hâli aynıdır."
+    },
+    {
+      "id": "b1-episode",
+      "word": "episode",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bölüm"
+          ],
+          "example_en": "I watched the last episode.",
+          "example_tr": "Son bölümü izledim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-performance",
+      "word": "performance",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "performans",
+            "oyun"
+          ],
+          "example_en": "The actors gave a great performance.",
+          "example_tr": "Oyuncular harika bir performans sergiledi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-gallery",
+      "word": "gallery",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "galeri"
+          ],
+          "example_en": "They visited a new gallery.",
+          "example_tr": "Yeni bir galeriyi ziyaret ettiler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-artist",
+      "word": "artist",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sanatçı",
+            "ressam"
+          ],
+          "example_en": "He is a famous artist.",
+          "example_tr": "O ünlü bir sanatçı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-painting",
+      "word": "painting",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tablo",
+            "resim"
+          ],
+          "example_en": "That is a beautiful painting.",
+          "example_tr": "Şu güzel bir tablo."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-ancient",
+      "word": "ancient",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "antik",
+            "eski"
+          ],
+          "example_en": "We visited an ancient city.",
+          "example_tr": "Antik bir şehri ziyaret ettik."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-traditional",
+      "word": "traditional",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "geleneksel"
+          ],
+          "example_en": "They like traditional music.",
+          "example_tr": "Geleneksel müziği severler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-culture",
+      "word": "culture",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kültür"
+          ],
+          "example_en": "Their culture is quite different.",
+          "example_tr": "Onların kültürü oldukça farklı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-custom",
+      "word": "custom",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gelenek",
+            "âdet"
+          ],
+          "example_en": "This is an old custom.",
+          "example_tr": "Bu eski bir âdettir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-popular",
+      "word": "popular",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "popüler",
+            "sevilen"
+          ],
+          "example_en": "This music is very popular.",
+          "example_tr": "Bu müzik çok popüler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-recommend",
+      "word": "recommend",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "önermek",
+            "tavsiye etmek"
+          ],
+          "example_en": "Can you recommend a good book?",
+          "example_tr": "İyi bir kitap önerebilir misin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-review",
+      "word": "review",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "inceleme",
+            "eleştiri"
+          ],
+          "example_en": "The film had good reviews.",
+          "example_tr": "Filmin iyi eleştirileri vardı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-entertainment",
+      "word": "entertainment",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "eğlence"
+          ],
+          "example_en": "There is a lot of entertainment here.",
+          "example_tr": "Burada çok fazla eğlence var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-actor",
+      "word": "actor",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "oyuncu",
+            "aktör"
+          ],
+          "example_en": "He is a very famous actor.",
+          "example_tr": "O çok ünlü bir oyuncu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-ending",
+      "word": "ending",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "son",
+            "bitiş"
+          ],
+          "example_en": "The ending was quite bad.",
+          "example_tr": "Sonu oldukça kötüydü."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b1-p-based-on",
+      "text": "It's based on…",
+      "tr": "…e dayanıyor.",
+      "example_en": "It's based on a true story.",
+      "example_tr": "Gerçek bir hikâyeye dayanıyor.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-what-about",
+      "text": "What's it about?",
+      "tr": "Konusu ne?",
+      "example_en": "What's the novel about?",
+      "example_tr": "Romanın konusu ne?",
+      "note": ""
+    },
+    {
+      "id": "b1-p-couldnt-put",
+      "text": "I couldn't put it down.",
+      "tr": "Elimden bırakamadım.",
+      "example_en": "It was great! I couldn't put it down.",
+      "example_tr": "Harikaydı! Elimden bırakamadım.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-worth-seeing",
+      "text": "It's worth seeing.",
+      "tr": "Görmeye değer.",
+      "example_en": "The exhibition is worth seeing.",
+      "example_tr": "Sergi görmeye değer.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-not-cup",
+      "text": "It's not my cup of tea.",
+      "tr": "Bana göre değil.",
+      "example_en": "Traditional music isn't my cup of tea.",
+      "example_tr": "Geleneksel müzik bana göre değil.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b1-culture-1",
+      "title": "Yeni roman",
+      "names": [
+        "Ali"
+      ],
+      "lines": [
+        {
+          "en": "Did you read the new novel?",
+          "tr": "Yeni romanı okudun mu?"
+        },
+        {
+          "en": "Yes, I couldn't put it down.",
+          "tr": "Evet, elimden bırakamadım."
+        },
+        {
+          "en": "What's it about?",
+          "tr": "Konusu ne?"
+        },
+        {
+          "en": "It's based on a true story.",
+          "tr": "Gerçek bir hikâyeye dayanıyor."
+        },
+        {
+          "en": "Who is the author?",
+          "tr": "Yazarı kim?"
+        },
+        {
+          "en": "A young woman. She is also a great artist.",
+          "tr": "Genç bir kadın. Aynı zamanda harika bir sanatçı."
+        }
+      ]
+    },
+    {
+      "id": "b1-culture-2",
+      "title": "Dizi önerisi",
+      "names": [],
+      "lines": [
+        {
+          "en": "Did you watch the new series?",
+          "tr": "Yeni diziyi izledin mi?"
+        },
+        {
+          "en": "No. Is it worth seeing?",
+          "tr": "Hayır. Görmeye değer mi?"
+        },
+        {
+          "en": "Yes! The plot is very interesting.",
+          "tr": "Evet! Olay örgüsü çok ilginç."
+        },
+        {
+          "en": "I usually don't like series.",
+          "tr": "Genelde dizileri sevmem."
+        },
+        {
+          "en": "However, the actors gave a great performance.",
+          "tr": "Ancak oyuncular harika bir performans sergiledi."
+        },
+        {
+          "en": "Maybe I'll watch the first episode tonight.",
+          "tr": "Belki ilk bölümü bu gece izlerim."
+        }
+      ]
+    },
+    {
+      "id": "b1-culture-3",
+      "title": "Galeri ziyareti",
+      "names": [
+        "Oya",
+        "Mert"
+      ],
+      "lines": [
+        {
+          "en": "We went to the new gallery yesterday.",
+          "tr": "Dün yeni galeriye gittik."
+        },
+        {
+          "en": "Did you see the big painting?",
+          "tr": "Büyük tabloyu gördün mü?"
+        },
+        {
+          "en": "Yes. Actually, the artist is my brother.",
+          "tr": "Evet. Aslında sanatçısı benim kardeşim."
+        },
+        {
+          "en": "Really? It's not my cup of tea, I'm afraid.",
+          "tr": "Gerçekten mi? Bana göre değil maalesef."
+        },
+        {
+          "en": "In my opinion, it is a beautiful work.",
+          "tr": "Bence güzel bir eser."
+        },
+        {
+          "en": "I agree with you. The colours are nice.",
+          "tr": "Sana katılıyorum. Renkleri güzel."
+        }
+      ]
+    },
+    {
+      "id": "b1-culture-4",
+      "title": "Gelenekler",
+      "names": [
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "My partner is from a small village.",
+          "tr": "Partnerim küçük bir köyden."
+        },
+        {
+          "en": "Their culture is quite different.",
+          "tr": "Onların kültürü oldukça farklı."
+        },
+        {
+          "en": "Do they have traditional dances?",
+          "tr": "Geleneksel dansları var mı?"
+        },
+        {
+          "en": "Yes, they dance at every festival.",
+          "tr": "Evet, her festivalde dans ederler."
+        },
+        {
+          "en": "It's a beautiful custom.",
+          "tr": "Bu güzel bir âdet."
+        },
+        {
+          "en": "Yes, it is very popular there.",
+          "tr": "Evet, orada çok popülerdir."
+        }
+      ]
+    },
+    {
+      "id": "b1-culture-5",
+      "title": "Eleştiri",
+      "names": [],
+      "lines": [
+        {
+          "en": "I read a review of that film.",
+          "tr": "Şu filmin bir incelemesini okudum."
+        },
+        {
+          "en": "Can you recommend it?",
+          "tr": "Önerebilir misin?"
+        },
+        {
+          "en": "The first scene is great.",
+          "tr": "İlk sahne harika."
+        },
+        {
+          "en": "But what about the ending?",
+          "tr": "Peki ya sonu?"
+        },
+        {
+          "en": "The ending is very bad.",
+          "tr": "Sonu çok kötü."
+        },
+        {
+          "en": "Then it's not my cup of tea.",
+          "tr": "O zaman bana göre değil."
+        }
+      ]
+    }
+  ]
+}

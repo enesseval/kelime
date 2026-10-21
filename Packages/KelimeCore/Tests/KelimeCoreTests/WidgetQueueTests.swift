@@ -130,7 +130,7 @@ struct WidgetQueueTests {
     @Test func strugglingCardsShowUpMoreOften() throws {
         let db = try makeDatabase(Preferences(rotationInterval: .thirtyMinutes, isPro: true))
         let struggling = try db.writer.write { db -> Set<String> in
-            let ids = try String.fetchAll(db, sql: "SELECT id FROM card WHERE level = 'B1' ORDER BY id LIMIT 10")
+            let ids = try String.fetchAll(db, sql: "SELECT card_id FROM unit_card WHERE unit_id IN ('a2-core', 'b1-core') ORDER BY card_id LIMIT 10")
             for id in ids { try CardState(cardID: id, state: .struggling).insert(db) }
             return Set(ids)
         }
@@ -141,7 +141,7 @@ struct WidgetQueueTests {
                 if struggling.contains(e.cardID) { hits += 1 }
             }
         }
-        // 10 of 119 free cards (A2 core and B1) carry weight 3: about 25% of slots instead of 9%.
+        // 10 of 109 free cards (the A2 and B1 cores) carry weight 3: about 25% of slots instead of 9%.
         let share = Double(hits) / Double(total)
         #expect(share > 0.15)
     }

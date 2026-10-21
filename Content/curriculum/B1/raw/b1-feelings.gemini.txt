@@ -1,0 +1,572 @@
+{
+"id": "b1-feelings",
+"level": "B1",
+"title": "Duygular ve ilişkiler",
+"placement": "any",
+"goal": "Duygularını ve nedenlerini anlatır, bir tartışmayı ve barışmayı anlatır, özür diler, birine destek olur.",
+"words": [
+{
+"id": "b1-proud",
+"word": "proud",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"gururlu"
+],
+"example_en": "I am very proud of my daughter.",
+"example_tr": "Kızımla çok gurur duyuyorum."
+}
+],
+"note": ""
+},
+{
+"id": "b1-confident",
+"word": "confident",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kendinden emin"
+],
+"example_en": "She is a very confident manager.",
+"example_tr": "O çok kendinden emin bir yönetici."
+}
+],
+"note": ""
+},
+{
+"id": "b1-embarrassed",
+"word": "embarrassed",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"utanmış"
+],
+"example_en": "I felt very embarrassed yesterday.",
+"example_tr": "Dün çok utanmış hissettim."
+}
+],
+"note": ""
+},
+{
+"id": "b1-nervous",
+"word": "nervous",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"gergin",
+"heyecanlı"
+],
+"example_en": "Are you nervous about the exam?",
+"example_tr": "Sınav için gergin misin?"
+}
+],
+"note": "Olumsuz anlamda heyecan veya stres için sıkça kullanılır."
+},
+{
+"id": "b1-disappointed",
+"word": "disappointed",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"hayal kırıklığına uğramış"
+],
+"example_en": "We were disappointed with the hotel.",
+"example_tr": "Otelden hayal kırıklığına uğradık."
+}
+],
+"note": ""
+},
+{
+"id": "b1-jealous",
+"word": "jealous",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kıskanç"
+],
+"example_en": "He is a very jealous husband.",
+"example_tr": "O çok kıskanç bir koca."
+}
+],
+"note": ""
+},
+{
+"id": "b1-lonely",
+"word": "lonely",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"yalnız"
+],
+"example_en": "I feel lonely when you travel.",
+"example_tr": "Sen seyahat ettiğinde yalnız hissediyorum."
+}
+],
+"note": "Fiziksel tek başınalıktan ziyade duygusal yalnızlığı ifade eder."
+},
+{
+"id": "b1-upset",
+"word": "upset",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"üzgün",
+"keyfi kaçık"
+],
+"example_en": "Why is your brother so upset?",
+"example_tr": "Kardeşin neden bu kadar üzgün?"
+}
+],
+"note": ""
+},
+{
+"id": "b1-relaxed",
+"word": "relaxed",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"rahatlamış",
+"rahat"
+],
+"example_en": "I feel relaxed after a shower.",
+"example_tr": "Duştan sonra rahatlamış hissediyorum."
+}
+],
+"note": ""
+},
+{
+"id": "b1-curious",
+"word": "curious",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"meraklı"
+],
+"example_en": "I was curious about their decision.",
+"example_tr": "Kararlarını merak ediyordum."
+}
+],
+"note": ""
+},
+{
+"id": "b1-honest",
+"word": "honest",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"dürüst"
+],
+"example_en": "I expect you to be honest.",
+"example_tr": "Dürüst olmanı bekliyorum."
+}
+],
+"note": "Okunuşunda 'h' harfi sessizdir (onıst)."
+},
+{
+"id": "b1-patient",
+"word": "patient",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"sabırlı"
+],
+"example_en": "You must be patient with children.",
+"example_tr": "Çocuklara karşı sabırlı olmalısın."
+},
+{
+"pos": "n",
+"tr": [
+"hasta"
+],
+"example_en": "The doctor saw five patients.",
+"example_tr": "Doktor beş hastayı gördü."
+}
+],
+"note": ""
+},
+{
+"id": "b1-trust",
+"word": "trust",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"güvenmek"
+],
+"example_en": "I don't trust him.",
+"example_tr": "Ona güvenmiyorum."
+},
+{
+"pos": "n",
+"tr": [
+"güven"
+],
+"example_en": "Trust is important in a relationship.",
+"example_tr": "İlişkide güven önemlidir."
+}
+],
+"note": ""
+},
+{
+"id": "b1-argue",
+"word": "argue",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"tartışmak",
+"kavga etmek"
+],
+"example_en": "They always argue about money.",
+"example_tr": "Hep para hakkında tartışırlar."
+}
+],
+"note": ""
+},
+{
+"id": "b1-argument",
+"word": "argument",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tartışma"
+],
+"example_en": "We had a bad argument yesterday.",
+"example_tr": "Dün kötü bir tartışma yaşadık."
+}
+],
+"note": ""
+},
+{
+"id": "b1-apologize",
+"word": "apologize",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"özür dilemek"
+],
+"example_en": "I apologize for my mistake.",
+"example_tr": "Hatam için özür dilerim."
+}
+],
+"note": ""
+},
+{
+"id": "b1-forgive",
+"word": "forgive",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"affetmek"
+],
+"example_en": "I hope she will forgive me.",
+"example_tr": "Umarım beni affeder."
+}
+],
+"note": "Düzensiz fiil: forgive - forgave - forgiven."
+},
+{
+"id": "b1-support",
+"word": "support",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"desteklemek"
+],
+"example_en": "My friends always support me.",
+"example_tr": "Arkadaşlarım beni hep destekler."
+},
+{
+"pos": "n",
+"tr": [
+"destek"
+],
+"example_en": "Thank you for your support.",
+"example_tr": "Desteğiniz için teşekkürler."
+}
+],
+"note": ""
+},
+{
+"id": "b1-respect",
+"word": "respect",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"saygı duymak"
+],
+"example_en": "You should respect their decision.",
+"example_tr": "Kararlarına saygı duymalısın."
+}
+],
+"note": ""
+},
+{
+"id": "b1-encourage",
+"word": "encourage",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"cesaretlendirmek"
+],
+"example_en": "Good teachers encourage students.",
+"example_tr": "İyi öğretmenler öğrencileri cesaretlendirir."
+}
+],
+"note": ""
+},
+{
+"id": "b1-mood",
+"word": "mood",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ruh hali"
+],
+"example_en": "I am in a bad mood today.",
+"example_tr": "Bugün kötü bir ruh halindeyim."
+}
+],
+"note": ""
+},
+{
+"id": "b1-attitude",
+"word": "attitude",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tavır",
+"tutum"
+],
+"example_en": "I don't like his rude attitude.",
+"example_tr": "Onun kaba tavrını sevmiyorum."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "b1-p-fed-up",
+"text": "I'm fed up with…",
+"tr": "…den bıktım.",
+"example_en": "I'm fed up with this weather!",
+"example_tr": "Bu havadan bıktım!",
+"note": ""
+},
+{
+"id": "b1-p-look-forward",
+"text": "I'm looking forward to…",
+"tr": "…dört gözle bekliyorum.",
+"example_en": "I'm looking forward to the holiday.",
+"example_tr": "Tatili dört gözle bekliyorum.",
+"note": ""
+},
+{
+"id": "b1-p-never-mind",
+"text": "Never mind.",
+"tr": "Boş ver. / Önemli değil.",
+"example_en": "I forgot your book. – Never mind.",
+"example_tr": "Kitabını unuttum. – Boş ver.",
+"note": ""
+},
+{
+"id": "b1-p-didnt-mean",
+"text": "I didn't mean to…",
+"tr": "Amacım … değildi.",
+"example_en": "I didn't mean to hurt you.",
+"example_tr": "Seni kırmak istememiştim.",
+"note": ""
+},
+{
+"id": "b1-p-not-fault",
+"text": "It's not your fault.",
+"tr": "Senin suçun değil.",
+"example_en": "We lost the game. – It's not your fault.",
+"example_tr": "Oyunu kaybettik. – Senin suçun değil.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "b1-feelings-1",
+"title": "Tartışma",
+"names": [
+"Zeynep",
+"Ali"
+],
+"lines": [
+{
+"en": "Zeynep and Ali had an argument yesterday.",
+"tr": "Zeynep ve Ali dün tartıştılar."
+},
+{
+"en": "Ali is in a very bad mood today.",
+"tr": "Ali bugün çok kötü bir ruh halinde."
+},
+{
+"en": "I'm fed up with his rude attitude.",
+"tr": "Onun kaba tavrından bıktım."
+},
+{
+"en": "He never listens to my opinions!",
+"tr": "Benim fikirlerimi hiç dinlemiyor!"
+},
+{
+"en": "You should be patient and talk to him later.",
+"tr": "Sabırlı olmalı ve onunla daha sonra konuşmalısın."
+}
+]
+},
+{
+"id": "b1-feelings-2",
+"title": "Özür dilemek",
+"names": [
+"Mert",
+"Leyla"
+],
+"lines": [
+{
+"en": "Mert was very upset about the meeting.",
+"tr": "Mert toplantı hakkında çok üzgündü."
+},
+{
+"en": "I apologize, Leyla. I didn't mean to be rude.",
+"tr": "Özür dilerim, Leyla. Kaba olmak istememiştim."
+},
+{
+"en": "I was just nervous about the interview.",
+"tr": "Sadece mülakat için gergindim."
+},
+{
+"en": "Never mind. I know you respect me.",
+"tr": "Boş ver. Bana saygı duyduğunu biliyorum."
+},
+{
+"en": "I hope you can forgive me.",
+"tr": "Umarım beni affedebilirsin."
+},
+{
+"en": "Yes. We always support each other.",
+"tr": "Evet. Birbirimizi her zaman destekleriz."
+}
+]
+},
+{
+"id": "b1-feelings-3",
+"title": "Sınav stresi",
+"names": [
+"Ayşe"
+],
+"lines": [
+{
+"en": "Ayşe is taking an important exam tomorrow.",
+"tr": "Ayşe yarın önemli bir sınava giriyor."
+},
+{
+"en": "I'm worried I will fail.",
+"tr": "Başarısız olacağımdan endişeleniyorum."
+},
+{
+"en": "Don't be disappointed before you try!",
+"tr": "Denemeden hayal kırıklığına uğrama!"
+},
+{
+"en": "I encourage you to be confident.",
+"tr": "Kendinden emin olmanı teşvik ediyorum."
+},
+{
+"en": "I am already proud of you.",
+"tr": "Seninle şimdiden gurur duyuyorum."
+},
+{
+"en": "I feel better now. I'm looking forward to the weekend!",
+"tr": "Şimdi daha iyi hissediyorum. Hafta sonunu dört gözle bekliyorum!"
+}
+]
+},
+{
+"id": "b1-feelings-4",
+"title": "Güven problemi",
+"names": [
+"David",
+"Sarah"
+],
+"lines": [
+{
+"en": "Sarah and David had a beautiful relationship.",
+"tr": "Sarah ve David'in güzel bir ilişkisi vardı."
+},
+{
+"en": "But David was always very jealous.",
+"tr": "Ama David hep çok kıskançtı."
+},
+{
+"en": "To be honest, I don't trust you.",
+"tr": "Dürüst olmak gerekirse, sana güvenmiyorum."
+},
+{
+"en": "Now David is single and feels lonely.",
+"tr": "Şimdi David bekar ve yalnız hissediyor."
+},
+{
+"en": "It's not your fault, Sarah. He was too jealous.",
+"tr": "Senin suçun değil, Sarah. O çok kıskançtı."
+}
+]
+},
+{
+"id": "b1-feelings-5",
+"title": "Rahatlama zamanı",
+"names": [
+"Cem"
+],
+"lines": [
+{
+"en": "Cem is usually very busy.",
+"tr": "Cem genelde çok meşguldür."
+},
+{
+"en": "Recently, he looks very relaxed.",
+"tr": "Son zamanlarda çok rahatlamış görünüyor."
+},
+{
+"en": "I am curious about his new attitude.",
+"tr": "Yeni tavrını merak ediyorum."
+},
+{
+"en": "I realized that I need to rest.",
+"tr": "Dinlenmem gerektiğini fark ettim."
+},
+{
+"en": "I sleep eight hours every night.",
+"tr": "Her gece sekiz saat uyuyorum."
+},
+{
+"en": "That makes sense. I should do the same.",
+"tr": "Mantıklı. Ben de aynısını yapmalıyım."
+}
+]
+}
+]
+}

@@ -1,0 +1,560 @@
+{
+"id": "b1-environment",
+"level": "B1",
+"title": "Çevre",
+"placement": "any",
+"goal": "Çevre sorunlarını ve nedenlerini anlatır, ne yapılabileceğini önerir, doğal afetler hakkında konuşur.",
+"words": [
+{
+"id": "b1-environment",
+"word": "environment",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"çevre"
+],
+"example_en": "We must protect the environment.",
+"example_tr": "Çevreyi korumalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b1-pollution",
+"word": "pollution",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"kirlilik"
+],
+"example_en": "Pollution is bad for the planet.",
+"example_tr": "Kirlilik gezegen için kötü."
+}
+],
+"note": ""
+},
+{
+"id": "b1-climate",
+"word": "climate",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"iklim"
+],
+"example_en": "The climate is changing fast.",
+"example_tr": "İklim hızla değişiyor."
+}
+],
+"note": ""
+},
+{
+"id": "b1-recycle",
+"word": "recycle",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"geri dönüştürmek"
+],
+"example_en": "We should recycle plastic.",
+"example_tr": "Plastiği geri dönüştürmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "b1-protect",
+"word": "protect",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"korumak"
+],
+"example_en": "We need to protect nature.",
+"example_tr": "Doğayı korumamız gerekiyor."
+}
+],
+"note": ""
+},
+{
+"id": "b1-reduce",
+"word": "reduce",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"azaltmak"
+],
+"example_en": "We must reduce plastic use.",
+"example_tr": "Plastik kullanımını azaltmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b1-energy",
+"word": "energy",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"enerji"
+],
+"example_en": "We use a lot of energy.",
+"example_tr": "Çok fazla enerji kullanıyoruz."
+}
+],
+"note": ""
+},
+{
+"id": "b1-plastic",
+"word": "plastic",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"plastik"
+],
+"example_en": "Plastic is bad for the planet.",
+"example_tr": "Plastik gezegen için kötü."
+}
+],
+"note": ""
+},
+{
+"id": "b1-nature",
+"word": "nature",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"doğa"
+],
+"example_en": "I love walking in nature.",
+"example_tr": "Doğada yürüyüş yapmayı severim."
+}
+],
+"note": ""
+},
+{
+"id": "b1-wildlife",
+"word": "wildlife",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yaban hayatı"
+],
+"example_en": "Pollution is destroying wildlife.",
+"example_tr": "Kirlilik yaban hayatını yok ediyor."
+}
+],
+"note": ""
+},
+{
+"id": "b1-global",
+"word": "global",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"küresel"
+],
+"example_en": "Pollution is a global problem.",
+"example_tr": "Kirlilik küresel bir sorun."
+}
+],
+"note": ""
+},
+{
+"id": "b1-destroy",
+"word": "destroy",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"yok etmek",
+"yıkmak"
+],
+"example_en": "Storms destroy houses.",
+"example_tr": "Fırtınalar evleri yıkıyor."
+}
+],
+"note": ""
+},
+{
+"id": "b1-damage",
+"word": "damage",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"zarar vermek"
+],
+"example_en": "Earthquakes damage cities.",
+"example_tr": "Depremler şehirlere zarar verir."
+},
+{
+"pos": "n",
+"tr": [
+"hasar",
+"zarar"
+],
+"example_en": "The storm caused a lot of damage.",
+"example_tr": "Fırtına büyük hasara neden oldu."
+}
+],
+"note": ""
+},
+{
+"id": "b1-flood",
+"word": "flood",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sel"
+],
+"example_en": "The rain caused a big flood.",
+"example_tr": "Yağmur büyük bir sele neden oldu."
+}
+],
+"note": ""
+},
+{
+"id": "b1-earthquake",
+"word": "earthquake",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"deprem"
+],
+"example_en": "Did you feel the earthquake?",
+"example_tr": "Depremi hissettin mi?"
+}
+],
+"note": ""
+},
+{
+"id": "b1-disaster",
+"word": "disaster",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"felaket"
+],
+"example_en": "The flood was a big disaster.",
+"example_tr": "Sel büyük bir felaketti."
+}
+],
+"note": ""
+},
+{
+"id": "b1-planet",
+"word": "planet",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"gezegen"
+],
+"example_en": "We only have one planet.",
+"example_tr": "Sadece bir gezegenimiz var."
+}
+],
+"note": ""
+},
+{
+"id": "b1-rescue",
+"word": "rescue",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"kurtarmak"
+],
+"example_en": "They rescue animals after a storm.",
+"example_tr": "Fırtınadan sonra hayvanları kurtarıyorlar."
+}
+],
+"note": ""
+},
+{
+"id": "b1-species",
+"word": "species",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tür"
+],
+"example_en": "We must protect this bird species.",
+"example_tr": "Bu kuş türünü korumalıyız."
+}
+],
+"note": "Tekil ve çoğul hali aynıdır (species)."
+},
+{
+"id": "b1-solution",
+"word": "solution",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"çözüm"
+],
+"example_en": "We need a solution to this problem.",
+"example_tr": "Bu soruna bir çözüm bulmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b1-cause",
+"word": "cause",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"neden",
+"sebep"
+],
+"example_en": "What is the cause of the flood?",
+"example_tr": "Selin nedeni nedir?"
+},
+{
+"pos": "v",
+"tr": [
+"neden olmak"
+],
+"example_en": "Pollution causes problems.",
+"example_tr": "Kirlilik sorunlara neden olur."
+}
+],
+"note": ""
+},
+{
+"id": "b1-effect",
+"word": "effect",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"etki"
+],
+"example_en": "What is the effect on the climate?",
+"example_tr": "İklime etkisi nedir?"
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "b1-p-we-should",
+"text": "We should…",
+"tr": "…-malıyız / …-meliyiz",
+"example_en": "We should protect wildlife.",
+"example_tr": "Yaban hayatını korumalıyız.",
+"note": ""
+},
+{
+"id": "b1-p-bad-for-planet",
+"text": "It's bad for the planet.",
+"tr": "Gezegen için kötü.",
+"example_en": "Don't use it. It's bad for the planet.",
+"example_tr": "Kullanma. Gezegen için kötü.",
+"note": ""
+},
+{
+"id": "b1-p-what-can-we-do",
+"text": "What can we do about…?",
+"tr": "…hakkında ne yapabiliriz?",
+"example_en": "What can we do about pollution?",
+"example_tr": "Kirlilik hakkında ne yapabiliriz?",
+"note": ""
+},
+{
+"id": "b1-p-if-we-dont",
+"text": "If we don't…",
+"tr": "Eğer …-mazsak",
+"example_en": "If we don't help, it will get worse.",
+"example_tr": "Yardım etmezsek, daha kötü olacak.",
+"note": ""
+},
+{
+"id": "b1-p-every-little-helps",
+"text": "Every little helps.",
+"tr": "Her küçük şeyin faydası olur.",
+"example_en": "We should recycle. Every little helps.",
+"example_tr": "Geri dönüştürmeliyiz. Her küçük şeyin faydası olur.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "b1-environment-1",
+"title": "Deprem Gecesi",
+"names": [
+"Ozan",
+"Ayşe"
+],
+"lines": [
+{
+"en": "Ozan and Ayşe talk about the news.",
+"tr": "Ozan ve Ayşe haberler hakkında konuşuyor."
+},
+{
+"en": "Did you feel the earthquake last night?",
+"tr": "Dün geceki depremi hissettin mi?"
+},
+{
+"en": "Yes, I was really afraid.",
+"tr": "Evet, gerçekten çok korktum."
+},
+{
+"en": "Was there any damage?",
+"tr": "Herhangi bir hasar var mıydı?"
+},
+{
+"en": "Luckily, no. Our house is fine.",
+"tr": "Çok şükür, hayır. Evimiz iyi durumda."
+},
+{
+"en": "Earthquakes are a big disaster.",
+"tr": "Depremler büyük bir felaket."
+}
+]
+},
+{
+"id": "b1-environment-2",
+"title": "Plastik Sorunu",
+"names": [
+"Zeynep",
+"Emre"
+],
+"lines": [
+{
+"en": "What can we do about plastic pollution?",
+"tr": "Plastik kirliliği hakkında ne yapabiliriz?"
+},
+{
+"en": "We should recycle more.",
+"tr": "Daha fazla geri dönüştürmeliyiz."
+},
+{
+"en": "I agree with you. It's bad for the planet.",
+"tr": "Sana katılıyorum. Gezegen için kötü."
+},
+{
+"en": "I only use glass bottles now.",
+"tr": "Artık sadece cam şişe kullanıyorum."
+},
+{
+"en": "That makes sense. Every little helps.",
+"tr": "Bu mantıklı. Her küçük şeyin faydası olur."
+}
+]
+},
+{
+"id": "b1-environment-3",
+"title": "Değişen İklim",
+"names": [
+"Mert",
+"Aslı"
+],
+"lines": [
+{
+"en": "The weather is very strange recently.",
+"tr": "Son zamanlarda hava çok tuhaf."
+},
+{
+"en": "Yes, the climate is really changing.",
+"tr": "Evet, iklim gerçekten değişiyor."
+},
+{
+"en": "What is the cause?",
+"tr": "Nedeni ne?"
+},
+{
+"en": "We use too much energy and destroy nature.",
+"tr": "Çok fazla enerji kullanıyoruz ve doğayı yok ediyoruz."
+},
+{
+"en": "If we don't stop, the effect will be worse.",
+"tr": "Eğer durmazsak, etkisi daha kötü olacak."
+}
+]
+},
+{
+"id": "b1-environment-4",
+"title": "Yaban Hayatı",
+"names": [
+"Leyla",
+"Kaan"
+],
+"lines": [
+{
+"en": "Look at this bird! It is ill.",
+"tr": "Şu kuşa bak! Hasta."
+},
+{
+"en": "We must rescue it!",
+"tr": "Onu kurtarmalıyız!"
+},
+{
+"en": "Is it a strange species?",
+"tr": "Garip bir tür mü?"
+},
+{
+"en": "I don't know, but we should protect wildlife.",
+"tr": "Bilmiyorum ama yaban hayatını korumalıyız."
+},
+{
+"en": "Let's take it to an animal hospital.",
+"tr": "Onu bir hayvan hastanesine götürelim."
+}
+]
+},
+{
+"id": "b1-environment-5",
+"title": "Doğal Afetler",
+"names": [
+"Ali",
+"Fatma"
+],
+"lines": [
+{
+"en": "Did you see the news about the flood?",
+"tr": "Sel hakkındaki haberleri gördün mü?"
+},
+{
+"en": "Yes, it was a bad disaster.",
+"tr": "Evet, kötü bir felaketti."
+},
+{
+"en": "It is a global problem now.",
+"tr": "Artık küresel bir sorun."
+},
+{
+"en": "We need a solution.",
+"tr": "Bir çözüme ihtiyacımız var."
+},
+{
+"en": "In my opinion, we must reduce plastic.",
+"tr": "Bence plastiği azaltmalıyız."
+},
+{
+"en": "Yes, we need to protect our environment.",
+"tr": "Evet, çevremizi korumamız gerekiyor."
+}
+]
+}
+]
+}

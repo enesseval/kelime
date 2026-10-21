@@ -1,0 +1,619 @@
+{
+  "id": "b1-money",
+  "level": "B1",
+  "title": "Para",
+  "placement": "any",
+  "goal": "Bütçesini anlatır, indirim ve iade ister, bir üründen şikâyet eder, para biriktirme ve harcama üzerine konuşur.",
+  "words": [
+    {
+      "id": "b1-afford",
+      "word": "afford",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "parası yetmek",
+            "gücü yetmek"
+          ],
+          "example_en": "I can't afford a new car.",
+          "example_tr": "Yeni bir araba almaya gücüm yetmez."
+        }
+      ],
+      "note": "Genellikle 'can', 'could' veya 'be able to' ile kullanılır."
+    },
+    {
+      "id": "b1-budget",
+      "word": "budget",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bütçe"
+          ],
+          "example_en": "My budget is very small.",
+          "example_tr": "Bütçem çok dar."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "bütçe yapmak"
+          ],
+          "example_en": "We need to budget our money.",
+          "example_tr": "Bütçe yapmamız lazım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-save",
+      "word": "save",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "biriktirmek",
+            "tasarruf etmek"
+          ],
+          "example_en": "I want to save money for a holiday.",
+          "example_tr": "Tatil için para biriktirmek istiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-spend",
+      "word": "spend",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "harcamak"
+          ],
+          "example_en": "Don't spend all your money today.",
+          "example_tr": "Bugün bütün paranı harcama."
+        }
+      ],
+      "note": "Zaman harcamak/geçirmek anlamı da vardır."
+    },
+    {
+      "id": "b1-bargain",
+      "word": "bargain",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kelepir",
+            "ucuz mal"
+          ],
+          "example_en": "This shirt is a great bargain.",
+          "example_tr": "Bu gömlek tam kelepir."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "pazarlık yapmak"
+          ],
+          "example_en": "You can bargain at the market.",
+          "example_tr": "Pazarda pazarlık yapabilirsin."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-discount",
+      "word": "discount",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "indirim"
+          ],
+          "example_en": "Is there a discount for students?",
+          "example_tr": "Öğrenciler için indirim var mı?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-refund",
+      "word": "refund",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "para iadesi"
+          ],
+          "example_en": "I want a refund for this bag.",
+          "example_tr": "Bu çanta için para iadesi istiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-receipt",
+      "word": "receipt",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "fiş",
+            "makbuz"
+          ],
+          "example_en": "Do you have the receipt?",
+          "example_tr": "Fişiniz var mı?"
+        }
+      ],
+      "note": "Okunurken 'p' harfi söylenmez (risit)."
+    },
+    {
+      "id": "b1-complain",
+      "word": "complain",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "şikâyet etmek"
+          ],
+          "example_en": "I want to complain about the food.",
+          "example_tr": "Yemek hakkında şikâyet etmek istiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-complaint",
+      "word": "complaint",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "şikâyet"
+          ],
+          "example_en": "I have a complaint about this hotel.",
+          "example_tr": "Bu otel hakkında bir şikâyetim var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-quality",
+      "word": "quality",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kalite"
+          ],
+          "example_en": "The quality of these shoes is bad.",
+          "example_tr": "Bu ayakkabıların kalitesi kötü."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-offer",
+      "word": "offer",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "teklif etmek",
+            "sunmak"
+          ],
+          "example_en": "They offer a good price.",
+          "example_tr": "İyi bir fiyat sunuyorlar."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "teklif"
+          ],
+          "example_en": "That is a great offer.",
+          "example_tr": "Bu harika bir teklif."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-deliver",
+      "word": "deliver",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "teslim etmek"
+          ],
+          "example_en": "Can you deliver it tomorrow?",
+          "example_tr": "Yarın teslim edebilir misiniz?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-delivery",
+      "word": "delivery",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "teslimat"
+          ],
+          "example_en": "The delivery is late.",
+          "example_tr": "Teslimat gecikti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-cash",
+      "word": "cash",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "nakit"
+          ],
+          "example_en": "I don't have any cash.",
+          "example_tr": "Hiç nakdim yok."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-loan",
+      "word": "loan",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kredi",
+            "borç"
+          ],
+          "example_en": "I need a loan from the bank.",
+          "example_tr": "Bankadan krediye ihtiyacım var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-owe",
+      "word": "owe",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "borçlu olmak"
+          ],
+          "example_en": "You owe me money.",
+          "example_tr": "Bana borcun var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-waste",
+      "word": "waste",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "boşa harcamak",
+            "israf etmek"
+          ],
+          "example_en": "Don't waste your time.",
+          "example_tr": "Zamanını boşa harcama."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "israf"
+          ],
+          "example_en": "This is a waste of food.",
+          "example_tr": "Bu yiyecek israfı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-worth",
+      "word": "worth",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "değer"
+          ],
+          "example_en": "Is it worth the price?",
+          "example_tr": "Bu fiyata değer mi?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-value",
+      "word": "value",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "değer"
+          ],
+          "example_en": "It has great value.",
+          "example_tr": "Büyük değeri var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-debt",
+      "word": "debt",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "borç"
+          ],
+          "example_en": "He has a lot of debt.",
+          "example_tr": "Çok borcu var."
+        }
+      ],
+      "note": "Okunurken 'b' harfi söylenmez (det)."
+    },
+    {
+      "id": "b1-rich",
+      "word": "rich",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "zengin"
+          ],
+          "example_en": "Her family is very rich.",
+          "example_tr": "Ailesi çok zengin."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-poor",
+      "word": "poor",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "fakir",
+            "yoksul"
+          ],
+          "example_en": "They were poor when they were young.",
+          "example_tr": "Gençken fakirdiler."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b1-p-get-refund",
+      "text": "Can I get a refund?",
+      "tr": "İade alabilir miyim?",
+      "example_en": "Can I get a refund? – Do you have the receipt?",
+      "example_tr": "İade alabilir miyim? – Fişiniz var mı?",
+      "note": ""
+    },
+    {
+      "id": "b1-p-on-sale",
+      "text": "It's on sale.",
+      "tr": "İndirimde.",
+      "example_en": "Is this expensive? – No, it's on sale.",
+      "example_tr": "Bu pahalı mı? – Hayır, indirimde.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-cant-afford",
+      "text": "I can't afford it.",
+      "tr": "Buna gücüm yetmez.",
+      "example_en": "I can't afford it. It's too expensive.",
+      "example_tr": "Buna gücüm yetmez. Çok pahalı.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-not-worth",
+      "text": "It's not worth it.",
+      "tr": "Buna değmez.",
+      "example_en": "It's not worth it. The quality is bad.",
+      "example_tr": "Buna değmez. Kalitesi kötü.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-waste-money",
+      "text": "It's a waste of money.",
+      "tr": "Para israfı.",
+      "example_en": "Don't buy that. It's a waste of money.",
+      "example_tr": "Onu alma. Para israfı.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b1-money-1",
+      "title": "Kötü Bir Bilgisayar",
+      "names": [
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep wants to complain about her new computer.",
+          "tr": "Zeynep yeni bilgisayarı hakkında şikâyet etmek istiyor."
+        },
+        {
+          "en": "The quality is very bad. I have a complaint.",
+          "tr": "Kalitesi çok kötü. Bir şikâyetim var."
+        },
+        {
+          "en": "Can I get a refund, please?",
+          "tr": "İade alabilir miyim, lütfen?"
+        },
+        {
+          "en": "Do you have the receipt?",
+          "tr": "Fişiniz var mı?"
+        },
+        {
+          "en": "Yes, here it is.",
+          "tr": "Evet, buyurun."
+        },
+        {
+          "en": "We can offer a new computer instead.",
+          "tr": "Bunun yerine yeni bir bilgisayar sunabiliriz."
+        },
+        {
+          "en": "No, it's not worth it. I want my money back.",
+          "tr": "Hayır, değmez. Paramı geri istiyorum."
+        }
+      ]
+    },
+    {
+      "id": "b1-money-2",
+      "title": "Pazarda",
+      "names": [
+        "Ahmet",
+        "John"
+      ],
+      "lines": [
+        {
+          "en": "John and Ahmet are at a market.",
+          "tr": "John ve Ahmet bir pazardalar."
+        },
+        {
+          "en": "I like this bag, but it's expensive.",
+          "tr": "Bu çantayı sevdim ama pahalı."
+        },
+        {
+          "en": "You can bargain here. Ask for a discount.",
+          "tr": "Burada pazarlık yapabilirsin. İndirim iste."
+        },
+        {
+          "en": "Is there a discount? I can't afford it.",
+          "tr": "İndirim var mı? Buna gücüm yetmez."
+        },
+        {
+          "en": "Yes, it's on sale today. It's a bargain.",
+          "tr": "Evet, bugün indirimde. Tam kelepir."
+        },
+        {
+          "en": "Great! Do you accept cash?",
+          "tr": "Harika! Nakit kabul ediyor musunuz?"
+        },
+        {
+          "en": "Yes. But we don't deliver.",
+          "tr": "Evet. Ama teslimat yapmıyoruz."
+        }
+      ]
+    },
+    {
+      "id": "b1-money-3",
+      "title": "Banka Kredisi",
+      "names": [
+        "Ali",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Ali lives in London. He has a lot of debt.",
+          "tr": "Ali Londra'da yaşıyor. Çok borcu var."
+        },
+        {
+          "en": "I owe the bank a lot of money.",
+          "tr": "Bankaya çok para borçluyum."
+        },
+        {
+          "en": "Are you poor? You work very hard.",
+          "tr": "Fakir misin? Çok sıkı çalışıyorsun."
+        },
+        {
+          "en": "I'm not rich. I spend too much.",
+          "tr": "Zengin değilim. Çok harcıyorum."
+        },
+        {
+          "en": "You must save money and plan your budget.",
+          "tr": "Para biriktirmeli ve bütçeni planlamalısın."
+        },
+        {
+          "en": "That makes sense. Buying expensive shoes is a waste of money.",
+          "tr": "Mantıklı. Pahalı ayakkabılar almak para israfı."
+        }
+      ]
+    },
+    {
+      "id": "b1-money-4",
+      "title": "Yeni Araba",
+      "names": [
+        "Ayşe",
+        "Emre"
+      ],
+      "lines": [
+        {
+          "en": "Emre wants to buy a car. Ayşe doesn't agree.",
+          "tr": "Emre araba almak istiyor. Ayşe aynı fikirde değil."
+        },
+        {
+          "en": "We can get a loan from the bank.",
+          "tr": "Bankadan kredi alabiliriz."
+        },
+        {
+          "en": "I'm not sure about that. We can't afford it.",
+          "tr": "Ondan emin değilim. Gücümüz yetmez."
+        },
+        {
+          "en": "But the car has great value. It's a good offer.",
+          "tr": "Ama arabanın değeri büyük. İyi bir teklif."
+        },
+        {
+          "en": "In my opinion, taking a big loan is dangerous.",
+          "tr": "Bence büyük bir kredi çekmek tehlikeli."
+        },
+        {
+          "en": "You are right. Let's save money first.",
+          "tr": "Haklısın. Önce para biriktirelim."
+        }
+      ]
+    },
+    {
+      "id": "b1-money-5",
+      "title": "Kötü Teslimat",
+      "names": [
+        "Fatma",
+        "Turkey"
+      ],
+      "lines": [
+        {
+          "en": "Fatma is in Turkey. She orders a dress online.",
+          "tr": "Fatma Türkiye'de. İnternetten bir elbise sipariş ediyor."
+        },
+        {
+          "en": "The delivery is very late. I'm angry.",
+          "tr": "Teslimat çok gecikti. Kızgınım."
+        },
+        {
+          "en": "When did they deliver it?",
+          "tr": "Ne zaman teslim ettiler?"
+        },
+        {
+          "en": "Yesterday. But the dress is too small.",
+          "tr": "Dün. Ama elbise çok küçük."
+        },
+        {
+          "en": "It's a waste of money. Complain about it.",
+          "tr": "Para israfı. Şikâyet et."
+        },
+        {
+          "en": "I will. Can I get a refund?",
+          "tr": "Edeceğim. İade alabilir miyim?"
+        },
+        {
+          "en": "Yes, if you have the receipt.",
+          "tr": "Evet, fişin varsa."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+{
+  "id": "b1-media",
+  "level": "B1",
+  "title": "Medya ve haberler",
+  "placement": "any",
+  "goal": "Bir haberi ya da paylaşımı anlatır, kaynağın güvenilir olup olmadığını tartışır, sosyal medya alışkanlıklarını anlatır.",
+  "words": [
+    {
+      "id": "b1-article",
+      "word": "article",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "makale",
+            "yazı"
+          ],
+          "example_en": "I recently read a good article.",
+          "example_tr": "Geçenlerde iyi bir makale okudum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-journalist",
+      "word": "journalist",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gazeteci"
+          ],
+          "example_en": "The journalist works for a big company.",
+          "example_tr": "Gazeteci büyük bir şirket için çalışıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-advertisement",
+      "word": "advertisement",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "reklam"
+          ],
+          "example_en": "I saw an advertisement for a new app.",
+          "example_tr": "Yeni bir uygulamanın reklamını gördüm."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-post",
+      "word": "post",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gönderi",
+            "paylaşım"
+          ],
+          "example_en": "Did you see her new post?",
+          "example_tr": "Onun yeni gönderisini gördün mü?"
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "paylaşmak",
+            "yazmak"
+          ],
+          "example_en": "I usually post photos online.",
+          "example_tr": "İnternette genelde fotoğraf paylaşırım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-comment",
+      "word": "comment",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yorum"
+          ],
+          "example_en": "He left a bad comment.",
+          "example_tr": "Kötü bir yorum bıraktı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-share",
+      "word": "share",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "paylaşmak"
+          ],
+          "example_en": "Can you share this photo with me?",
+          "example_tr": "Bu fotoğrafı benimle paylaşabilir misin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-channel",
+      "word": "channel",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kanal"
+          ],
+          "example_en": "Which channel is the game on?",
+          "example_tr": "Maç hangi kanalda?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-programme",
+      "word": "programme",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "program"
+          ],
+          "example_en": "I always watch this programme.",
+          "example_tr": "Bu programı her zaman izlerim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-documentary",
+      "word": "documentary",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "belgesel"
+          ],
+          "example_en": "We watched a documentary about animals.",
+          "example_tr": "Hayvanlar hakkında bir belgesel izledik."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-accurate",
+      "word": "accurate",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "doğru",
+            "kesin"
+          ],
+          "example_en": "Is this news accurate?",
+          "example_tr": "Bu haber doğru mu?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-fake",
+      "word": "fake",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "sahte",
+            "yalan"
+          ],
+          "example_en": "That is a fake photo.",
+          "example_tr": "O sahte bir fotoğraf."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-privacy",
+      "word": "privacy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gizlilik"
+          ],
+          "example_en": "Privacy is very important online.",
+          "example_tr": "İnternette gizlilik çok önemlidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-device",
+      "word": "device",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "cihaz",
+            "alet"
+          ],
+          "example_en": "You can use this app on any device.",
+          "example_tr": "Bu uygulamayı her cihazda kullanabilirsiniz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-update",
+      "word": "update",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "güncellemek"
+          ],
+          "example_en": "You must update the app today.",
+          "example_tr": "Uygulamayı bugün güncellemelisin."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "güncelleme"
+          ],
+          "example_en": "There is a new update.",
+          "example_tr": "Yeni bir güncelleme var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-inform",
+      "word": "inform",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "bilgilendirmek",
+            "haber vermek"
+          ],
+          "example_en": "Please inform us about the problem.",
+          "example_tr": "Lütfen bizi problem hakkında bilgilendirin."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-announce",
+      "word": "announce",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "duyurmak",
+            "ilan etmek"
+          ],
+          "example_en": "They will announce the news tomorrow.",
+          "example_tr": "Haberi yarın duyuracaklar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-headline",
+      "word": "headline",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "manşet",
+            "başlık"
+          ],
+          "example_en": "Did you read the headline?",
+          "example_tr": "Manşeti okudun mu?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-source",
+      "word": "source",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kaynak"
+          ],
+          "example_en": "What is the source of this news?",
+          "example_tr": "Bu haberin kaynağı ne?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-audience",
+      "word": "audience",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "izleyici",
+            "dinleyici"
+          ],
+          "example_en": "The audience laughed a lot.",
+          "example_tr": "İzleyiciler çok güldü."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-broadcast",
+      "word": "broadcast",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yayın"
+          ],
+          "example_en": "The broadcast starts at eight.",
+          "example_tr": "Yayın sekizde başlıyor."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "yayınlamak"
+          ],
+          "example_en": "They broadcast the news every evening.",
+          "example_tr": "Haberi her akşam yayınlıyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-media",
+      "word": "media",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "medya"
+          ],
+          "example_en": "The media is talking about the accident.",
+          "example_tr": "Medya kazayı konuşuyor."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b1-p-according-to",
+      "text": "According to…",
+      "tr": "…-e göre",
+      "example_en": "According to the news, it will rain.",
+      "example_tr": "Habere göre yağmur yağacak.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-did-you-hear-about",
+      "text": "Did you hear about…?",
+      "tr": "…-i duydun mu?",
+      "example_en": "Did you hear about the accident?",
+      "example_tr": "Kazayı duydun mu?",
+      "note": ""
+    },
+    {
+      "id": "b1-p-i-read-somewhere-that",
+      "text": "I read somewhere that…",
+      "tr": "Bir yerde … diye okudum",
+      "example_en": "I read somewhere that he is ill.",
+      "example_tr": "Bir yerde onun hasta olduğunu okudum.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-have-you-seen",
+      "text": "Have you seen…?",
+      "tr": "…-i gördün mü?",
+      "example_en": "Have you seen this article?",
+      "example_tr": "Bu makaleyi gördün mü?",
+      "note": ""
+    },
+    {
+      "id": "b1-p-it-went-viral",
+      "text": "It went viral.",
+      "tr": "İnternette çok yayıldı.",
+      "example_en": "Her video went viral.",
+      "example_tr": "Videosu internette çok yayıldı.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b1-media-1",
+      "title": "Yalan haber",
+      "names": [
+        "Ali",
+        "Hasan"
+      ],
+      "lines": [
+        {
+          "en": "Did you read this new article?",
+          "tr": "Bu yeni makaleyi okudun mu?"
+        },
+        {
+          "en": "No, I didn't. What is it about?",
+          "tr": "Hayır, okumadım. Ne hakkında?"
+        },
+        {
+          "en": "According to the article, they will close the airport.",
+          "tr": "Makaleye göre, havalimanını kapatacaklar."
+        },
+        {
+          "en": "I'm not sure about that. What is the source?",
+          "tr": "Bundan emin değilim. Kaynağı ne?"
+        },
+        {
+          "en": "Actually, I think it is fake.",
+          "tr": "Aslında sanırım yalan."
+        },
+        {
+          "en": "Yes, it doesn't seem accurate.",
+          "tr": "Evet, doğru görünmüyor."
+        }
+      ]
+    },
+    {
+      "id": "b1-media-2",
+      "title": "Popüler video",
+      "names": [
+        "Zeynep",
+        "Elif"
+      ],
+      "lines": [
+        {
+          "en": "Have you seen my new post?",
+          "tr": "Yeni paylaşımımı gördün mü?"
+        },
+        {
+          "en": "Yes! A lot of people share it.",
+          "tr": "Evet! Bir sürü insan onu paylaşıyor."
+        },
+        {
+          "en": "It went viral recently.",
+          "tr": "Geçenlerde internette çok yayıldı."
+        },
+        {
+          "en": "I read the comments. They are very funny.",
+          "tr": "Yorumları okudum. Çok komikler."
+        },
+        {
+          "en": "I will answer them later.",
+          "tr": "Onlara daha sonra cevap vereceğim."
+        }
+      ]
+    },
+    {
+      "id": "b1-media-3",
+      "title": "Yeni bir belgesel",
+      "names": [
+        "Burak",
+        "Cem"
+      ],
+      "lines": [
+        {
+          "en": "Did you hear about the new documentary?",
+          "tr": "Yeni belgeseli duydun mu?"
+        },
+        {
+          "en": "No. Which channel is it on?",
+          "tr": "Hayır. Hangi kanalda?"
+        },
+        {
+          "en": "It is on channel four.",
+          "tr": "Kanal dörtte."
+        },
+        {
+          "en": "Is it a good programme?",
+          "tr": "İyi bir program mı?"
+        },
+        {
+          "en": "Yes, the audience loves it.",
+          "tr": "Evet, izleyiciler onu çok seviyor."
+        }
+      ]
+    },
+    {
+      "id": "b1-media-4",
+      "title": "İnternette gizlilik",
+      "names": [
+        "Ayşe",
+        "Fatma"
+      ],
+      "lines": [
+        {
+          "en": "I need to update my phone.",
+          "tr": "Telefonumu güncellemem lazım."
+        },
+        {
+          "en": "Why? Is there a problem?",
+          "tr": "Neden? Bir problem mi var?"
+        },
+        {
+          "en": "I read somewhere that old devices are dangerous.",
+          "tr": "Bir yerde eski cihazların tehlikeli olduğunu okudum."
+        },
+        {
+          "en": "That makes sense. Privacy is very important.",
+          "tr": "Bu mantıklı. Gizlilik çok önemlidir."
+        },
+        {
+          "en": "I agree with you.",
+          "tr": "Sana katılıyorum."
+        }
+      ]
+    },
+    {
+      "id": "b1-media-5",
+      "title": "Medya ve haberler",
+      "names": [
+        "Leyla",
+        "Murat"
+      ],
+      "lines": [
+        {
+          "en": "The journalist will announce some big news tonight.",
+          "tr": "Gazeteci bu gece büyük bir haber duyuracak."
+        },
+        {
+          "en": "Where did you see the headline?",
+          "tr": "Manşeti nerede gördün?"
+        },
+        {
+          "en": "I saw an advertisement on the internet.",
+          "tr": "İnternette bir reklam gördüm."
+        },
+        {
+          "en": "I will inform my brother. When does the broadcast start?",
+          "tr": "Kardeşime haber vereceğim. Yayın ne zaman başlıyor?"
+        },
+        {
+          "en": "At nine. The media is very busy.",
+          "tr": "Dokuzda. Medya çok meşgul."
+        }
+      ]
+    }
+  ]
+}

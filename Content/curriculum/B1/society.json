@@ -1,0 +1,513 @@
+{
+  "id": "b1-society",
+  "level": "B1",
+  "title": "Şehir ve toplum",
+  "placement": "any",
+  "goal": "Yaşadığı yerin sorunlarını ve imkânlarını anlatır, kurallar ve yasalar hakkında konuşur, gönüllülük ve yardımlaşmayı anlatır.",
+  "words": [
+    {
+      "id": "b1-community",
+      "word": "community",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "toplum",
+            "topluluk"
+          ],
+          "example_en": "We have a great community here.",
+          "example_tr": "Burada harika bir topluluğumuz var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-public",
+      "word": "public",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "halka açık",
+            "kamu"
+          ],
+          "example_en": "This is a public park.",
+          "example_tr": "Bu halka açık bir park."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-transport",
+      "word": "transport",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ulaşım"
+          ],
+          "example_en": "Public transport is cheap here.",
+          "example_tr": "Burada toplu taşıma ucuz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-traffic",
+      "word": "traffic",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "trafik"
+          ],
+          "example_en": "The traffic is bad today.",
+          "example_tr": "Bugün trafik kötü."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-crime",
+      "word": "crime",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "suç"
+          ],
+          "example_en": "There isn't much crime here.",
+          "example_tr": "Burada pek suç yok."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-safe",
+      "word": "safe",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "güvenli"
+          ],
+          "example_en": "It is safe to walk at night.",
+          "example_tr": "Gece yürümek güvenli."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-citizen",
+      "word": "citizen",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "vatandaş"
+          ],
+          "example_en": "Every citizen should vote.",
+          "example_tr": "Her vatandaş oy vermeli."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-government",
+      "word": "government",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hükümet",
+            "devlet"
+          ],
+          "example_en": "The government makes the laws.",
+          "example_tr": "Yasaları hükümet yapar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-law",
+      "word": "law",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yasa",
+            "kanun"
+          ],
+          "example_en": "The new law is very good.",
+          "example_tr": "Yeni yasa çok iyi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-rule",
+      "word": "rule",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kural"
+          ],
+          "example_en": "School rules are important.",
+          "example_tr": "Okul kuralları önemlidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-vote",
+      "word": "vote",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "oy vermek"
+          ],
+          "example_en": "I will vote tomorrow.",
+          "example_tr": "Yarın oy vereceğim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-volunteer",
+      "word": "volunteer",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gönüllü"
+          ],
+          "example_en": "We need a volunteer.",
+          "example_tr": "Bir gönüllüye ihtiyacımız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-charity",
+      "word": "charity",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hayır kurumu",
+            "yardım"
+          ],
+          "example_en": "I give money to a charity.",
+          "example_tr": "Bir hayır kurumuna para veririm."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-population",
+      "word": "population",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "nüfus"
+          ],
+          "example_en": "The city's population is big.",
+          "example_tr": "Şehrin nüfusu büyük."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-increase",
+      "word": "increase",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "artmak",
+            "artırmak"
+          ],
+          "example_en": "The population might increase.",
+          "example_tr": "Nüfus artabilir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-facility",
+      "word": "facility",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tesis",
+            "imkân"
+          ],
+          "example_en": "The new sports facility is great.",
+          "example_tr": "Yeni spor tesisi harika."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-include",
+      "word": "include",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "içermek"
+          ],
+          "example_en": "Does the price include breakfast?",
+          "example_tr": "Fiyata kahvaltı dâhil mi?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-available",
+      "word": "available",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "mevcut",
+            "müsait"
+          ],
+          "example_en": "Are there tickets available?",
+          "example_tr": "Mevcut bilet var mı?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-resident",
+      "word": "resident",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sakin",
+            "oturan kişi"
+          ],
+          "example_en": "The residents are angry.",
+          "example_tr": "Mahalle sakinleri kızgın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-area",
+      "word": "area",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bölge",
+            "alan"
+          ],
+          "example_en": "My area is quiet and safe.",
+          "example_tr": "Benim bölgem sessiz ve güvenli."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b1-p-against-law",
+      "text": "It's against the law.",
+      "tr": "Yasaya aykırı.",
+      "example_en": "You can't steal. It's against the law.",
+      "example_tr": "Çalamazsın. Yasaya aykırı.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-not-enough",
+      "text": "There isn't enough…",
+      "tr": "Yeterli … yok.",
+      "example_en": "There isn't enough time.",
+      "example_tr": "Yeterli zaman yok.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-tend-to",
+      "text": "People tend to…",
+      "tr": "İnsanlar … eğiliminde.",
+      "example_en": "People tend to sleep late.",
+      "example_tr": "İnsanlar geç uyuma eğiliminde.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-my-area",
+      "text": "In my area…",
+      "tr": "Benim yaşadığım yerde…",
+      "example_en": "In my area, traffic is bad.",
+      "example_tr": "Benim yaşadığım yerde trafik kötü.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-should-change",
+      "text": "Something should change.",
+      "tr": "Bir şeyler değişmeli.",
+      "example_en": "The traffic is bad. Something should change.",
+      "example_tr": "Trafik kötü. Bir şeyler değişmeli.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b1-society-1",
+      "title": "Ulaşım sorunu",
+      "names": [
+        "Burak",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Burak lives in London. The population is big.",
+          "tr": "Burak Londra'da yaşıyor. Nüfus büyük."
+        },
+        {
+          "en": "In my area, there isn't enough public transport.",
+          "tr": "Benim yaşadığım yerde, yeterli toplu taşıma yok."
+        },
+        {
+          "en": "The traffic is always bad.",
+          "tr": "Trafik her zaman kötü."
+        },
+        {
+          "en": "Something should change!",
+          "tr": "Bir şeyler değişmeli!"
+        },
+        {
+          "en": "I agree with you. It's a big problem.",
+          "tr": "Sana katılıyorum. Bu büyük bir problem."
+        }
+      ]
+    },
+    {
+      "id": "b1-society-2",
+      "title": "Kurallar ve yasalar",
+      "names": [
+        "Ayşe",
+        "Eda"
+      ],
+      "lines": [
+        {
+          "en": "Ayşe and Eda are at a park.",
+          "tr": "Ayşe ve Eda bir parktalar."
+        },
+        {
+          "en": "Eda, don't leave your rubbish here!",
+          "tr": "Eda, çöpünü buraya bırakma!"
+        },
+        {
+          "en": "Why not? There are no rules.",
+          "tr": "Neden olmasın? Kural yok."
+        },
+        {
+          "en": "Actually, there are. It's against the law.",
+          "tr": "Aslında var. Yasaya aykırı."
+        },
+        {
+          "en": "You are right. Public areas should be clean.",
+          "tr": "Haklısın. Kamusal alanlar temiz olmalı."
+        }
+      ]
+    },
+    {
+      "id": "b1-society-3",
+      "title": "Toplum için gönüllülük",
+      "names": [
+        "Ali",
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "Our community needs help.",
+          "tr": "Toplumumuzun yardıma ihtiyacı var."
+        },
+        {
+          "en": "Yes, we should start a charity.",
+          "tr": "Evet, bir hayır kurumu kurmalıyız."
+        },
+        {
+          "en": "We can find volunteers for the weekend.",
+          "tr": "Hafta sonu için gönüllüler bulabiliriz."
+        },
+        {
+          "en": "That makes sense. People tend to help.",
+          "tr": "Bu mantıklı. İnsanlar yardım etme eğilimindedir."
+        },
+        {
+          "en": "The facilities in our neighbourhood will be better.",
+          "tr": "Mahallemizdeki tesisler daha iyi olacak."
+        }
+      ]
+    },
+    {
+      "id": "b1-society-4",
+      "title": "Güvenli bir şehir",
+      "names": [
+        "Mert",
+        "John"
+      ],
+      "lines": [
+        {
+          "en": "Is this city safe for tourists?",
+          "tr": "Bu şehir turistler için güvenli mi?"
+        },
+        {
+          "en": "Yes, there isn't much crime.",
+          "tr": "Evet, pek suç yok."
+        },
+        {
+          "en": "That is good news.",
+          "tr": "Bu iyi bir haber."
+        },
+        {
+          "en": "Also, residents are very friendly.",
+          "tr": "Ayrıca, burada oturanlar çok arkadaş canlısı."
+        },
+        {
+          "en": "It's worth visiting.",
+          "tr": "Ziyaret etmeye değer."
+        }
+      ]
+    },
+    {
+      "id": "b1-society-5",
+      "title": "Seçim günü",
+      "names": [
+        "Elif",
+        "Ozan"
+      ],
+      "lines": [
+        {
+          "en": "Did you vote yesterday?",
+          "tr": "Dün oy verdin mi?"
+        },
+        {
+          "en": "No, I didn't. I was very busy.",
+          "tr": "Hayır, vermedim. Çok meşguldüm."
+        },
+        {
+          "en": "But every citizen should vote!",
+          "tr": "Ama her vatandaş oy vermeli!"
+        },
+        {
+          "en": "I know. We need a good government.",
+          "tr": "Biliyorum. İyi bir hükümete ihtiyacımız var."
+        },
+        {
+          "en": "We need more jobs in our area.",
+          "tr": "Bölgemizde daha çok iş lazım."
+        }
+      ]
+    }
+  ]
+}

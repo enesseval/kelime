@@ -1,0 +1,557 @@
+{
+"id": "b1-career",
+"level": "B1",
+"title": "Kariyer",
+"placement": "any",
+"goal": "Bir işe başvurur, deneyim ve becerilerini anlatır, sorumluluklarını ve hedeflerini açıklar.",
+"words": [
+{
+"id": "b1-apply",
+"word": "apply",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"başvurmak"
+],
+"example_en": "I want to apply for this job.",
+"example_tr": "Bu işe başvurmak istiyorum."
+}
+],
+"note": ""
+},
+{
+"id": "b1-application",
+"word": "application",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"başvuru"
+],
+"example_en": "Did you send your application?",
+"example_tr": "Başvurunu gönderdin mi?"
+}
+],
+"note": ""
+},
+{
+"id": "b1-qualification",
+"word": "qualification",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"nitelik",
+"vasıf"
+],
+"example_en": "What qualifications do you have?",
+"example_tr": "Ne gibi nitelikleriniz var?"
+}
+],
+"note": ""
+},
+{
+"id": "b1-promotion",
+"word": "promotion",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"terfi"
+],
+"example_en": "She expects a promotion soon.",
+"example_tr": "Yakında terfi bekliyor."
+}
+],
+"note": ""
+},
+{
+"id": "b1-responsible",
+"word": "responsible",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"sorumlu"
+],
+"example_en": "He is responsible for the team.",
+"example_tr": "Takımdan o sorumlu."
+}
+],
+"note": ""
+},
+{
+"id": "b1-achieve",
+"word": "achieve",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"ulaşmak",
+"başarmak"
+],
+"example_en": "We finally achieved our goal.",
+"example_tr": "Sonunda hedefimize ulaştık."
+}
+],
+"note": ""
+},
+{
+"id": "b1-succeed",
+"word": "succeed",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"başarılı olmak"
+],
+"example_en": "You can succeed if you try.",
+"example_tr": "Denersen başarılı olabilirsin."
+}
+],
+"note": ""
+},
+{
+"id": "b1-success",
+"word": "success",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"başarı"
+],
+"example_en": "The new app was a big success.",
+"example_tr": "Yeni uygulama büyük bir başarıydı."
+}
+],
+"note": ""
+},
+{
+"id": "b1-opportunity",
+"word": "opportunity",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"fırsat"
+],
+"example_en": "This is a great opportunity.",
+"example_tr": "Bu harika bir fırsat."
+}
+],
+"note": ""
+},
+{
+"id": "b1-challenge",
+"word": "challenge",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"zorluk",
+"meydan okuma"
+],
+"example_en": "I like a difficult challenge.",
+"example_tr": "Zorlu bir meydan okumayı severim."
+}
+],
+"note": ""
+},
+{
+"id": "b1-develop",
+"word": "develop",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"geliştirmek"
+],
+"example_en": "We need to develop new skills.",
+"example_tr": "Yeni beceriler geliştirmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "b1-improve",
+"word": "improve",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"ilerletmek",
+"iyileştirmek"
+],
+"example_en": "I want to improve my English.",
+"example_tr": "İngilizcemi ilerletmek istiyorum."
+}
+],
+"note": ""
+},
+{
+"id": "b1-goal",
+"word": "goal",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"hedef",
+"amaç"
+],
+"example_en": "My first goal is to be a manager.",
+"example_tr": "İlk hedefim yönetici olmak."
+}
+],
+"note": ""
+},
+{
+"id": "b1-ambition",
+"word": "ambition",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"hırs",
+"ideal"
+],
+"example_en": "Her ambition is to be the boss.",
+"example_tr": "Onun ideali patron olmak."
+}
+],
+"note": ""
+},
+{
+"id": "b1-unemployed",
+"word": "unemployed",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"işsiz"
+],
+"example_en": "He was unemployed for a year.",
+"example_tr": "Bir yıl boyunca işsizdi."
+}
+],
+"note": ""
+},
+{
+"id": "b1-retire",
+"word": "retire",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"emekli olmak"
+],
+"example_en": "My father will retire next year.",
+"example_tr": "Babam gelecek yıl emekli olacak."
+}
+],
+"note": ""
+},
+{
+"id": "b1-efficient",
+"word": "efficient",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"verimli"
+],
+"example_en": "She is efficient at work.",
+"example_tr": "O, işte verimlidir."
+}
+],
+"note": ""
+},
+{
+"id": "b1-reliable",
+"word": "reliable",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"güvenilir"
+],
+"example_en": "We need a reliable car.",
+"example_tr": "Güvenilir bir arabaya ihtiyacımız var."
+}
+],
+"note": ""
+},
+{
+"id": "b1-knowledge",
+"word": "knowledge",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"bilgi"
+],
+"example_en": "He has good computer knowledge.",
+"example_tr": "İyi bilgisayar bilgisi var."
+}
+],
+"note": ""
+},
+{
+"id": "b1-contract",
+"word": "contract",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sözleşme",
+"kontrat"
+],
+"example_en": "I didn't accept the contract.",
+"example_tr": "Sözleşmeyi kabul etmedim."
+}
+],
+"note": ""
+},
+{
+"id": "b1-training",
+"word": "training",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"eğitim"
+],
+"example_en": "The training was very good.",
+"example_tr": "Eğitim çok iyiydi."
+}
+],
+"note": ""
+},
+{
+"id": "b1-candidate",
+"word": "candidate",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"aday"
+],
+"example_en": "She is the best candidate.",
+"example_tr": "O en iyi aday."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "b1-p-in-charge",
+"text": "I'm in charge of…",
+"tr": "…dan sorumluyum.",
+"example_en": "I'm in charge of the office.",
+"example_tr": "Ofisten ben sorumluyum.",
+"note": "Bir işin yönetiminden sorumlu olmak."
+},
+{
+"id": "b1-p-responsible-for",
+"text": "I'm responsible for…",
+"tr": "…dan sorumluyum.",
+"example_en": "I'm responsible for this team.",
+"example_tr": "Bu takımdan ben sorumluyum.",
+"note": ""
+},
+{
+"id": "b1-p-apply-for",
+"text": "I'd like to apply for…",
+"tr": "…a başvurmak istiyorum.",
+"example_en": "I'd like to apply for the job.",
+"example_tr": "İşe başvurmak istiyorum.",
+"note": ""
+},
+{
+"id": "b1-p-experience-in",
+"text": "I have experience in…",
+"tr": "…konusunda deneyimim var.",
+"example_en": "I have experience in this subject.",
+"example_tr": "Bu konuda deneyimim var.",
+"note": ""
+},
+{
+"id": "b1-p-tell-me-more",
+"text": "Could you tell me more about…?",
+"tr": "…hakkında bilgi verir misiniz?",
+"example_en": "Could you tell me more about the company?",
+"example_tr": "Şirket hakkında bilgi verir misiniz?",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "b1-career-1",
+"title": "İş Görüşmesi",
+"names": [
+"Leyla"
+],
+"lines": [
+{
+"en": "Good morning, Leyla. I see your application.",
+"tr": "Günaydın Leyla. Başvurunuzu görüyorum."
+},
+{
+"en": "Yes, I'd like to apply for the manager job.",
+"tr": "Evet, yönetici işine başvurmak istiyorum."
+},
+{
+"en": "What qualifications do you have?",
+"tr": "Ne gibi nitelikleriniz var?"
+},
+{
+"en": "I have experience in this subject. I am very reliable.",
+"tr": "Bu konuda deneyimim var. Çok güvenilirimdir."
+},
+{
+"en": "Could you tell me more about your old job?",
+"tr": "Eski işiniz hakkında bilgi verir misiniz?"
+},
+{
+"en": "I was responsible for a big team.",
+"tr": "Büyük bir takımdan sorumluydum."
+}
+]
+},
+{
+"id": "b1-career-2",
+"title": "Terfi Beklentisi",
+"names": [
+"Emre"
+],
+"lines": [
+{
+"en": "Emre works in a big company. He is very efficient.",
+"tr": "Emre büyük bir şirkette çalışıyor. Çok verimli biri."
+},
+{
+"en": "I expect a promotion this year.",
+"tr": "Bu yıl terfi bekliyorum."
+},
+{
+"en": "You have a lot of ambition.",
+"tr": "Çok hırsın var."
+},
+{
+"en": "Yes, my goal is to be the new boss.",
+"tr": "Evet, hedefim yeni patron olmak."
+},
+{
+"en": "Did you achieve your old goals?",
+"tr": "Eski hedeflerine ulaştın mı?"
+},
+{
+"en": "Yes, I always succeed.",
+"tr": "Evet, her zaman başarılı olurum."
+}
+]
+},
+{
+"id": "b1-career-3",
+"title": "Yeni Bir Başlangıç",
+"names": [
+"Hasan"
+],
+"lines": [
+{
+"en": "My father Hasan will retire tomorrow.",
+"tr": "Babam Hasan yarın emekli olacak."
+},
+{
+"en": "What will he do?",
+"tr": "Ne yapacak?"
+},
+{
+"en": "He doesn't want to be unemployed.",
+"tr": "İşsiz olmak istemiyor."
+},
+{
+"en": "He has a lot of knowledge about computers.",
+"tr": "Bilgisayarlar hakkında çok bilgisi var."
+},
+{
+"en": "He wants to start a new company.",
+"tr": "Yeni bir şirket kurmak istiyor."
+},
+{
+"en": "That's a great opportunity for him.",
+"tr": "Bu onun için harika bir fırsat."
+}
+]
+},
+{
+"id": "b1-career-4",
+"title": "İlk Eğitim Günü",
+"names": [
+"Defne",
+"Izmir"
+],
+"lines": [
+{
+"en": "Defne is a candidate for a new job in Izmir.",
+"tr": "Defne İzmir'deki yeni bir iş için aday."
+},
+{
+"en": "She starts her training today.",
+"tr": "Eğitimine bugün başlıyor."
+},
+{
+"en": "I need to develop my computer skills.",
+"tr": "Bilgisayar becerilerimi geliştirmem lazım."
+},
+{
+"en": "You will improve soon.",
+"tr": "Yakında gelişeceksin."
+},
+{
+"en": "I'm in charge of your training.",
+"tr": "Eğitiminden ben sorumluyum."
+},
+{
+"en": "I am happy. I want to be ready.",
+"tr": "Mutluyum. Hazır olmak istiyorum."
+}
+]
+},
+{
+"id": "b1-career-5",
+"title": "Zorlu Sözleşme",
+"names": [
+"Ozan",
+"Sarah"
+],
+"lines": [
+{
+"en": "Ozan, did you read the new contract?",
+"tr": "Ozan, yeni sözleşmeyi okudun mu?"
+},
+{
+"en": "Yes, Sarah. It seems very difficult.",
+"tr": "Evet Sarah. Çok zor görünüyor."
+},
+{
+"en": "It is a big challenge for us.",
+"tr": "Bizim için büyük bir meydan okuma."
+},
+{
+"en": "I'm in charge of this situation.",
+"tr": "Bu durumdan ben sorumluyum."
+},
+{
+"en": "We must work together for success.",
+"tr": "Başarı için birlikte çalışmalıyız."
+},
+{
+"en": "I agree with you. We can manage it.",
+"tr": "Sana katılıyorum. Bunu halledebiliriz."
+}
+]
+}
+]
+}

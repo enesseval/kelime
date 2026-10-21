@@ -37,6 +37,6 @@ struct ProgressResetTests {
         let db = try AppDatabase.inMemory()
         let file = try ContentImporter.decode(Data(contentsOf: TestSupport.bundledCardsURL))
         try db.writer.write { db in try ContentImporter.apply(file, in: db, progress: { _ in }) }
-        #expect(try db.reader.read { db in try Curriculum.levels(db: db) } == [.a1, .a2])
+        #expect(try db.reader.read { db in try Curriculum.levels(db: db) } == [.a1, .a2, .b1])
     }
 }

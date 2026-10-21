@@ -99,6 +99,14 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
+## B1 course (content v5, not in a build yet)
+
+Content/curriculum/B1/: core (43 words, 7 phrases, 3 stories), ten units and a bridge to B2
+(If I were…, I wish…, reported speech, it is said that); 337 cards. With the "read every line
+word by word" rule in the prompt, Gemini's first pass had 24 checker problems (A2: 140). Six
+basic cards were added to the core by hand (interesting, favourite, true, keep, past, hard).
+The old B1 deck and its bundled puzzles are gone; Onboarding and Ayarlar now offer A1-B1.
+
 ## A2 course (build 16, content v3)
 
 Content/curriculum/A2/: core (52 words, 7 phrases, 3 stories), ten units in any order and a

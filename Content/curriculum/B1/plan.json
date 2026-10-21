@@ -51,7 +51,13 @@
         "disadvantage",
         "decision",
         "situation",
-        "replace"
+        "replace",
+        "interesting",
+        "favourite",
+        "true",
+        "keep",
+        "past",
+        "hard"
       ],
       "phrases": [
         "In my opinion…",
@@ -134,7 +140,7 @@
         "I'm responsible for…",
         "I'd like to apply for…",
         "I have experience in…",
-        "Could you tell me more about…?"
+        "Can you tell me about…?"
       ]
     },
     {
@@ -387,7 +393,7 @@
         "There isn't enough…",
         "People tend to…",
         "In my area…",
-        "Something should be done about…"
+        "Something should change."
       ]
     },
     {

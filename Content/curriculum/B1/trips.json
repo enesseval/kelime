@@ -1,0 +1,549 @@
+{
+  "id": "b1-trips",
+  "level": "B1",
+  "title": "Gezi deneyimleri",
+  "placement": "any",
+  "goal": "Yaşadığı bir geziyi ayrıntılı anlatır, yolda çıkan sorunları ve çözümlerini anlatır, bir yer önerir.",
+  "words": [
+    {
+      "id": "b1-accommodation",
+      "word": "accommodation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "konaklama"
+          ],
+          "example_en": "We need to find cheap accommodation.",
+          "example_tr": "Ucuz bir konaklama bulmamız lazım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-destination",
+      "word": "destination",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "varış noktası",
+            "gidilecek yer"
+          ],
+          "example_en": "We finally arrived at our destination.",
+          "example_tr": "Sonunda varış noktamıza ulaştık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-sightseeing",
+      "word": "sightseeing",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "turistik gezi"
+          ],
+          "example_en": "We did a lot of sightseeing yesterday.",
+          "example_tr": "Dün çok fazla turistik gezi yaptık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-adventure",
+      "word": "adventure",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "macera"
+          ],
+          "example_en": "This trip was a great adventure.",
+          "example_tr": "Bu gezi harika bir maceraydı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-explore",
+      "word": "explore",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "keşfetmek",
+            "gezmek"
+          ],
+          "example_en": "I'd like to explore the city today.",
+          "example_tr": "Bugün şehri keşfetmek istiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-discover",
+      "word": "discover",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "keşfetmek",
+            "bulmak"
+          ],
+          "example_en": "We can discover new beaches.",
+          "example_tr": "Yeni plajlar keşfedebiliriz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-local",
+      "word": "local",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yerel",
+            "yerli"
+          ],
+          "example_en": "The local food was really delicious.",
+          "example_tr": "Yerel yemekler gerçekten lezzetliydi."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "yerli (halk)"
+          ],
+          "example_en": "We asked a local for help.",
+          "example_tr": "Bir yerliden yardım istedik."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-crowded",
+      "word": "crowded",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kalabalık"
+          ],
+          "example_en": "The market was too crowded.",
+          "example_tr": "Pazar çok kalabalıktı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-passenger",
+      "word": "passenger",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yolcu"
+          ],
+          "example_en": "There were many passengers on the bus.",
+          "example_tr": "Otobüste çok sayıda yolcu vardı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-customs",
+      "word": "customs",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gümrük"
+          ],
+          "example_en": "We waited for two hours at customs.",
+          "example_tr": "Gümrükte iki saat bekledik."
+        }
+      ],
+      "note": "Her zaman çoğul (customs) kullanılır."
+    },
+    {
+      "id": "b1-border",
+      "word": "border",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sınır"
+          ],
+          "example_en": "We passed the border at night.",
+          "example_tr": "Sınırı gece geçtik."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-coast",
+      "word": "coast",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sahil",
+            "kıyı"
+          ],
+          "example_en": "We want to visit the coast.",
+          "example_tr": "Sahili ziyaret etmek istiyoruz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-hostel",
+      "word": "hostel",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hostel",
+            "ucuz otel"
+          ],
+          "example_en": "Staying in a hostel is usually cheap.",
+          "example_tr": "Bir hostelde kalmak genelde ucuzdur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-tour",
+      "word": "tour",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tur",
+            "gezi"
+          ],
+          "example_en": "We took a tour of the museum.",
+          "example_tr": "Müzede bir tur yaptık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-backpack",
+      "word": "backpack",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sırt çantası"
+          ],
+          "example_en": "His backpack was too heavy.",
+          "example_tr": "Sırt çantası çok ağırdı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-sunset",
+      "word": "sunset",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gün batımı"
+          ],
+          "example_en": "The sunset over the lake is beautiful.",
+          "example_tr": "Gölün üzerindeki gün batımı çok güzel."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-lost",
+      "word": "lost",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kayıp",
+            "kaybolmuş"
+          ],
+          "example_en": "I think we are lost.",
+          "example_tr": "Sanırım kaybolduk."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-direction",
+      "word": "direction",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yön",
+            "istikamet"
+          ],
+          "example_en": "Do you know the direction?",
+          "example_tr": "Yönü biliyor musun?"
+        }
+      ],
+      "note": "Yol tarifi anlamında çoğul (directions) kullanılır."
+    },
+    {
+      "id": "b1-guidebook",
+      "word": "guidebook",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "rehber kitap"
+          ],
+          "example_en": "I bought a good guidebook.",
+          "example_tr": "İyi bir rehber kitap aldım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-scenery",
+      "word": "scenery",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "manzara"
+          ],
+          "example_en": "The mountain scenery was beautiful.",
+          "example_tr": "Dağ manzarası güzeldi."
+        }
+      ],
+      "note": "Genellikle doğal manzaralar için kullanılır, sayılamaz."
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b1-p-got-lost",
+      "text": "We got lost.",
+      "tr": "Kaybolduk.",
+      "example_en": "We got lost in the forest.",
+      "example_tr": "Ormanda kaybolduk.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-took-ages",
+      "text": "It took ages.",
+      "tr": "Çok uzun sürdü.",
+      "example_en": "We waited, and it took ages.",
+      "example_tr": "Bekledik ve çok uzun sürdü.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-worth-it",
+      "text": "It was worth it.",
+      "tr": "Buna değdi.",
+      "example_en": "It was expensive, but it was worth it.",
+      "example_tr": "Pahalıydı ama buna değdi.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-recommend",
+      "text": "I'd recommend…",
+      "tr": "… tavsiye ederim.",
+      "example_en": "I'd recommend this tour.",
+      "example_tr": "Bu turu tavsiye ederim.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-best-part",
+      "text": "The best part was…",
+      "tr": "En iyi kısmı …",
+      "example_en": "The best part was the sunset.",
+      "example_tr": "En iyi kısmı gün batımıydı.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b1-trips-1",
+      "title": "Macera",
+      "names": [
+        "Ali",
+        "Hasan"
+      ],
+      "lines": [
+        {
+          "en": "Our trip was a great adventure!",
+          "tr": "Gezimiz harika bir maceraydı!"
+        },
+        {
+          "en": "Where did you go?",
+          "tr": "Nereye gittiniz?"
+        },
+        {
+          "en": "We went to the coast and stayed in a hostel.",
+          "tr": "Sahile gittik ve bir hostelde kaldık."
+        },
+        {
+          "en": "Did you have any problems?",
+          "tr": "Hiç sorun yaşadınız mı?"
+        },
+        {
+          "en": "Yes, we didn't have a map and we got lost.",
+          "tr": "Evet, haritamız yoktu ve kaybolduk."
+        },
+        {
+          "en": "Did you find the destination?",
+          "tr": "Varış noktasını buldunuz mu?"
+        },
+        {
+          "en": "We asked a local passenger for directions.",
+          "tr": "Yön için yerli bir yolcuya sorduk."
+        }
+      ]
+    },
+    {
+      "id": "b1-trips-2",
+      "title": "Sınırda",
+      "names": [
+        "Zeynep",
+        "Sofia",
+        "Bulgaria"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep travelled to Bulgaria yesterday.",
+          "tr": "Zeynep dün Bulgaristan'a seyahat etti."
+        },
+        {
+          "en": "She had only a small backpack.",
+          "tr": "Sadece küçük bir sırt çantası vardı."
+        },
+        {
+          "en": "The bus arrived at the border late at night.",
+          "tr": "Otobüs gece geç saatte sınıra ulaştı."
+        },
+        {
+          "en": "Customs was very crowded.",
+          "tr": "Gümrük çok kalabalıktı."
+        },
+        {
+          "en": "Waiting there took ages.",
+          "tr": "Orada beklemek çok uzun sürdü."
+        },
+        {
+          "en": "I'm really tired.",
+          "tr": "Gerçekten yorgunum."
+        },
+        {
+          "en": "Me too, but we are finally here.",
+          "tr": "Ben de, ama sonunda buradayız."
+        }
+      ]
+    },
+    {
+      "id": "b1-trips-3",
+      "title": "Rehber Kitap",
+      "names": [
+        "Emir",
+        "Spain"
+      ],
+      "lines": [
+        {
+          "en": "Emir went to Spain for sightseeing.",
+          "tr": "Emir turistik gezi için İspanya'ya gitti."
+        },
+        {
+          "en": "He bought a new guidebook before his trip.",
+          "tr": "Gezisinden önce yeni bir rehber kitap satın aldı."
+        },
+        {
+          "en": "I want to discover some beautiful scenery.",
+          "tr": "Güzel manzaralar keşfetmek istiyorum."
+        },
+        {
+          "en": "He didn't want to take a tour.",
+          "tr": "Tura katılmak istemedi."
+        },
+        {
+          "en": "He walked up the mountain to watch the sunset.",
+          "tr": "Gün batımını izlemek için dağa yürüdü."
+        },
+        {
+          "en": "It was very cold, but it was worth it.",
+          "tr": "Çok soğuktu ama buna değdi."
+        }
+      ]
+    },
+    {
+      "id": "b1-trips-4",
+      "title": "Yerel Tavsiyeler",
+      "names": [
+        "Cem",
+        "David"
+      ],
+      "lines": [
+        {
+          "en": "David is an old friend of Cem.",
+          "tr": "David, Cem'in eski bir arkadaşı."
+        },
+        {
+          "en": "Which accommodation do you suggest?",
+          "tr": "Hangi konaklamayı önerirsin?"
+        },
+        {
+          "en": "I'd recommend a small hotel near the lake.",
+          "tr": "Gölün yakınındaki küçük bir oteli tavsiye ederim."
+        },
+        {
+          "en": "Is the countryside there nice?",
+          "tr": "Oranın kırsalı güzel mi?"
+        },
+        {
+          "en": "Yes! The best part was the green forest.",
+          "tr": "Evet! En iyi kısmı yeşil ormandı."
+        },
+        {
+          "en": "I'll pack my bags tonight.",
+          "tr": "Çantalarımı bu gece hazırlayacağım."
+        }
+      ]
+    },
+    {
+      "id": "b1-trips-5",
+      "title": "Şehri Gezmek",
+      "names": [
+        "Aslı",
+        "Paris"
+      ],
+      "lines": [
+        {
+          "en": "Aslı went to Paris with her family.",
+          "tr": "Aslı ailesiyle Paris'e gitti."
+        },
+        {
+          "en": "They wanted to explore the city.",
+          "tr": "Şehri keşfetmek istediler."
+        },
+        {
+          "en": "However, their destination was very far.",
+          "tr": "Ancak, varış noktaları çok uzaktı."
+        },
+        {
+          "en": "We can't walk. We need a taxi.",
+          "tr": "Yürüyemeyiz. Taksiye ihtiyacımız var."
+        },
+        {
+          "en": "I agree with you. It's too late.",
+          "tr": "Sana katılıyorum. Çok geç oldu."
+        },
+        {
+          "en": "They found a taxi and loved the view.",
+          "tr": "Bir taksi buldular ve manzaraya bayıldılar."
+        }
+      ]
+    }
+  ]
+}

@@ -574,6 +574,99 @@
         }
       ],
       "note": ""
+    },
+    {
+      "id": "b1-interesting",
+      "word": "interesting",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ilginç"
+          ],
+          "example_en": "The film was very interesting.",
+          "example_tr": "Film çok ilginçti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-favourite",
+      "word": "favourite",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "en sevdiği"
+          ],
+          "example_en": "What's your favourite film?",
+          "example_tr": "En sevdiğin film hangisi?"
+        }
+      ],
+      "note": "Amerikan İngilizcesinde 'favorite' yazılır."
+    },
+    {
+      "id": "b1-true",
+      "word": "true",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "doğru",
+            "gerçek"
+          ],
+          "example_en": "Is that true?",
+          "example_tr": "Bu doğru mu?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-keep",
+      "word": "keep",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "tutmak",
+            "saklamak"
+          ],
+          "example_en": "Can I keep this book?",
+          "example_tr": "Bu kitap bende kalabilir mi?"
+        }
+      ],
+      "note": "keep + -ing: 'devam etmek' (keep trying)."
+    },
+    {
+      "id": "b1-past",
+      "word": "past",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "geçmiş"
+          ],
+          "example_en": "Forget the past.",
+          "example_tr": "Geçmişi unut."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-hard",
+      "word": "hard",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "zor",
+            "sert"
+          ],
+          "example_en": "This exam is hard.",
+          "example_tr": "Bu sınav zor."
+        }
+      ],
+      "note": "Zarf olarak 'sıkı': work hard. 'hardly' ise 'neredeyse hiç' demektir."
     }
   ],
   "phrases": [
