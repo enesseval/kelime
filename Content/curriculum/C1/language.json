@@ -1,0 +1,518 @@
+{
+  "id": "c1-language",
+  "level": "C1",
+  "title": "Dil ve iletişim",
+  "placement": "any",
+  "goal": "Üslubu ve tonu duruma göre ayarlar, ima ile açık anlatımı ayırır, dil öğrenimi ve iletişim üzerine derinlemesine konuşur.",
+  "words": [
+    {
+      "id": "c1-articulate",
+      "word": "articulate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "açıkça ifade etmek"
+          ],
+          "example_en": "He could not articulate his opinion.",
+          "example_tr": "Fikrini açıkça ifade edemedi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-connotation",
+      "word": "connotation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yan anlam",
+            "çağrışım"
+          ],
+          "example_en": "This sentence has a bad connotation.",
+          "example_tr": "Bu cümlenin kötü bir yan anlamı var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-idiom",
+      "word": "idiom",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "deyim"
+          ],
+          "example_en": "This idiom is hard to translate.",
+          "example_tr": "Bu deyimi çevirmek zor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-jargon",
+      "word": "jargon",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "jargon",
+            "mesleki dil"
+          ],
+          "example_en": "This article has too much academic jargon.",
+          "example_tr": "Bu makalede çok fazla akademik jargon var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-colloquial",
+      "word": "colloquial",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "gündelik",
+            "konuşma diline ait"
+          ],
+          "example_en": "Don't use colloquial words in an essay.",
+          "example_tr": "Kompozisyonda gündelik kelimeler kullanma."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-register",
+      "word": "register",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "üslup",
+            "dil düzeyi"
+          ],
+          "example_en": "You must use an academic register here.",
+          "example_tr": "Burada akademik bir üslup kullanmalısın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-tone",
+      "word": "tone",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ses tonu",
+            "tavır"
+          ],
+          "example_en": "I do not like your angry tone.",
+          "example_tr": "Bu sinirli ses tonundan hoşlanmıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-paraphrase",
+      "word": "paraphrase",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kendi sözleriyle anlatmak"
+          ],
+          "example_en": "Can you paraphrase this sentence?",
+          "example_tr": "Bu cümleyi başka kelimelerle ifade edebilir misin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-convey",
+      "word": "convey",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "iletmek",
+            "aktarmak"
+          ],
+          "example_en": "How can I convey this message?",
+          "example_tr": "Bu mesajı nasıl iletebilirim?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-imply",
+      "word": "imply",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ima etmek"
+          ],
+          "example_en": "What does this sentence imply?",
+          "example_tr": "Bu cümle ne ima ediyor?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-infer",
+      "word": "infer",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "çıkarım yapmak"
+          ],
+          "example_en": "What can we infer from this data?",
+          "example_tr": "Bu veriden ne çıkarabiliriz?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-discourse",
+      "word": "discourse",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "söylem"
+          ],
+          "example_en": "Political discourse today is quite rude.",
+          "example_tr": "Bugünkü siyasi söylem oldukça kaba."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-proficiency",
+      "word": "proficiency",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yeterlilik",
+            "uzmanlık"
+          ],
+          "example_en": "I need to improve my language proficiency.",
+          "example_tr": "Dil yeterliliğimi geliştirmem gerek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-dialect",
+      "word": "dialect",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "lehçe",
+            "ağız"
+          ],
+          "example_en": "He speaks a local dialect.",
+          "example_tr": "Yerel bir lehçe konuşuyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-verbatim",
+      "word": "verbatim",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "kelimesi kelimesine"
+          ],
+          "example_en": "I remember his promise verbatim.",
+          "example_tr": "Sözünü kelimesi kelimesine hatırlıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-concise",
+      "word": "concise",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "özlü",
+            "kısa ve net"
+          ],
+          "example_en": "Please give a concise answer.",
+          "example_tr": "Lütfen özlü bir cevap ver."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-eloquence",
+      "word": "eloquence",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hitabet",
+            "güzel konuşma"
+          ],
+          "example_en": "His eloquence is obvious.",
+          "example_tr": "Güzel konuşması ortada."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-literal",
+      "word": "literal",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kelimesi kelimesine",
+            "düz"
+          ],
+          "example_en": "The literal meaning is different.",
+          "example_tr": "Kelimesi kelimesine anlamı farklı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-fluency",
+      "word": "fluency",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "akıcılık"
+          ],
+          "example_en": "Fluency is essential for this job.",
+          "example_tr": "Bu iş için akıcılık şart."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-nuanced",
+      "word": "nuanced",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "incelikli",
+            "ayrıntılı"
+          ],
+          "example_en": "This problem requires a nuanced approach.",
+          "example_tr": "Bu sorun incelikli bir yaklaşım gerektiriyor."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c1-p-read-between",
+      "text": "Read between the lines.",
+      "tr": "Satır aralarını oku.",
+      "example_en": "You must read between the lines.",
+      "example_tr": "Satır aralarını okumalısın.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-lost-translation",
+      "text": "It got lost in translation.",
+      "tr": "Çeviride kayboldu.",
+      "example_en": "My message got lost in translation.",
+      "example_tr": "Mesajım çeviride kayboldu.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-let-me-rephrase",
+      "text": "Let me rephrase that.",
+      "tr": "Şöyle ifade edeyim.",
+      "example_en": "Let me rephrase that. I am not angry.",
+      "example_tr": "Şöyle ifade edeyim. Kızgın değilim.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-put-it-mildly",
+      "text": "To put it mildly,…",
+      "tr": "Hafif tabirle,…",
+      "example_en": "To put it mildly, the food was bad.",
+      "example_tr": "Hafif tabirle, yemek kötüydü.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-loss-for-words",
+      "text": "I'm at a loss for words.",
+      "tr": "Diyecek söz bulamıyorum.",
+      "example_en": "I'm at a loss for words. I am very grateful.",
+      "example_tr": "Diyecek söz bulamıyorum. Çok minnettarım.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c1-language-1",
+      "title": "Zor bir ders",
+      "names": [
+        "Ali",
+        "Clark"
+      ],
+      "lines": [
+        {
+          "en": "Ali is a student. He listens to a lecture by Clark.",
+          "tr": "Ali bir öğrenci. Clark'ın bir dersini dinliyor."
+        },
+        {
+          "en": "I do not understand this academic jargon.",
+          "tr": "Bu akademik jargonu anlamıyorum."
+        },
+        {
+          "en": "Can you paraphrase it, please?",
+          "tr": "Bunu kendi kelimelerinizle ifade edebilir misiniz, lütfen?"
+        },
+        {
+          "en": "Let me rephrase that. The underlying theory is easy.",
+          "tr": "Şöyle ifade edeyim. Temeldeki teori kolay."
+        },
+        {
+          "en": "Your new message is very concise.",
+          "tr": "Yeni mesajınız çok özlü."
+        },
+        {
+          "en": "You must articulate your opinions in an academic register.",
+          "tr": "Fikirlerinizi akademik bir üslupla açıkça ifade etmelisiniz."
+        }
+      ]
+    },
+    {
+      "id": "c1-language-2",
+      "title": "Londra'da yanlış anlama",
+      "names": [
+        "Zeynep",
+        "London",
+        "Ben"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep lives in London. Ben speaks a local dialect.",
+          "tr": "Zeynep Londra'da yaşıyor. Ben yerel bir lehçe konuşuyor."
+        },
+        {
+          "en": "His colloquial words are difficult.",
+          "tr": "Gündelik kelimeleri zor."
+        },
+        {
+          "en": "Did he say that verbatim?",
+          "tr": "Bunu kelimesi kelimesine mi söyledi?"
+        },
+        {
+          "en": "Yes, but do not be so literal.",
+          "tr": "Evet, ama bu kadar gerçek anlamıyla alma."
+        },
+        {
+          "en": "It got lost in translation. I apologize.",
+          "tr": "Çeviride kayboldu. Özür dilerim."
+        }
+      ]
+    },
+    {
+      "id": "c1-language-3",
+      "title": "Siyasi tartışma",
+      "names": [
+        "Maria"
+      ],
+      "lines": [
+        {
+          "en": "Maria watches a political debate on the internet.",
+          "tr": "Maria internette siyasi bir tartışma izliyor."
+        },
+        {
+          "en": "The eloquence of the candidate is obvious.",
+          "tr": "Adayın hitabet yeteneği ortada."
+        },
+        {
+          "en": "What does his comment imply?",
+          "tr": "Onun yorumu ne ima ediyor?"
+        },
+        {
+          "en": "His answer is quite nuanced.",
+          "tr": "Cevabı oldukça incelikli."
+        },
+        {
+          "en": "Political discourse is very sensitive.",
+          "tr": "Siyasi söylem çok hassastır."
+        }
+      ]
+    },
+    {
+      "id": "c1-language-4",
+      "title": "İş görüşmesi",
+      "names": [
+        "Ayşe"
+      ],
+      "lines": [
+        {
+          "en": "Ayşe is at a job interview.",
+          "tr": "Ayşe bir iş görüşmesinde."
+        },
+        {
+          "en": "We need advanced language proficiency and fluency.",
+          "tr": "İleri düzey dil yeterliliğine ve akıcılığa ihtiyacımız var."
+        },
+        {
+          "en": "I am confident in my fluency.",
+          "tr": "Akıcılığım konusunda kendime güveniyorum."
+        },
+        {
+          "en": "To put it mildly, your tone was a little rude.",
+          "tr": "Hafif tabirle, ses tonunuz biraz kabaydı."
+        },
+        {
+          "en": "I'm at a loss for words. I apologize.",
+          "tr": "Diyecek söz bulamıyorum. Özür dilerim."
+        }
+      ]
+    },
+    {
+      "id": "c1-language-5",
+      "title": "Gizli anlamlar",
+      "names": [
+        "Emre",
+        "Sarah"
+      ],
+      "lines": [
+        {
+          "en": "Emre and Sarah read a novel.",
+          "tr": "Emre ve Sarah bir roman okuyor."
+        },
+        {
+          "en": "This idiom does not convey the message.",
+          "tr": "Bu deyim mesajı iletmiyor."
+        },
+        {
+          "en": "It has a bad connotation.",
+          "tr": "Kötü bir yan anlamı var."
+        },
+        {
+          "en": "You must read between the lines.",
+          "tr": "Satır aralarını okumalısın."
+        },
+        {
+          "en": "Now I understand the underlying nuance.",
+          "tr": "Şimdi alttaki ince ayrıntıyı anlıyorum."
+        }
+      ]
+    }
+  ]
+}
