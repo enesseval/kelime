@@ -46,6 +46,10 @@ CARDS
   sentence says older). Avoid crude or dated words. At most 55 characters.
 - note: optional, short Turkish, only for a real trap (irregular past, false friend, a second
   meaning the learner will meet, a confusing pair like say/tell). Otherwise "".
+- Idioms and phrases: give the Turkish a native speaker would use, never a word-for-word
+  rendering ("Let's agree to disagree." is "Fikirlerimiz farklı, kabul.", not "Anlaşamadığımızda
+  anlaşalım."; "Let's take it from here." is "Gerisini biz hallederiz."). Turkish must be
+  grammatical everyday Turkish; never coin forms like "dikkate almamazlık etmek".
 - Phrase cards: text at most 28 characters (use "…" for the slot), tr at most 28
   characters, one example that fills the slot. When an example has two speakers, separate
   them with " – " ("I'm hungry. – Me too!").

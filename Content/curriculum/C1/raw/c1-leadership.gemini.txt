@@ -1,0 +1,561 @@
+{
+"id": "c1-leadership",
+"level": "C1",
+"title": "Liderlik ve yönetim",
+"placement": "any",
+"goal": "Bir ekibi ve projeyi yönetmeyi anlatır, sorumluluk ve hesap verebilirliği tartışır, iş yükü ve tükenmişlik üzerine konuşur.",
+"words": [
+{
+"id": "c1-facilitate",
+"word": "facilitate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"kolaylaştırmak"
+],
+"example_en": "I will facilitate the meeting.",
+"example_tr": "Toplantıyı ben kolaylaştıracağım."
+}
+],
+"note": ""
+},
+{
+"id": "c1-oversee",
+"word": "oversee",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"denetlemek",
+"yönetmek"
+],
+"example_en": "She will oversee the campaign.",
+"example_tr": "Kampanyayı o yönetecek."
+}
+],
+"note": ""
+},
+{
+"id": "c1-implement",
+"word": "implement",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"uygulamak"
+],
+"example_en": "We must implement the new rule.",
+"example_tr": "Yeni kuralı uygulamalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "c1-streamline",
+"word": "streamline",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"düzene sokmak",
+"sadeleştirmek"
+],
+"example_en": "They streamline the delivery.",
+"example_tr": "Teslimatı düzene sokuyorlar."
+}
+],
+"note": ""
+},
+{
+"id": "c1-accountability",
+"word": "accountability",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"hesap verebilirlik"
+],
+"example_en": "Accountability is crucial here.",
+"example_tr": "Burada hesap verebilirlik çok önemlidir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-stakeholder",
+"word": "stakeholder",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"paydaş"
+],
+"example_en": "Every stakeholder agreed.",
+"example_tr": "Her paydaş aynı fikirdeydi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-initiative",
+"word": "initiative",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"girişim",
+"inisiyatif"
+],
+"example_en": "It was a brave initiative.",
+"example_tr": "Cesur bir girişimdi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-incentive",
+"word": "incentive",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"teşvik"
+],
+"example_en": "We need a financial incentive.",
+"example_tr": "Mali bir teşvike ihtiyacımız var."
+}
+],
+"note": ""
+},
+{
+"id": "c1-benchmark",
+"word": "benchmark",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"kriter",
+"kıyas noktası"
+],
+"example_en": "This is our new benchmark.",
+"example_tr": "Bu bizim yeni kriterimiz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-feasible",
+"word": "feasible",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"yapılabilir",
+"mümkün"
+],
+"example_en": "Is this plan feasible?",
+"example_tr": "Bu plan yapılabilir mi?"
+}
+],
+"note": ""
+},
+{
+"id": "c1-viable",
+"word": "viable",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"uygulanabilir"
+],
+"example_en": "It is not a viable alternative.",
+"example_tr": "Uygulanabilir bir alternatif değil."
+}
+],
+"note": ""
+},
+{
+"id": "c1-restructure",
+"word": "restructure",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"yeniden yapılandırmak"
+],
+"example_en": "We have to restructure the team.",
+"example_tr": "Ekibi yeniden yapılandırmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "c1-merger",
+"word": "merger",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"birleşme"
+],
+"example_en": "The merger was a success.",
+"example_tr": "Birleşme başarılı oldu."
+}
+],
+"note": ""
+},
+{
+"id": "c1-meticulous",
+"word": "meticulous",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"titiz"
+],
+"example_en": "She is meticulous at work.",
+"example_tr": "İşinde titizdir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-diligent",
+"word": "diligent",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"çalışkan",
+"gayretli"
+],
+"example_en": "He is a diligent student.",
+"example_tr": "O gayretli bir öğrencidir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-tedious",
+"word": "tedious",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"sıkıcı",
+"bıktırıcı"
+],
+"example_en": "This job is very tedious.",
+"example_tr": "Bu iş çok sıkıcı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-burnout",
+"word": "burnout",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tükenmişlik"
+],
+"example_en": "Burnout is a big problem.",
+"example_tr": "Tükenmişlik büyük bir sorundur."
+}
+],
+"note": ""
+},
+{
+"id": "c1-workload",
+"word": "workload",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"iş yükü"
+],
+"example_en": "My workload is heavy.",
+"example_tr": "İş yüküm ağır."
+}
+],
+"note": ""
+},
+{
+"id": "c1-allocate",
+"word": "allocate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"ayırmak",
+"tahsis etmek"
+],
+"example_en": "Allocate more time to this.",
+"example_tr": "Buna daha fazla zaman ayırın."
+}
+],
+"note": ""
+},
+{
+"id": "c1-prioritize",
+"word": "prioritize",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"öncelik vermek"
+],
+"example_en": "You must prioritize this issue.",
+"example_tr": "Bu soruna öncelik vermelisin."
+}
+],
+"note": ""
+},
+{
+"id": "c1-consolidate",
+"word": "consolidate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"birleştirmek",
+"sağlamlaştırmak"
+],
+"example_en": "We will consolidate our debts.",
+"example_tr": "Borçlarımızı birleştireceğiz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-transparent",
+"word": "transparent",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"şeffaf"
+],
+"example_en": "We are quite transparent.",
+"example_tr": "Biz oldukça şeffafız."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c1-p-touch-base",
+"text": "Let's touch base…",
+"tr": "…görüşelim",
+"example_en": "Let's touch base next week.",
+"example_tr": "Haftaya görüşelim.",
+"note": ""
+},
+{
+"id": "c1-p-outside-box",
+"text": "Think outside the box.",
+"tr": "Farklı düşün.",
+"example_en": "We must think outside the box.",
+"example_tr": "Farklı düşünmek zorundayız.",
+"note": ""
+},
+{
+"id": "c1-p-not-my-call",
+"text": "It's not my call.",
+"tr": "Benim kararım değil.",
+"example_en": "I'm sorry, it's not my call.",
+"example_tr": "Üzgünüm, benim kararım değil.",
+"note": ""
+},
+{
+"id": "c1-p-in-the-loop",
+"text": "Keep me in the loop.",
+"tr": "Beni haberdar et.",
+"example_en": "Please keep me in the loop.",
+"example_tr": "Lütfen beni haberdar et.",
+"note": ""
+},
+{
+"id": "c1-p-take-it-from-here",
+"text": "Let's take it from here.",
+"tr": "Buradan biz devralalım.",
+"example_en": "Thanks. Let's take it from here.",
+"example_tr": "Teşekkürler. Buradan biz devralalım.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c1-leadership-1",
+"title": "Zor Bir Karar",
+"names": [
+"Leyla",
+"John"
+],
+"lines": [
+{
+"en": "Leyla and John work in an office.",
+"tr": "Leyla ve John bir ofiste çalışıyor."
+},
+{
+"en": "Is the new plan feasible, John?",
+"tr": "Yeni plan yapılabilir mi, John?"
+},
+{
+"en": "I doubt it. We must prioritize our budget.",
+"tr": "Şüpheliyim. Bütçemize öncelik vermeliyiz."
+},
+{
+"en": "Can we restructure the team instead?",
+"tr": "Onun yerine ekibi yeniden yapılandıramaz mıyız?"
+},
+{
+"en": "It's not my call. The manager decides.",
+"tr": "Benim kararım değil. Yönetici karar verir."
+},
+{
+"en": "Keep me in the loop, please.",
+"tr": "Beni haberdar et, lütfen."
+}
+]
+},
+{
+"id": "c1-leadership-2",
+"title": "Birleşme Toplantısı",
+"names": [
+"Mehmet",
+"Sarah"
+],
+"lines": [
+{
+"en": "Mehmet will oversee the new merger.",
+"tr": "Mehmet yeni birleşmeyi yönetecek."
+},
+{
+"en": "Every stakeholder is nervous about it.",
+"tr": "Her paydaş bu konuda gergin."
+},
+{
+"en": "We must streamline the method.",
+"tr": "Yöntemi düzene sokmalıyız."
+},
+{
+"en": "Yes, we have to be transparent.",
+"tr": "Evet, şeffaf olmak zorundayız."
+},
+{
+"en": "Let's touch base next week.",
+"tr": "Haftaya görüşelim."
+},
+{
+"en": "Perfect. Let's take it from here.",
+"tr": "Harika. Buradan biz devralalım."
+}
+]
+},
+{
+"id": "c1-leadership-3",
+"title": "İş Yükü",
+"names": [
+"Ayşe"
+],
+"lines": [
+{
+"en": "Ayşe is a meticulous and diligent worker.",
+"tr": "Ayşe titiz ve gayretli bir çalışandır."
+},
+{
+"en": "However, her workload is very heavy.",
+"tr": "Ancak, iş yükü çok ağır."
+},
+{
+"en": "The daily routine is tedious.",
+"tr": "Günlük rutin bıktırıcı."
+},
+{
+"en": "She fears burnout.",
+"tr": "Tükenmişlikten korkuyor."
+},
+{
+"en": "I need a financial incentive.",
+"tr": "Mali bir teşvike ihtiyacım var."
+},
+{
+"en": "We must think outside the box to help her.",
+"tr": "Ona yardım etmek için farklı düşünmek zorundayız."
+}
+]
+},
+{
+"id": "c1-leadership-4",
+"title": "Yeni Girişim",
+"names": [
+"London",
+"Ali"
+],
+"lines": [
+{
+"en": "Ali is in London for a big meeting.",
+"tr": "Ali büyük bir toplantı için Londra'da."
+},
+{
+"en": "They want to implement a new initiative.",
+"tr": "Yeni bir girişim uygulamak istiyorlar."
+},
+{
+"en": "Is it a viable idea?",
+"tr": "Uygulanabilir bir fikir mi?"
+},
+{
+"en": "Yes, but they must allocate more money.",
+"tr": "Evet, ama daha fazla para ayırmalılar."
+},
+{
+"en": "Accountability is a benchmark for success.",
+"tr": "Hesap verebilirlik başarı için bir kriterdir."
+},
+{
+"en": "I will facilitate the first phase.",
+"tr": "İlk aşamayı ben kolaylaştıracağım."
+}
+]
+},
+{
+"id": "c1-leadership-5",
+"title": "Borçları Yönetmek",
+"names": [
+"Kemal",
+"Emma"
+],
+"lines": [
+{
+"en": "Kemal and Emma discuss their budget.",
+"tr": "Kemal ve Emma bütçelerini tartışıyor."
+},
+{
+"en": "We must consolidate our debts, Emma.",
+"tr": "Borçlarımızı birleştirmeliyiz, Emma."
+},
+{
+"en": "That is a feasible strategy.",
+"tr": "Bu yapılabilir bir strateji."
+},
+{
+"en": "It will streamline our payments.",
+"tr": "Ödemelerimizi düzene sokacak."
+},
+{
+"en": "By and large, I agree with you.",
+"tr": "Genel olarak sana katılıyorum."
+},
+{
+"en": "Let's touch base next week about this.",
+"tr": "Bunun hakkında haftaya görüşelim."
+}
+]
+}
+]
+}

@@ -1,0 +1,559 @@
+{
+  "id": "c1-argument",
+  "level": "C1",
+  "title": "Tartışma ve ikna",
+  "placement": "any",
+  "goal": "Bir görüşü kanıtla savunur, karşı görüşü çürütür ya da kısmen kabul eder, bir argümandaki önyargıyı ve mantık hatasını gösterir.",
+  "words": [
+    {
+      "id": "c1-advocate",
+      "word": "advocate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "savunmak",
+            "desteklemek"
+          ],
+          "example_en": "We advocate equality for all.",
+          "example_tr": "Herkes için eşitliği savunuyoruz."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "savunucu"
+          ],
+          "example_en": "He is an advocate for animal rights.",
+          "example_tr": "O, hayvan hakları savunucusudur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-undermine",
+      "word": "undermine",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "sarsmak",
+            "zayıflatmak"
+          ],
+          "example_en": "This mistake undermines his theory.",
+          "example_tr": "Bu hata onun teorisini sarsıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-scrutinize",
+      "word": "scrutinize",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "incelemek",
+            "irdelemek"
+          ],
+          "example_en": "We must scrutinize every aspect of the proposal.",
+          "example_tr": "Teklifin her yönünü dikkatle incelemeliyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-refute",
+      "word": "refute",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "çürütmek",
+            "yalanlamak"
+          ],
+          "example_en": "The evidence refutes his claim.",
+          "example_tr": "Kanıt onun iddiasını çürütüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-concede",
+      "word": "concede",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kabul etmek",
+            "teslim etmek"
+          ],
+          "example_en": "I concede that you are right.",
+          "example_tr": "Haklı olduğunuzu kabul ediyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-assert",
+      "word": "assert",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ileri sürmek",
+            "iddia etmek"
+          ],
+          "example_en": "He asserts that the plan is safe.",
+          "example_tr": "Planın güvenli olduğunu ileri sürüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-contend",
+      "word": "contend",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "iddia etmek",
+            "öne sürmek"
+          ],
+          "example_en": "Many contend that the policy will fail.",
+          "example_tr": "Çoğu kişi politikanın başarısız olacağını iddia ediyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-dispute",
+      "word": "dispute",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "itiraz etmek"
+          ],
+          "example_en": "Nobody can dispute this evidence.",
+          "example_tr": "Kimse bu kanıta itiraz edemez."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "anlaşmazlık"
+          ],
+          "example_en": "We have a dispute over the contract.",
+          "example_tr": "Sözleşme konusunda anlaşmazlığımız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-rhetoric",
+      "word": "rhetoric",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hitabet",
+            "söylem"
+          ],
+          "example_en": "His political rhetoric is persuasive.",
+          "example_tr": "Siyasi söylemi ikna edici."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-bias",
+      "word": "bias",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "önyargı",
+            "taraf tutma"
+          ],
+          "example_en": "This article shows political bias.",
+          "example_tr": "Bu makale siyasi önyargı gösteriyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-fallacy",
+      "word": "fallacy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "mantık hatası",
+            "yanılgı"
+          ],
+          "example_en": "It is a fallacy to assume this.",
+          "example_tr": "Bunu varsaymak bir yanılgıdır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-premise",
+      "word": "premise",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "öncül",
+            "temel dayanak"
+          ],
+          "example_en": "His theory rests on a poor premise.",
+          "example_tr": "Teorisi zayıf bir öncüle dayanıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-compelling",
+      "word": "compelling",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ikna edici",
+            "inandırıcı"
+          ],
+          "example_en": "She made a compelling argument.",
+          "example_tr": "İkna edici bir argüman sundu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-controversial",
+      "word": "controversial",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tartışmalı"
+          ],
+          "example_en": "This is a very controversial issue.",
+          "example_tr": "Bu çok tartışmalı bir mesele."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-stance",
+      "word": "stance",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "duruş",
+            "tutum"
+          ],
+          "example_en": "The government changed its stance.",
+          "example_tr": "Hükümet tutumunu değiştirdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-endorse",
+      "word": "endorse",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "onaylamak",
+            "desteklemek"
+          ],
+          "example_en": "I cannot endorse this decision.",
+          "example_tr": "Bu kararı onaylayamam."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-objection",
+      "word": "objection",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "itiraz"
+          ],
+          "example_en": "Does anyone have an objection?",
+          "example_tr": "İtirazı olan var mı?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-persuasive",
+      "word": "persuasive",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ikna edici"
+          ],
+          "example_en": "Your essay is very persuasive.",
+          "example_tr": "Makalen çok ikna edici."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-credible",
+      "word": "credible",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "güvenilir",
+            "inandırıcı"
+          ],
+          "example_en": "Is this a credible source?",
+          "example_tr": "Bu güvenilir bir kaynak mı?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-dismiss",
+      "word": "dismiss",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "reddetmek",
+            "geçiştirmek"
+          ],
+          "example_en": "Do not dismiss my concerns.",
+          "example_tr": "Endişelerimi geçiştirme."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-acknowledge",
+      "word": "acknowledge",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kabul etmek",
+            "tanımak"
+          ],
+          "example_en": "We must acknowledge the risks.",
+          "example_tr": "Riskleri kabul etmeliyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-counter",
+      "word": "counter",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "karşılık vermek",
+            "çürütmek"
+          ],
+          "example_en": "How do you counter this argument?",
+          "example_tr": "Bu argümana nasıl karşılık verirsin?"
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c1-p-go-as-far",
+      "text": "I'd go as far as to say…",
+      "tr": "Şunu bile söyleyebilirim ki…",
+      "example_en": "I'd go as far as to say he is very clever.",
+      "example_tr": "Onun çok zeki olduğunu bile söyleyebilirim.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-beside-point",
+      "text": "That's beside the point.",
+      "tr": "Konumuz bu değil.",
+      "example_en": "Maybe, but that's beside the point.",
+      "example_tr": "Olabilir ama konumuz bu değil.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-have-point",
+      "text": "You have a point there.",
+      "tr": "Bu konuda haklısın.",
+      "example_en": "You have a point there, I agree.",
+      "example_tr": "Bu konuda haklısın, katılıyorum.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-agree-disagree",
+      "text": "Let's agree to disagree.",
+      "tr": "Fikirlerimiz farklı, kabul.",
+      "example_en": "We will never agree. Let's agree to disagree.",
+      "example_tr": "Anlaşamayacağız. Farklı düşündüğümüzü kabul edelim.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-fact-matter",
+      "text": "The fact of the matter is…",
+      "tr": "İşin aslı şu ki…",
+      "example_en": "The fact of the matter is, we have no money.",
+      "example_tr": "İşin aslı şu ki, hiç paramız yok.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c1-argument-1",
+      "title": "İklim tartışması",
+      "names": [
+        "Ali",
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "The new climate policy is very controversial.",
+          "tr": "Yeni iklim politikası çok tartışmalı."
+        },
+        {
+          "en": "What is your stance on it?",
+          "tr": "Bu konudaki duruşun ne?"
+        },
+        {
+          "en": "I endorse it. I'd go as far as to say it is essential.",
+          "tr": "Onaylıyorum. Hatta şart olduğunu bile söyleyebilirim."
+        },
+        {
+          "en": "But how do you counter the financial objections?",
+          "tr": "Peki finansal itirazlara nasıl karşı çıkıyorsun?"
+        },
+        {
+          "en": "The research evidence is compelling.",
+          "tr": "Araştırma kanıtları ikna edici."
+        }
+      ]
+    },
+    {
+      "id": "c1-argument-2",
+      "title": "Akademik anlaşmazlık",
+      "names": [
+        "Dr. Evans",
+        "Emre"
+      ],
+      "lines": [
+        {
+          "en": "I dispute the underlying premise of your thesis.",
+          "tr": "Tezinin temel öncülüne itiraz ediyorum."
+        },
+        {
+          "en": "Why? Do you think it is a fallacy?",
+          "tr": "Neden? Bunun bir yanılgı olduğunu mu düşünüyorsunuz?"
+        },
+        {
+          "en": "Yes. I can refute your claims with new data.",
+          "tr": "Evet. İddialarını yeni verilerle çürütebilirim."
+        },
+        {
+          "en": "I concede that the data is different.",
+          "tr": "Verilerin farklı olduğunu kabul ediyorum."
+        },
+        {
+          "en": "The fact of the matter is, your hypothesis is not accurate.",
+          "tr": "İşin aslı şu ki, hipotezin doğru değil."
+        }
+      ]
+    },
+    {
+      "id": "c1-argument-3",
+      "title": "Toplantı odası",
+      "names": [
+        "Sarah"
+      ],
+      "lines": [
+        {
+          "en": "The manager asserts that we need a new strategy.",
+          "tr": "Müdür yeni bir stratejiye ihtiyacımız olduğunu iddia ediyor."
+        },
+        {
+          "en": "His rhetoric is always very confident.",
+          "tr": "Söylemi her zaman çok kendinden emin."
+        },
+        {
+          "en": "We shouldn't merely dismiss his opinions.",
+          "tr": "Fikirlerini öylece geçiştirmemeliyiz."
+        },
+        {
+          "en": "You have a point there. I acknowledge my bias.",
+          "tr": "Bu konuda haklısın. Önyargımı kabul ediyorum."
+        }
+      ]
+    },
+    {
+      "id": "c1-argument-4",
+      "title": "Haber eleştirisi",
+      "names": [
+        "Burak",
+        "Elena"
+      ],
+      "lines": [
+        {
+          "en": "This journalist advocates for political change.",
+          "tr": "Bu gazeteci siyasi değişimi savunuyor."
+        },
+        {
+          "en": "But her last article undermines her reputation.",
+          "tr": "Fakat son makalesi itibarını sarsıyor."
+        },
+        {
+          "en": "Is she a credible source?",
+          "tr": "Güvenilir bir kaynak mı?"
+        },
+        {
+          "en": "That's beside the point. Her argument is persuasive.",
+          "tr": "Konumuz bu değil. Argümanı ikna edici."
+        },
+        {
+          "en": "I still don't always trust her.",
+          "tr": "Yine de ona her zaman güvenmiyorum."
+        }
+      ]
+    },
+    {
+      "id": "c1-argument-5",
+      "title": "Yatırım riski",
+      "names": [
+        "David",
+        "Aylin"
+      ],
+      "lines": [
+        {
+          "en": "I contend that this investment is a big risk.",
+          "tr": "Bu yatırımın büyük bir risk olduğunu iddia ediyorum."
+        },
+        {
+          "en": "If you scrutinize the market, you will see the profit.",
+          "tr": "Piyasayı dikkatle incelersen, kârı göreceksin."
+        },
+        {
+          "en": "Our views are very different.",
+          "tr": "Görüşlerimiz çok farklı."
+        },
+        {
+          "en": "Yes, they are. Let's agree to disagree.",
+          "tr": "Evet, öyle. Farklı düşündüğümüzü kabul edelim."
+        }
+      ]
+    }
+  ],
+  "names": []
+}
