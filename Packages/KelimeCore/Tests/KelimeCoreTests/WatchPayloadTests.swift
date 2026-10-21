@@ -26,11 +26,34 @@ struct WatchPayloadTests {
         return try db.writer.write { db in try WatchPayload.make(db: db, clock: clock(), using: &rng) }
     }
 
+    @Test func staysInStepWithTheWidgetWhileTheAppIsClosed() throws {
+        let db = try makeDatabase()
+        let sent = try payload(db)
+        // Two and a half days later only the widget extension has run (it refills the queue).
+        for hours in [12.0, 30, 47, 60] {
+            let later = clock(hours * 3600)
+            var rng = SeededGenerator(seed: UInt64(hours))
+            let onPhone = try db.writer.write { db -> String? in
+                _ = try WidgetQueue.refill(db: db, clock: later, using: &rng)
+                return try WidgetQueue.current(db: db, clock: later)?.cardID
+            }
+            #expect(sent.slot(at: later.now)?.card.id == onPhone, "after \(hours) h")
+        }
+    }
+
+    @Test func sendsEachCardOnce() throws {
+        let payload = try payload(try makeDatabase())
+        let data = try payload.encoded()
+        #expect(try WatchPayload.decode(data) == payload)
+        // Three days of 30-minute slots stay small enough for WatchConnectivity.
+        #expect(data.count < 60_000, "\(data.count) bytes")
+    }
+
     @Test func matchesTheIPhoneWidgetQueue() throws {
         let db = try makeDatabase()
         let payload = try payload(db)
         let queue = try db.reader.read { db in try WidgetQueue.current(db: db, clock: clock()) }
-        #expect(payload.slots.count == 49)
+        #expect(payload.slots.count == 145)
         #expect(payload.slot(at: clock().now)?.card.id == queue?.cardID)
         // Round trip through JSON, the way it crosses to the watch.
         #expect(try WatchPayload.decode(payload.encoded()) == payload)

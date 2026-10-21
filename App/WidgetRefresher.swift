@@ -7,8 +7,11 @@ enum WidgetRefresher {
     static func refresh(_ database: AppDatabase) async {
         do {
             try await database.writer.write { db in
-                // A nearly learned unit hands over to the next one before the queue fills.
-                try Curriculum.advance(db: db)
+                // A nearly learned unit hands over to the next one; the slots ahead are picked
+                // again so its words show up now rather than in three days.
+                if try Curriculum.advance(db: db) != nil {
+                    try WidgetQueue.clearFuture(db: db, clock: .system)
+                }
                 try CoursePuzzle.keepToday(clock: .system, db: db)
                 var rng = SystemRandomNumberGenerator()
                 try WidgetQueue.refill(db: db, clock: .system, using: &rng)

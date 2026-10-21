@@ -35,7 +35,7 @@ struct WidgetTimelineTests {
 
     @Test func cardModeHasOneEntryPerSlot() throws {
         let snapshots = try build(try makeDatabase())
-        #expect(snapshots.count == 9)
+        #expect(snapshots.count == 25)
         #expect(snapshots.allSatisfy { $0.mode == .card && $0.phase == .answer && $0.card != nil })
         #expect(snapshots.map(\.date) == snapshots.map(\.date).sorted())
     }
@@ -48,7 +48,7 @@ struct WidgetTimelineTests {
 
     @Test func selfTestRevealsTheAnswerHalfwayCappedAt30Minutes() throws {
         let threeHours = try build(try makeDatabase(), mode: .selfTest)
-        #expect(threeHours.count == 18)
+        #expect(threeHours.count == 50)
         for pair in stride(from: 0, to: threeHours.count, by: 2) {
             let q = threeHours[pair], a = threeHours[pair + 1]
             #expect(q.phase == .question && a.phase == .answer)

@@ -1,7 +1,7 @@
 import Foundation
 import GRDB
 
-/// What the iPhone sends the Apple Watch: the widget's next 24 hours of words, plus today's
+/// What the iPhone sends the Apple Watch: the widget's queued words (three days), plus today's
 /// review count. The watch has no database of its own; its app and complications read this.
 ///
 /// The phone builds it from the same queue as the iPhone widget, so the wrist and the lock
@@ -34,6 +34,47 @@ public struct WatchPayload: Codable, Sendable, Equatable {
     public var mode: WidgetMode
     /// Kendini sına: how long after a slot starts the answer appears.
     public var revealDelay: TimeInterval
+
+    // On the wire each card is written once and slots refer to it by id: three days of slots
+    // reuse the same few dozen cards, and WatchConnectivity payloads should stay small.
+    enum CodingKeys: String, CodingKey {
+        case generatedAt, cards, slots, reviewedToday, reviewedDay, dailyTarget, mode, revealDelay
+    }
+
+    struct WireSlot: Codable {
+        var start: Date
+        var cardID: String
+        var state: LearningState
+        var quizOptions: [String]
+        var quizAnswer: String?
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        let cards = Dictionary(try c.decode([Card].self, forKey: .cards).map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
+        generatedAt = try c.decode(Date.self, forKey: .generatedAt)
+        slots = try c.decode([WireSlot].self, forKey: .slots).compactMap { w in
+            cards[w.cardID].map { Slot(start: w.start, card: $0, state: w.state, quizOptions: w.quizOptions, quizAnswer: w.quizAnswer) }
+        }
+        reviewedToday = try c.decode(Int.self, forKey: .reviewedToday)
+        reviewedDay = try c.decode(LocalDate.self, forKey: .reviewedDay)
+        dailyTarget = try c.decode(Int.self, forKey: .dailyTarget)
+        mode = try c.decode(WidgetMode.self, forKey: .mode)
+        revealDelay = try c.decode(TimeInterval.self, forKey: .revealDelay)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        var seen = Set<String>()
+        try c.encode(slots.map(\.card).filter { seen.insert($0.id).inserted }, forKey: .cards)
+        try c.encode(slots.map { WireSlot(start: $0.start, cardID: $0.card.id, state: $0.state, quizOptions: $0.quizOptions, quizAnswer: $0.quizAnswer) }, forKey: .slots)
+        try c.encode(generatedAt, forKey: .generatedAt)
+        try c.encode(reviewedToday, forKey: .reviewedToday)
+        try c.encode(reviewedDay, forKey: .reviewedDay)
+        try c.encode(dailyTarget, forKey: .dailyTarget)
+        try c.encode(mode, forKey: .mode)
+        try c.encode(revealDelay, forKey: .revealDelay)
+    }
 
     public init(
         generatedAt: Date, slots: [Slot], reviewedToday: Int, reviewedDay: LocalDate,
@@ -102,7 +143,7 @@ public struct WatchPayload: Codable, Sendable, Equatable {
     public func snapshots(from now: Date, calendar: Calendar) -> [WidgetSnapshot] {
         let upcoming = slots.filter { $0.start > now }
         var starts = [now] + upcoming.map(\.start)
-        // No update from the phone for a day: keep a day of repeated words on the timeline.
+        // No update from the phone for the whole queue: keep a day of repeated words on the timeline.
         if upcoming.isEmpty, slots.count > 1 {
             let step = slots[1].start.timeIntervalSince(slots[0].start)
             if step > 0 {

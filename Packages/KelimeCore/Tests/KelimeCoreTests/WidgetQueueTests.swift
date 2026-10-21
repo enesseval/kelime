@@ -26,10 +26,10 @@ struct WidgetQueueTests {
         return try db.writer.write { db in try WidgetQueue.refill(db: db, clock: clock, using: &rng) }
     }
 
-    @Test func fillsTheNext24HoursFromFreeDecks() throws {
+    @Test func fillsTheNextThreeDaysFromFreeDecks() throws {
         let db = try makeDatabase()
         let entries = try refill(db, at: clock())
-        #expect(entries.count == 9)
+        #expect(entries.count == 25) // three days of 3-hour slots
         try db.reader.read { db throws in
             for entry in entries {
                 let card = try #require(try Card.fetchOne(db, key: entry.cardID))
@@ -57,11 +57,11 @@ struct WidgetQueueTests {
         let db = try makeDatabase()
         let first = try refill(db, at: clock())
         let later = try refill(db, at: clock(4 * 3600))
-        #expect(later.count == 9)
+        #expect(later.count == 25)
         #expect(later.first!.slotStart == first[1].slotStart)
-        #expect(Array(later.prefix(8)).map(\.cardID) == Array(first.dropFirst()).map(\.cardID))
+        #expect(Array(later.prefix(first.count - 1)).map(\.cardID) == Array(first.dropFirst()).map(\.cardID))
         let total = try db.reader.read { db in try WidgetQueueEntry.fetchCount(db) }
-        #expect(total == 10) // one past slot kept as history
+        #expect(total == 26) // one past slot kept as history
     }
 
     @Test func neverRepeatsWithinTwentySlotsAcrossRefills() throws {
@@ -82,16 +82,16 @@ struct WidgetQueueTests {
 
     @Test func rotationSettingChangesTheGrid() throws {
         let db = try makeDatabase(Preferences(rotationInterval: .thirtyMinutes, isPro: false))
-        #expect(try refill(db, at: clock()).count == 9) // free users fall back to 3 hours
+        #expect(try refill(db, at: clock()).count == 25) // free users fall back to 3 hours
         try db.writer.write { db in try Settings.set(.isPro, true, in: db) }
-        #expect(try refill(db, at: clock()).count == 49)
+        #expect(try refill(db, at: clock()).count == 145)
         try db.writer.write { db in try Settings.set(.rotationInterval, RotationInterval.daily.minutes, in: db) }
         let daily = try refill(db, at: clock())
-        #expect(daily.count == 2)
+        #expect(daily.count == 4)
         let future = try db.reader.read { db in
             try WidgetQueueEntry.filter(WidgetQueueEntry.Columns.slotStart >= daily[0].slotStart).fetchCount(db)
         }
-        #expect(future == 2)
+        #expect(future == 4)
     }
 
     @Test func proDecksRequirePro() throws {

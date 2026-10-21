@@ -99,6 +99,15 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
+## Watch in step for three days (after build 17)
+
+The widget queue now holds three days of slots (`WidgetQueue.horizon`) and the watch payload
+carries all of them, each card written once (well under 60 KB at 30-minute slots). The widget
+extension only fills missing slots, so phone and wrist show the same word for three days even
+with the app closed. Slots ahead are picked again when a unit hands over or a setting changes;
+complication pushes go out only when the payload changed, and one held back by the spacing is
+sent when the spacing allows.
+
 ## B2 course (content v7, build 17)
 
 Content/curriculum/B2/: core (36 words, 7 phrases), ten units and a bridge to C1 (mixed

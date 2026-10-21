@@ -1,13 +1,20 @@
 import Foundation
 import GRDB
 
-/// Maintains `widget_queue`: one row per rotation slot for the next 24 hours.
+/// Maintains `widget_queue`: one row per rotation slot for the next three days.
+///
+/// Three days, not one: the Apple Watch gets the same slots from the phone, and only the app can
+/// send them (the widget extension cannot talk to the watch). With three days queued, the wrist
+/// and the lock screen show the same word even when the app stays closed for a few days.
 ///
 /// The widget timeline is built from this table. Refilling keeps existing future slots (and the
 /// quiz answers stored on them), drops old ones, and picks cards for missing slots.
 public enum WidgetQueue {
     /// Wrong options shown next to the answer in the medium quiz widget.
     public static let quizOptionCount = 2
+
+    /// How far ahead slots are picked.
+    public static let horizon: TimeInterval = 3 * 24 * 3600
 
     /// Past slots kept around so the "no repeat within 20 slots" rule spans refills.
     static let historyToKeep = WidgetScheduler.recentWindow
@@ -23,7 +30,7 @@ public enum WidgetQueue {
         let calendar = clock.calendar
         let prefs = try Preferences.load(db)
         let interval = prefs.effectiveRotation
-        let wanted = WidgetScheduler.slots(from: now, interval: interval, calendar: calendar)
+        let wanted = WidgetScheduler.slots(from: now, interval: interval, calendar: calendar, horizon: horizon)
         guard let currentSlot = wanted.first else { return [] }
 
         try markShown(db: db, now: now)
