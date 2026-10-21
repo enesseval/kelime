@@ -39,6 +39,15 @@ GRAMMAR = {
                 "(suddenly, then, finally, while, during).",
     },
 }
+GRAMMAR["B1"] = {
+    "any": "B1 grammar: everything from A1-A2, present perfect continuous, past perfect, used to, the first "
+           "and second conditional, the passive (present and past simple), relative clauses (who, which, "
+           "that, where), might/must/can't for guessing, gerund or infinitive after common verbs. No third "
+           "conditional, no reported speech.",
+    "last": "B1 grammar plus the bridge to B2: second conditional (If I were…), wish + past (I wish I had…), "
+            "reported speech (He told me that…), it is said that…, and the past perfect in stories.",
+}
+GRAMMAR["B1"]["first"] = GRAMMAR["B1"]["any"]
 GRAMMAR["A1"]["first"] = GRAMMAR["A1"]["any"]
 GRAMMAR["A2"]["first"] = GRAMMAR["A2"]["any"]
 NAMES = {"A1": "beginner (A1)", "A2": "elementary (A2)", "B1": "intermediate (B1)"}
@@ -95,6 +104,8 @@ VOCABULARY RULE
 {vocab_rule}
 - Grammar words: {" ".join(sorted(function_words))}
 {known}{core_lines}- Inflected forms are fine (works, sitting, coffees, children, colder).
+- Before you answer, read every example and every story line again word by word and replace
+  any word that is not in the lists. This is the most common mistake.
 - Check every word against the lists. Even very common words are not allowed unless they are
   listed (question, food, minute, phone, umbrella, coat, sea, back): use a listed word instead.
 - Words of OTHER units of this level are not allowed, however common.

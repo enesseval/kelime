@@ -51,6 +51,10 @@ i've you've we've they've he'd she'd you'd they'd i'll you'll he'll she'll we'll
 wasn't weren't didn't hasn't haven't there's here's
 why only lot inside outside back ok then first soon later as
 """.split()),
+    "B1": set("""
+might may whose anyone anybody somewhere anywhere everywhere nowhere
+myself yourself himself herself itself ourselves themselves
+""".split()),
 }
 LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
 
