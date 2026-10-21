@@ -1,0 +1,755 @@
+{
+  "id": "b1-core",
+  "level": "B1",
+  "title": "Çekirdek",
+  "placement": "first",
+  "goal": "Fikrini gerekçesiyle savunur, katılır ya da katılmaz, karşılaştırır, bir durumu tahmin eder; B1'in en sık bağlaç, fiil ve zarflarını kullanır.",
+  "words": [
+    {
+      "id": "b1-although",
+      "word": "although",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "rağmen"
+          ],
+          "example_en": "Although it was cold, we went outside.",
+          "example_tr": "Soğuk olmasına rağmen dışarı çıktık."
+        }
+      ],
+      "note": "Cümle başında veya ortasında kullanılabilir."
+    },
+    {
+      "id": "b1-however",
+      "word": "however",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "ancak",
+            "bununla birlikte"
+          ],
+          "example_en": "I like this car. However, it is very expensive.",
+          "example_tr": "Bu arabayı seviyorum. Ancak çok pahalı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-unless",
+      "word": "unless",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "-medikçe",
+            "-mezse"
+          ],
+          "example_en": "I won't go unless you come with me.",
+          "example_tr": "Sen benimle gelmedikçe ben gitmem."
+        }
+      ],
+      "note": "'if not' ile aynı anlama gelir."
+    },
+    {
+      "id": "b1-whether",
+      "word": "whether",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "olup olmadığını"
+          ],
+          "example_en": "I don't know whether he will come.",
+          "example_tr": "Gelip gelmeyeceğini bilmiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-instead",
+      "word": "instead",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "bunun yerine",
+            "onun yerine"
+          ],
+          "example_en": "I didn't buy a bag. I bought shoes instead.",
+          "example_tr": "Çanta almadım. Onun yerine ayakkabı aldım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-actually",
+      "word": "actually",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "aslında"
+          ],
+          "example_en": "He seems angry, but actually he is very friendly.",
+          "example_tr": "Kızgın görünüyor ama aslında çok cana yakın."
+        }
+      ],
+      "note": "'Şu an' (aktüel) demek değildir; 'aslında' demektir."
+    },
+    {
+      "id": "b1-especially",
+      "word": "especially",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "özellikle"
+          ],
+          "example_en": "I love warm weather, especially in summer.",
+          "example_tr": "Sıcak havayı severim, özellikle yazın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-quite",
+      "word": "quite",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "oldukça"
+          ],
+          "example_en": "The exam was quite difficult.",
+          "example_tr": "Sınav oldukça zordu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-nearly",
+      "word": "nearly",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "neredeyse"
+          ],
+          "example_en": "I have nearly finished my work.",
+          "example_tr": "İşimi neredeyse bitirdim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-either",
+      "word": "either",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "ya ... ya da"
+          ],
+          "example_en": "You can either stay here or come with us.",
+          "example_tr": "Ya burada kalabilirsin ya da bizimle gelebilirsin."
+        }
+      ],
+      "note": "Genelde 'or' ile birlikte kullanılır."
+    },
+    {
+      "id": "b1-agree",
+      "word": "agree",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "katılmak",
+            "aynı fikirde olmak"
+          ],
+          "example_en": "I agree with your decision.",
+          "example_tr": "Kararına katılıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-disagree",
+      "word": "disagree",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "katılmamak"
+          ],
+          "example_en": "I disagree with him about this situation.",
+          "example_tr": "Bu durum hakkında ona katılmıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-opinion",
+      "word": "opinion",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "fikir",
+            "düşünce"
+          ],
+          "example_en": "What is your opinion about this plan?",
+          "example_tr": "Bu plan hakkındaki fikrin nedir?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-reason",
+      "word": "reason",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sebep",
+            "neden"
+          ],
+          "example_en": "What is the reason for this decision?",
+          "example_tr": "Bu kararın sebebi nedir?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-explain",
+      "word": "explain",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "açıklamak"
+          ],
+          "example_en": "Can you explain this situation to me?",
+          "example_tr": "Bu durumu bana açıklayabilir misin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-compare",
+      "word": "compare",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "karşılaştırmak"
+          ],
+          "example_en": "You shouldn't compare yourself to other people.",
+          "example_tr": "Kendini diğer insanlarla karşılaştırmamalısın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-mention",
+      "word": "mention",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "bahsetmek"
+          ],
+          "example_en": "Did he mention the meeting?",
+          "example_tr": "Toplantıdan bahsetti mi?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-realize",
+      "word": "realize",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "fark etmek"
+          ],
+          "example_en": "I didn't realize that it was so late.",
+          "example_tr": "O kadar geç olduğunu fark etmedim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-notice",
+      "word": "notice",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "farkına varmak",
+            "görmek"
+          ],
+          "example_en": "Did you notice her new glasses?",
+          "example_tr": "Onun yeni gözlüğünü fark ettin mi?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-seem",
+      "word": "seem",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "görünmek",
+            "gibi gelmek"
+          ],
+          "example_en": "They seem very happy today.",
+          "example_tr": "Bugün çok mutlu görünüyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-expect",
+      "word": "expect",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "beklemek",
+            "ummak"
+          ],
+          "example_en": "I expect him to arrive tomorrow.",
+          "example_tr": "Yarın gelmesini bekliyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-consider",
+      "word": "consider",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "düşünmek",
+            "değerlendirmek"
+          ],
+          "example_en": "We are considering moving to a new house.",
+          "example_tr": "Yeni bir eve taşınmayı düşünüyoruz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-allow",
+      "word": "allow",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "izin vermek"
+          ],
+          "example_en": "They don't allow children to play here.",
+          "example_tr": "Çocukların burada oynamasına izin vermiyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-manage",
+      "word": "manage",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "başarmak",
+            "halletmek"
+          ],
+          "example_en": "Did you manage to fix the car?",
+          "example_tr": "Arabayı tamir edebildin mi?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-avoid",
+      "word": "avoid",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kaçınmak",
+            "uzak durmak"
+          ],
+          "example_en": "You should avoid eating too much sugar.",
+          "example_tr": "Çok fazla şeker yemekten kaçınmalısın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-necessary",
+      "word": "necessary",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "gerekli"
+          ],
+          "example_en": "It is necessary to bring your passport.",
+          "example_tr": "Pasaportunu getirmen gerekli."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-possible",
+      "word": "possible",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "mümkün"
+          ],
+          "example_en": "Is it possible to change my ticket?",
+          "example_tr": "Biletimi değiştirmek mümkün mü?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-similar",
+      "word": "similar",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "benzer"
+          ],
+          "example_en": "Our problems are quite similar.",
+          "example_tr": "Sorunlarımız oldukça benzer."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-obvious",
+      "word": "obvious",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "belli",
+            "açık"
+          ],
+          "example_en": "It is obvious that he is tired.",
+          "example_tr": "Yorgun olduğu belli."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-certain",
+      "word": "certain",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "emin",
+            "kesin"
+          ],
+          "example_en": "I am not certain about the time.",
+          "example_tr": "Saat konusunda emin değilim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-various",
+      "word": "various",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "çeşitli"
+          ],
+          "example_en": "There are various reasons for this.",
+          "example_tr": "Bunun çeşitli sebepleri var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-recently",
+      "word": "recently",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "son zamanlarda"
+          ],
+          "example_en": "Have you seen him recently?",
+          "example_tr": "Onu son zamanlarda gördün mü?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-advantage",
+      "word": "advantage",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "avantaj"
+          ],
+          "example_en": "What is the advantage of this app?",
+          "example_tr": "Bu uygulamanın avantajı nedir?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-disadvantage",
+      "word": "disadvantage",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "dezavantaj"
+          ],
+          "example_en": "The only disadvantage is the price.",
+          "example_tr": "Tek dezavantajı fiyatı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-decision",
+      "word": "decision",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "karar"
+          ],
+          "example_en": "It was a very difficult decision.",
+          "example_tr": "Çok zor bir karardı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-situation",
+      "word": "situation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "durum"
+          ],
+          "example_en": "We are in a difficult situation.",
+          "example_tr": "Zor bir durumdayız."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b1-replace",
+      "word": "replace",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "değiştirmek",
+            "yenisini almak"
+          ],
+          "example_en": "I need to replace my old computer.",
+          "example_tr": "Eski bilgisayarımı değiştirmem lazım."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b1-p-in-my-opinion",
+      "text": "In my opinion…",
+      "tr": "Bence…",
+      "example_en": "In my opinion, this is a bad plan.",
+      "example_tr": "Bence bu kötü bir plan.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-i-agree",
+      "text": "I agree with you.",
+      "tr": "Sana katılıyorum.",
+      "example_en": "I agree with you. It is too expensive.",
+      "example_tr": "Sana katılıyorum. Çok pahalı.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-not-sure",
+      "text": "I'm not sure about that.",
+      "tr": "Bundan emin değilim.",
+      "example_en": "I'm not sure about that. It seems dangerous.",
+      "example_tr": "Bundan emin değilim. Tehlikeli görünüyor.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-on-the-other-hand",
+      "text": "On the other hand…",
+      "tr": "Öte yandan…",
+      "example_en": "On the other hand, it might be too late.",
+      "example_tr": "Öte yandan, çok geç olabilir.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-as-far-as",
+      "text": "As far as I know…",
+      "tr": "Bildiğim kadarıyla…",
+      "example_en": "As far as I know, he is still abroad.",
+      "example_tr": "Bildiğim kadarıyla hâlâ yurt dışında.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-worth-ing",
+      "text": "It's worth…ing.",
+      "tr": "…maya değer.",
+      "example_en": "It's worth visiting the museum.",
+      "example_tr": "Müzeyi ziyaret etmeye değer.",
+      "note": ""
+    },
+    {
+      "id": "b1-p-makes-sense",
+      "text": "That makes sense.",
+      "tr": "Bu mantıklı.",
+      "example_en": "That makes sense. Let's do that.",
+      "example_tr": "Bu mantıklı. Öyle yapalım.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b1-core-1",
+      "title": "İş Kararı",
+      "names": [
+        "Ali",
+        "Sarah",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Ali and Sarah are in a meeting in London.",
+          "tr": "Ali ve Sarah Londra'da bir toplantıdalar."
+        },
+        {
+          "en": "We need to replace our old computers.",
+          "tr": "Eski bilgisayarlarımızı değiştirmemiz gerekiyor."
+        },
+        {
+          "en": "I agree with you, but they are very expensive.",
+          "tr": "Sana katılıyorum ama onlar çok pahalı."
+        },
+        {
+          "en": "In my opinion, it is a necessary decision.",
+          "tr": "Bence bu gerekli bir karar."
+        },
+        {
+          "en": "That makes sense. Can we manage to do it this year?",
+          "tr": "Bu mantıklı. Bunu bu yıl halletmeyi başarabilir miyiz?"
+        },
+        {
+          "en": "Yes, if we avoid buying expensive furniture.",
+          "tr": "Evet, pahalı mobilyalar almaktan kaçınırsak."
+        },
+        {
+          "en": "OK, it's worth trying.",
+          "tr": "Tamam, denemeye değer."
+        }
+      ]
+    },
+    {
+      "id": "b1-core-2",
+      "title": "Tatil Planı",
+      "names": [
+        "Canan",
+        "David",
+        "Antalya"
+      ],
+      "lines": [
+        {
+          "en": "Canan and David are planning a summer holiday in Antalya.",
+          "tr": "Canan ve David Antalya'da bir yaz tatili planlıyorlar."
+        },
+        {
+          "en": "I want to stay in a quiet village this year.",
+          "tr": "Bu yıl sessiz bir köyde kalmak istiyorum."
+        },
+        {
+          "en": "I'm not sure about that. It might be too quiet.",
+          "tr": "Ondan emin değilim. Fazla sessiz olabilir."
+        },
+        {
+          "en": "As far as I know, there are various festivals in summer.",
+          "tr": "Bildiğim kadarıyla yazın çeşitli festivaller oluyor."
+        },
+        {
+          "en": "On the other hand, a big hotel has an advantage. It is near the sea.",
+          "tr": "Öte yandan, büyük bir otelin bir avantajı var. Denize yakın."
+        },
+        {
+          "en": "Although you are right, I prefer the countryside.",
+          "tr": "Haklı olmana rağmen ben kırsalı tercih ederim."
+        },
+        {
+          "en": "OK, let's compare prices before we decide.",
+          "tr": "Tamam, karar vermeden önce fiyatları karşılaştıralım."
+        }
+      ]
+    },
+    {
+      "id": "b1-core-3",
+      "title": "Zor Durum",
+      "names": [
+        "Emre",
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "Emre notices that Zeynep seems worried.",
+          "tr": "Emre, Zeynep'in endişeli göründüğünü fark eder."
+        },
+        {
+          "en": "What is the problem? You've looked very tired recently.",
+          "tr": "Sorun nedir? Son zamanlarda çok yorgun görünüyorsun."
+        },
+        {
+          "en": "I didn't realize it was obvious. I am in a difficult situation.",
+          "tr": "Belli olduğunu fark etmemiştim. Zor bir durumdayım."
+        },
+        {
+          "en": "Can you explain it to me? Maybe I can help.",
+          "tr": "Bana açıklayabilir misin? Belki yardım edebilirim."
+        },
+        {
+          "en": "My boss expects me to work on weekends.",
+          "tr": "Patronum hafta sonları çalışmamı bekliyor."
+        },
+        {
+          "en": "You shouldn't accept unless he pays you more money.",
+          "tr": "Sana daha fazla para ödemedikçe kabul etmemelisin."
+        },
+        {
+          "en": "Actually, you are right. I will talk to him tomorrow.",
+          "tr": "Aslında haklısın. Onunla yarın konuşacağım."
+        }
+      ]
+    }
+  ]
+}
