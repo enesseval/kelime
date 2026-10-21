@@ -1,0 +1,525 @@
+{
+  "id": "c1-research",
+  "level": "C1",
+  "title": "Araştırma yöntemleri",
+  "placement": "any",
+  "goal": "Bir çalışmanın yöntemini, verisini ve sınırlılıklarını açıklar, sonuçların güvenilirliğini eleştirel biçimde değerlendirir.",
+  "words": [
+    {
+      "id": "c1-empirical",
+      "word": "empirical",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ampirik",
+            "deneysel"
+          ],
+          "example_en": "We need empirical evidence, not just a theory.",
+          "example_tr": "Sadece teori değil, ampirik kanıt lazım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-methodology",
+      "word": "methodology",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yöntembilim",
+            "yöntem"
+          ],
+          "example_en": "We can't accept their methodology.",
+          "example_tr": "Yöntemlerini kabul edemeyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-variable",
+      "word": "variable",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "değişken"
+          ],
+          "example_en": "Every variable must be known during the experiment.",
+          "example_tr": "Deney sırasında her değişken bilinmelidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-correlation",
+      "word": "correlation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "korelasyon",
+            "ilişki"
+          ],
+          "example_en": "A correlation between diet and disease was evident.",
+          "example_tr": "Diyet ve hastalık arasındaki korelasyon açıktı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-sample",
+      "word": "sample",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "örneklem"
+          ],
+          "example_en": "The sample is too small to validate these findings.",
+          "example_tr": "Örneklem, bu bulguları doğrulamak için çok küçük."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-replicate",
+      "word": "replicate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "tekrarlamak",
+            "yinelemek"
+          ],
+          "example_en": "We must replicate the experiment without a mistake.",
+          "example_tr": "Deneyi hatasız bir şekilde tekrarlamalıyız."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-anomaly",
+      "word": "anomaly",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "anomali",
+            "sapma"
+          ],
+          "example_en": "This anomaly cannot be explained by any known theory.",
+          "example_tr": "Bu anomali bilinen hiçbir teoriyle açıklanamaz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-validate",
+      "word": "validate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "doğrulamak",
+            "onaylamak"
+          ],
+          "example_en": "Further research is needed to validate the data.",
+          "example_tr": "Verileri doğrulamak için daha fazla araştırma şart."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-quantify",
+      "word": "quantify",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ölçmek",
+            "sayısallaştırmak"
+          ],
+          "example_en": "It is difficult to quantify the impact of the policy.",
+          "example_tr": "Politikanın etkisini ölçmek zordur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-phenomenon",
+      "word": "phenomenon",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "olgu",
+            "fenomen"
+          ],
+          "example_en": "It is a strange phenomenon that we must investigate.",
+          "example_tr": "Araştırmamız gereken tuhaf bir olgudur."
+        }
+      ],
+      "note": "Çoğulu 'phenomena' şeklindedir."
+    },
+    {
+      "id": "c1-simulate",
+      "word": "simulate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "simüle etmek"
+          ],
+          "example_en": "We use a computer to simulate the climate.",
+          "example_tr": "İklimi simüle etmek için bilgisayar kullanıyoruz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-parameter",
+      "word": "parameter",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "parametre"
+          ],
+          "example_en": "Every parameter was revised before starting the trial.",
+          "example_tr": "Denemeye başlamadan önce her parametre revize edildi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-preliminary",
+      "word": "preliminary",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ilk",
+            "ön"
+          ],
+          "example_en": "Our preliminary findings suggest the vaccine is safe.",
+          "example_tr": "İlk bulgularımız aşının güvenli olduğunu gösteriyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-rigorous",
+      "word": "rigorous",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "titiz",
+            "sıkı"
+          ],
+          "example_en": "The vaccine went through rigorous trials.",
+          "example_tr": "Aşı titiz denemelerden geçti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-inconclusive",
+      "word": "inconclusive",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "sonuçsuz",
+            "kesin olmayan"
+          ],
+          "example_en": "The evidence is inconclusive; we cannot accuse him.",
+          "example_tr": "Kanıtlar kesin değil; onu suçlayamayız."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-peer",
+      "word": "peer",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "meslektaş",
+            "akran"
+          ],
+          "example_en": "His article was reviewed by his peers.",
+          "example_tr": "Makalesi meslektaşları tarafından incelendi."
+        }
+      ],
+      "note": "Akademide makaleleri aynı alandaki uzmanlar (peer) inceler."
+    },
+    {
+      "id": "c1-findings",
+      "word": "findings",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bulgular"
+          ],
+          "example_en": "The findings suggest that the treatment works.",
+          "example_tr": "Bulgular tedavinin işe yaradığını gösteriyor."
+        }
+      ],
+      "note": "Araştırma sonuçları için genellikle çoğul kullanılır."
+    },
+    {
+      "id": "c1-causal",
+      "word": "causal",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "nedensel"
+          ],
+          "example_en": "A causal relationship between the events is unlikely.",
+          "example_tr": "Olaylar arasında nedensel bir ilişki olması zor."
+        }
+      ],
+      "note": "'Casual' (gündelik) ile karıştırmayın."
+    },
+    {
+      "id": "c1-outlier",
+      "word": "outlier",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "aykırı değer"
+          ],
+          "example_en": "We should ignore this outlier in our data.",
+          "example_tr": "Verimizdeki bu aykırı değeri göz ardı etmeliyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-interpret",
+      "word": "interpret",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "yorumlamak"
+          ],
+          "example_en": "How we interpret the data will decide our strategy.",
+          "example_tr": "Veriyi nasıl yorumladığımız stratejimizi belirleyecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c1-verify",
+      "word": "verify",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "doğrulamak",
+            "teyit etmek"
+          ],
+          "example_en": "We need more data to verify these unexpected results.",
+          "example_tr": "Bu beklenmedik sonuçları teyit etmek için veri lazım."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c1-p-findings-suggest",
+      "text": "The findings suggest that…",
+      "tr": "Bulgular şunu gösteriyor…",
+      "example_en": "The findings suggest that you inherit this disease.",
+      "example_tr": "Bulgular bu hastalığın kalıtsal olduğunu gösteriyor.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-correlation",
+      "text": "Correlation isn't causation.",
+      "tr": "İlişki, neden demek değil.",
+      "example_en": "Correlation isn't causation; be careful.",
+      "example_tr": "İlişki, neden demek değil; dikkatli ol.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-further-research",
+      "text": "Further research is needed.",
+      "tr": "Daha fazla araştırma şart.",
+      "example_en": "It is interesting, but further research is needed.",
+      "example_tr": "İlginç ama daha fazla araştırmaya ihtiyaç var.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-inconclusive",
+      "text": "It's far from conclusive.",
+      "tr": "Kesin olmaktan çok uzak.",
+      "example_en": "Do you have an answer? – No, it's far from conclusive.",
+      "example_tr": "Cevabınız var mı? – Hayır, kesin olmaktan çok uzak.",
+      "note": ""
+    },
+    {
+      "id": "c1-p-data-speaks",
+      "text": "The data speaks for itself.",
+      "tr": "Veriler ortada.",
+      "example_en": "We do not need to argue; the data speaks for itself.",
+      "example_tr": "Tartışmaya gerek yok; veriler ortada.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c1-research-1",
+      "title": "Laboratuvar Toplantısı",
+      "names": [
+        "Ayşe",
+        "Tom"
+      ],
+      "lines": [
+        {
+          "en": "Ayşe and Tom evaluate the preliminary findings of their new experiment.",
+          "tr": "Ayşe ve Tom, yeni deneylerinin ilk bulgularını değerlendiriyorlar."
+        },
+        {
+          "en": "The findings suggest that too much sugar causes obesity.",
+          "tr": "Bulgular fazla şekerin obeziteye yol açtığını gösteriyor."
+        },
+        {
+          "en": "However, Tom has doubts about the methodology.",
+          "tr": "Ancak Tom'un yöntem hakkında şüpheleri var."
+        },
+        {
+          "en": "We need empirical evidence to validate this.",
+          "tr": "Bunu doğrulamak için ampirik kanıta ihtiyacımız var."
+        },
+        {
+          "en": "I agree. Further research is needed.",
+          "tr": "Katılıyorum. Daha fazla araştırmaya ihtiyaç var."
+        }
+      ]
+    },
+    {
+      "id": "c1-research-2",
+      "title": "Veri Analizi",
+      "names": [
+        "Burak"
+      ],
+      "lines": [
+        {
+          "en": "Burak is looking at the data on his laptop.",
+          "tr": "Burak dizüstü bilgisayarındaki verilere bakıyor."
+        },
+        {
+          "en": "There is a significant correlation between these two variables.",
+          "tr": "Bu iki değişken arasında anlamlı bir korelasyon var."
+        },
+        {
+          "en": "Wait, what is this anomaly?",
+          "tr": "Bekle, bu anomali ne?"
+        },
+        {
+          "en": "That is just an outlier; we should ignore it.",
+          "tr": "O sadece aykırı bir değer; onu görmezden gelmeliyiz."
+        },
+        {
+          "en": "But if we delete it, we might miss a crucial phenomenon.",
+          "tr": "Ama onu silersek, önemli bir olguyu gözden kaçırabiliriz."
+        }
+      ]
+    },
+    {
+      "id": "c1-research-3",
+      "title": "Akademik İnceleme",
+      "names": [
+        "Zeynep",
+        "Mark"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep reads a new article by her colleague Mark.",
+          "tr": "Zeynep, meslektaşı Mark'ın yeni bir makalesini okuyor."
+        },
+        {
+          "en": "As a peer, she must evaluate his research.",
+          "tr": "Bir meslektaş olarak, araştırmasını değerlendirmek zorunda."
+        },
+        {
+          "en": "His attempt to quantify the results is interesting, but not rigorous enough.",
+          "tr": "Sonuçları sayılarla ifade etme girişimi ilginç ama yeterince titiz değil."
+        },
+        {
+          "en": "The evidence he shows is quite inconclusive.",
+          "tr": "Gösterdiği kanıtlar hiç kesin değil."
+        },
+        {
+          "en": "It's far from conclusive; he cannot share this yet.",
+          "tr": "Kesin olmaktan çok uzak; bunu henüz paylaşamaz."
+        }
+      ]
+    },
+    {
+      "id": "c1-research-4",
+      "title": "Çevreyi Simüle Etmek",
+      "names": [
+        "David",
+        "Elif"
+      ],
+      "lines": [
+        {
+          "en": "David and Elif try to simulate the effects of deforestation.",
+          "tr": "David ve Elif ormansızlaşmanın etkilerini simüle etmeye çalışıyorlar."
+        },
+        {
+          "en": "Did you revise every parameter in the programme?",
+          "tr": "Programdaki her parametreyi gözden geçirdin mi?"
+        },
+        {
+          "en": "Yes, but I cannot replicate the past results.",
+          "tr": "Evet ama geçmiş sonuçları tekrarlayamıyorum."
+        },
+        {
+          "en": "We must verify the data before another attempt.",
+          "tr": "Bir deneme daha yapmadan önce veriyi doğrulamalıyız."
+        }
+      ]
+    },
+    {
+      "id": "c1-research-5",
+      "title": "Medyaya Karşı Bilim",
+      "names": [
+        "Ahmet"
+      ],
+      "lines": [
+        {
+          "en": "Ahmet reads a dramatic headline about coffee and cancer.",
+          "tr": "Ahmet kahve ve kanser hakkında çarpıcı bir manşet okuyor."
+        },
+        {
+          "en": "It claims that a causal relationship was discovered.",
+          "tr": "Nedensel bir ilişkinin keşfedildiğini iddia ediyor."
+        },
+        {
+          "en": "Journalists usually interpret these findings badly.",
+          "tr": "Gazeteciler genellikle bu bulguları kötü yorumlarlar."
+        },
+        {
+          "en": "Correlation isn't causation.",
+          "tr": "Korelasyon nedensellik değildir."
+        },
+        {
+          "en": "It is obvious; the data speaks for itself.",
+          "tr": "Bu çok açık; veriler ortada."
+        }
+      ]
+    }
+  ]
+}
