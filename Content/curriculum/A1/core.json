@@ -554,9 +554,18 @@
      ],
      "example_en": "I'm cold.",
      "example_tr": "Üşüyorum."
+    },
+    {
+     "pos": "n",
+     "tr": [
+      "nezle",
+      "soğuk algınlığı"
+     ],
+     "example_en": "I have a cold.",
+     "example_tr": "Nezleyim."
     }
    ],
-   "note": "'I'm cold' Türkçede 'Üşüyorum' olur."
+   "note": "'I'm cold' Türkçede 'Üşüyorum' olur. 'I have a cold' ise 'Nezleyim'."
   },
   {
    "id": "a1-old",

@@ -46,9 +46,18 @@
      ],
      "example_en": "I have a new book.",
      "example_tr": "Yeni bir kitabım var."
+    },
+    {
+     "pos": "v",
+     "tr": [
+      "ayırtmak",
+      "rezervasyon yapmak"
+     ],
+     "example_en": "I'd like to book it, please.",
+     "example_tr": "Ayırtmak istiyorum, lütfen."
     }
    ],
-   "note": ""
+   "note": "Fiil olarak 'ayırtmak' demektir: book a table, book a room."
   },
   {
    "id": "a1-game",
