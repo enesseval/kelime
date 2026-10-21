@@ -629,6 +629,222 @@
         }
       ],
       "note": ""
+    },
+    {
+      "id": "a2-long",
+      "word": "long",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "uzun"
+          ],
+          "example_en": "It was a long day.",
+          "example_tr": "Uzun bir gündü."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-short",
+      "word": "short",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kısa"
+          ],
+          "example_en": "It's a short film.",
+          "example_tr": "Kısa bir film."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-fast",
+      "word": "fast",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "hızlı"
+          ],
+          "example_en": "This train is very fast.",
+          "example_tr": "Bu tren çok hızlı."
+        }
+      ],
+      "note": "Zarf hali de 'fast': He runs fast."
+    },
+    {
+      "id": "a2-slow",
+      "word": "slow",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yavaş"
+          ],
+          "example_en": "The bus is slow today.",
+          "example_tr": "Otobüs bugün yavaş."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-ready",
+      "word": "ready",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "hazır"
+          ],
+          "example_en": "Dinner is ready!",
+          "example_tr": "Yemek hazır!"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-great",
+      "word": "great",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "harika",
+            "büyük"
+          ],
+          "example_en": "That's a great idea!",
+          "example_tr": "Harika bir fikir!"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-problem",
+      "word": "problem",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sorun",
+            "problem"
+          ],
+          "example_en": "No problem! I can help.",
+          "example_tr": "Sorun değil! Yardım edebilirim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-talk",
+      "word": "talk",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "konuşmak"
+          ],
+          "example_en": "Can we talk after lunch?",
+          "example_tr": "Öğle yemeğinden sonra konuşabilir miyiz?"
+        }
+      ],
+      "note": "Birisiyle konuşmak: talk to / talk with."
+    },
+    {
+      "id": "a2-show",
+      "word": "show",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "göstermek"
+          ],
+          "example_en": "Show me your photos.",
+          "example_tr": "Bana fotoğraflarını göster."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-food",
+      "word": "food",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yemek",
+            "yiyecek"
+          ],
+          "example_en": "The food here is good.",
+          "example_tr": "Buradaki yemekler güzel."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-life",
+      "word": "life",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hayat",
+            "yaşam"
+          ],
+          "example_en": "Life is good!",
+          "example_tr": "Hayat güzel!"
+        }
+      ],
+      "note": "Çoğulu: lives."
+    },
+    {
+      "id": "a2-run",
+      "word": "run",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "koşmak"
+          ],
+          "example_en": "I run in the park every morning.",
+          "example_tr": "Her sabah parkta koşarım."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'ran'."
+    },
+    {
+      "id": "a2-wear",
+      "word": "wear",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "giymek",
+            "takmak"
+          ],
+          "example_en": "She wears a white dress.",
+          "example_tr": "Beyaz bir elbise giyiyor."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'wore'. Gözlük takmak da 'wear'."
+    },
+    {
+      "id": "a2-little",
+      "word": "little",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "küçük",
+            "biraz"
+          ],
+          "example_en": "Can I have a little milk?",
+          "example_tr": "Biraz süt alabilir miyim?"
+        }
+      ],
+      "note": "'a little' = biraz."
     }
   ],
   "phrases": [

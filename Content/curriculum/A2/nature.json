@@ -1,0 +1,583 @@
+{
+  "id": "a2-nature",
+  "level": "A2",
+  "title": "Doğa ve mevsimler",
+  "placement": "any",
+  "goal": "Mevsimleri ve havayı ayrıntılı anlatır, şehir ile kırsalı karşılaştırır, doğada geçen bir günü anlatır.",
+  "words": [
+    {
+      "id": "a2-season",
+      "word": "season",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "mevsim"
+          ],
+          "example_en": "Summer is a hot season.",
+          "example_tr": "Yaz sıcak bir mevsimdir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-spring",
+      "word": "spring",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ilkbahar",
+            "bahar"
+          ],
+          "example_en": "I love walking in the spring.",
+          "example_tr": "İlkbaharda yürümeyi çok severim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-summer",
+      "word": "summer",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yaz"
+          ],
+          "example_en": "We visit the sea every summer.",
+          "example_tr": "Her yaz denize gideriz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-autumn",
+      "word": "autumn",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sonbahar",
+            "güz"
+          ],
+          "example_en": "It rains a lot in autumn.",
+          "example_tr": "Sonbaharda çok yağmur yağar."
+        }
+      ],
+      "note": "Amerikan İngilizcesinde 'fall' denir."
+    },
+    {
+      "id": "a2-winter",
+      "word": "winter",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kış"
+          ],
+          "example_en": "Winter is very cold here.",
+          "example_tr": "Burada kış çok soğuktur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-sunny",
+      "word": "sunny",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "güneşli"
+          ],
+          "example_en": "Today is sunny and warm.",
+          "example_tr": "Bugün güneşli ve ılık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-cloudy",
+      "word": "cloudy",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "bulutlu"
+          ],
+          "example_en": "The morning was cloudy.",
+          "example_tr": "Sabah bulutluydu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-windy",
+      "word": "windy",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "rüzgarlı"
+          ],
+          "example_en": "It is windy near the river.",
+          "example_tr": "Nehrin yanında rüzgar var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-storm",
+      "word": "storm",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "fırtına"
+          ],
+          "example_en": "A big storm is coming this evening.",
+          "example_tr": "Bu akşam büyük bir fırtına geliyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-temperature",
+      "word": "temperature",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sıcaklık",
+            "hava sıcaklığı"
+          ],
+          "example_en": "The temperature is thirty today.",
+          "example_tr": "Sıcaklık bugün otuz derece."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-degree",
+      "word": "degree",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "derece"
+          ],
+          "example_en": "It is only five degrees outside.",
+          "example_tr": "Dışarısı sadece beş derece."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-countryside",
+      "word": "countryside",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kırsal",
+            "köy ortamı"
+          ],
+          "example_en": "I want to live in the countryside.",
+          "example_tr": "Kırsalda yaşamak istiyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-mountain",
+      "word": "mountain",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "dağ"
+          ],
+          "example_en": "We can see the tall mountain.",
+          "example_tr": "Yüksek dağı görebiliyoruz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-river",
+      "word": "river",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "nehir",
+            "ırmak"
+          ],
+          "example_en": "Children swim in the river.",
+          "example_tr": "Çocuklar nehirde yüzüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-lake",
+      "word": "lake",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "göl"
+          ],
+          "example_en": "The water in the lake is cold.",
+          "example_tr": "Göldeki su soğuk."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-forest",
+      "word": "forest",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "orman"
+          ],
+          "example_en": "They walk through the green forest.",
+          "example_tr": "Yeşil ormanın içinden yürüyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-sea",
+      "word": "sea",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "deniz"
+          ],
+          "example_en": "We had a swim in the sea.",
+          "example_tr": "Denizde yüzdük."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-island",
+      "word": "island",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ada"
+          ],
+          "example_en": "We took a trip to the island.",
+          "example_tr": "Adaya geziye gittik."
+        }
+      ],
+      "note": "'s' harfi okunmaz: /aɪlənd/."
+    },
+    {
+      "id": "a2-animal",
+      "word": "animal",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hayvan"
+          ],
+          "example_en": "Many animals live in this forest.",
+          "example_tr": "Bu ormanda birçok hayvan yaşar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-plant",
+      "word": "plant",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bitki"
+          ],
+          "example_en": "This small plant needs water.",
+          "example_tr": "Bu küçük bitkinin suya ihtiyacı var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-tree",
+      "word": "tree",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ağaç"
+          ],
+          "example_en": "There is a big tree in the garden.",
+          "example_tr": "Bahçede büyük bir ağaç var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-bird",
+      "word": "bird",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kuş"
+          ],
+          "example_en": "A small bird is singing.",
+          "example_tr": "Küçük bir kuş ötüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-flower",
+      "word": "flower",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "çiçek"
+          ],
+          "example_en": "These flowers are beautiful.",
+          "example_tr": "Bu çiçekler çok güzel."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "a2-p-getting-cold",
+      "text": "It's getting cold.",
+      "tr": "Hava soğuyor.",
+      "example_en": "It's getting cold. Let's go home.",
+      "example_tr": "Hava soğuyor. Eve gidelim.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-which-season",
+      "text": "Which season do you like?",
+      "tr": "Hangi mevsimi seversin?",
+      "example_en": "Which season do you like? – Spring!",
+      "example_tr": "Hangi mevsimi seversin? – Baharı!",
+      "note": ""
+    },
+    {
+      "id": "a2-p-colder-than",
+      "text": "It's colder than yesterday.",
+      "tr": "Dünden daha soğuk.",
+      "example_en": "It's colder than yesterday. Wear a shirt.",
+      "example_tr": "Dünden daha soğuk. Gömlek giy.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-best-time",
+      "text": "The best time to visit is…",
+      "tr": "Ziyaret için en iyi zaman…",
+      "example_en": "The best time to visit is autumn.",
+      "example_tr": "Ziyaret için en iyi zaman sonbahar.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-lovely-day",
+      "text": "What a lovely day!",
+      "tr": "Ne güzel bir gün!",
+      "example_en": "The sun is out. What a lovely day!",
+      "example_tr": "Güneş açtı. Ne güzel bir gün!",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "a2-nature-1",
+      "title": "Göl kenarında bir gün",
+      "names": [
+        "Cem",
+        "Bursa"
+      ],
+      "lines": [
+        {
+          "en": "Cem lives in Bursa, but today he is in the countryside.",
+          "tr": "Cem Bursa'da yaşıyor ama bugün kırsalda."
+        },
+        {
+          "en": "The morning is sunny and warm.",
+          "tr": "Sabah güneşli ve ılık."
+        },
+        {
+          "en": "He walks through a big forest to a clean lake.",
+          "tr": "Büyük bir ormandan geçip temiz bir göle yürüyor."
+        },
+        {
+          "en": "What a lovely day!",
+          "tr": "Ne güzel bir gün!"
+        },
+        {
+          "en": "He sees many birds and a small animal near the water.",
+          "tr": "Su kenarında çok sayıda kuş ve küçük bir hayvan görüyor."
+        },
+        {
+          "en": "In the afternoon, it is getting cold.",
+          "tr": "Öğleden sonra hava soğuyor."
+        },
+        {
+          "en": "Cem decides to take the bus back to the city.",
+          "tr": "Cem şehre dönmek için otobüse binmeye karar veriyor."
+        }
+      ]
+    },
+    {
+      "id": "a2-nature-2",
+      "title": "Mevsim sohbeti",
+      "names": [
+        "English",
+        "John",
+        "London",
+        "Selin"
+      ],
+      "lines": [
+        {
+          "en": "Selin speaks with her English friend John from London.",
+          "tr": "Selin, Londralı İngiliz arkadaşı John ile konuşuyor."
+        },
+        {
+          "en": "Which season do you like?",
+          "tr": "Hangi mevsimi seversin?"
+        },
+        {
+          "en": "I love spring because all the plants turn green.",
+          "tr": "İlkbaharı seviyorum çünkü bütün bitkiler yeşeriyor."
+        },
+        {
+          "en": "Summer is better for me. I like the sea.",
+          "tr": "Benim için yaz daha iyi. Denizi severim."
+        },
+        {
+          "en": "How is the weather today?",
+          "tr": "Bugün hava nasıl?"
+        },
+        {
+          "en": "It is cloudy and windy. It's colder than yesterday.",
+          "tr": "Bulutlu ve rüzgarlı. Dünden daha soğuk."
+        },
+        {
+          "en": "The temperature is only ten degrees.",
+          "tr": "Sıcaklık sadece on derece."
+        }
+      ]
+    },
+    {
+      "id": "a2-nature-3",
+      "title": "Dağda fırtına",
+      "names": [
+        "Tarık",
+        "Uludağ"
+      ],
+      "lines": [
+        {
+          "en": "Tarık and his father travel to Uludağ.",
+          "tr": "Tarık ve babası Uludağ'a gidiyor."
+        },
+        {
+          "en": "In winter, there is always white snow on the mountain.",
+          "tr": "Kışın dağda her zaman beyaz kar vardır."
+        },
+        {
+          "en": "The temperature is only two degrees.",
+          "tr": "Sıcaklık sadece iki derece."
+        },
+        {
+          "en": "Look outside. A storm is coming!",
+          "tr": "Dışarı bak. Fırtına geliyor!"
+        },
+        {
+          "en": "It is very windy now.",
+          "tr": "Şimdi çok rüzgarlı."
+        },
+        {
+          "en": "They find a warm café and wait inside.",
+          "tr": "Sıcak bir kafe bulup içeride bekliyorlar."
+        }
+      ]
+    },
+    {
+      "id": "a2-nature-4",
+      "title": "Ada gezisi",
+      "names": [
+        "Merve",
+        "Büyükada"
+      ],
+      "lines": [
+        {
+          "en": "Merve wants to visit Büyükada on Saturday.",
+          "tr": "Merve cumartesi günü Büyükada'yı ziyaret etmek istiyor."
+        },
+        {
+          "en": "She asks her brother about the trip.",
+          "tr": "Kardeşine gezi hakkında soru soruyor."
+        },
+        {
+          "en": "The best time to visit is spring or autumn.",
+          "tr": "Ziyaret için en iyi zaman ilkbahar veya sonbahar."
+        },
+        {
+          "en": "Is it expensive to go to the island?",
+          "tr": "Adaya gitmek pahalı mı?"
+        },
+        {
+          "en": "No, it is cheap and easy.",
+          "tr": "Hayır, ucuz ve kolay."
+        },
+        {
+          "en": "They see tall green plants and nice old houses on the island.",
+          "tr": "Adada uzun yeşil bitkiler ve hoş eski evler görüyorlar."
+        }
+      ]
+    },
+    {
+      "id": "a2-nature-5",
+      "title": "Nehir kenarında yürüyüş",
+      "names": [
+        "Emre",
+        "Aydın"
+      ],
+      "lines": [
+        {
+          "en": "Emre works in Aydın and needs a rest.",
+          "tr": "Emre Aydın'da çalışıyor ve dinlenmeye ihtiyacı var."
+        },
+        {
+          "en": "He leaves his car and walks near a long river.",
+          "tr": "Arabasını bırakıp uzun bir nehrin yanında yürüyor."
+        },
+        {
+          "en": "The sun is hot, but the water is cold.",
+          "tr": "Güneş sıcak ama su soğuk."
+        },
+        {
+          "en": "He stops to take a photo of an old tree and a plant.",
+          "tr": "Yaşlı bir ağacın ve bir bitkinin fotoğrafını çekmek için duruyor."
+        },
+        {
+          "en": "The countryside is different from the big city.",
+          "tr": "Kırsal, büyük şehirden farklı."
+        },
+        {
+          "en": "I hope to come back next weekend!",
+          "tr": "Umarım gelecek hafta sonu yine gelirim!"
+        }
+      ]
+    }
+  ]
+}

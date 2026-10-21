@@ -49,6 +49,7 @@ someone something anything nothing everyone everything somebody nobody
 into through over under between behind until since
 i've you've we've they've he'd she'd you'd they'd i'll you'll he'll she'll we'll they'll it'll
 wasn't weren't didn't hasn't haven't there's here's
+why only lot inside outside back ok then first soon later as
 """.split()),
 }
 LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
@@ -62,7 +63,7 @@ IRREGULAR = {
     "took": "take", "felt": "feel", "met": "meet", "left": "left", "understood": "understand",
     "thought": "think", "said": "say", "told": "tell", "gave": "give", "brought": "bring",
     "found": "find", "forgot": "forget", "chose": "choose", "grew": "grow", "stole": "steal",
-    "lost": "lose", "began": "begin", "became": "become", "broke": "break", "fell": "fall",
+    "lost": "lose", "began": "begin", "became": "become", "broke": "broken", "fell": "fall",
     "flew": "fly", "wrote": "write", "won": "win", "ran": "run", "drove": "drive", "rode": "ride",
     "wore": "wear", "kept": "keep", "sent": "send", "spent": "spend", "built": "build",
     "taught": "teach", "caught": "catch", "heard": "hear", "held": "hold", "hurt": "hurt",

@@ -52,7 +52,21 @@
         "best",
         "choose",
         "mistake",
-        "almost"
+        "almost",
+        "long",
+        "short",
+        "fast",
+        "slow",
+        "ready",
+        "great",
+        "problem",
+        "talk",
+        "show",
+        "food",
+        "life",
+        "run",
+        "wear",
+        "little"
       ],
       "phrases": [
         "I think…",
@@ -93,7 +107,9 @@
         "land",
         "foreign",
         "heavy",
-        "carry"
+        "carry",
+        "plane",
+        "fly"
       ],
       "phrases": [
         "I'd like to book a room.",
@@ -420,11 +436,14 @@
         "sea",
         "island",
         "animal",
-        "plant"
+        "plant",
+        "tree",
+        "bird",
+        "flower"
       ],
       "phrases": [
         "It's getting cold.",
-        "What's your favourite season?",
+        "Which season do you like?",
         "It's colder than yesterday.",
         "The best time to visit is…",
         "What a lovely day!"

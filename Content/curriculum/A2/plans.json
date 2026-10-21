@@ -1,0 +1,589 @@
+{
+  "id": "a2-plans",
+  "level": "A2",
+  "title": "Planlar",
+  "placement": "any",
+  "goal": "Hafta sonu ve tatil planı yapar, birini davet eder, daveti kabul eder ya da kibarca reddeder, planı değiştirir veya iptal eder.",
+  "words": [
+    {
+      "id": "a2-free",
+      "word": "free",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "müsait",
+            "boş"
+          ],
+          "example_en": "Are you free tonight?",
+          "example_tr": "Bu akşam müsait misin?"
+        },
+        {
+          "pos": "adj",
+          "tr": [
+            "ücretsiz",
+            "bedava"
+          ],
+          "example_en": "The festival is free.",
+          "example_tr": "Festival ücretsiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-tonight",
+      "word": "tonight",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "bu akşam",
+            "bu gece"
+          ],
+          "example_en": "We can meet tonight.",
+          "example_tr": "Bu akşam buluşabiliriz."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "bu akşam",
+            "bu gece"
+          ],
+          "example_en": "Tonight is very cold.",
+          "example_tr": "Bu gece çok soğuk."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-concert",
+      "word": "concert",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "konser"
+          ],
+          "example_en": "I have a ticket for the concert.",
+          "example_tr": "Konser için biletim var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-festival",
+      "word": "festival",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "festival"
+          ],
+          "example_en": "There is a music festival in the park.",
+          "example_tr": "Parkta bir müzik festivali var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-theatre",
+      "word": "theatre",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tiyatro"
+          ],
+          "example_en": "We are going to the theatre.",
+          "example_tr": "Tiyatroya gidiyoruz."
+        }
+      ],
+      "note": "Amerikan İngilizcesinde 'theater' yazılır."
+    },
+    {
+      "id": "a2-exhibition",
+      "word": "exhibition",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sergi"
+          ],
+          "example_en": "Do you want to see the photo exhibition?",
+          "example_tr": "Fotoğraf sergisini görmek ister misin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-accept",
+      "word": "accept",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kabul etmek"
+          ],
+          "example_en": "Did she accept your invitation?",
+          "example_tr": "Davetini kabul etti mi?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-refuse",
+      "word": "refuse",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "reddetmek"
+          ],
+          "example_en": "I had to refuse his invitation.",
+          "example_tr": "Davetini reddetmek zorunda kaldım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-cancel",
+      "word": "cancel",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "iptal etmek"
+          ],
+          "example_en": "They had to cancel the concert.",
+          "example_tr": "Konseri iptal etmek zorunda kaldılar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-change",
+      "word": "change",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "değiştirmek"
+          ],
+          "example_en": "Can we change the plan?",
+          "example_tr": "Planı değiştirebilir miyiz?"
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "değişiklik"
+          ],
+          "example_en": "There is a small change in our plan.",
+          "example_tr": "Planımızda küçük bir değişiklik var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-meet",
+      "word": "meet",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "buluşmak",
+            "görüşmek"
+          ],
+          "example_en": "Let's meet at the café tomorrow.",
+          "example_tr": "Yarın kafede buluşalım."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "tanışmak"
+          ],
+          "example_en": "Nice to meet you.",
+          "example_tr": "Tanıştığıma memnun oldum."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'met' şeklindedir."
+    },
+    {
+      "id": "a2-probably",
+      "word": "probably",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "muhtemelen",
+            "büyük ihtimalle"
+          ],
+          "example_en": "He will probably come late.",
+          "example_tr": "Muhtemelen geç gelecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-perhaps",
+      "word": "perhaps",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "belki"
+          ],
+          "example_en": "Perhaps we can go together.",
+          "example_tr": "Belki birlikte gidebiliriz."
+        }
+      ],
+      "note": "'Maybe' ile aynı anlama gelir; biraz daha resmidir."
+    },
+    {
+      "id": "a2-prefer",
+      "word": "prefer",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "tercih etmek"
+          ],
+          "example_en": "I prefer tea to coffee.",
+          "example_tr": "Çayı kahveye tercih ederim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-invitation",
+      "word": "invitation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "davet",
+            "davetiye"
+          ],
+          "example_en": "Thank you for the invitation.",
+          "example_tr": "Davet için teşekkür ederim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-soon",
+      "word": "soon",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "yakında",
+            "birazdan"
+          ],
+          "example_en": "See you soon!",
+          "example_tr": "Yakında görüşmek üzere!"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-later",
+      "word": "later",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "sonra",
+            "daha sonra"
+          ],
+          "example_en": "I will tell you later.",
+          "example_tr": "Sana sonra söylerim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-event",
+      "word": "event",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "etkinlik"
+          ],
+          "example_en": "This is an important event for our city.",
+          "example_tr": "Bu, şehrimiz için önemli bir etkinlik."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-promise",
+      "word": "promise",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "söz vermek"
+          ],
+          "example_en": "I promise to be there on time.",
+          "example_tr": "Vaktinde orada olacağıma söz veriyorum."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "söz"
+          ],
+          "example_en": "Remember your promise.",
+          "example_tr": "Verdiğin sözü hatırla."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-suggest",
+      "word": "suggest",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "önermek",
+            "tavsiye etmek"
+          ],
+          "example_en": "What do you suggest?",
+          "example_tr": "Ne önerirsin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-future",
+      "word": "future",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gelecek"
+          ],
+          "example_en": "We are making plans for the future.",
+          "example_tr": "Gelecek için planlar yapıyoruz."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "a2-p-are-you-free-on",
+      "text": "Are you free on…?",
+      "tr": "… günü müsait misin?",
+      "example_en": "Are you free on Friday? – Yes, I am!",
+      "example_tr": "Cuma günü müsait misin? – Evet, müsaitim!",
+      "note": ""
+    },
+    {
+      "id": "a2-p-id-love-to",
+      "text": "I'd love to!",
+      "tr": "Çok isterim!",
+      "example_en": "Do you want to come? – I'd love to!",
+      "example_tr": "Gelmek ister misin? – Çok isterim!",
+      "note": "Bir daveti hevesle kabul ederken kullanılır."
+    },
+    {
+      "id": "a2-p-maybe-next-time",
+      "text": "Maybe next time.",
+      "tr": "Belki başka zamana.",
+      "example_en": "I can't come today. Maybe next time.",
+      "example_tr": "Bugün gelemem. Belki başka zamana.",
+      "note": "Kibar bir ret ifadesidir."
+    },
+    {
+      "id": "a2-p-what-are-you-doing",
+      "text": "What are you doing this…?",
+      "tr": "Bu… ne yapıyorsun?",
+      "example_en": "What are you doing this weekend?",
+      "example_tr": "Bu hafta sonu ne yapıyorsun?",
+      "note": ""
+    },
+    {
+      "id": "a2-p-how-about",
+      "text": "How about…?",
+      "tr": "… ne dersin?",
+      "example_en": "How about a coffee after work?",
+      "example_tr": "İşten sonra bir kahveye ne dersin?",
+      "note": "Öneri sunarken sıkça kullanılır."
+    }
+  ],
+  "stories": [
+    {
+      "id": "a2-plans-1",
+      "title": "Konser daveti",
+      "names": [
+        "Selin",
+        "Kerem"
+      ],
+      "lines": [
+        {
+          "en": "Are you free on Saturday, Kerem?",
+          "tr": "Cumartesi günü müsait misin, Kerem?"
+        },
+        {
+          "en": "Yes, I am. What are you doing this weekend?",
+          "tr": "Evet, müsaitim. Bu hafta sonu ne yapıyorsun?"
+        },
+        {
+          "en": "There is a concert in the park.",
+          "tr": "Parkta bir konser var."
+        },
+        {
+          "en": "I'd love to! Where can we buy tickets?",
+          "tr": "Çok isterim! Bileti nereden alabiliriz?"
+        },
+        {
+          "en": "The event is free! Let's meet at six.",
+          "tr": "Etkinlik ücretsiz! Saat altıda buluşalım."
+        },
+        {
+          "en": "That's a good idea. See you soon!",
+          "tr": "İyi fikir. Yakında görüşürüz!"
+        }
+      ]
+    },
+    {
+      "id": "a2-plans-2",
+      "title": "Belki başka zamana",
+      "names": [
+        "Zeynep",
+        "Murat"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep brings an invitation to Murat.",
+          "tr": "Zeynep, Murat'a bir davetiye getiriyor."
+        },
+        {
+          "en": "Do you want to come to the theatre tonight?",
+          "tr": "Bu akşam tiyatroya gelmek ister misin?"
+        },
+        {
+          "en": "I'm really tired and I have to work late.",
+          "tr": "Gerçekten yorgunum ve geç saate kadar çalışmalıyım."
+        },
+        {
+          "en": "So you refuse my invitation?",
+          "tr": "Yani davetimi reddediyor musun?"
+        },
+        {
+          "en": "I'm sorry. Maybe next time.",
+          "tr": "Üzgünüm. Belki başka zamana."
+        },
+        {
+          "en": "OK, no problem. We can meet later this week.",
+          "tr": "Tamam, sorun değil. Bu haftanın devamında buluşuruz."
+        }
+      ]
+    },
+    {
+      "id": "a2-plans-3",
+      "title": "Plan değişikliği",
+      "names": [
+        "Ahmet",
+        "Emre"
+      ],
+      "lines": [
+        {
+          "en": "Ahmet and Emre planned to go to a festival.",
+          "tr": "Ahmet ile Emre bir festivale gitmeyi planlamıştı."
+        },
+        {
+          "en": "It is raining a lot today.",
+          "tr": "Bugün çok yağmur yağıyor."
+        },
+        {
+          "en": "Did they cancel the festival because of the rain?",
+          "tr": "Yağmur yüzünden festivali iptal mi ettiler?"
+        },
+        {
+          "en": "Yes, but we can change our plan.",
+          "tr": "Evet ama planımızı değiştirebiliriz."
+        },
+        {
+          "en": "How about the photo exhibition?",
+          "tr": "Fotoğraf sergisine ne dersin?"
+        },
+        {
+          "en": "I prefer the exhibition. It is warm inside!",
+          "tr": "Sergiyi tercih ederim. İçerisi sıcak!"
+        }
+      ]
+    },
+    {
+      "id": "a2-plans-4",
+      "title": "Gelecek planları",
+      "names": [
+        "Ece",
+        "Sinan",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Ece and Sinan are talking about the future.",
+          "tr": "Ece ile Sinan gelecek hakkında konuşuyorlar."
+        },
+        {
+          "en": "What do you suggest for our holiday next year?",
+          "tr": "Gelecek yıl tatilimiz için ne önerirsin?"
+        },
+        {
+          "en": "Perhaps we can travel to London together.",
+          "tr": "Belki birlikte Londra'ya seyahat edebiliriz."
+        },
+        {
+          "en": "I'd love to, but it will probably be expensive.",
+          "tr": "Çok isterim ama muhtemelen pahalı olacaktır."
+        },
+        {
+          "en": "We can find a cheap hotel and buy tickets early.",
+          "tr": "Ucuz bir otel bulup biletleri erkenden alabiliriz."
+        },
+        {
+          "en": "Promise me we will go! – I promise!",
+          "tr": "Gideceğimize söz ver! – Söz veriyorum!"
+        }
+      ]
+    },
+    {
+      "id": "a2-plans-5",
+      "title": "Hafta sonu buluşması",
+      "names": [
+        "Burak",
+        "Deniz"
+      ],
+      "lines": [
+        {
+          "en": "What are you doing this weekend, Deniz?",
+          "tr": "Bu hafta sonu ne yapıyorsun Deniz?"
+        },
+        {
+          "en": "I have no plans. Are you free?",
+          "tr": "Hiç planım yok. Müsait misin?"
+        },
+        {
+          "en": "I want to visit the new photo exhibition.",
+          "tr": "Yeni fotoğraf sergisini ziyaret etmek istiyorum."
+        },
+        {
+          "en": "Great! Can we meet before lunch?",
+          "tr": "Harika! Öğle yemeğinden önce buluşabilir miyiz?"
+        },
+        {
+          "en": "I prefer the afternoon. How about two?",
+          "tr": "Öğleden sonrayı tercih ederim. İkiye ne dersin?"
+        },
+        {
+          "en": "Two is fine. See you on Sunday!",
+          "tr": "İki uygundur. Pazar günü görüşürüz!"
+        }
+      ]
+    }
+  ]
+}

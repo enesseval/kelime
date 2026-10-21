@@ -1,0 +1,574 @@
+{
+  "id": "a2-bridge",
+  "level": "A2",
+  "title": "Bir şey oldu",
+  "placement": "last",
+  "goal": "Başından geçen bir olayı sırasıyla anlatır (o sırada ne yapıyordu, sonra ne oldu), koşul cümlesiyle sonuç söyler; B1'e köprü.",
+  "words": [
+    {
+      "id": "a2-happen",
+      "word": "happen",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "olmak",
+            "meydana gelmek"
+          ],
+          "example_en": "Accidents happen when you are tired.",
+          "example_tr": "Yorgunken kazalar olur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-suddenly",
+      "word": "suddenly",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "aniden",
+            "birdenbire"
+          ],
+          "example_en": "Suddenly, the car stopped.",
+          "example_tr": "Aniden araba durdu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-while",
+      "word": "while",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "-ken",
+            "esnasında"
+          ],
+          "example_en": "You called while I was sleeping.",
+          "example_tr": "Ben uyurken aradın."
+        }
+      ],
+      "note": "Arkasına genellikle 'was/were -ing' gelir."
+    },
+    {
+      "id": "a2-during",
+      "word": "during",
+      "senses": [
+        {
+          "pos": "prep",
+          "tr": [
+            "boyunca",
+            "sırasında"
+          ],
+          "example_en": "Nobody spoke during the lesson.",
+          "example_tr": "Ders sırasında kimse konuşmadı."
+        }
+      ],
+      "note": "Arkasına cümle değil, bir isim ('the storm') gelir."
+    },
+    {
+      "id": "a2-finally",
+      "word": "finally",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "sonunda",
+            "nihayet"
+          ],
+          "example_en": "The late train finally arrived.",
+          "example_tr": "Geciken tren nihayet geldi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-then",
+      "word": "then",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "sonra",
+            "ondan sonra"
+          ],
+          "example_en": "We had dinner, then went out.",
+          "example_tr": "Akşam yemeği yedik, sonra çıktık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-first",
+      "word": "first",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "önce",
+            "ilk olarak"
+          ],
+          "example_en": "First, we went to the museum.",
+          "example_tr": "Önce müzeye gittik."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-lose",
+      "word": "lose",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kaybetmek"
+          ],
+          "example_en": "Don't lose your keys.",
+          "example_tr": "Anahtarlarını kaybetme."
+        }
+      ],
+      "note": "Geçmiş zaman hali 'lost' şeklindedir."
+    },
+    {
+      "id": "a2-steal",
+      "word": "steal",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "çalmak"
+          ],
+          "example_en": "Did someone steal your bag?",
+          "example_tr": "Biri çantanı mı çaldı?"
+        }
+      ],
+      "note": "Geçmiş zaman hali 'stole' şeklindedir."
+    },
+    {
+      "id": "a2-police",
+      "word": "police",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "polis"
+          ],
+          "example_en": "Call the police now!",
+          "example_tr": "Hemen polisi ara!"
+        }
+      ],
+      "note": "İngilizcede çoğuldur: 'The police are here.'"
+    },
+    {
+      "id": "a2-worried",
+      "word": "worried",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "endişeli",
+            "kaygılı"
+          ],
+          "example_en": "She is worried about the exam.",
+          "example_tr": "Sınav için endişeli."
+        }
+      ],
+      "note": "Genellikle 'worried about' kalıbıyla kullanılır."
+    },
+    {
+      "id": "a2-surprised",
+      "word": "surprised",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "şaşırmış"
+          ],
+          "example_en": "I was very surprised to see him.",
+          "example_tr": "Onu gördüğüme çok şaşırdım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-afraid",
+      "word": "afraid",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "korkmuş",
+            "korkan"
+          ],
+          "example_en": "Are you afraid of the storm?",
+          "example_tr": "Fırtınadan korkuyor musun?"
+        }
+      ],
+      "note": "'Korkmak' için 'afraid of' yapısı kullanılır."
+    },
+    {
+      "id": "a2-luckily",
+      "word": "luckily",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "neyse ki",
+            "şans eseri"
+          ],
+          "example_en": "Luckily, nobody was hurt.",
+          "example_tr": "Neyse ki kimse incinmedi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-unfortunately",
+      "word": "unfortunately",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "maalesef"
+          ],
+          "example_en": "Unfortunately, the shop is closed.",
+          "example_tr": "Maalesef dükkân kapalı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-news",
+      "word": "news",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "haber",
+            "haberler"
+          ],
+          "example_en": "I have good news for you.",
+          "example_tr": "Sana güzel haberlerim var."
+        }
+      ],
+      "note": "Sonunda 's' olsa da sayılamaz: 'The news is good.'"
+    },
+    {
+      "id": "a2-story",
+      "word": "story",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hikâye",
+            "öykü"
+          ],
+          "example_en": "Tell me a story, please.",
+          "example_tr": "Bana bir hikâye anlat, lütfen."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-believe",
+      "word": "believe",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "inanmak"
+          ],
+          "example_en": "I don't believe this story.",
+          "example_tr": "Bu hikâyeye inanmıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-strange",
+      "word": "strange",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tuhaf",
+            "garip"
+          ],
+          "example_en": "Something strange happened yesterday.",
+          "example_tr": "Dün tuhaf bir şey oldu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-angry",
+      "word": "angry",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kızgın",
+            "öfkeli"
+          ],
+          "example_en": "Why are you so angry with me?",
+          "example_tr": "Bana niye bu kadar kızgınsın?"
+        }
+      ],
+      "note": "Birine kızgınken 'angry with' kullanılır."
+    },
+    {
+      "id": "a2-dangerous",
+      "word": "dangerous",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tehlikeli"
+          ],
+          "example_en": "This street is dangerous at night.",
+          "example_tr": "Bu sokak geceleri tehlikeli."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "a2-p-what-happened",
+      "text": "What happened?",
+      "tr": "Ne oldu?",
+      "example_en": "You look worried. What happened?",
+      "example_tr": "Endişeli görünüyorsun. Ne oldu?",
+      "note": ""
+    },
+    {
+      "id": "a2-p-i-was-when",
+      "text": "I was … when…",
+      "tr": "… yapıyordum ki…",
+      "example_en": "I was sleeping when you called.",
+      "example_tr": "Sen aradığında uyuyordum.",
+      "note": "Süren bir olayı bölen ani durumları anlatır."
+    },
+    {
+      "id": "a2-p-if-it-rains",
+      "text": "If it rains, we'll…",
+      "tr": "Yağmur yağarsa…",
+      "example_en": "If it rains, we'll stay at home.",
+      "example_tr": "Yağmur yağarsa evde kalacağız.",
+      "note": "Birinci tip koşul: 'if' tarafı geniş zaman kalır."
+    },
+    {
+      "id": "a2-p-you-wont-believe-it",
+      "text": "You won't believe it!",
+      "tr": "İnanmayacaksın!",
+      "example_en": "You won't believe it! I found my bag!",
+      "example_tr": "İnanmayacaksın! Çantamı buldum!",
+      "note": ""
+    },
+    {
+      "id": "a2-p-in-the-end",
+      "text": "In the end…",
+      "tr": "Sonunda…",
+      "example_en": "In the end, we took a taxi.",
+      "example_tr": "Sonunda taksiye bindik.",
+      "note": "'Finally' gibi sürecin sonucunu bağlar."
+    }
+  ],
+  "stories": [
+    {
+      "id": "a2-bridge-1",
+      "title": "Parkta tuhaf bir gün",
+      "names": [
+        "London",
+        "Selim"
+      ],
+      "lines": [
+        {
+          "en": "Selim was walking in London when it started to rain.",
+          "tr": "Selim Londra'da yürüyordu ki yağmur başladı."
+        },
+        {
+          "en": "Suddenly, he saw a black bag under a tree.",
+          "tr": "Birden bir ağacın altında siyah bir çanta gördü."
+        },
+        {
+          "en": "A strange man ran to the bag and took it.",
+          "tr": "Tuhaf bir adam çantaya koştu ve onu aldı."
+        },
+        {
+          "en": "Stop! Did you steal that bag?",
+          "tr": "Dur! O çantayı sen mi çaldın?"
+        },
+        {
+          "en": "The man was afraid and left the bag.",
+          "tr": "Adam korktu ve çantayı bıraktı."
+        },
+        {
+          "en": "Selim called the police.",
+          "tr": "Selim polisi aradı."
+        },
+        {
+          "en": "In the end, the police gave the bag to the woman.",
+          "tr": "Sonunda polis çantayı kadına verdi."
+        }
+      ]
+    },
+    {
+      "id": "a2-bridge-2",
+      "title": "Kayıp pasaport",
+      "names": [
+        "Rome",
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep was waiting at the airport in Rome.",
+          "tr": "Zeynep Roma'da havaalanında bekliyordu."
+        },
+        {
+          "en": "First, she bought a coffee and some water.",
+          "tr": "Önce bir kahve ve biraz su aldı."
+        },
+        {
+          "en": "Then, she looked inside her bag.",
+          "tr": "Sonra çantasının içine baktı."
+        },
+        {
+          "en": "Oh no! Did I lose my passport?",
+          "tr": "Olamaz! Pasaportumu mu kaybettim?"
+        },
+        {
+          "en": "She was very worried during the flight delay.",
+          "tr": "Uçuş rötarlı olduğu sırada çok endişelendi."
+        },
+        {
+          "en": "Luckily, a friendly waiter ran to her table with it.",
+          "tr": "Neyse ki kibar bir garson masasına pasaportla koştu."
+        },
+        {
+          "en": "Thank you! I was so worried!",
+          "tr": "Teşekkürler! Çok endişelenmiştim!"
+        }
+      ]
+    },
+    {
+      "id": "a2-bridge-3",
+      "title": "Hava durumu planı",
+      "names": [
+        "Murat",
+        "Bursa",
+        "Emre"
+      ],
+      "lines": [
+        {
+          "en": "Murat and Emre were planning a trip near Bursa.",
+          "tr": "Murat ve Emre Bursa yakınlarında bir gezi planlıyordu."
+        },
+        {
+          "en": "The news says a heavy storm is coming tomorrow.",
+          "tr": "Haberlerde yarın şiddetli bir fırtına geleceği söyleniyor."
+        },
+        {
+          "en": "If it rains, we'll visit the museum.",
+          "tr": "Yağmur yağarsa müzeyi gezeriz."
+        },
+        {
+          "en": "Walking in the forest during a storm is dangerous.",
+          "tr": "Fırtına sırasında ormanda yürümek tehlikeli."
+        },
+        {
+          "en": "That's a good idea. The forest is dangerous in a storm.",
+          "tr": "İyi fikir. Fırtınada orman tehlikeli."
+        },
+        {
+          "en": "Finally, they decided on the museum.",
+          "tr": "Sonunda müzede karar kıldılar."
+        }
+      ]
+    },
+    {
+      "id": "a2-bridge-4",
+      "title": "Kırılan fincan",
+      "names": [
+        "Selin",
+        "Canan"
+      ],
+      "lines": [
+        {
+          "en": "Selin was very angry in the kitchen.",
+          "tr": "Selin mutfakta çok kızgındı."
+        },
+        {
+          "en": "What happened? Why are you angry?",
+          "tr": "Ne oldu? Neden kızgınsın?"
+        },
+        {
+          "en": "I was washing the dishes when I broke my grandmother's cup.",
+          "tr": "Bulaşıkları yıkarken büyükannemin fincanını kırdım."
+        },
+        {
+          "en": "Unfortunately, it was an old family memory.",
+          "tr": "Maalesef eski bir aile hatırasıydı."
+        },
+        {
+          "en": "It's OK. We can fix it together.",
+          "tr": "Sorun değil. Birlikte tamir edebiliriz."
+        },
+        {
+          "en": "Selin was surprised and happy.",
+          "tr": "Selin şaşırdı ve sevindi."
+        }
+      ]
+    },
+    {
+      "id": "a2-bridge-5",
+      "title": "Kuşun macerası",
+      "names": [
+        "Kerem",
+        "İzmir"
+      ],
+      "lines": [
+        {
+          "en": "Kerem lives in a quiet village near İzmir.",
+          "tr": "Kerem İzmir yakınlarında sakin bir köyde yaşıyor."
+        },
+        {
+          "en": "One night, he heard something strange downstairs.",
+          "tr": "Bir gece aşağıda tuhaf bir şey duydu."
+        },
+        {
+          "en": "He was afraid, but he walked down slowly.",
+          "tr": "Korkmuştu ama yavaşça aşağı indi."
+        },
+        {
+          "en": "His little bird was eating bread on the table.",
+          "tr": "Küçük kuşu masada ekmek yiyordu."
+        },
+        {
+          "en": "I don't believe it! Bad bird!",
+          "tr": "İnanmıyorum! Yaramaz kuş!"
+        },
+        {
+          "en": "Kerem laughed and told his sister the funny story.",
+          "tr": "Kerem güldü ve bu komik hikâyeyi kız kardeşine anlattı."
+        }
+      ]
+    }
+  ],
+  "names": [
+    "London",
+    "Selim",
+    "Rome",
+    "Zeynep",
+    "Murat",
+    "Bursa",
+    "Emre",
+    "Selin",
+    "Canan",
+    "Kerem",
+    "İzmir"
+  ]
+}

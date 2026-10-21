@@ -1,0 +1,593 @@
+{
+"id": "a2-work",
+"level": "A2",
+"title": "İş hayatı",
+"placement": "any",
+"goal": "Ne iş yaptığını ve iş yerini anlatır, toplantı ayarlar, e-postayla basit iş yazışması yapar, iş görüşmesinde kendini tanıtır.",
+"words": [
+{
+"id": "a2-job",
+"word": "job",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"iş",
+"meslek"
+],
+"example_en": "I love my new job.",
+"example_tr": "Yeni işimi çok seviyorum."
+}
+],
+"note": "'work' sayılamaz, 'job' sayılabilir: a good job."
+},
+{
+"id": "a2-office",
+"word": "office",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ofis",
+"büro"
+],
+"example_en": "Our office is in the city.",
+"example_tr": "Ofisimiz şehirde."
+}
+],
+"note": ""
+},
+{
+"id": "a2-company",
+"word": "company",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"şirket"
+],
+"example_en": "She works for a big company.",
+"example_tr": "Büyük bir şirkette çalışıyor."
+}
+],
+"note": ""
+},
+{
+"id": "a2-boss",
+"word": "boss",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"patron"
+],
+"example_en": "My boss is very friendly.",
+"example_tr": "Patronum çok cana yakın."
+}
+],
+"note": ""
+},
+{
+"id": "a2-colleague",
+"word": "colleague",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"iş arkadaşı"
+],
+"example_en": "I eat lunch with my colleagues.",
+"example_tr": "Öğle yemeğini iş arkadaşlarımla yerim."
+}
+],
+"note": ""
+},
+{
+"id": "a2-manager",
+"word": "manager",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"müdür",
+"yönetici"
+],
+"example_en": "The manager is in a meeting.",
+"example_tr": "Müdür toplantıda."
+}
+],
+"note": ""
+},
+{
+"id": "a2-customer",
+"word": "customer",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"müşteri"
+],
+"example_en": "We help every customer.",
+"example_tr": "Her müşteriye yardımcı oluyoruz."
+}
+],
+"note": ""
+},
+{
+"id": "a2-meeting",
+"word": "meeting",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"toplantı"
+],
+"example_en": "We have an important meeting.",
+"example_tr": "Önemli bir toplantımız var."
+}
+],
+"note": ""
+},
+{
+"id": "a2-email",
+"word": "email",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"e-posta"
+],
+"example_en": "I got your email today.",
+"example_tr": "Bugün e-postanı aldım."
+},
+{
+"pos": "v",
+"tr": [
+"e-posta göndermek"
+],
+"example_en": "Please email the report to me.",
+"example_tr": "Lütfen raporu bana e-postayla gönder."
+}
+],
+"note": ""
+},
+{
+"id": "a2-salary",
+"word": "salary",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"maaş"
+],
+"example_en": "The salary is very good.",
+"example_tr": "Maaş çok iyi."
+}
+],
+"note": ""
+},
+{
+"id": "a2-interview",
+"word": "interview",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"mülakat",
+"iş görüşmesi"
+],
+"example_en": "She has a job interview tomorrow.",
+"example_tr": "Yarın iş görüşmesi var."
+}
+],
+"note": ""
+},
+{
+"id": "a2-experience",
+"word": "experience",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"deneyim",
+"tecrübe"
+],
+"example_en": "Do you have work experience?",
+"example_tr": "İş deneyimin var mı?"
+}
+],
+"note": "İş tecrübesi anlamında sayılamaz ('an experience' denmez)."
+},
+{
+"id": "a2-earn",
+"word": "earn",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"para kazanmak"
+],
+"example_en": "He earns good money here.",
+"example_tr": "Burada iyi para kazanıyor."
+}
+],
+"note": "Çalışarak kazanmak 'earn'; oyunda veya piyangoda 'win'."
+},
+{
+"id": "a2-busy",
+"word": "busy",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"meşgul",
+"yoğun"
+],
+"example_en": "I am very busy this morning.",
+"example_tr": "Bu sabah çok yoğunum."
+}
+],
+"note": ""
+},
+{
+"id": "a2-part-time",
+"word": "part-time",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"yarı zamanlı"
+],
+"example_en": "This is a part-time job.",
+"example_tr": "Bu yarı zamanlı bir iş."
+},
+{
+"pos": "adv",
+"tr": [
+"yarı zamanlı olarak"
+],
+"example_en": "I work part-time in a café.",
+"example_tr": "Bir kafede yarı zamanlı çalışıyorum."
+}
+],
+"note": "Zıttı: full-time (tam zamanlı)."
+},
+{
+"id": "a2-career",
+"word": "career",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"kariyer"
+],
+"example_en": "She wants a career in medicine.",
+"example_tr": "Tıpta kariyer yapmak istiyor."
+}
+],
+"note": ""
+},
+{
+"id": "a2-team",
+"word": "team",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ekip",
+"takım"
+],
+"example_en": "Our team works very well together.",
+"example_tr": "Ekibimiz birlikte çok iyi çalışıyor."
+}
+],
+"note": ""
+},
+{
+"id": "a2-report",
+"word": "report",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"rapor"
+],
+"example_en": "I must read this report today.",
+"example_tr": "Bu raporu bugün okumalıyım."
+},
+{
+"pos": "v",
+"tr": [
+"bildirmek",
+"rapor etmek"
+],
+"example_en": "Please report any mistake to me.",
+"example_tr": "Lütfen her hatayı bana bildirin."
+}
+],
+"note": ""
+},
+{
+"id": "a2-arrange",
+"word": "arrange",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"ayarlamak",
+"düzenlemek"
+],
+"example_en": "Can you arrange a meeting for us?",
+"example_tr": "Bizim için bir toplantı ayarlar mısın?"
+}
+],
+"note": ""
+},
+{
+"id": "a2-employ",
+"word": "employ",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"işe almak",
+"çalıştırmak"
+],
+"example_en": "They employ fifty people here.",
+"example_tr": "Burada elli kişi çalıştırıyorlar."
+}
+],
+"note": ""
+},
+{
+"id": "a2-skill",
+"word": "skill",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"beceri",
+"yetenek"
+],
+"example_en": "English is an important skill.",
+"example_tr": "İngilizce önemli bir beceridir."
+}
+],
+"note": ""
+},
+{
+"id": "a2-deadline",
+"word": "deadline",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"son teslim tarihi"
+],
+"example_en": "The deadline is this Friday.",
+"example_tr": "Son teslim tarihi bu cuma."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "a2-p-what-do-you-do",
+"text": "What do you do?",
+"tr": "Ne iş yapıyorsun?",
+"example_en": "What do you do? – I am a doctor.",
+"example_tr": "Ne iş yapıyorsun? – Doktorum.",
+"note": "'Şu an ne yapıyorsun?' değil, meslek sorusudur."
+},
+{
+"id": "a2-p-work-as-a",
+"text": "I work as a…",
+"tr": "… olarak çalışıyorum",
+"example_en": "I work as a waiter in a café.",
+"example_tr": "Bir kafede garson olarak çalışıyorum.",
+"note": ""
+},
+{
+"id": "a2-p-can-we-meet-on",
+"text": "Can we meet on…?",
+"tr": "… günü buluşalım mı?",
+"example_en": "Can we meet on Friday?",
+"example_tr": "Cuma günü buluşabilir miyiz?",
+"note": "Günlerden önce 'on' kullanılır: on Monday."
+},
+{
+"id": "a2-p-send-you-an-email",
+"text": "I'll send you an email.",
+"tr": "Sana e-posta atarım.",
+"example_en": "I'll send you an email tomorrow.",
+"example_tr": "Yarın sana bir e-posta atarım.",
+"note": ""
+},
+{
+"id": "a2-p-busy-right-now",
+"text": "I'm busy right now.",
+"tr": "Şu an meşgulüm.",
+"example_en": "I'm busy right now. Can we talk later?",
+"example_tr": "Şu an meşgulüm. Sonra konuşabilir miyiz?",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "a2-work-1",
+"title": "İş görüşmesi",
+"names": [
+"Selin",
+"London"
+],
+"lines": [
+{
+"en": "Selin has a job interview in London today.",
+"tr": "Selin'in bugün Londra'da iş görüşmesi var."
+},
+{
+"en": "What do you do?",
+"tr": "Ne iş yapıyorsunuz?"
+},
+{
+"en": "I work as a manager in a small company.",
+"tr": "Küçük bir şirkette yönetici olarak çalışıyorum."
+},
+{
+"en": "Do you have experience with customers?",
+"tr": "Müşterilerle deneyiminiz var mı?"
+},
+{
+"en": "Yes, I have five years of work experience.",
+"tr": "Evet, beş yıllık iş tecrübem var."
+},
+{
+"en": "We want to employ you for this career.",
+"tr": "Bu kariyer için sizi işe almak istiyoruz."
+},
+{
+"en": "The salary is very good and Selin is happy.",
+"tr": "Maaş çok iyi ve Selin mutlu."
+}
+]
+},
+{
+"id": "a2-work-2",
+"title": "Ofiste toplantı",
+"names": [
+"Kerem",
+"John"
+],
+"lines": [
+{
+"en": "Kerem and John work in the same office.",
+"tr": "Kerem ve John aynı ofiste çalışıyorlar."
+},
+{
+"en": "Can we meet on Tuesday?",
+"tr": "Salı günü buluşabilir miyiz?"
+},
+{
+"en": "I am busy right now, but Tuesday is good.",
+"tr": "Şu an meşgulüm ama salı uygun."
+},
+{
+"en": "Can you arrange a meeting room for our team?",
+"tr": "Ekibimiz için bir toplantı odası ayarlar mısın?"
+},
+{
+"en": "Yes, I will arrange it before lunch.",
+"tr": "Evet, öğle yemeğinden önce ayarlarım."
+},
+{
+"en": "The boss will also come to our meeting.",
+"tr": "Patron da toplantımıza gelecek."
+}
+]
+},
+{
+"id": "a2-work-3",
+"title": "Rapor ve son teslim",
+"names": [
+"Banu",
+"Paris"
+],
+"lines": [
+{
+"en": "Banu works for a big company in Paris.",
+"tr": "Banu Paris'te büyük bir şirkette çalışıyor."
+},
+{
+"en": "Her colleague asks for the new report.",
+"tr": "İş arkadaşı yeni raporu istiyor."
+},
+{
+"en": "The deadline is tomorrow afternoon.",
+"tr": "Son teslim tarihi yarın öğleden sonra."
+},
+{
+"en": "I must finish this report today.",
+"tr": "Bu raporu bugün bitirmeliyim."
+},
+{
+"en": "I'll send you an email with the report.",
+"tr": "Sana raporla birlikte bir e-posta atarım."
+},
+{
+"en": "That's a good idea. Thank you, Banu!",
+"tr": "Bu iyi bir fikir. Teşekkürler Banu!"
+}
+]
+},
+{
+"id": "a2-work-4",
+"title": "Yarı zamanlı iş",
+"names": [
+"Emre",
+"İzmir"
+],
+"lines": [
+{
+"en": "Emre lives in İzmir and needs money.",
+"tr": "Emre İzmir'de yaşıyor ve paraya ihtiyacı var."
+},
+{
+"en": "He finds a part-time job in a busy café.",
+"tr": "Yoğun bir kafede yarı zamanlı bir iş buluyor."
+},
+{
+"en": "I work as a waiter three days a week.",
+"tr": "Haftada üç gün garson olarak çalışıyorum."
+},
+{
+"en": "He learns an important new skill every day.",
+"tr": "Her gün önemli yeni bir beceri öğreniyor."
+},
+{
+"en": "He earns good money for his family.",
+"tr": "Ailesi için iyi para kazanıyor."
+},
+{
+"en": "The customers like him very much.",
+"tr": "Müşteriler onu çok seviyor."
+}
+]
+},
+{
+"id": "a2-work-5",
+"title": "Müdürün mesajı",
+"names": [
+"Zeynep",
+"David",
+"Ankara"
+],
+"lines": [
+{
+"en": "Zeynep and David work in an office in Ankara.",
+"tr": "Zeynep ve David Ankara'da bir ofiste çalışıyorlar."
+},
+{
+"en": "Can we meet on Wednesday morning?",
+"tr": "Çarşamba sabahı buluşabilir miyiz?"
+},
+{
+"en": "I'm busy right now because I have a meeting.",
+"tr": "Şu an meşgulüm çünkü bir toplantım var."
+},
+{
+"en": "Is the new report ready for the boss?",
+"tr": "Patron için yeni rapor hazır mı?"
+},
+{
+"en": "It is almost ready. I'll send you an email.",
+"tr": "Neredeyse hazır. Sana bir e-posta atarım."
+},
+{
+"en": "Great! Our manager can read it before Friday.",
+"tr": "Harika! Müdürümüz cumadan önce onu okuyabilir."
+}
+]
+}
+]
+}

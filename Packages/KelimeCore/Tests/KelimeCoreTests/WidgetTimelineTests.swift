@@ -109,7 +109,7 @@ struct WidgetTimelineTests {
         let db = try makeDatabase()
         try db.writer.write { db in
             for _ in 0..<3 {
-                try LearningStore.record(.answered(correct: true), cardID: "a2-borrow", source: .quickReview, clock: clock(), db: db)
+                try LearningStore.record(.answered(correct: true), cardID: "b1-curious", source: .quickReview, clock: clock(), db: db)
             }
         }
         let snapshots = try build(db)

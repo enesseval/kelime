@@ -99,6 +99,17 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
+## A2 course (build 16, content v3)
+
+Content/curriculum/A2/: core (52 words, 7 phrases, 3 stories), ten units in any order and a
+bridge to B1; 356 cards, 58 stories. Learners at A2 may use all of A1, so check_unit.py and
+unit_prompt.py take every earlier level's vocabulary and A2 grammar words, and flag words that
+already have an A1 card. Gemini wrote the units; the checker plus review fixed ~140 out-of-list
+words and translation slips, and 19 basic cards were added by hand (long, short, fast, ready,
+problem, talk, food, life, plane, tree…). The old A2 deck and its bundled puzzles are gone.
+pos "conj" is new, so content schema is 2: older builds skip downloaded content. Onboarding at a
+level with units enables only that course (plus an exam deck).
+
 ## Units replace decks (build 13)
 
 Where the learner's level has units, they are the content: no separate "A1 yolu" entry.

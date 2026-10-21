@@ -1,0 +1,544 @@
+{
+"id": "a2-travel",
+"level": "A2",
+"title": "Yolculuk",
+"placement": "any",
+"goal": "Otel ve bilet ayırtır, havalimanında ve garda yolunu bulur, rötar ve değişikliklerle başa çıkar, gezdiği yeri anlatır.",
+"words": [
+{
+"id": "a2-journey",
+"word": "journey",
+"senses": [
+{
+"pos": "n",
+"tr": ["yolculuk", "seyahat"],
+"example_en": "Have a good journey!",
+"example_tr": "İyi yolculuklar!"
+}
+],
+"note": "'trip' daha kısadır; 'journey' tek yön gidişi de anlatır."
+},
+{
+"id": "a2-flight",
+"word": "flight",
+"senses": [
+{
+"pos": "n",
+"tr": ["uçuş"],
+"example_en": "Our flight was very good.",
+"example_tr": "Uçuşumuz çok iyiydi."
+}
+],
+"note": ""
+},
+{
+"id": "a2-passport",
+"word": "passport",
+"senses": [
+{
+"pos": "n",
+"tr": ["pasaport"],
+"example_en": "Where is my passport?",
+"example_tr": "Pasaportum nerede?"
+}
+],
+"note": ""
+},
+{
+"id": "a2-suitcase",
+"word": "suitcase",
+"senses": [
+{
+"pos": "n",
+"tr": ["bavul"],
+"example_en": "My suitcase is very heavy.",
+"example_tr": "Bavulum çok ağır."
+}
+],
+"note": ""
+},
+{
+"id": "a2-luggage",
+"word": "luggage",
+"senses": [
+{
+"pos": "n",
+"tr": ["bagaj"],
+"example_en": "We have too much luggage.",
+"example_tr": "Çok fazla bagajımız var."
+}
+],
+"note": "Sayılmaz: 'two luggages' denmez; 'two bags' denir."
+},
+{
+"id": "a2-reservation",
+"word": "reservation",
+"senses": [
+{
+"pos": "n",
+"tr": ["rezervasyon"],
+"example_en": "I made a hotel reservation.",
+"example_tr": "Otel rezervasyonu yaptım."
+}
+],
+"note": ""
+},
+{
+"id": "a2-arrive",
+"word": "arrive",
+"senses": [
+{
+"pos": "v",
+"tr": ["varmak", "ulaşmak"],
+"example_en": "We arrived at the airport.",
+"example_tr": "Havalimanına vardık."
+}
+],
+"note": "'arrive to' denmez; 'arrive in' veya 'arrive at' denir."
+},
+{
+"id": "a2-delay",
+"word": "delay",
+"senses": [
+{
+"pos": "n",
+"tr": ["rötar", "gecikme"],
+"example_en": "There is a two-hour delay.",
+"example_tr": "İki saatlik bir rötar var."
+},
+{
+"pos": "v",
+"tr": ["geciktirmek", "ertelemek"],
+"example_en": "Rain will delay the train.",
+"example_tr": "Yağmur treni geciktirecek."
+}
+],
+"note": ""
+},
+{
+"id": "a2-abroad",
+"word": "abroad",
+"senses": [
+{
+"pos": "adv",
+"tr": ["yurt dışında", "yurt dışına"],
+"example_en": "She wants to go abroad.",
+"example_tr": "Yurt dışına gitmek istiyor."
+}
+],
+"note": "Önüne 'to' gelmez: 'go to abroad' değil, 'go abroad'."
+},
+{
+"id": "a2-tourist",
+"word": "tourist",
+"senses": [
+{
+"pos": "n",
+"tr": ["turist"],
+"example_en": "Many tourists visit here.",
+"example_tr": "Burayı çok turist ziyaret eder."
+}
+],
+"note": ""
+},
+{
+"id": "a2-museum",
+"word": "museum",
+"senses": [
+{
+"pos": "n",
+"tr": ["müze"],
+"example_en": "We visited an old museum.",
+"example_tr": "Eski bir müzeyi gezdik."
+}
+],
+"note": ""
+},
+{
+"id": "a2-guide",
+"word": "guide",
+"senses": [
+{
+"pos": "n",
+"tr": ["rehber"],
+"example_en": "Our guide knows the city well.",
+"example_tr": "Rehberimiz şehri iyi biliyor."
+},
+{
+"pos": "v",
+"tr": ["yol göstermek", "rehberlik etmek"],
+"example_en": "He will guide us in the park.",
+"example_tr": "Parkta bize rehberlik edecek."
+}
+],
+"note": ""
+},
+{
+"id": "a2-view",
+"word": "view",
+"senses": [
+{
+"pos": "n",
+"tr": ["manzara"],
+"example_en": "The room has a great view.",
+"example_tr": "Odanın harika bir manzarası var."
+}
+],
+"note": ""
+},
+{
+"id": "a2-souvenir",
+"word": "souvenir",
+"senses": [
+{
+"pos": "n",
+"tr": ["hediyelik eşya", "anı"],
+"example_en": "I bought a small souvenir.",
+"example_tr": "Küçük bir hediyelik eşya aldım."
+}
+],
+"note": ""
+},
+{
+"id": "a2-single",
+"word": "single",
+"senses": [
+{
+"pos": "adj",
+"tr": ["tek", "tek kişilik", "tek yön"],
+"example_en": "A single ticket, please.",
+"example_tr": "Tek yön bilet, lütfen."
+}
+],
+"note": "Bilette 'tek yön', otelde 'tek kişilik' demektir."
+},
+{
+"id": "a2-return",
+"word": "return",
+"senses": [
+{
+"pos": "n",
+"tr": ["gidiş-dönüş bileti", "dönüş"],
+"example_en": "Two returns to London, please.",
+"example_tr": "Londra'ya iki gidiş-dönüş, lütfen."
+},
+{
+"pos": "v",
+"tr": ["dönmek"],
+"example_en": "We will return tomorrow.",
+"example_tr": "Yarın döneceğiz."
+}
+],
+"note": "İngiltere'de gidiş-dönüş bilete kısaca 'return' denir."
+},
+{
+"id": "a2-platform",
+"word": "platform",
+"senses": [
+{
+"pos": "n",
+"tr": ["peron"],
+"example_en": "The train is at platform four.",
+"example_tr": "Tren dördüncü peronda."
+}
+],
+"note": ""
+},
+{
+"id": "a2-luxury",
+"word": "luxury",
+"senses": [
+{
+"pos": "n",
+"tr": ["lüks"],
+"example_en": "We stayed in a luxury hotel.",
+"example_tr": "Lüks bir otelde kaldık."
+}
+],
+"note": ""
+},
+{
+"id": "a2-pack",
+"word": "pack",
+"senses": [
+{
+"pos": "v",
+"tr": ["toplamak", "bavul hazırlamak"],
+"example_en": "I need to pack my bag.",
+"example_tr": "Çantamı toplamam lazım."
+}
+],
+"note": ""
+},
+{
+"id": "a2-miss",
+"word": "miss",
+"senses": [
+{
+"pos": "v",
+"tr": ["kaçırmak", "özlemek"],
+"example_en": "Hurry, or we will miss the bus!",
+"example_tr": "Acele et, yoksa otobüsü kaçıracağız!"
+}
+],
+"note": "Vasıta için 'kaçırmak', insan için 'özlemek'."
+},
+{
+"id": "a2-land",
+"word": "land",
+"senses": [
+{
+"pos": "v",
+"tr": ["inmek", "karaya çıkmak"],
+"example_en": "The plane will land soon.",
+"example_tr": "Uçak birazdan inecek."
+},
+{
+"pos": "n",
+"tr": ["kara", "toprak"],
+"example_en": "I saw land from the window.",
+"example_tr": "Pencereden karayı gördüm."
+}
+],
+"note": ""
+},
+{
+"id": "a2-foreign",
+"word": "foreign",
+"senses": [
+{
+"pos": "adj",
+"tr": ["yabancı"],
+"example_en": "He speaks two foreign languages.",
+"example_tr": "İki yabancı dil konuşuyor."
+}
+],
+"note": "'foreign' yabancı ülke/dille ilgilidir; 'strange' tuhaftır."
+},
+{
+"id": "a2-heavy",
+"word": "heavy",
+"senses": [
+{
+"pos": "adj",
+"tr": ["ağır"],
+"example_en": "This suitcase is too heavy.",
+"example_tr": "Bu bavul çok ağır."
+}
+],
+"note": ""
+},
+{
+"id": "a2-carry",
+"word": "carry",
+"senses": [
+{
+"pos": "v",
+"tr": ["taşımak"],
+"example_en": "Can you help me carry this?",
+"example_tr": "Bunu taşımama yardım eder misin?"
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "a2-p-book-room",
+"text": "I'd like to book a room.",
+"tr": "Oda ayırtmak istiyorum.",
+"example_en": "Hello, I'd like to book a room.",
+"example_tr": "Merhaba, oda ayırtmak istiyorum.",
+"note": "'book' burada 'ayırtmak' demektir."
+},
+{
+"id": "a2-p-have-reservation",
+"text": "I have a reservation.",
+"tr": "Rezervasyonum var.",
+"example_en": "I have a reservation for two.",
+"example_tr": "İki kişilik rezervasyonum var.",
+"note": ""
+},
+{
+"id": "a2-p-what-time-leave",
+"text": "What time does it leave?",
+"tr": "Saat kaçta kalkıyor?",
+"example_en": "What time does the bus leave?",
+"example_tr": "Otobüs saat kaçta kalkıyor?",
+"note": ""
+},
+{
+"id": "a2-p-flight-delayed",
+"text": "The flight is delayed.",
+"tr": "Uçuş rötarlı.",
+"example_en": "The flight is delayed by an hour.",
+"example_tr": "Uçuş bir saat rötarlı.",
+"note": ""
+},
+{
+"id": "a2-p-breakfast-included",
+"text": "Is breakfast included?",
+"tr": "Kahvaltı dahil mi?",
+"example_en": "Is breakfast included in the price?",
+"example_tr": "Kahvaltı fiyata dahil mi?",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "a2-travel-1",
+"title": "Otelde ilk gün",
+"names": ["Selin", "Rome"],
+"lines": [
+{
+"en": "Selin is on holiday in Rome.",
+"tr": "Selin Roma'da tatilde."
+},
+{
+"en": "Hello, I have a reservation.",
+"tr": "Merhaba, rezervasyonum var."
+},
+{
+"en": "Welcome! Here is the key to your room.",
+"tr": "Hoş geldiniz! İşte odanızın anahtarı."
+},
+{
+"en": "Is breakfast included?",
+"tr": "Kahvaltı dahil mi?"
+},
+{
+"en": "Yes, breakfast is from seven to ten.",
+"tr": "Evet, kahvaltı yediden ona kadar."
+},
+{
+"en": "The room has a beautiful city view.",
+"tr": "Odanın güzel bir şehir manzarası var."
+},
+{
+"en": "This luxury hotel is really nice.",
+"tr": "Bu lüks otel gerçekten çok hoş."
+}
+]
+},
+{
+"id": "a2-travel-2",
+"title": "Havalimanında rötar",
+"names": ["Emre", "London"],
+"lines": [
+{
+"en": "Emre arrives at the airport for his flight to London.",
+"tr": "Emre, Londra uçuşu için havalimanına varıyor."
+},
+{
+"en": "His suitcase is very heavy, so he carries it slowly.",
+"tr": "Bavulu çok ağır, bu yüzden onu yavaşça taşıyor."
+},
+{
+"en": "A woman looks at his passport.",
+"tr": "Bir kadın onun pasaportuna bakıyor."
+},
+{
+"en": "I am sorry, the flight is delayed.",
+"tr": "Üzgünüm, uçuş rötarlı."
+},
+{
+"en": "There is bad weather and rain.",
+"tr": "Kötü hava ve yağmur var."
+},
+{
+"en": "Emre decides to wait in a café.",
+"tr": "Emre bir kafede beklemeye karar veriyor."
+}
+]
+},
+{
+"id": "a2-travel-3",
+"title": "Garda bilet almak",
+"names": ["Kerem", "Izmir"],
+"lines": [
+{
+"en": "Kerem is at the train station in Izmir.",
+"tr": "Kerem İzmir'deki tren garında."
+},
+{
+"en": "Single or return?",
+"tr": "Tek yön mü, gidiş-dönüş mü?"
+},
+{
+"en": "One return ticket, please.",
+"tr": "Bir gidiş-dönüş bilet, lütfen."
+},
+{
+"en": "What time does it leave?",
+"tr": "Saat kaçta kalkıyor?"
+},
+{
+"en": "It leaves at three from platform two.",
+"tr": "Üçte, ikinci perondan kalkıyor."
+},
+{
+"en": "Run, or you will miss the train!",
+"tr": "Koş, yoksa treni kaçıracaksın!"
+}
+]
+},
+{
+"id": "a2-travel-4",
+"title": "Müze gezisi",
+"names": ["Mert", "Paris"],
+"lines": [
+{
+"en": "Mert travels abroad to Paris as a tourist.",
+"tr": "Mert turist olarak yurt dışına, Paris'e seyahat ediyor."
+},
+{
+"en": "A friendly guide shows him an old museum.",
+"tr": "Güler yüzlü bir rehber ona eski bir müzeyi gezdiriyor."
+},
+{
+"en": "Many people speak a foreign language here.",
+"tr": "Burada birçok insan yabancı bir dil konuşuyor."
+},
+{
+"en": "Mert buys a small souvenir for his sister.",
+"tr": "Mert kız kardeşi için küçük bir hediyelik eşya alıyor."
+},
+{
+"en": "He takes a photo from the garden.",
+"tr": "Bahçeden bir fotoğraf çekiyor."
+},
+{
+"en": "This journey was the best part of his year.",
+"tr": "Bu yolculuk yılının en güzel kısmıydı."
+}
+]
+},
+{
+"id": "a2-travel-5",
+"title": "Eve dönüş hazırlığı",
+"names": ["Zeynep"],
+"lines": [
+{
+"en": "Zeynep needs to pack her luggage today.",
+"tr": "Zeynep'in bugün bagajını toplaması gerekiyor."
+},
+{
+"en": "She brings her big bag to the bedroom floor.",
+"tr": "Büyük çantasını yatak odasının zeminine getiriyor."
+},
+{
+"en": "Tomorrow she will fly home.",
+"tr": "Yarın uçakla eve dönecek."
+},
+{
+"en": "Her plane will land in the afternoon.",
+"tr": "Uçağı öğleden sonra inecek."
+},
+{
+"en": "She is tired but very happy.",
+"tr": "Yorgun ama çok mutlu."
+}
+]
+}
+]
+}

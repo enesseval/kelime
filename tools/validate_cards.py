@@ -22,7 +22,7 @@ POS = {"adj", "n", "v", "adv", "prep", "conj", "phrase"}
 DECKS = {"general", "yds", "yokdil", "ielts"}
 FIELDS = {"id", "word", "pos", "level", "tr", "example_en", "example_tr", "decks"}
 OPTIONAL = {"note", "senses"}
-COURSE_LEVELS = {"A1"}
+COURSE_LEVELS = {"A1", "A2"}
 MAX_WORD, MAX_TR, MAX_SENTENCE = 16, 28, 55
 
 
@@ -63,7 +63,7 @@ def validate(data):
             if len(word) > MAX_TR:
                 errors.append(f"{where}: phrase longer than {MAX_TR}")
         else:
-            if not re.fullmatch(r"[^\W\d_]+" if course else r"[a-z]+", word):
+            if not re.fullmatch(r"[^\W\d_]+(?:-[^\W\d_]+)*" if course else r"[a-z]+", word):
                 errors.append(f"{where}: word must be ASCII letters only")
             if len(word) > MAX_WORD:
                 errors.append(f"{where}: word longer than {MAX_WORD}")

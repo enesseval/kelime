@@ -82,7 +82,8 @@ public struct OnboardingChoices: Sendable, Equatable {
     public func save(db: Database) throws {
         var prefs = try Preferences.load(db)
         prefs.level = level
-        prefs.enabledDecks = decks
+        // A level with units is the whole content: only its course (and an exam deck).
+        prefs.enabledDecks = try Curriculum.levels(db: db).contains(level) ? decks.filter { $0.level == level || $0.tag != nil } : decks
         // No paywall in onboarding: Pro-only rhythms can't be chosen there.
         prefs.rotationInterval = rotation.isPro && !prefs.isPro ? .default : rotation
         try prefs.save(db)

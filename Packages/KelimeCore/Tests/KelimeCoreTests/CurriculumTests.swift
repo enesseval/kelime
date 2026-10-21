@@ -60,7 +60,7 @@ struct CurriculumTests {
     @Test func otherLevelsAreUnaffected() throws {
         let db = try makeDatabase(Preferences())
         let ids = try db.reader.read { db in try CardQueries.candidates(in: DeckID.basicDecks, db: db) }
-        #expect(ids.count == 111)
+        #expect(ids.count == 119) // A2 core (always started) and B1
         #expect(!DeckID.basicDecks.contains(.a1) && !DeckID.a1.isPro)
     }
 
@@ -124,6 +124,38 @@ struct CurriculumTests {
         try db.writer.write { db in _ = try Curriculum.advance(db: db) }
         let state = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
         #expect(state.currentID == "a1-shopping")
+    }
+
+    @Test func importsTheA2CourseInGoalOrder() throws {
+        let db = try makeDatabase(Preferences(level: .a2, enabledDecks: [.a2]))
+        try db.writer.write { db in try Settings.set(.goal, LearningGoal.work.rawValue, in: db) }
+        let state = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
+        #expect(state.units.count == 12)
+        #expect(state.units.prefix(4).map(\.id) == ["a2-core", "a2-work", "a2-tech", "a2-people"])
+        #expect(state.units.last?.id == "a2-bridge")
+        let because = try #require(try db.reader.read { db in try Card.fetchOne(db, key: "a2-because") })
+        #expect(because.pos == .conjunction)
+    }
+
+    @Test func anA2StarterGetsOnlyTheA2Course() throws {
+        let db = try makeDatabase(Preferences())
+        try db.writer.write { db in try OnboardingChoices(goal: .yds, level: .a2).save(db: db) }
+        #expect(try db.reader.read { db in try Preferences.load(db).enabledDecks } == [.a2, .yds])
+    }
+
+    @Test func aFinishedA1OpensA2() throws {
+        let db = try makeDatabase()
+        try db.writer.write { db in
+            for unit in try Curriculum.units(level: .a1, db: db) { try Curriculum.start(unit.id, db: db) }
+            try Settings.set(.currentUnit, "a1-bridge", in: db)
+        }
+        try learn(0.85, of: "a1-bridge", in: db)
+        let state = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
+        #expect(state.nextLevel == .a2)
+        try db.writer.write { db in try Curriculum.moveOn(to: .a2, db: db) }
+        let a2 = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
+        #expect(a2.level == .a2 && a2.currentID == "a2-core")
+        #expect(try db.reader.read { db in try Preferences.load(db).enabledDecks } == [.a1, .a2])
     }
 
     @Test func levelsWithoutUnitsKeepTheirDecks() throws {

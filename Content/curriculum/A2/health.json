@@ -1,0 +1,597 @@
+{
+  "id": "a2-health",
+  "level": "A2",
+  "title": "Sağlık",
+  "placement": "any",
+  "goal": "Nerenin ağrıdığını söyler, doktordan randevu alır, eczanede derdini anlatır, sağlıklı yaşam hakkında öneri verir ve alır.",
+  "words": [
+    {
+      "id": "a2-body",
+      "word": "body",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "vücut",
+            "beden"
+          ],
+          "example_en": "Exercise is good for your body.",
+          "example_tr": "Egzersiz vücuduna iyi gelir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-arm",
+      "word": "arm",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kol"
+          ],
+          "example_en": "My left arm hurts.",
+          "example_tr": "Sol kolum ağrıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-leg",
+      "word": "leg",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bacak"
+          ],
+          "example_en": "He can't walk on this leg.",
+          "example_tr": "Bu bacağının üstüne basamıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-back",
+      "word": "back",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sırt",
+            "bel"
+          ],
+          "example_en": "My back hurts today.",
+          "example_tr": "Bugün sırtım ağrıyor."
+        }
+      ],
+      "note": "'Geri' ve 'arka' anlamı da vardır."
+    },
+    {
+      "id": "a2-stomach",
+      "word": "stomach",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "mide",
+            "karın"
+          ],
+          "example_en": "My stomach hurts after dinner.",
+          "example_tr": "Akşam yemeğinden sonra midem ağrıyor."
+        }
+      ],
+      "note": "'ch' harfi 'k' gibi okunur: stamık."
+    },
+    {
+      "id": "a2-tooth",
+      "word": "tooth",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "diş"
+          ],
+          "example_en": "This tooth hurts a lot.",
+          "example_tr": "Bu dişim çok ağrıyor."
+        }
+      ],
+      "note": "Çoğulu düzensizdir: 'teeth'."
+    },
+    {
+      "id": "a2-eye",
+      "word": "eye",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "göz"
+          ],
+          "example_en": "My eyes are very tired.",
+          "example_tr": "Gözlerim çok yorgun."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-ear",
+      "word": "ear",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kulak"
+          ],
+          "example_en": "I have a pain in my ear.",
+          "example_tr": "Kulağımda bir ağrı var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-pain",
+      "word": "pain",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ağrı",
+            "acı"
+          ],
+          "example_en": "Do you feel any pain?",
+          "example_tr": "Hiç ağrı hissediyor musun?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-hurt",
+      "word": "hurt",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ağrımak",
+            "acımak"
+          ],
+          "example_en": "Does your leg hurt?",
+          "example_tr": "Bacağın ağrıyor mu?"
+        }
+      ],
+      "note": "Geçmiş zaman hali de 'hurt' şeklindedir."
+    },
+    {
+      "id": "a2-cough",
+      "word": "cough",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "öksürmek"
+          ],
+          "example_en": "He coughs at night.",
+          "example_tr": "Geceleri öksürüyor."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "öksürük"
+          ],
+          "example_en": "I have a bad cough.",
+          "example_tr": "Kötü bir öksürüğüm var."
+        }
+      ],
+      "note": "'kof' gibi okunur."
+    },
+    {
+      "id": "a2-fever",
+      "word": "fever",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ateş"
+          ],
+          "example_en": "The child has a fever.",
+          "example_tr": "Çocuğun ateşi var."
+        }
+      ],
+      "note": "Hastalık ateşi için kullanılır."
+    },
+    {
+      "id": "a2-headache",
+      "word": "headache",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "baş ağrısı"
+          ],
+          "example_en": "I have a bad headache.",
+          "example_tr": "Kötü bir baş ağrım var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-appointment",
+      "word": "appointment",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "randevu"
+          ],
+          "example_en": "I have an appointment at ten.",
+          "example_tr": "Saat onda randevum var."
+        }
+      ],
+      "note": "Doktor ve iş randevuları için kullanılır."
+    },
+    {
+      "id": "a2-pharmacy",
+      "word": "pharmacy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "eczane"
+          ],
+          "example_en": "Is there a pharmacy near here?",
+          "example_tr": "Yakında bir eczane var mı?"
+        }
+      ],
+      "note": "İngilizcede 'chemist' de denir."
+    },
+    {
+      "id": "a2-healthy",
+      "word": "healthy",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "sağlıklı"
+          ],
+          "example_en": "Milk is very healthy.",
+          "example_tr": "Süt çok sağlıklıdır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-exercise",
+      "word": "exercise",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "egzersiz",
+            "spor"
+          ],
+          "example_en": "Exercise is good for you.",
+          "example_tr": "Egzersiz sana iyi gelir."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "egzersiz yapmak"
+          ],
+          "example_en": "I try to exercise every day.",
+          "example_tr": "Her gün spor yapmaya çalışırım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-diet",
+      "word": "diet",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "diyet",
+            "beslenme"
+          ],
+          "example_en": "A healthy diet is important.",
+          "example_tr": "Sağlıklı beslenme önemlidir."
+        }
+      ],
+      "note": "Yalnızca kilo verme değil, genel beslenme düzenidir."
+    },
+    {
+      "id": "a2-ill",
+      "word": "ill",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "hasta"
+          ],
+          "example_en": "She is ill today.",
+          "example_tr": "Bugün hasta."
+        }
+      ],
+      "note": "'sick' ile yakın anlamlıdır."
+    },
+    {
+      "id": "a2-accident",
+      "word": "accident",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kaza"
+          ],
+          "example_en": "He had a car accident.",
+          "example_tr": "Trafik kazası geçirdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-dentist",
+      "word": "dentist",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "diş hekimi",
+            "dişçi"
+          ],
+          "example_en": "I must see a dentist.",
+          "example_tr": "Dişçiye görünmeliyim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-nurse",
+      "word": "nurse",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hemşire"
+          ],
+          "example_en": "The nurse was very nice.",
+          "example_tr": "Hemşire çok iyiydi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-advice",
+      "word": "advice",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tavsiye",
+            "öneri"
+          ],
+          "example_en": "Can you give me some advice?",
+          "example_tr": "Bana biraz tavsiye verir misin?"
+        }
+      ],
+      "note": "Sayılamaz bir isimdir; 'an advice' denmez."
+    }
+  ],
+  "phrases": [
+    {
+      "id": "a2-p-my-hurts",
+      "text": "My … hurts.",
+      "tr": "…m ağrıyor.",
+      "example_en": "My leg hurts.",
+      "example_tr": "Bacağım ağrıyor.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-i-need-an-appointment",
+      "text": "I need an appointment.",
+      "tr": "Randevu almam gerek.",
+      "example_en": "I need an appointment today.",
+      "example_tr": "Bugün randevu almam gerek.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-you-should",
+      "text": "You should…",
+      "tr": "…malısın.",
+      "example_en": "You should see a doctor.",
+      "example_tr": "Doktora görünmelisin.",
+      "note": "Öneri ve tavsiye verirken kullanılır."
+    },
+    {
+      "id": "a2-p-get-well-soon",
+      "text": "Get well soon!",
+      "tr": "Geçmiş olsun!",
+      "example_en": "Get well soon, my friend!",
+      "example_tr": "Geçmiş olsun, arkadaşım!",
+      "note": ""
+    },
+    {
+      "id": "a2-p-how-long-have-you-had-it",
+      "text": "How long have you had it?",
+      "tr": "Ne zamandır var?",
+      "example_en": "How long have you had it? – Two days.",
+      "example_tr": "Ne zamandır var? – İki gündür.",
+      "note": "Şikayetin süresini sorarken kullanılır."
+    }
+  ],
+  "stories": [
+    {
+      "id": "a2-health-1",
+      "title": "Doktorda",
+      "names": [
+        "Ahmet",
+        "İzmir"
+      ],
+      "lines": [
+        {
+          "en": "Ahmet is ill. He goes to a hospital in İzmir.",
+          "tr": "Ahmet hasta. İzmir'de bir hastaneye gidiyor."
+        },
+        {
+          "en": "Hello. I need an appointment with a doctor.",
+          "tr": "Merhaba. Bir doktordan randevu almam gerek."
+        },
+        {
+          "en": "What is the problem? – My stomach hurts.",
+          "tr": "Sorun nedir? – Midem ağrıyor."
+        },
+        {
+          "en": "How long have you had it?",
+          "tr": "Ne zamandır var?"
+        },
+        {
+          "en": "Since yesterday. And I have a fever.",
+          "tr": "Dünden beri. Bir de ateşim var."
+        },
+        {
+          "en": "Please sit and wait here. A nurse will help.",
+          "tr": "Lütfen buraya oturun ve bekleyin. Bir hemşire yardımcı olacak."
+        },
+        {
+          "en": "Thank you. – Get well soon!",
+          "tr": "Teşekkür ederim. – Geçmiş olsun!"
+        }
+      ]
+    },
+    {
+      "id": "a2-health-2",
+      "title": "Eczanede",
+      "names": [
+        "Selin",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Selin is in a pharmacy in London.",
+          "tr": "Selin Londra'da bir eczanede."
+        },
+        {
+          "en": "Hello. Can you help me? I have a bad headache.",
+          "tr": "Merhaba. Yardım edebilir misiniz? Kötü bir baş ağrım var."
+        },
+        {
+          "en": "Do you also have a cough? – Yes, a little.",
+          "tr": "Öksürüğün de var mı? – Evet, biraz."
+        },
+        {
+          "en": "Take this medicine with water.",
+          "tr": "Bu ilacı suyla alın."
+        },
+        {
+          "en": "You should rest in bed today.",
+          "tr": "Bugün yatakta dinlenmelisin."
+        },
+        {
+          "en": "Thank you for the good advice.",
+          "tr": "İyi tavsiye için teşekkürler."
+        }
+      ]
+    },
+    {
+      "id": "a2-health-3",
+      "title": "Dişçi randevusu",
+      "names": [
+        "Emre",
+        "Ankara"
+      ],
+      "lines": [
+        {
+          "en": "Emre lives in Ankara. He has a bad tooth.",
+          "tr": "Emre Ankara'da yaşıyor. Dişi fena durumda."
+        },
+        {
+          "en": "My tooth hurts! I can't eat anything.",
+          "tr": "Dişim ağrıyor! Hiçbir şey yiyemiyorum."
+        },
+        {
+          "en": "You should visit a dentist today.",
+          "tr": "Bugün bir diş hekimine gitmelisin."
+        },
+        {
+          "en": "I need an appointment for this afternoon.",
+          "tr": "Bu öğleden sonra için bir randevu almam gerek."
+        },
+        {
+          "en": "The dentist can see you at two.",
+          "tr": "Diş hekimi seni saat ikide görebilir."
+        },
+        {
+          "en": "That is fine. I hope the pain will stop.",
+          "tr": "Bu iyi. Umarım ağrı geçer."
+        }
+      ]
+    },
+    {
+      "id": "a2-health-4",
+      "title": "Küçük bir kaza",
+      "names": [
+        "Kerem",
+        "Bursa"
+      ],
+      "lines": [
+        {
+          "en": "Kerem had a small accident in Bursa.",
+          "tr": "Kerem Bursa'da küçük bir kaza geçirdi."
+        },
+        {
+          "en": "He was running and he hurt his arm.",
+          "tr": "Koşarken kolunu incitti."
+        },
+        {
+          "en": "Does your back hurt too? – No, just my arm.",
+          "tr": "Sırtın da ağrıyor mu? – Hayır, sadece kolum."
+        },
+        {
+          "en": "The nurse looks at his arm and his back.",
+          "tr": "Hemşire koluna ve sırtına bakıyor."
+        },
+        {
+          "en": "It's not bad. You should rest.",
+          "tr": "Kötü değil. Dinlenmelisin."
+        },
+        {
+          "en": "Get well soon, Kerem!",
+          "tr": "Geçmiş olsun, Kerem!"
+        }
+      ]
+    },
+    {
+      "id": "a2-health-5",
+      "title": "Sağlıklı yaşam",
+      "names": [
+        "Banu",
+        "Cem"
+      ],
+      "lines": [
+        {
+          "en": "Banu and Cem speak in the park.",
+          "tr": "Banu ile Cem parkta konuşuyor."
+        },
+        {
+          "en": "I feel tired every morning. Can you give me advice?",
+          "tr": "Her sabah yorgun hissediyorum. Bana tavsiye verir misin?"
+        },
+        {
+          "en": "You should choose a healthy diet and drink water.",
+          "tr": "Sağlıklı beslenmeyi seçmeli ve su içmelisin."
+        },
+        {
+          "en": "Do you exercise? – Not really.",
+          "tr": "Spor yapıyor musun? – Pek değil."
+        },
+        {
+          "en": "Exercise is good for your body. Walk with me!",
+          "tr": "Egzersiz vücuduna iyi gelir. Benimle yürü!"
+        },
+        {
+          "en": "That's a good idea. I will start today.",
+          "tr": "İyi fikir. Bugün başlayacağım."
+        }
+      ]
+    }
+  ]
+}

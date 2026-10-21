@@ -1,0 +1,563 @@
+{
+  "id": "a2-home",
+  "level": "A2",
+  "title": "Ev ve mahalle",
+  "placement": "any",
+  "goal": "Ev kiralar ya da taşınır, evdeki bir arızayı anlatıp tamir ister, ev işlerini ve mahallesini anlatır.",
+  "words": [
+    {
+      "id": "a2-neighbour",
+      "word": "neighbour",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "komşu"
+          ],
+          "example_en": "Our new neighbour is very friendly.",
+          "example_tr": "Yeni komşumuz çok cana yakın."
+        }
+      ],
+      "note": "Amerikan İngilizcesinde 'neighbor' yazılır."
+    },
+    {
+      "id": "a2-neighbourhood",
+      "word": "neighbourhood",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "mahalle",
+            "çevre"
+          ],
+          "example_en": "This is a quiet neighbourhood.",
+          "example_tr": "Burası sakin bir mahalle."
+        }
+      ],
+      "note": "Amerikan İngilizcesinde 'neighborhood' yazılır."
+    },
+    {
+      "id": "a2-rent",
+      "word": "rent",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kiralamak"
+          ],
+          "example_en": "We want to rent a small apartment.",
+          "example_tr": "Küçük bir daire kiralamak istiyoruz."
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "kira"
+          ],
+          "example_en": "The rent is very expensive.",
+          "example_tr": "Kirası çok pahalı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-move",
+      "word": "move",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "taşınmak",
+            "hareket etmek"
+          ],
+          "example_en": "They are going to move tomorrow.",
+          "example_tr": "Yarın taşınacaklar."
+        }
+      ],
+      "note": "'move house' kalıbı da sık kullanılır."
+    },
+    {
+      "id": "a2-furniture",
+      "word": "furniture",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "mobilya"
+          ],
+          "example_en": "We need new furniture for the room.",
+          "example_tr": "Oda için yeni mobilyaya ihtiyacımız var."
+        }
+      ],
+      "note": "Sayılamaz bir isimdir; 'furnitures' denmez."
+    },
+    {
+      "id": "a2-upstairs",
+      "word": "upstairs",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "üst kata",
+            "üst katta"
+          ],
+          "example_en": "My bedroom is upstairs.",
+          "example_tr": "Yatak odam üst katta."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-downstairs",
+      "word": "downstairs",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "alt kata",
+            "alt katta"
+          ],
+          "example_en": "The kitchen is downstairs.",
+          "example_tr": "Mutfak alt katta."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-noisy",
+      "word": "noisy",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "gürültülü"
+          ],
+          "example_en": "The street is noisy at night.",
+          "example_tr": "Sokak geceleri gürültülü."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-quiet",
+      "word": "quiet",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "sessiz",
+            "sakin"
+          ],
+          "example_en": "Our village is very quiet.",
+          "example_tr": "Köyümüz çok sessiz."
+        }
+      ],
+      "note": "'quite' (oldukça) sözcüğüyle karıştırmayın."
+    },
+    {
+      "id": "a2-broken",
+      "word": "broken",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "bozuk",
+            "kırık"
+          ],
+          "example_en": "The window is broken.",
+          "example_tr": "Pencere kırık."
+        }
+      ],
+      "note": "Hem kırık hem de çalışmayan aletler için denir."
+    },
+    {
+      "id": "a2-repair",
+      "word": "repair",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "tamir etmek",
+            "onarmak"
+          ],
+          "example_en": "Can you repair this door?",
+          "example_tr": "Bu kapıyı onarabilir misin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-fix",
+      "word": "fix",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "tamir etmek",
+            "düzeltmek"
+          ],
+          "example_en": "I can fix the chair.",
+          "example_tr": "Sandalyeyi tamir edebilirim."
+        }
+      ],
+      "note": "Günlük dilde 'repair' yerine çok sık 'fix' denir."
+    },
+    {
+      "id": "a2-light",
+      "word": "light",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ışık",
+            "lamba"
+          ],
+          "example_en": "Turn on the light, please.",
+          "example_tr": "Işığı aç, lütfen."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-heating",
+      "word": "heating",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ısıtma",
+            "kalorifer"
+          ],
+          "example_en": "The heating doesn't work.",
+          "example_tr": "Isıtma çalışmıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-wash",
+      "word": "wash",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "yıkamak"
+          ],
+          "example_en": "I must wash the floor today.",
+          "example_tr": "Bugün yeri yıkamam gerek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-tidy",
+      "word": "tidy",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "toplamak",
+            "düzenlemek"
+          ],
+          "example_en": "Please tidy your bedroom.",
+          "example_tr": "Lütfen yatak odanı topla."
+        },
+        {
+          "pos": "adj",
+          "tr": [
+            "düzenli",
+            "derli toplu"
+          ],
+          "example_en": "The house is clean and tidy.",
+          "example_tr": "Ev temiz ve düzenli."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-comfortable",
+      "word": "comfortable",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "rahat",
+            "konforlu"
+          ],
+          "example_en": "This sofa is very comfortable.",
+          "example_tr": "Bu koltuk çok rahat."
+        }
+      ],
+      "note": "Okunuşu üç hece gibidir: 'kamf-tə-bıl'."
+    },
+    {
+      "id": "a2-village",
+      "word": "village",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "köy"
+          ],
+          "example_en": "My grandmother lives in a village.",
+          "example_tr": "Büyükannem bir köyde yaşıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-lift",
+      "word": "lift",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "asansör"
+          ],
+          "example_en": "The lift is broken today.",
+          "example_tr": "Asansör bugün bozuk."
+        }
+      ],
+      "note": "Amerikan İngilizcesinde 'elevator' denir."
+    },
+    {
+      "id": "a2-rubbish",
+      "word": "rubbish",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "çöp"
+          ],
+          "example_en": "Please take out the rubbish.",
+          "example_tr": "Lütfen çöpü dışarı çıkar."
+        }
+      ],
+      "note": "Amerikan İngilizcesinde 'trash' ya da 'garbage' denir."
+    },
+    {
+      "id": "a2-empty",
+      "word": "empty",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "boş"
+          ],
+          "example_en": "The room is empty.",
+          "example_tr": "Oda boş."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "boşaltmak"
+          ],
+          "example_en": "Can you empty the bag?",
+          "example_tr": "Çantayı boşaltabilir misin?"
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "a2-p-doesnt-work",
+      "text": "The … doesn't work.",
+      "tr": "… çalışmıyor.",
+      "example_en": "The heating doesn't work.",
+      "example_tr": "Isıtma çalışmıyor.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-can-you-fix-it",
+      "text": "Can you fix it?",
+      "tr": "Tamir edebilir misiniz?",
+      "example_en": "The door is broken. Can you fix it?",
+      "example_tr": "Kapı bozuk. Tamir edebilir misiniz?",
+      "note": ""
+    },
+    {
+      "id": "a2-p-im-moving-to",
+      "text": "I'm moving to…",
+      "tr": "…'a taşınıyorum.",
+      "example_en": "I'm moving to a new apartment.",
+      "example_tr": "Yeni bir daireye taşınıyorum.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-its-next-to",
+      "text": "It's next to…",
+      "tr": "…'nın yanında.",
+      "example_en": "It's next to the park.",
+      "example_tr": "Parkın yanında.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-turn-off-the",
+      "text": "Turn off the…",
+      "tr": "…'yı kapat.",
+      "example_en": "Turn off the light, please.",
+      "example_tr": "Işığı kapat, lütfen.",
+      "note": "Elektrikli aletleri kapatmak için kullanılır."
+    }
+  ],
+  "stories": [
+    {
+      "id": "a2-home-1",
+      "title": "Yeni bir daire",
+      "names": [
+        "Selin",
+        "İzmir"
+      ],
+      "lines": [
+        {
+          "en": "Selin wants to rent an apartment in İzmir.",
+          "tr": "Selin İzmir'de bir daire kiralamak istiyor."
+        },
+        {
+          "en": "I'm moving to a quiet neighbourhood.",
+          "tr": "Sakin bir mahalleye taşınıyorum."
+        },
+        {
+          "en": "There is no furniture in the apartment. It is empty.",
+          "tr": "Dairede mobilya yok. Bomboş."
+        },
+        {
+          "en": "It's next to a nice park.",
+          "tr": "Güzel bir parkın yanında."
+        },
+        {
+          "en": "She decides to take it today.",
+          "tr": "Bugün tutmaya karar veriyor."
+        }
+      ]
+    },
+    {
+      "id": "a2-home-2",
+      "title": "Evdeki arıza",
+      "names": [
+        "Emre",
+        "Kemal"
+      ],
+      "lines": [
+        {
+          "en": "Emre feels very cold in his bedroom.",
+          "tr": "Emre yatak odasında çok üşüyor."
+        },
+        {
+          "en": "The heating doesn't work.",
+          "tr": "Isıtma çalışmıyor."
+        },
+        {
+          "en": "He asks his neighbour Kemal for help.",
+          "tr": "Komşusu Kemal'den yardım istiyor."
+        },
+        {
+          "en": "The heating is broken. Can you fix it?",
+          "tr": "Isıtma bozuk. Tamir edebilir misin?"
+        },
+        {
+          "en": "Kemal can repair it easily.",
+          "tr": "Kemal kolayca tamir edebiliyor."
+        },
+        {
+          "en": "Now the room is warm and comfortable.",
+          "tr": "Artık oda sıcak ve rahat."
+        }
+      ]
+    },
+    {
+      "id": "a2-home-3",
+      "title": "Temizlik vakti",
+      "names": [
+        "Kerem",
+        "Derya"
+      ],
+      "lines": [
+        {
+          "en": "Kerem and Derya want to clean the house.",
+          "tr": "Kerem ve Derya evi temizlemek istiyor."
+        },
+        {
+          "en": "I can tidy the bedroom upstairs.",
+          "tr": "Üst kattaki yatak odasını toplayabilirim."
+        },
+        {
+          "en": "I will wash the kitchen floor downstairs.",
+          "tr": "Ben alt kattaki mutfağın yerini yıkayacağım."
+        },
+        {
+          "en": "Please take out the rubbish too.",
+          "tr": "Lütfen çöpü de çıkar."
+        },
+        {
+          "en": "Turn off the light when you leave.",
+          "tr": "Çıkarken ışığı kapat."
+        },
+        {
+          "en": "Soon the house is clean.",
+          "tr": "Kısa sürede ev tertemiz oluyor."
+        }
+      ]
+    },
+    {
+      "id": "a2-home-4",
+      "title": "Köyde yaşam",
+      "names": [
+        "Fatma",
+        "Bursa"
+      ],
+      "lines": [
+        {
+          "en": "Fatma lived in a noisy street in Bursa.",
+          "tr": "Fatma Bursa'da gürültülü bir sokakta yaşıyordu."
+        },
+        {
+          "en": "Last year she moved to a small village.",
+          "tr": "Geçen yıl küçük bir köye taşındı."
+        },
+        {
+          "en": "Her new house is quiet and comfortable.",
+          "tr": "Yeni evi sessiz ve rahat."
+        },
+        {
+          "en": "She has a big garden.",
+          "tr": "Büyük bir bahçesi var."
+        },
+        {
+          "en": "I love my village because life is better here.",
+          "tr": "Köyümü seviyorum çünkü burada hayat daha güzel."
+        }
+      ]
+    },
+    {
+      "id": "a2-home-5",
+      "title": "Bozuk asansör",
+      "names": [
+        "Mert",
+        "Ankara"
+      ],
+      "lines": [
+        {
+          "en": "Mert lives in a tall apartment in Ankara.",
+          "tr": "Mert Ankara'da yüksek bir apartmanda yaşıyor."
+        },
+        {
+          "en": "Today the lift doesn't work.",
+          "tr": "Bugün asansör çalışmıyor."
+        },
+        {
+          "en": "The lift is broken, so he must walk upstairs.",
+          "tr": "Asansör bozuk, bu yüzden merdivenlerden yukarı yürümek zorunda."
+        },
+        {
+          "en": "Can you fix it today?",
+          "tr": "Bugün tamir edebilir misiniz?"
+        },
+        {
+          "en": "A man comes to repair it in the afternoon.",
+          "tr": "Öğleden sonra bir adam tamir etmeye geliyor."
+        }
+      ]
+    }
+  ]
+}

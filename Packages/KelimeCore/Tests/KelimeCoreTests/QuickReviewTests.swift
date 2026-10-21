@@ -29,12 +29,12 @@ struct QuickReviewTests {
         let db = try makeDatabase()
         try db.writer.write { db in
             try CardState(cardID: "b1-avoid", state: .struggling, lastAnsweredOn: LocalDate(year: 2026, month: 10, day: 12)).insert(db)
-            try CardState(cardID: "a2-busy", state: .struggling, lastAnsweredOn: LocalDate(year: 2026, month: 10, day: 10)).insert(db)
-            try CardState(cardID: "a2-wait", state: .new, timesShown: 2).insert(db)
+            try CardState(cardID: "b1-honest", state: .struggling, lastAnsweredOn: LocalDate(year: 2026, month: 10, day: 10)).insert(db)
+            try CardState(cardID: "b1-patient", state: .new, timesShown: 2).insert(db)
             try CardState(cardID: "b1-proud", state: .learned).insert(db)
         }
         let ids = try questions(db).map(\.id)
-        #expect(Array(ids.prefix(3)) == ["a2-busy", "b1-avoid", "a2-wait"])
+        #expect(Array(ids.prefix(3)) == ["b1-honest", "b1-avoid", "b1-patient"])
         #expect(!ids.contains("b1-proud"))
     }
 

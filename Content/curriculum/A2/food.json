@@ -1,0 +1,594 @@
+{
+  "id": "a2-food",
+  "level": "A2",
+  "title": "Yemek",
+  "placement": "any",
+  "goal": "Restoranda masa ayırtır ve sipariş verir, yemeği beğenip beğenmediğini söyler, basit bir tarif anlatır, alerjisini belirtir.",
+  "words": [
+    {
+      "id": "a2-restaurant",
+      "word": "restaurant",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "restoran",
+            "lokanta"
+          ],
+          "example_en": "We can eat at this restaurant.",
+          "example_tr": "Bu restoranda yemek yiyebiliriz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-bread",
+      "word": "bread",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ekmek"
+          ],
+          "example_en": "Could you bring some bread, please?",
+          "example_tr": "Biraz ekmek getirebilir misiniz, lütfen?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-meat",
+      "word": "meat",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "et"
+          ],
+          "example_en": "I don't eat meat.",
+          "example_tr": "Et yemem."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-chicken",
+      "word": "chicken",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tavuk",
+            "tavuk eti"
+          ],
+          "example_en": "He ordered chicken with rice.",
+          "example_tr": "Tavuk pilav sipariş etti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-fish",
+      "word": "fish",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "balık"
+          ],
+          "example_en": "The fish is very fresh today.",
+          "example_tr": "Balık bugün çok taze."
+        }
+      ],
+      "note": "Çoğulu da 'fish' olarak kalır."
+    },
+    {
+      "id": "a2-vegetable",
+      "word": "vegetable",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sebze"
+          ],
+          "example_en": "You should eat more vegetables.",
+          "example_tr": "Daha çok sebze yemelisin."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-fruit",
+      "word": "fruit",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "meyve"
+          ],
+          "example_en": "We bought fresh fruit at the market.",
+          "example_tr": "Pazardan taze meyve aldık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-rice",
+      "word": "rice",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "pirinç",
+            "pilav"
+          ],
+          "example_en": "Can I have more rice, please?",
+          "example_tr": "Biraz daha pilav alabilir miyim, lütfen?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-soup",
+      "word": "soup",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "çorba"
+          ],
+          "example_en": "This hot soup is delicious.",
+          "example_tr": "Bu sıcak çorba çok lezzetli."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-salad",
+      "word": "salad",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "salata"
+          ],
+          "example_en": "I'd like a small green salad.",
+          "example_tr": "Küçük bir yeşil salata alayım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-dessert",
+      "word": "dessert",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tatlı"
+          ],
+          "example_en": "What do you want for dessert?",
+          "example_tr": "Tatlı olarak ne istersin?"
+        }
+      ],
+      "note": "Çöl anlamına gelen 'desert' ile karıştırmayın."
+    },
+    {
+      "id": "a2-delicious",
+      "word": "delicious",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "lezzetli",
+            "nefis"
+          ],
+          "example_en": "This dish is really delicious!",
+          "example_tr": "Bu yemek gerçekten nefis!"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-spicy",
+      "word": "spicy",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "baharatlı",
+            "acılı"
+          ],
+          "example_en": "Is this chicken spicy?",
+          "example_tr": "Bu tavuk acılı mı?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-fresh",
+      "word": "fresh",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "taze"
+          ],
+          "example_en": "They sell fresh bread here.",
+          "example_tr": "Burada taze ekmek satıyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-taste",
+      "word": "taste",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "tadına bakmak"
+          ],
+          "example_en": "Can I taste the soup?",
+          "example_tr": "Çorbanın tadına bakabilir miyim?"
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "tat",
+            "lezzet"
+          ],
+          "example_en": "I really like the taste.",
+          "example_tr": "Tadını çok beğendim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-recipe",
+      "word": "recipe",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tarif",
+            "yemek tarifi"
+          ],
+          "example_en": "This recipe is very easy.",
+          "example_tr": "Bu tarif çok kolay."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-fry",
+      "word": "fry",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kızartmak"
+          ],
+          "example_en": "I fry fish for dinner.",
+          "example_tr": "Akşam yemeği için balık kızartırım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-boil",
+      "word": "boil",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "kaynatmak",
+            "haşlamak"
+          ],
+          "example_en": "Boil the vegetables in water.",
+          "example_tr": "Sebzeleri suda haşlayın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-bake",
+      "word": "bake",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "fırında pişirmek"
+          ],
+          "example_en": "We can bake bread at home.",
+          "example_tr": "Evde ekmek pişirebiliriz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-dish",
+      "word": "dish",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yemek",
+            "tabak"
+          ],
+          "example_en": "This is our best dish.",
+          "example_tr": "En iyi yemeğimiz budur."
+        }
+      ],
+      "note": "Hem yapılan yemek hem de servis tabağı demektir."
+    },
+    {
+      "id": "a2-vegetarian",
+      "word": "vegetarian",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "vejetaryen"
+          ],
+          "example_en": "Do you have vegetarian dishes?",
+          "example_tr": "Vejetaryen yemekleriniz var mı?"
+        },
+        {
+          "pos": "n",
+          "tr": [
+            "vejetaryen"
+          ],
+          "example_en": "My sister is a vegetarian.",
+          "example_tr": "Kız kardeşim vejetaryen."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a2-kilo",
+      "word": "kilo",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kilo",
+            "kilogram"
+          ],
+          "example_en": "I bought two kilos of fruit.",
+          "example_tr": "İki kilo meyve aldım."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "a2-p-table-for-two",
+      "text": "A table for two, please.",
+      "tr": "İki kişilik masa, lütfen.",
+      "example_en": "A table for two, please. – Sit here.",
+      "example_tr": "İki kişilik bir masa, lütfen. – Buraya oturun.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-ready-to-order",
+      "text": "Are you ready to order?",
+      "tr": "Sipariş için hazır mısınız?",
+      "example_en": "Are you ready to order? – Yes, we are.",
+      "example_tr": "Sipariş vermeye hazır mısınız? – Evet, hazırız.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-what-recommend",
+      "text": "What do you recommend?",
+      "tr": "Ne tavsiye edersiniz?",
+      "example_en": "What do you recommend? – The fish.",
+      "example_tr": "Ne tavsiye edersiniz? – Balığı.",
+      "note": ""
+    },
+    {
+      "id": "a2-p-its-delicious",
+      "text": "It's delicious!",
+      "tr": "Çok lezzetli!",
+      "example_en": "Taste this soup. – It's delicious!",
+      "example_tr": "Şu çorbanın tadına bak. – Çok lezzetli!",
+      "note": ""
+    },
+    {
+      "id": "a2-p-allergic-to",
+      "text": "I'm allergic to…",
+      "tr": "…'e alerjim var.",
+      "example_en": "I'm allergic to fish.",
+      "example_tr": "Balığa alerjim var.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "a2-food-1",
+      "title": "Akşam yemeği",
+      "names": [
+        "Mert",
+        "Selin",
+        "İzmir"
+      ],
+      "lines": [
+        {
+          "en": "Mert and Selin walk into a restaurant in İzmir.",
+          "tr": "Mert ile Selin İzmir'de bir restorana girerler."
+        },
+        {
+          "en": "A table for two, please.",
+          "tr": "İki kişilik bir masa, lütfen."
+        },
+        {
+          "en": "Are you ready to order?",
+          "tr": "Sipariş vermeye hazır mısınız?"
+        },
+        {
+          "en": "What do you recommend?",
+          "tr": "Ne tavsiye edersiniz?"
+        },
+        {
+          "en": "The fish is fresh today.",
+          "tr": "Balık bugün taze."
+        },
+        {
+          "en": "I'm allergic to fish. I'd like chicken and rice.",
+          "tr": "Balığa alerjim var. Tavuk ve pilav alayım."
+        },
+        {
+          "en": "They eat dinner and it's delicious!",
+          "tr": "Akşam yemeğini yerler ve çok lezzetlidir!"
+        }
+      ]
+    },
+    {
+      "id": "a2-food-2",
+      "title": "Vejetaryen misafir",
+      "names": [
+        "Kerem",
+        "Sarah",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Sarah lives in London and visits her friend Kerem.",
+          "tr": "Sarah Londra'da yaşar ve arkadaşı Kerem'i ziyaret eder."
+        },
+        {
+          "en": "Do you eat meat or chicken?",
+          "tr": "Et ya da tavuk yer misin?"
+        },
+        {
+          "en": "No, I'm a vegetarian.",
+          "tr": "Hayır, ben vejetaryenim."
+        },
+        {
+          "en": "Kerem makes a hot vegetable dish with rice.",
+          "tr": "Kerem pilavlı sıcak bir sebze yemeği yapar."
+        },
+        {
+          "en": "He brings fresh bread and a big salad too.",
+          "tr": "Taze ekmek ve büyük bir salata da getirir."
+        },
+        {
+          "en": "Sarah tastes the dish.",
+          "tr": "Sarah yemeğin tadına bakar."
+        },
+        {
+          "en": "It's delicious!",
+          "tr": "Çok lezzetli!"
+        }
+      ]
+    },
+    {
+      "id": "a2-food-3",
+      "title": "Kolay bir tarif",
+      "names": [
+        "Emre",
+        "Bursa"
+      ],
+      "lines": [
+        {
+          "en": "Emre wants to cook dinner at his home in Bursa.",
+          "tr": "Emre Bursa'daki evinde akşam yemeği pişirmek ister."
+        },
+        {
+          "en": "His mother gave him an easy soup recipe.",
+          "tr": "Annesi ona kolay bir çorba tarifi verdi."
+        },
+        {
+          "en": "First, he buys fresh vegetables.",
+          "tr": "Önce taze sebze alıyor."
+        },
+        {
+          "en": "Boil them in water.",
+          "tr": "Onları suda haşlayın."
+        },
+        {
+          "en": "Is it spicy? I don't think so.",
+          "tr": "Baharatlı mı? Sanmıyorum."
+        },
+        {
+          "en": "He tastes the hot soup and he is very happy.",
+          "tr": "Sıcak çorbanın tadına bakar ve çok mutlu olur."
+        }
+      ]
+    },
+    {
+      "id": "a2-food-4",
+      "title": "Pazar alışverişi",
+      "names": [
+        "Fatma",
+        "Antalya"
+      ],
+      "lines": [
+        {
+          "en": "Fatma goes to the open market in Antalya.",
+          "tr": "Fatma Antalya'da açık pazara gider."
+        },
+        {
+          "en": "She wants to buy fresh fruit and vegetables.",
+          "tr": "Taze meyve ve sebze almak istiyor."
+        },
+        {
+          "en": "How much is one kilo of fruit?",
+          "tr": "Bir kilo meyve ne kadar?"
+        },
+        {
+          "en": "It's cheap today.",
+          "tr": "Bugün ucuz."
+        },
+        {
+          "en": "She buys two kilos of fruit and leaves the market.",
+          "tr": "İki kilo meyve alır ve pazardan ayrılır."
+        },
+        {
+          "en": "Now she can bake a cake for dessert.",
+          "tr": "Artık tatlı için bir kek pişirebilir."
+        }
+      ]
+    },
+    {
+      "id": "a2-food-5",
+      "title": "Yeni bir masa",
+      "names": [
+        "Burak",
+        "Cem",
+        "Ankara"
+      ],
+      "lines": [
+        {
+          "en": "Burak and Cem are hungry after work in Ankara.",
+          "tr": "Burak ile Cem Ankara'da iş çıkışı açtır."
+        },
+        {
+          "en": "They find a nice restaurant near the station.",
+          "tr": "İstasyonun yakınında güzel bir restoran bulurlar."
+        },
+        {
+          "en": "A table for two, please.",
+          "tr": "İki kişilik bir masa, lütfen."
+        },
+        {
+          "en": "The waiter brings the menu.",
+          "tr": "Garson menüyü getirir."
+        },
+        {
+          "en": "Are you ready to order?",
+          "tr": "Sipariş vermeye hazır mısınız?"
+        },
+        {
+          "en": "We want meat, rice, and fresh bread.",
+          "tr": "Et, pilav ve taze ekmek istiyoruz."
+        },
+        {
+          "en": "The food comes and it's delicious!",
+          "tr": "Yemek geliyor ve çok lezzetli!"
+        }
+      ]
+    }
+  ]
+}
