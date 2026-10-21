@@ -42,6 +42,8 @@ CARDS
   simpler situation.
   Do not squeeze core words into sentences where they do not belong (no "a profound dilemma",
   "a profound nostalgia", "a substantial discrepancy in our views"); simple words are fine.
+  The core and earlier-level lists say what is allowed, not what to use: do not try to fit in as
+  many of them as possible. Build each sentence around this unit's word and plain, common words.
 - example_tr: what a Turkish speaker actually says for example_en: idiomatic, not word for word
   ("I'm cold." is "Üşüyorum.", "Don't worry about it." is "Merak etme."). Nothing added, nothing
   dropped: do not add what English leaves open (brother is "kardeş", not "abi", unless the

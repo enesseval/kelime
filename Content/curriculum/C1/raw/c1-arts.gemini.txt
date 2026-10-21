@@ -1,0 +1,542 @@
+{
+"id": "c1-arts",
+"level": "C1",
+"title": "Sanat ve eleştiri",
+"placement": "any",
+"goal": "Bir eseri biçim ve anlam açısından çözümler, eleştirel bir değerlendirme yazar, beğenisini gerekçelendirir.",
+"words": [
+{
+"id": "c1-aesthetic",
+"word": "aesthetic",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"estetik"
+],
+"example_en": "The new painting has a beautiful aesthetic.",
+"example_tr": "Yeni tablonun güzel bir estetiği var."
+}
+],
+"note": ""
+},
+{
+"id": "c1-critique",
+"word": "critique",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"eleştiri"
+],
+"example_en": "She made a profound critique of contemporary culture.",
+"example_tr": "Çağdaş kültür üzerine derin bir eleştiri yaptı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-genre",
+"word": "genre",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tür"
+],
+"example_en": "Which film genre do you prefer?",
+"example_tr": "Hangi film türünü tercih edersin?"
+}
+],
+"note": ""
+},
+{
+"id": "c1-narrative",
+"word": "narrative",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"anlatı",
+"hikaye"
+],
+"example_en": "The novel's underlying narrative is quite ambiguous.",
+"example_tr": "Romanın temel anlatısı oldukça belirsiz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-metaphor",
+"word": "metaphor",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"metafor",
+"mecaz"
+],
+"example_en": "The island is a subtle metaphor for freedom.",
+"example_tr": "Ada, özgürlük için ince bir metafordur."
+}
+],
+"note": ""
+},
+{
+"id": "c1-satire",
+"word": "satire",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"hiciv",
+"taşlama"
+],
+"example_en": "The documentary is a clever satire of politics.",
+"example_tr": "Belgesel, siyasetin zekice bir hicvi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-masterpiece",
+"word": "masterpiece",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"başyapıt"
+],
+"example_en": "It goes without saying that it is a masterpiece.",
+"example_tr": "Bunun bir başyapıt olduğunu söylemeye gerek yok."
+}
+],
+"note": ""
+},
+{
+"id": "c1-acclaimed",
+"word": "acclaimed",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"beğeni toplayan"
+],
+"example_en": "The acclaimed author will attend the festival.",
+"example_tr": "Beğeni toplayan yazar festivale katılacak."
+}
+],
+"note": ""
+},
+{
+"id": "c1-evocative",
+"word": "evocative",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"çağrışım yapan"
+],
+"example_en": "Her paintings are very evocative of her childhood.",
+"example_tr": "Tabloları çocukluğunu çok çağrıştırıyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-portray",
+"word": "portray",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"canlandırmak",
+"resmetmek"
+],
+"example_en": "The actor portrays a vulnerable doctor.",
+"example_tr": "Oyuncu kırılgan bir doktoru canlandırıyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-depict",
+"word": "depict",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"tasvir etmek",
+"betimlemek"
+],
+"example_en": "The exhibition depicts the consequences of poverty.",
+"example_tr": "Sergi, yoksulluğun sonuçlarını tasvir ediyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-symbolism",
+"word": "symbolism",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sembolizm",
+"simgecilik"
+],
+"example_en": "The film relies on profound symbolism.",
+"example_tr": "Film derin bir sembolizme dayanıyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-mundane",
+"word": "mundane",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"sıradan",
+"tekdüze"
+],
+"example_en": "He transforms the mundane into the beautiful.",
+"example_tr": "Sıradan olanı güzele dönüştürür."
+}
+],
+"note": ""
+},
+{
+"id": "c1-eloquent",
+"word": "eloquent",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"etkili konuşan",
+"anlamlı"
+],
+"example_en": "She gave an eloquent lecture about equality.",
+"example_tr": "Eşitlik hakkında etkili bir ders verdi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-poignant",
+"word": "poignant",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"dokunaklı"
+],
+"example_en": "It is a poignant story of a lost childhood.",
+"example_tr": "Kayıp bir çocukluğun dokunaklı bir hikayesidir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-provocative",
+"word": "provocative",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kışkırtıcı"
+],
+"example_en": "His provocative exhibition challenges the consensus.",
+"example_tr": "Kışkırtıcı sergisi fikir birliğine meydan okuyor."
+}
+],
+"note": ""
+},
+{
+"id": "c1-contemporary",
+"word": "contemporary",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"çağdaş",
+"güncel"
+],
+"example_en": "I predominantly read contemporary novels.",
+"example_tr": "Ağırlıklı olarak çağdaş romanlar okurum."
+}
+],
+"note": ""
+},
+{
+"id": "c1-allegory",
+"word": "allegory",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"alegori"
+],
+"example_en": "The novel is an allegory of contemporary politics.",
+"example_tr": "Roman, çağdaş siyasetin bir alegorisidir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-protagonist",
+"word": "protagonist",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ana karakter"
+],
+"example_en": "The protagonist is an anxious young woman.",
+"example_tr": "Ana karakter endişeli genç bir kadındır."
+}
+],
+"note": ""
+},
+{
+"id": "c1-medium",
+"word": "medium",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"araç",
+"mecra"
+],
+"example_en": "The internet is a prevalent medium for artists.",
+"example_tr": "İnternet, sanatçılar için yaygın bir mecradır."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c1-p-stayed-with-me",
+"text": "It stayed with me.",
+"tr": "Aklımdan çıkmadı.",
+"example_en": "The poignant ending? It stayed with me.",
+"example_tr": "O dokunaklı son mu? Aklımdan çıkmadı.",
+"note": ""
+},
+{
+"id": "c1-p-acquired-taste",
+"text": "It's an acquired taste.",
+"tr": "Zamanla sevilir.",
+"example_en": "This provocative genre? It's an acquired taste.",
+"example_tr": "Bu kışkırtıcı tür mü? Zamanla sevilen bir şey.",
+"note": ""
+},
+{
+"id": "c1-p-overrated",
+"text": "It's overrated.",
+"tr": "Abartılıyor.",
+"example_en": "The acclaimed masterpiece? I think it's overrated.",
+"example_tr": "Şu övülen başyapıt mı? Bence abartılıyor.",
+"note": ""
+},
+{
+"id": "c1-p-strikes-a-chord",
+"text": "It strikes a chord.",
+"tr": "Derinden etkiliyor.",
+"example_en": "Her story is mundane, but it strikes a chord.",
+"example_tr": "Hikayesi sıradan ama insana tanıdık geliyor.",
+"note": ""
+},
+{
+"id": "c1-p-open-interpretation",
+"text": "It's open to interpretation.",
+"tr": "Yoruma açık.",
+"example_en": "The allegory is ambiguous; it's open to interpretation.",
+"example_tr": "Alegori belirsiz; yoruma açık.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c1-arts-1",
+"title": "Sergide",
+"names": [
+"Leyla",
+"London"
+],
+"lines": [
+{
+"en": "Leyla is at an exhibition in London.",
+"tr": "Leyla Londra'da bir sergide."
+},
+{
+"en": "The gallery depicts the consequences of city poverty.",
+"tr": "Galeri, şehir yoksulluğunun sonuçlarını tasvir ediyor."
+},
+{
+"en": "What do you think of this contemporary painting?",
+"tr": "Bu çağdaş tablo hakkında ne düşünüyorsun?"
+},
+{
+"en": "To a certain extent, it strikes a chord.",
+"tr": "Belli bir ölçüde, insanı derinden etkiliyor."
+},
+{
+"en": "It is quite provocative and evocative.",
+"tr": "Oldukça kışkırtıcı ve çağrışımlarla dolu."
+},
+{
+"en": "Yes, but I think it's overrated.",
+"tr": "Evet, ama bence abartılıyor."
+},
+{
+"en": "Perhaps. The symbolism is open to interpretation.",
+"tr": "Belki. Sembolizm yoruma açık."
+}
+]
+},
+{
+"id": "c1-arts-2",
+"title": "Yeni bir roman",
+"names": [
+"Canan",
+"Izmir"
+],
+"lines": [
+{
+"en": "Canan reads a new novel in Izmir.",
+"tr": "Canan İzmir'de yeni bir roman okuyor."
+},
+{
+"en": "The protagonist is a young author.",
+"tr": "Ana karakter genç bir yazar."
+},
+{
+"en": "The narrative is a subtle allegory of democracy.",
+"tr": "Anlatı, demokrasinin ince bir alegorisidir."
+},
+{
+"en": "Did you read it? It stayed with me.",
+"tr": "Okudun mu? Aklımdan çıkmadı."
+},
+{
+"en": "I did. The ending is very poignant.",
+"tr": "Okudum. Sonu çok dokunaklı."
+},
+{
+"en": "The author uses eloquent metaphors.",
+"tr": "Yazar etkili metaforlar kullanıyor."
+},
+{
+"en": "By and large, it is a masterpiece.",
+"tr": "Genel hatlarıyla bu bir başyapıt."
+}
+]
+},
+{
+"id": "c1-arts-3",
+"title": "Belgesel filmi",
+"names": [
+"Emre",
+"Thomas",
+"Berlin"
+],
+"lines": [
+{
+"en": "Emre and Thomas watch a film in Berlin.",
+"tr": "Emre ve Thomas Berlin'de bir film izliyor."
+},
+{
+"en": "It is an acclaimed documentary about wildlife.",
+"tr": "Vahşi yaşam hakkında beğeni toplayan bir belgesel."
+},
+{
+"en": "I don't understand the artist's aesthetic.",
+"tr": "Sanatçının estetiğini anlamıyorum."
+},
+{
+"en": "It's an acquired taste.",
+"tr": "Zamanla sevilir."
+},
+{
+"en": "The mundane scenes are very slow.",
+"tr": "Sıradan sahneler çok yavaş."
+},
+{
+"en": "Be that as it may, it portrays the animals' habitat well.",
+"tr": "Öyle de olsa, hayvanların yaşam alanını iyi canlandırıyor."
+}
+]
+},
+{
+"id": "c1-arts-4",
+"title": "Tiyatro eleştirisi",
+"names": [
+"Zeynep",
+"Istanbul"
+],
+"lines": [
+{
+"en": "Zeynep writes a critique of a popular play.",
+"tr": "Zeynep popüler bir tiyatro oyunu hakkında bir eleştiri yazar."
+},
+{
+"en": "The play is a satire of contemporary politics.",
+"tr": "Oyun, çağdaş siyasetin bir hicvidir."
+},
+{
+"en": "It is a difficult genre to evaluate.",
+"tr": "Değerlendirmesi zor bir tür."
+},
+{
+"en": "Do you deem it a success?",
+"tr": "Bunu bir başarı olarak görüyor musun?"
+},
+{
+"en": "Yes. It reveals the prevalent discrepancy between rich and poor.",
+"tr": "Evet. Zengin ve yoksul arasındaki yaygın tutarsızlığı gözler önüne seriyor."
+},
+{
+"en": "Hence, the audience leaves with profound doubts.",
+"tr": "Bu nedenle, izleyici derin şüphelerle ayrılıyor."
+}
+]
+},
+{
+"id": "c1-arts-5",
+"title": "Medya ve sanat",
+"names": [
+"Ali",
+"New York"
+],
+"lines": [
+{
+"en": "Ali is an artist in New York.",
+"tr": "Ali, New York'ta bir sanatçı."
+},
+{
+"en": "His preferred medium is virtual video.",
+"tr": "Tercih ettiği mecra sanal videodur."
+},
+{
+"en": "He develops provocative narratives.",
+"tr": "Kışkırtıcı hikayeler geliştirir."
+},
+{
+"en": "In the light of his new exhibition, the media is curious.",
+"tr": "Yeni sergisinin ışığında, medya meraklı."
+},
+{
+"en": "The underlying message is explicitly political.",
+"tr": "Temel mesaj açıkça siyasidir."
+},
+{
+"en": "Some journalists disagree with him, but he has loyal friends.",
+"tr": "Bazı gazeteciler onunla aynı fikirde değil ama sadık dostları var."
+}
+]
+}
+]
+}
