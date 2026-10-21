@@ -101,7 +101,7 @@ def lemmas(word):
     for suffix, repl in (("ies", "y"), ("es", ""), ("s", ""), ("ied", "y"), ("ed", ""), ("ed", "e"),
                          ("ing", ""), ("ing", "e"), ("ier", "y"), ("iest", "y"), ("er", ""),
                          ("er", "e"), ("est", ""), ("est", "e"), ("ily", "y"), ("ly", "")):
-        if word.endswith(suffix) and len(word) > len(suffix) + 2:
+        if word.endswith(suffix) and len(word) >= len(suffix) + 2:
             out.add(word[: -len(suffix)] + repl)
     # doubled consonant: sitting -> sit, stopped -> stop
     for form in list(out):

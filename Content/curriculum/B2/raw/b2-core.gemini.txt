@@ -1,0 +1,755 @@
+{
+  "id": "b2-core",
+  "level": "B2",
+  "title": "Çekirdek",
+  "placement": "first",
+  "goal": "Bir görüşü ayrıntılı savunur ve karşı görüşü tartar, neden-sonuç ve karşıtlık bildirir, soyut konularda kesinlik derecesini ayarlar.",
+  "words": [
+    {
+      "id": "b2-despite",
+      "word": "despite",
+      "senses": [
+        {
+          "pos": "prep",
+          "tr": [
+            "rağmen"
+          ],
+          "example_en": "Despite the rain, we walked.",
+          "example_tr": "Yağmura rağmen yürüdük."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-whereas",
+      "word": "whereas",
+      "senses": [
+        {
+          "pos": "conj",
+          "tr": [
+            "oysa",
+            "halbuki"
+          ],
+          "example_en": "I like tea, whereas he prefers coffee.",
+          "example_tr": "Ben çay severim, oysa o kahve tercih eder."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-therefore",
+      "word": "therefore",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "bu nedenle",
+            "dolayısıyla"
+          ],
+          "example_en": "I was ill; therefore, I stayed home.",
+          "example_tr": "Hastaydım; bu nedenle evde kaldım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-moreover",
+      "word": "moreover",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "dahası",
+            "ayrıca"
+          ],
+          "example_en": "It is cheap; moreover, it is good.",
+          "example_tr": "Ucuz; dahası, iyi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-otherwise",
+      "word": "otherwise",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "aksi takdirde",
+            "yoksa"
+          ],
+          "example_en": "We must leave; otherwise, we will be late.",
+          "example_tr": "Çıkmalıyız; aksi takdirde geç kalacağız."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-nevertheless",
+      "word": "nevertheless",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "yine de",
+            "buna rağmen"
+          ],
+          "example_en": "It was hard; nevertheless, I tried.",
+          "example_tr": "Zordu; yine de denedim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-merely",
+      "word": "merely",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "sadece",
+            "yalnızca"
+          ],
+          "example_en": "I merely tried to help.",
+          "example_tr": "Sadece yardım etmeye çalıştım."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-regarding",
+      "word": "regarding",
+      "senses": [
+        {
+          "pos": "prep",
+          "tr": [
+            "ilişkin",
+            "hakkında"
+          ],
+          "example_en": "He sent an email regarding the meeting.",
+          "example_tr": "Toplantıya ilişkin bir e-posta gönderdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-assume",
+      "word": "assume",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "varsaymak",
+            "farz etmek"
+          ],
+          "example_en": "I assume you are ready.",
+          "example_tr": "Hazır olduğunu varsayıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-tend",
+      "word": "tend",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "eğiliminde olmak"
+          ],
+          "example_en": "I tend to agree with you.",
+          "example_tr": "Sana katılma eğilimindeyim."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-tendency",
+      "word": "tendency",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "eğilim"
+          ],
+          "example_en": "He has a tendency to speak fast.",
+          "example_tr": "Hızlı konuşma eğilimi var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-require",
+      "word": "require",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "gerektirmek",
+            "istemek"
+          ],
+          "example_en": "This job requires English.",
+          "example_tr": "Bu iş İngilizce gerektiriyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-indicate",
+      "word": "indicate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "göstermek",
+            "işaret etmek"
+          ],
+          "example_en": "The results indicate a problem.",
+          "example_tr": "Sonuçlar bir sorunu gösteriyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-significant",
+      "word": "significant",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "önemli",
+            "belirgin"
+          ],
+          "example_en": "There is a significant difference.",
+          "example_tr": "Belirgin bir fark var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-considerable",
+      "word": "considerable",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kayda değer",
+            "önemli"
+          ],
+          "example_en": "We spent considerable time on this.",
+          "example_tr": "Buna kayda değer zaman harcadık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-essential",
+      "word": "essential",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "gerekli",
+            "temel"
+          ],
+          "example_en": "Water is essential for life.",
+          "example_tr": "Su hayat için gereklidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-apparent",
+      "word": "apparent",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "açık",
+            "belli"
+          ],
+          "example_en": "The mistake was apparent.",
+          "example_tr": "Hata açıktı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-evident",
+      "word": "evident",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "ortada",
+            "belli"
+          ],
+          "example_en": "It is evident that he is tired.",
+          "example_tr": "Yorgun olduğu ortada."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-sufficient",
+      "word": "sufficient",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yeterli"
+          ],
+          "example_en": "We have sufficient money.",
+          "example_tr": "Yeterli paramız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-adequate",
+      "word": "adequate",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yeterli",
+            "uygun"
+          ],
+          "example_en": "Is the heating adequate?",
+          "example_tr": "Isıtma yeterli mi?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-approach",
+      "word": "approach",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yaklaşım"
+          ],
+          "example_en": "We need a new approach.",
+          "example_tr": "Yeni bir yaklaşıma ihtiyacımız var."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "yaklaşmak"
+          ],
+          "example_en": "Winter is approaching.",
+          "example_tr": "Kış yaklaşıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-aspect",
+      "word": "aspect",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yön",
+            "açı"
+          ],
+          "example_en": "Consider every aspect of the plan.",
+          "example_tr": "Planın her yönünü düşünün."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-issue",
+      "word": "issue",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "mesele",
+            "sorun"
+          ],
+          "example_en": "This is an important issue.",
+          "example_tr": "Bu önemli bir mesele."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-factor",
+      "word": "factor",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "faktör",
+            "etken"
+          ],
+          "example_en": "Price is an important factor.",
+          "example_tr": "Fiyat önemli bir faktördür."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-extent",
+      "word": "extent",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "derece",
+            "boyut"
+          ],
+          "example_en": "I agree to some extent.",
+          "example_tr": "Bir dereceye kadar katılıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-attempt",
+      "word": "attempt",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "girişim"
+          ],
+          "example_en": "It was a good attempt.",
+          "example_tr": "İyi bir girişimdi."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "çabalamak"
+          ],
+          "example_en": "Do not attempt to fix it.",
+          "example_tr": "Onu tamir etmeye çabalamayın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-concern",
+      "word": "concern",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "endişe"
+          ],
+          "example_en": "The price is a big concern.",
+          "example_tr": "Fiyat büyük bir endişe."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-feature",
+      "word": "feature",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "özellik"
+          ],
+          "example_en": "This app has a great feature.",
+          "example_tr": "Bu uygulamanın harika bir özelliği var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-impact",
+      "word": "impact",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "etki"
+          ],
+          "example_en": "The internet has a big impact.",
+          "example_tr": "İnternetin büyük bir etkisi var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-outcome",
+      "word": "outcome",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sonuç",
+            "netice"
+          ],
+          "example_en": "We are happy with the outcome.",
+          "example_tr": "Sonuçtan memnunuz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-vast",
+      "word": "vast",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "çok geniş",
+            "muazzam"
+          ],
+          "example_en": "The forest is vast.",
+          "example_tr": "Orman çok geniş."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-rapid",
+      "word": "rapid",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "hızlı",
+            "ani"
+          ],
+          "example_en": "There was a rapid increase.",
+          "example_tr": "Hızlı bir artış oldu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-reasonable",
+      "word": "reasonable",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "makul",
+            "mantıklı"
+          ],
+          "example_en": "The price seems reasonable.",
+          "example_tr": "Fiyat makul görünüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-likely",
+      "word": "likely",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "olası",
+            "muhtemel"
+          ],
+          "example_en": "It is likely to rain.",
+          "example_tr": "Yağmur yağması muhtemel."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-unlikely",
+      "word": "unlikely",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "pek olası değil"
+          ],
+          "example_en": "That is very unlikely.",
+          "example_tr": "Bu pek olası değil."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-genuine",
+      "word": "genuine",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "gerçek",
+            "samimi"
+          ],
+          "example_en": "He is a genuine friend.",
+          "example_tr": "O samimi bir arkadaştır."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b2-p-seems-to-me",
+      "text": "It seems to me that…",
+      "tr": "Bana öyle geliyor ki…",
+      "example_en": "It seems to me that we need more time.",
+      "example_tr": "Bana öyle geliyor ki daha fazla zamana ihtiyacımız var.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-fair-point",
+      "text": "That's a fair point.",
+      "tr": "Bu haklı bir nokta.",
+      "example_en": "It is too expensive. – That's a fair point.",
+      "example_tr": "Çok pahalı. – Bu haklı bir nokta.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-see-what-you-mean",
+      "text": "I see what you mean, but…",
+      "tr": "Ne demek istediğini anlıyorum ama…",
+      "example_en": "I see what you mean, but it is dangerous.",
+      "example_tr": "Ne demek istediğini anlıyorum ama bu tehlikeli.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-as-a-result",
+      "text": "As a result…",
+      "tr": "Sonuç olarak…",
+      "example_en": "As a result, we didn't go.",
+      "example_tr": "Sonuç olarak gitmedik.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-in-other-words",
+      "text": "In other words…",
+      "tr": "Başka bir deyişle…",
+      "example_en": "In other words, you agree.",
+      "example_tr": "Başka bir deyişle, aynı fikirdesin.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-on-the-whole",
+      "text": "On the whole…",
+      "tr": "Genel olarak…",
+      "example_en": "On the whole, it was a good trip.",
+      "example_tr": "Genel olarak, iyi bir geziydi.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-up-to-you",
+      "text": "It's up to you.",
+      "tr": "Sana bağlı. / Sen bilirsin.",
+      "example_en": "We can stay or go. It's up to you.",
+      "example_tr": "Kalabiliriz veya gidebiliriz. Sen bilirsin.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b2-core-1",
+      "title": "İş Görüşmesi",
+      "names": [
+        "Ali",
+        "Mr. Smith",
+        "English",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Regarding the new job in London, is my English adequate?",
+          "tr": "Londra'daki yeni işe ilişkin, İngilizcem yeterli mi?"
+        },
+        {
+          "en": "On the whole, yes. However, it requires a lot of travel.",
+          "tr": "Genel olarak, evet. Ancak çok seyahat gerektiriyor."
+        },
+        {
+          "en": "That's a fair point. But I tend to enjoy travelling.",
+          "tr": "Bu haklı bir nokta. Ama seyahat etmekten keyif alma eğilimindeyim."
+        },
+        {
+          "en": "It is essential that you agree to move.",
+          "tr": "Taşınmayı kabul etmeniz şart."
+        },
+        {
+          "en": "It seems to me that the outcome will be good.",
+          "tr": "Bana öyle geliyor ki sonuç iyi olacak."
+        },
+        {
+          "en": "In other words, you want the job. It's up to you.",
+          "tr": "Başka bir deyişle işi istiyorsunuz. Karar sizin."
+        }
+      ]
+    },
+    {
+      "id": "b2-core-2",
+      "title": "Yeni Bir Plan",
+      "names": [
+        "Zeynep",
+        "Can"
+      ],
+      "lines": [
+        {
+          "en": "We need a new approach. The old plan was completely wrong.",
+          "tr": "Yeni bir yaklaşıma ihtiyacımız var. Eski plan tamamen yanlıştı."
+        },
+        {
+          "en": "I see what you mean, but it was merely an attempt.",
+          "tr": "Ne demek istediğini anlıyorum ama o sadece bir girişimdi."
+        },
+        {
+          "en": "Nevertheless, the impact was significant.",
+          "tr": "Buna rağmen, etkisi belirgindi."
+        },
+        {
+          "en": "We must consider every aspect. Otherwise, we will fail.",
+          "tr": "Her yönünü düşünmeliyiz. Aksi takdirde, başarısız olacağız."
+        },
+        {
+          "en": "I assume you have sufficient time for a rapid change?",
+          "tr": "Hızlı bir değişiklik için yeterli vaktin olduğunu varsayıyorum?"
+        },
+        {
+          "en": "Yes. Therefore, we should start now.",
+          "tr": "Evet. Bu nedenle, şimdi başlamalıyız."
+        }
+      ]
+    },
+    {
+      "id": "b2-core-3",
+      "title": "Farklı Görüşler",
+      "names": [
+        "Cem",
+        "Mert"
+      ],
+      "lines": [
+        {
+          "en": "My main concern is the price. It seems unreasonable.",
+          "tr": "Temel endişem fiyat. Makul görünmüyor."
+        },
+        {
+          "en": "Whereas I think it is a genuine bargain.",
+          "tr": "Oysa ben bunun gerçek bir fırsat olduğunu düşünüyorum."
+        },
+        {
+          "en": "The app has a vast tendency to crash.",
+          "tr": "Uygulamanın büyük bir çökme eğilimi var."
+        },
+        {
+          "en": "It is apparent that we disagree.",
+          "tr": "Anlaşamadığımız açık."
+        },
+        {
+          "en": "As a result, we need to ask the manager.",
+          "tr": "Sonuç olarak, yöneticiye sormamız gerek."
+        },
+        {
+          "en": "It is unlikely that she will agree with you.",
+          "tr": "Seninle aynı fikirde olması pek olası değil."
+        }
+      ]
+    }
+  ]
+}
