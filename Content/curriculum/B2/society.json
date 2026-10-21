@@ -1,0 +1,556 @@
+{
+  "id": "b2-society",
+  "level": "B2",
+  "title": "Toplum ve siyaset",
+  "placement": "any",
+  "goal": "Toplumsal sorunları ve siyasi tartışmaları anlatır, farklı görüşleri karşılaştırır, bir kampanyayı veya protestoyu anlatır.",
+  "words": [
+    {
+      "id": "b2-politics",
+      "word": "politics",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "siyaset",
+            "politika"
+          ],
+          "example_en": "Politics is a difficult subject.",
+          "example_tr": "Siyaset zor bir konudur."
+        }
+      ],
+      "note": "İngilizcede çoğul yazılır ama tekil fiil alır."
+    },
+    {
+      "id": "b2-political",
+      "word": "political",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "siyasi",
+            "politik"
+          ],
+          "example_en": "We have different political opinions.",
+          "example_tr": "Farklı siyasi görüşlerimiz var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-policy",
+      "word": "policy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "politika",
+            "kural"
+          ],
+          "example_en": "The new policy will reduce unemployment.",
+          "example_tr": "Yeni politika işsizliği azaltacak."
+        }
+      ],
+      "note": "'politics' genel siyaset, 'policy' ise izlenen yoldur."
+    },
+    {
+      "id": "b2-election",
+      "word": "election",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "seçim"
+          ],
+          "example_en": "We will vote in the next election.",
+          "example_tr": "Gelecek seçimde oy kullanacağız."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-democracy",
+      "word": "democracy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "demokrasi"
+          ],
+          "example_en": "Freedom is essential in a democracy.",
+          "example_tr": "Demokraside özgürlük şarttır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-rights",
+      "word": "rights",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "haklar"
+          ],
+          "example_en": "They protest for their rights.",
+          "example_tr": "Hakları için protesto ediyorlar."
+        }
+      ],
+      "note": "Tekil hali 'right' aynı zamanda 'sağ' ve 'doğru' demektir."
+    },
+    {
+      "id": "b2-equality",
+      "word": "equality",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "eşitlik"
+          ],
+          "example_en": "We need equality at work.",
+          "example_tr": "İş yerinde eşitliğe ihtiyacımız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-discrimination",
+      "word": "discrimination",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ayrımcılık"
+          ],
+          "example_en": "Discrimination is a significant problem.",
+          "example_tr": "Ayrımcılık önemli bir sorundur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-protest",
+      "word": "protest",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "protesto"
+          ],
+          "example_en": "The student protest was quite noisy.",
+          "example_tr": "Öğrenci protestosu epey gürültülüydü."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "protesto etmek"
+          ],
+          "example_en": "They will protest the new policy.",
+          "example_tr": "Yeni politikayı protesto edecekler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-campaign",
+      "word": "campaign",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kampanya"
+          ],
+          "example_en": "The campaign started yesterday.",
+          "example_tr": "Kampanya dün başladı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-majority",
+      "word": "majority",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "çoğunluk"
+          ],
+          "example_en": "The vast majority agree with this.",
+          "example_tr": "Büyük çoğunluk buna katılıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-minority",
+      "word": "minority",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "azınlık"
+          ],
+          "example_en": "Only a small minority voted for him.",
+          "example_tr": "Sadece küçük bir azınlık ona oy verdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-poverty",
+      "word": "poverty",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yoksulluk"
+          ],
+          "example_en": "Many families live in poverty here.",
+          "example_tr": "Burada birçok aile yoksulluk içinde yaşıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-unemployment",
+      "word": "unemployment",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "işsizlik"
+          ],
+          "example_en": "Unemployment is a big concern.",
+          "example_tr": "İşsizlik büyük bir endişe."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-welfare",
+      "word": "welfare",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "refah",
+            "sosyal yardım"
+          ],
+          "example_en": "The government must improve welfare.",
+          "example_tr": "Hükümet refahı artırmalı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-burden",
+      "word": "burden",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yük"
+          ],
+          "example_en": "Debt is a heavy burden on the young.",
+          "example_tr": "Borç, gençlerin üzerinde ağır bir yüktür."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-threat",
+      "word": "threat",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tehdit"
+          ],
+          "example_en": "Pollution is a threat to nature.",
+          "example_tr": "Kirlilik doğa için bir tehdittir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-immigrant",
+      "word": "immigrant",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "göçmen"
+          ],
+          "example_en": "Many immigrants are arriving today.",
+          "example_tr": "Bugün birçok göçmen geliyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-generation",
+      "word": "generation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "nesil",
+            "kuşak"
+          ],
+          "example_en": "The younger generation uses apps more.",
+          "example_tr": "Genç nesil uygulamaları daha çok kullanıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-debate",
+      "word": "debate",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tartışma"
+          ],
+          "example_en": "The political debate is on the news.",
+          "example_tr": "Siyasi tartışma haberlerde."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-freedom",
+      "word": "freedom",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "özgürlük"
+          ],
+          "example_en": "We should protect our freedom.",
+          "example_tr": "Özgürlüğümüzü korumalıyız."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b2-p-in-terms-of",
+      "text": "In terms of…",
+      "tr": "…açısından",
+      "example_en": "In terms of money, it's a disaster.",
+      "example_tr": "Para açısından, bu bir felaket.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-growing-concern",
+      "text": "There's a growing concern…",
+      "tr": "…konusunda endişe artıyor",
+      "example_en": "There's a growing concern about poverty.",
+      "example_tr": "Yoksulluk konusunda endişe artıyor.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-high-time",
+      "text": "It's high time…",
+      "tr": "…zamanı geldi de geçiyor",
+      "example_en": "It's high time we changed the policy.",
+      "example_tr": "Politikayı değiştirmenin zamanı geldi.",
+      "note": "Kendisinden sonra genellikle geçmiş zaman (past tense) yapısı gelir."
+    },
+    {
+      "id": "b2-p-the-point-is",
+      "text": "The point is…",
+      "tr": "Mesele şu ki…",
+      "example_en": "The point is, they don't listen to us.",
+      "example_tr": "Mesele şu ki, bizi dinlemiyorlar.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-easier-said",
+      "text": "Easier said than done.",
+      "tr": "Söylemesi kolay.",
+      "example_en": "Stop smoking? Easier said than done.",
+      "example_tr": "Sigarayı bırakmak mı? Söylemesi kolay.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b2-society-1",
+      "title": "Siyasi tartışma",
+      "names": [
+        "Ali",
+        "Hasan"
+      ],
+      "lines": [
+        {
+          "en": "Did you watch the political debate yesterday?",
+          "tr": "Dün siyasi tartışmayı izledin mi?"
+        },
+        {
+          "en": "Yes. The government policy is an issue.",
+          "tr": "Evet. Hükümet politikası bir sorun."
+        },
+        {
+          "en": "In terms of money, it is a disaster.",
+          "tr": "Para açısından bu bir felaket."
+        },
+        {
+          "en": "There's a growing concern about poverty.",
+          "tr": "Yoksulluk konusunda endişe artıyor."
+        },
+        {
+          "en": "The point is, they should help the poor.",
+          "tr": "Mesele şu ki, yoksullara yardım etmeliler."
+        },
+        {
+          "en": "That's easier said than done.",
+          "tr": "Söylemesi kolay."
+        },
+        {
+          "en": "Nevertheless, it is their job.",
+          "tr": "Yine de, bu onların işi."
+        }
+      ]
+    },
+    {
+      "id": "b2-society-2",
+      "title": "Öğrenci protestosu",
+      "names": [
+        "Zeynep",
+        "Canan"
+      ],
+      "lines": [
+        {
+          "en": "Look outside! Why are the students protesting?",
+          "tr": "Dışarı bak! Öğrenciler neden protesto ediyor?"
+        },
+        {
+          "en": "They want more freedom.",
+          "tr": "Daha fazla özgürlük istiyorlar."
+        },
+        {
+          "en": "It's high time the university listened.",
+          "tr": "Üniversitenin dinleme zamanı geldi de geçiyor."
+        },
+        {
+          "en": "Are they a majority or a minority?",
+          "tr": "Çoğunluktalar mı yoksa azınlıkta mı?"
+        },
+        {
+          "en": "A vast majority of students are there.",
+          "tr": "Öğrencilerin büyük çoğunluğu orada."
+        },
+        {
+          "en": "Good. Discrimination is a threat to everyone.",
+          "tr": "Güzel. Ayrımcılık herkes için bir tehdittir."
+        }
+      ]
+    },
+    {
+      "id": "b2-society-3",
+      "title": "Seçim zamanı",
+      "names": [
+        "Murat",
+        "Elif"
+      ],
+      "lines": [
+        {
+          "en": "The election is tomorrow. Who will you vote for?",
+          "tr": "Seçim yarın. Kime oy vereceksin?"
+        },
+        {
+          "en": "I don't know. Unemployment is a heavy burden.",
+          "tr": "Bilmiyorum. İşsizlik ağır bir yük."
+        },
+        {
+          "en": "That's a fair point. We need equality.",
+          "tr": "Haklısın. Eşitliğe ihtiyacımız var."
+        },
+        {
+          "en": "I see what you mean, but how?",
+          "tr": "Ne demek istediğini anlıyorum ama nasıl?"
+        },
+        {
+          "en": "They must find jobs for the younger generation.",
+          "tr": "Genç nesil için iş bulmalılar."
+        },
+        {
+          "en": "It seems to me that it will take time.",
+          "tr": "Bana öyle geliyor ki bu zaman alacak."
+        }
+      ]
+    },
+    {
+      "id": "b2-society-4",
+      "title": "Başkalarına yardım",
+      "names": [
+        "Sarah",
+        "London",
+        "Kemal"
+      ],
+      "lines": [
+        {
+          "en": "Sarah works for a charity in London.",
+          "tr": "Sarah Londra'da bir hayır kurumunda çalışıyor."
+        },
+        {
+          "en": "She tries to help poor immigrants.",
+          "tr": "Yoksul göçmenlere yardım etmeye çalışıyor."
+        },
+        {
+          "en": "Do they receive welfare from the government?",
+          "tr": "Hükümetten sosyal yardım alıyorlar mı?"
+        },
+        {
+          "en": "Not always. Therefore, the charity is essential.",
+          "tr": "Her zaman değil. Bu yüzden hayır kurumu şart."
+        },
+        {
+          "en": "Kemal is a volunteer there.",
+          "tr": "Kemal orada bir gönüllü."
+        },
+        {
+          "en": "He starts campaigns for food.",
+          "tr": "Yemek için kampanyalar başlatıyor."
+        }
+      ]
+    },
+    {
+      "id": "b2-society-5",
+      "title": "Daha iyi bir toplum",
+      "names": [
+        "David",
+        "Emma"
+      ],
+      "lines": [
+        {
+          "en": "Democracy requires respect for every citizen.",
+          "tr": "Demokrasi her vatandaşa saygı gerektirir."
+        },
+        {
+          "en": "Yes, we must respect the minority.",
+          "tr": "Evet, azınlığa saygı duymalıyız."
+        },
+        {
+          "en": "Otherwise, we can't be safe together.",
+          "tr": "Aksi takdirde birlikte güvende olamayız."
+        },
+        {
+          "en": "As a result, the community will fail.",
+          "tr": "Sonuç olarak toplum başarısız olur."
+        },
+        {
+          "en": "On the whole, learning is the best solution.",
+          "tr": "Genel olarak en iyi çözüm öğrenmektir."
+        },
+        {
+          "en": "I agree. It is up to us.",
+          "tr": "Katılıyorum. Bu bize bağlı."
+        }
+      ]
+    }
+  ]
+}

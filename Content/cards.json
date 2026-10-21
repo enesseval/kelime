@@ -1,922 +1,6 @@
 {
- "contentVersion": 6,
+ "contentVersion": 7,
  "cards": [
-  {
-   "id": "b2-reluctant",
-   "word": "reluctant",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "isteksiz",
-    "gönülsüz"
-   ],
-   "example_en": "She was reluctant to leave.",
-   "example_tr": "Ayrılmaya gönülsüzdü.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-hesitate",
-   "word": "hesitate",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "tereddüt etmek"
-   ],
-   "example_en": "Don't hesitate to ask.",
-   "example_tr": "Sormaktan çekinme.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-significant",
-   "word": "significant",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "önemli",
-    "kayda değer"
-   ],
-   "example_en": "There was a significant increase in prices.",
-   "example_tr": "Fiyatlarda kayda değer bir artış oldu.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-consequence",
-   "word": "consequence",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "sonuç"
-   ],
-   "example_en": "Every choice has a consequence.",
-   "example_tr": "Her seçimin bir sonucu vardır.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-abandon",
-   "word": "abandon",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "terk etmek"
-   ],
-   "example_en": "They had to abandon the ship.",
-   "example_tr": "Gemiyi terk etmek zorunda kaldılar.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-acquire",
-   "word": "acquire",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "edinmek",
-    "elde etmek"
-   ],
-   "example_en": "Children acquire language fast.",
-   "example_tr": "Çocuklar dili hızla edinir.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-adapt",
-   "word": "adapt",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "uyum sağlamak"
-   ],
-   "example_en": "Animals adapt to the cold.",
-   "example_tr": "Hayvanlar soğuğa uyum sağlar.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-anticipate",
-   "word": "anticipate",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "öngörmek",
-    "beklemek"
-   ],
-   "example_en": "We anticipate some delays.",
-   "example_tr": "Bazı gecikmeler öngörüyoruz.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-assume",
-   "word": "assume",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "varsaymak"
-   ],
-   "example_en": "I assume you are tired.",
-   "example_tr": "Yorgun olduğunu varsayıyorum.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-attempt",
-   "word": "attempt",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "denemek",
-    "girişmek"
-   ],
-   "example_en": "He will attempt the climb.",
-   "example_tr": "Tırmanışı deneyecek.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-claim",
-   "word": "claim",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "iddia etmek"
-   ],
-   "example_en": "They claim it is safe.",
-   "example_tr": "Güvenli olduğunu iddia ediyorlar.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-concern",
-   "word": "concern",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "endişe"
-   ],
-   "example_en": "Safety is our main concern.",
-   "example_tr": "Güvenlik ana endişemiz.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-consist",
-   "word": "consist",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "oluşmak"
-   ],
-   "example_en": "The team will consist of five people.",
-   "example_tr": "Ekip beş kişiden oluşacak.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-convince",
-   "word": "convince",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "ikna etmek"
-   ],
-   "example_en": "Try to convince your boss.",
-   "example_tr": "Patronunu ikna etmeye çalış.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-decline",
-   "word": "decline",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "azalmak",
-    "reddetmek"
-   ],
-   "example_en": "Sales began to decline.",
-   "example_tr": "Satışlar azalmaya başladı.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-demonstrate",
-   "word": "demonstrate",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "göstermek",
-    "kanıtlamak"
-   ],
-   "example_en": "The test will demonstrate it.",
-   "example_tr": "Test bunu gösterecek.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-emphasize",
-   "word": "emphasize",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "vurgulamak"
-   ],
-   "example_en": "I want to emphasize this point.",
-   "example_tr": "Bu noktayı vurgulamak istiyorum.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-enhance",
-   "word": "enhance",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "artırmak",
-    "geliştirmek"
-   ],
-   "example_en": "Music can enhance your mood.",
-   "example_tr": "Müzik ruh halini iyileştirebilir.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-establish",
-   "word": "establish",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "kurmak"
-   ],
-   "example_en": "They want to establish a company.",
-   "example_tr": "Bir şirket kurmak istiyorlar.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-evaluate",
-   "word": "evaluate",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "değerlendirmek"
-   ],
-   "example_en": "We evaluate every idea.",
-   "example_tr": "Her fikri değerlendiririz.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-ignore",
-   "word": "ignore",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "görmezden gelmek"
-   ],
-   "example_en": "Don't ignore the warning.",
-   "example_tr": "Uyarıyı görmezden gelme.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-indicate",
-   "word": "indicate",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "göstermek",
-    "işaret etmek"
-   ],
-   "example_en": "The signs indicate a storm.",
-   "example_tr": "İşaretler bir fırtınayı gösteriyor.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-maintain",
-   "word": "maintain",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "sürdürmek",
-    "korumak"
-   ],
-   "example_en": "It is hard to maintain focus.",
-   "example_tr": "Odağı korumak zor.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-obtain",
-   "word": "obtain",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "elde etmek"
-   ],
-   "example_en": "You must obtain a visa.",
-   "example_tr": "Vize almalısın.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-persuade",
-   "word": "persuade",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "ikna etmek"
-   ],
-   "example_en": "She tried to persuade me.",
-   "example_tr": "Beni ikna etmeye çalıştı.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-pursue",
-   "word": "pursue",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "peşinden gitmek"
-   ],
-   "example_en": "You should pursue your dreams.",
-   "example_tr": "Hayallerinin peşinden gitmelisin.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-require",
-   "word": "require",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "gerektirmek"
-   ],
-   "example_en": "This job will require patience.",
-   "example_tr": "Bu iş sabır gerektirecek.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-reveal",
-   "word": "reveal",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "ortaya çıkarmak"
-   ],
-   "example_en": "The study will reveal the truth.",
-   "example_tr": "Çalışma gerçeği ortaya çıkaracak.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-tend",
-   "word": "tend",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "eğiliminde olmak"
-   ],
-   "example_en": "People tend to forget names.",
-   "example_tr": "İnsanlar isimleri unutmaya meyillidir.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-undergo",
-   "word": "undergo",
-   "pos": "v",
-   "level": "B2",
-   "tr": [
-    "geçirmek",
-    "maruz kalmak"
-   ],
-   "example_en": "He will undergo surgery.",
-   "example_tr": "Ameliyat olacak.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-adequate",
-   "word": "adequate",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "yeterli"
-   ],
-   "example_en": "The room has adequate light.",
-   "example_tr": "Odada yeterli ışık var.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-apparent",
-   "word": "apparent",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "belli",
-    "görünürdeki"
-   ],
-   "example_en": "The problem became apparent.",
-   "example_tr": "Sorun belli oldu.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-considerable",
-   "word": "considerable",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "epey",
-    "önemli ölçüde"
-   ],
-   "example_en": "It costs a considerable amount.",
-   "example_tr": "Epey bir paraya mal oluyor.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-crucial",
-   "word": "crucial",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "çok önemli",
-    "kritik"
-   ],
-   "example_en": "Sleep is crucial for health.",
-   "example_tr": "Uyku sağlık için çok önemli.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-essential",
-   "word": "essential",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "temel",
-    "gerekli"
-   ],
-   "example_en": "Water is essential for life.",
-   "example_tr": "Su yaşam için gereklidir.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-evident",
-   "word": "evident",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "açık",
-    "belli"
-   ],
-   "example_en": "Her talent was evident.",
-   "example_tr": "Yeteneği belliydi.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-inevitable",
-   "word": "inevitable",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "kaçınılmaz"
-   ],
-   "example_en": "Change is inevitable.",
-   "example_tr": "Değişim kaçınılmazdır.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-reasonable",
-   "word": "reasonable",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "makul"
-   ],
-   "example_en": "The price is reasonable.",
-   "example_tr": "Fiyat makul.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-sufficient",
-   "word": "sufficient",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "yeterli"
-   ],
-   "example_en": "We have sufficient time.",
-   "example_tr": "Yeterli zamanımız var.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-vast",
-   "word": "vast",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "çok geniş",
-    "engin"
-   ],
-   "example_en": "The desert is vast.",
-   "example_tr": "Çöl uçsuz bucaksız.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-vulnerable",
-   "word": "vulnerable",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "savunmasız"
-   ],
-   "example_en": "Babies are vulnerable.",
-   "example_tr": "Bebekler savunmasızdır.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-anxious",
-   "word": "anxious",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "kaygılı",
-    "endişeli"
-   ],
-   "example_en": "I feel anxious before exams.",
-   "example_tr": "Sınavlardan önce kaygılanırım.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-genuine",
-   "word": "genuine",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "gerçek",
-    "samimi"
-   ],
-   "example_en": "She showed genuine interest.",
-   "example_tr": "Samimi bir ilgi gösterdi.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-rapid",
-   "word": "rapid",
-   "pos": "adj",
-   "level": "B2",
-   "tr": [
-    "hızlı"
-   ],
-   "example_en": "The city saw rapid growth.",
-   "example_tr": "Şehir hızlı bir büyüme yaşadı.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-approach",
-   "word": "approach",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "yaklaşım"
-   ],
-   "example_en": "We need a new approach.",
-   "example_tr": "Yeni bir yaklaşıma ihtiyacımız var.",
-   "decks": [
-    "general",
-    "yds",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-assessment",
-   "word": "assessment",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "değerlendirme"
-   ],
-   "example_en": "The assessment took an hour.",
-   "example_tr": "Değerlendirme bir saat sürdü.",
-   "decks": [
-    "general",
-    "yds",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-evidence",
-   "word": "evidence",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "kanıt"
-   ],
-   "example_en": "There is no evidence.",
-   "example_tr": "Hiç kanıt yok.",
-   "decks": [
-    "general",
-    "yds",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-feature",
-   "word": "feature",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "özellik"
-   ],
-   "example_en": "This phone has a new feature.",
-   "example_tr": "Bu telefonun yeni bir özelliği var.",
-   "decks": [
-    "general",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-impact",
-   "word": "impact",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "etki"
-   ],
-   "example_en": "Social media has a big impact.",
-   "example_tr": "Sosyal medyanın büyük bir etkisi var.",
-   "decks": [
-    "general",
-    "yds",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-outcome",
-   "word": "outcome",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "sonuç"
-   ],
-   "example_en": "The outcome was positive.",
-   "example_tr": "Sonuç olumluydu.",
-   "decks": [
-    "general",
-    "yds",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-priority",
-   "word": "priority",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "öncelik"
-   ],
-   "example_en": "Health is my priority.",
-   "example_tr": "Sağlık benim önceliğim.",
-   "decks": [
-    "general",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-resource",
-   "word": "resource",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "kaynak"
-   ],
-   "example_en": "Water is a precious resource.",
-   "example_tr": "Su değerli bir kaynaktır.",
-   "decks": [
-    "general",
-    "yds",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-strategy",
-   "word": "strategy",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "strateji"
-   ],
-   "example_en": "We need a clear strategy.",
-   "example_tr": "Net bir stratejiye ihtiyacımız var.",
-   "decks": [
-    "general",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-tendency",
-   "word": "tendency",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "eğilim"
-   ],
-   "example_en": "He has a tendency to worry.",
-   "example_tr": "Endişelenme eğilimi var.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-threat",
-   "word": "threat",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "tehdit"
-   ],
-   "example_en": "Pollution is a serious threat.",
-   "example_tr": "Kirlilik ciddi bir tehdit.",
-   "decks": [
-    "general",
-    "yds",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-burden",
-   "word": "burden",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "yük"
-   ],
-   "example_en": "Debt is a heavy burden.",
-   "example_tr": "Borç ağır bir yüktür.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-shortage",
-   "word": "shortage",
-   "pos": "n",
-   "level": "B2",
-   "tr": [
-    "kıtlık",
-    "eksiklik"
-   ],
-   "example_en": "There is a water shortage.",
-   "example_tr": "Su kıtlığı var.",
-   "decks": [
-    "general",
-    "yds",
-    "ielts"
-   ]
-  },
-  {
-   "id": "b2-eventually",
-   "word": "eventually",
-   "pos": "adv",
-   "level": "B2",
-   "tr": [
-    "sonunda"
-   ],
-   "example_en": "He eventually agreed.",
-   "example_tr": "Sonunda kabul etti.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "b2-merely",
-   "word": "merely",
-   "pos": "adv",
-   "level": "B2",
-   "tr": [
-    "sadece",
-    "yalnızca"
-   ],
-   "example_en": "It was merely a joke.",
-   "example_tr": "Sadece bir şakaydı.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
-  {
-   "id": "b2-nevertheless",
-   "word": "nevertheless",
-   "pos": "adv",
-   "level": "B2",
-   "tr": [
-    "yine de"
-   ],
-   "example_en": "It was hard; nevertheless, we won.",
-   "example_tr": "Zordu; yine de kazandık.",
-   "decks": [
-    "general",
-    "yds"
-   ]
-  },
   {
    "id": "c1-ambiguous",
    "word": "ambiguous",
@@ -16104,7 +15188,8 @@
    "example_en": "You must accept the consequence.",
    "example_tr": "Sonucu kabul etmelisin.",
    "decks": [
-    "general"
+    "general",
+    "yds"
    ],
    "note": "Genellikle olumsuz sonuçlar için kullanılır."
   },
@@ -16162,7 +15247,8 @@
    "example_en": "They claim that they saw a mystery animal.",
    "example_tr": "Gizemli bir hayvan gördüklerini iddia ediyorlar.",
    "decks": [
-    "general"
+    "general",
+    "yds"
    ]
   },
   {
@@ -16356,6 +15442,4835 @@
    ],
    "example_en": "By the time we arrived, they had left.",
    "example_tr": "Biz vardığımızda onlar gitmişti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-despite",
+   "word": "despite",
+   "pos": "prep",
+   "level": "B2",
+   "tr": [
+    "rağmen"
+   ],
+   "example_en": "Despite the rain, we walked.",
+   "example_tr": "Yağmura rağmen yürüdük.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-whereas",
+   "word": "whereas",
+   "pos": "conj",
+   "level": "B2",
+   "tr": [
+    "oysa",
+    "halbuki"
+   ],
+   "example_en": "I like tea, whereas he prefers coffee.",
+   "example_tr": "Ben çay severim, oysa o kahve tercih eder.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-therefore",
+   "word": "therefore",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "bu nedenle",
+    "dolayısıyla"
+   ],
+   "example_en": "I was ill; therefore, I stayed home.",
+   "example_tr": "Hastaydım; bu nedenle evde kaldım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-moreover",
+   "word": "moreover",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "dahası",
+    "ayrıca"
+   ],
+   "example_en": "It is cheap; moreover, it is good.",
+   "example_tr": "Ucuz; dahası, iyi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-otherwise",
+   "word": "otherwise",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "aksi takdirde",
+    "yoksa"
+   ],
+   "example_en": "We must leave; otherwise, we will be late.",
+   "example_tr": "Çıkmalıyız; aksi takdirde geç kalacağız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-nevertheless",
+   "word": "nevertheless",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "yine de",
+    "buna rağmen"
+   ],
+   "example_en": "It was hard; nevertheless, I tried.",
+   "example_tr": "Zordu; yine de denedim.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-merely",
+   "word": "merely",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "sadece",
+    "yalnızca"
+   ],
+   "example_en": "I merely tried to help.",
+   "example_tr": "Sadece yardım etmeye çalıştım.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-regarding",
+   "word": "regarding",
+   "pos": "prep",
+   "level": "B2",
+   "tr": [
+    "ilişkin",
+    "hakkında"
+   ],
+   "example_en": "He sent an email regarding the meeting.",
+   "example_tr": "Toplantıya ilişkin bir e-posta gönderdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-assume",
+   "word": "assume",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "varsaymak",
+    "farz etmek"
+   ],
+   "example_en": "I assume you are ready.",
+   "example_tr": "Hazır olduğunu varsayıyorum.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-tend",
+   "word": "tend",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "eğiliminde olmak"
+   ],
+   "example_en": "I tend to agree with you.",
+   "example_tr": "Sana katılma eğilimindeyim.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-tendency",
+   "word": "tendency",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "eğilim"
+   ],
+   "example_en": "He has a tendency to speak fast.",
+   "example_tr": "Hızlı konuşma eğilimi var.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-require",
+   "word": "require",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "gerektirmek",
+    "istemek"
+   ],
+   "example_en": "This job requires English.",
+   "example_tr": "Bu iş İngilizce gerektiriyor.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-indicate",
+   "word": "indicate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "göstermek",
+    "işaret etmek"
+   ],
+   "example_en": "The results indicate a problem.",
+   "example_tr": "Sonuçlar bir sorunu gösteriyor.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-significant",
+   "word": "significant",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "önemli",
+    "belirgin"
+   ],
+   "example_en": "There is a significant increase.",
+   "example_tr": "Belirgin bir artış var.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-considerable",
+   "word": "considerable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kayda değer",
+    "önemli"
+   ],
+   "example_en": "We spent considerable time on this.",
+   "example_tr": "Buna kayda değer zaman harcadık.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-essential",
+   "word": "essential",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "gerekli",
+    "temel"
+   ],
+   "example_en": "Water is essential for life.",
+   "example_tr": "Su hayat için gereklidir.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-apparent",
+   "word": "apparent",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "açık",
+    "belli"
+   ],
+   "example_en": "The mistake was apparent.",
+   "example_tr": "Hata açıktı.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-evident",
+   "word": "evident",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "ortada",
+    "belli"
+   ],
+   "example_en": "It is evident that he is tired.",
+   "example_tr": "Yorgun olduğu ortada.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-sufficient",
+   "word": "sufficient",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "yeterli"
+   ],
+   "example_en": "We have sufficient money.",
+   "example_tr": "Yeterli paramız var.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-adequate",
+   "word": "adequate",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "yeterli",
+    "uygun"
+   ],
+   "example_en": "Is the heating adequate?",
+   "example_tr": "Isıtma yeterli mi?",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-approach",
+   "word": "approach",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yaklaşım"
+   ],
+   "example_en": "We need a new approach.",
+   "example_tr": "Yeni bir yaklaşıma ihtiyacımız var.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "yaklaşmak"
+     ],
+     "example_en": "Winter is approaching.",
+     "example_tr": "Kış yaklaşıyor."
+    }
+   ]
+  },
+  {
+   "id": "b2-aspect",
+   "word": "aspect",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yön",
+    "açı"
+   ],
+   "example_en": "Consider every aspect of the plan.",
+   "example_tr": "Planın her yönünü düşünün.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-issue",
+   "word": "issue",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mesele",
+    "sorun"
+   ],
+   "example_en": "This is an important issue.",
+   "example_tr": "Bu önemli bir mesele.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-factor",
+   "word": "factor",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "faktör",
+    "etken"
+   ],
+   "example_en": "Price is an important factor.",
+   "example_tr": "Fiyat önemli bir faktördür.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-extent",
+   "word": "extent",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "derece",
+    "boyut"
+   ],
+   "example_en": "I agree to some extent.",
+   "example_tr": "Bir dereceye kadar katılıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-attempt",
+   "word": "attempt",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "girişim"
+   ],
+   "example_en": "It was a good attempt.",
+   "example_tr": "İyi bir girişimdi.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "denemek",
+      "girişmek"
+     ],
+     "example_en": "Do not attempt to fix it.",
+     "example_tr": "Onu tamir etmeye kalkışmayın."
+    }
+   ]
+  },
+  {
+   "id": "b2-concern",
+   "word": "concern",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "endişe"
+   ],
+   "example_en": "The price is a big concern.",
+   "example_tr": "Fiyat büyük bir endişe.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-feature",
+   "word": "feature",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "özellik"
+   ],
+   "example_en": "This app has a great feature.",
+   "example_tr": "Bu uygulamanın harika bir özelliği var.",
+   "decks": [
+    "general",
+    "ielts"
+   ]
+  },
+  {
+   "id": "b2-impact",
+   "word": "impact",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "etki"
+   ],
+   "example_en": "The internet has a big impact.",
+   "example_tr": "İnternetin büyük bir etkisi var.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-outcome",
+   "word": "outcome",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sonuç",
+    "netice"
+   ],
+   "example_en": "We are happy with the outcome.",
+   "example_tr": "Sonuçtan memnunuz.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-vast",
+   "word": "vast",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "çok geniş",
+    "muazzam"
+   ],
+   "example_en": "The forest is vast.",
+   "example_tr": "Orman çok geniş.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-rapid",
+   "word": "rapid",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "hızlı"
+   ],
+   "example_en": "There was a rapid increase.",
+   "example_tr": "Hızlı bir artış oldu.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-reasonable",
+   "word": "reasonable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "makul",
+    "mantıklı"
+   ],
+   "example_en": "The price seems reasonable.",
+   "example_tr": "Fiyat makul görünüyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-likely",
+   "word": "likely",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "olası",
+    "muhtemel"
+   ],
+   "example_en": "It is likely to rain.",
+   "example_tr": "Yağmur yağması muhtemel.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-unlikely",
+   "word": "unlikely",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "pek olası değil"
+   ],
+   "example_en": "That is very unlikely.",
+   "example_tr": "Bu pek olası değil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-genuine",
+   "word": "genuine",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "gerçek",
+    "samimi"
+   ],
+   "example_en": "He is a genuine friend.",
+   "example_tr": "O samimi bir arkadaştır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-seems-to-me",
+   "word": "It seems to me that…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Bana öyle geliyor ki…"
+   ],
+   "example_en": "It seems to me that we need more time.",
+   "example_tr": "Bana öyle geliyor ki daha fazla zamana ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-fair-point",
+   "word": "That's a fair point.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Bu haklı bir nokta."
+   ],
+   "example_en": "It is too expensive. – That's a fair point.",
+   "example_tr": "Çok pahalı. – Bu haklı bir nokta.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-see-what-you-mean",
+   "word": "I see what you mean, but…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Anlıyorum ama…"
+   ],
+   "example_en": "I see what you mean, but it is dangerous.",
+   "example_tr": "Ne demek istediğini anlıyorum ama bu tehlikeli.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-as-a-result",
+   "word": "As a result…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Sonuç olarak…"
+   ],
+   "example_en": "As a result, we didn't go.",
+   "example_tr": "Sonuç olarak gitmedik.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-in-other-words",
+   "word": "In other words…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Başka bir deyişle…"
+   ],
+   "example_en": "In other words, you agree.",
+   "example_tr": "Başka bir deyişle, aynı fikirdesin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-on-the-whole",
+   "word": "On the whole…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Genel olarak…"
+   ],
+   "example_en": "On the whole, it was a good trip.",
+   "example_tr": "Genel olarak, iyi bir geziydi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-up-to-you",
+   "word": "It's up to you.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Sen bilirsin."
+   ],
+   "example_en": "We can stay or go. It's up to you.",
+   "example_tr": "Kalabiliriz veya gidebiliriz. Sen bilirsin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-negotiate",
+   "word": "negotiate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "pazarlık etmek",
+    "görüşmek"
+   ],
+   "example_en": "We must negotiate the price with the company.",
+   "example_tr": "Şirketle fiyat konusunda pazarlık yapmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-client",
+   "word": "client",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "müşteri",
+    "müvekkil"
+   ],
+   "example_en": "The new client wants an important meeting.",
+   "example_tr": "Yeni müşteri önemli bir toplantı istiyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-profit",
+   "word": "profit",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kâr",
+    "kazanç"
+   ],
+   "example_en": "Our company made a significant profit this year.",
+   "example_tr": "Şirketimiz bu yıl önemli bir kâr elde etti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-invest",
+   "word": "invest",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "yatırım yapmak"
+   ],
+   "example_en": "We should invest in new computers.",
+   "example_tr": "Yeni bilgisayarlara yatırım yapmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-investment",
+   "word": "investment",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yatırım"
+   ],
+   "example_en": "This is a reasonable investment for our future.",
+   "example_tr": "Bu, geleceğimiz için makul bir yatırım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-competitor",
+   "word": "competitor",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "rakip"
+   ],
+   "example_en": "Our biggest competitor is launching a new app.",
+   "example_tr": "En büyük rakibimiz yeni bir uygulama başlatıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-strategy",
+   "word": "strategy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "strateji"
+   ],
+   "example_en": "We need to change our strategy now.",
+   "example_tr": "Stratejimizi şimdi değiştirmeliyiz.",
+   "decks": [
+    "general",
+    "ielts"
+   ]
+  },
+  {
+   "id": "b2-priority",
+   "word": "priority",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "öncelik"
+   ],
+   "example_en": "Our first priority is to make the client happy.",
+   "example_tr": "İlk önceliğimiz müşteriyi mutlu etmektir.",
+   "decks": [
+    "general",
+    "ielts"
+   ]
+  },
+  {
+   "id": "b2-establish",
+   "word": "establish",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "kurmak",
+    "tesis etmek"
+   ],
+   "example_en": "We will establish a new office in London.",
+   "example_tr": "Londra'da yeni bir ofis kuracağız.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-maintain",
+   "word": "maintain",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "sürdürmek",
+    "korumak"
+   ],
+   "example_en": "We must maintain a good relationship with them.",
+   "example_tr": "Onlarla iyi bir ilişki sürdürmeliyiz.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-enhance",
+   "word": "enhance",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "geliştirmek",
+    "artırmak"
+   ],
+   "example_en": "This update will enhance the app's efficiency.",
+   "example_tr": "Bu güncelleme uygulamanın verimliliğini artıracak.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-delegate",
+   "word": "delegate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "görev vermek",
+    "devretmek"
+   ],
+   "example_en": "A good manager must delegate work to the team.",
+   "example_tr": "İyi bir yönetici işleri ekibe devretmelidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-proposal",
+   "word": "proposal",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "teklif",
+    "öneri"
+   ],
+   "example_en": "I will read your proposal tomorrow morning.",
+   "example_tr": "Teklifinizi yarın sabah okuyacağım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-objective",
+   "word": "objective",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "hedef",
+    "amaç"
+   ],
+   "example_en": "Our first objective is to expand the company.",
+   "example_tr": "İlk hedefimiz şirketi büyütmektir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-launch",
+   "word": "launch",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "başlatmak",
+    "piyasaya sürmek"
+   ],
+   "example_en": "We plan to launch the website next week.",
+   "example_tr": "Web sitesini haftaya yayına almayı planlıyoruz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-expand",
+   "word": "expand",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "genişletmek",
+    "büyümek"
+   ],
+   "example_en": "They want to expand their business abroad.",
+   "example_tr": "İşlerini yurtdışına genişletmek istiyorlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-decline",
+   "word": "decline",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "düşmek",
+    "azalmak"
+   ],
+   "example_en": "Our profits may decline this year.",
+   "example_tr": "Kârlarımız bu yıl düşebilir.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-shortage",
+   "word": "shortage",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sıkıntı",
+    "kıtlık"
+   ],
+   "example_en": "There is a shortage of clean water in the city.",
+   "example_tr": "Şehirde temiz su sıkıntısı var.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-risk",
+   "word": "risk",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "risk",
+    "tehlike"
+   ],
+   "example_en": "This investment carries a considerable risk.",
+   "example_tr": "Bu yatırım ciddi bir risk taşıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-deal",
+   "word": "deal",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "anlaşma"
+   ],
+   "example_en": "We made a great deal with our new partner.",
+   "example_tr": "Yeni ortağımızla harika bir anlaşma yaptık.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-partnership",
+   "word": "partnership",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ortaklık"
+   ],
+   "example_en": "This partnership will bring a lot of money.",
+   "example_tr": "Bu ortaklık çok para getirecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-efficiency",
+   "word": "efficiency",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "verimlilik"
+   ],
+   "example_en": "We must improve the efficiency of our team.",
+   "example_tr": "Ekibimizin verimliliğini artırmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-down-to-business",
+   "word": "Let's get down to business.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "İş konuşalım."
+   ],
+   "example_en": "Let's get down to business. – Yes, let's start.",
+   "example_tr": "İş konuşalım. – Evet, başlayalım.",
+   "decks": [
+    "general"
+   ],
+   "note": "Toplantıya asıl konuya girmek için kullanılır."
+  },
+  {
+   "id": "b2-p-get-back",
+   "word": "I'll get back to you.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Sana döneceğim."
+   ],
+   "example_en": "I'll get back to you tomorrow. – Thank you.",
+   "example_tr": "Size yarın döneceğim. – Teşekkürler.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-running-out",
+   "word": "We're running out of time.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Zamanımız tükeniyor."
+   ],
+   "example_en": "We're running out of time. – Yes, let's be fast!",
+   "example_tr": "Zamanımız tükeniyor. – Evet, hızlı olalım!",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-go-over",
+   "word": "Could we go over…?",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "…üstünden geçebilir miyiz?"
+   ],
+   "example_en": "Could we go over the plan? – Yes.",
+   "example_tr": "Planın üstünden geçebilir miyiz? – Evet.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-win-win",
+   "word": "It's a win-win situation.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Kazan-kazan bir durum."
+   ],
+   "example_en": "It's a win-win situation. – I agree.",
+   "example_tr": "Kazan-kazan bir durum. – Katılıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-research",
+   "word": "research",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "araştırma"
+   ],
+   "example_en": "Their research was very expensive.",
+   "example_tr": "Araştırmaları çok pahalıydı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-evidence",
+   "word": "evidence",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kanıt"
+   ],
+   "example_en": "We need genuine evidence.",
+   "example_tr": "Gerçek bir kanıta ihtiyacımız var.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-experiment",
+   "word": "experiment",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "deney"
+   ],
+   "example_en": "They did an experiment on plants.",
+   "example_tr": "Bitkiler üzerinde bir deney yaptılar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-theory",
+   "word": "theory",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "teori",
+    "kuram"
+   ],
+   "example_en": "His theory seems reasonable.",
+   "example_tr": "Teorisi mantıklı görünüyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-invention",
+   "word": "invention",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "icat",
+    "buluş"
+   ],
+   "example_en": "The internet is a great invention.",
+   "example_tr": "İnternet harika bir buluş.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-artificial",
+   "word": "artificial",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "yapay",
+    "suni"
+   ],
+   "example_en": "I don't like artificial light.",
+   "example_tr": "Yapay ışığı sevmem.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-intelligence",
+   "word": "intelligence",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "zekâ",
+    "akıl"
+   ],
+   "example_en": "Her intelligence is obvious.",
+   "example_tr": "Zekası ortada.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-data",
+   "word": "data",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "veri"
+   ],
+   "example_en": "The data indicates a rapid increase.",
+   "example_tr": "Veriler hızlı bir artış gösteriyor.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngilizcede genellikle çoğul kabul edilir."
+  },
+  {
+   "id": "b2-analyse",
+   "word": "analyse",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "analiz etmek",
+    "incelemek"
+   ],
+   "example_en": "We must analyse the data.",
+   "example_tr": "Verileri analiz etmeliyiz.",
+   "decks": [
+    "general"
+   ],
+   "note": "Amerikan İngilizcesinde 'analyze' olarak yazılır."
+  },
+  {
+   "id": "b2-demonstrate",
+   "word": "demonstrate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "göstermek",
+    "kanıtlamak"
+   ],
+   "example_en": "This experiment demonstrates the problem.",
+   "example_tr": "Bu deney sorunu gösteriyor.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-reveal",
+   "word": "reveal",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ortaya çıkarmak"
+   ],
+   "example_en": "The research revealed the results.",
+   "example_tr": "Araştırma sonuçları ortaya çıkardı.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-obtain",
+   "word": "obtain",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "elde etmek",
+    "almak"
+   ],
+   "example_en": "How did you obtain this data?",
+   "example_tr": "Bu veriyi nasıl elde ettin?",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-acquire",
+   "word": "acquire",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "edinmek",
+    "kazanmak"
+   ],
+   "example_en": "He acquired new skills.",
+   "example_tr": "Yeni beceriler edindi.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-laboratory",
+   "word": "laboratory",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "laboratuvar"
+   ],
+   "example_en": "She works in a laboratory.",
+   "example_tr": "Bir laboratuvarda çalışıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-innovation",
+   "word": "innovation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yenilik"
+   ],
+   "example_en": "We need more innovation.",
+   "example_tr": "Daha fazla yeniliğe ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-breakthrough",
+   "word": "breakthrough",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "çığır açan buluş",
+    "atılım"
+   ],
+   "example_en": "This is a significant breakthrough.",
+   "example_tr": "Bu önemli bir gelişme.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-genetic",
+   "word": "genetic",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "genetik"
+   ],
+   "example_en": "It is a genetic problem.",
+   "example_tr": "Bu genetik bir sorun.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-virtual",
+   "word": "virtual",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "sanal"
+   ],
+   "example_en": "We had a virtual meeting.",
+   "example_tr": "Sanal bir toplantı yaptık.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-resource",
+   "word": "resource",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kaynak"
+   ],
+   "example_en": "Water is an essential resource.",
+   "example_tr": "Su temel bir kaynaktır.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-consist",
+   "word": "consist",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "oluşmak"
+   ],
+   "example_en": "The team consists of five people.",
+   "example_tr": "Takım beş kişiden oluşuyor.",
+   "decks": [
+    "general"
+   ],
+   "note": "Her zaman 'of' edatı ile kullanılır."
+  },
+  {
+   "id": "b2-rely",
+   "word": "rely",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "güvenmek",
+    "bel bağlamak"
+   ],
+   "example_en": "You can't rely on that device.",
+   "example_tr": "O cihaza güvenemezsin.",
+   "decks": [
+    "general"
+   ],
+   "note": "Her zaman 'on' edatı ile kullanılır."
+  },
+  {
+   "id": "b2-advanced",
+   "word": "advanced",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "gelişmiş",
+    "ileri"
+   ],
+   "example_en": "They use advanced computers.",
+   "example_tr": "Gelişmiş bilgisayarlar kullanıyorlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-studies-show",
+   "word": "Studies show that…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Çalışmalar gösteriyor ki…"
+   ],
+   "example_en": "Studies show that early sleep is healthy.",
+   "example_tr": "Çalışmalar erken uyumanın sağlıklı olduğunu gösteriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-turns-out",
+   "word": "It turns out that…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Meğerse…"
+   ],
+   "example_en": "It turns out that she was right.",
+   "example_tr": "Meğerse haklıymış.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-no-evidence",
+   "word": "There's no evidence that…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "…dair hiçbir kanıt yok."
+   ],
+   "example_en": "There's no evidence that he stole the money.",
+   "example_tr": "Parayı çaldığına dair hiçbir kanıt yok.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-in-theory",
+   "word": "In theory…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Teoride…"
+   ],
+   "example_en": "In theory, this should work.",
+   "example_tr": "Teoride bunun çalışması lazım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-remains-seen",
+   "word": "It remains to be seen.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Bunu zaman gösterecek."
+   ],
+   "example_en": "Will it be a success? It remains to be seen.",
+   "example_tr": "Başarılı olacak mı? Bunu zaman gösterecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-anxious",
+   "word": "anxious",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "endişeli",
+    "kaygılı"
+   ],
+   "example_en": "She is anxious about her new job.",
+   "example_tr": "Yeni işi konusunda endişeli.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-reluctant",
+   "word": "reluctant",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "isteksiz",
+    "gönülsüz"
+   ],
+   "example_en": "He was reluctant to accept the offer.",
+   "example_tr": "Teklifi kabul etmeye isteksizdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-hesitate",
+   "word": "hesitate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "tereddüt etmek",
+    "çekinmek"
+   ],
+   "example_en": "Please don't hesitate to call me.",
+   "example_tr": "Beni aramaktan çekinmeyin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-vulnerable",
+   "word": "vulnerable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "savunmasız",
+    "kırılgan"
+   ],
+   "example_en": "Children are vulnerable in this situation.",
+   "example_tr": "Çocuklar bu durumda savunmasızdır.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-convince",
+   "word": "convince",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ikna etmek"
+   ],
+   "example_en": "I am trying to convince him.",
+   "example_tr": "Onu ikna etmeye çalışıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-persuade",
+   "word": "persuade",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ikna etmek"
+   ],
+   "example_en": "She persuaded her friends to come.",
+   "example_tr": "Arkadaşlarını gelmeye ikna etti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-ignore",
+   "word": "ignore",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "görmezden gelmek"
+   ],
+   "example_en": "He ignored my advice.",
+   "example_tr": "Tavsiyemi görmezden geldi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-abandon",
+   "word": "abandon",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "terk etmek",
+    "bırakmak"
+   ],
+   "example_en": "They had to abandon their car in the snow.",
+   "example_tr": "Arabalarını karda bırakmak zorunda kaldılar.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-adapt",
+   "word": "adapt",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "uyum sağlamak"
+   ],
+   "example_en": "It is difficult to adapt to a new climate.",
+   "example_tr": "Yeni bir iklime uyum sağlamak zordur.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-cope",
+   "word": "cope",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "başa çıkmak"
+   ],
+   "example_en": "How do you cope with stress?",
+   "example_tr": "Stresle nasıl başa çıkıyorsun?",
+   "decks": [
+    "general"
+   ],
+   "note": "Genellikle 'with' ile kullanılır."
+  },
+  {
+   "id": "b2-determined",
+   "word": "determined",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kararlı",
+    "azimli"
+   ],
+   "example_en": "She is determined to succeed.",
+   "example_tr": "Başarmaya kararlı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-stubborn",
+   "word": "stubborn",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "inatçı"
+   ],
+   "example_en": "He is too stubborn to admit his mistake.",
+   "example_tr": "Hatasını kabul edemeyecek kadar inatçı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-sensitive",
+   "word": "sensitive",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "hassas",
+    "duyarlı"
+   ],
+   "example_en": "He is very sensitive about his weight.",
+   "example_tr": "Kilosu konusunda çok hassas.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngilizcede mantıklı/makul anlamındaki 'sensible' ile sıkça karıştırılır."
+  },
+  {
+   "id": "b2-tolerant",
+   "word": "tolerant",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "hoşgörülü"
+   ],
+   "example_en": "We must be tolerant of different opinions.",
+   "example_tr": "Farklı görüşlere karşı hoşgörülü olmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-anticipate",
+   "word": "anticipate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "beklemek",
+    "öngörmek"
+   ],
+   "example_en": "We anticipate a significant increase in prices.",
+   "example_tr": "Fiyatlarda önemli bir artış öngörüyoruz.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-overcome",
+   "word": "overcome",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "üstesinden gelmek",
+    "aşmak"
+   ],
+   "example_en": "You can overcome any problem.",
+   "example_tr": "Her sorunun üstesinden gelebilirsin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-temper",
+   "word": "temper",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "öfke",
+    "huy"
+   ],
+   "example_en": "He has a bad temper.",
+   "example_tr": "Çabuk sinirlenir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-pursue",
+   "word": "pursue",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "peşinden gitmek",
+    "sürdürmek"
+   ],
+   "example_en": "I want to pursue a career in medicine.",
+   "example_tr": "Tıp alanında bir kariyer yapmak istiyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-willing",
+   "word": "willing",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "istekli",
+    "gönüllü"
+   ],
+   "example_en": "Are you willing to help us?",
+   "example_tr": "Bize yardım etmeye istekli misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-frustrated",
+   "word": "frustrated",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "hüsrana uğramış",
+    "sinir olmuş"
+   ],
+   "example_en": "I felt frustrated when I failed the exam.",
+   "example_tr": "Sınavda başarısız olduğumda hüsrana uğradım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-ashamed",
+   "word": "ashamed",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "utanmış",
+    "mahcup"
+   ],
+   "example_en": "You should be ashamed of yourself.",
+   "example_tr": "Kendinden utanmalısın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-grateful",
+   "word": "grateful",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "minnettar"
+   ],
+   "example_en": "I am grateful for your support.",
+   "example_tr": "Desteğinize minnettarım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-cant-help",
+   "word": "I can't help…ing.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "…mekten kendimi alamıyorum."
+   ],
+   "example_en": "I can't help laughing.",
+   "example_tr": "Gülmekten kendimi alamıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-two-minds",
+   "word": "I'm in two minds about…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "… konusunda kararsızım."
+   ],
+   "example_en": "I'm in two minds about this job.",
+   "example_tr": "Bu iş konusunda kararsızım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-keep-calm",
+   "word": "Keep calm.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Sakin ol."
+   ],
+   "example_en": "You must keep calm.",
+   "example_tr": "Sakin olmalısın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-couldnt-care",
+   "word": "I couldn't care less.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Hiç umurumda değil."
+   ],
+   "example_en": "I couldn't care less about his opinion.",
+   "example_tr": "Onun fikri hiç umurumda değil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-not-like-me",
+   "word": "It's not like me to…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "… bana hiç uymaz."
+   ],
+   "example_en": "It's not like me to be late.",
+   "example_tr": "Geç kalmak bana hiç uymaz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-politics",
+   "word": "politics",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "siyaset",
+    "politika"
+   ],
+   "example_en": "Politics is a difficult subject.",
+   "example_tr": "Siyaset zor bir konudur.",
+   "decks": [
+    "general"
+   ],
+   "note": "İngilizcede çoğul yazılır ama tekil fiil alır."
+  },
+  {
+   "id": "b2-political",
+   "word": "political",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "siyasi",
+    "politik"
+   ],
+   "example_en": "We have different political opinions.",
+   "example_tr": "Farklı siyasi görüşlerimiz var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-policy",
+   "word": "policy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "politika",
+    "kural"
+   ],
+   "example_en": "The new policy will reduce unemployment.",
+   "example_tr": "Yeni politika işsizliği azaltacak.",
+   "decks": [
+    "general"
+   ],
+   "note": "'politics' genel siyaset, 'policy' ise izlenen yoldur."
+  },
+  {
+   "id": "b2-election",
+   "word": "election",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "seçim"
+   ],
+   "example_en": "We will vote in the next election.",
+   "example_tr": "Gelecek seçimde oy kullanacağız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-democracy",
+   "word": "democracy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "demokrasi"
+   ],
+   "example_en": "Freedom is essential in a democracy.",
+   "example_tr": "Demokraside özgürlük şarttır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-rights",
+   "word": "rights",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "haklar"
+   ],
+   "example_en": "They protest for their rights.",
+   "example_tr": "Hakları için protesto ediyorlar.",
+   "decks": [
+    "general"
+   ],
+   "note": "Tekil hali 'right' aynı zamanda 'sağ' ve 'doğru' demektir."
+  },
+  {
+   "id": "b2-equality",
+   "word": "equality",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "eşitlik"
+   ],
+   "example_en": "We need equality at work.",
+   "example_tr": "İş yerinde eşitliğe ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-discrimination",
+   "word": "discrimination",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ayrımcılık"
+   ],
+   "example_en": "Discrimination is a significant problem.",
+   "example_tr": "Ayrımcılık önemli bir sorundur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-protest",
+   "word": "protest",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "protesto"
+   ],
+   "example_en": "The student protest was quite noisy.",
+   "example_tr": "Öğrenci protestosu epey gürültülüydü.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "protesto etmek"
+     ],
+     "example_en": "They will protest the new policy.",
+     "example_tr": "Yeni politikayı protesto edecekler."
+    }
+   ]
+  },
+  {
+   "id": "b2-campaign",
+   "word": "campaign",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kampanya"
+   ],
+   "example_en": "The campaign started yesterday.",
+   "example_tr": "Kampanya dün başladı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-majority",
+   "word": "majority",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "çoğunluk"
+   ],
+   "example_en": "The vast majority agree with this.",
+   "example_tr": "Büyük çoğunluk buna katılıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-minority",
+   "word": "minority",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "azınlık"
+   ],
+   "example_en": "Only a small minority voted for him.",
+   "example_tr": "Sadece küçük bir azınlık ona oy verdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-poverty",
+   "word": "poverty",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yoksulluk"
+   ],
+   "example_en": "Many families live in poverty here.",
+   "example_tr": "Burada birçok aile yoksulluk içinde yaşıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-unemployment",
+   "word": "unemployment",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "işsizlik"
+   ],
+   "example_en": "Unemployment is a big concern.",
+   "example_tr": "İşsizlik büyük bir endişe.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-welfare",
+   "word": "welfare",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "refah",
+    "sosyal yardım"
+   ],
+   "example_en": "The government must improve welfare.",
+   "example_tr": "Hükümet refahı artırmalı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-burden",
+   "word": "burden",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yük"
+   ],
+   "example_en": "Debt is a heavy burden on the young.",
+   "example_tr": "Borç, gençlerin üzerinde ağır bir yüktür.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-threat",
+   "word": "threat",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tehdit"
+   ],
+   "example_en": "Pollution is a threat to nature.",
+   "example_tr": "Kirlilik doğa için bir tehdittir.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-immigrant",
+   "word": "immigrant",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "göçmen"
+   ],
+   "example_en": "Many immigrants are arriving today.",
+   "example_tr": "Bugün birçok göçmen geliyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-generation",
+   "word": "generation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "nesil",
+    "kuşak"
+   ],
+   "example_en": "The younger generation uses apps more.",
+   "example_tr": "Genç nesil uygulamaları daha çok kullanıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-debate",
+   "word": "debate",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tartışma"
+   ],
+   "example_en": "The political debate is on the news.",
+   "example_tr": "Siyasi tartışma haberlerde.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-freedom",
+   "word": "freedom",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "özgürlük"
+   ],
+   "example_en": "We should protect our freedom.",
+   "example_tr": "Özgürlüğümüzü korumalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-in-terms-of",
+   "word": "In terms of…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "…açısından"
+   ],
+   "example_en": "In terms of money, it's a disaster.",
+   "example_tr": "Para açısından, bu bir felaket.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-growing-concern",
+   "word": "There's a growing concern…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "…konusunda endişe artıyor"
+   ],
+   "example_en": "There's a growing concern about poverty.",
+   "example_tr": "Yoksulluk konusunda endişe artıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-high-time",
+   "word": "It's high time…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "…zamanı geldi de geçiyor"
+   ],
+   "example_en": "It's high time we changed the policy.",
+   "example_tr": "Politikayı değiştirmenin zamanı geldi.",
+   "decks": [
+    "general"
+   ],
+   "note": "Kendisinden sonra genellikle geçmiş zaman (past tense) yapısı gelir."
+  },
+  {
+   "id": "b2-p-the-point-is",
+   "word": "The point is…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Mesele şu ki…"
+   ],
+   "example_en": "The point is, they don't listen to us.",
+   "example_tr": "Mesele şu ki, bizi dinlemiyorlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-easier-said",
+   "word": "Easier said than done.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Söylemesi kolay."
+   ],
+   "example_en": "Stop smoking? Easier said than done.",
+   "example_tr": "Sigarayı bırakmak mı? Söylemesi kolay.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-court",
+   "word": "court",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mahkeme"
+   ],
+   "example_en": "The lawyer will see you in court tomorrow.",
+   "example_tr": "Avukat seni yarın mahkemede görecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-trial",
+   "word": "trial",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "duruşma",
+    "yargılama"
+   ],
+   "example_en": "The trial will start next week.",
+   "example_tr": "Duruşma haftaya başlayacak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-judge",
+   "word": "judge",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "hakim",
+    "yargıç"
+   ],
+   "example_en": "The judge listened to the lawyer.",
+   "example_tr": "Hakim avukatı dinledi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-lawyer",
+   "word": "lawyer",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "avukat"
+   ],
+   "example_en": "A good lawyer is essential.",
+   "example_tr": "İyi bir avukat şarttır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-guilty",
+   "word": "guilty",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "suçlu"
+   ],
+   "example_en": "They assume he is guilty.",
+   "example_tr": "Onun suçlu olduğunu varsayıyorlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-innocent",
+   "word": "innocent",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "masum",
+    "suçsuz"
+   ],
+   "example_en": "She was innocent despite the rumour.",
+   "example_tr": "Söylentiye rağmen masumdu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-arrest",
+   "word": "arrest",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "tutuklamak",
+    "gözaltına almak"
+   ],
+   "example_en": "The police will arrest him soon.",
+   "example_tr": "Polis onu yakında tutuklayacak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-prison",
+   "word": "prison",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "hapishane",
+    "cezaevi"
+   ],
+   "example_en": "He has been in prison for five years.",
+   "example_tr": "Beş yıldır hapiste.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-punishment",
+   "word": "punishment",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ceza"
+   ],
+   "example_en": "The punishment must be reasonable.",
+   "example_tr": "Ceza makul olmalı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-victim",
+   "word": "victim",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kurban",
+    "mağdur"
+   ],
+   "example_en": "We must support the victim.",
+   "example_tr": "Mağdura destek olmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-offence",
+   "word": "offence",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "suç",
+    "kabahat"
+   ],
+   "example_en": "It was a significant offence.",
+   "example_tr": "Ciddi bir suçtu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-investigate",
+   "word": "investigate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "soruşturmak",
+    "araştırmak"
+   ],
+   "example_en": "The police must investigate the crime.",
+   "example_tr": "Polis suçu araştırmalı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-sentence",
+   "word": "sentence",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ceza",
+    "hüküm"
+   ],
+   "example_en": "The judge will announce the sentence.",
+   "example_tr": "Hakim cezayı açıklayacak.",
+   "decks": [
+    "general"
+   ],
+   "note": "Dilbilgisinde 'cümle' demektir; mahkemede 'ceza'."
+  },
+  {
+   "id": "b2-accuse",
+   "word": "accuse",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "suçlamak"
+   ],
+   "example_en": "They accuse him of robbery.",
+   "example_tr": "Onu soygunla suçluyorlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-robbery",
+   "word": "robbery",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "soygun",
+    "gasp"
+   ],
+   "example_en": "The robbery happened at the bank.",
+   "example_tr": "Soygun bankada oldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-fraud",
+   "word": "fraud",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "dolandırıcılık"
+   ],
+   "example_en": "He is in prison for internet fraud.",
+   "example_tr": "İnternet dolandırıcılığından hapiste.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-security",
+   "word": "security",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "güvenlik"
+   ],
+   "example_en": "Security is a significant concern here.",
+   "example_tr": "Güvenlik burada önemli bir endişe.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-justice",
+   "word": "justice",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "adalet"
+   ],
+   "example_en": "We all want justice for the victim.",
+   "example_tr": "Kurban için hepimiz adalet istiyoruz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-verdict",
+   "word": "verdict",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "karar"
+   ],
+   "example_en": "The court will announce the verdict today.",
+   "example_tr": "Mahkeme kararı bugün açıklayacak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-commit",
+   "word": "commit",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "işlemek"
+   ],
+   "example_en": "Did he commit the crime?",
+   "example_tr": "Suçu o mu işledi?",
+   "decks": [
+    "general"
+   ],
+   "note": "commit a crime: suç işlemek."
+  },
+  {
+   "id": "b2-p-found-guilty",
+   "word": "He was found guilty.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Suçlu bulundu."
+   ],
+   "example_en": "He was found guilty of the robbery.",
+   "example_tr": "Soygundan suçlu bulundu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-no-excuse",
+   "word": "There's no excuse for…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "…için hiçbir bahane olamaz."
+   ],
+   "example_en": "There's no excuse for this offence.",
+   "example_tr": "Bu suç için hiçbir mazeret olamaz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-matter-of-time",
+   "word": "It's only a matter of time.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Zaman meselesi."
+   ],
+   "example_en": "They will arrest him, it's only a matter of time.",
+   "example_tr": "Onu tutuklayacaklar, sadece zaman meselesi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-justice-done",
+   "word": "Justice was done.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Adalet yerini buldu."
+   ],
+   "example_en": "He is in prison now, so justice was done.",
+   "example_tr": "Şu an hapiste, yani adalet yerini buldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-better-safe",
+   "word": "Better safe than sorry.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Tedbirli olmak iyidir."
+   ],
+   "example_en": "Call the police. Better safe than sorry.",
+   "example_tr": "Polisi ara. Tedbirli olmak iyidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-disease",
+   "word": "disease",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "hastalık"
+   ],
+   "example_en": "This disease is very dangerous.",
+   "example_tr": "Bu hastalık çok tehlikeli.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-infection",
+   "word": "infection",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "enfeksiyon"
+   ],
+   "example_en": "The doctor found the infection.",
+   "example_tr": "Doktor enfeksiyonu buldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-vaccine",
+   "word": "vaccine",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "aşı"
+   ],
+   "example_en": "We need a new vaccine for this.",
+   "example_tr": "Bunun için yeni bir aşıya ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-therapy",
+   "word": "therapy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "terapi",
+    "tedavi"
+   ],
+   "example_en": "She started therapy recently.",
+   "example_tr": "Yakın zamanda terapiye başladı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-chronic",
+   "word": "chronic",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kronik"
+   ],
+   "example_en": "He has a chronic disease.",
+   "example_tr": "Kronik bir hastalığı var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-diagnosis",
+   "word": "diagnosis",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "teşhis",
+    "tanı"
+   ],
+   "example_en": "An accurate diagnosis is essential.",
+   "example_tr": "Doğru teşhis koymak şarttır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-cure",
+   "word": "cure",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tedavi",
+    "çare"
+   ],
+   "example_en": "There is no genuine cure for this.",
+   "example_tr": "Bunun gerçek bir tedavisi yok.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "iyileştirmek"
+     ],
+     "example_en": "The new medicine will cure him.",
+     "example_tr": "Yeni ilaç onu iyileştirecek."
+    }
+   ]
+  },
+  {
+   "id": "b2-prevent",
+   "word": "prevent",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "önlemek",
+    "engel olmak"
+   ],
+   "example_en": "A healthy diet can prevent cancer.",
+   "example_tr": "Sağlıklı beslenme kanseri önleyebilir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-undergo",
+   "word": "undergo",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "geçirmek",
+    "maruz kalmak"
+   ],
+   "example_en": "He will undergo surgery tomorrow.",
+   "example_tr": "Yarın ameliyat olacak.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-surgery",
+   "word": "surgery",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ameliyat",
+    "cerrahi"
+   ],
+   "example_en": "The surgery was a great success.",
+   "example_tr": "Ameliyat çok başarılı geçti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-immune",
+   "word": "immune",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "bağışık"
+   ],
+   "example_en": "You are now immune to the disease.",
+   "example_tr": "Artık hastalığa karşı bağışıksın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-heal",
+   "word": "heal",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "iyileşmek",
+    "iyileştirmek"
+   ],
+   "example_en": "His injured leg will heal soon.",
+   "example_tr": "Yaralı bacağı yakında iyileşecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-organ",
+   "word": "organ",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "organ"
+   ],
+   "example_en": "The stomach is an important organ.",
+   "example_tr": "Mide önemli bir organdır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-cancer",
+   "word": "cancer",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kanser"
+   ],
+   "example_en": "My grandfather had cancer.",
+   "example_tr": "Dedem kanser olmuştu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-obesity",
+   "word": "obesity",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "obezite"
+   ],
+   "example_en": "Obesity is a significant issue.",
+   "example_tr": "Obezite önemli bir sorundur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-nutrition",
+   "word": "nutrition",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "beslenme"
+   ],
+   "example_en": "Good nutrition is essential.",
+   "example_tr": "İyi beslenme şarttır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-addiction",
+   "word": "addiction",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bağımlılık"
+   ],
+   "example_en": "Sugar addiction is a big problem.",
+   "example_tr": "Şeker bağımlılığı büyük bir sorundur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-consult",
+   "word": "consult",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "danışmak",
+    "başvurmak"
+   ],
+   "example_en": "You should consult a doctor.",
+   "example_tr": "Bir doktora danışmalısın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-inherit",
+   "word": "inherit",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "miras almak",
+    "genetik geçmek"
+   ],
+   "example_en": "She inherited the allergy.",
+   "example_tr": "Alerji ona genetik geçti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-allergy",
+   "word": "allergy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "alerji"
+   ],
+   "example_en": "I have an allergy to milk.",
+   "example_tr": "Süte alerjim var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-prevention",
+   "word": "Prevention is key.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Önlemek esastır."
+   ],
+   "example_en": "Eat well. Prevention is key.",
+   "example_tr": "İyi beslen. Önlemek esastır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-under-weather",
+   "word": "I'm under the weather.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Biraz rahatsızım."
+   ],
+   "example_en": "I've been feeling under the weather.",
+   "example_tr": "Birkaç gündür biraz rahatsızım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-runs-family",
+   "word": "It runs in the family.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Aileden geliyor."
+   ],
+   "example_en": "It runs in the family. – I see.",
+   "example_tr": "Bizde aileden geliyor. – Anlıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-on-mend",
+   "word": "He's on the mend.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "İyileşiyor."
+   ],
+   "example_en": "He's on the mend after the surgery.",
+   "example_tr": "Ameliyattan sonra iyileşiyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-fresh-air",
+   "word": "Get some fresh air.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Biraz temiz hava al."
+   ],
+   "example_en": "You look tired. Get some fresh air.",
+   "example_tr": "Yorgun görünüyorsun. Biraz temiz hava al.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-economy",
+   "word": "economy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ekonomi"
+   ],
+   "example_en": "The global economy is growing.",
+   "example_tr": "Küresel ekonomi büyüyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-inflation",
+   "word": "inflation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "enflasyon"
+   ],
+   "example_en": "Inflation reduces our income.",
+   "example_tr": "Enflasyon gelirimizi azaltıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-income",
+   "word": "income",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "gelir"
+   ],
+   "example_en": "My income is quite small.",
+   "example_tr": "Gelirim oldukça az.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-tax",
+   "word": "tax",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "vergi"
+   ],
+   "example_en": "We have to pay a lot of tax.",
+   "example_tr": "Çok fazla vergi ödemeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-wage",
+   "word": "wage",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "maaş",
+    "ücret"
+   ],
+   "example_en": "I want a better wage.",
+   "example_tr": "Daha iyi bir maaş istiyorum.",
+   "decks": [
+    "general"
+   ],
+   "note": "Genellikle haftalık veya saatlik ödenen ücretler için kullanılır."
+  },
+  {
+   "id": "b2-consumer",
+   "word": "consumer",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tüketici"
+   ],
+   "example_en": "A clever consumer compares prices.",
+   "example_tr": "Akıllı bir tüketici fiyatları karşılaştırır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-demand",
+   "word": "demand",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "talep"
+   ],
+   "example_en": "There is a big demand for this car.",
+   "example_tr": "Bu arabaya büyük bir talep var.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "talep etmek"
+     ],
+     "example_en": "People demand better wages.",
+     "example_tr": "İnsanlar daha iyi maaşlar talep ediyor."
+    }
+   ]
+  },
+  {
+   "id": "b2-supply",
+   "word": "supply",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "arz",
+    "tedarik"
+   ],
+   "example_en": "The supply of cheap food is small.",
+   "example_tr": "Ucuz gıda arzı az.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-crisis",
+   "word": "crisis",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kriz"
+   ],
+   "example_en": "The financial crisis destroyed many jobs.",
+   "example_tr": "Finansal kriz birçok işi yok etti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-recession",
+   "word": "recession",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "resesyon",
+    "durgunluk"
+   ],
+   "example_en": "The economy is in a bad recession.",
+   "example_tr": "Ekonomi kötü bir durgunluk içinde.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-purchase",
+   "word": "purchase",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "satın almak"
+   ],
+   "example_en": "I want to purchase a new laptop.",
+   "example_tr": "Yeni bir dizüstü bilgisayar satın almak istiyorum.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "satın alma"
+     ],
+     "example_en": "Is it a reasonable purchase?",
+     "example_tr": "Bu makul bir satın alma mı?"
+    }
+   ]
+  },
+  {
+   "id": "b2-brand",
+   "word": "brand",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "marka"
+   ],
+   "example_en": "It is a famous brand.",
+   "example_tr": "Bu ünlü bir marka.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-subscription",
+   "word": "subscription",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "abonelik"
+   ],
+   "example_en": "I cancelled my app subscription.",
+   "example_tr": "Uygulama aboneliğimi iptal ettim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-wealth",
+   "word": "wealth",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "servet",
+    "zenginlik"
+   ],
+   "example_en": "His family has a lot of wealth.",
+   "example_tr": "Ailesinin büyük bir serveti var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-benefit",
+   "word": "benefit",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "fayda",
+    "avantaj"
+   ],
+   "example_en": "What is the benefit of this?",
+   "example_tr": "Bunun faydası nedir?",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "faydalanmak"
+     ],
+     "example_en": "Consumers benefit from cheap prices.",
+     "example_tr": "Tüketiciler ucuz fiyatlardan faydalanır."
+    }
+   ]
+  },
+  {
+   "id": "b2-expense",
+   "word": "expense",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "masraf",
+    "gider"
+   ],
+   "example_en": "Rent is our biggest expense.",
+   "example_tr": "Kira en büyük masrafımız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-financial",
+   "word": "financial",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "finansal",
+    "mali"
+   ],
+   "example_en": "She has big financial problems.",
+   "example_tr": "Büyük finansal sorunları var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-currency",
+   "word": "currency",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "para birimi",
+    "döviz"
+   ],
+   "example_en": "Foreign currency is expensive now.",
+   "example_tr": "Döviz şu an pahalı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-insurance",
+   "word": "insurance",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sigorta"
+   ],
+   "example_en": "You must buy travel insurance.",
+   "example_tr": "Seyahat sigortası almalısın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-mortgage",
+   "word": "mortgage",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "konut kredisi",
+    "ipotek"
+   ],
+   "example_en": "We need a mortgage to buy a house.",
+   "example_tr": "Ev almak için konut kredisine ihtiyacımız var.",
+   "decks": [
+    "general"
+   ],
+   "note": "Sadece gayrimenkul kredisi için kullanılır."
+  },
+  {
+   "id": "b2-p-fortune",
+   "word": "It costs a fortune.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Bir servete mal oluyor."
+   ],
+   "example_en": "Look at this bag! It costs a fortune.",
+   "example_tr": "Şu çantaya bak! Bir servete mal oluyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-budget",
+   "word": "We're on a tight budget.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Kısıtlı bir bütçemiz var."
+   ],
+   "example_en": "I can't buy it, we're on a tight budget.",
+   "example_tr": "Onu alamam, kısıtlı bir bütçemiz var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-prices",
+   "word": "Prices have gone up.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Fiyatlar arttı."
+   ],
+   "example_en": "Prices have gone up recently.",
+   "example_tr": "Son zamanlarda fiyatlar arttı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-value",
+   "word": "It's good value for money.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Parasına değiyor."
+   ],
+   "example_en": "This laptop is good value for money.",
+   "example_tr": "Bu dizüstü bilgisayar parasına değiyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-ends-meet",
+   "word": "We barely make ends meet.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Ay sonunu zor getiriyoruz."
+   ],
+   "example_en": "We barely make ends meet with this wage.",
+   "example_tr": "Bu maaşla ay sonunu zor getiriyoruz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-sustainable",
+   "word": "sustainable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "sürdürülebilir"
+   ],
+   "example_en": "We need a sustainable lifestyle.",
+   "example_tr": "Sürdürülebilir bir yaşama ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-renewable",
+   "word": "renewable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "yenilenebilir"
+   ],
+   "example_en": "Solar energy is a renewable source.",
+   "example_tr": "Güneş enerjisi yenilenebilir bir kaynaktır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-emission",
+   "word": "emission",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "emisyon",
+    "salım"
+   ],
+   "example_en": "We must reduce carbon emissions.",
+   "example_tr": "Karbon emisyonlarını azaltmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-fuel",
+   "word": "fuel",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yakıt"
+   ],
+   "example_en": "This car uses a lot of fuel.",
+   "example_tr": "Bu araba çok yakıt kullanıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-conservation",
+   "word": "conservation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "koruma"
+   ],
+   "example_en": "Wildlife conservation is essential.",
+   "example_tr": "Yaban hayatını korumak esastır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-extinct",
+   "word": "extinct",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "nesli tükenmiş"
+   ],
+   "example_en": "Many species are almost extinct.",
+   "example_tr": "Pek çok türün nesli tükenmek üzere.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-habitat",
+   "word": "habitat",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yaşam alanı"
+   ],
+   "example_en": "They are destroying its habitat.",
+   "example_tr": "Onun yaşam alanını yok ediyorlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-drought",
+   "word": "drought",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kuraklık"
+   ],
+   "example_en": "The drought will destroy the plants.",
+   "example_tr": "Kuraklık bitkileri yok edecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-consumption",
+   "word": "consumption",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tüketim"
+   ],
+   "example_en": "We must reduce meat consumption.",
+   "example_tr": "Et tüketimini azaltmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-carbon",
+   "word": "carbon",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "karbon"
+   ],
+   "example_en": "Carbon pollution is a big issue.",
+   "example_tr": "Karbon kirliliği büyük bir sorundur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-solar",
+   "word": "solar",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "güneş"
+   ],
+   "example_en": "Solar energy is cheap and clean.",
+   "example_tr": "Güneş enerjisi ucuz ve temizdir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-greenhouse",
+   "word": "greenhouse",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sera"
+   ],
+   "example_en": "The greenhouse effect is dangerous.",
+   "example_tr": "Sera etkisi tehlikelidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-pollute",
+   "word": "pollute",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "kirletmek"
+   ],
+   "example_en": "Plastic rubbish pollutes the sea.",
+   "example_tr": "Plastik çöpler denizi kirletir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-deforestation",
+   "word": "deforestation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ormansızlaşma"
+   ],
+   "example_en": "Deforestation destroys the environment.",
+   "example_tr": "Ormansızlaşma çevreyi mahvediyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-ecosystem",
+   "word": "ecosystem",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ekosistem"
+   ],
+   "example_en": "Every plant is important for the ecosystem.",
+   "example_tr": "Her bitki ekosistem için önemlidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-biodiversity",
+   "word": "biodiversity",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "biyoçeşitlilik"
+   ],
+   "example_en": "We must protect biodiversity.",
+   "example_tr": "Biyoçeşitliliği korumalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-crucial",
+   "word": "crucial",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "çok önemli",
+    "hayati"
+   ],
+   "example_en": "Water is crucial for all life.",
+   "example_tr": "Su tüm yaşam için çok önemlidir.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-inevitable",
+   "word": "inevitable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kaçınılmaz"
+   ],
+   "example_en": "Climate change seems inevitable.",
+   "example_tr": "İklim değişikliği kaçınılmaz görünüyor.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-wildfire",
+   "word": "wildfire",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "orman yangını"
+   ],
+   "example_en": "The wildfire destroyed the forest.",
+   "example_tr": "Orman yangını ormanı yok etti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-melt",
+   "word": "melt",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "erimek"
+   ],
+   "example_en": "The snow is melting rapidly.",
+   "example_tr": "Kar hızla eriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-long-run",
+   "word": "In the long run…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Uzun vadede…"
+   ],
+   "example_en": "In the long run, we will save money.",
+   "example_tr": "Uzun vadede tasarruf edeceğiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-step-direction",
+   "word": "It's a step forward.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "İleriye doğru bir adım."
+   ],
+   "example_en": "Solar energy? It's a step forward.",
+   "example_tr": "Güneş enerjisi mi? İleriye doğru bir adım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-cant-afford",
+   "word": "We can't afford to…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "…yapmayı göze alamayız."
+   ],
+   "example_en": "We can't afford to lose it.",
+   "example_tr": "Onu kaybetmeyi göze alamayız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-no-going-back",
+   "word": "There's no going back.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Geri dönüş yok."
+   ],
+   "example_en": "If we fail, there's no going back.",
+   "example_tr": "Başarısız olursak geri dönüş yok.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-sooner-later",
+   "word": "Sooner or later…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Er ya da geç…"
+   ],
+   "example_en": "Sooner or later, it will melt.",
+   "example_tr": "Er ya da geç eriyecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-academic",
+   "word": "academic",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "akademik"
+   ],
+   "example_en": "She has a great academic career.",
+   "example_tr": "Harika bir akademik kariyeri var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-thesis",
+   "word": "thesis",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tez"
+   ],
+   "example_en": "I must finish my thesis soon.",
+   "example_tr": "Tezimi yakında bitirmeliyim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-lecture",
+   "word": "lecture",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ders",
+    "konferans"
+   ],
+   "example_en": "The lecture was very long.",
+   "example_tr": "Ders çok uzundu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-seminar",
+   "word": "seminar",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "seminer"
+   ],
+   "example_en": "I will attend a seminar today.",
+   "example_tr": "Bugün bir seminere katılacağım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-scholarship",
+   "word": "scholarship",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "burs"
+   ],
+   "example_en": "Did you get a scholarship?",
+   "example_tr": "Burs aldın mı?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-curriculum",
+   "word": "curriculum",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "müfredat"
+   ],
+   "example_en": "The new curriculum is difficult.",
+   "example_tr": "Yeni müfredat zor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-assessment",
+   "word": "assessment",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "değerlendirme"
+   ],
+   "example_en": "The assessment was hard.",
+   "example_tr": "Değerlendirme zordu.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-essay",
+   "word": "essay",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kompozisyon",
+    "deneme"
+   ],
+   "example_en": "My essay is almost ready.",
+   "example_tr": "Makalem neredeyse hazır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-tuition",
+   "word": "tuition",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "okul ücreti",
+    "harç"
+   ],
+   "example_en": "Tuition is expensive here.",
+   "example_tr": "Burada okul ücreti pahalı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-discipline",
+   "word": "discipline",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "disiplin"
+   ],
+   "example_en": "You need discipline to succeed.",
+   "example_tr": "Başarmak için disipline ihtiyacın var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-concept",
+   "word": "concept",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kavram",
+    "konsept"
+   ],
+   "example_en": "This is a difficult concept.",
+   "example_tr": "Bu zor bir kavram.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-summarize",
+   "word": "summarize",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "özetlemek"
+   ],
+   "example_en": "Can you summarize the story?",
+   "example_tr": "Hikayeyi özetleyebilir misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-critical",
+   "word": "critical",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "eleştirel",
+    "kritik"
+   ],
+   "example_en": "It is a critical decision.",
+   "example_tr": "Bu kritik bir karar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-evaluate",
+   "word": "evaluate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "değerlendirmek"
+   ],
+   "example_en": "We must evaluate the results.",
+   "example_tr": "Sonuçları değerlendirmeliyiz.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-emphasize",
+   "word": "emphasize",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "vurgulamak"
+   ],
+   "example_en": "I must emphasize this rule.",
+   "example_tr": "Bu kuralı vurgulamalıyım.",
+   "decks": [
+    "general",
+    "yds"
+   ]
+  },
+  {
+   "id": "b2-plagiarism",
+   "word": "plagiarism",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "intihal",
+    "aşırma"
+   ],
+   "example_en": "Plagiarism is a big mistake.",
+   "example_tr": "İntihal büyük bir hatadır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-campus",
+   "word": "campus",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kampüs",
+    "yerleşke"
+   ],
+   "example_en": "The campus is very green.",
+   "example_tr": "Kampüs çok yeşil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-reference",
+   "word": "reference",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "referans",
+    "kaynak"
+   ],
+   "example_en": "You must include a reference.",
+   "example_tr": "Bir referans eklemelisin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-assignment",
+   "word": "assignment",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ödev",
+    "görev"
+   ],
+   "example_en": "Did you finish the assignment?",
+   "example_tr": "Ödevi bitirdin mi?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-faculty",
+   "word": "faculty",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "fakülte",
+    "öğretim üyeleri"
+   ],
+   "example_en": "The faculty is very good.",
+   "example_tr": "Fakülte çok iyi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-to-sum-up",
+   "word": "To sum up…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Özetle…"
+   ],
+   "example_en": "To sum up, we need more time.",
+   "example_tr": "Özetle, daha fazla zamana ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-let-me-give",
+   "word": "Let me give you an example.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Size bir örnek vereyim."
+   ],
+   "example_en": "Let me give you an example.",
+   "example_tr": "Sana bir örnek vereyim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-raises-question",
+   "word": "This raises the question of…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Bu, … sorusunu doğuruyor."
+   ],
+   "example_en": "This raises the question of money.",
+   "example_tr": "Bu, para sorusunu doğuruyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-on-top-of",
+   "word": "On top of that…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Bunun da ötesinde…"
+   ],
+   "example_en": "On top of that, I am tired.",
+   "example_tr": "Üstelik bir de yorgunum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-correct-me",
+   "word": "Correct me if I'm wrong.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Yanılıyorsam düzeltin."
+   ],
+   "example_en": "Correct me if I'm wrong.",
+   "example_tr": "Yanlışım varsa düzelt.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-commitment",
+   "word": "commitment",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bağlılık",
+    "taahhüt"
+   ],
+   "example_en": "A good relationship requires genuine commitment.",
+   "example_tr": "İyi bir ilişki gerçek bir bağlılık gerektirir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-divorce",
+   "word": "divorce",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "boşanma"
+   ],
+   "example_en": "Their divorce was a significant issue for the family.",
+   "example_tr": "Boşanmaları aile için önemli bir sorundu.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "boşanmak"
+     ],
+     "example_en": "She will divorce her husband tomorrow.",
+     "example_tr": "Yarın kocasından boşanacak."
+    }
+   ]
+  },
+  {
+   "id": "b2-engaged",
+   "word": "engaged",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "nişanlı"
+   ],
+   "example_en": "They have been engaged for a year.",
+   "example_tr": "Bir yıldır nişanlılar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-acquaintance",
+   "word": "acquaintance",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tanıdık"
+   ],
+   "example_en": "He is not a close friend, merely an acquaintance.",
+   "example_tr": "Yakın bir arkadaş değil, sadece bir tanıdık.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-mutual",
+   "word": "mutual",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "karşılıklı",
+    "ortak"
+   ],
+   "example_en": "Mutual respect is essential in a relationship.",
+   "example_tr": "Bir ilişkide karşılıklı saygı şarttır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-conflict",
+   "word": "conflict",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "çatışma",
+    "anlaşmazlık"
+   ],
+   "example_en": "We must avoid conflict and talk about the issue.",
+   "example_tr": "Çatışmadan kaçınmalı ve sorunu konuşmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-compromise",
+   "word": "compromise",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "uzlaşma"
+   ],
+   "example_en": "We found a compromise despite our different opinions.",
+   "example_tr": "Farklı fikirlerimize rağmen bir uzlaşma bulduk.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-loyal",
+   "word": "loyal",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "sadık",
+    "vefalı"
+   ],
+   "example_en": "She has always been a loyal friend to me.",
+   "example_tr": "Bana her zaman sadık bir arkadaş oldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-betray",
+   "word": "betray",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ihanet etmek"
+   ],
+   "example_en": "I trusted him, but he betrayed me.",
+   "example_tr": "Ona güvendim ama o bana ihanet etti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-gossip",
+   "word": "gossip",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "dedikodu yapmak"
+   ],
+   "example_en": "People tend to gossip about their neighbours.",
+   "example_tr": "İnsanlar komşularının dedikodusunu yapmaya eğilimlidir.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "dedikodu"
+     ],
+     "example_en": "Did you hear the gossip about her?",
+     "example_tr": "Onun hakkındaki dedikoduyu duydun mu?"
+    }
+   ]
+  },
+  {
+   "id": "b2-reputation",
+   "word": "reputation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "itibar",
+    "ün"
+   ],
+   "example_en": "The rumour destroyed his reputation in the company.",
+   "example_tr": "Söylenti şirketteki itibarını mahvetti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-appreciate",
+   "word": "appreciate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "takdir etmek",
+    "değer vermek"
+   ],
+   "example_en": "I really appreciate your support during this hard time.",
+   "example_tr": "Bu zor zamanda desteğini gerçekten takdir ediyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-loyalty",
+   "word": "loyalty",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sadakat"
+   ],
+   "example_en": "Loyalty is a significant aspect of any relationship.",
+   "example_tr": "Sadakat, her ilişkinin önemli bir yönüdür.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-independent",
+   "word": "independent",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "bağımsız"
+   ],
+   "example_en": "She is an independent woman; she doesn't need help.",
+   "example_tr": "Bağımsız bir kadındır; yardıma ihtiyacı yoktur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-intimate",
+   "word": "intimate",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "samimi",
+    "yakın"
+   ],
+   "example_en": "They had an intimate talk about their future.",
+   "example_tr": "Gelecekleri hakkında samimi bir konuşma yaptılar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-reunion",
+   "word": "reunion",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "buluşma",
+    "bir araya gelme"
+   ],
+   "example_en": "Our family reunion was a great event.",
+   "example_tr": "Aile buluşmamız harika bir etkinlikti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-sibling",
+   "word": "sibling",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kardeş"
+   ],
+   "example_en": "I have three siblings: two sisters and one brother.",
+   "example_tr": "Üç kardeşim var: iki kız kardeş ve bir erkek kardeş.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-spouse",
+   "word": "spouse",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "eş"
+   ],
+   "example_en": "You should talk about this issue with your spouse.",
+   "example_tr": "Bu sorunu eşinle konuşmalısın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-flatmate",
+   "word": "flatmate",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ev arkadaşı"
+   ],
+   "example_en": "My flatmate is noisy, whereas I prefer a quiet home.",
+   "example_tr": "Ev arkadaşım gürültücü, oysa ben sessizliği severim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-bond",
+   "word": "bond",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bağ"
+   ],
+   "example_en": "The bond between a mother and her child is genuine.",
+   "example_tr": "Bir anne ve çocuğu arasındaki bağ gerçektir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-we-dont-see-eye-to-eye",
+   "word": "We don't see eye to eye.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Fikirlerimiz uyuşmuyor."
+   ],
+   "example_en": "We don't see eye to eye on this issue.",
+   "example_tr": "Fikirlerimiz bu konuda uyuşmuyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-he-gets-on-my-nerves",
+   "word": "He gets on my nerves.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Sinirlerimi bozuyor."
+   ],
+   "example_en": "My boss gets on my nerves.",
+   "example_tr": "Patronum sinirlerimi bozuyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-they-broke-up",
+   "word": "They broke up.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Ayrıldılar."
+   ],
+   "example_en": "I am very upset. They broke up yesterday.",
+   "example_tr": "Çok üzgünüm. Dün ayrıldılar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-we-fell-out",
+   "word": "We fell out.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Aramız bozuldu."
+   ],
+   "example_en": "We fell out because of a bad mistake.",
+   "example_tr": "Kötü bir hata yüzünden aramız bozuldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-lets-keep-in-touch",
+   "word": "Let's keep in touch.",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "İletişimde kalalım."
+   ],
+   "example_en": "I must go now, but let's keep in touch.",
+   "example_tr": "Şimdi gitmeliyim ama iletişimde kalalım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-ultimately",
+   "word": "ultimately",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "sonuçta",
+    "en nihayetinde"
+   ],
+   "example_en": "Ultimately, I would rather work from home.",
+   "example_tr": "Sonuçta evden çalışmayı tercih ederim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-hindsight",
+   "word": "hindsight",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "geriye dönüp bakma"
+   ],
+   "example_en": "With hindsight, it was a dramatic mistake.",
+   "example_tr": "Geriye dönüp bakınca çok büyük bir hataydı.",
+   "decks": [
+    "general"
+   ],
+   "note": "Genelde 'with hindsight' (sonradan bakınca) olarak kullanılır."
+  },
+  {
+   "id": "b2-perspective",
+   "word": "perspective",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bakış açısı"
+   ],
+   "example_en": "Travelling abroad changes your perspective.",
+   "example_tr": "Yurtdışına çıkmak bakış açınızı değiştirir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-speculate",
+   "word": "speculate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "tahmin yürütmek"
+   ],
+   "example_en": "I don't want to speculate about her future.",
+   "example_tr": "Geleceği hakkında tahminde bulunmak istemiyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-alternative",
+   "word": "alternative",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "alternatif",
+    "seçenek"
+   ],
+   "example_en": "We had no alternative but to cancel the meeting.",
+   "example_tr": "Toplantıyı iptal etmekten başka seçeneğimiz yoktu.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "adj",
+     "tr": [
+      "alternatif"
+     ],
+     "example_en": "We must find alternative energy sources.",
+     "example_tr": "Alternatif enerji kaynakları bulmalıyız."
+    }
+   ]
+  },
+  {
+   "id": "b2-circumstance",
+   "word": "circumstance",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "durum",
+    "koşul"
+   ],
+   "example_en": "I wouldn't accept this job in any circumstance.",
+   "example_tr": "Hiçbir koşulda bu işi kabul etmezdim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-unexpected",
+   "word": "unexpected",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "beklenmedik"
+   ],
+   "example_en": "It was an unexpected event for everyone.",
+   "example_tr": "Herkes için beklenmedik bir olaydı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-overwhelming",
+   "word": "overwhelming",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "bunaltıcı",
+    "ezici"
+   ],
+   "example_en": "The support from the community was overwhelming.",
+   "example_tr": "Toplumun desteği muazzamdı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-regardless",
+   "word": "regardless",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "ne olursa olsun",
+    "-e rağmen"
+   ],
+   "example_en": "I'll go to the concert regardless of the weather.",
+   "example_tr": "Havaya rağmen konsere gideceğim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-presumably",
+   "word": "presumably",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "muhtemelen",
+    "galiba"
+   ],
+   "example_en": "Presumably, he will arrive at the airport late.",
+   "example_tr": "Muhtemelen havalimanına geç varacak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-decisive",
+   "word": "decisive",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "belirleyici",
+    "kararlı"
+   ],
+   "example_en": "That goal was decisive for the game.",
+   "example_tr": "O gol maç için belirleyiciydi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-irreversible",
+   "word": "irreversible",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "geri döndürülemez"
+   ],
+   "example_en": "Climate change may cause irreversible damage.",
+   "example_tr": "İklim değişikliği geri dönüşsüz hasar verebilir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-reluctantly",
+   "word": "reluctantly",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "isteksizce"
+   ],
+   "example_en": "She reluctantly agreed to help her flatmate.",
+   "example_tr": "Ev arkadaşına yardım etmeyi isteksizce kabul etti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-afterwards",
+   "word": "afterwards",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "sonradan",
+    "daha sonra"
+   ],
+   "example_en": "We had dinner and watched a film afterwards.",
+   "example_tr": "Akşam yemeği yedik ve sonrasında film izledik.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-dramatic",
+   "word": "dramatic",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "çarpıcı",
+    "dramatik"
+   ],
+   "example_en": "There was a dramatic shift in his attitude.",
+   "example_tr": "Tavrında çarpıcı bir değişim vardı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-transform",
+   "word": "transform",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "dönüştürmek"
+   ],
+   "example_en": "The internet has transformed our lives.",
+   "example_tr": "İnternet hayatımızı dönüştürdü.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-shift",
+   "word": "shift",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "değişim"
+   ],
+   "example_en": "I noticed a significant shift in his attitude.",
+   "example_tr": "Tavrında belirgin bir değişim fark ettim.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "v",
+     "tr": [
+      "değişmek",
+      "değiştirmek"
+     ],
+     "example_en": "Public opinion has shifted recently.",
+     "example_tr": "Kamuoyu son zamanlarda değişti."
+    }
+   ]
+  },
+  {
+   "id": "b2-milestone",
+   "word": "milestone",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "dönüm noktası"
+   ],
+   "example_en": "Graduating from university is a big milestone.",
+   "example_tr": "Üniversiteden mezun olmak büyük bir dönüm noktası.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-if-i-had-known",
+   "word": "If I had known…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Bilseydim…"
+   ],
+   "example_en": "If I had known, I would be there now.",
+   "example_tr": "Bilseydim, şu an orada olurdum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-what-i-really-need",
+   "word": "What I really need is…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Gerçekten ihtiyacım olan…"
+   ],
+   "example_en": "What I really need is a long holiday.",
+   "example_tr": "Gerçekten ihtiyacım olan şey uzun bir tatil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-not-only",
+   "word": "Not only…, but also…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Sadece… değil, ayrıca…"
+   ],
+   "example_en": "Not only is he clever, but he is also polite.",
+   "example_tr": "Sadece zeki değil, aynı zamanda kibar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-id-rather",
+   "word": "I'd rather…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "… yapmayı tercih ederim"
+   ],
+   "example_en": "I'd rather stay at home tonight.",
+   "example_tr": "Bu gece evde kalmayı tercih ederim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "b2-p-looking-back",
+   "word": "Looking back,…",
+   "pos": "phrase",
+   "level": "B2",
+   "tr": [
+    "Geriye dönüp bakınca,…"
+   ],
+   "example_en": "Looking back, I should have listened to you.",
+   "example_tr": "Geriye dönüp bakınca seni dinlemeliydim.",
    "decks": [
     "general"
    ]
@@ -22791,6 +26706,2185 @@
     "b1-p-it-is-said-that",
     "b1-p-he-told-me-that",
     "b1-p-by-the-time"
+   ]
+  },
+  {
+   "id": "b2-core",
+   "level": "B2",
+   "title": "Çekirdek",
+   "goal": "Bir görüşü ayrıntılı savunur ve karşı görüşü tartar, neden-sonuç ve karşıtlık bildirir, soyut konularda kesinlik derecesini ayarlar.",
+   "placement": "first",
+   "position": 0,
+   "stories": [
+    {
+     "id": "b2-core-1",
+     "title": "İş Görüşmesi",
+     "lines": [
+      {
+       "en": "Regarding the new job in London, is my English adequate?",
+       "tr": "Londra'daki yeni işe ilişkin, İngilizcem yeterli mi?"
+      },
+      {
+       "en": "On the whole, yes. However, it requires a lot of travel.",
+       "tr": "Genel olarak, evet. Ancak çok seyahat gerektiriyor."
+      },
+      {
+       "en": "That's a fair point. But I tend to like travelling.",
+       "tr": "Bu haklı bir nokta. Ama genelde seyahat etmeyi severim."
+      },
+      {
+       "en": "It is essential that you agree to move.",
+       "tr": "Taşınmayı kabul etmeniz şart."
+      },
+      {
+       "en": "It seems to me that the outcome will be good.",
+       "tr": "Bana öyle geliyor ki sonuç iyi olacak."
+      },
+      {
+       "en": "In other words, you want the job. It's up to you.",
+       "tr": "Başka bir deyişle işi istiyorsunuz. Karar sizin."
+      }
+     ]
+    },
+    {
+     "id": "b2-core-2",
+     "title": "Yeni Bir Plan",
+     "lines": [
+      {
+       "en": "We need a new approach. The old plan didn't work.",
+       "tr": "Yeni bir yaklaşıma ihtiyacımız var. Eski plan işe yaramadı."
+      },
+      {
+       "en": "I see what you mean, but it was merely an attempt.",
+       "tr": "Ne demek istediğini anlıyorum ama o sadece bir girişimdi."
+      },
+      {
+       "en": "Nevertheless, the impact was significant.",
+       "tr": "Buna rağmen, etkisi belirgindi."
+      },
+      {
+       "en": "We must consider every aspect. Otherwise, we will fail.",
+       "tr": "Her yönünü düşünmeliyiz. Aksi takdirde, başarısız olacağız."
+      },
+      {
+       "en": "I assume you have sufficient time for a rapid change?",
+       "tr": "Hızlı bir değişiklik için yeterli vaktin olduğunu varsayıyorum?"
+      },
+      {
+       "en": "Yes. Therefore, we should start now.",
+       "tr": "Evet. Bu nedenle, şimdi başlamalıyız."
+      }
+     ]
+    },
+    {
+     "id": "b2-core-3",
+     "title": "Farklı Görüşler",
+     "lines": [
+      {
+       "en": "My biggest concern is the price. It doesn't seem reasonable.",
+       "tr": "En büyük endişem fiyat. Makul görünmüyor."
+      },
+      {
+       "en": "I think it's a genuine bargain, whereas you don't.",
+       "tr": "Ben bunun gerçek bir kelepir olduğunu düşünüyorum, oysa sen öyle düşünmüyorsun."
+      },
+      {
+       "en": "But the app has a tendency to stop working.",
+       "tr": "Ama uygulamanın durup kalma eğilimi var."
+      },
+      {
+       "en": "It is apparent that we disagree.",
+       "tr": "Anlaşamadığımız açık."
+      },
+      {
+       "en": "As a result, we need to ask the manager.",
+       "tr": "Sonuç olarak, yöneticiye sormamız gerek."
+      },
+      {
+       "en": "It is unlikely that she will agree with you.",
+       "tr": "Seninle aynı fikirde olması pek olası değil."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-despite",
+    "b2-whereas",
+    "b2-therefore",
+    "b2-moreover",
+    "b2-otherwise",
+    "b2-nevertheless",
+    "b2-merely",
+    "b2-regarding",
+    "b2-assume",
+    "b2-tend",
+    "b2-tendency",
+    "b2-require",
+    "b2-indicate",
+    "b2-significant",
+    "b2-considerable",
+    "b2-essential",
+    "b2-apparent",
+    "b2-evident",
+    "b2-sufficient",
+    "b2-adequate",
+    "b2-approach",
+    "b2-aspect",
+    "b2-issue",
+    "b2-factor",
+    "b2-extent",
+    "b2-attempt",
+    "b2-concern",
+    "b2-feature",
+    "b2-impact",
+    "b2-outcome",
+    "b2-vast",
+    "b2-rapid",
+    "b2-reasonable",
+    "b2-likely",
+    "b2-unlikely",
+    "b2-genuine",
+    "b2-p-seems-to-me",
+    "b2-p-fair-point",
+    "b2-p-see-what-you-mean",
+    "b2-p-as-a-result",
+    "b2-p-in-other-words",
+    "b2-p-on-the-whole",
+    "b2-p-up-to-you"
+   ]
+  },
+  {
+   "id": "b2-business",
+   "level": "B2",
+   "title": "İş dünyası",
+   "goal": "Toplantıda öneri sunar ve pazarlık eder, bir projenin hedeflerini ve risklerini anlatır, şirketin durumunu değerlendirir.",
+   "placement": "any",
+   "position": 1,
+   "stories": [
+    {
+     "id": "b2-business-1",
+     "title": "Yeni Müşteri",
+     "lines": [
+      {
+       "en": "Let's get down to business. We have a new client.",
+       "tr": "İş konuşalım. Yeni bir müşterimiz var."
+      },
+      {
+       "en": "I read the proposal. Our first priority is to help them.",
+       "tr": "Teklifi okudum. İlk önceliğimiz onlara yardım etmek."
+      },
+      {
+       "en": "Yes. The first objective is to establish a good relationship.",
+       "tr": "Evet. İlk hedef iyi bir ilişki kurmak."
+      },
+      {
+       "en": "We must delegate some work to the team.",
+       "tr": "Ekibe biraz iş devretmeliyiz."
+      },
+      {
+       "en": "I see what you mean, but we're running out of time.",
+       "tr": "Ne demek istediğini anlıyorum ama zamanımız tükeniyor."
+      },
+      {
+       "en": "I will talk to the manager and I'll get back to you.",
+       "tr": "Yöneticiyle konuşacağım ve sana döneceğim."
+      }
+     ]
+    },
+    {
+     "id": "b2-business-2",
+     "title": "Büyüme Stratejisi",
+     "lines": [
+      {
+       "en": "Our biggest competitor is expanding into Asia.",
+       "tr": "En büyük rakibimiz Asya'ya açılıyor."
+      },
+      {
+       "en": "Therefore, we need a new strategy.",
+       "tr": "Bu nedenle, yeni bir stratejiye ihtiyacımız var."
+      },
+      {
+       "en": "We can establish a new partnership.",
+       "tr": "Yeni bir ortaklık kurabiliriz."
+      },
+      {
+       "en": "That carries a considerable risk.",
+       "tr": "Bu ciddi bir risk taşıyor."
+      },
+      {
+       "en": "It seems to me that it is a win-win situation.",
+       "tr": "Bana öyle geliyor ki bu kazan-kazan bir durum."
+      },
+      {
+       "en": "That's a fair point. Could we go over the plan tomorrow?",
+       "tr": "Bu haklı bir nokta. Planın üstünden yarın geçebilir miyiz?"
+      }
+     ]
+    },
+    {
+     "id": "b2-business-3",
+     "title": "Su Sıkıntısı",
+     "lines": [
+      {
+       "en": "Our profits are declining this year.",
+       "tr": "Kârlarımız bu yıl düşüyor."
+      },
+      {
+       "en": "It is because of the water shortage.",
+       "tr": "Bunun nedeni su sıkıntısı."
+      },
+      {
+       "en": "We must improve our efficiency.",
+       "tr": "Verimliliğimizi artırmalıyız."
+      },
+      {
+       "en": "If we make a new deal, we can save money.",
+       "tr": "Eğer yeni bir anlaşma yaparsak, para tasarrufu yapabiliriz."
+      },
+      {
+       "en": "Are you certain that we can maintain our quality?",
+       "tr": "Kalitemizi koruyabileceğimizden emin misin?"
+      },
+      {
+       "en": "Yes, it is an adequate solution.",
+       "tr": "Evet, bu yeterli bir çözüm."
+      }
+     ]
+    },
+    {
+     "id": "b2-business-4",
+     "title": "Uygulama Yatırımı",
+     "lines": [
+      {
+       "en": "We plan to launch the new app next week.",
+       "tr": "Yeni uygulamayı haftaya başlatmayı planlıyoruz."
+      },
+      {
+       "en": "I think we should invest more money in it.",
+       "tr": "Bence ona daha fazla para yatırmalıyız."
+      },
+      {
+       "en": "Is this a good investment?",
+       "tr": "Bu iyi bir yatırım mı?"
+      },
+      {
+       "en": "Yes. It will enhance our relationship with the customers.",
+       "tr": "Evet. Müşterilerle olan ilişkimizi geliştirecek."
+      },
+      {
+       "en": "I see what you mean, but it is very expensive.",
+       "tr": "Ne demek istediğini anlıyorum ama çok pahalı."
+      },
+      {
+       "en": "Nevertheless, we must try it.",
+       "tr": "Yine de bunu denemeliyiz."
+      }
+     ]
+    },
+    {
+     "id": "b2-business-5",
+     "title": "Fiyat Görüşmesi",
+     "lines": [
+      {
+       "en": "We must negotiate the price with the new client.",
+       "tr": "Yeni müşteriyle fiyat konusunda pazarlık yapmalıyız."
+      },
+      {
+       "en": "They have a tendency to ask for a big discount.",
+       "tr": "Büyük bir indirim isteme eğilimindeler."
+      },
+      {
+       "en": "We can offer them a better deal.",
+       "tr": "Onlara daha iyi bir anlaşma sunabiliriz."
+      },
+      {
+       "en": "Could we go over the price now?",
+       "tr": "Fiyatın üstünden şimdi geçebilir miyiz?"
+      },
+      {
+       "en": "We're running out of time today.",
+       "tr": "Bugün zamanımız tükeniyor."
+      },
+      {
+       "en": "OK, I'll get back to you tomorrow morning.",
+       "tr": "Tamam, sana yarın sabah döneceğim."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-negotiate",
+    "b2-client",
+    "b2-profit",
+    "b2-invest",
+    "b2-investment",
+    "b2-competitor",
+    "b2-strategy",
+    "b2-priority",
+    "b2-establish",
+    "b2-maintain",
+    "b2-enhance",
+    "b2-delegate",
+    "b2-proposal",
+    "b2-objective",
+    "b2-launch",
+    "b2-expand",
+    "b2-decline",
+    "b2-shortage",
+    "b2-risk",
+    "b2-deal",
+    "b2-partnership",
+    "b2-efficiency",
+    "b2-p-down-to-business",
+    "b2-p-get-back",
+    "b2-p-running-out",
+    "b2-p-go-over",
+    "b2-p-win-win"
+   ]
+  },
+  {
+   "id": "b2-science",
+   "level": "B2",
+   "title": "Bilim ve teknoloji",
+   "goal": "Bir araştırmanın sonucunu anlatır, kanıtı yorumlar, yeni teknolojilerin artı ve eksilerini tartışır.",
+   "placement": "any",
+   "position": 2,
+   "stories": [
+    {
+     "id": "b2-science-1",
+     "title": "Yapay zeka",
+     "lines": [
+      {
+       "en": "Zeynep, did you analyse the data?",
+       "tr": "Zeynep, verileri analiz ettin mi?"
+      },
+      {
+       "en": "Yes. It turns out that the artificial intelligence is learning fast.",
+       "tr": "Evet. Meğerse yapay zekâ hızlı öğreniyormuş."
+      },
+      {
+       "en": "Is it a genuine breakthrough?",
+       "tr": "Bu gerçekten büyük bir buluş mu?"
+      },
+      {
+       "en": "It remains to be seen. In theory, it should improve our virtual environment.",
+       "tr": "Bunu zaman gösterecek. Teoride sanal ortamımızı geliştirmesi lazım."
+      },
+      {
+       "en": "We will obtain more evidence tomorrow.",
+       "tr": "Yarın daha fazla kanıt elde edeceğiz."
+      }
+     ]
+    },
+    {
+     "id": "b2-science-2",
+     "title": "Laboratuvar",
+     "lines": [
+      {
+       "en": "Our genetic research consists of three areas.",
+       "tr": "Genetik araştırmamız üç alandan oluşuyor."
+      },
+      {
+       "en": "Studies show that we can fix the problem.",
+       "tr": "Çalışmalar sorunu çözebileceğimizi gösteriyor."
+      },
+      {
+       "en": "Do we have adequate resources for the laboratory?",
+       "tr": "Laboratuvar için yeterli kaynağımız var mı?"
+      },
+      {
+       "en": "I hope so. Otherwise, we can't finish the experiment.",
+       "tr": "Umarım. Aksi takdirde deneyi bitiremeyiz."
+      },
+      {
+       "en": "We rely on this innovation.",
+       "tr": "Bu yeniliğe bel bağlıyoruz."
+      }
+     ]
+    },
+    {
+     "id": "b2-science-3",
+     "title": "Yeni icat",
+     "lines": [
+      {
+       "en": "Look at this new invention!",
+       "tr": "Şu yeni icada bak!"
+      },
+      {
+       "en": "What does it demonstrate?",
+       "tr": "Neyi gösteriyor?"
+      },
+      {
+       "en": "It reveals how much energy we waste.",
+       "tr": "Ne kadar enerjiyi boşa harcadığımızı ortaya çıkarıyor."
+      },
+      {
+       "en": "There's no evidence that it is accurate.",
+       "tr": "Bunun doğru olduğuna dair hiçbir kanıt yok."
+      },
+      {
+       "en": "You shouldn't assume it's fake. It uses advanced data.",
+       "tr": "Sahte olduğunu varsaymamalısın. Gelişmiş veriler kullanıyor."
+      }
+     ]
+    },
+    {
+     "id": "b2-science-4",
+     "title": "Sanal stres",
+     "lines": [
+      {
+       "en": "Do you rely on virtual entertainment?",
+       "tr": "Sanal eğlenceye güveniyor musun?"
+      },
+      {
+       "en": "Yes. It turns out that it reduces my stress.",
+       "tr": "Evet. Meğerse stresimi azaltıyormuş."
+      },
+      {
+       "en": "But studies show that it has a bad impact.",
+       "tr": "Ama çalışmalar kötü bir etkisi olduğunu gösteriyor."
+      },
+      {
+       "en": "That's a fair point. However, my tendency is to relax online.",
+       "tr": "Bu haklı bir nokta. Ancak benim eğilimim internette rahatlamak."
+      },
+      {
+       "en": "Just don't forget nature.",
+       "tr": "Sadece doğayı unutma."
+      }
+     ]
+    },
+    {
+     "id": "b2-science-5",
+     "title": "Yeni bir avantaj",
+     "lines": [
+      {
+       "en": "We finally acquired the new computers for the laboratory.",
+       "tr": "Sonunda laboratuvar için yeni bilgisayarları edindik."
+      },
+      {
+       "en": "This is a vast advantage.",
+       "tr": "Bu çok büyük bir avantaj."
+      },
+      {
+       "en": "Therefore, we can analyse the genetic data faster.",
+       "tr": "Bu nedenle genetik verileri daha hızlı analiz edebiliriz."
+      },
+      {
+       "en": "In theory, we will obtain rapid results.",
+       "tr": "Teoride hızlı sonuçlar elde edeceğiz."
+      },
+      {
+       "en": "We will see. It remains to be seen.",
+       "tr": "Göreceğiz. Bunu zaman gösterecek."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-research",
+    "b2-evidence",
+    "b2-experiment",
+    "b2-theory",
+    "b2-invention",
+    "b2-artificial",
+    "b2-intelligence",
+    "b2-data",
+    "b2-analyse",
+    "b2-demonstrate",
+    "b2-reveal",
+    "b2-obtain",
+    "b2-acquire",
+    "b2-laboratory",
+    "b2-innovation",
+    "b2-breakthrough",
+    "b2-genetic",
+    "b2-virtual",
+    "b2-resource",
+    "b2-consist",
+    "b2-rely",
+    "b2-advanced",
+    "b2-p-studies-show",
+    "b2-p-turns-out",
+    "b2-p-no-evidence",
+    "b2-p-in-theory",
+    "b2-p-remains-seen"
+   ]
+  },
+  {
+   "id": "b2-mind",
+   "level": "B2",
+   "title": "Zihin ve kişilik",
+   "goal": "Kişilik özelliklerini ve duygusal tepkileri incelikle anlatır, bir zorlukla nasıl başa çıktığını ve fikrinin nasıl değiştiğini anlatır.",
+   "placement": "any",
+   "position": 3,
+   "stories": [
+    {
+     "id": "b2-mind-1",
+     "title": "Zor Bir Karar",
+     "lines": [
+      {
+       "en": "Ahmet has a new job offer from London.",
+       "tr": "Ahmet'in Londra'dan yeni bir iş teklifi var."
+      },
+      {
+       "en": "I am in two minds about it, Zeynep. I feel anxious.",
+       "tr": "Bu konuda kararsızım Zeynep. Kaygılı hissediyorum."
+      },
+      {
+       "en": "Why do you hesitate? It is a great opportunity.",
+       "tr": "Neden tereddüt ediyorsun? Bu harika bir fırsat."
+      },
+      {
+       "en": "I am reluctant to leave my family. I might not adapt.",
+       "tr": "Ailemi bırakmaya gönülsüzüm. Uyum sağlayamayabilirim."
+      },
+      {
+       "en": "Keep calm. I will try to convince you. You are determined enough to succeed.",
+       "tr": "Sakin ol. Seni ikna etmeye çalışacağım. Başaracak kadar kararlısın."
+      },
+      {
+       "en": "I see what you mean, but I am still vulnerable.",
+       "tr": "Ne demek istediğini anlıyorum ama hâlâ savunmasızım."
+      }
+     ]
+    },
+    {
+     "id": "b2-mind-2",
+     "title": "Havalimanında",
+     "lines": [
+      {
+       "en": "Sarah and Ali are at the airport. Their flight is delayed.",
+       "tr": "Sarah ve Ali havalimanındalar. Uçuşları gecikti."
+      },
+      {
+       "en": "I am so frustrated! I anticipate a long wait.",
+       "tr": "Çok sinirliyim! Uzun bir bekleyiş öngörüyorum."
+      },
+      {
+       "en": "You should keep calm. We can cope with this.",
+       "tr": "Sakin olmalısın. Bununla başa çıkabiliriz."
+      },
+      {
+       "en": "I couldn't care less about the delay. I just want to sleep.",
+       "tr": "Gecikme hiç umurumda değil. Sadece uyumak istiyorum."
+      },
+      {
+       "en": "It's not like me to complain, but I am very tired.",
+       "tr": "Şikayet etmek huyum değildir ama çok yorgunum."
+      },
+      {
+       "en": "I think they will not abandon us here.",
+       "tr": "Sanırım bizi burada terk etmeyecekler."
+      }
+     ]
+    },
+    {
+     "id": "b2-mind-3",
+     "title": "Hassas Bir Konu",
+     "lines": [
+      {
+       "en": "Emma is angry because Murat ignored her message.",
+       "tr": "Emma kızgın çünkü Murat mesajını görmezden geldi."
+      },
+      {
+       "en": "Why did you ignore my message?",
+       "tr": "Mesajımı neden görmezden geldin?"
+      },
+      {
+       "en": "I am ashamed. I forgot to answer.",
+       "tr": "Utanıyorum. Cevap vermeyi unuttum."
+      },
+      {
+       "en": "You are always so stubborn! You never apologize!",
+       "tr": "Her zaman çok inatçısın! Hiç özür dilemiyorsun!"
+      },
+      {
+       "en": "Please be tolerant. I did not want to hurt you.",
+       "tr": "Lütfen hoşgörülü ol. Seni kırmak istemedim."
+      },
+      {
+       "en": "I can't help feeling upset. I am very sensitive.",
+       "tr": "Üzülmekten kendimi alamıyorum. Çok hassasım."
+      }
+     ]
+    },
+    {
+     "id": "b2-mind-4",
+     "title": "Kariyer Hedefi",
+     "lines": [
+      {
+       "en": "David wants to pursue a career in music.",
+       "tr": "David müzik alanında bir kariyer yapmak istiyor."
+      },
+      {
+       "en": "Are you willing to work hard? It is not easy.",
+       "tr": "Çok çalışmaya istekli misin? Bu kolay değil."
+      },
+      {
+       "en": "I am determined. I will overcome any problem.",
+       "tr": "Kararlıyım. Her türlü sorunun üstesinden geleceğim."
+      },
+      {
+       "en": "It seems to me that you need a lot of money.",
+       "tr": "Bana öyle geliyor ki çok paraya ihtiyacın var."
+      },
+      {
+       "en": "That's a fair point. But my parents are grateful for my success.",
+       "tr": "Bu haklı bir nokta. Ama ailem başarıma minnettar."
+      },
+      {
+       "en": "I hope you succeed. You never lose your temper.",
+       "tr": "Umarım başarırsın. Hiç sinirlenmiyorsun."
+      }
+     ]
+    },
+    {
+     "id": "b2-mind-5",
+     "title": "Yeni Bilgisayar",
+     "lines": [
+      {
+       "en": "Burak wants to buy a new computer.",
+       "tr": "Burak yeni bir bilgisayar almak istiyor."
+      },
+      {
+       "en": "I am trying to persuade my boss to give me a loan.",
+       "tr": "Patronumu bana kredi vermesi için ikna etmeye çalışıyorum."
+      },
+      {
+       "en": "I see what you mean, but it is unlikely.",
+       "tr": "Ne demek istediğini anlıyorum ama bu pek olası değil."
+      },
+      {
+       "en": "I will attempt to convince her tomorrow.",
+       "tr": "Yarın onu ikna etmeyi deneyeceğim."
+      },
+      {
+       "en": "If you are polite, she might be tolerant.",
+       "tr": "Kibar olursan, hoşgörülü olabilir."
+      },
+      {
+       "en": "I couldn't care less if she refuses. I will save money.",
+       "tr": "Reddederse hiç umurumda olmaz. Para biriktireceğim."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-anxious",
+    "b2-reluctant",
+    "b2-hesitate",
+    "b2-vulnerable",
+    "b2-convince",
+    "b2-persuade",
+    "b2-ignore",
+    "b2-abandon",
+    "b2-adapt",
+    "b2-cope",
+    "b2-determined",
+    "b2-stubborn",
+    "b2-sensitive",
+    "b2-tolerant",
+    "b2-anticipate",
+    "b2-overcome",
+    "b2-temper",
+    "b2-pursue",
+    "b2-willing",
+    "b2-frustrated",
+    "b2-ashamed",
+    "b2-grateful",
+    "b2-p-cant-help",
+    "b2-p-two-minds",
+    "b2-p-keep-calm",
+    "b2-p-couldnt-care",
+    "b2-p-not-like-me"
+   ]
+  },
+  {
+   "id": "b2-society",
+   "level": "B2",
+   "title": "Toplum ve siyaset",
+   "goal": "Toplumsal sorunları ve siyasi tartışmaları anlatır, farklı görüşleri karşılaştırır, bir kampanyayı veya protestoyu anlatır.",
+   "placement": "any",
+   "position": 4,
+   "stories": [
+    {
+     "id": "b2-society-1",
+     "title": "Siyasi tartışma",
+     "lines": [
+      {
+       "en": "Did you watch the political debate yesterday?",
+       "tr": "Dün siyasi tartışmayı izledin mi?"
+      },
+      {
+       "en": "Yes. The government policy is an issue.",
+       "tr": "Evet. Hükümet politikası bir sorun."
+      },
+      {
+       "en": "In terms of money, it is a disaster.",
+       "tr": "Para açısından bu bir felaket."
+      },
+      {
+       "en": "There's a growing concern about poverty.",
+       "tr": "Yoksulluk konusunda endişe artıyor."
+      },
+      {
+       "en": "The point is, they should help the poor.",
+       "tr": "Mesele şu ki, yoksullara yardım etmeliler."
+      },
+      {
+       "en": "That's easier said than done.",
+       "tr": "Söylemesi kolay."
+      },
+      {
+       "en": "Nevertheless, it is their job.",
+       "tr": "Yine de, bu onların işi."
+      }
+     ]
+    },
+    {
+     "id": "b2-society-2",
+     "title": "Öğrenci protestosu",
+     "lines": [
+      {
+       "en": "Look outside! Why are the students protesting?",
+       "tr": "Dışarı bak! Öğrenciler neden protesto ediyor?"
+      },
+      {
+       "en": "They want more freedom.",
+       "tr": "Daha fazla özgürlük istiyorlar."
+      },
+      {
+       "en": "It's high time the university listened.",
+       "tr": "Üniversitenin dinleme zamanı geldi de geçiyor."
+      },
+      {
+       "en": "Are they a majority or a minority?",
+       "tr": "Çoğunluktalar mı yoksa azınlıkta mı?"
+      },
+      {
+       "en": "A vast majority of students are there.",
+       "tr": "Öğrencilerin büyük çoğunluğu orada."
+      },
+      {
+       "en": "Good. Discrimination is a threat to everyone.",
+       "tr": "Güzel. Ayrımcılık herkes için bir tehdittir."
+      }
+     ]
+    },
+    {
+     "id": "b2-society-3",
+     "title": "Seçim zamanı",
+     "lines": [
+      {
+       "en": "The election is tomorrow. Who will you vote for?",
+       "tr": "Seçim yarın. Kime oy vereceksin?"
+      },
+      {
+       "en": "I don't know. Unemployment is a heavy burden.",
+       "tr": "Bilmiyorum. İşsizlik ağır bir yük."
+      },
+      {
+       "en": "That's a fair point. We need equality.",
+       "tr": "Haklısın. Eşitliğe ihtiyacımız var."
+      },
+      {
+       "en": "I see what you mean, but how?",
+       "tr": "Ne demek istediğini anlıyorum ama nasıl?"
+      },
+      {
+       "en": "They must find jobs for the younger generation.",
+       "tr": "Genç nesil için iş bulmalılar."
+      },
+      {
+       "en": "It seems to me that it will take time.",
+       "tr": "Bana öyle geliyor ki bu zaman alacak."
+      }
+     ]
+    },
+    {
+     "id": "b2-society-4",
+     "title": "Başkalarına yardım",
+     "lines": [
+      {
+       "en": "Sarah works for a charity in London.",
+       "tr": "Sarah Londra'da bir hayır kurumunda çalışıyor."
+      },
+      {
+       "en": "She tries to help poor immigrants.",
+       "tr": "Yoksul göçmenlere yardım etmeye çalışıyor."
+      },
+      {
+       "en": "Do they receive welfare from the government?",
+       "tr": "Hükümetten sosyal yardım alıyorlar mı?"
+      },
+      {
+       "en": "Not always. Therefore, the charity is essential.",
+       "tr": "Her zaman değil. Bu yüzden hayır kurumu şart."
+      },
+      {
+       "en": "Kemal is a volunteer there.",
+       "tr": "Kemal orada bir gönüllü."
+      },
+      {
+       "en": "He starts campaigns for food.",
+       "tr": "Yemek için kampanyalar başlatıyor."
+      }
+     ]
+    },
+    {
+     "id": "b2-society-5",
+     "title": "Daha iyi bir toplum",
+     "lines": [
+      {
+       "en": "Democracy requires respect for every citizen.",
+       "tr": "Demokrasi her vatandaşa saygı gerektirir."
+      },
+      {
+       "en": "Yes, we must respect the minority.",
+       "tr": "Evet, azınlığa saygı duymalıyız."
+      },
+      {
+       "en": "Otherwise, we can't be safe together.",
+       "tr": "Aksi takdirde birlikte güvende olamayız."
+      },
+      {
+       "en": "As a result, the community will fail.",
+       "tr": "Sonuç olarak toplum başarısız olur."
+      },
+      {
+       "en": "On the whole, learning is the best solution.",
+       "tr": "Genel olarak en iyi çözüm öğrenmektir."
+      },
+      {
+       "en": "I agree. It is up to us.",
+       "tr": "Katılıyorum. Bu bize bağlı."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-politics",
+    "b2-political",
+    "b2-policy",
+    "b2-election",
+    "b2-democracy",
+    "b2-rights",
+    "b2-equality",
+    "b2-discrimination",
+    "b2-protest",
+    "b2-campaign",
+    "b2-majority",
+    "b2-minority",
+    "b2-poverty",
+    "b2-unemployment",
+    "b2-welfare",
+    "b2-burden",
+    "b2-threat",
+    "b2-immigrant",
+    "b2-generation",
+    "b2-debate",
+    "b2-freedom",
+    "b2-p-in-terms-of",
+    "b2-p-growing-concern",
+    "b2-p-high-time",
+    "b2-p-the-point-is",
+    "b2-p-easier-said"
+   ]
+  },
+  {
+   "id": "b2-justice",
+   "level": "B2",
+   "title": "Suç ve adalet",
+   "goal": "Bir suç olayını ve yargı sürecini anlatır, cezalar hakkında görüş bildirir, güvenlik önlemlerini tartışır.",
+   "placement": "any",
+   "position": 5,
+   "stories": [
+    {
+     "id": "b2-justice-1",
+     "title": "Banka Soygunu",
+     "lines": [
+      {
+       "en": "Someone committed a robbery at the local bank.",
+       "tr": "Biri yerel bankada bir soygun işledi."
+      },
+      {
+       "en": "The police will investigate the crime.",
+       "tr": "Polis suçu araştıracak."
+      },
+      {
+       "en": "They have a suspect.",
+       "tr": "Bir şüphelileri var."
+      },
+      {
+       "en": "If he committed the offence, they will arrest him.",
+       "tr": "Eğer suçu o işlediyse, onu tutuklayacaklar."
+      },
+      {
+       "en": "It's only a matter of time.",
+       "tr": "Bu sadece zaman meselesi."
+      }
+     ]
+    },
+    {
+     "id": "b2-justice-2",
+     "title": "Duruşma Günü",
+     "lines": [
+      {
+       "en": "The trial starts today.",
+       "tr": "Duruşma bugün başlıyor."
+      },
+      {
+       "en": "The lawyer assumes the man is innocent.",
+       "tr": "Avukat adamın masum olduğunu varsayıyor."
+      },
+      {
+       "en": "However, the judge must listen to every witness.",
+       "tr": "Ancak hakim her tanığı dinlemeli."
+      },
+      {
+       "en": "We will see the outcome soon.",
+       "tr": "Sonucu yakında göreceğiz."
+      }
+     ]
+    },
+    {
+     "id": "b2-justice-3",
+     "title": "İnternet Dolandırıcılığı",
+     "lines": [
+      {
+       "en": "Internet fraud is a significant issue today.",
+       "tr": "İnternet dolandırıcılığı bugün önemli bir sorun."
+      },
+      {
+       "en": "They accuse a young man of stealing money online.",
+       "tr": "Genç bir adamı internetten para çalmakla suçluyorlar."
+      },
+      {
+       "en": "There are many victims.",
+       "tr": "Birçok mağdur var."
+      },
+      {
+       "en": "Update your password for security.",
+       "tr": "Güvenlik için şifrenizi güncelleyin."
+      },
+      {
+       "en": "Better safe than sorry.",
+       "tr": "Sonradan üzülmektense baştan tedbirli olmak iyidir."
+      }
+     ]
+    },
+    {
+     "id": "b2-justice-4",
+     "title": "Karar Anı",
+     "lines": [
+      {
+       "en": "Everyone is waiting in the court.",
+       "tr": "Mahkemede herkes bekliyor."
+      },
+      {
+       "en": "The judge will announce the verdict.",
+       "tr": "Hakim kararı açıklayacak."
+      },
+      {
+       "en": "He was found guilty.",
+       "tr": "Suçlu bulundu."
+      },
+      {
+       "en": "The sentence is ten years in prison.",
+       "tr": "Cezası on yıl hapis."
+      },
+      {
+       "en": "Justice was done.",
+       "tr": "Adalet yerini buldu."
+      }
+     ]
+    },
+    {
+     "id": "b2-justice-5",
+     "title": "Trafik Kazası",
+     "lines": [
+      {
+       "en": "The police stopped him in traffic.",
+       "tr": "Polis onu trafikte durdurdu."
+      },
+      {
+       "en": "He caused an accident.",
+       "tr": "Bir kazaya sebep oldu."
+      },
+      {
+       "en": "There's no excuse for this.",
+       "tr": "Bunun için hiçbir mazeret olamaz."
+      },
+      {
+       "en": "The punishment is heavy.",
+       "tr": "Ceza ağır."
+      },
+      {
+       "en": "He must accept the consequence.",
+       "tr": "Sonucunu kabul etmeli."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-court",
+    "b2-trial",
+    "b2-judge",
+    "b2-lawyer",
+    "b2-guilty",
+    "b2-innocent",
+    "b2-arrest",
+    "b2-prison",
+    "b2-punishment",
+    "b2-victim",
+    "b2-offence",
+    "b2-investigate",
+    "b2-sentence",
+    "b2-accuse",
+    "b2-robbery",
+    "b2-fraud",
+    "b2-security",
+    "b2-justice",
+    "b2-verdict",
+    "b2-commit",
+    "b2-p-found-guilty",
+    "b2-p-no-excuse",
+    "b2-p-matter-of-time",
+    "b2-p-justice-done",
+    "b2-p-better-safe"
+   ]
+  },
+  {
+   "id": "b2-medicine",
+   "level": "B2",
+   "title": "Tıp",
+   "goal": "Bir hastalığı, tanısını ve tedavisini anlatır, önleyici sağlık önerileri verir, sağlık sistemini tartışır.",
+   "placement": "any",
+   "position": 6,
+   "stories": [
+    {
+     "id": "b2-medicine-1",
+     "title": "Doktor Ziyareti",
+     "lines": [
+      {
+       "en": "Zeynep feels ill and visits Dr. Smith.",
+       "tr": "Zeynep hasta hissediyor ve Dr. Smith'i ziyaret ediyor."
+      },
+      {
+       "en": "I've been feeling under the weather.",
+       "tr": "Kendimi keyifsiz hissediyorum."
+      },
+      {
+       "en": "We need an accurate diagnosis.",
+       "tr": "Doğru bir teşhise ihtiyacımız var."
+      },
+      {
+       "en": "Is it a chronic disease?",
+       "tr": "Kronik bir hastalık mı?"
+      },
+      {
+       "en": "No, it is just a small infection.",
+       "tr": "Hayır, sadece küçük bir enfeksiyon."
+      },
+      {
+       "en": "Will I undergo surgery?",
+       "tr": "Ameliyat olacak mıyım?"
+      },
+      {
+       "en": "No. Just get some fresh air.",
+       "tr": "Hayır. Sadece biraz temiz hava al."
+      }
+     ]
+    },
+    {
+     "id": "b2-medicine-2",
+     "title": "Genetik Alerji",
+     "lines": [
+      {
+       "en": "I have a bad allergy to milk.",
+       "tr": "Süte karşı kötü bir alerjim var."
+      },
+      {
+       "en": "Really? My son has it too.",
+       "tr": "Gerçekten mi? Oğlumda da var."
+      },
+      {
+       "en": "It runs in the family. We inherited it.",
+       "tr": "Bizde aileden geliyor. Bize genetik geçti."
+      },
+      {
+       "en": "Does it require therapy?",
+       "tr": "Terapi gerektiriyor mu?"
+      },
+      {
+       "en": "No, I merely avoid milk.",
+       "tr": "Hayır, sadece sütten uzak duruyorum."
+      },
+      {
+       "en": "Prevention is better than cure.",
+       "tr": "Önlemek tedavi etmekten iyidir."
+      }
+     ]
+    },
+    {
+     "id": "b2-medicine-3",
+     "title": "İyileşme Süreci",
+     "lines": [
+      {
+       "en": "Ayşe had cancer, but she is better now.",
+       "tr": "Ayşe kanserdi ama şimdi daha iyi."
+      },
+      {
+       "en": "A friend visits Ayşe in London.",
+       "tr": "Bir arkadaşı Londra'da Ayşe'yi ziyaret ediyor."
+      },
+      {
+       "en": "You look very healthy today.",
+       "tr": "Bugün çok sağlıklı görünüyorsun."
+      },
+      {
+       "en": "Yes, I'm on the mend.",
+       "tr": "Evet, iyileşme yolundayım."
+      },
+      {
+       "en": "Did the new medicine heal you?",
+       "tr": "Yeni ilaç mı seni iyileştirdi?"
+      },
+      {
+       "en": "Yes, it is a genuine cure.",
+       "tr": "Evet, gerçek bir çare oldu."
+      }
+     ]
+    },
+    {
+     "id": "b2-medicine-4",
+     "title": "Sağlıklı Yaşam",
+     "lines": [
+      {
+       "en": "Obesity is a significant problem today.",
+       "tr": "Obezite günümüzde önemli bir sorun."
+      },
+      {
+       "en": "I see what you mean, but why?",
+       "tr": "Ne demek istediğini anlıyorum, ama neden?"
+      },
+      {
+       "en": "It's sugar addiction.",
+       "tr": "Sebep şeker bağımlılığı."
+      },
+      {
+       "en": "We must improve our diets.",
+       "tr": "Diyetlerimizi geliştirmeliyiz."
+      },
+      {
+       "en": "Yes, good nutrition can prevent diseases.",
+       "tr": "Evet, iyi beslenme hastalıkları önleyebilir."
+      }
+     ]
+    },
+    {
+     "id": "b2-medicine-5",
+     "title": "Organ ve Aşı",
+     "lines": [
+      {
+       "en": "The stomach is an important organ.",
+       "tr": "Mide önemli bir organdır."
+      },
+      {
+       "en": "Do I need to undergo surgery?",
+       "tr": "Ameliyat olmam gerekiyor mu?"
+      },
+      {
+       "en": "No, you merely need a vaccine.",
+       "tr": "Hayır, sadece bir aşıya ihtiyacınız var."
+      },
+      {
+       "en": "Will it make me immune?",
+       "tr": "Beni bağışık yapacak mı?"
+      },
+      {
+       "en": "Yes. Are you feeling well?",
+       "tr": "Evet. Kendinizi iyi hissediyor musunuz?"
+      },
+      {
+       "en": "No, I've been feeling under the weather.",
+       "tr": "Hayır, kendimi keyifsiz hissediyorum."
+      },
+      {
+       "en": "You must consult me again later.",
+       "tr": "Daha sonra bana tekrar danışmalısınız."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-disease",
+    "b2-infection",
+    "b2-vaccine",
+    "b2-therapy",
+    "b2-chronic",
+    "b2-diagnosis",
+    "b2-cure",
+    "b2-prevent",
+    "b2-undergo",
+    "b2-surgery",
+    "b2-immune",
+    "b2-heal",
+    "b2-organ",
+    "b2-cancer",
+    "b2-obesity",
+    "b2-nutrition",
+    "b2-addiction",
+    "b2-consult",
+    "b2-inherit",
+    "b2-allergy",
+    "b2-p-prevention",
+    "b2-p-under-weather",
+    "b2-p-runs-family",
+    "b2-p-on-mend",
+    "b2-p-fresh-air"
+   ]
+  },
+  {
+   "id": "b2-economy",
+   "level": "B2",
+   "title": "Ekonomi",
+   "goal": "Fiyatlar, gelir ve vergiler hakkında konuşur, ekonomik bir krizi ve etkilerini anlatır, tüketim alışkanlıklarını eleştirir.",
+   "placement": "any",
+   "position": 7,
+   "stories": [
+    {
+     "id": "b2-economy-1",
+     "title": "Pazar Alışverişi",
+     "lines": [
+      {
+       "en": "Ayşe and Tom are at a market in London.",
+       "tr": "Ayşe ve Tom Londra'da bir pazardalar."
+      },
+      {
+       "en": "Look at this bag! It costs a fortune.",
+       "tr": "Şu çantaya bak! Bir servete mal oluyor."
+      },
+      {
+       "en": "Prices have gone up recently.",
+       "tr": "Son zamanlarda fiyatlar arttı."
+      },
+      {
+       "en": "Yes, inflation is a big problem.",
+       "tr": "Evet, enflasyon büyük bir sorun."
+      },
+      {
+       "en": "Most consumers can't afford this.",
+       "tr": "Çoğu tüketicinin buna gücü yetmez."
+      },
+      {
+       "en": "The economy is in a bad situation.",
+       "tr": "Ekonomi kötü bir durumda."
+      },
+      {
+       "en": "I agree. Let's buy something cheaper.",
+       "tr": "Katılıyorum. Daha ucuz bir şey alalım."
+      }
+     ]
+    },
+    {
+     "id": "b2-economy-2",
+     "title": "Geçim Sıkıntısı",
+     "lines": [
+      {
+       "en": "Ali and his wife Zeynep talk about money in Istanbul.",
+       "tr": "Ali ve eşi Zeynep İstanbul'da para hakkında konuşuyor."
+      },
+      {
+       "en": "Our rent is a big expense.",
+       "tr": "Kiramız büyük bir masraf."
+      },
+      {
+       "en": "My new wage is not enough.",
+       "tr": "Yeni maaşım yeterli değil."
+      },
+      {
+       "en": "We can barely make ends meet.",
+       "tr": "Ay sonunu zor getiriyoruz."
+      },
+      {
+       "en": "Should we cancel the internet subscription?",
+       "tr": "İnternet aboneliğini iptal etmeli miyiz?"
+      },
+      {
+       "en": "Perhaps. We're on a tight budget.",
+       "tr": "Belki. Kısıtlı bir bütçemiz var."
+      },
+      {
+       "en": "I hope I can find a part-time job soon.",
+       "tr": "Umarım yakında yarı zamanlı bir iş bulabilirim."
+      }
+     ]
+    },
+    {
+     "id": "b2-economy-3",
+     "title": "Ev Sahibi Olmak",
+     "lines": [
+      {
+       "en": "Hakan wants to buy a small house in Berlin.",
+       "tr": "Hakan Berlin'de küçük bir ev almak istiyor."
+      },
+      {
+       "en": "But there is a big demand for houses here.",
+       "tr": "Ancak burada evlere büyük bir talep var."
+      },
+      {
+       "en": "And the supply is very small.",
+       "tr": "Ve arz çok az."
+      },
+      {
+       "en": "Therefore, you need a mortgage.",
+       "tr": "Bu nedenle konut kredisine ihtiyacın var."
+      },
+      {
+       "en": "Yes, I don't have enough wealth.",
+       "tr": "Evet, yeterli servetim yok."
+      },
+      {
+       "en": "Is it a reasonable purchase?",
+       "tr": "Bu makul bir satın alma mı?"
+      },
+      {
+       "en": "Yes, it's good value for money.",
+       "tr": "Evet, parasına değiyor."
+      }
+     ]
+    },
+    {
+     "id": "b2-economy-4",
+     "title": "Şirkette Kriz",
+     "lines": [
+      {
+       "en": "Two managers meet at a company in Tokyo.",
+       "tr": "İki yönetici Tokyo'da bir şirkette buluşuyor."
+      },
+      {
+       "en": "The financial crisis is very bad.",
+       "tr": "Finansal kriz çok kötü."
+      },
+      {
+       "en": "Are we in a recession?",
+       "tr": "Bir durgunluk içinde miyiz?"
+      },
+      {
+       "en": "It seems to me that we are.",
+       "tr": "Bana öyle geliyor ki öyleyiz."
+      },
+      {
+       "en": "Can we benefit from this situation?",
+       "tr": "Bu durumdan faydalanabilir miyiz?"
+      },
+      {
+       "en": "Maybe. We can buy cheap furniture.",
+       "tr": "Belki. Ucuz mobilya satın alabiliriz."
+      }
+     ]
+    },
+    {
+     "id": "b2-economy-5",
+     "title": "Yeni Araba",
+     "lines": [
+      {
+       "en": "Lisa buys a new car in Paris.",
+       "tr": "Lisa Paris'te yeni bir araba satın alıyor."
+      },
+      {
+       "en": "Is this a reliable brand?",
+       "tr": "Bu güvenilir bir marka mı?"
+      },
+      {
+       "en": "Yes. But you must pay car tax.",
+       "tr": "Evet. Ama araba vergisi ödemelisin."
+      },
+      {
+       "en": "Does the price include insurance?",
+       "tr": "Fiyata sigorta dahil mi?"
+      },
+      {
+       "en": "No, insurance is another expense.",
+       "tr": "Hayır, sigorta başka bir masraf."
+      },
+      {
+       "en": "Also, the foreign currency is expensive now.",
+       "tr": "Ayrıca döviz şu an pahalı."
+      },
+      {
+       "en": "I see what you mean, but I will buy it.",
+       "tr": "Ne demek istediğini anlıyorum ama onu alacağım."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-economy",
+    "b2-inflation",
+    "b2-income",
+    "b2-tax",
+    "b2-wage",
+    "b2-consumer",
+    "b2-demand",
+    "b2-supply",
+    "b2-crisis",
+    "b2-recession",
+    "b2-purchase",
+    "b2-brand",
+    "b2-subscription",
+    "b2-wealth",
+    "b2-benefit",
+    "b2-expense",
+    "b2-financial",
+    "b2-currency",
+    "b2-insurance",
+    "b2-mortgage",
+    "b2-p-fortune",
+    "b2-p-budget",
+    "b2-p-prices",
+    "b2-p-value",
+    "b2-p-ends-meet"
+   ]
+  },
+  {
+   "id": "b2-planet",
+   "level": "B2",
+   "title": "Sürdürülebilirlik",
+   "goal": "İklim krizinin nedenlerini ve çözümlerini ayrıntılı tartışır, enerji ve tüketim tercihlerini savunur.",
+   "placement": "any",
+   "position": 8,
+   "stories": [
+    {
+     "id": "b2-planet-1",
+     "title": "Yeni Araba",
+     "lines": [
+      {
+       "en": "Ali and Deniz are talking.",
+       "tr": "Ali ve Deniz konuşuyorlar."
+      },
+      {
+       "en": "I want to buy a new car.",
+       "tr": "Yeni bir araba almak istiyorum."
+      },
+      {
+       "en": "Are you certain? They are very expensive.",
+       "tr": "Emin misin? Çok pahalılar."
+      },
+      {
+       "en": "Yes, but they use renewable energy.",
+       "tr": "Evet, ama yenilenebilir enerji kullanıyorlar."
+      },
+      {
+       "en": "I see what you mean, but… can you afford it?",
+       "tr": "Ne demek istediğini anlıyorum ama… bunu karşılayabilir misin?"
+      },
+      {
+       "en": "In the long run, I will save money.",
+       "tr": "Uzun vadede tasarruf edeceğim."
+      },
+      {
+       "en": "That's a fair point.",
+       "tr": "Bu haklı bir nokta."
+      }
+     ]
+    },
+    {
+     "id": "b2-planet-2",
+     "title": "Ormansızlaşma",
+     "lines": [
+      {
+       "en": "Sarah and Mark are watching a documentary.",
+       "tr": "Sarah ve Mark bir belgesel izliyorlar."
+      },
+      {
+       "en": "It is about a big wildfire in the mountains.",
+       "tr": "Dağlardaki büyük bir orman yangını hakkında."
+      },
+      {
+       "en": "The deforestation is rapid and dangerous.",
+       "tr": "Ormansızlaşma hızlı ve tehlikeli."
+      },
+      {
+       "en": "Yes. Many animals lose their habitat.",
+       "tr": "Evet. Pek çok hayvan yaşam alanını kaybediyor."
+      },
+      {
+       "en": "If this happens, species will be extinct.",
+       "tr": "Böyle olursa, türlerin nesli tükenecek."
+      },
+      {
+       "en": "We can't afford to lose our biodiversity.",
+       "tr": "Biyoçeşitliliğimizi kaybetmeyi göze alamayız."
+      },
+      {
+       "en": "True. Conservation is essential.",
+       "tr": "Doğru. Koruma esastır."
+      },
+      {
+       "en": "There's no going back if we destroy it.",
+       "tr": "Eğer onu yok edersek geri dönüş yok."
+      }
+     ]
+    },
+    {
+     "id": "b2-planet-3",
+     "title": "Sıcak Bir Yaz",
+     "lines": [
+      {
+       "en": "Emre and Canan are sitting in the garden.",
+       "tr": "Emre ve Canan bahçede oturuyorlar."
+      },
+      {
+       "en": "The weather is very hot this year.",
+       "tr": "Bu yıl hava çok sıcak."
+      },
+      {
+       "en": "Yes, the drought is a significant problem.",
+       "tr": "Evet, kuraklık önemli bir sorun."
+      },
+      {
+       "en": "It is the greenhouse effect.",
+       "tr": "Bu sera etkisi."
+      },
+      {
+       "en": "The planet is getting hotter and the snow is melting.",
+       "tr": "Gezegen ısınıyor ve kar eriyor."
+      },
+      {
+       "en": "Sooner or later, we must change our consumption habits.",
+       "tr": "Er ya da geç tüketim alışkanlıklarımızı değiştirmeliyiz."
+      },
+      {
+       "en": "Yes, this is an inevitable outcome.",
+       "tr": "Evet, bu kaçınılmaz bir sonuç."
+      }
+     ]
+    },
+    {
+     "id": "b2-planet-4",
+     "title": "Güneş Enerjisi",
+     "lines": [
+      {
+       "en": "John works for an energy company.",
+       "tr": "John bir enerji şirketinde çalışıyor."
+      },
+      {
+       "en": "They want to open a new solar facility.",
+       "tr": "Yeni bir güneş enerjisi tesisi açmak istiyorlar."
+      },
+      {
+       "en": "Lisa is his colleague.",
+       "tr": "Lisa onun meslektaşı."
+      },
+      {
+       "en": "Will this plan reduce pollution?",
+       "tr": "Bu plan kirliliği azaltacak mı?"
+      },
+      {
+       "en": "Yes. Solar energy is sustainable.",
+       "tr": "Evet. Güneş enerjisi sürdürülebilirdir."
+      },
+      {
+       "en": "That is a crucial feature.",
+       "tr": "Bu çok önemli bir özellik."
+      },
+      {
+       "en": "We tend to use too much fuel.",
+       "tr": "Çok fazla yakıt kullanma eğilimindeyiz."
+      },
+      {
+       "en": "As a result, we pollute the ecosystem.",
+       "tr": "Sonuç olarak ekosistemi kirletiyoruz."
+      }
+     ]
+    },
+    {
+     "id": "b2-planet-5",
+     "title": "Sergi",
+     "lines": [
+      {
+       "en": "Leyla and Murat are at a photo exhibition.",
+       "tr": "Leyla ve Murat bir fotoğraf sergisindeler."
+      },
+      {
+       "en": "The photos show our beautiful planet.",
+       "tr": "Fotoğraflar güzel gezegenimizi gösteriyor."
+      },
+      {
+       "en": "This scenery is vast and beautiful.",
+       "tr": "Bu manzara devasa ve güzel."
+      },
+      {
+       "en": "Yes, but we tend to destroy it.",
+       "tr": "Evet ama onu yok etme eğilimindeyiz."
+      },
+      {
+       "en": "We must reduce our carbon emissions.",
+       "tr": "Karbon emisyonlarımızı azaltmalıyız."
+      },
+      {
+       "en": "It seems to me that people are finally aware.",
+       "tr": "Bana öyle geliyor ki insanlar sonunda farkındalar."
+      },
+      {
+       "en": "I hope so. A clean planet is essential.",
+       "tr": "Umarım öyledir. Temiz bir gezegen esastır."
+      },
+      {
+       "en": "It's a step forward.",
+       "tr": "İleriye doğru bir adım."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-sustainable",
+    "b2-renewable",
+    "b2-emission",
+    "b2-fuel",
+    "b2-conservation",
+    "b2-extinct",
+    "b2-habitat",
+    "b2-drought",
+    "b2-consumption",
+    "b2-carbon",
+    "b2-solar",
+    "b2-greenhouse",
+    "b2-pollute",
+    "b2-deforestation",
+    "b2-ecosystem",
+    "b2-biodiversity",
+    "b2-crucial",
+    "b2-inevitable",
+    "b2-wildfire",
+    "b2-melt",
+    "b2-p-long-run",
+    "b2-p-step-direction",
+    "b2-p-cant-afford",
+    "b2-p-no-going-back",
+    "b2-p-sooner-later"
+   ]
+  },
+  {
+   "id": "b2-academic",
+   "level": "B2",
+   "title": "Akademik hayat",
+   "goal": "Bir dersi, ödevi ve sınav sürecini anlatır, bir konuyu özetler ve örnekle açıklar, akademik dürüstlüğü tartışır.",
+   "placement": "any",
+   "position": 9,
+   "stories": [
+    {
+     "id": "b2-academic-1",
+     "title": "Burs ve Eğitim",
+     "lines": [
+      {
+       "en": "Ozan is a student in London. He studies English.",
+       "tr": "Ozan Londra'da bir öğrenci. İngilizce çalışıyor."
+      },
+      {
+       "en": "Did you get a scholarship?",
+       "tr": "Burs aldın mı?"
+      },
+      {
+       "en": "Yes! Tuition is very expensive here. The scholarship is essential.",
+       "tr": "Evet! Burada okul ücreti çok pahalı. Burs şart."
+      },
+      {
+       "en": "That's a fair point. Do you like the curriculum?",
+       "tr": "Haklısın. Müfredatı seviyor musun?"
+      },
+      {
+       "en": "It is difficult, but I try to keep my discipline.",
+       "tr": "Zor ama disiplinimi korumaya çalışıyorum."
+      },
+      {
+       "en": "I want to emphasize that you are very clever.",
+       "tr": "Çok zeki olduğunu vurgulamak isterim."
+      }
+     ]
+    },
+    {
+     "id": "b2-academic-2",
+     "title": "Uzun Bir Seminer",
+     "lines": [
+      {
+       "en": "Zeynep and Ali are on campus.",
+       "tr": "Zeynep ve Ali kampüsteler."
+      },
+      {
+       "en": "Are you ready for the seminar?",
+       "tr": "Seminer için hazır mısın?"
+      },
+      {
+       "en": "Not really. The last lecture was so long.",
+       "tr": "Pek sayılmaz. Geçen ders çok uzundu."
+      },
+      {
+       "en": "I see what you mean, but this concept is important.",
+       "tr": "Ne demek istediğini anlıyorum ama bu kavram önemli."
+      },
+      {
+       "en": "On top of that, we have a big assessment tomorrow.",
+       "tr": "Üstelik yarın büyük bir değerlendirmemiz var."
+      },
+      {
+       "en": "Correct me if I'm wrong. The exam is in the morning, right?",
+       "tr": "Yanlışım varsa düzelt. Sınav sabah, değil mi?"
+      }
+     ]
+    },
+    {
+     "id": "b2-academic-3",
+     "title": "Ödev Zamanı",
+     "lines": [
+      {
+       "en": "Cem is studying on campus.",
+       "tr": "Cem kampüste ders çalışıyor."
+      },
+      {
+       "en": "My assignment is quite difficult. I must evaluate this article.",
+       "tr": "Ödevim oldukça zor. Bu makaleyi değerlendirmeliyim."
+      },
+      {
+       "en": "Let me give you an example. You can summarize the first part.",
+       "tr": "Sana bir örnek vereyim. İlk kısmı özetleyebilirsin."
+      },
+      {
+       "en": "This raises the question of plagiarism.",
+       "tr": "Bu, intihal sorununu akla getiriyor."
+      },
+      {
+       "en": "Yes. You must include a reference for every source.",
+       "tr": "Evet. Her kaynak için bir referans eklemelisin."
+      },
+      {
+       "en": "To sum up, I have a lot of work to do.",
+       "tr": "Özetle, yapacak çok işim var."
+      }
+     ]
+    },
+    {
+     "id": "b2-academic-4",
+     "title": "Tez Teslimi",
+     "lines": [
+      {
+       "en": "Ayşe talks to David.",
+       "tr": "Ayşe David ile konuşuyor."
+      },
+      {
+       "en": "I finally finished my thesis!",
+       "tr": "Sonunda tezimi bitirdim!"
+      },
+      {
+       "en": "That is great news. The faculty will review it soon.",
+       "tr": "Bu harika bir haber. Fakülte yakında inceleyecektir."
+      },
+      {
+       "en": "I hope so. I am a little nervous about the outcome.",
+       "tr": "Umarım. Sonuç hakkında biraz gerginim."
+      },
+      {
+       "en": "It seems to me that you did a great job.",
+       "tr": "Bana öyle geliyor ki harika bir iş çıkardın."
+      },
+      {
+       "en": "Thank you! I used a critical approach.",
+       "tr": "Teşekkürler! Eleştirel bir yaklaşım kullandım."
+      }
+     ]
+    },
+    {
+     "id": "b2-academic-5",
+     "title": "Derse Doğru",
+     "lines": [
+      {
+       "en": "Leyla and Hasan walk to their faculty.",
+       "tr": "Leyla ve Hasan fakültelerine yürüyorlar."
+      },
+      {
+       "en": "Did you finish the essay?",
+       "tr": "Makaleyi bitirdin mi?"
+      },
+      {
+       "en": "Almost. I just need one more reference.",
+       "tr": "Neredeyse. Sadece bir referansa daha ihtiyacım var."
+      },
+      {
+       "en": "Otherwise, the teacher might be angry.",
+       "tr": "Aksi takdirde öğretmen kızabilir."
+      },
+      {
+       "en": "That's true. Academic discipline is an important aspect of university life.",
+       "tr": "Doğru. Akademik disiplin üniversite hayatının önemli bir yönüdür."
+      },
+      {
+       "en": "Let's run! The lecture starts soon.",
+       "tr": "Koşalım! Ders birazdan başlıyor."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-academic",
+    "b2-thesis",
+    "b2-lecture",
+    "b2-seminar",
+    "b2-scholarship",
+    "b2-curriculum",
+    "b2-assessment",
+    "b2-essay",
+    "b2-tuition",
+    "b2-discipline",
+    "b2-concept",
+    "b2-summarize",
+    "b2-critical",
+    "b2-evaluate",
+    "b2-emphasize",
+    "b2-plagiarism",
+    "b2-campus",
+    "b2-reference",
+    "b2-assignment",
+    "b2-faculty",
+    "b2-p-to-sum-up",
+    "b2-p-let-me-give",
+    "b2-p-raises-question",
+    "b2-p-on-top-of",
+    "b2-p-correct-me"
+   ]
+  },
+  {
+   "id": "b2-relationships",
+   "level": "B2",
+   "title": "İnsan ilişkileri",
+   "goal": "Uzun süreli ilişkileri, anlaşmazlıkları ve uzlaşmayı anlatır, birinin güvenini kaybetmeyi ya da kazanmayı anlatır.",
+   "placement": "any",
+   "position": 10,
+   "stories": [
+    {
+     "id": "b2-relationships-1",
+     "title": "Aile Buluşması",
+     "lines": [
+      {
+       "en": "Ali and his spouse Zeynep are at a family reunion.",
+       "tr": "Ali ve eşi Zeynep bir aile buluşmasındalar."
+      },
+      {
+       "en": "Ali sees an old acquaintance.",
+       "tr": "Ali eski bir tanıdık görüyor."
+      },
+      {
+       "en": "Did you hear the gossip about my sibling?",
+       "tr": "Kardeşim hakkındaki dedikoduyu duydun mu?"
+      },
+      {
+       "en": "No, what happened? Did they divorce?",
+       "tr": "Hayır, ne oldu? Boşandılar mı?"
+      },
+      {
+       "en": "No, they just had a big conflict.",
+       "tr": "Hayır, sadece büyük bir anlaşmazlık yaşadılar."
+      }
+     ]
+    },
+    {
+     "id": "b2-relationships-2",
+     "title": "İhanet",
+     "lines": [
+      {
+       "en": "Emre and Leyla had a genuine bond.",
+       "tr": "Emre ve Leyla'nın gerçek bir bağı vardı."
+      },
+      {
+       "en": "However, Emre betrayed her.",
+       "tr": "Ancak Emre ona ihanet etti."
+      },
+      {
+       "en": "Loyalty is essential for me!",
+       "tr": "Sadakat benim için şarttır!"
+      },
+      {
+       "en": "As a result, they broke up.",
+       "tr": "Sonuç olarak, ayrıldılar."
+      },
+      {
+       "en": "Leyla is a very independent woman now.",
+       "tr": "Leyla artık çok bağımsız bir kadın."
+      }
+     ]
+    },
+    {
+     "id": "b2-relationships-3",
+     "title": "Ev Arkadaşı",
+     "lines": [
+      {
+       "en": "Ahmet and his flatmate Burak don't see eye to eye.",
+       "tr": "Ahmet ve ev arkadaşı Burak'ın fikirleri uyuşmuyor."
+      },
+      {
+       "en": "Burak is very noisy. He gets on my nerves!",
+       "tr": "Burak çok gürültücü. Sinirlerimi bozuyor!"
+      },
+      {
+       "en": "You must talk to him and find a compromise.",
+       "tr": "Onunla konuşmalı ve bir uzlaşma bulmalısın."
+      },
+      {
+       "en": "I tried, but we don't have mutual respect.",
+       "tr": "Denedim ama karşılıklı saygımız yok."
+      },
+      {
+       "en": "Then you should find a new apartment.",
+       "tr": "O zaman yeni bir daire bulmalısın."
+      }
+     ]
+    },
+    {
+     "id": "b2-relationships-4",
+     "title": "Küsüşmek",
+     "lines": [
+      {
+       "en": "Selin and Ayşe fell out yesterday.",
+       "tr": "Selin ve Ayşe dün küsüştüler."
+      },
+      {
+       "en": "Selin is engaged, but Ayşe doesn't like her partner.",
+       "tr": "Selin nişanlı ama Ayşe onun partnerini sevmiyor."
+      },
+      {
+       "en": "Ayşe shared a rumour and destroyed his reputation.",
+       "tr": "Ayşe bir söylenti paylaştı ve onun itibarını zedeledi."
+      },
+      {
+       "en": "I am your loyal friend! You must listen to me!",
+       "tr": "Ben senin sadık arkadaşınım! Beni dinlemelisin!"
+      },
+      {
+       "en": "I see what you mean, but I love him.",
+       "tr": "Ne demek istediğini anlıyorum ama onu seviyorum."
+      }
+     ]
+    },
+    {
+     "id": "b2-relationships-5",
+     "title": "Veda",
+     "lines": [
+      {
+       "en": "Deniz works in London. She has a big commitment to her company.",
+       "tr": "Deniz Londra'da çalışıyor. Şirketine büyük bir bağlılığı var."
+      },
+      {
+       "en": "Murat is leaving the company to go back to Turkey.",
+       "tr": "Murat Türkiye'ye dönmek için şirketten ayrılıyor."
+      },
+      {
+       "en": "I really appreciate your hard work, Murat.",
+       "tr": "Sıkı çalışmanı gerçekten takdir ediyorum, Murat."
+      },
+      {
+       "en": "Thank you. We shared some intimate memories here.",
+       "tr": "Teşekkür ederim. Burada samimi anılar paylaştık."
+      },
+      {
+       "en": "Yes. Let's keep in touch!",
+       "tr": "Evet. İletişimde kalalım!"
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-commitment",
+    "b2-divorce",
+    "b2-engaged",
+    "b2-acquaintance",
+    "b2-mutual",
+    "b2-conflict",
+    "b2-compromise",
+    "b2-loyal",
+    "b2-betray",
+    "b2-gossip",
+    "b2-reputation",
+    "b2-appreciate",
+    "b2-loyalty",
+    "b2-independent",
+    "b2-intimate",
+    "b2-reunion",
+    "b2-sibling",
+    "b2-spouse",
+    "b2-flatmate",
+    "b2-bond",
+    "b2-p-we-dont-see-eye-to-eye",
+    "b2-p-he-gets-on-my-nerves",
+    "b2-p-they-broke-up",
+    "b2-p-we-fell-out",
+    "b2-p-lets-keep-in-touch"
+   ]
+  },
+  {
+   "id": "b2-bridge",
+   "level": "B2",
+   "title": "Geriye bakış",
+   "goal": "Geçmişe dair varsayımlar ve sonuçları (If I had…, I would be…), vurgu yapıları (What I need is…, Not only…) kullanarak bir hayat dönemecini anlatır; C1'e köprü.",
+   "placement": "last",
+   "position": 11,
+   "stories": [
+    {
+     "id": "b2-bridge-1",
+     "title": "Büyük bir adım",
+     "lines": [
+      {
+       "en": "Moving abroad was a milestone for Kemal.",
+       "tr": "Yurt dışına taşınmak Kemal için bir dönüm noktasıydı."
+      },
+      {
+       "en": "Looking back, it was the best decision of his life.",
+       "tr": "Geriye dönüp bakınca, hayatının en iyi kararıydı."
+      },
+      {
+       "en": "His friend Zeynep was surprised by this dramatic shift.",
+       "tr": "Arkadaşı Zeynep bu çarpıcı değişime şaşırmıştı."
+      },
+      {
+       "en": "If I had known you were so brave, I would be less worried.",
+       "tr": "Bu kadar cesur olduğunu bilseydim, daha az endişelenirdim."
+      },
+      {
+       "en": "What I really need is your support, not your concern.",
+       "tr": "Gerçekten ihtiyacım olan şey endişen değil, desteğin."
+      }
+     ]
+    },
+    {
+     "id": "b2-bridge-2",
+     "title": "Beklenmedik bir fırsat",
+     "lines": [
+      {
+       "en": "Leyla got an unexpected job offer yesterday.",
+       "tr": "Leyla dün beklenmedik bir iş teklifi aldı."
+      },
+      {
+       "en": "She reluctantly left her old company afterwards.",
+       "tr": "Sonrasında isteksizce eski şirketinden ayrıldı."
+      },
+      {
+       "en": "The new job is overwhelming.",
+       "tr": "Yeni iş bunaltıcı."
+      },
+      {
+       "en": "However, it will transform her career.",
+       "tr": "Ancak kariyerini dönüştürecek."
+      },
+      {
+       "en": "She will succeed regardless of the difficult circumstances.",
+       "tr": "Zor koşullara rağmen başarılı olacak."
+      }
+     ]
+    },
+    {
+     "id": "b2-bridge-3",
+     "title": "Karar anı",
+     "lines": [
+      {
+       "en": "Did you choose your university degree yet, Ahmet?",
+       "tr": "Üniversite bölümünü seçtin mi Ahmet?"
+      },
+      {
+       "en": "Not yet. It is a decisive time for my future.",
+       "tr": "Henüz değil. Geleceğim için belirleyici bir dönem."
+      },
+      {
+       "en": "I'd rather take some time than make an irreversible mistake.",
+       "tr": "Geri döndürülemez bir hata yapmaktansa biraz zaman ayırmayı tercih ederim."
+      },
+      {
+       "en": "With hindsight, I chose my degree too fast.",
+       "tr": "Sonradan bakınca, bölümümü çok hızlı seçmiştim."
+      },
+      {
+       "en": "Not only is it hard, but also quite expensive.",
+       "tr": "Sadece zor değil, aynı zamanda oldukça pahalı."
+      }
+     ]
+    },
+    {
+     "id": "b2-bridge-4",
+     "title": "Farklı bakış açıları",
+     "lines": [
+      {
+       "en": "People tend to ignore other perspectives.",
+       "tr": "İnsanlar başka bakış açılarını görmezden gelme eğilimindedir."
+      },
+      {
+       "en": "Murat, what do you think about the new policy?",
+       "tr": "Murat, yeni politika hakkında ne düşünüyorsun?"
+      },
+      {
+       "en": "It is hard to speculate without sufficient data.",
+       "tr": "Yeterli veri olmadan tahminde bulunmak zor."
+      },
+      {
+       "en": "Presumably, they will announce the alternative soon.",
+       "tr": "Muhtemelen yakında alternatifi duyuracaklar."
+      },
+      {
+       "en": "Ultimately, the citizens will decide the outcome.",
+       "tr": "Sonuçta sonuca vatandaşlar karar verecek."
+      }
+     ]
+    },
+    {
+     "id": "b2-bridge-5",
+     "title": "Çevre için mücadele",
+     "lines": [
+      {
+       "en": "Defne started an environment campaign in London.",
+       "tr": "Defne Londra'da bir çevre kampanyası başlattı."
+      },
+      {
+       "en": "Not only does she protest, but she also shares articles.",
+       "tr": "Sadece protesto etmiyor, aynı zamanda makaleler de paylaşıyor."
+      },
+      {
+       "en": "The threat of climate change requires a rapid answer.",
+       "tr": "İklim değişikliği tehdidi hızlı bir cevap gerektiriyor."
+      },
+      {
+       "en": "If we ignore it, the disaster will be inevitable.",
+       "tr": "Bunu görmezden gelirsek felaket kaçınılmaz olacak."
+      },
+      {
+       "en": "What I really need is more volunteers.",
+       "tr": "Gerçekten ihtiyacım olan şey daha çok gönüllü."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "b2-ultimately",
+    "b2-hindsight",
+    "b2-perspective",
+    "b2-speculate",
+    "b2-alternative",
+    "b2-circumstance",
+    "b2-unexpected",
+    "b2-overwhelming",
+    "b2-regardless",
+    "b2-presumably",
+    "b2-decisive",
+    "b2-irreversible",
+    "b2-reluctantly",
+    "b2-afterwards",
+    "b2-dramatic",
+    "b2-transform",
+    "b2-shift",
+    "b2-milestone",
+    "b2-p-if-i-had-known",
+    "b2-p-what-i-really-need",
+    "b2-p-not-only",
+    "b2-p-id-rather",
+    "b2-p-looking-back"
    ]
   }
  ]

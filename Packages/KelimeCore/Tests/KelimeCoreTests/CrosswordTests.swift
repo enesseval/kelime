@@ -54,7 +54,7 @@ struct CrosswordTests {
     @Test func everyBundledPuzzleIsValid() throws {
         let cards = try Self.cards()
         let files = try Self.puzzleFiles()
-        #expect(files.map(\.lastPathComponent) == ["B2.json", "C1.json"])
+        #expect(files.map(\.lastPathComponent) == ["C1.json"])
         for url in files {
             let file = try DailyPuzzle.decode(Data(contentsOf: url))
             #expect(file.puzzles.count >= 365, "\(url.lastPathComponent) has too few puzzles")

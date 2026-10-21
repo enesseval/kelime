@@ -1,0 +1,493 @@
+{
+  "id": "b2-justice",
+  "level": "B2",
+  "title": "Suç ve adalet",
+  "placement": "any",
+  "goal": "Bir suç olayını ve yargı sürecini anlatır, cezalar hakkında görüş bildirir, güvenlik önlemlerini tartışır.",
+  "words": [
+    {
+      "id": "b2-court",
+      "word": "court",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "mahkeme"
+          ],
+          "example_en": "The lawyer will see you in court tomorrow.",
+          "example_tr": "Avukat seni yarın mahkemede görecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-trial",
+      "word": "trial",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "duruşma",
+            "yargılama"
+          ],
+          "example_en": "The trial will start next week.",
+          "example_tr": "Duruşma haftaya başlayacak."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-judge",
+      "word": "judge",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hakim",
+            "yargıç"
+          ],
+          "example_en": "The judge listened to the lawyer.",
+          "example_tr": "Hakim avukatı dinledi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-lawyer",
+      "word": "lawyer",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "avukat"
+          ],
+          "example_en": "A good lawyer is essential.",
+          "example_tr": "İyi bir avukat şarttır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-guilty",
+      "word": "guilty",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "suçlu"
+          ],
+          "example_en": "They assume he is guilty.",
+          "example_tr": "Onun suçlu olduğunu varsayıyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-innocent",
+      "word": "innocent",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "masum",
+            "suçsuz"
+          ],
+          "example_en": "She was innocent despite the rumour.",
+          "example_tr": "Söylentiye rağmen masumdu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-arrest",
+      "word": "arrest",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "tutuklamak",
+            "gözaltına almak"
+          ],
+          "example_en": "The police will arrest him soon.",
+          "example_tr": "Polis onu yakında tutuklayacak."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-prison",
+      "word": "prison",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hapishane",
+            "cezaevi"
+          ],
+          "example_en": "He has been in prison for five years.",
+          "example_tr": "Beş yıldır hapiste."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-punishment",
+      "word": "punishment",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ceza"
+          ],
+          "example_en": "The punishment must be reasonable.",
+          "example_tr": "Ceza makul olmalı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-victim",
+      "word": "victim",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kurban",
+            "mağdur"
+          ],
+          "example_en": "We must support the victim.",
+          "example_tr": "Mağdura destek olmalıyız."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-offence",
+      "word": "offence",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "suç",
+            "kabahat"
+          ],
+          "example_en": "It was a significant offence.",
+          "example_tr": "Ciddi bir suçtu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-investigate",
+      "word": "investigate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "soruşturmak",
+            "araştırmak"
+          ],
+          "example_en": "The police must investigate the crime.",
+          "example_tr": "Polis suçu araştırmalı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-sentence",
+      "word": "sentence",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ceza (mahkeme)"
+          ],
+          "example_en": "The judge will announce the sentence.",
+          "example_tr": "Hakim cezayı açıklayacak."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-accuse",
+      "word": "accuse",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "suçlamak"
+          ],
+          "example_en": "They accuse him of robbery.",
+          "example_tr": "Onu soyguncukla suçluyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-robbery",
+      "word": "robbery",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "soygun",
+            "gasp"
+          ],
+          "example_en": "The robbery happened at the bank.",
+          "example_tr": "Soygun bankada oldu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-fraud",
+      "word": "fraud",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "dolandırıcılık"
+          ],
+          "example_en": "He is in prison for internet fraud.",
+          "example_tr": "İnternet dolandırıcılığından hapiste."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-security",
+      "word": "security",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "güvenlik"
+          ],
+          "example_en": "Security is a significant concern here.",
+          "example_tr": "Güvenlik burada önemli bir endişe."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-justice",
+      "word": "justice",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "adalet"
+          ],
+          "example_en": "We all want justice for the victim.",
+          "example_tr": "Kurban için hepimiz adalet istiyoruz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-verdict",
+      "word": "verdict",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "karar (mahkeme)"
+          ],
+          "example_en": "The court will announce the verdict today.",
+          "example_tr": "Mahkeme kararı bugün açıklayacak."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-commit",
+      "word": "commit",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "işlemek (suç)"
+          ],
+          "example_en": "Did he commit the crime?",
+          "example_tr": "Suçu o mu işledi?"
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b2-p-found-guilty",
+      "text": "He was found guilty.",
+      "tr": "Suçlu bulundu.",
+      "example_en": "He was found guilty of the robbery.",
+      "example_tr": "Soygundan suçlu bulundu.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-no-excuse",
+      "text": "There's no excuse for…",
+      "tr": "…için hiçbir bahane olamaz.",
+      "example_en": "There's no excuse for this offence.",
+      "example_tr": "Bu suç için hiçbir mazeret olamaz.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-matter-of-time",
+      "text": "It's only a matter of time.",
+      "tr": "An meselesi.",
+      "example_en": "They will arrest him, it's only a matter of time.",
+      "example_tr": "Onu tutuklayacaklar, sadece an meselesi.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-justice-done",
+      "text": "Justice was done.",
+      "tr": "Adalet yerini buldu.",
+      "example_en": "He is in prison now, so justice was done.",
+      "example_tr": "Şu an hapiste, yani adalet yerini buldu.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-better-safe",
+      "text": "Better safe than sorry.",
+      "tr": "Tedbirli olmak iyidir.",
+      "example_en": "Call the police. Better safe than sorry.",
+      "example_tr": "Polisi ara. Sonradan üzülmektense tedbirli olmak iyidir.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b2-justice-1",
+      "title": "Banka Soygunu",
+      "names": [],
+      "lines": [
+        {
+          "en": "Someone committed a robbery at the local bank.",
+          "tr": "Biri yerel bankada bir soygun işledi."
+        },
+        {
+          "en": "The police will investigate the crime.",
+          "tr": "Polis suçu araştıracak."
+        },
+        {
+          "en": "They have a suspect.",
+          "tr": "Bir şüphelileri var."
+        },
+        {
+          "en": "If he committed the offence, they will arrest him.",
+          "tr": "Eğer suçu o işlediyse, onu tutuklayacaklar."
+        },
+        {
+          "en": "It's only a matter of time.",
+          "tr": "Bu sadece an meselesi."
+        }
+      ]
+    },
+    {
+      "id": "b2-justice-2",
+      "title": "Duruşma Günü",
+      "names": [],
+      "lines": [
+        {
+          "en": "The trial starts today.",
+          "tr": "Duruşma bugün başlıyor."
+        },
+        {
+          "en": "The lawyer assumes the man is innocent.",
+          "tr": "Avukat adamın masum olduğunu varsayıyor."
+        },
+        {
+          "en": "However, the judge must listen to every witness.",
+          "tr": "Ancak hakim her tanığı dinlemeli."
+        },
+        {
+          "en": "We will see the outcome soon.",
+          "tr": "Sonucu yakında göreceğiz."
+        }
+      ]
+    },
+    {
+      "id": "b2-justice-3",
+      "title": "İnternet Dolandırıcılığı",
+      "names": [],
+      "lines": [
+        {
+          "en": "Internet fraud is a significant issue today.",
+          "tr": "İnternet dolandırıcılığı bugün önemli bir sorun."
+        },
+        {
+          "en": "They accuse a young man of stealing money online.",
+          "tr": "Genç bir adamı internetten para çalmakla suçluyorlar."
+        },
+        {
+          "en": "There are many victims.",
+          "tr": "Birçok mağdur var."
+        },
+        {
+          "en": "Update your password for security.",
+          "tr": "Güvenlik için şifrenizi güncelleyin."
+        },
+        {
+          "en": "Better safe than sorry.",
+          "tr": "Sonradan üzülmektense baştan tedbirli olmak iyidir."
+        }
+      ]
+    },
+    {
+      "id": "b2-justice-4",
+      "title": "Karar Anı",
+      "names": [],
+      "lines": [
+        {
+          "en": "Everyone is waiting in the court.",
+          "tr": "Mahkemede herkes bekliyor."
+        },
+        {
+          "en": "The judge will announce the verdict.",
+          "tr": "Hakim kararı açıklayacak."
+        },
+        {
+          "en": "He was found guilty.",
+          "tr": "Suçlu bulundu."
+        },
+        {
+          "en": "The sentence is ten years in prison.",
+          "tr": "Cezası on yıl hapis."
+        },
+        {
+          "en": "Justice was done.",
+          "tr": "Adalet yerini buldu."
+        }
+      ]
+    },
+    {
+      "id": "b2-justice-5",
+      "title": "Trafik Kazası",
+      "names": [],
+      "lines": [
+        {
+          "en": "The police stopped him in traffic.",
+          "tr": "Polis onu trafikte durdurdu."
+        },
+        {
+          "en": "He caused an accident.",
+          "tr": "Bir kazaya sebep oldu."
+        },
+        {
+          "en": "There's no excuse for this.",
+          "tr": "Bunun için hiçbir mazeret olamaz."
+        },
+        {
+          "en": "The punishment is heavy.",
+          "tr": "Ceza ağır."
+        },
+        {
+          "en": "He must accept the consequence.",
+          "tr": "Sonucunu kabul etmeli."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,568 @@
+{
+"id": "b2-mind",
+"level": "B2",
+"title": "Zihin ve kişilik",
+"placement": "any",
+"goal": "Kişilik özelliklerini ve duygusal tepkileri incelikle anlatır, bir zorlukla nasıl başa çıktığını ve fikrinin nasıl değiştiğini anlatır.",
+"words": [
+{
+"id": "b2-anxious",
+"word": "anxious",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"endişeli",
+"kaygılı"
+],
+"example_en": "She is anxious about her new job.",
+"example_tr": "Yeni işi konusunda endişeli."
+}
+],
+"note": ""
+},
+{
+"id": "b2-reluctant",
+"word": "reluctant",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"isteksiz",
+"gönülsüz"
+],
+"example_en": "He was reluctant to accept the offer.",
+"example_tr": "Teklifi kabul etmeye isteksizdi."
+}
+],
+"note": ""
+},
+{
+"id": "b2-hesitate",
+"word": "hesitate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"tereddüt etmek",
+"çekinmek"
+],
+"example_en": "Please don't hesitate to call me.",
+"example_tr": "Beni aramaktan çekinmeyin."
+}
+],
+"note": ""
+},
+{
+"id": "b2-vulnerable",
+"word": "vulnerable",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"savunmasız",
+"kırılgan"
+],
+"example_en": "Children are vulnerable in this situation.",
+"example_tr": "Çocuklar bu durumda savunmasızdır."
+}
+],
+"note": ""
+},
+{
+"id": "b2-convince",
+"word": "convince",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"ikna etmek"
+],
+"example_en": "I am trying to convince him.",
+"example_tr": "Onu ikna etmeye çalışıyorum."
+}
+],
+"note": ""
+},
+{
+"id": "b2-persuade",
+"word": "persuade",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"ikna etmek"
+],
+"example_en": "She persuaded her friends to come.",
+"example_tr": "Arkadaşlarını gelmeye ikna etti."
+}
+],
+"note": ""
+},
+{
+"id": "b2-ignore",
+"word": "ignore",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"görmezden gelmek"
+],
+"example_en": "He ignored my advice.",
+"example_tr": "Tavsiyemi görmezden geldi."
+}
+],
+"note": ""
+},
+{
+"id": "b2-abandon",
+"word": "abandon",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"terk etmek",
+"bırakmak"
+],
+"example_en": "They had to abandon their car in the snow.",
+"example_tr": "Arabalarını karda bırakmak zorunda kaldılar."
+}
+],
+"note": ""
+},
+{
+"id": "b2-adapt",
+"word": "adapt",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"uyum sağlamak"
+],
+"example_en": "It is difficult to adapt to a new climate.",
+"example_tr": "Yeni bir iklime uyum sağlamak zordur."
+}
+],
+"note": ""
+},
+{
+"id": "b2-cope",
+"word": "cope",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"başa çıkmak"
+],
+"example_en": "How do you cope with stress?",
+"example_tr": "Stresle nasıl başa çıkıyorsun?"
+}
+],
+"note": "Genellikle 'with' ile kullanılır."
+},
+{
+"id": "b2-determined",
+"word": "determined",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kararlı",
+"azimli"
+],
+"example_en": "She is determined to succeed.",
+"example_tr": "Başarmaya kararlı."
+}
+],
+"note": ""
+},
+{
+"id": "b2-stubborn",
+"word": "stubborn",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"inatçı"
+],
+"example_en": "He is too stubborn to admit his mistake.",
+"example_tr": "Hatasını kabul edemeyecek kadar inatçı."
+}
+],
+"note": ""
+},
+{
+"id": "b2-sensitive",
+"word": "sensitive",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"hassas",
+"duyarlı"
+],
+"example_en": "He is very sensitive about his weight.",
+"example_tr": "Kilosu konusunda çok hassas."
+}
+],
+"note": "İngilizcede mantıklı/makul anlamındaki 'sensible' ile sıkça karıştırılır."
+},
+{
+"id": "b2-tolerant",
+"word": "tolerant",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"hoşgörülü"
+],
+"example_en": "We must be tolerant of different opinions.",
+"example_tr": "Farklı görüşlere karşı hoşgörülü olmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b2-anticipate",
+"word": "anticipate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"beklemek",
+"öngörmek"
+],
+"example_en": "We anticipate a significant increase in prices.",
+"example_tr": "Fiyatlarda önemli bir artış öngörüyoruz."
+}
+],
+"note": ""
+},
+{
+"id": "b2-overcome",
+"word": "overcome",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"üstesinden gelmek",
+"aşmak"
+],
+"example_en": "He overcame many problems.",
+"example_tr": "Birçok sorunun üstesinden geldi."
+}
+],
+"note": ""
+},
+{
+"id": "b2-temper",
+"word": "temper",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"öfke",
+"huy"
+],
+"example_en": "He has a bad temper.",
+"example_tr": "Kötü bir huyu var."
+}
+],
+"note": ""
+},
+{
+"id": "b2-pursue",
+"word": "pursue",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"peşinden gitmek",
+"sürdürmek"
+],
+"example_en": "I want to pursue a career in medicine.",
+"example_tr": "Tıp alanında bir kariyer yapmak istiyorum."
+}
+],
+"note": ""
+},
+{
+"id": "b2-willing",
+"word": "willing",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"istekli",
+"gönüllü"
+],
+"example_en": "Are you willing to help us?",
+"example_tr": "Bize yardım etmeye istekli misin?"
+}
+],
+"note": ""
+},
+{
+"id": "b2-frustrated",
+"word": "frustrated",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"hüsrana uğramış",
+"sinir olmuş"
+],
+"example_en": "I felt frustrated when I failed the exam.",
+"example_tr": "Sınavda başarısız olduğumda hüsrana uğradım."
+}
+],
+"note": ""
+},
+{
+"id": "b2-ashamed",
+"word": "ashamed",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"utanmış",
+"mahcup"
+],
+"example_en": "You should be ashamed of yourself.",
+"example_tr": "Kendinden utanmalısın."
+}
+],
+"note": ""
+},
+{
+"id": "b2-grateful",
+"word": "grateful",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"minnettar"
+],
+"example_en": "I am grateful for your support.",
+"example_tr": "Desteğinize minnettarım."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "b2-p-cant-help",
+"text": "I can't help…ing.",
+"tr": "...-maktan alıkoyamam.",
+"example_en": "I can't help laughing.",
+"example_tr": "Gülmekten kendimi alamıyorum.",
+"note": ""
+},
+{
+"id": "b2-p-two-minds",
+"text": "I'm in two minds about…",
+"tr": "... konusunda kararsızım.",
+"example_en": "I'm in two minds about this job.",
+"example_tr": "Bu iş konusunda kararsızım.",
+"note": ""
+},
+{
+"id": "b2-p-keep-calm",
+"text": "Keep calm.",
+"tr": "Sakin ol.",
+"example_en": "You must keep calm.",
+"example_tr": "Sakin olmalısın.",
+"note": ""
+},
+{
+"id": "b2-p-couldnt-care",
+"text": "I couldn't care less.",
+"tr": "Hiç umurumda değil.",
+"example_en": "I couldn't care less about his opinion.",
+"example_tr": "Onun fikri hiç umurumda değil.",
+"note": ""
+},
+{
+"id": "b2-p-not-like-me",
+"text": "It's not like me to…",
+"tr": "... yapmak huyum değildir.",
+"example_en": "It's not like me to be late.",
+"example_tr": "Geç kalmak huyum değildir.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "b2-mind-1",
+"title": "Zor Bir Karar",
+"names": [
+"Ahmet",
+"Zeynep",
+"London"
+],
+"lines": [
+{
+"en": "Ahmet has a new job offer from London.",
+"tr": "Ahmet'in Londra'dan yeni bir iş teklifi var."
+},
+{
+"en": "I am in two minds about it, Zeynep. I feel anxious.",
+"tr": "Bu konuda kararsızım Zeynep. Kaygılı hissediyorum."
+},
+{
+"en": "Why do you hesitate? It is a great opportunity.",
+"tr": "Neden tereddüt ediyorsun? Bu harika bir fırsat."
+},
+{
+"en": "I am reluctant to leave my family. I might not adapt.",
+"tr": "Ailemi bırakmaya gönülsüzüm. Uyum sağlayamayabilirim."
+},
+{
+"en": "Keep calm. I will try to convince you. You are determined enough to succeed.",
+"tr": "Sakin ol. Seni ikna etmeye çalışacağım. Başaracak kadar kararlısın."
+},
+{
+"en": "I see what you mean, but I am still vulnerable.",
+"tr": "Ne demek istediğini anlıyorum ama hâlâ savunmasızım."
+}
+]
+},
+{
+"id": "b2-mind-2",
+"title": "Havalimanında",
+"names": [
+"Sarah",
+"Ali"
+],
+"lines": [
+{
+"en": "Sarah and Ali are at the airport. Their flight is delayed.",
+"tr": "Sarah ve Ali havalimanındalar. Uçuşları gecikti."
+},
+{
+"en": "I am so frustrated! I anticipate a long wait.",
+"tr": "Çok sinirliyim! Uzun bir bekleyiş öngörüyorum."
+},
+{
+"en": "You should keep calm. We can cope with this.",
+"tr": "Sakin olmalısın. Bununla başa çıkabiliriz."
+},
+{
+"en": "I couldn't care less about the delay. I just want to sleep.",
+"tr": "Gecikme hiç umurumda değil. Sadece uyumak istiyorum."
+},
+{
+"en": "It's not like me to complain, but I am very tired.",
+"tr": "Şikayet etmek huyum değildir ama çok yorgunum."
+},
+{
+"en": "I think they will not abandon us here.",
+"tr": "Sanırım bizi burada terk etmeyecekler."
+}
+]
+},
+{
+"id": "b2-mind-3",
+"title": "Hassas Bir Konu",
+"names": [
+"Murat",
+"Emma"
+],
+"lines": [
+{
+"en": "Emma is angry because Murat ignored her message.",
+"tr": "Emma kızgın çünkü Murat mesajını görmezden geldi."
+},
+{
+"en": "Why did you ignore my message?",
+"tr": "Mesajımı neden görmezden geldin?"
+},
+{
+"en": "I am ashamed. I forgot to answer.",
+"tr": "Utanıyorum. Cevap vermeyi unuttum."
+},
+{
+"en": "You are always so stubborn! You never apologize!",
+"tr": "Her zaman çok inatçısın! Hiç özür dilemiyorsun!"
+},
+{
+"en": "Please be tolerant. I did not want to hurt you.",
+"tr": "Lütfen hoşgörülü ol. Seni kırmak istemedim."
+},
+{
+"en": "I can't help feeling upset. I am very sensitive.",
+"tr": "Üzülmekten kendimi alamıyorum. Çok hassasım."
+}
+]
+},
+{
+"id": "b2-mind-4",
+"title": "Kariyer Hedefi",
+"names": [
+"David",
+"Hasan"
+],
+"lines": [
+{
+"en": "David wants to pursue a career in music.",
+"tr": "David müzik alanında bir kariyer yapmak istiyor."
+},
+{
+"en": "Are you willing to work hard? It is not easy.",
+"tr": "Çok çalışmaya istekli misin? Bu kolay değil."
+},
+{
+"en": "I am determined. I will overcome any problem.",
+"tr": "Kararlıyım. Her türlü sorunun üstesinden geleceğim."
+},
+{
+"en": "It seems to me that you need a lot of money.",
+"tr": "Bana öyle geliyor ki çok paraya ihtiyacın var."
+},
+{
+"en": "That's a fair point. But my parents are grateful for my success.",
+"tr": "Bu haklı bir nokta. Ama ailem başarıma minnettar."
+},
+{
+"en": "I hope you succeed. You have a good temper.",
+"tr": "Umarım başarırsın. İyi bir huyun var."
+}
+]
+},
+{
+"id": "b2-mind-5",
+"title": "Yeni Bilgisayar",
+"names": [
+"Lisa",
+"Burak"
+],
+"lines": [
+{
+"en": "Burak wants to buy a new computer.",
+"tr": "Burak yeni bir bilgisayar almak istiyor."
+},
+{
+"en": "I am trying to persuade my boss to give me a loan.",
+"tr": "Patronumu bana kredi vermesi için ikna etmeye çalışıyorum."
+},
+{
+"en": "I see what you mean, but it is unlikely.",
+"tr": "Ne demek istediğini anlıyorum ama bu pek olası değil."
+},
+{
+"en": "I will attempt to convince her tomorrow.",
+"tr": "Yarın onu ikna etmeyi deneyeceğim."
+},
+{
+"en": "If you are polite, she might be tolerant.",
+"tr": "Kibar olursan, hoşgörülü olabilir."
+},
+{
+"en": "I couldn't care less if she refuses. I will save money.",
+"tr": "Reddederse hiç umurumda olmaz. Para biriktireceğim."
+}
+]
+}
+]
+}

@@ -1,0 +1,498 @@
+{
+"id": "b2-bridge",
+"level": "B2",
+"title": "Geriye bakış",
+"placement": "last",
+"goal": "Geçmişe dair varsayımlar ve sonuçları (If I had…, I would be…), vurgu yapıları (What I need is…, Not only…) kullanarak bir hayat dönemecini anlatır; C1'e köprü.",
+"words": [
+{
+"id": "b2-ultimately",
+"word": "ultimately",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"sonuçta",
+"en nihayetinde"
+],
+"example_en": "Ultimately, I would rather work from home.",
+"example_tr": "Sonuçta evden çalışmayı tercih ederim."
+}
+],
+"note": ""
+},
+{
+"id": "b2-hindsight",
+"word": "hindsight",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sonradan anlama"
+],
+"example_en": "With hindsight, it was a dramatic mistake.",
+"example_tr": "Sonradan bakınca çarpıcı bir hataydı."
+}
+],
+"note": "Genelde 'with hindsight' (sonradan bakınca) olarak kullanılır."
+},
+{
+"id": "b2-perspective",
+"word": "perspective",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"bakış açısı"
+],
+"example_en": "Travelling abroad changes your perspective.",
+"example_tr": "Yurtdışına çıkmak bakış açınızı değiştirir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-speculate",
+"word": "speculate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"tahminde bulunmak",
+"kafa yormak"
+],
+"example_en": "I don't want to speculate about her future.",
+"example_tr": "Geleceği hakkında tahminde bulunmak istemiyorum."
+}
+],
+"note": ""
+},
+{
+"id": "b2-alternative",
+"word": "alternative",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"alternatif",
+"seçenek"
+],
+"example_en": "We had no alternative but to cancel the meeting.",
+"example_tr": "Toplantıyı iptal etmekten başka seçeneğimiz yoktu."
+},
+{
+"pos": "adj",
+"tr": [
+"alternatif"
+],
+"example_en": "We must find alternative energy sources.",
+"example_tr": "Alternatif enerji kaynakları bulmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b2-circumstance",
+"word": "circumstance",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"durum",
+"koşul"
+],
+"example_en": "I wouldn't accept this job in any circumstance.",
+"example_tr": "Hiçbir koşulda bu işi kabul etmezdim."
+}
+],
+"note": ""
+},
+{
+"id": "b2-unexpected",
+"word": "unexpected",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"beklenmedik"
+],
+"example_en": "It was an unexpected event for everyone.",
+"example_tr": "Herkes için beklenmedik bir olaydı."
+}
+],
+"note": ""
+},
+{
+"id": "b2-overwhelming",
+"word": "overwhelming",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"bunaltıcı",
+"ezici"
+],
+"example_en": "The support from the community was overwhelming.",
+"example_tr": "Toplumun desteği muazzamdı."
+}
+],
+"note": ""
+},
+{
+"id": "b2-regardless",
+"word": "regardless",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"her şeye rağmen"
+],
+"example_en": "I'll go to the concert regardless of the weather.",
+"example_tr": "Havaya rağmen konsere gideceğim."
+}
+],
+"note": ""
+},
+{
+"id": "b2-presumably",
+"word": "presumably",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"muhtemelen",
+"galiba"
+],
+"example_en": "Presumably, he will arrive at the airport late.",
+"example_tr": "Muhtemelen havalimanına geç varacak."
+}
+],
+"note": ""
+},
+{
+"id": "b2-decisive",
+"word": "decisive",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"belirleyici",
+"kararlı"
+],
+"example_en": "That goal was the decisive moment of the game.",
+"example_tr": "O gol maçın belirleyici anıydı."
+}
+],
+"note": ""
+},
+{
+"id": "b2-irreversible",
+"word": "irreversible",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"geri döndürülemez"
+],
+"example_en": "Climate change may cause irreversible damage.",
+"example_tr": "İklim değişikliği geri döndürülemez hasara yol açabilir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-reluctantly",
+"word": "reluctantly",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"isteksizce"
+],
+"example_en": "She reluctantly agreed to help her flatmate.",
+"example_tr": "Ev arkadaşına yardım etmeyi isteksizce kabul etti."
+}
+],
+"note": ""
+},
+{
+"id": "b2-afterwards",
+"word": "afterwards",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"sonradan",
+"daha sonra"
+],
+"example_en": "We had dinner and watched a film afterwards.",
+"example_tr": "Akşam yemeği yedik ve sonrasında film izledik."
+}
+],
+"note": ""
+},
+{
+"id": "b2-dramatic",
+"word": "dramatic",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"çarpıcı",
+"dramatik"
+],
+"example_en": "There was a dramatic shift in his attitude.",
+"example_tr": "Tavrında çarpıcı bir değişim vardı."
+}
+],
+"note": ""
+},
+{
+"id": "b2-transform",
+"word": "transform",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"dönüştürmek"
+],
+"example_en": "The internet has transformed our society.",
+"example_tr": "İnternet toplumumuzu dönüştürdü."
+}
+],
+"note": ""
+},
+{
+"id": "b2-shift",
+"word": "shift",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"değişim"
+],
+"example_en": "I noticed a significant shift in his behaviour.",
+"example_tr": "Davranışlarında belirgin bir değişim fark ettim."
+},
+{
+"pos": "v",
+"tr": [
+"değişmek",
+"değiştirmek"
+],
+"example_en": "Public opinion has shifted recently.",
+"example_tr": "Kamuoyu son zamanlarda değişti."
+}
+],
+"note": ""
+},
+{
+"id": "b2-milestone",
+"word": "milestone",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"dönüm noktası"
+],
+"example_en": "Graduating from university is a huge milestone.",
+"example_tr": "Üniversiteden mezun olmak büyük bir dönüm noktası."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "b2-p-if-i-had-known",
+"text": "If I had known…",
+"tr": "Keşke bilseydim…",
+"example_en": "If I had known, I would be there now.",
+"example_tr": "Bilseydim, şu an orada olurdum.",
+"note": ""
+},
+{
+"id": "b2-p-what-i-really-need",
+"text": "What I really need is…",
+"tr": "Gerçekten ihtiyacım olan…",
+"example_en": "What I really need is a long holiday.",
+"example_tr": "Gerçekten ihtiyacım olan şey uzun bir tatil.",
+"note": ""
+},
+{
+"id": "b2-p-not-only",
+"text": "Not only…, but also…",
+"tr": "Sadece… değil, ayrıca…",
+"example_en": "Not only is he smart, but also very polite.",
+"example_tr": "Sadece zeki değil, aynı zamanda çok kibar.",
+"note": ""
+},
+{
+"id": "b2-p-id-rather",
+"text": "I'd rather…",
+"tr": "… yapmayı tercih ederim",
+"example_en": "I'd rather stay at home tonight.",
+"example_tr": "Bu gece evde kalmayı tercih ederim.",
+"note": ""
+},
+{
+"id": "b2-p-looking-back",
+"text": "Looking back,…",
+"tr": "Geriye dönüp bakınca,…",
+"example_en": "Looking back, I should have listened to you.",
+"example_tr": "Geriye dönüp bakınca seni dinlemeliydim.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "b2-bridge-1",
+"title": "Büyük bir adım",
+"names": [
+"Kemal",
+"Zeynep"
+],
+"lines": [
+{
+"en": "Moving to a new country was a milestone for Kemal.",
+"tr": "Yeni bir ülkeye taşınmak Kemal için bir dönüm noktasıydı."
+},
+{
+"en": "Looking back, it was the best decision of his life.",
+"tr": "Geriye dönüp bakınca, hayatının en iyi kararıydı."
+},
+{
+"en": "His friend Zeynep was surprised by this dramatic shift.",
+"tr": "Arkadaşı Zeynep bu çarpıcı değişime şaşırmıştı."
+},
+{
+"en": "If I had known you were so brave, I would be less worried.",
+"tr": "Bu kadar cesur olduğunu bilseydim, daha az endişelenirdim."
+},
+{
+"en": "What I really need is your support, not your worry.",
+"tr": "Gerçekten ihtiyacım olan şey endişen değil, desteğin."
+}
+]
+},
+{
+"id": "b2-bridge-2",
+"title": "Beklenmedik bir fırsat",
+"names": [
+"Leyla"
+],
+"lines": [
+{
+"en": "Leyla got an unexpected job offer yesterday.",
+"tr": "Leyla dün beklenmedik bir iş teklifi aldı."
+},
+{
+"en": "She reluctantly left her old company afterwards.",
+"tr": "Sonrasında isteksizce eski şirketinden ayrıldı."
+},
+{
+"en": "The responsibility of the new role is overwhelming.",
+"tr": "Yeni rolün sorumluluğu bunaltıcı."
+},
+{
+"en": "However, it will transform her career completely.",
+"tr": "Ancak, kariyerini tamamen dönüştürecek."
+},
+{
+"en": "She will succeed regardless of the difficult circumstances.",
+"tr": "Zor koşullara rağmen başarılı olacak."
+}
+]
+},
+{
+"id": "b2-bridge-3",
+"title": "Karar anı",
+"names": [
+"Tariq",
+"Ahmet"
+],
+"lines": [
+{
+"en": "Did you choose your university degree yet, Ahmet?",
+"tr": "Üniversite bölümünü seçtin mi Ahmet?"
+},
+{
+"en": "Not yet. It is a decisive moment for my future.",
+"tr": "Henüz değil. Geleceğim için belirleyici bir an."
+},
+{
+"en": "I'd rather take some time than make an irreversible mistake.",
+"tr": "Geri döndürülemez bir hata yapmaktansa biraz zaman ayırmayı tercih ederim."
+},
+{
+"en": "With hindsight, I chose my degree too fast.",
+"tr": "Sonradan bakınca, bölümümü çok hızlı seçmiştim."
+},
+{
+"en": "Not only is it hard, but also quite expensive.",
+"tr": "Sadece zor değil, aynı zamanda oldukça pahalı."
+}
+]
+},
+{
+"id": "b2-bridge-4",
+"title": "Farklı bakış açıları",
+"names": [
+"Sarah",
+"Murat"
+],
+"lines": [
+{
+"en": "People tend to ignore the importance of perspective.",
+"tr": "İnsanlar bakış açısının önemini görmezden gelme eğilimindedir."
+},
+{
+"en": "Murat, what do you think about the new policy?",
+"tr": "Murat, yeni politika hakkında ne düşünüyorsun?"
+},
+{
+"en": "It is hard to speculate without sufficient data.",
+"tr": "Yeterli veri olmadan tahminde bulunmak zor."
+},
+{
+"en": "Presumably, they will announce the alternative soon.",
+"tr": "Muhtemelen yakında alternatifi duyuracaklar."
+},
+{
+"en": "Ultimately, the voters will decide the outcome.",
+"tr": "Sonuçta, sonuca seçmenler karar verecek."
+}
+]
+},
+{
+"id": "b2-bridge-5",
+"title": "Çevre için mücadele",
+"names": [
+"Defne",
+"London"
+],
+"lines": [
+{
+"en": "Defne joined an environmental campaign in London.",
+"tr": "Defne Londra'da çevreci bir kampanyaya katıldı."
+},
+{
+"en": "Not only does she protest, but also writes articles.",
+"tr": "Sadece protesto etmiyor, aynı zamanda makaleler de yazıyor."
+},
+{
+"en": "The threat of climate change requires immediate action.",
+"tr": "İklim değişikliği tehdidi acil eylem gerektiriyor."
+},
+{
+"en": "If we ignore it, the disaster will be inevitable.",
+"tr": "Bunu görmezden gelirsek felaket kaçınılmaz olacak."
+},
+{
+"en": "What I really need is more people to join us.",
+"tr": "Gerçekten ihtiyacım olan şey, daha fazla insanın bize katılması."
+}
+]
+}
+]
+}

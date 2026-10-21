@@ -1,0 +1,544 @@
+{
+  "id": "b2-medicine",
+  "level": "B2",
+  "title": "Tıp",
+  "placement": "any",
+  "goal": "Bir hastalığı, tanısını ve tedavisini anlatır, önleyici sağlık önerileri verir, sağlık sistemini tartışır.",
+  "words": [
+    {
+      "id": "b2-disease",
+      "word": "disease",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hastalık"
+          ],
+          "example_en": "This disease is very dangerous.",
+          "example_tr": "Bu hastalık çok tehlikeli."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-infection",
+      "word": "infection",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "enfeksiyon"
+          ],
+          "example_en": "The doctor treated the infection.",
+          "example_tr": "Doktor enfeksiyonu tedavi etti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-vaccine",
+      "word": "vaccine",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "aşı"
+          ],
+          "example_en": "We need a new vaccine for this.",
+          "example_tr": "Bunun için yeni bir aşıya ihtiyacımız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-therapy",
+      "word": "therapy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "terapi",
+            "tedavi"
+          ],
+          "example_en": "She started therapy recently.",
+          "example_tr": "Yakın zamanda terapiye başladı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-chronic",
+      "word": "chronic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kronik"
+          ],
+          "example_en": "He suffers from a chronic disease.",
+          "example_tr": "Kronik bir hastalığı var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-diagnosis",
+      "word": "diagnosis",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "teşhis",
+            "tanı"
+          ],
+          "example_en": "An accurate diagnosis is essential.",
+          "example_tr": "Doğru teşhis koymak şarttır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-cure",
+      "word": "cure",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tedavi",
+            "çare"
+          ],
+          "example_en": "There is no genuine cure for this.",
+          "example_tr": "Bunun gerçek bir tedavisi yok."
+        },
+        {
+          "pos": "v",
+          "tr": [
+            "iyileştirmek"
+          ],
+          "example_en": "The new medicine will cure him.",
+          "example_tr": "Yeni ilaç onu iyileştirecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-prevent",
+      "word": "prevent",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "önlemek",
+            "engel olmak"
+          ],
+          "example_en": "A healthy diet can prevent cancer.",
+          "example_tr": "Sağlıklı beslenme kanseri önleyebilir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-undergo",
+      "word": "undergo",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "geçirmek",
+            "maruz kalmak"
+          ],
+          "example_en": "He will undergo surgery tomorrow.",
+          "example_tr": "Yarın ameliyat olacak."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-surgery",
+      "word": "surgery",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ameliyat",
+            "cerrahi"
+          ],
+          "example_en": "The surgery was a great success.",
+          "example_tr": "Ameliyat çok başarılı geçti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-immune",
+      "word": "immune",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "bağışık"
+          ],
+          "example_en": "You are now immune to the disease.",
+          "example_tr": "Artık hastalığa karşı bağışıksın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-heal",
+      "word": "heal",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "iyileşmek",
+            "iyileştirmek"
+          ],
+          "example_en": "His injured leg will heal soon.",
+          "example_tr": "Yaralı bacağı yakında iyileşecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-organ",
+      "word": "organ",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "organ"
+          ],
+          "example_en": "The stomach is an important organ.",
+          "example_tr": "Mide önemli bir organdır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-cancer",
+      "word": "cancer",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kanser"
+          ],
+          "example_en": "My grandfather had cancer.",
+          "example_tr": "Dedem kanserdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-obesity",
+      "word": "obesity",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "obezite"
+          ],
+          "example_en": "Obesity is a significant issue.",
+          "example_tr": "Obezite önemli bir sorundur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-nutrition",
+      "word": "nutrition",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "beslenme"
+          ],
+          "example_en": "Good nutrition is essential.",
+          "example_tr": "İyi beslenme şarttır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-addiction",
+      "word": "addiction",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bağımlılık"
+          ],
+          "example_en": "Sugar addiction is a big problem.",
+          "example_tr": "Şeker bağımlılığı büyük bir sorundur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-consult",
+      "word": "consult",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "danışmak",
+            "başvurmak"
+          ],
+          "example_en": "You should consult a doctor.",
+          "example_tr": "Bir doktora danışmalısın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-inherit",
+      "word": "inherit",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "miras almak",
+            "genetik geçmek"
+          ],
+          "example_en": "She inherited the allergy.",
+          "example_tr": "Alerji ona genetik geçti."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-allergy",
+      "word": "allergy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "alerji"
+          ],
+          "example_en": "I have an allergy to milk.",
+          "example_tr": "Süte alerjim var."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b2-p-prevention",
+      "text": "Prevention is better than…",
+      "tr": "Önlemek iyileştirmekten…",
+      "example_en": "Prevention is better than cure.",
+      "example_tr": "Önlemek iyileştirmekten iyidir.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-under-weather",
+      "text": "…under the weather.",
+      "tr": "…keyifsiz hissetmek.",
+      "example_en": "I've been feeling under the weather.",
+      "example_tr": "Kendimi biraz keyifsiz hissediyorum.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-runs-family",
+      "text": "It runs in the family.",
+      "tr": "Aileden geliyor.",
+      "example_en": "It runs in the family. – I see.",
+      "example_tr": "Bizde aileden geliyor. – Anlıyorum.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-on-mend",
+      "text": "…on the mend.",
+      "tr": "…iyileşme yolunda.",
+      "example_en": "He's on the mend.",
+      "example_tr": "O iyileşme yolunda.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-fresh-air",
+      "text": "Get some fresh air.",
+      "tr": "Biraz temiz hava al.",
+      "example_en": "Get some fresh air. – Ok.",
+      "example_tr": "Biraz temiz hava al. – Tamam.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b2-medicine-1",
+      "title": "Doktor Ziyareti",
+      "names": [
+        "Zeynep",
+        "Smith"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep feels ill and visits Dr. Smith.",
+          "tr": "Zeynep hasta hissediyor ve Dr. Smith'i ziyaret ediyor."
+        },
+        {
+          "en": "I've been feeling under the weather.",
+          "tr": "Kendimi keyifsiz hissediyorum."
+        },
+        {
+          "en": "We need an accurate diagnosis.",
+          "tr": "Doğru bir teşhise ihtiyacımız var."
+        },
+        {
+          "en": "Is it a chronic disease?",
+          "tr": "Kronik bir hastalık mı?"
+        },
+        {
+          "en": "No, it is just a small infection.",
+          "tr": "Hayır, sadece küçük bir enfeksiyon."
+        },
+        {
+          "en": "Will I undergo surgery?",
+          "tr": "Ameliyat olacak mıyım?"
+        },
+        {
+          "en": "No. Just get some fresh air.",
+          "tr": "Hayır. Sadece biraz temiz hava al."
+        }
+      ]
+    },
+    {
+      "id": "b2-medicine-2",
+      "title": "Genetik Alerji",
+      "names": [
+        "Ali",
+        "Hasan"
+      ],
+      "lines": [
+        {
+          "en": "I have a bad allergy to milk.",
+          "tr": "Süte karşı kötü bir alerjim var."
+        },
+        {
+          "en": "Really? My son has it too.",
+          "tr": "Gerçekten mi? Oğlumda da var."
+        },
+        {
+          "en": "It runs in the family. We inherited it.",
+          "tr": "Bizde aileden geliyor. Bize genetik geçti."
+        },
+        {
+          "en": "Does it require therapy?",
+          "tr": "Terapi gerektiriyor mu?"
+        },
+        {
+          "en": "No, I merely avoid milk.",
+          "tr": "Hayır, sadece sütten uzak duruyorum."
+        },
+        {
+          "en": "Prevention is better than cure.",
+          "tr": "Önlemek tedavi etmekten iyidir."
+        }
+      ]
+    },
+    {
+      "id": "b2-medicine-3",
+      "title": "İyileşme Süreci",
+      "names": [
+        "Ayşe",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Ayşe had cancer, but she is better now.",
+          "tr": "Ayşe kanserdi ama şimdi daha iyi."
+        },
+        {
+          "en": "A friend visits Ayşe in London.",
+          "tr": "Bir arkadaşı Londra'da Ayşe'yi ziyaret ediyor."
+        },
+        {
+          "en": "You look very healthy today.",
+          "tr": "Bugün çok sağlıklı görünüyorsun."
+        },
+        {
+          "en": "Yes, I'm on the mend.",
+          "tr": "Evet, iyileşme yolundayım."
+        },
+        {
+          "en": "Did the new medicine heal you?",
+          "tr": "Yeni ilaç mı seni iyileştirdi?"
+        },
+        {
+          "en": "Yes, it is a genuine cure.",
+          "tr": "Evet, gerçek bir çare oldu."
+        }
+      ]
+    },
+    {
+      "id": "b2-medicine-4",
+      "title": "Sağlıklı Yaşam",
+      "names": [
+        "Burak",
+        "David"
+      ],
+      "lines": [
+        {
+          "en": "Obesity is a significant problem today.",
+          "tr": "Obezite günümüzde önemli bir sorun."
+        },
+        {
+          "en": "I see what you mean, but why?",
+          "tr": "Ne demek istediğini anlıyorum, ama neden?"
+        },
+        {
+          "en": "It's sugar addiction.",
+          "tr": "Sebep şeker bağımlılığı."
+        },
+        {
+          "en": "We must improve our diets.",
+          "tr": "Diyetlerimizi geliştirmeliyiz."
+        },
+        {
+          "en": "Yes, good nutrition can prevent diseases.",
+          "tr": "Evet, iyi beslenme hastalıkları önleyebilir."
+        }
+      ]
+    },
+    {
+      "id": "b2-medicine-5",
+      "title": "Organ ve Aşı",
+      "names": [
+        "Brown",
+        "Lisa"
+      ],
+      "lines": [
+        {
+          "en": "The stomach is an important organ.",
+          "tr": "Mide önemli bir organdır."
+        },
+        {
+          "en": "Do I need to undergo surgery?",
+          "tr": "Ameliyat olmam gerekiyor mu?"
+        },
+        {
+          "en": "No, you merely need a vaccine.",
+          "tr": "Hayır, sadece bir aşıya ihtiyacınız var."
+        },
+        {
+          "en": "Will it make me immune?",
+          "tr": "Beni bağışık yapacak mı?"
+        },
+        {
+          "en": "Yes. Are you feeling well?",
+          "tr": "Evet. Kendinizi iyi hissediyor musunuz?"
+        },
+        {
+          "en": "No, I've been feeling under the weather.",
+          "tr": "Hayır, kendimi keyifsiz hissediyorum."
+        },
+        {
+          "en": "You must consult me again later.",
+          "tr": "Daha sonra bana tekrar danışmalısınız."
+        }
+      ]
+    }
+  ]
+}

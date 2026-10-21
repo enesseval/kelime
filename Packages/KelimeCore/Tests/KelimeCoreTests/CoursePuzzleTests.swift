@@ -56,7 +56,7 @@ struct CoursePuzzleTests {
     @Test func levelsWithoutUnitsKeepNoGrid() throws {
         let db = try makeDatabase()
         try db.writer.write { db in
-            try Preferences(level: .b2).save(db)
+            try Preferences(level: .c1).save(db)
             try CoursePuzzle.keepToday(clock: clock, db: db)
         }
         #expect(try db.reader.read { db in try PuzzleProgress.fetchCount(db) } == 0)

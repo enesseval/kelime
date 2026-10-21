@@ -1,0 +1,78 @@
+{
+"id": "b2-academic",
+"level": "B2",
+"title": "Akademik hayat",
+"placement": "any",
+"goal": "Bir dersi, ödevi ve sınav sürecini anlatır, bir konuyu özetler ve örnekle açıklar, akademik dürüstlüğü tartışır.",
+"words": [
+{"id": "b2-academic", "word": "academic", "senses": [{"pos": "adj", "tr": ["akademik"], "example_en": "She has a great academic career.", "example_tr": "Harika bir akademik kariyeri var."}], "note": ""},
+{"id": "b2-thesis", "word": "thesis", "senses": [{"pos": "n", "tr": ["tez"], "example_en": "I must finish my thesis soon.", "example_tr": "Tezimi yakında bitirmeliyim."}], "note": ""},
+{"id": "b2-lecture", "word": "lecture", "senses": [{"pos": "n", "tr": ["ders", "konferans"], "example_en": "The lecture was very long.", "example_tr": "Ders çok uzundu."}], "note": ""},
+{"id": "b2-seminar", "word": "seminar", "senses": [{"pos": "n", "tr": ["seminer"], "example_en": "I will attend a seminar today.", "example_tr": "Bugün bir seminere katılacağım."}], "note": ""},
+{"id": "b2-scholarship", "word": "scholarship", "senses": [{"pos": "n", "tr": ["burs"], "example_en": "Did you get a scholarship?", "example_tr": "Burs aldın mı?"}], "note": ""},
+{"id": "b2-curriculum", "word": "curriculum", "senses": [{"pos": "n", "tr": ["müfredat"], "example_en": "The new curriculum is difficult.", "example_tr": "Yeni müfredat zor."}], "note": ""},
+{"id": "b2-assessment", "word": "assessment", "senses": [{"pos": "n", "tr": ["değerlendirme"], "example_en": "The assessment was hard.", "example_tr": "Değerlendirme zordu."}], "note": ""},
+{"id": "b2-essay", "word": "essay", "senses": [{"pos": "n", "tr": ["makale", "deneme"], "example_en": "My essay is almost ready.", "example_tr": "Makalem neredeyse hazır."}], "note": ""},
+{"id": "b2-tuition", "word": "tuition", "senses": [{"pos": "n", "tr": ["okul ücreti", "harç"], "example_en": "Tuition is expensive here.", "example_tr": "Burada okul ücreti pahalı."}], "note": ""},
+{"id": "b2-discipline", "word": "discipline", "senses": [{"pos": "n", "tr": ["disiplin"], "example_en": "You need discipline to succeed.", "example_tr": "Başarmak için disipline ihtiyacın var."}], "note": ""},
+{"id": "b2-concept", "word": "concept", "senses": [{"pos": "n", "tr": ["kavram", "konsept"], "example_en": "This is a difficult concept.", "example_tr": "Bu zor bir kavram."}], "note": ""},
+{"id": "b2-summarize", "word": "summarize", "senses": [{"pos": "v", "tr": ["özetlemek"], "example_en": "Can you summarize the story?", "example_tr": "Hikayeyi özetleyebilir misin?"}], "note": ""},
+{"id": "b2-critical", "word": "critical", "senses": [{"pos": "adj", "tr": ["eleştirel", "kritik"], "example_en": "It is a critical decision.", "example_tr": "Bu kritik bir karar."}], "note": ""},
+{"id": "b2-evaluate", "word": "evaluate", "senses": [{"pos": "v", "tr": ["değerlendirmek"], "example_en": "We must evaluate the results.", "example_tr": "Sonuçları değerlendirmeliyiz."}], "note": ""},
+{"id": "b2-emphasize", "word": "emphasize", "senses": [{"pos": "v", "tr": ["vurgulamak"], "example_en": "I must emphasize this rule.", "example_tr": "Bu kuralı vurgulamalıyım."}], "note": ""},
+{"id": "b2-plagiarism", "word": "plagiarism", "senses": [{"pos": "n", "tr": ["intihal", "aşırma"], "example_en": "Plagiarism is a big mistake.", "example_tr": "İntihal büyük bir hatadır."}], "note": ""},
+{"id": "b2-campus", "word": "campus", "senses": [{"pos": "n", "tr": ["kampüs", "yerleşke"], "example_en": "The campus is very green.", "example_tr": "Kampüs çok yeşil."}], "note": ""},
+{"id": "b2-reference", "word": "reference", "senses": [{"pos": "n", "tr": ["referans", "kaynak"], "example_en": "You must include a reference.", "example_tr": "Bir referans eklemelisin."}], "note": ""},
+{"id": "b2-assignment", "word": "assignment", "senses": [{"pos": "n", "tr": ["ödev", "görev"], "example_en": "Did you finish the assignment?", "example_tr": "Ödevi bitirdin mi?"}], "note": ""},
+{"id": "b2-faculty", "word": "faculty", "senses": [{"pos": "n", "tr": ["fakülte", "öğretim üyeleri"], "example_en": "The faculty is very good.", "example_tr": "Fakülte çok iyi."}], "note": ""}
+],
+"phrases": [
+{"id": "b2-p-to-sum-up", "text": "To sum up…", "tr": "Özetle…", "example_en": "To sum up, we need more time.", "example_tr": "Özetle, daha fazla zamana ihtiyacımız var.", "note": ""},
+{"id": "b2-p-let-me-give", "text": "Let me give you an example.", "tr": "Size bir örnek vereyim.", "example_en": "Let me give you an example.", "example_tr": "Sana bir örnek vereyim.", "note": ""},
+{"id": "b2-p-raises-question", "text": "This raises the question of…", "tr": "Bu, … sorusunu akla getiriyor.", "example_en": "This raises the question of money.", "example_tr": "Bu, para konusunu akla getiriyor.", "note": ""},
+{"id": "b2-p-on-top-of", "text": "On top of that…", "tr": "Bunun da ötesinde…", "example_en": "On top of that, I am tired.", "example_tr": "Üstelik bir de yorgunum.", "note": ""},
+{"id": "b2-p-correct-me", "text": "Correct me if I'm wrong.", "tr": "Yanılıyorsam düzeltin.", "example_en": "Correct me if I'm wrong.", "example_tr": "Yanlışım varsa düzelt.", "note": ""}
+],
+"stories": [
+{"id": "b2-academic-1", "title": "Burs ve Eğitim", "names": ["Ozan", "London", "English"], "lines": [
+{"en": "Ozan is a student in London. He studies English.", "tr": "Ozan Londra'da bir öğrenci. İngilizce çalışıyor."},
+{"en": "Did you get a scholarship?", "tr": "Burs aldın mı?"},
+{"en": "Yes! Tuition is very expensive here. The scholarship is essential.", "tr": "Evet! Burada okul ücreti çok pahalı. Burs şart."},
+{"en": "That's a fair point. Do you like the curriculum?", "tr": "Haklısın. Müfredatı seviyor musun?"},
+{"en": "It is difficult, but I try to keep my discipline.", "tr": "Zor ama disiplinimi korumaya çalışıyorum."},
+{"en": "I want to emphasize that you are very clever.", "tr": "Çok zeki olduğunu vurgulamak isterim."}
+]},
+{"id": "b2-academic-2", "title": "Uzun Bir Seminer", "names": ["Zeynep", "Ali"], "lines": [
+{"en": "Zeynep and Ali are on campus.", "tr": "Zeynep ve Ali kampüsteler."},
+{"en": "Are you ready for the seminar?", "tr": "Seminer için hazır mısın?"},
+{"en": "Not really. The last lecture was so boring.", "tr": "Pek sayılmaz. Geçen ders çok sıkıcıydı."},
+{"en": "I see what you mean, but this concept is important.", "tr": "Ne demek istediğini anlıyorum ama bu kavram önemli."},
+{"en": "On top of that, we have a big assessment tomorrow.", "tr": "Üstelik yarın büyük bir değerlendirmemiz var."},
+{"en": "Correct me if I'm wrong. The exam is in the morning, right?", "tr": "Yanlışım varsa düzelt. Sınav sabah, değil mi?"}
+]},
+{"id": "b2-academic-3", "title": "Ödev Zamanı", "names": ["Cem", "Elif"], "lines": [
+{"en": "Cem is at the university library.", "tr": "Cem üniversite kütüphanesinde."},
+{"en": "My assignment is quite difficult. I must evaluate this article.", "tr": "Ödevim oldukça zor. Bu makaleyi değerlendirmeliyim."},
+{"en": "Let me give you an example. You can summarize the first part.", "tr": "Sana bir örnek vereyim. İlk kısmı özetleyebilirsin."},
+{"en": "This raises the question of plagiarism.", "tr": "Bu, intihal sorununu akla getiriyor."},
+{"en": "Yes. You must include a reference for every source.", "tr": "Evet. Her kaynak için bir referans eklemelisin."},
+{"en": "To sum up, I have a lot of work to do.", "tr": "Özetle, yapacak çok işim var."}
+]},
+{"id": "b2-academic-4", "title": "Tez Teslimi", "names": ["Ayşe", "David"], "lines": [
+{"en": "Ayşe talks to David.", "tr": "Ayşe David ile konuşuyor."},
+{"en": "I finally finished my thesis!", "tr": "Sonunda tezimi bitirdim!"},
+{"en": "That is great news. The faculty will review it soon.", "tr": "Bu harika bir haber. Fakülte yakında inceleyecektir."},
+{"en": "I hope so. I am a bit nervous about the outcome.", "tr": "Umarım. Sonuç hakkında biraz gerginim."},
+{"en": "It seems to me that you did a wonderful job.", "tr": "Bana harika bir iş çıkardın gibi geliyor."},
+{"en": "Thank you! I used a critical approach.", "tr": "Teşekkürler! Eleştirel bir yaklaşım kullandım."}
+]},
+{"id": "b2-academic-5", "title": "Derse Doğru", "names": ["Leyla", "Hasan"], "lines": [
+{"en": "Leyla and Hasan walk to their faculty.", "tr": "Leyla ve Hasan fakültelerine yürüyorlar."},
+{"en": "Did you finish the essay?", "tr": "Makaleyi bitirdin mi?"},
+{"en": "Almost. I just need to add one more reference.", "tr": "Neredeyse. Sadece bir referans daha eklemem gerekiyor."},
+{"en": "Otherwise, the teacher might be angry.", "tr": "Aksi takdirde öğretmen kızabilir."},
+{"en": "Exactly. Academic discipline is an important aspect of university life.", "tr": "Kesinlikle. Akademik disiplin üniversite hayatının önemli bir yönüdür."},
+{"en": "Let's run! The lecture starts in five minutes.", "tr": "Koşalım! Ders beş dakika içinde başlıyor."}
+]}
+]
+}

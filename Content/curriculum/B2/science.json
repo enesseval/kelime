@@ -1,0 +1,544 @@
+{
+  "id": "b2-science",
+  "level": "B2",
+  "title": "Bilim ve teknoloji",
+  "placement": "any",
+  "goal": "Bir araştırmanın sonucunu anlatır, kanıtı yorumlar, yeni teknolojilerin artı ve eksilerini tartışır.",
+  "words": [
+    {
+      "id": "b2-research",
+      "word": "research",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "araştırma"
+          ],
+          "example_en": "Their research was very expensive.",
+          "example_tr": "Araştırmaları çok pahalıydı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-evidence",
+      "word": "evidence",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kanıt"
+          ],
+          "example_en": "We need genuine evidence.",
+          "example_tr": "Gerçek bir kanıta ihtiyacımız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-experiment",
+      "word": "experiment",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "deney"
+          ],
+          "example_en": "They did an experiment on plants.",
+          "example_tr": "Bitkiler üzerinde bir deney yaptılar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-theory",
+      "word": "theory",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "teori",
+            "kuram"
+          ],
+          "example_en": "His theory seems reasonable.",
+          "example_tr": "Teorisi mantıklı görünüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-invention",
+      "word": "invention",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "icat",
+            "buluş"
+          ],
+          "example_en": "The internet is a great invention.",
+          "example_tr": "İnternet harika bir buluş."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-artificial",
+      "word": "artificial",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yapay",
+            "suni"
+          ],
+          "example_en": "I don't like artificial light.",
+          "example_tr": "Yapay ışığı sevmem."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-intelligence",
+      "word": "intelligence",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "zekâ",
+            "akıl"
+          ],
+          "example_en": "Her intelligence is obvious.",
+          "example_tr": "Zekası ortada."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-data",
+      "word": "data",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "veri"
+          ],
+          "example_en": "The data indicates a rapid increase.",
+          "example_tr": "Veriler hızlı bir artış gösteriyor."
+        }
+      ],
+      "note": "İngilizcede genellikle çoğul kabul edilir."
+    },
+    {
+      "id": "b2-analyse",
+      "word": "analyse",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "analiz etmek",
+            "incelemek"
+          ],
+          "example_en": "We must analyse the data.",
+          "example_tr": "Verileri analiz etmeliyiz."
+        }
+      ],
+      "note": "Amerikan İngilizcesinde 'analyze' olarak yazılır."
+    },
+    {
+      "id": "b2-demonstrate",
+      "word": "demonstrate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "göstermek",
+            "kanıtlamak"
+          ],
+          "example_en": "This experiment demonstrates the problem.",
+          "example_tr": "Bu deney sorunu gösteriyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-reveal",
+      "word": "reveal",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "ortaya çıkarmak"
+          ],
+          "example_en": "The research revealed the results.",
+          "example_tr": "Araştırma sonuçları ortaya çıkardı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-obtain",
+      "word": "obtain",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "elde etmek",
+            "almak"
+          ],
+          "example_en": "How did you obtain this data?",
+          "example_tr": "Bu veriyi nasıl elde ettin?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-acquire",
+      "word": "acquire",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "edinmek",
+            "kazanmak"
+          ],
+          "example_en": "He acquired new skills.",
+          "example_tr": "Yeni beceriler edindi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-laboratory",
+      "word": "laboratory",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "laboratuvar"
+          ],
+          "example_en": "She works in a laboratory.",
+          "example_tr": "Bir laboratuvarda çalışıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-innovation",
+      "word": "innovation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yenilik"
+          ],
+          "example_en": "We need more innovation.",
+          "example_tr": "Daha fazla yeniliğe ihtiyacımız var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-breakthrough",
+      "word": "breakthrough",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "çığır açan buluş",
+            "atılım"
+          ],
+          "example_en": "This is a significant breakthrough.",
+          "example_tr": "Bu önemli bir gelişme."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-genetic",
+      "word": "genetic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "genetik"
+          ],
+          "example_en": "It is a genetic problem.",
+          "example_tr": "Bu genetik bir sorun."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-virtual",
+      "word": "virtual",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "sanal"
+          ],
+          "example_en": "We had a virtual meeting.",
+          "example_tr": "Sanal bir toplantı yaptık."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-resource",
+      "word": "resource",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kaynak"
+          ],
+          "example_en": "Water is an essential resource.",
+          "example_tr": "Su temel bir kaynaktır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b2-consist",
+      "word": "consist",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "oluşmak"
+          ],
+          "example_en": "The team consists of five people.",
+          "example_tr": "Takım beş kişiden oluşuyor."
+        }
+      ],
+      "note": "Her zaman 'of' edatı ile kullanılır."
+    },
+    {
+      "id": "b2-rely",
+      "word": "rely",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "güvenmek",
+            "bel bağlamak"
+          ],
+          "example_en": "You can't rely on that device.",
+          "example_tr": "O cihaza güvenemezsin."
+        }
+      ],
+      "note": "Her zaman 'on' edatı ile kullanılır."
+    },
+    {
+      "id": "b2-advanced",
+      "word": "advanced",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "gelişmiş",
+            "ileri"
+          ],
+          "example_en": "They use advanced computers.",
+          "example_tr": "Gelişmiş bilgisayarlar kullanıyorlar."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "b2-p-studies-show",
+      "text": "Studies show that…",
+      "tr": "Çalışmalar gösteriyor ki…",
+      "example_en": "Studies show that early sleep is healthy.",
+      "example_tr": "Çalışmalar erken uyumanın sağlıklı olduğunu gösteriyor.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-turns-out",
+      "text": "It turns out that…",
+      "tr": "Meğerse…",
+      "example_en": "It turns out that she was right.",
+      "example_tr": "Meğerse haklıymış.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-no-evidence",
+      "text": "There's no evidence that…",
+      "tr": "…dair hiçbir kanıt yok.",
+      "example_en": "There's no evidence that he stole the money.",
+      "example_tr": "Parayı çaldığına dair hiçbir kanıt yok.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-in-theory",
+      "text": "In theory…",
+      "tr": "Teoride…",
+      "example_en": "In theory, this should work.",
+      "example_tr": "Teoride bunun çalışması lazım.",
+      "note": ""
+    },
+    {
+      "id": "b2-p-remains-seen",
+      "text": "It remains to be seen.",
+      "tr": "Bunu zaman gösterecek.",
+      "example_en": "Will it be a success? It remains to be seen.",
+      "example_tr": "Başarılı olacak mı? Bunu zaman gösterecek.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "b2-science-1",
+      "title": "Yapay zeka",
+      "names": [
+        "Ali",
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep, did you analyse the data?",
+          "tr": "Zeynep, verileri analiz ettin mi?"
+        },
+        {
+          "en": "Yes. It turns out that the artificial intelligence is learning fast.",
+          "tr": "Evet. Meğerse yapay zekâ hızlı öğreniyormuş."
+        },
+        {
+          "en": "Is it a genuine breakthrough?",
+          "tr": "Bu gerçekten büyük bir buluş mu?"
+        },
+        {
+          "en": "It remains to be seen. In theory, it should improve our virtual environment.",
+          "tr": "Bunu zaman gösterecek. Teoride sanal ortamımızı geliştirmesi lazım."
+        },
+        {
+          "en": "We will obtain more evidence tomorrow.",
+          "tr": "Yarın daha fazla kanıt elde edeceğiz."
+        }
+      ]
+    },
+    {
+      "id": "b2-science-2",
+      "title": "Laboratuvar",
+      "names": [
+        "Kaya",
+        "Emre"
+      ],
+      "lines": [
+        {
+          "en": "Our genetic research consists of three areas.",
+          "tr": "Genetik araştırmamız üç alandan oluşuyor."
+        },
+        {
+          "en": "Studies show that we can fix the problem.",
+          "tr": "Çalışmalar sorunu çözebileceğimizi gösteriyor."
+        },
+        {
+          "en": "Do we have adequate resources for the laboratory?",
+          "tr": "Laboratuvar için yeterli kaynağımız var mı?"
+        },
+        {
+          "en": "I hope so. Otherwise, we can't finish the experiment.",
+          "tr": "Umarım. Aksi takdirde deneyi bitiremeyiz."
+        },
+        {
+          "en": "We rely on this innovation.",
+          "tr": "Bu yeniliğe bel bağlıyoruz."
+        }
+      ]
+    },
+    {
+      "id": "b2-science-3",
+      "title": "Yeni icat",
+      "names": [
+        "Tom",
+        "Ayşe"
+      ],
+      "lines": [
+        {
+          "en": "Look at this new invention!",
+          "tr": "Şu yeni icada bak!"
+        },
+        {
+          "en": "What does it demonstrate?",
+          "tr": "Neyi gösteriyor?"
+        },
+        {
+          "en": "It reveals how much energy we waste.",
+          "tr": "Ne kadar enerjiyi boşa harcadığımızı ortaya çıkarıyor."
+        },
+        {
+          "en": "There's no evidence that it is accurate.",
+          "tr": "Bunun doğru olduğuna dair hiçbir kanıt yok."
+        },
+        {
+          "en": "You shouldn't assume it's fake. It uses advanced data.",
+          "tr": "Sahte olduğunu varsaymamalısın. Gelişmiş veriler kullanıyor."
+        }
+      ]
+    },
+    {
+      "id": "b2-science-4",
+      "title": "Sanal stres",
+      "names": [
+        "Mark",
+        "Elif"
+      ],
+      "lines": [
+        {
+          "en": "Do you rely on virtual entertainment?",
+          "tr": "Sanal eğlenceye güveniyor musun?"
+        },
+        {
+          "en": "Yes. It turns out that it reduces my stress.",
+          "tr": "Evet. Meğerse stresimi azaltıyormuş."
+        },
+        {
+          "en": "But studies show that it has a bad impact.",
+          "tr": "Ama çalışmalar kötü bir etkisi olduğunu gösteriyor."
+        },
+        {
+          "en": "That's a fair point. However, my tendency is to relax online.",
+          "tr": "Bu haklı bir nokta. Ancak benim eğilimim internette rahatlamak."
+        },
+        {
+          "en": "Just don't forget nature.",
+          "tr": "Sadece doğayı unutma."
+        }
+      ]
+    },
+    {
+      "id": "b2-science-5",
+      "title": "Yeni bir avantaj",
+      "names": [
+        "Kemal",
+        "Sarah"
+      ],
+      "lines": [
+        {
+          "en": "We finally acquired the new computers for the laboratory.",
+          "tr": "Sonunda laboratuvar için yeni bilgisayarları edindik."
+        },
+        {
+          "en": "This is a vast advantage.",
+          "tr": "Bu çok büyük bir avantaj."
+        },
+        {
+          "en": "Therefore, we can analyse the genetic data faster.",
+          "tr": "Bu nedenle genetik verileri daha hızlı analiz edebiliriz."
+        },
+        {
+          "en": "In theory, we will obtain rapid results.",
+          "tr": "Teoride hızlı sonuçlar elde edeceğiz."
+        },
+        {
+          "en": "We will see. It remains to be seen.",
+          "tr": "Göreceğiz. Bunu zaman gösterecek."
+        }
+      ]
+    }
+  ]
+}

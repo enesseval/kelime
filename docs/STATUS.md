@@ -99,7 +99,17 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
-## B1 course (content v5, not in a build yet)
+## B2 course (content v7, build 17)
+
+Content/curriculum/B2/: core (36 words, 7 phrases), ten units and a bridge to C1 (mixed
+conditionals, cleft sentences, not only… but also); 323 cards. About 40 checker problems and a
+round of translation fixes; four idioms shortened to the 28-character lock-screen limit. The old
+B2 deck and puzzles are gone. Exam decks keep every word: build_curriculum.py carries YDS/YÖKDİL/
+IELTS tags onto course cards (and onto the same word at another level, e.g. b1-claim), and exam
+decks take tagged words whether or not their unit is started. The YDS goal orders units by
+science, academic, society and work topics. Onboarding and Ayarlar offer A1-B2; C1 is "Yakında".
+
+## B1 course (content v5)
 
 Content/curriculum/B1/: core (43 words, 7 phrases, 3 stories), ten units and a bridge to B2
 (If I were…, I wish…, reported speech, it is said that); 337 cards. With the "read every line

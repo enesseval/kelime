@@ -1,0 +1,573 @@
+{
+"id": "b2-economy",
+"level": "B2",
+"title": "Ekonomi",
+"placement": "any",
+"goal": "Fiyatlar, gelir ve vergiler hakkında konuşur, ekonomik bir krizi ve etkilerini anlatır, tüketim alışkanlıklarını eleştirir.",
+"words": [
+{
+"id": "b2-economy",
+"word": "economy",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ekonomi"
+],
+"example_en": "The global economy is growing.",
+"example_tr": "Küresel ekonomi büyüyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-inflation",
+"word": "inflation",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"enflasyon"
+],
+"example_en": "Inflation reduces our income.",
+"example_tr": "Enflasyon gelirimizi azaltıyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-income",
+"word": "income",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"gelir"
+],
+"example_en": "My income is quite small.",
+"example_tr": "Gelirim oldukça az."
+}
+],
+"note": ""
+},
+{
+"id": "b2-tax",
+"word": "tax",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"vergi"
+],
+"example_en": "We have to pay a lot of tax.",
+"example_tr": "Çok fazla vergi ödemeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "b2-wage",
+"word": "wage",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"maaş",
+"ücret"
+],
+"example_en": "I want a better wage.",
+"example_tr": "Daha iyi bir maaş istiyorum."
+}
+],
+"note": "Genellikle haftalık veya saatlik ödenen ücretler için kullanılır."
+},
+{
+"id": "b2-consumer",
+"word": "consumer",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tüketici"
+],
+"example_en": "A clever consumer compares prices.",
+"example_tr": "Akıllı bir tüketici fiyatları karşılaştırır."
+}
+],
+"note": ""
+},
+{
+"id": "b2-demand",
+"word": "demand",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"talep"
+],
+"example_en": "There is a big demand for this car.",
+"example_tr": "Bu arabaya büyük bir talep var."
+},
+{
+"pos": "v",
+"tr": [
+"talep etmek"
+],
+"example_en": "People demand better wages.",
+"example_tr": "İnsanlar daha iyi maaşlar talep ediyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-supply",
+"word": "supply",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"arz",
+"tedarik"
+],
+"example_en": "The supply of cheap food is small.",
+"example_tr": "Ucuz gıda arzı az."
+}
+],
+"note": ""
+},
+{
+"id": "b2-crisis",
+"word": "crisis",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"kriz"
+],
+"example_en": "The financial crisis destroyed many jobs.",
+"example_tr": "Finansal kriz birçok işi yok etti."
+}
+],
+"note": ""
+},
+{
+"id": "b2-recession",
+"word": "recession",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"resesyon",
+"durgunluk"
+],
+"example_en": "The economy is in a bad recession.",
+"example_tr": "Ekonomi kötü bir durgunluk içinde."
+}
+],
+"note": ""
+},
+{
+"id": "b2-purchase",
+"word": "purchase",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"satın almak"
+],
+"example_en": "I want to purchase a new laptop.",
+"example_tr": "Yeni bir dizüstü bilgisayar satın almak istiyorum."
+},
+{
+"pos": "n",
+"tr": [
+"satın alma"
+],
+"example_en": "Is it a reasonable purchase?",
+"example_tr": "Bu makul bir satın alma mı?"
+}
+],
+"note": ""
+},
+{
+"id": "b2-brand",
+"word": "brand",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"marka"
+],
+"example_en": "It is a famous brand.",
+"example_tr": "Bu ünlü bir marka."
+}
+],
+"note": ""
+},
+{
+"id": "b2-subscription",
+"word": "subscription",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"abonelik"
+],
+"example_en": "I cancelled my app subscription.",
+"example_tr": "Uygulama aboneliğimi iptal ettim."
+}
+],
+"note": ""
+},
+{
+"id": "b2-wealth",
+"word": "wealth",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"servet",
+"zenginlik"
+],
+"example_en": "His family has a lot of wealth.",
+"example_tr": "Ailesinin büyük bir serveti var."
+}
+],
+"note": ""
+},
+{
+"id": "b2-benefit",
+"word": "benefit",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"fayda",
+"avantaj"
+],
+"example_en": "What is the benefit of this?",
+"example_tr": "Bunun faydası nedir?"
+},
+{
+"pos": "v",
+"tr": [
+"faydalanmak"
+],
+"example_en": "Consumers benefit from cheap prices.",
+"example_tr": "Tüketiciler ucuz fiyatlardan faydalanır."
+}
+],
+"note": ""
+},
+{
+"id": "b2-expense",
+"word": "expense",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"masraf",
+"gider"
+],
+"example_en": "Rent is our biggest expense.",
+"example_tr": "Kira en büyük masrafımız."
+}
+],
+"note": ""
+},
+{
+"id": "b2-financial",
+"word": "financial",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"finansal",
+"mali"
+],
+"example_en": "She has big financial problems.",
+"example_tr": "Büyük finansal sorunları var."
+}
+],
+"note": ""
+},
+{
+"id": "b2-currency",
+"word": "currency",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"para birimi",
+"döviz"
+],
+"example_en": "The foreign currency is expensive.",
+"example_tr": "Döviz pahalı."
+}
+],
+"note": ""
+},
+{
+"id": "b2-insurance",
+"word": "insurance",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sigorta"
+],
+"example_en": "You must buy travel insurance.",
+"example_tr": "Seyahat sigortası almalısın."
+}
+],
+"note": ""
+},
+{
+"id": "b2-mortgage",
+"word": "mortgage",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"konut kredisi",
+"ipotek"
+],
+"example_en": "We need a mortgage to buy a house.",
+"example_tr": "Ev almak için konut kredisine ihtiyacımız var."
+}
+],
+"note": "Sadece gayrimenkul kredisi için kullanılır."
+}
+],
+"phrases": [
+{
+"id": "b2-p-fortune",
+"text": "It costs a fortune",
+"tr": "Bir servete mal oluyor",
+"example_en": "Look at this bag! It costs a fortune.",
+"example_tr": "Şu çantaya bak! Bir servete mal oluyor.",
+"note": ""
+},
+{
+"id": "b2-p-budget",
+"text": "We're on a tight budget",
+"tr": "Kısıtlı bir bütçemiz var",
+"example_en": "I can't buy it, we're on a tight budget.",
+"example_tr": "Onu alamam, kısıtlı bir bütçemiz var.",
+"note": ""
+},
+{
+"id": "b2-p-prices",
+"text": "Prices have gone up",
+"tr": "Fiyatlar arttı",
+"example_en": "Prices have gone up recently.",
+"example_tr": "Son zamanlarda fiyatlar arttı.",
+"note": ""
+},
+{
+"id": "b2-p-value",
+"text": "It's good value for money",
+"tr": "Parasına değiyor",
+"example_en": "This laptop is good value for money.",
+"example_tr": "Bu dizüstü bilgisayar parasına değiyor.",
+"note": ""
+},
+{
+"id": "b2-p-ends-meet",
+"text": "We can barely make ends meet",
+"tr": "Ay sonunu zor getiriyoruz",
+"example_en": "We can barely make ends meet with this wage.",
+"example_tr": "Bu maaşla ay sonunu zor getiriyoruz.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "b2-economy-1",
+"title": "Pazar Alışverişi",
+"names": [
+"Ayşe",
+"Tom",
+"London"
+],
+"lines": [
+{
+"en": "Ayşe and Tom are at a market in London.",
+"tr": "Ayşe ve Tom Londra'da bir pazardalar."
+},
+{
+"en": "Look at this bag! It costs a fortune.",
+"tr": "Şu çantaya bak! Bir servete mal oluyor."
+},
+{
+"en": "Prices have gone up recently.",
+"tr": "Son zamanlarda fiyatlar arttı."
+},
+{
+"en": "Yes, inflation is a big problem.",
+"tr": "Evet, enflasyon büyük bir sorun."
+},
+{
+"en": "A consumer cannot afford this.",
+"tr": "Bir tüketici bunu karşılayamaz."
+},
+{
+"en": "The economy is in a bad situation.",
+"tr": "Ekonomi kötü bir durumda."
+},
+{
+"en": "I agree. Let's buy something cheaper.",
+"tr": "Katılıyorum. Daha ucuz bir şey alalım."
+}
+]
+},
+{
+"id": "b2-economy-2",
+"title": "Geçim Sıkıntısı",
+"names": [
+"Ali",
+"Zeynep",
+"Istanbul"
+],
+"lines": [
+{
+"en": "Ali and his wife Zeynep talk about money in Istanbul.",
+"tr": "Ali ve eşi Zeynep İstanbul'da para hakkında konuşuyor."
+},
+{
+"en": "Our rent is a big expense.",
+"tr": "Kiramız büyük bir masraf."
+},
+{
+"en": "My new wage is not enough.",
+"tr": "Yeni maaşım yeterli değil."
+},
+{
+"en": "We can barely make ends meet.",
+"tr": "Ay sonunu zor getiriyoruz."
+},
+{
+"en": "Should we cancel the internet subscription?",
+"tr": "İnternet aboneliğini iptal etmeli miyiz?"
+},
+{
+"en": "Perhaps. We're on a tight budget.",
+"tr": "Belki. Kısıtlı bir bütçemiz var."
+},
+{
+"en": "I hope I can find a part-time job soon.",
+"tr": "Umarım yakında yarı zamanlı bir iş bulabilirim."
+}
+]
+},
+{
+"id": "b2-economy-3",
+"title": "Ev Sahibi Olmak",
+"names": [
+"Hakan",
+"Berlin"
+],
+"lines": [
+{
+"en": "Hakan wants to buy a small house in Berlin.",
+"tr": "Hakan Berlin'de küçük bir ev almak istiyor."
+},
+{
+"en": "But there is a big demand for houses here.",
+"tr": "Ancak burada evlere büyük bir talep var."
+},
+{
+"en": "And the supply is very small.",
+"tr": "Ve arz çok az."
+},
+{
+"en": "Therefore, you need a mortgage.",
+"tr": "Bu nedenle konut kredisine ihtiyacın var."
+},
+{
+"en": "Yes, I don't have enough wealth.",
+"tr": "Evet, yeterli servetim yok."
+},
+{
+"en": "Is it a reasonable purchase?",
+"tr": "Bu makul bir satın alma mı?"
+},
+{
+"en": "Yes, it's good value for money.",
+"tr": "Evet, parasına değiyor."
+}
+]
+},
+{
+"id": "b2-economy-4",
+"title": "Şirkette Kriz",
+"names": [
+"Tokyo"
+],
+"lines": [
+{
+"en": "Two managers meet at a company in Tokyo.",
+"tr": "İki yönetici Tokyo'da bir şirkette buluşuyor."
+},
+{
+"en": "The financial crisis is very bad.",
+"tr": "Finansal kriz çok kötü."
+},
+{
+"en": "Are we in a recession?",
+"tr": "Bir durgunluk içinde miyiz?"
+},
+{
+"en": "It seems to me that we are.",
+"tr": "Bana öyle geliyor ki öyleyiz."
+},
+{
+"en": "Can we benefit from this situation?",
+"tr": "Bu durumdan faydalanabilir miyiz?"
+},
+{
+"en": "Maybe. We can buy cheap furniture.",
+"tr": "Belki. Ucuz mobilya satın alabiliriz."
+}
+]
+},
+{
+"id": "b2-economy-5",
+"title": "Yeni Araba",
+"names": [
+"Lisa",
+"Paris"
+],
+"lines": [
+{
+"en": "Lisa buys a new car in Paris.",
+"tr": "Lisa Paris'te yeni bir araba satın alıyor."
+},
+{
+"en": "Is this a reliable brand?",
+"tr": "Bu güvenilir bir marka mı?"
+},
+{
+"en": "Yes. But you must pay car tax.",
+"tr": "Evet. Ama araba vergisi ödemelisin."
+},
+{
+"en": "Does the price include insurance?",
+"tr": "Fiyata sigorta dahil mi?"
+},
+{
+"en": "No, insurance is another expense.",
+"tr": "Hayır, sigorta başka bir masraf."
+},
+{
+"en": "Also, the foreign currency is expensive now.",
+"tr": "Ayrıca döviz şu an pahalı."
+},
+{
+"en": "I see what you mean, but I will buy it.",
+"tr": "Ne demek istediğini anlıyorum ama onu alacağım."
+}
+]
+}
+]
+}

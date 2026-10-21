@@ -1,0 +1,557 @@
+{
+"id": "b2-planet",
+"level": "B2",
+"title": "Sürdürülebilirlik",
+"placement": "any",
+"goal": "İklim krizinin nedenlerini ve çözümlerini ayrıntılı tartışır, enerji ve tüketim tercihlerini savunur.",
+"words": [
+{
+"id": "b2-sustainable",
+"word": "sustainable",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"sürdürülebilir"
+],
+"example_en": "We need a sustainable lifestyle.",
+"example_tr": "Sürdürülebilir bir yaşama ihtiyacımız var."
+}
+],
+"note": ""
+},
+{
+"id": "b2-renewable",
+"word": "renewable",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"yenilenebilir"
+],
+"example_en": "Solar energy is a renewable source.",
+"example_tr": "Güneş enerjisi yenilenebilir bir kaynaktır."
+}
+],
+"note": ""
+},
+{
+"id": "b2-emission",
+"word": "emission",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"emisyon",
+"salım"
+],
+"example_en": "We must reduce carbon emissions.",
+"example_tr": "Karbon emisyonlarını azaltmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b2-fuel",
+"word": "fuel",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yakıt"
+],
+"example_en": "This car uses a lot of fuel.",
+"example_tr": "Bu araba çok yakıt kullanıyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-conservation",
+"word": "conservation",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"koruma"
+],
+"example_en": "Wildlife conservation is essential.",
+"example_tr": "Yaban hayatını korumak esastır."
+}
+],
+"note": ""
+},
+{
+"id": "b2-extinct",
+"word": "extinct",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"nesli tükenmiş"
+],
+"example_en": "Many species are almost extinct.",
+"example_tr": "Pek çok türün nesli tükenmek üzere."
+}
+],
+"note": ""
+},
+{
+"id": "b2-habitat",
+"word": "habitat",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yaşam alanı"
+],
+"example_en": "They are destroying its habitat.",
+"example_tr": "Onun yaşam alanını yok ediyorlar."
+}
+],
+"note": ""
+},
+{
+"id": "b2-drought",
+"word": "drought",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"kuraklık"
+],
+"example_en": "The drought will destroy the plants.",
+"example_tr": "Kuraklık bitkileri yok edecek."
+}
+],
+"note": ""
+},
+{
+"id": "b2-consumption",
+"word": "consumption",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tüketim"
+],
+"example_en": "We must reduce meat consumption.",
+"example_tr": "Et tüketimini azaltmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b2-carbon",
+"word": "carbon",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"karbon"
+],
+"example_en": "Carbon pollution is a big issue.",
+"example_tr": "Karbon kirliliği büyük bir sorundur."
+}
+],
+"note": ""
+},
+{
+"id": "b2-solar",
+"word": "solar",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"güneş"
+],
+"example_en": "Solar energy is cheap and clean.",
+"example_tr": "Güneş enerjisi ucuz ve temizdir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-greenhouse",
+"word": "greenhouse",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sera"
+],
+"example_en": "The greenhouse effect is dangerous.",
+"example_tr": "Sera etkisi tehlikelidir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-pollute",
+"word": "pollute",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"kirletmek"
+],
+"example_en": "Plastic rubbish pollutes the sea.",
+"example_tr": "Plastik çöpler denizi kirletir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-deforestation",
+"word": "deforestation",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ormansızlaşma"
+],
+"example_en": "Deforestation destroys the environment.",
+"example_tr": "Ormansızlaşma çevreyi mahvediyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-ecosystem",
+"word": "ecosystem",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ekosistem"
+],
+"example_en": "Every plant is important for the ecosystem.",
+"example_tr": "Her bitki ekosistem için önemlidir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-biodiversity",
+"word": "biodiversity",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"biyoçeşitlilik"
+],
+"example_en": "We must protect biodiversity.",
+"example_tr": "Biyoçeşitliliği korumalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b2-crucial",
+"word": "crucial",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"çok önemli",
+"hayati"
+],
+"example_en": "Water is crucial for all life.",
+"example_tr": "Su tüm yaşam için çok önemlidir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-inevitable",
+"word": "inevitable",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kaçınılmaz"
+],
+"example_en": "Climate change seems inevitable.",
+"example_tr": "İklim değişikliği kaçınılmaz görünüyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-wildfire",
+"word": "wildfire",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"orman yangını"
+],
+"example_en": "The wildfire destroyed the forest.",
+"example_tr": "Orman yangını ormanı yok etti."
+}
+],
+"note": ""
+},
+{
+"id": "b2-melt",
+"word": "melt",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"erimek"
+],
+"example_en": "The snow is melting rapidly.",
+"example_tr": "Kar hızla eriyor."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "b2-p-long-run",
+"text": "In the long run…",
+"tr": "Uzun vadede…",
+"example_en": "In the long run, we will save money.",
+"example_tr": "Uzun vadede tasarruf edeceğiz.",
+"note": ""
+},
+{
+"id": "b2-p-step-direction",
+"text": "It's a step in the right…",
+"tr": "Doğru yönde bir adım.",
+"example_en": "It's a step in the right direction.",
+"example_tr": "Doğru yönde atılmış bir adım.",
+"note": ""
+},
+{
+"id": "b2-p-cant-afford",
+"text": "We can't afford to…",
+"tr": "…yapmayı göze alamayız.",
+"example_en": "We can't afford to lose it.",
+"example_tr": "Onu kaybetmeyi göze alamayız.",
+"note": ""
+},
+{
+"id": "b2-p-no-going-back",
+"text": "There's no going back.",
+"tr": "Geri dönüş yok.",
+"example_en": "If we fail, there's no going back.",
+"example_tr": "Başarısız olursak geri dönüş yok.",
+"note": ""
+},
+{
+"id": "b2-p-sooner-later",
+"text": "Sooner or later…",
+"tr": "Er ya da geç…",
+"example_en": "Sooner or later, it will melt.",
+"example_tr": "Er ya da geç eriyecek.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "b2-planet-1",
+"title": "Yeni Araba",
+"names": [
+"Ali",
+"Deniz"
+],
+"lines": [
+{
+"en": "Ali and Deniz are talking.",
+"tr": "Ali ve Deniz konuşuyorlar."
+},
+{
+"en": "I want to buy a new car.",
+"tr": "Yeni bir araba almak istiyorum."
+},
+{
+"en": "Are you certain? They are very expensive.",
+"tr": "Emin misin? Çok pahalılar."
+},
+{
+"en": "Yes, but they use renewable energy.",
+"tr": "Evet, ama yenilenebilir enerji kullanıyorlar."
+},
+{
+"en": "I see what you mean, but… can you afford it?",
+"tr": "Ne demek istediğini anlıyorum ama… bunu karşılayabilir misin?"
+},
+{
+"en": "In the long run, I will save money.",
+"tr": "Uzun vadede tasarruf edeceğim."
+},
+{
+"en": "That's a fair point.",
+"tr": "Bu haklı bir nokta."
+}
+]
+},
+{
+"id": "b2-planet-2",
+"title": "Ormansızlaşma",
+"names": [
+"Sarah",
+"Mark"
+],
+"lines": [
+{
+"en": "Sarah and Mark are watching a documentary.",
+"tr": "Sarah ve Mark bir belgesel izliyorlar."
+},
+{
+"en": "It is about a big wildfire in the mountains.",
+"tr": "Dağlardaki büyük bir orman yangını hakkında."
+},
+{
+"en": "The deforestation is rapid and dangerous.",
+"tr": "Ormansızlaşma hızlı ve tehlikeli."
+},
+{
+"en": "Yes. Many animals lose their habitat.",
+"tr": "Evet. Pek çok hayvan yaşam alanını kaybediyor."
+},
+{
+"en": "If this happens, species will be extinct.",
+"tr": "Böyle olursa, türlerin nesli tükenecek."
+},
+{
+"en": "We can't afford to lose our biodiversity.",
+"tr": "Biyoçeşitliliğimizi kaybetmeyi göze alamayız."
+},
+{
+"en": "True. Conservation is essential.",
+"tr": "Doğru. Koruma esastır."
+},
+{
+"en": "There's no going back if we destroy it.",
+"tr": "Eğer onu yok edersek geri dönüş yok."
+}
+]
+},
+{
+"id": "b2-planet-3",
+"title": "Sıcak Bir Yaz",
+"names": [
+"Emre",
+"Canan"
+],
+"lines": [
+{
+"en": "Emre and Canan are sitting in the garden.",
+"tr": "Emre ve Canan bahçede oturuyorlar."
+},
+{
+"en": "The weather is very hot this year.",
+"tr": "Bu yıl hava çok sıcak."
+},
+{
+"en": "Yes, the drought is a significant problem.",
+"tr": "Evet, kuraklık önemli bir sorun."
+},
+{
+"en": "It is the greenhouse effect.",
+"tr": "Bu sera etkisi."
+},
+{
+"en": "The planet is getting hotter and the snow is melting.",
+"tr": "Gezegen ısınıyor ve kar eriyor."
+},
+{
+"en": "Sooner or later, we must change our consumption habits.",
+"tr": "Er ya da geç tüketim alışkanlıklarımızı değiştirmeliyiz."
+},
+{
+"en": "Yes, this is an inevitable outcome.",
+"tr": "Evet, bu kaçınılmaz bir sonuç."
+}
+]
+},
+{
+"id": "b2-planet-4",
+"title": "Güneş Enerjisi",
+"names": [
+"John",
+"Lisa"
+],
+"lines": [
+{
+"en": "John works for an energy company.",
+"tr": "John bir enerji şirketinde çalışıyor."
+},
+{
+"en": "They want to open a new solar facility.",
+"tr": "Yeni bir güneş enerjisi tesisi açmak istiyorlar."
+},
+{
+"en": "Lisa is his colleague.",
+"tr": "Lisa onun meslektaşı."
+},
+{
+"en": "Will this plan reduce pollution?",
+"tr": "Bu plan kirliliği azaltacak mı?"
+},
+{
+"en": "Yes. Solar energy is sustainable.",
+"tr": "Evet. Güneş enerjisi sürdürülebilirdir."
+},
+{
+"en": "That is a crucial feature.",
+"tr": "Bu çok önemli bir özellik."
+},
+{
+"en": "We tend to use too much fuel.",
+"tr": "Çok fazla yakıt kullanma eğilimindeyiz."
+},
+{
+"en": "As a result, we pollute the ecosystem.",
+"tr": "Sonuç olarak ekosistemi kirletiyoruz."
+}
+]
+},
+{
+"id": "b2-planet-5",
+"title": "Sergi",
+"names": [
+"Leyla",
+"Murat"
+],
+"lines": [
+{
+"en": "Leyla and Murat are at a photo exhibition.",
+"tr": "Leyla ve Murat bir fotoğraf sergisindeler."
+},
+{
+"en": "The photos show our beautiful planet.",
+"tr": "Fotoğraflar güzel gezegenimizi gösteriyor."
+},
+{
+"en": "This scenery is vast and beautiful.",
+"tr": "Bu manzara devasa ve güzel."
+},
+{
+"en": "Yes, but we tend to destroy it.",
+"tr": "Evet ama onu yok etme eğilimindeyiz."
+},
+{
+"en": "We must reduce our carbon emissions.",
+"tr": "Karbon emisyonlarımızı azaltmalıyız."
+},
+{
+"en": "It seems to me that people are finally aware.",
+"tr": "Bana öyle geliyor ki insanlar sonunda farkındalar."
+},
+{
+"en": "I hope so. A clean planet is essential.",
+"tr": "Umarım öyledir. Temiz bir gezegen esastır."
+},
+{
+"en": "It's a step in the right direction.",
+"tr": "Doğru yönde atılmış bir adım."
+}
+]
+}
+]
+}

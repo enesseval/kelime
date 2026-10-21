@@ -198,7 +198,11 @@ public enum Curriculum {
     static let goalTopics: [LearningGoal: [String]] = [
         .travel: ["cafe", "city", "shopping", "free-time", "feelings", "travel", "food", "plans", "nature",
                   "trips", "culture", "money"],
-        .work: ["day", "city", "cafe", "feelings", "work", "tech", "people", "career", "media", "learning"],
+        .work: ["day", "city", "cafe", "feelings", "work", "tech", "people", "career", "media", "learning",
+                "business", "academic", "economy"],
+        // Exam texts lean on science, education and society.
+        .yds: ["life", "work", "learning", "media", "environment", "science", "academic", "society", "medicine",
+               "economy", "planet"],
     ]
 
     /// `units` in the order the learner meets them: core, the any-order units by goal, bridge.

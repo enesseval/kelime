@@ -169,7 +169,7 @@ struct CurriculumTests {
     }
 
     @Test func levelsWithoutUnitsKeepTheirDecks() throws {
-        let db = try makeDatabase(Preferences(level: .b2))
+        let db = try makeDatabase(Preferences(level: .c1))
         #expect(try db.reader.read { db in try Curriculum.state(db: db) } == nil)
     }
 

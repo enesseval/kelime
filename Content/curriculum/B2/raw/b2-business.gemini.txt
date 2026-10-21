@@ -1,0 +1,567 @@
+{
+"id": "b2-business",
+"level": "B2",
+"title": "İş dünyası",
+"placement": "any",
+"goal": "Toplantıda öneri sunar ve pazarlık eder, bir projenin hedeflerini ve risklerini anlatır, şirketin durumunu değerlendirir.",
+"words": [
+{
+"id": "b2-negotiate",
+"word": "negotiate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"pazarlık etmek",
+"görüşmek"
+],
+"example_en": "We must negotiate the price with the company.",
+"example_tr": "Şirketle fiyatı pazarlık etmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "b2-client",
+"word": "client",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"müşteri",
+"müvekkil"
+],
+"example_en": "The new client requires an important meeting.",
+"example_tr": "Yeni müşteri önemli bir toplantı talep ediyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-profit",
+"word": "profit",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"kâr",
+"kazanç"
+],
+"example_en": "Our company made a significant profit this year.",
+"example_tr": "Şirketimiz bu yıl önemli bir kâr elde etti."
+}
+],
+"note": ""
+},
+{
+"id": "b2-invest",
+"word": "invest",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"yatırım yapmak"
+],
+"example_en": "We should invest our money in a new strategy.",
+"example_tr": "Paramızı yeni bir stratejiye yatırmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "b2-investment",
+"word": "investment",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yatırım"
+],
+"example_en": "This is a reasonable investment for our future.",
+"example_tr": "Bu, geleceğimiz için makul bir yatırım."
+}
+],
+"note": ""
+},
+{
+"id": "b2-competitor",
+"word": "competitor",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"rakip"
+],
+"example_en": "Our biggest competitor is launching a new app.",
+"example_tr": "En büyük rakibimiz yeni bir uygulama başlatıyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-strategy",
+"word": "strategy",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"strateji"
+],
+"example_en": "We need to change our strategy now.",
+"example_tr": "Stratejimizi şimdi değiştirmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "b2-priority",
+"word": "priority",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"öncelik"
+],
+"example_en": "Our first priority is to make the client happy.",
+"example_tr": "İlk önceliğimiz müşteriyi mutlu etmektir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-establish",
+"word": "establish",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"kurmak",
+"tesis etmek"
+],
+"example_en": "We will establish a new office in London.",
+"example_tr": "Londra'da yeni bir ofis kuracağız."
+}
+],
+"note": ""
+},
+{
+"id": "b2-maintain",
+"word": "maintain",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"sürdürmek",
+"korumak"
+],
+"example_en": "We must maintain a good relationship with them.",
+"example_tr": "Onlarla iyi bir ilişki sürdürmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "b2-enhance",
+"word": "enhance",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"geliştirmek",
+"artırmak"
+],
+"example_en": "This update will enhance the app's efficiency.",
+"example_tr": "Bu güncelleme uygulamanın verimliliğini artıracak."
+}
+],
+"note": ""
+},
+{
+"id": "b2-delegate",
+"word": "delegate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"devretmek"
+],
+"example_en": "A good manager must delegate work to the team.",
+"example_tr": "İyi bir yönetici işleri ekibe devretmelidir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-proposal",
+"word": "proposal",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"teklif",
+"öneri"
+],
+"example_en": "I will read your proposal tomorrow morning.",
+"example_tr": "Teklifinizi yarın sabah okuyacağım."
+}
+],
+"note": ""
+},
+{
+"id": "b2-objective",
+"word": "objective",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"hedef",
+"amaç"
+],
+"example_en": "Our first objective is to expand the company.",
+"example_tr": "İlk hedefimiz şirketi büyütmektir."
+}
+],
+"note": ""
+},
+{
+"id": "b2-launch",
+"word": "launch",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"başlatmak",
+"piyasaya sürmek"
+],
+"example_en": "We plan to launch the website next week.",
+"example_tr": "Web sitesini haftaya başlatmayı planlıyoruz."
+}
+],
+"note": ""
+},
+{
+"id": "b2-expand",
+"word": "expand",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"genişletmek",
+"büyümek"
+],
+"example_en": "They want to expand their business abroad.",
+"example_tr": "İşlerini yurtdışına genişletmek istiyorlar."
+}
+],
+"note": ""
+},
+{
+"id": "b2-decline",
+"word": "decline",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"düşmek",
+"azalmak"
+],
+"example_en": "The profits are declining very fast this year.",
+"example_tr": "Kârlar bu yıl çok hızlı düşüyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-shortage",
+"word": "shortage",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sıkıntı",
+"kıtlık"
+],
+"example_en": "There is a shortage of clean water in the city.",
+"example_tr": "Şehirde temiz su sıkıntısı var."
+}
+],
+"note": ""
+},
+{
+"id": "b2-risk",
+"word": "risk",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"risk",
+"tehlike"
+],
+"example_en": "This investment carries a considerable risk.",
+"example_tr": "Bu yatırım önemli ölçüde risk taşıyor."
+}
+],
+"note": ""
+},
+{
+"id": "b2-deal",
+"word": "deal",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"anlaşma"
+],
+"example_en": "We made a great deal with our new partner.",
+"example_tr": "Yeni ortağımızla harika bir anlaşma yaptık."
+}
+],
+"note": ""
+},
+{
+"id": "b2-partnership",
+"word": "partnership",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ortaklık"
+],
+"example_en": "This partnership will bring a lot of money.",
+"example_tr": "Bu ortaklık çok para getirecek."
+}
+],
+"note": ""
+},
+{
+"id": "b2-efficiency",
+"word": "efficiency",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"verimlilik"
+],
+"example_en": "We must improve the efficiency of our team.",
+"example_tr": "Ekibimizin verimliliğini artırmalıyız."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "b2-p-down-to-business",
+"text": "Let's get down to business.",
+"tr": "İş konuşalım.",
+"example_en": "Let's get down to business. – Yes, let's start.",
+"example_tr": "İş konuşalım. – Evet, başlayalım.",
+"note": "Toplantıya asıl konuya girmek için kullanılır."
+},
+{
+"id": "b2-p-get-back",
+"text": "I'll get back to you.",
+"tr": "Sana döneceğim.",
+"example_en": "I'll get back to you tomorrow. – Thank you.",
+"example_tr": "Size yarın döneceğim. – Teşekkürler.",
+"note": ""
+},
+{
+"id": "b2-p-running-out",
+"text": "We're running out of time.",
+"tr": "Zamanımız tükeniyor.",
+"example_en": "We're running out of time. – Yes, let's be fast!",
+"example_tr": "Zamanımız tükeniyor. – Evet, hızlı olalım!",
+"note": ""
+},
+{
+"id": "b2-p-go-over",
+"text": "Could we go over…?",
+"tr": "…üstünden geçebilir miyiz?",
+"example_en": "Could we go over the plan? – Yes.",
+"example_tr": "Planın üstünden geçebilir miyiz? – Evet.",
+"note": ""
+},
+{
+"id": "b2-p-win-win",
+"text": "It's a win-win situation.",
+"tr": "Kazan-kazan bir durum.",
+"example_en": "It's a win-win situation. – I agree.",
+"example_tr": "Kazan-kazan bir durum. – Katılıyorum.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "b2-business-1",
+"title": "Yeni Müşteri",
+"names": [
+"Ali",
+"Sarah"
+],
+"lines": [
+{
+"en": "Let's get down to business. We have a new client.",
+"tr": "İş konuşalım. Yeni bir müşterimiz var."
+},
+{
+"en": "I read the proposal. Our first priority is to help them.",
+"tr": "Teklifi okudum. İlk önceliğimiz onlara yardım etmek."
+},
+{
+"en": "Yes. The first objective is to establish a good relationship.",
+"tr": "Evet. İlk hedef iyi bir ilişki kurmak."
+},
+{
+"en": "We must delegate some work to the team.",
+"tr": "Ekibe biraz iş devretmeliyiz."
+},
+{
+"en": "I see what you mean, but we're running out of time.",
+"tr": "Ne demek istediğini anlıyorum ama zamanımız tükeniyor."
+},
+{
+"en": "I will talk to the manager and I'll get back to you.",
+"tr": "Yöneticiyle konuşacağım ve sana döneceğim."
+}
+]
+},
+{
+"id": "b2-business-2",
+"title": "Büyüme Stratejisi",
+"names": [
+"Canan",
+"John",
+"Asia"
+],
+"lines": [
+{
+"en": "Our biggest competitor is expanding into Asia.",
+"tr": "En büyük rakibimiz Asya'ya açılıyor."
+},
+{
+"en": "Therefore, we need a new strategy.",
+"tr": "Bu nedenle, yeni bir stratejiye ihtiyacımız var."
+},
+{
+"en": "We can establish a new partnership.",
+"tr": "Yeni bir ortaklık kurabiliriz."
+},
+{
+"en": "That carries a considerable risk.",
+"tr": "Bu önemli ölçüde bir risk taşıyor."
+},
+{
+"en": "It seems to me that it is a win-win situation.",
+"tr": "Bana öyle geliyor ki bu kazan-kazan bir durum."
+},
+{
+"en": "That's a fair point. Could we go over the plan tomorrow?",
+"tr": "Bu haklı bir nokta. Planın üstünden yarın geçebilir miyiz?"
+}
+]
+},
+{
+"id": "b2-business-3",
+"title": "Su Sıkıntısı",
+"names": [
+"Murat",
+"Emma"
+],
+"lines": [
+{
+"en": "Our profits are declining this year.",
+"tr": "Kârlarımız bu yıl düşüyor."
+},
+{
+"en": "It is because of the water shortage.",
+"tr": "Bunun nedeni su sıkıntısı."
+},
+{
+"en": "We must improve our efficiency.",
+"tr": "Verimliliğimizi artırmalıyız."
+},
+{
+"en": "If we make a new deal, we can save money.",
+"tr": "Eğer yeni bir anlaşma yaparsak, para tasarrufu yapabiliriz."
+},
+{
+"en": "Are you certain that we can maintain our quality?",
+"tr": "Kalitemizi koruyabileceğimizden emin misin?"
+},
+{
+"en": "Yes, it is an adequate solution.",
+"tr": "Evet, bu yeterli bir çözüm."
+}
+]
+},
+{
+"id": "b2-business-4",
+"title": "Uygulama Yatırımı",
+"names": [
+"Zeynep",
+"Paul"
+],
+"lines": [
+{
+"en": "We plan to launch the new app next week.",
+"tr": "Yeni uygulamayı haftaya başlatmayı planlıyoruz."
+},
+{
+"en": "I think we should invest more money in it.",
+"tr": "Bence ona daha fazla para yatırmalıyız."
+},
+{
+"en": "Is this a good investment?",
+"tr": "Bu iyi bir yatırım mı?"
+},
+{
+"en": "Yes. It will enhance our relationship with the customers.",
+"tr": "Evet. Müşterilerle olan ilişkimizi geliştirecek."
+},
+{
+"en": "I see what you mean, but it is very expensive.",
+"tr": "Ne demek istediğini anlıyorum ama çok pahalı."
+},
+{
+"en": "Nevertheless, we must try it.",
+"tr": "Yine de bunu denemeliyiz."
+}
+]
+},
+{
+"id": "b2-business-5",
+"title": "Fiyat Görüşmesi",
+"names": [
+"David",
+"Leyla"
+],
+"lines": [
+{
+"en": "We must negotiate the price with the new client.",
+"tr": "Yeni müşteriyle fiyatı pazarlık etmeliyiz."
+},
+{
+"en": "They have a tendency to ask for a big discount.",
+"tr": "Büyük bir indirim isteme eğilimindeler."
+},
+{
+"en": "We can offer them a better deal.",
+"tr": "Onlara daha iyi bir anlaşma sunabiliriz."
+},
+{
+"en": "Could we go over the price now?",
+"tr": "Fiyatın üstünden şimdi geçebilir miyiz?"
+},
+{
+"en": "We're running out of time today.",
+"tr": "Bugün zamanımız tükeniyor."
+},
+{
+"en": "OK, I'll get back to you tomorrow morning.",
+"tr": "Tamam, sana yarın sabah döneceğim."
+}
+]
+}
+]
+}

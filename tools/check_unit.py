@@ -49,7 +49,7 @@ someone something anything nothing everyone everything somebody nobody
 into through over under between behind until since
 i've you've we've they've he'd she'd you'd they'd i'll you'll he'll she'll we'll they'll it'll
 wasn't weren't didn't hasn't haven't there's here's
-why only lot inside outside back ok then first soon later as
+why only lot inside outside back ok then first soon later as cannot yet without
 """.split()),
     "B1": set("""
 might may whose anyone anybody somewhere anywhere everywhere nowhere
@@ -78,7 +78,7 @@ IRREGULAR = {
     "been": "be", "done": "do", "gone": "go", "seen": "see", "eaten": "eat", "written": "write",
     "taken": "take", "given": "give", "known": "know", "flown": "fly", "chosen": "choose",
     "grown": "grow", "stolen": "steal", "driven": "drive", "spoken": "speak", "got": "get",
-    "better": "better", "best": "best", "worse": "worse", "worst": "worse",
+    "overcame": "overcome", "better": "better", "best": "best", "worse": "worse", "worst": "worse",
 }
 
 
@@ -94,7 +94,7 @@ def tokens(text):
 def lemmas(word):
     """Possible base forms of `word`."""
     if word in IRREGULAR:
-        return {IRREGULAR[word]}
+        return {word, IRREGULAR[word]}
     out = {word}
     if word.endswith("'s"):
         out.add(word[:-2])
