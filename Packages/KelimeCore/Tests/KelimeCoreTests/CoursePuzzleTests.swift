@@ -16,16 +16,12 @@ struct CoursePuzzleTests {
         return db
     }
 
-    func startedCardIDs(_ db: Database) throws -> Set<String> {
-        var ids = Set<String>()
-        for unit in try Curriculum.started(db: db) { ids.formUnion(try Curriculum.cards(of: unit, db: db).map(\.id)) }
-        return ids
-    }
-
-    @Test func usesStartedUnitsWithStrugglingWordsFirst() throws {
+    @Test func usesTheCurrentUnitWithStrugglingWordsFirst() throws {
         let db = try makeDatabase()
         try db.writer.write { db in
-            try Curriculum.start("a1-cafe", db: db)
+            try Curriculum.makeCurrent("a1-cafe", db: db)
+            // A struggling word of another unit stays out.
+            try CardState(cardID: "a1-mother", state: .struggling).save(db)
             for id in ["a1-coffee", "a1-milk", "a1-water"] {
                 try CardState(cardID: id, state: .struggling).save(db)
             }
@@ -34,7 +30,8 @@ struct CoursePuzzleTests {
             let day = clock.today.adding(days: offset)
             let puzzle = try #require(try db.reader.read { db in try CoursePuzzle.daily(level: .a1, day: day, db: db) })
             let ids = Set(puzzle.entries.map(\.cardID))
-            #expect(ids.isSubset(of: try db.reader.read { db in try startedCardIDs(db) }))
+            let cafe = Set(try db.reader.read { db in try Curriculum.cards(of: "a1-cafe", db: db) }.map(\.id))
+            #expect(ids.isSubset(of: cafe))
             #expect(CrosswordValidator.isValid(puzzle))
             #expect(ids.isSuperset(of: ["a1-coffee", "a1-milk", "a1-water"]), "day \(offset): \(ids)")
         }
