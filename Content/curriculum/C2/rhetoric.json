@@ -73,8 +73,8 @@
         {
           "pos": "n",
           "tr": [
-            "hafifsetme",
-            "azımsama"
+            "azımsama",
+            "hafif ifade"
           ],
           "example_en": "To call it bad is an understatement.",
           "example_tr": "Buna kötü demek hafif kalır."
@@ -91,8 +91,8 @@
           "tr": [
             "klişe"
           ],
-          "example_en": "It seems like a cliché.",
-          "example_tr": "Kulağa bir klişe gibi geliyor."
+          "example_en": "That ending is a cliché.",
+          "example_tr": "O son bir klişe."
         }
       ],
       "note": ""
@@ -104,11 +104,11 @@
         {
           "pos": "n",
           "tr": [
-            "anektod",
-            "fıkra"
+            "anekdot",
+            "kısa hikâye"
           ],
           "example_en": "He shared a funny anecdote.",
-          "example_tr": "Komik bir anektod paylaştı."
+          "example_tr": "Komik bir anekdot paylaştı."
         }
       ],
       "note": ""
@@ -152,8 +152,8 @@
           "tr": [
             "ima etmek"
           ],
-          "example_en": "What do you insinuate?",
-          "example_tr": "Ne ima ediyorsun?"
+          "example_en": "What are you insinuating?",
+          "example_tr": "Ne ima etmeye çalışıyorsun?"
         }
       ],
       "note": ""
@@ -196,8 +196,8 @@
         {
           "pos": "adj",
           "tr": [
-            "patavatsız",
-            "açık"
+            "dobra",
+            "patavatsız"
           ],
           "example_en": "To be blunt, this plan is bad.",
           "example_tr": "Açık konuşmak gerekirse, bu plan kötü."
@@ -228,10 +228,11 @@
         {
           "pos": "adj",
           "tr": [
-            "gereksiz sözcüklü"
+            "ağdalı",
+            "sözü uzatan"
           ],
           "example_en": "The report is too verbose.",
-          "example_tr": "Rapor çok gereksiz sözcüklü."
+          "example_tr": "Rapor çok ağdalı."
         }
       ],
       "note": ""
@@ -258,10 +259,11 @@
         {
           "pos": "adj",
           "tr": [
-            "lafazan"
+            "yüzeysel",
+            "kolay söylenmiş"
           ],
           "example_en": "I do not trust his glib promises.",
-          "example_tr": "Onun lafazan vaatlerine güvenmiyorum."
+          "example_tr": "Onun boş vaatlerine güvenmiyorum."
         }
       ],
       "note": ""
@@ -370,7 +372,7 @@
         },
         {
           "en": "Your report is too verbose.",
-          "tr": "Raporun çok gereksiz sözcüklü."
+          "tr": "Raporun çok ağdalı."
         },
         {
           "en": "Please get to the point.",
@@ -434,7 +436,7 @@
         },
         {
           "en": "Sarah does not like his glib comments.",
-          "tr": "Sarah onun lafazan yorumlarını sevmez."
+          "tr": "Sarah onun yüzeysel yorumlarını sevmez."
         },
         {
           "en": "The irony of the situation is evident.",
@@ -468,7 +470,7 @@
         },
         {
           "en": "She shares a funny anecdote.",
-          "tr": "Komik bir anektod paylaşıyor."
+          "tr": "Komik bir anekdot paylaşıyor."
         }
       ]
     },
@@ -492,8 +494,8 @@
           "tr": "Buna hata demek hafif kalır."
         },
         {
-          "en": "What do you insinuate?",
-          "tr": "Ne ima ediyorsun?"
+          "en": "What are you insinuating?",
+          "tr": "Ne ima etmeye çalışıyorsun?"
         },
         {
           "en": "It is just a rhetorical strategy.",
