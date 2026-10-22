@@ -1,0 +1,509 @@
+{
+"id": "c2-rhetoric",
+"level": "C2",
+"title": "Söz ustalığı",
+"placement": "any",
+"goal": "Ironi, abartı ve örtmeceyi tanır ve yerinde kullanır, birinin kaçamak ya da açık sözlü konuşmasını çözümler.",
+"words": [
+{
+"id": "c2-euphemism",
+"word": "euphemism",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"örtmece"
+],
+"example_en": "He used a euphemism for being poor.",
+"example_tr": "Fakir olmak için bir örtmece kullandı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-hyperbole",
+"word": "hyperbole",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"abartı"
+],
+"example_en": "That claim is obvious hyperbole.",
+"example_tr": "O iddia bariz bir abartı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-irony",
+"word": "irony",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ironi"
+],
+"example_en": "The irony of the situation was obvious.",
+"example_tr": "Durumun ironisi barizdi."
+}
+],
+"note": ""
+},
+{
+"id": "c2-sarcasm",
+"word": "sarcasm",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"iğneleme",
+"kinaye"
+],
+"example_en": "I did not like his sarcasm.",
+"example_tr": "İğnelemesinden hoşlanmadım."
+}
+],
+"note": ""
+},
+{
+"id": "c2-understatement",
+"word": "understatement",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"hafifsetme",
+"azımsama"
+],
+"example_en": "To call it bad is an understatement.",
+"example_tr": "Buna kötü demek hafif kalır."
+}
+],
+"note": ""
+},
+{
+"id": "c2-cliche",
+"word": "cliché",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"klişe"
+],
+"example_en": "It seems like a cliché.",
+"example_tr": "Kulağa bir klişe gibi geliyor."
+}
+],
+"note": ""
+},
+{
+"id": "c2-anecdote",
+"word": "anecdote",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"anektod",
+"fıkra"
+],
+"example_en": "He shared a funny anecdote.",
+"example_tr": "Komik bir anektod paylaştı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-digress",
+"word": "digress",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"konudan sapmak"
+],
+"example_en": "I digress; let's return to the subject.",
+"example_tr": "Konudan saptım; mevzuya dönelim."
+}
+],
+"note": ""
+},
+{
+"id": "c2-allude",
+"word": "allude",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"üstü kapalı değinmek"
+],
+"example_en": "He alluded to their past relationship.",
+"example_tr": "Geçmişteki ilişkilerine üstü kapalı değindi."
+}
+],
+"note": ""
+},
+{
+"id": "c2-insinuate",
+"word": "insinuate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"ima etmek"
+],
+"example_en": "What do you insinuate?",
+"example_tr": "Ne ima ediyorsun?"
+}
+],
+"note": ""
+},
+{
+"id": "c2-evasive",
+"word": "evasive",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kaçamak"
+],
+"example_en": "His answers were very evasive.",
+"example_tr": "Cevapları çok kaçamaktı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-candid",
+"word": "candid",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"içten",
+"açık sözlü"
+],
+"example_en": "I appreciate your candid opinion.",
+"example_tr": "İçten fikrine değer veriyorum."
+}
+],
+"note": ""
+},
+{
+"id": "c2-blunt",
+"word": "blunt",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"patavatsız",
+"açık"
+],
+"example_en": "To be blunt, this plan is bad.",
+"example_tr": "Açık konuşmak gerekirse, bu plan kötü."
+}
+],
+"note": ""
+},
+{
+"id": "c2-terse",
+"word": "terse",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kısa ve ters",
+"özlü"
+],
+"example_en": "She gave a terse answer.",
+"example_tr": "Kısa ve ters bir cevap verdi."
+}
+],
+"note": ""
+},
+{
+"id": "c2-verbose",
+"word": "verbose",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"gereksiz sözcüklü"
+],
+"example_en": "The report is too verbose.",
+"example_tr": "Rapor çok gereksiz sözcüklü."
+}
+],
+"note": ""
+},
+{
+"id": "c2-pithy",
+"word": "pithy",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"özlü ve anlamlı"
+],
+"example_en": "I like his pithy comments.",
+"example_tr": "Onun özlü yorumlarını severim."
+}
+],
+"note": ""
+},
+{
+"id": "c2-glib",
+"word": "glib",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"lafazan"
+],
+"example_en": "I do not trust his glib promises.",
+"example_tr": "Onun lafazan vaatlerine güvenmiyorum."
+}
+],
+"note": ""
+},
+{
+"id": "c2-lucid",
+"word": "lucid",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"berrak",
+"anlaşılır"
+],
+"example_en": "Her argument was very lucid.",
+"example_tr": "Argümanı çok berraktı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-eloquently",
+"word": "eloquently",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"etkili bir şekilde"
+],
+"example_en": "He spoke eloquently about freedom.",
+"example_tr": "Özgürlük hakkında etkili konuştu."
+}
+],
+"note": ""
+},
+{
+"id": "c2-rhetorical",
+"word": "rhetorical",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"retorik"
+],
+"example_en": "It was merely a rhetorical strategy.",
+"example_tr": "Sadece retorik bir stratejiydi."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c2-p-beat-around",
+"text": "Beat around the bush.",
+"tr": "Lafı dolandırmak.",
+"example_en": "Please do not beat around the bush.",
+"example_tr": "Lütfen lafı dolandırma.",
+"note": ""
+},
+{
+"id": "c2-p-get-point",
+"text": "Get to the point.",
+"tr": "Sadede gelmek.",
+"example_en": "I wish he would get to the point.",
+"example_tr": "Keşke sadede gelse.",
+"note": ""
+},
+{
+"id": "c2-p-mince-words",
+"text": "Mince one's words.",
+"tr": "Lafını esirgemek.",
+"example_en": "She never minces her words.",
+"example_tr": "Lafını asla esirgemez.",
+"note": ""
+},
+{
+"id": "c2-p-speak-volumes",
+"text": "Speak volumes.",
+"tr": "Çok şey ifade etmek.",
+"example_en": "His laugh speaks volumes.",
+"example_tr": "Gülüşü çok şey ifade ediyor.",
+"note": ""
+},
+{
+"id": "c2-p-put-bluntly",
+"text": "To put it bluntly, …",
+"tr": "Açıkçası, …",
+"example_en": "To put it bluntly, you failed.",
+"example_tr": "Açıkçası, başarısız oldun.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c2-rhetoric-1",
+"title": "Kısa ve öz",
+"names": [
+"Leyla",
+"Ali"
+],
+"lines": [
+{
+"en": "Leyla and Ali are in the office.",
+"tr": "Leyla ve Ali ofisteler."
+},
+{
+"en": "Your report is too verbose.",
+"tr": "Raporun çok gereksiz sözcüklü."
+},
+{
+"en": "Please get to the point.",
+"tr": "Lütfen sadede gel."
+},
+{
+"en": "To put it bluntly, it is bad.",
+"tr": "Açıkçası, kötü."
+},
+{
+"en": "I need pithy sentences.",
+"tr": "Özlü cümlelere ihtiyacım var."
+}
+]
+},
+{
+"id": "c2-rhetoric-2",
+"title": "Kaçamak cevaplar",
+"names": [
+"Kaya",
+"London"
+],
+"lines": [
+{
+"en": "Kaya works for the government in London.",
+"tr": "Kaya Londra'da hükümet için çalışıyor."
+},
+{
+"en": "He is very evasive today.",
+"tr": "Bugün çok kaçamak davranıyor."
+},
+{
+"en": "He digresses a lot.",
+"tr": "Konudan çok sapıyor."
+},
+{
+"en": "Don't beat around the bush!",
+"tr": "Lafı dolandırma!"
+},
+{
+"en": "We need candid answers.",
+"tr": "İçten cevaplara ihtiyacımız var."
+}
+]
+},
+{
+"id": "c2-rhetoric-3",
+"title": "İronik durum",
+"names": [
+"Emre",
+"Sarah"
+],
+"lines": [
+{
+"en": "Emre does not mince his words.",
+"tr": "Emre lafını hiç esirgemez."
+},
+{
+"en": "His sarcasm is obvious.",
+"tr": "İğnelemesi bariz."
+},
+{
+"en": "Sarah does not like his glib comments.",
+"tr": "Sarah onun lafazan yorumlarını sevmez."
+},
+{
+"en": "The irony of the situation is evident.",
+"tr": "Durumun ironisi ortada."
+},
+{
+"en": "They must work together.",
+"tr": "Birlikte çalışmaları şart."
+}
+]
+},
+{
+"id": "c2-rhetoric-4",
+"title": "Etkili konuşma",
+"names": [
+"Zeynep",
+"Paris"
+],
+"lines": [
+{
+"en": "Zeynep is in Paris for a seminar.",
+"tr": "Zeynep bir seminer için Paris'te."
+},
+{
+"en": "She speaks eloquently about a famous painting.",
+"tr": "Ünlü bir tablo hakkında etkili konuşuyor."
+},
+{
+"en": "Her lucid story speaks volumes.",
+"tr": "Berrak hikayesi çok şey ifade ediyor."
+},
+{
+"en": "She shares a funny anecdote.",
+"tr": "Komik bir anektod paylaşıyor."
+}
+]
+},
+{
+"id": "c2-rhetoric-5",
+"title": "Retorik strateji",
+"names": [
+"John"
+],
+"lines": [
+{
+"en": "John uses a lot of clichés.",
+"tr": "John çok fazla klişe kullanır."
+},
+{
+"en": "His latest claim is hyperbole.",
+"tr": "Son iddiası abartı."
+},
+{
+"en": "To call it a mistake is an understatement.",
+"tr": "Buna hata demek hafif kalır."
+},
+{
+"en": "What do you insinuate?",
+"tr": "Ne ima ediyorsun?"
+},
+{
+"en": "It is just a rhetorical strategy.",
+"tr": "Bu sadece retorik bir strateji."
+},
+{
+"en": "He alludes to a big crisis.",
+"tr": "Büyük bir krize üstü kapalı değiniyor."
+}
+]
+}
+]
+}
