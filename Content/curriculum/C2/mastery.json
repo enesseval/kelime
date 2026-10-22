@@ -1,0 +1,491 @@
+{
+  "id": "c2-mastery",
+  "level": "C2",
+  "title": "Usta işi",
+  "placement": "last",
+  "goal": "En seçkin kelimeleri yerinde kullanarak etkileyici bir konuşma ya da deneme kurar; dil üzerinde tam hâkimiyet.",
+  "words": [
+    {
+      "id": "c2-quintessential",
+      "word": "quintessential",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "en tipik örnek",
+            "tam bir"
+          ],
+          "example_en": "She is the quintessential artist.",
+          "example_tr": "O, tam anlamıyla bir sanatçı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-juxtapose",
+      "word": "juxtapose",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "yan yana koymak"
+          ],
+          "example_en": "We can juxtapose the two paintings.",
+          "example_tr": "İki tabloyu yan yana koyabiliriz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-serendipity",
+      "word": "serendipity",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "mutlu tesadüf",
+            "şans eseri"
+          ],
+          "example_en": "Finding this book was pure serendipity.",
+          "example_tr": "Bu kitabı bulmak mutlu bir tesadüftü."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-ephemeral",
+      "word": "ephemeral",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "geçici",
+            "kısa süreli"
+          ],
+          "example_en": "Life is ephemeral.",
+          "example_tr": "Hayat geçicidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-esoteric",
+      "word": "esoteric",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "az kişinin anladığı",
+            "gizemli"
+          ],
+          "example_en": "His theory is very esoteric.",
+          "example_tr": "Teorisi çok az kişinin anlayabileceği türden."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-idiosyncratic",
+      "word": "idiosyncratic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kendine özgü",
+            "alışılmadık"
+          ],
+          "example_en": "He has an idiosyncratic method.",
+          "example_tr": "Kendine özgü bir yöntemi var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-incongruous",
+      "word": "incongruous",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "uyumsuz",
+            "yersiz"
+          ],
+          "example_en": "His trainers look incongruous with his suit.",
+          "example_tr": "Spor ayakkabıları takım elbisesiyle uyumsuz duruyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-ineffable",
+      "word": "ineffable",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tarif edilemez"
+          ],
+          "example_en": "The view gave me an ineffable joy.",
+          "example_tr": "Manzara bana tarif edilemez bir mutluluk verdi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-labyrinthine",
+      "word": "labyrinthine",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "labirent gibi",
+            "karmaşık"
+          ],
+          "example_en": "The city has labyrinthine streets.",
+          "example_tr": "Şehrin labirent gibi sokakları var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-perennial",
+      "word": "perennial",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kronik",
+            "sürekli",
+            "çok yıllık"
+          ],
+          "example_en": "This is a perennial problem.",
+          "example_tr": "Bu sürekli bir sorundur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-quixotic",
+      "word": "quixotic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "hayalperest",
+            "Don Kişotvari"
+          ],
+          "example_en": "He has a quixotic plan.",
+          "example_tr": "Gerçekçi olmayan, hayalperest bir planı var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-sanguine",
+      "word": "sanguine",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "iyimser",
+            "umutlu"
+          ],
+          "example_en": "She is sanguine about the future.",
+          "example_tr": "Gelecek hakkında iyimser."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-vicarious",
+      "word": "vicarious",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "dolaylı yoldan yaşanan"
+          ],
+          "example_en": "I get a vicarious thrill from travel films.",
+          "example_tr": "Gezi filmleriyle dolaylı yoldan heyecan yaşıyorum."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-zenith",
+      "word": "zenith",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "zirve",
+            "doruk"
+          ],
+          "example_en": "His career is at its zenith.",
+          "example_tr": "Kariyeri zirvesinde."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-nadir",
+      "word": "nadir",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "en alt nokta",
+            "dip"
+          ],
+          "example_en": "Their relationship is at its nadir.",
+          "example_tr": "İlişkileri en alt noktada."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-cathartic",
+      "word": "cathartic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "rahatlatıcı",
+            "arındırıcı"
+          ],
+          "example_en": "The therapy was very cathartic.",
+          "example_tr": "Terapi çok rahatlatıcıydı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-meticulously",
+      "word": "meticulously",
+      "senses": [
+        {
+          "pos": "adv",
+          "tr": [
+            "titizlikle",
+            "özenle"
+          ],
+          "example_en": "She meticulously planned the trip.",
+          "example_tr": "Geziyi titizlikle planladı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-enigmatic",
+      "word": "enigmatic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "gizemli",
+            "anlaşılmaz"
+          ],
+          "example_en": "The famous artist is very enigmatic.",
+          "example_tr": "Ünlü sanatçı çok gizemli."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c2-p-hit-the-nail",
+      "text": "Hit the nail on the head.",
+      "tr": "Tam üstüne basmak.",
+      "example_en": "You hit the nail on the head.",
+      "example_tr": "Tam üstüne bastın.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-icing-on-the-cake",
+      "text": "The icing on the cake.",
+      "tr": "İşin en güzel yanı.",
+      "example_en": "This is the icing on the cake.",
+      "example_tr": "Bu da işin en güzel yanı oldu.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-leave-no-stone",
+      "text": "Leave no stone unturned.",
+      "tr": "Her yolu denemek.",
+      "example_en": "We will leave no stone unturned.",
+      "example_tr": "Yapmadık şey bırakmayacağız.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-once-in-a-blue",
+      "text": "Once in a blue moon.",
+      "tr": "Ayda yılda bir.",
+      "example_en": "I eat meat once in a blue moon.",
+      "example_tr": "Ayda yılda bir et yerim.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-best-of-both",
+      "text": "The best of both worlds.",
+      "tr": "İki tarafın da en iyisi.",
+      "example_en": "We have the best of both worlds.",
+      "example_tr": "İkisinin de iyi yanlarına sahibiz.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c2-mastery-1",
+      "title": "Londra Sanatı",
+      "names": [
+        "Emma",
+        "London",
+        "Ali"
+      ],
+      "lines": [
+        {
+          "en": "Emma is in London.",
+          "tr": "Emma Londra'da."
+        },
+        {
+          "en": "This is the quintessential London museum.",
+          "tr": "Bu, tam bir Londra müzesi."
+        },
+        {
+          "en": "Ali, look! They juxtapose old and new paintings.",
+          "tr": "Ali, bak! Eski ve yeni tabloları yan yana koyuyorlar."
+        },
+        {
+          "en": "Meeting you here was serendipity.",
+          "tr": "Seninle burada karşılaşmak tamamen şanstı."
+        },
+        {
+          "en": "Yes! And the free coffee is the icing on the cake.",
+          "tr": "Evet! Bedava kahve de cabası."
+        },
+        {
+          "en": "I love it. Moments like this are ephemeral.",
+          "tr": "Bunu seviyorum. Böyle anlar geçicidir."
+        }
+      ]
+    },
+    {
+      "id": "c2-mastery-2",
+      "title": "Anlaşılmaz Kitap",
+      "names": [
+        "Ahmet"
+      ],
+      "lines": [
+        {
+          "en": "Ahmet has an idiosyncratic method.",
+          "tr": "Ahmet'in kendine özgü bir yöntemi var."
+        },
+        {
+          "en": "His new book is very esoteric.",
+          "tr": "Yeni kitabı oldukça anlaşılması zor."
+        },
+        {
+          "en": "His friend hits the nail on the head: 'It is too esoteric.'",
+          "tr": "Arkadaşı tam üstüne basıyor: 'Fazla anlaşılmaz.'"
+        },
+        {
+          "en": "The blue cover looks incongruous.",
+          "tr": "Mavi kapak uyumsuz duruyor."
+        },
+        {
+          "en": "But the ending leaves an ineffable feeling.",
+          "tr": "Ama sonu tarif edilemez bir his bırakıyor."
+        }
+      ]
+    },
+    {
+      "id": "c2-mastery-3",
+      "title": "Yeni Politika",
+      "names": [
+        "Istanbul",
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "Istanbul has labyrinthine streets.",
+          "tr": "İstanbul'un labirent gibi sokakları var."
+        },
+        {
+          "en": "Traffic is a perennial problem here.",
+          "tr": "Trafik burada sürekli bir sorun."
+        },
+        {
+          "en": "Zeynep is sanguine about the new policy.",
+          "tr": "Zeynep yeni politika hakkında iyimser."
+        },
+        {
+          "en": "I will leave no stone unturned to find a solution.",
+          "tr": "Bir çözüm bulmak için elimden geleni ardına koymayacağım."
+        },
+        {
+          "en": "That is a quixotic goal, Zeynep!",
+          "tr": "Bu hayalperest bir hedef, Zeynep!"
+        }
+      ]
+    },
+    {
+      "id": "c2-mastery-4",
+      "title": "Kariyer Zirvesi",
+      "names": [
+        "David"
+      ],
+      "lines": [
+        {
+          "en": "David is at the zenith of his career.",
+          "tr": "David kariyerinin zirvesinde."
+        },
+        {
+          "en": "Last year was the nadir.",
+          "tr": "Geçen yıl en alt noktaydı."
+        },
+        {
+          "en": "His mother feels a vicarious joy at his success.",
+          "tr": "Annesi onun başarısını dolaylı yoldan yaşıyor."
+        },
+        {
+          "en": "He visits his parents once in a blue moon.",
+          "tr": "Ailesini ayda yılda bir ziyaret eder."
+        },
+        {
+          "en": "But they are always proud.",
+          "tr": "Ama her zaman gurur duyuyorlar."
+        }
+      ]
+    },
+    {
+      "id": "c2-mastery-5",
+      "title": "Sergi",
+      "names": [
+        "Elif"
+      ],
+      "lines": [
+        {
+          "en": "Elif meticulously planned the exhibition.",
+          "tr": "Elif sergiyi titizlikle planladı."
+        },
+        {
+          "en": "The enigmatic artist is finally here.",
+          "tr": "Gizemli sanatçı nihayet burada."
+        },
+        {
+          "en": "Her new painting is very cathartic.",
+          "tr": "Yeni tablosu insanı çok rahatlatıyor."
+        },
+        {
+          "en": "It is both traditional and contemporary.",
+          "tr": "Hem geleneksel hem çağdaş."
+        },
+        {
+          "en": "Yes, we have the best of both worlds.",
+          "tr": "Evet, ikisinin de en iyi yanı bir arada."
+        }
+      ]
+    }
+  ]
+}
