@@ -106,8 +106,8 @@ Content/exams/<exam>.json holds each exam's word list (from Gemini 3.1 Pro, aske
 teaches. tools/build_exams.py tags the course card when a course teaches the word, otherwise adds
 an exam-only card ("exam-<word>", exam decks only, so it never reaches a level course); a card
 written for one exam serves the others. Run it after build_curriculum.py. Decks: YDS 355, YÖKDİL
-309, IELTS 270. IELTS still lists 72 words without a card (build_exams.py prints them); Gemini
-kept erroring or refusing those batches ("credentials", "deter", "terminate" look like triggers).
+309, IELTS 270. 72 IELTS words Gemini would not write cards for (it kept erroring or refusing;
+"credentials", "deter", "terminate" looked like triggers) were left out of the list.
 
 ## C2 course (content v9)
 
