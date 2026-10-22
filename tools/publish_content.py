@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SCHEMA = 2  # 2: pos "conj"
+SCHEMA = 3  # 2: pos "conj"; 3: level C2
 
 
 def main():

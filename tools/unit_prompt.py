@@ -67,10 +67,18 @@ GRAMMAR["C1"] = {
             "formal register for speeches and writing.",
 }
 GRAMMAR["C1"]["first"] = GRAMMAR["C1"]["any"]
+GRAMMAR["C2"] = {
+    "any": "C2 grammar: everything from A1-C1, including inversion and cleft sentences where they sound "
+           "natural, and a register that fits the situation (formal, neutral or relaxed). Prefer clear, "
+           "natural sentences over showy ones.",
+    "last": "C2 grammar as in the other units: the full range of English, used with precision and in the "
+            "register the situation needs.",
+}
+GRAMMAR["C2"]["first"] = GRAMMAR["C2"]["any"]
 GRAMMAR["A1"]["first"] = GRAMMAR["A1"]["any"]
 GRAMMAR["A2"]["first"] = GRAMMAR["A2"]["any"]
-NAMES = {"A1": "beginner (A1)", "A2": "elementary (A2)", "B1": "intermediate (B1)", "B2": "upper-intermediate (B2)", "C1": "advanced (C1)"}
-SENSE_LEVEL = {"A1": "A1-A2", "A2": "A2-B1", "B1": "B1-B2", "B2": "B2-C1", "C1": "C1-C2"}
+NAMES = {"A1": "beginner (A1)", "A2": "elementary (A2)", "B1": "intermediate (B1)", "B2": "upper-intermediate (B2)", "C1": "advanced (C1)", "C2": "proficiency (C2)"}
+SENSE_LEVEL = {"A1": "A1-A2", "A2": "A2-B1", "B1": "B1-B2", "B2": "B2-C1", "C1": "C1-C2", "C2": "C2"}
 
 
 def compact(unit):

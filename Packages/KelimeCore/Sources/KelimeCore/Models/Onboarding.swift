@@ -103,6 +103,7 @@ public enum LevelSamples {
         case .b1: ["reliable", "obvious", "achieve"]
         case .b2: ["reluctant", "hesitate", "significant"]
         case .c1: ["ambiguous", "meticulous", "mitigate"]
+        case .c2: ["ubiquitous", "ephemeral", "esoteric"]
         }
     }
 }

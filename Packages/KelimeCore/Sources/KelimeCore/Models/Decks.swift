@@ -7,6 +7,7 @@ public enum DeckID: String, Codable, Sendable, CaseIterable {
     case b1 = "B1"
     case b2 = "B2"
     case c1 = "C1"
+    case c2 = "C2"
     case yds = "YDS"
     case yokdil = "YÖKDİL"
     case ielts = "IELTS"
@@ -27,6 +28,7 @@ public enum DeckID: String, Codable, Sendable, CaseIterable {
         case .b1: .b1
         case .b2: .b2
         case .c1: .c1
+        case .c2: .c2
         case .yds, .yokdil, .ielts: nil
         }
     }

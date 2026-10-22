@@ -45,6 +45,7 @@ public enum CEFRLevel: String, Codable, Sendable, CaseIterable, Comparable, Data
     case b1 = "B1"
     case b2 = "B2"
     case c1 = "C1"
+    case c2 = "C2"
 
     public static func < (lhs: CEFRLevel, rhs: CEFRLevel) -> Bool {
         allCases.firstIndex(of: lhs)! < allCases.firstIndex(of: rhs)!
