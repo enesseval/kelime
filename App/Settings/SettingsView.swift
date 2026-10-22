@@ -232,6 +232,11 @@ struct SettingsView: View {
                 .frame(minHeight: 50)
                 Divider().overlay(Palette.line)
             }
+            NavigationLink(value: Route.usageCounters) {
+                SettingsRowLabel("Kullanım sayaçları", value: "")
+            }
+            .buttonStyle(.plain)
+            Divider().overlay(Palette.line)
             NavigationLink(value: Route.widgetLog) {
                 SettingsRowLabel("Widget günlüğü ve ölçüm modu", value: "")
             }
@@ -287,6 +292,7 @@ struct SettingsView: View {
     }
 
     private func setExam(_ exam: (DeckID, LocalDate)?) async {
+        if exam != nil && data?.exam == nil { UsageCounter.count(.examCountdown) }
         await app.write(rebuildQueue: false) { db in
             if let exam {
                 try ExamCountdown.set(exam.0, date: exam.1, db: db)

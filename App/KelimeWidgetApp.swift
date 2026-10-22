@@ -1,10 +1,15 @@
 import SwiftUI
+import TipKit
 
 @main
 struct KelimeWidgetApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @State private var model = AppModel()
     @Environment(\.scenePhase) private var scenePhase
+
+    init() {
+        try? Tips.configure()
+    }
 
     var body: some Scene {
         WindowGroup {

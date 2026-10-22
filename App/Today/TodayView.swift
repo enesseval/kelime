@@ -288,13 +288,17 @@ struct WeekStatsRow: View {
                     }
                 }
                 Spacer(minLength: 0)
-                Text("bu hafta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
+                if stats.streak >= 2 {
+                    Text("\(stats.streak) gün üst üste").font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption)).foregroundStyle(Palette.greenInk)
+                } else {
+                    Text("bu hafta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
+                }
             }
             .padding(14)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .background(Palette.surface)
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text("Bu hafta \(stats.days.filter(\.reviewed).count) gün tekrar"))
+            .accessibilityLabel(Text("Bu hafta \(stats.days.filter(\.reviewed).count) gün tekrar" + (stats.streak >= 2 ? ", \(stats.streak) gün üst üste" : "")))
         }
         .background(Palette.line)
         .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))

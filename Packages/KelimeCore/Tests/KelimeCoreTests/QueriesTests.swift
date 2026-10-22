@@ -49,6 +49,22 @@ struct QueriesTests {
         #expect(StatsQueries.daysUntilExam(nil, clock: clock) == nil)
     }
 
+    @Test func streakCountsDaysInARow() throws {
+        let db = try makeDatabase()
+        #expect(try db.reader.read { db in try StatsQueries.streak(db: db, clock: clock) } == 0)
+        try db.writer.write { db in
+            for daysAgo in [1, 2, 3, 5] {
+                try LearningStore.record(.answered(correct: true), cardID: "b1-curious", source: .widget, clock: clock(daysAgo: daysAgo), db: db)
+            }
+        }
+        // Today is still open: yesterday's run of three counts.
+        #expect(try db.reader.read { db in try StatsQueries.streak(db: db, clock: clock) } == 3)
+        try db.writer.write { db in
+            try LearningStore.record(.answered(correct: true), cardID: "b1-honest", source: .quickReview, clock: clock, db: db)
+        }
+        #expect(try db.reader.read { db in try StatsQueries.week(db: db, clock: clock).streak } == 4)
+    }
+
     @Test func wordListSegmentsAndSearch() throws {
         let db = try makeDatabase()
         try db.writer.write { db in
@@ -61,14 +77,50 @@ struct QueriesTests {
             #expect(try WordQueries.list(segment: .learned, db: db).map(\.id) == ["b1-reliable"])
             #expect(try WordQueries.list(segment: .favorites, db: db).map(\.id) == ["b1-curious"])
             let all = try WordQueries.list(segment: .all, db: db)
-            #expect(all.count == 2271) // the A1-C2 courses and the exam-only cards
-            #expect(all.map(\.card.word) == all.map(\.card.word).sorted())
+            // The B1 core (started) and the three words with progress; no other unit, no exam card.
+            let core = try Curriculum.cards(of: "b1-core", db: db).map(\.id)
+            #expect(Set(all.map(\.id)) == Set(core).union(["b2-reluctant", "b1-reliable", "b1-curious"]))
+            let words = all.map { $0.card.word.lowercased() }
+            #expect(words == words.sorted())
             // English word, Turkish meaning, Turkish casing and missing diacritics.
-            #expect(try WordQueries.list(segment: .all, search: "relu", db: db).map(\.id) == ["b2-reluctant", "b2-reluctantly"])
+            #expect(try WordQueries.list(segment: .all, search: "relu", db: db).map(\.id) == ["b2-reluctant"])
             #expect(try WordQueries.list(segment: .all, search: "GÜVENİLİR", db: db).map(\.id).contains("b1-reliable"))
-            #expect(try WordQueries.list(segment: .all, search: "isteksiz", db: db).map(\.id) == ["b2-reluctant", "b2-reluctantly"])
+            #expect(try WordQueries.list(segment: .all, search: "isteksiz", db: db).map(\.id) == ["b2-reluctant"])
             #expect(try WordQueries.list(segment: .all, search: "merakli", db: db).map(\.id) == ["b1-curious"])
             #expect(try WordQueries.list(segment: .struggling, search: "curious", db: db).isEmpty)
+        }
+        // Starting a unit brings its words in.
+        try db.writer.write { db in try Curriculum.start("b1-career", db: db) }
+        let career = try db.reader.read { db in try Curriculum.cards(of: "b1-career", db: db).map(\.id) }
+        let all = try db.reader.read { db in try WordQueries.list(segment: .all, db: db).map(\.id) }
+        #expect(Set(career).isSubset(of: Set(all)))
+    }
+
+    @Test func wordListFiltersAndSorts() throws {
+        let db = try makeDatabase()
+        try db.writer.write { db in
+            try LearningStore.record(.answered(correct: false), cardID: "b2-reluctant", source: .quickReview, clock: clock(daysAgo: 1), db: db)
+            try LearningStore.record(.answered(correct: false), cardID: "b2-reluctant", source: .quickReview, clock: clock, db: db)
+            try LearningStore.record(.answered(correct: false), cardID: "b1-honest", source: .quickReview, clock: clock(daysAgo: 1), db: db)
+        }
+        try db.reader.read { db throws in
+            let b2 = try WordQueries.list(segment: .all, filter: WordFilter(levels: [.b2]), db: db)
+            #expect(b2.map(\.id) == ["b2-reluctant"])
+            let struggling = try WordQueries.list(segment: .all, filter: WordFilter(states: [.struggling]), db: db)
+            #expect(Set(struggling.map(\.id)) == ["b2-reluctant", "b1-honest"])
+            let verbs = try WordQueries.list(segment: .all, filter: WordFilter(kinds: [.verb]), db: db)
+            #expect(!verbs.isEmpty && verbs.allSatisfy { $0.card.pos == .verb })
+            let fresh = try WordQueries.list(segment: .all, filter: WordFilter(states: [.new]), db: db)
+            #expect(!fresh.isEmpty && fresh.allSatisfy { $0.state == .new })
+
+            let missed = try WordQueries.list(segment: .all, sort: .mostMissed, db: db)
+            #expect(missed.prefix(2).map(\.id) == ["b2-reluctant", "b1-honest"])
+            let recent = try WordQueries.list(segment: .all, sort: .recentlyStudied, db: db)
+            #expect(recent.first?.id == "b2-reluctant")
+            let reverse = try WordQueries.list(segment: .all, sort: .reverseAlphabetical, db: db).map { $0.card.word.lowercased() }
+            #expect(reverse == reverse.sorted(by: >))
+            let byLevel = try WordQueries.list(segment: .all, sort: .level, db: db).map(\.card.level)
+            #expect(byLevel == byLevel.sorted())
         }
     }
 

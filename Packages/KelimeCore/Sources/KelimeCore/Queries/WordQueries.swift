@@ -41,9 +41,81 @@ public enum WordSegment: String, CaseIterable, Sendable {
         case .struggling: "Zorlandığın kelime yok. Bir Hızlı Tekrar ile başla."
         case .learned: "Henüz öğrendiğin kelime yok. Bir Hızlı Tekrar ile başla."
         case .favorites: "Favori kelimen yok. Kelime detayında yıldıza dokun."
-        case .all: "Aramana uyan kelime yok."
+        case .all: "Aramana ya da filtrelerine uyan kelime yok."
         }
     }
+}
+
+/// Orders of the Kelimelerim lists.
+public enum WordSort: String, CaseIterable, Sendable {
+    case alphabetical
+    case reverseAlphabetical
+    case level
+    case recentlyStudied
+    case mostMissed
+
+    public var label: String {
+        switch self {
+        case .alphabetical: "A–Z"
+        case .reverseAlphabetical: "Z–A"
+        case .level: "Seviye"
+        case .recentlyStudied: "Son çalışılan"
+        case .mostMissed: "En çok yanlış"
+        }
+    }
+
+    var orderBy: String {
+        switch self {
+        case .alphabetical: "c.word COLLATE NOCASE"
+        case .reverseAlphabetical: "c.word COLLATE NOCASE DESC"
+        case .level: "c.level, c.word COLLATE NOCASE"
+        case .recentlyStudied: "last_studied IS NULL, last_studied DESC, c.word COLLATE NOCASE"
+        case .mostMissed: "missed DESC, c.word COLLATE NOCASE"
+        }
+    }
+}
+
+/// Kinds of word for the Tümü filter, grouping the parts of speech.
+public enum WordKind: String, CaseIterable, Sendable, Hashable {
+    case noun, verb, adjective, adverb, phrase, other
+
+    public var label: String {
+        switch self {
+        case .noun: "İsim"
+        case .verb: "Fiil"
+        case .adjective: "Sıfat"
+        case .adverb: "Zarf"
+        case .phrase: "Kalıp"
+        case .other: "Diğer"
+        }
+    }
+
+    var partsOfSpeech: [PartOfSpeech] {
+        switch self {
+        case .noun: [.noun]
+        case .verb: [.verb]
+        case .adjective: [.adjective]
+        case .adverb: [.adverb]
+        case .phrase: [.phrase]
+        case .other: [.preposition, .conjunction]
+        }
+    }
+}
+
+/// Filters of the Tümü list. Empty sets filter nothing.
+public struct WordFilter: Sendable, Equatable {
+    public var levels: Set<CEFRLevel> = []
+    public var states: Set<LearningState> = []
+    public var kinds: Set<WordKind> = []
+
+    public init(levels: Set<CEFRLevel> = [], states: Set<LearningState> = [], kinds: Set<WordKind> = []) {
+        self.levels = levels
+        self.states = states
+        self.kinds = kinds
+    }
+
+    public var isEmpty: Bool { levels.isEmpty && states.isEmpty && kinds.isEmpty }
+    public var count: Int { levels.count + states.count + kinds.count }
 }
 
 public enum WordQueries {
@@ -55,20 +127,57 @@ public enum WordQueries {
     }
 
     /// Words for a Kelimelerim segment, filtered by `search` over the English word and the
-    /// Turkish meaning (Turkish-aware, case- and diacritic-insensitive), sorted alphabetically.
-    public static func list(segment: WordSegment, search: String = "", db: Database) throws -> [WordItem] {
-        var sql = """
-            SELECT c.*, COALESCE(s.state, 'new') AS user_state, COALESCE(s.favorite, 0) AS user_favorite
-            FROM card c LEFT JOIN card_state s ON s.card_id = c.id
-            """
+    /// Turkish meaning (Turkish-aware, case- and diacritic-insensitive).
+    ///
+    /// Tümü holds the words the learner has met: the cards of started units (the core of the
+    /// current level counts as started) and every card with progress or a star. Words of units
+    /// not started yet and untouched exam cards stay out. `filter` applies to every segment.
+    public static func list(
+        segment: WordSegment,
+        search: String = "",
+        filter: WordFilter = WordFilter(),
+        sort: WordSort = .alphabetical,
+        db: Database
+    ) throws -> [WordItem] {
+        var conditions: [String] = []
+        var arguments: [any DatabaseValueConvertible] = []
         switch segment {
-        case .struggling: sql += " WHERE s.state = 'struggling'"
-        case .learned: sql += " WHERE s.state = 'learned'"
-        case .favorites: sql += " WHERE s.favorite = 1"
-        case .all: break
+        case .struggling: conditions.append("s.state = 'struggling'")
+        case .learned: conditions.append("s.state = 'learned'")
+        case .favorites: conditions.append("s.favorite = 1")
+        case .all:
+            let level = try Preferences.load(db).level
+            let saved = (try Settings.string(.unitsStarted, in: db) ?? "").split(separator: ",").map(String.init)
+            let units = saved + (try String.fetchAll(db, sql: "SELECT id FROM unit WHERE placement = ? AND level = ?", arguments: [UnitPlacement.first, level]))
+            let marks = units.isEmpty ? "NULL" : Array(repeating: "?", count: units.count).joined(separator: ",")
+            conditions.append("""
+                (EXISTS (SELECT 1 FROM unit_card uc WHERE uc.card_id = c.id AND uc.unit_id IN (\(marks)))
+                 OR s.state IN ('struggling', 'learned') OR s.favorite = 1)
+                """)
+            arguments += units
         }
-        sql += " ORDER BY c.word"
-        let rows = try Row.fetchAll(db, sql: sql)
+        if !filter.levels.isEmpty {
+            conditions.append("c.level IN (\(Array(repeating: "?", count: filter.levels.count).joined(separator: ",")))")
+            arguments += filter.levels.sorted().map(\.rawValue)
+        }
+        if !filter.states.isEmpty {
+            conditions.append("COALESCE(s.state, 'new') IN (\(Array(repeating: "?", count: filter.states.count).joined(separator: ",")))")
+            arguments += filter.states.map(\.rawValue).sorted()
+        }
+        if !filter.kinds.isEmpty {
+            let poses = filter.kinds.flatMap(\.partsOfSpeech).map(\.rawValue).sorted()
+            conditions.append("c.pos IN (\(Array(repeating: "?", count: poses.count).joined(separator: ",")))")
+            arguments += poses
+        }
+        let sql = """
+            SELECT c.*, COALESCE(s.state, 'new') AS user_state, COALESCE(s.favorite, 0) AS user_favorite,
+                (SELECT MAX(r.answered_at) FROM review_log r WHERE r.card_id = c.id) AS last_studied,
+                (SELECT COUNT(*) FROM review_log r WHERE r.card_id = c.id AND r.correct = 0) AS missed
+            FROM card c LEFT JOIN card_state s ON s.card_id = c.id
+            \(conditions.isEmpty ? "" : "WHERE " + conditions.joined(separator: " AND "))
+            ORDER BY \(sort.orderBy)
+            """
+        let rows = try Row.fetchAll(db, sql: sql, arguments: StatementArguments(arguments))
         let needle = normalize(search)
         return try rows.compactMap { row -> WordItem? in
             let card = try Card(row: row)

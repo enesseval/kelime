@@ -9,6 +9,8 @@ public struct WeekStats: Sendable, Equatable {
     public var strugglingNow: Int
     /// Monday…Sunday of the current week, with whether any answer was logged that day.
     public var days: [Day]
+    /// Days in a row with an answer, up to today (or yesterday, while today is still open).
+    public var streak: Int = 0
 
     public struct Day: Sendable, Equatable {
         public var date: LocalDate
@@ -46,7 +48,22 @@ public enum StatsQueries {
             let d = start.adding(days: i)
             return WeekStats.Day(date: d, reviewed: reviewedDays.contains(d), initial: weekdayInitials[i])
         }
-        return WeekStats(learnedThisWeek: learned, strugglingNow: struggling, days: days)
+        return WeekStats(learnedThisWeek: learned, strugglingNow: struggling, days: days, streak: try streak(db: db, clock: clock))
+    }
+
+    /// Days in a row with at least one answer, ending today, or yesterday when today has none yet.
+    public static func streak(db: Database, clock: AppClock) throws -> Int {
+        let today = clock.today
+        let days = try Set(LocalDate.fetchAll(db, sql: """
+            SELECT DISTINCT answered_on FROM review_log WHERE answered_on >= ?
+            """, arguments: [today.adding(days: -400)]))
+        var day = days.contains(today) ? today : today.adding(days: -1)
+        var count = 0
+        while days.contains(day) {
+            count += 1
+            day = day.adding(days: -1)
+        }
+        return count
     }
 
     /// Days from today until `examDate`; nil when there is no date or it has passed.

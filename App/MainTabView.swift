@@ -95,6 +95,7 @@ extension View {
             case .puzzleArchive: PuzzleArchiveView()
             case .widgetMode: WidgetModePickerView()
             case .widgetLog: WidgetLogView()
+            case .usageCounters: UsageCountersView()
             case .unit(let id): UnitView(unitID: id)
             case .story(let unit, let story): StoryView(unitID: unit, storyID: story)
             }

@@ -13,6 +13,7 @@ enum Route: Hashable {
     case puzzleArchive
     case widgetMode
     case widgetLog
+    case usageCounters
     case unit(String)
     case story(String, String)
 }
@@ -49,6 +50,7 @@ final class AppRouter {
     }
 
     func openWord(_ id: String) {
+        UsageCounter.count(.wordDetail)
         switch tab {
         case .words: wordsPath.append(.word(id))
         case .play: playPath.append(.word(id))
@@ -60,11 +62,13 @@ final class AppRouter {
 
     /// Opens a Quick Review session. Quick Review is unlimited.
     func startQuickReview() {
+        UsageCounter.count(.quickReview)
         reviewPresented = true
     }
 
     /// Opens a daily crossword (today by default).
     func openPuzzle(day: LocalDate = AppClock.system.today) {
+        UsageCounter.count(.puzzle)
         puzzle = PuzzleRequest(source: .daily(day))
     }
 

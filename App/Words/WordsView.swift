@@ -1,56 +1,92 @@
 import KelimeCore
 import KelimeUI
 import SwiftUI
+import TipKit
+
+/// Teaches the swipe actions once; gone after the first swipe or when closed.
+struct SwipeTip: Tip {
+    var title: Text { Text("Satırı sola kaydır") }
+    var message: Text? { Text("Biliyorum ya da Zorlanıyorum diye işaretle.") }
+    var image: Image? { Image(systemName: "hand.draw") }
+}
 
 struct WordsView: View {
     @Environment(AppModel.self) private var model
     @State private var showDecks = false
     @State private var segment: WordSegment = .struggling
     @State private var search = ""
+    /// Tümü only; reset each launch.
+    @State private var filter = WordFilter()
+    @State private var showFilters = false
+    /// Kept across launches.
+    @AppStorage("words.sort") private var sort: WordSort = .alphabetical
     @State private var items: [WordItem] = []
     @State private var stats: WeekStats?
     @State private var decks: [DeckProgress] = []
     @State private var course: CourseState?
     @State private var openRow: String?
+    private let swipeTip = SwipeTip()
 
     var body: some View {
         // One page: title, controls and words scroll together on the same background.
-        ScrollView {
-            VStack(alignment: .leading, spacing: 14) {
-                header.padding(.horizontal, 20)
-                if showDecks {
-                    VStack(alignment: .leading, spacing: 18) {
-                        if let course {
-                            UnitList(course: course)
-                            // Exam decks stay decks until they become courses.
-                            let exams = decks.filter { $0.deck.tag != nil }
-                            if !exams.isEmpty {
-                                Text("SINAV DESTELERİ")
-                                    .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
-                                    .tracking(0.7)
-                                    .foregroundStyle(Palette.ink2)
-                                DecksGrid(decks: exams)
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 14) {
+                    header.padding(.horizontal, 20)
+                    if showDecks {
+                        VStack(alignment: .leading, spacing: 18) {
+                            if let course {
+                                UnitList(course: course)
+                                // Exam decks stay decks until they become courses.
+                                let exams = decks.filter { $0.deck.tag != nil }
+                                if !exams.isEmpty {
+                                    Text("SINAV DESTELERİ")
+                                        .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
+                                        .tracking(0.7)
+                                        .foregroundStyle(Palette.ink2)
+                                    DecksGrid(decks: exams)
+                                }
+                            } else {
+                                DecksGrid(decks: decks)
                             }
-                        } else {
-                            DecksGrid(decks: decks)
                         }
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 24)
+                    } else {
+                        listControls.padding(.horizontal, 20)
+                        wordList
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 24)
-                } else {
-                    listControls.padding(.horizontal, 20)
-                    wordList
+                }
+                .padding(.top, 6)
+            }
+            .scrollIndicators(.hidden)
+            .scrollDismissesKeyboard(.immediately)
+            .overlay(alignment: .trailing) {
+                if showsIndex {
+                    LetterIndex(items: items) { id in proxy.scrollTo(id, anchor: .top) }
                 }
             }
-            .padding(.top, 6)
         }
-        .scrollIndicators(.hidden)
-        .scrollDismissesKeyboard(.immediately)
         .screenBackground()
         .hiddenNavigationBar()
-        .task(id: ReloadKey(version: model.dataVersion, segment: segment, search: search, decks: showDecks)) {
+        .sheet(isPresented: $showFilters) {
+            WordFilterSheet(filter: $filter)
+                .presentationDetents([.medium, .large])
+        }
+        .onChange(of: sort) { UsageCounter.count(.sort) }
+        .onChange(of: showFilters) { _, shown in if shown { UsageCounter.count(.filter) } }
+        .onChange(of: showDecks) { _, shown in if shown { UsageCounter.count(.units) } }
+        .onChange(of: openRow) { _, row in
+            if row != nil { swipeTip.invalidate(reason: .actionPerformed) }
+        }
+        .task(id: ReloadKey(version: model.dataVersion, segment: segment, search: search, decks: showDecks, filter: filter, sort: sort)) {
             await reload()
         }
+    }
+
+    /// The A–Z strip, for long alphabetical lists.
+    private var showsIndex: Bool {
+        !showDecks && sort == .alphabetical && items.count > 40
     }
 
     @ViewBuilder
@@ -58,6 +94,9 @@ struct WordsView: View {
         if items.isEmpty {
             emptyState.padding(.horizontal, 20)
         } else {
+            TipView(swipeTip)
+                .tipBackground(Palette.surface)
+                .padding(.horizontal, 20)
             LazyVStack(spacing: 0) {
                 ForEach(items) { item in
                     SwipeRow(id: item.id, actions: actions(for: item), openRow: $openRow) {
@@ -65,16 +104,12 @@ struct WordsView: View {
                     } content: {
                         WordRow(item: item)
                     }
+                    .id(item.id)
                     Rectangle().fill(Palette.line).frame(height: 1).padding(.leading, 20)
                 }
             }
             .animation(.snappy, value: items.map(\.id))
-            Text("Satırı sola kaydır: Biliyorum · Zorlanıyorum")
-                .font(KelimeFont.ui(12, relativeTo: .caption))
-                .foregroundStyle(Palette.ink2)
-                .frame(maxWidth: .infinity)
-                .padding(.top, 10)
-                .padding(.bottom, 24)
+            .padding(.bottom, 24)
         }
     }
 
@@ -99,6 +134,8 @@ struct WordsView: View {
         var segment: WordSegment
         var search: String
         var decks: Bool
+        var filter: WordFilter
+        var sort: WordSort
     }
 
     private func reload() async {
@@ -107,8 +144,9 @@ struct WordsView: View {
         if showDecks {
             decks = await model.read { db in try DeckQueries.progress(db: db) } ?? []
         } else {
-            let segment = segment, search = search
-            items = await model.read { db in try WordQueries.list(segment: segment, search: search, db: db) } ?? []
+            let segment = segment, search = search, sort = sort
+            let filter = segment == .all ? filter : WordFilter()
+            items = await model.read { db in try WordQueries.list(segment: segment, search: search, filter: filter, sort: sort, db: db) } ?? []
             stats = await model.read { db in try StatsQueries.week(db: db, clock: clock) }
         }
     }
@@ -132,21 +170,48 @@ struct WordsView: View {
                     .font(KelimeFont.ui(13, relativeTo: .footnote))
                     .foregroundStyle(Palette.ink2)
             }
-            TextField("Kelime ya da anlam ara", text: $search)
-                .font(KelimeFont.ui(16, relativeTo: .body))
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .padding(.horizontal, 14)
-                .frame(minHeight: 44)
-                .background(Palette.surface2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            HStack(spacing: 8) {
+                TextField("Kelime ya da anlam ara", text: $search)
+                    .font(KelimeFont.ui(16, relativeTo: .body))
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .padding(.horizontal, 14)
+                    .frame(minHeight: 44)
+                    .background(Palette.surface2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                Menu {
+                    Picker("Sırala", selection: $sort) {
+                        ForEach(WordSort.allCases, id: \.self) { Text($0.label).tag($0) }
+                    }
+                } label: {
+                    controlIcon("arrow.up.arrow.down")
+                }
+                .accessibilityLabel("Sırala: \(sort.label)")
+                if segment == .all {
+                    Button { showFilters = true } label: {
+                        controlIcon("line.3.horizontal.decrease", active: !filter.isEmpty)
+                    }
+                    .accessibilityLabel(filter.isEmpty ? "Filtrele" : "Filtrele, \(filter.count) filtre açık")
+                }
+            }
             SegmentedPicker(options: WordSegment.allCases, selection: $segment) { $0.label }
+            if segment == .all && !filter.isEmpty {
+                ActiveFilters(filter: $filter)
+            }
         }
+    }
+
+    private func controlIcon(_ name: String, active: Bool = false) -> some View {
+        Image(systemName: name)
+            .font(.system(size: 15, weight: .semibold))
+            .foregroundStyle(active ? Palette.onAccent : Palette.ink)
+            .frame(width: 44, height: 44)
+            .background(active ? Palette.accent : Palette.surface2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 
     private var emptyState: some View {
         VStack(spacing: 14) {
             Circle().strokeBorder(Palette.ink2, lineWidth: 1.5).frame(width: 14, height: 14)
-            Text(search.isEmpty ? segment.emptyText : WordSegment.all.emptyText)
+            Text(search.isEmpty && (segment != .all || filter.isEmpty) ? segment.emptyText : WordSegment.all.emptyText)
                 .font(KelimeFont.ui(15, relativeTo: .subheadline))
                 .foregroundStyle(Palette.ink2)
                 .multilineTextAlignment(.center)

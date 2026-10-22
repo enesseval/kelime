@@ -99,6 +99,29 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
+## Free release (for production after the build is tested)
+
+Everything the app has is free: every level and exam deck, unlimited Quick Review, one daily
+puzzle a day from the current unit (struggling words first; other started units only fill a grid
+the unit cannot). `PurchaseManager.isOnSale = false` keeps the StoreKit code but makes nobody Pro,
+so the widget changes every 3 hours with the Kâğıt theme and the paywall, the PRO section, the
+rotation and theme settings, the archive and the personal puzzle are hidden. Pro returns with
+the user's own word lists, 1 hour / 30 minute rotation, Discover and mixed puzzles.
+
+- The learning goal is gone: units come in plan order; onboarding is welcome, level, widget,
+  reminder. Ayarlar › Sınav geri sayımı sets an optional exam (YDS, YÖKDİL, IELTS) and date for
+  Bugün; older installs keep their YDS date.
+- Kelimelerim: a TipKit tip teaches the swipe once. Sorting (A–Z, Z–A, level, last studied, most
+  missed) works on every tab and is remembered; Tümü has level, state and kind filters (reset each
+  launch) and lists only words the learner met: started units, the current level's core, and any
+  word with progress or a star. Long A–Z lists get a letter strip.
+- Bugün shows a streak ("n gün üst üste") from two days on; a missed day shows nothing negative.
+- Ayarlar › Öneri gönder opens GitHub issues. Geliştirici › Kullanım sayaçları counts feature use
+  on the device in Debug and TestFlight builds only; nothing is sent.
+- The site's terms and privacy pages say the app is free with no purchases.
+- Before submitting: the IAP products in App Store Connect are simply not submitted with this
+  version; App Privacy stays "Data Not Collected".
+
 ## Exam decks (content v12)
 
 Content/exams/<exam>.json holds each exam's word list (from Gemini 3.1 Pro, asked topic by topic,
