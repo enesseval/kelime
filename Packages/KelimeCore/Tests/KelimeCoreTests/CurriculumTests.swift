@@ -150,7 +150,11 @@ struct CurriculumTests {
         // which an A1 learner has not started.
         #expect(ids.contains { $0.hasSuffix("-claim") })
         #expect(ids.count > 60)
+        // Exam-only cards (words no course teaches) are in the exam deck and in no level deck.
+        #expect(ids.contains("exam-hamper"))
         #expect(try db.reader.read { db in try CardQueries.candidates(in: [.a1], db: db).map(\.cardID) }.allSatisfy { $0.hasPrefix("a1-") })
+        try db.writer.write { db in try Curriculum.switchLevel(to: .c1, db: db) }
+        #expect(try db.reader.read { db in try CardQueries.candidates(in: [.c1], db: db).map(\.cardID) }.allSatisfy { !$0.hasPrefix("exam-") })
     }
 
     @Test func switchingLevelLeavesOnlyTheNewCourse() throws {

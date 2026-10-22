@@ -1,0 +1,511 @@
+{
+ "cards": [
+  {
+   "word": "furthermore",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "dahası",
+    "üstelik"
+   ],
+   "example_en": "The test is quick; furthermore, it is cheap.",
+   "example_tr": "Test hızlıdır; üstelik ucuzdur.",
+   "note": "moreover ve in addition ile eş anlamlıdır."
+  },
+  {
+   "word": "hamper",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "engellemek",
+    "aksatmak"
+   ],
+   "example_en": "Bad weather can hamper rescue efforts.",
+   "example_tr": "Kötü hava kurtarma çalışmalarını aksatabilir.",
+   "note": "hamper progress/efforts (ilerlemeyi/çabaları engellemek)"
+  },
+  {
+   "word": "comprise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "içermek",
+    "-den oluşmak"
+   ],
+   "example_en": "The team comprises ten scientists.",
+   "example_tr": "Ekip on bilim insanından oluşur.",
+   "note": "'consist of' ile aynı anlamdadır; 'comprise of' denmez."
+  },
+  {
+   "word": "relatively",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "nispeten",
+    "görece"
+   ],
+   "example_en": "The new treatment is relatively safe.",
+   "example_tr": "Yeni tedavi nispeten güvenlidir.",
+   "note": ""
+  },
+  {
+   "word": "regulate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "düzenlemek",
+    "kontrol etmek"
+   ],
+   "example_en": "Hormones help to regulate body temperature.",
+   "example_tr": "Hormonlar vücut sıcaklığını düzenlemeye yardımcı olur.",
+   "note": ""
+  },
+  {
+   "word": "treaty",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "antlaşma"
+   ],
+   "example_en": "They signed a peace treaty to end the war.",
+   "example_tr": "Savaşı bitirmek için bir barış antlaşması imzaladılar.",
+   "note": "sign a treaty (antlaşma imzalamak)"
+  },
+  {
+   "word": "abolish",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yürürlükten kaldırmak"
+   ],
+   "example_en": "The government may abolish the old tax law.",
+   "example_tr": "Hükümet eski vergi yasasını yürürlükten kaldırabilir.",
+   "note": "genellikle yasa, kölelik veya sistemler için kullanılır."
+  },
+  {
+   "word": "parliament",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "parlamento",
+    "meclis"
+   ],
+   "example_en": "The parliament will vote on the bill today.",
+   "example_tr": "Meclis bugün yasa tasarısını oylayacak.",
+   "note": ""
+  },
+  {
+   "word": "accumulate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "birikmek",
+    "biriktirmek"
+   ],
+   "example_en": "Toxins can accumulate in the liver over time.",
+   "example_tr": "Toksinler zamanla karaciğerde birikebilir.",
+   "note": ""
+  },
+  {
+   "word": "prominent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "önemli",
+    "seçkin",
+    "belirgin"
+   ],
+   "example_en": "She is a prominent scientist in the field.",
+   "example_tr": "O, bu alanda seçkin bir bilim insanıdır.",
+   "note": "play a prominent role (önemli bir rol oynamak)"
+  },
+  {
+   "word": "devastate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "yıkmak",
+    "tahrip etmek"
+   ],
+   "example_en": "A strong earthquake can devastate a city.",
+   "example_tr": "Güçlü bir deprem bir şehri yıkabilir.",
+   "note": ""
+  },
+  {
+   "word": "exploit",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "sömürmek",
+    "yararlanmak"
+   ],
+   "example_en": "Companies exploit natural resources for profit.",
+   "example_tr": "Şirketler kâr için doğal kaynaklardan faydalanır.",
+   "note": "Hem olumlu (yararlanmak) hem olumsuz (sömürmek) anlamı var."
+  },
+  {
+   "word": "agriculture",
+   "pos": "n",
+   "level": "B1",
+   "tr": [
+    "tarım",
+    "ziraat"
+   ],
+   "example_en": "Modern agriculture relies on heavy machinery.",
+   "example_tr": "Modern tarım ağır makinelere dayanır.",
+   "note": ""
+  },
+  {
+   "word": "marine",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "denizle ilgili",
+    "deniz"
+   ],
+   "example_en": "Pollution threatens marine life in the oceans.",
+   "example_tr": "Kirlilik okyanuslardaki deniz yaşamını tehdit ediyor.",
+   "note": "marine life (deniz yaşamı), marine biologist vb."
+  },
+  {
+   "word": "atmosphere",
+   "pos": "n",
+   "level": "B1",
+   "tr": [
+    "atmosfer",
+    "hava"
+   ],
+   "example_en": "Gases in the atmosphere trap solar heat.",
+   "example_tr": "Atmosferdeki gazlar güneş ısısını hapseder.",
+   "note": ""
+  },
+  {
+   "word": "incidence",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "görülme sıklığı",
+    "oran"
+   ],
+   "example_en": "The incidence of asthma is rising in cities.",
+   "example_tr": "Şehirlerde astım görülme sıklığı artmaktadır.",
+   "note": "high incidence of... (... nın yüksek görülme oranı)"
+  },
+  {
+   "word": "disorder",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bozukluk",
+    "rahatsızlık"
+   ],
+   "example_en": "Sleep disorders can affect mental health.",
+   "example_tr": "Uyku bozuklukları ruh sağlığını etkileyebilir.",
+   "note": "mental disorder / sleep disorder gibi kalıplar yaygındır."
+  },
+  {
+   "word": "longevity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "uzun ömürlülük"
+   ],
+   "example_en": "Good diet promotes health and longevity.",
+   "example_tr": "İyi beslenme sağlığı ve uzun ömrü destekler.",
+   "note": ""
+  },
+  {
+   "word": "therapeutic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "tedavi edici"
+   ],
+   "example_en": "Music can have a therapeutic effect on stress.",
+   "example_tr": "Müziğin stres üzerinde tedavi edici etkisi olabilir.",
+   "note": ""
+  },
+  {
+   "word": "clinical",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "klinik"
+   ],
+   "example_en": "The drug is now in the clinical trial phase.",
+   "example_tr": "İlaç şu an klinik deney aşamasındadır.",
+   "note": "clinical trials (klinik deneyler)"
+  },
+  {
+   "word": "anaesthesia",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "anestezi"
+   ],
+   "example_en": "Patients sleep deeply under general anaesthesia.",
+   "example_tr": "Hastalar genel anestezi altında derin uyurlar.",
+   "note": "under anaesthesia (anestezi altında)"
+  },
+  {
+   "word": "artery",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "atardamar",
+    "ana yol"
+   ],
+   "example_en": "A blocked artery can cause a heart attack.",
+   "example_tr": "Tıkalı bir atardamar kalp krizine neden olabilir.",
+   "note": ""
+  },
+  {
+   "word": "excavate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "kazı yapmak",
+    "kazmak"
+   ],
+   "example_en": "Archaeologists excavate sites to find tools.",
+   "example_tr": "Arkeologlar aletleri bulmak için alanlarda kazı yapar.",
+   "note": ""
+  },
+  {
+   "word": "unearth",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "gün ışığına çıkarmak"
+   ],
+   "example_en": "Researchers unearth new evidence every year.",
+   "example_tr": "Araştırmacılar her yıl yeni kanıtları ortaya çıkarır.",
+   "note": "Hem fiziksel hem de soyut (gerçekleri) çıkarmak için kullanılır."
+  },
+  {
+   "word": "descendant",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "torun",
+    "soyundan gelen"
+   ],
+   "example_en": "He is a direct descendant of a royal family.",
+   "example_tr": "O, bir kraliyet ailesinin soyundan geliyor.",
+   "note": ""
+  },
+  {
+   "word": "dynasty",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hanedan"
+   ],
+   "example_en": "The Ming dynasty ruled China for centuries.",
+   "example_tr": "Ming hanedanı Çin'i yüzyıllarca yönetti.",
+   "note": ""
+  },
+  {
+   "word": "empire",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "imparatorluk"
+   ],
+   "example_en": "The Roman Empire was vast and powerful.",
+   "example_tr": "Roma İmparatorluğu çok geniş ve güçlüydü.",
+   "note": ""
+  },
+  {
+   "word": "nomadic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "göçebe"
+   ],
+   "example_en": "Many ancient tribes lived a nomadic lifestyle.",
+   "example_tr": "Birçok eski kabile göçebe bir yaşam tarzı sürdü.",
+   "note": "nomadic lifestyle / tribes"
+  },
+  {
+   "word": "myth",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mit",
+    "efsane",
+    "yanılgı"
+   ],
+   "example_en": "It is a myth that we use only 10% of our brain.",
+   "example_tr": "Beynin yalnızca %10'unu kullandığımız bir efsane.",
+   "note": "YDS'de genellikle 'doğru bilinen yanlış' anlamında çıkar."
+  },
+  {
+   "word": "tomb",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mezar",
+    "türbe"
+   ],
+   "example_en": "They discovered an ancient Egyptian tomb.",
+   "example_tr": "Eski bir Mısır mezarı keşfettiler.",
+   "note": ""
+  },
+  {
+   "word": "monumental",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "devasa",
+    "anıtsal"
+   ],
+   "example_en": "Building the pyramids was a monumental task.",
+   "example_tr": "Piramitleri inşa etmek devasa bir görevdi.",
+   "note": ""
+  },
+  {
+   "word": "evolution",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "evrim",
+    "gelişim"
+   ],
+   "example_en": "Fossils provide evidence for human evolution.",
+   "example_tr": "Fosiller insan evrimi için kanıt sağlar.",
+   "note": "theory of evolution (evrim teorisi)"
+  },
+  {
+   "word": "velocity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hız",
+    "sürat"
+   ],
+   "example_en": "Light travels at a constant velocity in space.",
+   "example_tr": "Işık uzayda sabit bir hızda ilerler.",
+   "note": "high velocity (yüksek hız)"
+  },
+  {
+   "word": "obsolete",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "modası geçmiş",
+    "eskimiş"
+   ],
+   "example_en": "Smartphones made many old cameras obsolete.",
+   "example_tr": "Akıllı telefonlar birçok eski kamerayı gereksiz kıldı.",
+   "note": "become obsolete (kullanımdan kalkmak)"
+  },
+  {
+   "word": "orbit",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yörünge"
+   ],
+   "example_en": "The Earth takes a year to complete one orbit.",
+   "example_tr": "Dünya bir yörünge turunu bir yılda tamamlar.",
+   "note": "in orbit (yörüngede)"
+  },
+  {
+   "word": "flaw",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kusur",
+    "hata"
+   ],
+   "example_en": "A tiny design flaw can cause engine failure.",
+   "example_tr": "Küçük bir tasarım kusuru motoru bozabilir.",
+   "note": "fatal flaw (ölümcül hata/kusur)"
+  },
+  {
+   "word": "accelerate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "hızlandırmak",
+    "ivmelenmek"
+   ],
+   "example_en": "Global warming may accelerate ice melting.",
+   "example_tr": "Küresel ısınma buz erimesini hızlandırabilir.",
+   "note": ""
+  },
+  {
+   "word": "precise",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kesin",
+    "tam",
+    "hassas"
+   ],
+   "example_en": "Surgeons require highly precise instruments.",
+   "example_tr": "Cerrahlar oldukça hassas aletlere ihtiyaç duyar.",
+   "note": "precise measurement (kesin ölçüm)"
+  },
+  {
+   "word": "assess",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "değerlendirmek"
+   ],
+   "example_en": "Doctors will assess the patient's symptoms.",
+   "example_tr": "Doktorlar hastanın semptomlarını değerlendirecek.",
+   "note": "assess the damage (hasarı değerlendirmek)"
+  },
+  {
+   "word": "reinforce",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "güçlendirmek",
+    "pekiştirmek"
+   ],
+   "example_en": "Steel beams reinforce the concrete structure.",
+   "example_tr": "Çelik kirişler beton yapıyı güçlendirir.",
+   "note": "reinforce a behaviour (bir davranışı pekiştirmek)"
+  },
+  {
+   "word": "nurture",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "büyütmek",
+    "beslemek"
+   ],
+   "example_en": "Teachers must nurture young artistic talent.",
+   "example_tr": "Öğretmenler genç sanatsal yeteneği beslemelidir.",
+   "note": "nature vs. nurture (doğuştan gelen mi, sonradan kazanılan mı tartışması)"
+  },
+  {
+   "word": "aptitude",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yetenek",
+    "kabiliyet"
+   ],
+   "example_en": "She has an aptitude for languages.",
+   "example_tr": "Dillere karşı yeteneği var.",
+   "note": "have an aptitude for (-e yeteneği olmak)"
+  },
+  {
+   "word": "mainstream",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ana akım",
+    "yaygın"
+   ],
+   "example_en": "The idea is finally accepted by mainstream science.",
+   "example_tr": "Fikir sonunda ana akım bilim tarafından kabul edildi.",
+   "note": ""
+  }
+ ]
+}

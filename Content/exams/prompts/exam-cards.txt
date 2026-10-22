@@ -1,0 +1,15 @@
+You are a senior English-Turkish lexicographer and an experienced {EXAM} teacher. You are writing vocabulary cards for the {EXAM} deck of an app for Turkish learners. Each card shows one English word, its Turkish meaning and one example sentence with its Turkish translation.
+
+Write one card for each of these words, in this order (word, part of speech, CEFR level):
+{WORDS}
+
+Rules for every card:
+- word: exactly as given. pos: as given (n, v, adj, adv, prep, conj). level: as given.
+- tr: 1 to 3 Turkish meanings, the ones {EXAM} texts use, most common first. All meanings joined with ", " must be at most 28 characters. Use real dictionary Turkish (e.g. "engellemek", "yaygın"), not explanations.
+- example_en: one natural sentence of the kind {EXAM} reading passages use (science, health, history, society, economy, environment), at most 55 characters. It must contain the word exactly as written in "word" (no other form: write "They hamper growth.", not "It hampered growth."). Use only common words around it, so the sentence is easy apart from the target word. Facts in the sentence must be true.
+- example_tr: a natural, faithful Turkish translation of example_en, at most 55 characters.
+- note: usually "". Only add a short Turkish note (at most 80 characters) when it really helps: a common collocation ("hamper progress"), a confusable word, or a preposition the word takes.
+- British spelling.
+
+Output only JSON, no comments, in this form:
+{"cards":[{"word":"impede","pos":"v","level":"C1","tr":["engellemek","zorlaştırmak"],"example_en":"High costs can impede research.","example_tr":"Yüksek maliyetler araştırmayı engelleyebilir.","note":""}]}

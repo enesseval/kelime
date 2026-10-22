@@ -1,0 +1,255 @@
+{
+ "topic": "health and medicine",
+ "words": [
+  {
+   "word": "susceptible",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "eradicate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "diagnose",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "symptom",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "fatal",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "vulnerable",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "deteriorate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "alleviate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "incidence",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "mortality",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "epidemic",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "transmit",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "immune",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "vaccine",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prevalent",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "chronic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "disorder",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "contagious",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "malignant",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "benign",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "mutation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "undergo",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "longevity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "cardiovascular",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "cognitive",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "deficiency",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "impairment",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "genetic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "inherit",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "obesity",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "nutrition",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "therapeutic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "remedy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prescribe",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "prescription",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "dosage",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "clinical",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "syndrome",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "hygiene",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "sterile",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "trauma",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "anaesthesia",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "surgery",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "anatomy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "metabolism",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "respiration",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "artery",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "vein",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "inject",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "paralyse",
+   "pos": "v",
+   "level": "C1"
+  }
+ ]
+}

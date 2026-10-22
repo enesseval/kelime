@@ -1,0 +1,532 @@
+{
+ "cards": [
+  {
+   "word": "consequently",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "sonuç olarak",
+    "bu nedenle"
+   ],
+   "example_en": "Prices rose; consequently, sales fell.",
+   "example_tr": "Fiyatlar arttı; sonuç olarak satışlar düştü.",
+   "note": "Genellikle cümle başında veya ortasında bağlaç gibi kullanılır."
+  },
+  {
+   "word": "trigger",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "tetiklemek",
+    "başlatmak"
+   ],
+   "example_en": "Stress can trigger asthma.",
+   "example_tr": "Stres astımı tetikleyebilir.",
+   "note": "YDS'de genellikle hastalık veya kriz başlatmak anlamında çıkar."
+  },
+  {
+   "word": "emerge",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ortaya çıkmak",
+    "belirmek"
+   ],
+   "example_en": "New facts emerge over time.",
+   "example_tr": "Yeni gerçekler zamanla ortaya çıkar.",
+   "note": "emerge from: -den ortaya çıkmak/çıkmak"
+  },
+  {
+   "word": "subsequently",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "sonradan",
+    "ardından"
+   ],
+   "example_en": "He subsequently lost his job.",
+   "example_tr": "Ardından işini kaybetti.",
+   "note": "Sıralama bildirir, 'consequently' (sonuç olarak) ile karıştırmayın."
+  },
+  {
+   "word": "virtually",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "hemen hemen",
+    "neredeyse"
+   ],
+   "example_en": "The disease is virtually gone.",
+   "example_tr": "Hastalık hemen hemen yok oldu.",
+   "note": "YDS'de çoğunlukla 'almost' (neredeyse) anlamındadır."
+  },
+  {
+   "word": "violate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ihlal etmek",
+    "çiğnemek"
+   ],
+   "example_en": "The decision may violate human rights.",
+   "example_tr": "Karar insan haklarını ihlal edebilir.",
+   "note": "violate human rights (insan haklarını ihlal etmek)"
+  },
+  {
+   "word": "mandatory",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "zorunlu",
+    "mecburi"
+   ],
+   "example_en": "Education is mandatory here.",
+   "example_tr": "Eğitim burada zorunludur.",
+   "note": "Eş anlamlıları: compulsory, obligatory."
+  },
+  {
+   "word": "autonomous",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "özerk",
+    "otonom"
+   ],
+   "example_en": "Some robots are fully autonomous.",
+   "example_tr": "Bazı robotlar tamamen otonomdur.",
+   "note": ""
+  },
+  {
+   "word": "prosper",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "gelişmek",
+    "refaha ermek"
+   ],
+   "example_en": "Cities prosper through trade.",
+   "example_tr": "Şehirler ticaret sayesinde gelişir.",
+   "note": "Eş anlamlıları: thrive, flourish."
+  },
+  {
+   "word": "commerce",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ticaret",
+    "alım satım"
+   ],
+   "example_en": "Global commerce is growing.",
+   "example_tr": "Küresel ticaret büyüyor.",
+   "note": ""
+  },
+  {
+   "word": "deplete",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "tüketmek",
+    "azaltmak"
+   ],
+   "example_en": "Humans deplete natural resources quickly.",
+   "example_tr": "İnsanlar doğal kaynakları hızla tüketiyor.",
+   "note": "deplete resources (kaynakları tüketmek)"
+  },
+  {
+   "word": "hazard",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tehlike",
+    "risk"
+   ],
+   "example_en": "Pollution is a health hazard.",
+   "example_tr": "Kirlilik bir sağlık tehlikesidir.",
+   "note": "health hazard (sağlık riski)"
+  },
+  {
+   "word": "preserve",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "korumak",
+    "muhafaza etmek"
+   ],
+   "example_en": "We must preserve the forest.",
+   "example_tr": "Ormanı korumalıyız.",
+   "note": "preserve the environment (çevreyi korumak)"
+  },
+  {
+   "word": "severe",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "şiddetli",
+    "ciddi"
+   ],
+   "example_en": "The region faces a severe drought.",
+   "example_tr": "Bölge şiddetli bir kuraklıkla karşı karşıya.",
+   "note": "severe weather (şiddetli hava), severe pain (ciddi ağrı)"
+  },
+  {
+   "word": "ecology",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ekoloji",
+    "çevre bilimi"
+   ],
+   "example_en": "Marine ecology is complex.",
+   "example_tr": "Deniz ekolojisi karmaşıktır.",
+   "note": ""
+  },
+  {
+   "word": "fatal",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "ölümcül",
+    "vahim"
+   ],
+   "example_en": "The crash proved fatal.",
+   "example_tr": "Kaza ölümcül oldu.",
+   "note": "fatal disease/accident (ölümcül hastalık/kaza)"
+  },
+  {
+   "word": "transmit",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "iletmek",
+    "bulaştırmak"
+   ],
+   "example_en": "Mosquitoes transmit malaria.",
+   "example_tr": "Sivrisinekler sıtma bulaştırır.",
+   "note": "transmit signals (sinyal iletmek) veya hastalık bulaştırmak."
+  },
+  {
+   "word": "benign",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "iyi huylu",
+    "zararsız"
+   ],
+   "example_en": "The tumour is benign.",
+   "example_tr": "Tümör iyi huyludur.",
+   "note": "Zıttı: malignant (kötü huylu)."
+  },
+  {
+   "word": "impairment",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "bozukluk",
+    "zayıflama"
+   ],
+   "example_en": "It causes memory impairment.",
+   "example_tr": "Hafıza bozukluğuna neden olur.",
+   "note": "hearing/visual impairment (işitme/görme bozukluğu)"
+  },
+  {
+   "word": "dosage",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "doz",
+    "dozaj"
+   ],
+   "example_en": "Do not exceed the stated dosage.",
+   "example_tr": "Belirtilen dozu aşmayın.",
+   "note": ""
+  },
+  {
+   "word": "sterile",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "steril",
+    "mikropsuz",
+    "kısır"
+   ],
+   "example_en": "Use a sterile needle only.",
+   "example_tr": "Sadece steril bir iğne kullanın.",
+   "note": ""
+  },
+  {
+   "word": "respiration",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "solunum",
+    "nefes alma"
+   ],
+   "example_en": "Fish use gills for respiration.",
+   "example_tr": "Balıklar solunum için solungaçlarını kullanır.",
+   "note": "respiratory system (solunum sistemi)"
+  },
+  {
+   "word": "paralyse",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "felç etmek"
+   ],
+   "example_en": "The poison can paralyse you.",
+   "example_tr": "Zehir sizi felç edebilir.",
+   "note": "İngiliz İngilizcesinde 'paralyse', Amerikan İngilizcesinde 'paralyze'."
+  },
+  {
+   "word": "settlement",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yerleşim yeri",
+    "anlaşma"
+   ],
+   "example_en": "They found a Roman settlement.",
+   "example_tr": "Roma dönemine ait bir yerleşim yeri buldular.",
+   "note": "Hem fiziki 'yerleşim yeri' hem de hukuki 'uzlaşma' anlamı vardır."
+  },
+  {
+   "word": "ancestor",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ata",
+    "cet"
+   ],
+   "example_en": "Humans and apes share a common ancestor.",
+   "example_tr": "İnsanlar ve maymunlar ortak bir atadan gelir.",
+   "note": "common ancestor (ortak ata)"
+  },
+  {
+   "word": "epoch",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "çağ",
+    "dönem"
+   ],
+   "example_en": "It marks a new epoch.",
+   "example_tr": "Bu yeni bir çağı işaret eder.",
+   "note": "Eş anlamlıları: era, age, period."
+  },
+  {
+   "word": "invader",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "işgalci",
+    "istilacı"
+   ],
+   "example_en": "The invaders destroyed the town.",
+   "example_tr": "İşgalciler kasabayı yıktı.",
+   "note": "Fiil hali: invade (işgal etmek)"
+  },
+  {
+   "word": "tribe",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kabile",
+    "aşiret"
+   ],
+   "example_en": "The local tribe fishes here.",
+   "example_tr": "Yerel kabile burada balık tutar.",
+   "note": ""
+  },
+  {
+   "word": "chronological",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kronolojik"
+   ],
+   "example_en": "List the events in chronological order.",
+   "example_tr": "Olayları kronolojik sırayla listeleyin.",
+   "note": "chronological order (kronolojik sıra)"
+  },
+  {
+   "word": "sovereign",
+   "pos": "adj",
+   "level": "C2",
+   "tr": [
+    "egemen",
+    "bağımsız"
+   ],
+   "example_en": "Every sovereign state has its own laws.",
+   "example_tr": "Her egemen devletin kendi yasaları vardır.",
+   "note": "İsim olarak 'hükümdar' anlamına da gelir."
+  },
+  {
+   "word": "hierarchy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hiyerarşi",
+    "sıradüzen"
+   ],
+   "example_en": "Lions have a strict hierarchy.",
+   "example_tr": "Aslanların sıkı bir hiyerarşisi vardır.",
+   "note": "social hierarchy (sosyal hiyerarşi)"
+  },
+  {
+   "word": "uncover",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ortaya çıkarmak",
+    "bulmak"
+   ],
+   "example_en": "Archaeologists uncover old ruins.",
+   "example_tr": "Arkeologlar eski kalıntıları gün yüzüne çıkarıyor.",
+   "note": "Eş anlamlıları: reveal, discover, unearth."
+  },
+  {
+   "word": "simulation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "simülasyon",
+    "benzetim"
+   ],
+   "example_en": "Run a climate simulation.",
+   "example_tr": "Bir iklim simülasyonu çalıştırın.",
+   "note": ""
+  },
+  {
+   "word": "density",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yoğunluk",
+    "sıklık"
+   ],
+   "example_en": "Bone density drops with age.",
+   "example_tr": "Kemik yoğunluğu yaşla birlikte azalır.",
+   "note": "population density (nüfus yoğunluğu)"
+  },
+  {
+   "word": "mechanism",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mekanizma",
+    "düzenek"
+   ],
+   "example_en": "The body has a defence mechanism.",
+   "example_tr": "Vücudun bir savunma mekanizması vardır.",
+   "note": "defence mechanism (savunma mekanizması)"
+  },
+  {
+   "word": "component",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bileşen",
+    "parça"
+   ],
+   "example_en": "Trust is a key component.",
+   "example_tr": "Güven temel bir bileşendir.",
+   "note": "key component (önemli parça/bileşen)"
+  },
+  {
+   "word": "modification",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "değişiklik",
+    "uyarlama"
+   ],
+   "example_en": "The plan needs modification.",
+   "example_tr": "Planın değişikliğe ihtiyacı var.",
+   "note": "genetic modification (genetik değişiklik)"
+  },
+  {
+   "word": "insight",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kavrayış",
+    "içgörü"
+   ],
+   "example_en": "The study gives new insight into ageing.",
+   "example_tr": "Çalışma, yaşlanmaya dair yeni bir kavrayış sunuyor.",
+   "note": "insight into (bir şeyin içyüzünü kavrama)"
+  },
+  {
+   "word": "behaviour",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "davranış",
+    "tutum"
+   ],
+   "example_en": "Watch their social behaviour.",
+   "example_tr": "Onların sosyal davranışlarını izleyin.",
+   "note": "Amerikan İngilizcesinde 'behavior' olarak yazılır."
+  },
+  {
+   "word": "adolescent",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ergen",
+    "genç"
+   ],
+   "example_en": "Adolescents need more sleep.",
+   "example_tr": "Ergenlerin daha fazla uykuya ihtiyacı var.",
+   "note": "Sıfat olarak 'ergenliğe ait' anlamına gelir."
+  },
+  {
+   "word": "compulsory",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "zorunlu",
+    "mecburi"
+   ],
+   "example_en": "Primary education is compulsory.",
+   "example_tr": "İlköğretim zorunludur.",
+   "note": "compulsory education (zorunlu eğitim)"
+  },
+  {
+   "word": "juvenile",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "genç",
+    "çocuk",
+    "çocuksu"
+   ],
+   "example_en": "Juvenile crime has fallen.",
+   "example_tr": "Çocuk suçları azaldı.",
+   "note": "juvenile delinquency (çocuk suçluluğu)"
+  },
+  {
+   "word": "cognition",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "biliş",
+    "kavrama"
+   ],
+   "example_en": "Sleep affects cognition.",
+   "example_tr": "Uyku bilişi etkiler.",
+   "note": "Sıfat hali: cognitive (bilişsel, zihinsel)"
+  },
+  {
+   "word": "marginalise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "dışlamak",
+    "önemsizleştirmek"
+   ],
+   "example_en": "Society can marginalise them.",
+   "example_tr": "Toplum onları dışlayabilir.",
+   "note": "Genellikle pasif kullanılır: be marginalised (dışlanmak)"
+  }
+ ]
+}

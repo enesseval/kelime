@@ -1,0 +1,3531 @@
+{
+ "exam": "yds",
+ "words": [
+  {
+   "word": "however",
+   "pos": "adv",
+   "level": "B1"
+  },
+  {
+   "word": "although",
+   "pos": "conj",
+   "level": "B1"
+  },
+  {
+   "word": "therefore",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "moreover",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "whereas",
+   "pos": "conj",
+   "level": "B2"
+  },
+  {
+   "word": "nevertheless",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "despite",
+   "pos": "prep",
+   "level": "B1"
+  },
+  {
+   "word": "consequently",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "furthermore",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "thus",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "hence",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "nonetheless",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "significant",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "indicate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "reveal",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "crucial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "determine",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "establish",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "alter",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "inevitable",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "trigger",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "vulnerable",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "investigate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "analyse",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "facilitate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "hinder",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "hamper",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "impede",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "unprecedented",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "adverse",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "beneficial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "profound",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "fluctuate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "emerge",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "comprise",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "constitute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "emphasise",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "ambiguous",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "susceptible",
+   "pos": "adj",
+   "level": "C2"
+  },
+  {
+   "word": "subsequently",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "relatively",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "initially",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "ultimately",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "vital",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "apparent",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "virtually",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "predominantly",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "substantial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "entail",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "assert",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "implement",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "policy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "legislation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "regulate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "amend",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "revenue",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "allocate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "negotiate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "enforce",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "violate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "consensus",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "treaty",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "sanction",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "intervene",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "inflation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "deficit",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "recession",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "justify",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "legitimate",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "mandatory",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "abolish",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "ratify",
+   "pos": "v",
+   "level": "C2"
+  },
+  {
+   "word": "subsidy",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "expenditure",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "surplus",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "autonomous",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "sovereignty",
+   "pos": "n",
+   "level": "C2"
+  },
+  {
+   "word": "coalition",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "parliament",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "ally",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prosecute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "convict",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "verdict",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "jurisdiction",
+   "pos": "n",
+   "level": "C2"
+  },
+  {
+   "word": "commit",
+   "pos": "v",
+   "level": "B1"
+  },
+  {
+   "word": "accuse",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "poverty",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prosper",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "accumulate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "plummet",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "surge",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "commodity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "commerce",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prominent",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "testimony",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "dispute",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "sue",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "candidate",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "constitution",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "emission",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "sustainability",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "deplete",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "deteriorate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "extinction",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "mitigate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "habitat",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "biodiversity",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "devastate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "contaminate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "drought",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "consequence",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "conserve",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "irreversible",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "hazard",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "catastrophic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "exploit",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "deforestation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "precipitation",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "famine",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "renewable",
+   "pos": "adj",
+   "level": "B1"
+  },
+  {
+   "word": "arid",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "fertile",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "barren",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "yield",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "preserve",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "indigenous",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "agriculture",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "ecosystem",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "toxic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "reservoir",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "glacier",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "fossil",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "pollutant",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "species",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "impact",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "severe",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "threat",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "marine",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "terrestrial",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "flourish",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "vegetation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "ecology",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "atmosphere",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "greenhouse",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "eradicate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "diagnose",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "symptom",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "fatal",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "alleviate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "incidence",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "mortality",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "epidemic",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "transmit",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "immune",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "vaccine",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prevalent",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "chronic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "disorder",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "contagious",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "malignant",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "benign",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "mutation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "undergo",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "longevity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "cardiovascular",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "cognitive",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "deficiency",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "impairment",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "genetic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "inherit",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "obesity",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "nutrition",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "therapeutic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "remedy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prescribe",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "prescription",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "dosage",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "clinical",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "syndrome",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "hygiene",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "sterile",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "trauma",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "anaesthesia",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "surgery",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "anatomy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "metabolism",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "respiration",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "artery",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "vein",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "inject",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "paralyse",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "excavate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "artefact",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "civilisation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "heritage",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "settlement",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "ancient",
+   "pos": "adj",
+   "level": "B1"
+  },
+  {
+   "word": "unearth",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "remains",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "inhabitant",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "ancestor",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "descendant",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "antiquity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "era",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "epoch",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "dynasty",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "legacy",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "conquer",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "invader",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "empire",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "ruin",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prehistoric",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "tribe",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "nomadic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "trace",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "primitive",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "chronological",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "ritual",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "sacred",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "myth",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "custom",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "tradition",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "evolve",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "migration",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "reign",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "sovereign",
+   "pos": "n",
+   "level": "C2"
+  },
+  {
+   "word": "tomb",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "burial",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "relic",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "hierarchy",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "monumental",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "derive",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "colonise",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "uncover",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "hypothesis",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "breakthrough",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "phenomenon",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "empirical",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "innovation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "evolution",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "devise",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "fundamental",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "simulation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "variable",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "velocity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "validate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "observation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "generate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "controversial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "density",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "obsolete",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "synthetic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "gravity",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "feasible",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "mechanism",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "orbit",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "emit",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "radiation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "pioneer",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "component",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "framework",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "flaw",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "artificial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "application",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "procedure",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "trait",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "modification",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "accelerate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "specimen",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "detect",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "insight",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "precise",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "manipulate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "assumption",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "evaluate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "behaviour",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "assess",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "acquire",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "peer",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "perceive",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "interaction",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prejudice",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "bias",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "adolescent",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "curriculum",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "attitude",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "reinforce",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "literacy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "integrate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "compulsory",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "nurture",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "correlation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "sibling",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "incentive",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "paradigm",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "conform",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "innate",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "juvenile",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "aptitude",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "foster",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "suppress",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "tuition",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "encompass",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "alienate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "cognition",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "intrinsic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "mainstream",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "deprivation",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "retention",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "marginalise",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "affluent",
+   "pos": "adj",
+   "level": "C1"
+  }
+ ],
+ "cards": [
+  {
+   "word": "consequently",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "sonuç olarak",
+    "bu nedenle"
+   ],
+   "example_en": "Prices rose; consequently, sales fell.",
+   "example_tr": "Fiyatlar arttı; sonuç olarak satışlar düştü.",
+   "note": "Genellikle cümle başında veya ortasında bağlaç gibi kullanılır."
+  },
+  {
+   "word": "trigger",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "tetiklemek",
+    "başlatmak"
+   ],
+   "example_en": "Stress can trigger asthma.",
+   "example_tr": "Stres astımı tetikleyebilir.",
+   "note": "YDS'de genellikle hastalık veya kriz başlatmak anlamında çıkar."
+  },
+  {
+   "word": "emerge",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ortaya çıkmak",
+    "belirmek"
+   ],
+   "example_en": "New facts emerge over time.",
+   "example_tr": "Yeni gerçekler zamanla ortaya çıkar.",
+   "note": "emerge from: -den ortaya çıkmak/çıkmak"
+  },
+  {
+   "word": "subsequently",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "sonradan",
+    "ardından"
+   ],
+   "example_en": "He subsequently lost his job.",
+   "example_tr": "Ardından işini kaybetti.",
+   "note": "Sıralama bildirir, 'consequently' (sonuç olarak) ile karıştırmayın."
+  },
+  {
+   "word": "virtually",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "hemen hemen",
+    "neredeyse"
+   ],
+   "example_en": "The disease is virtually gone.",
+   "example_tr": "Hastalık hemen hemen yok oldu.",
+   "note": "YDS'de çoğunlukla 'almost' (neredeyse) anlamındadır."
+  },
+  {
+   "word": "violate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ihlal etmek",
+    "çiğnemek"
+   ],
+   "example_en": "The decision may violate human rights.",
+   "example_tr": "Karar insan haklarını ihlal edebilir.",
+   "note": "violate human rights (insan haklarını ihlal etmek)"
+  },
+  {
+   "word": "mandatory",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "zorunlu",
+    "mecburi"
+   ],
+   "example_en": "Education is mandatory here.",
+   "example_tr": "Eğitim burada zorunludur.",
+   "note": "Eş anlamlıları: compulsory, obligatory."
+  },
+  {
+   "word": "autonomous",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "özerk",
+    "otonom"
+   ],
+   "example_en": "Some robots are fully autonomous.",
+   "example_tr": "Bazı robotlar tamamen otonomdur."
+  },
+  {
+   "word": "prosper",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "gelişmek",
+    "refaha ermek"
+   ],
+   "example_en": "Cities prosper through trade.",
+   "example_tr": "Şehirler ticaret sayesinde gelişir.",
+   "note": "Eş anlamlıları: thrive, flourish."
+  },
+  {
+   "word": "commerce",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ticaret",
+    "alım satım"
+   ],
+   "example_en": "Global commerce is growing.",
+   "example_tr": "Küresel ticaret büyüyor."
+  },
+  {
+   "word": "deplete",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "tüketmek",
+    "azaltmak"
+   ],
+   "example_en": "Humans deplete natural resources quickly.",
+   "example_tr": "İnsanlar doğal kaynakları hızla tüketiyor.",
+   "note": "deplete resources (kaynakları tüketmek)"
+  },
+  {
+   "word": "hazard",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tehlike",
+    "risk"
+   ],
+   "example_en": "Pollution is a health hazard.",
+   "example_tr": "Kirlilik bir sağlık tehlikesidir.",
+   "note": "health hazard (sağlık riski)"
+  },
+  {
+   "word": "preserve",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "korumak",
+    "muhafaza etmek"
+   ],
+   "example_en": "We must preserve the forest.",
+   "example_tr": "Ormanı korumalıyız.",
+   "note": "preserve the environment (çevreyi korumak)"
+  },
+  {
+   "word": "severe",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "şiddetli",
+    "ciddi"
+   ],
+   "example_en": "The region faces a severe drought.",
+   "example_tr": "Bölge şiddetli bir kuraklıkla karşı karşıya.",
+   "note": "severe weather (şiddetli hava), severe pain (ciddi ağrı)"
+  },
+  {
+   "word": "ecology",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ekoloji",
+    "çevre bilimi"
+   ],
+   "example_en": "Marine ecology is complex.",
+   "example_tr": "Deniz ekolojisi karmaşıktır."
+  },
+  {
+   "word": "fatal",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "ölümcül",
+    "vahim"
+   ],
+   "example_en": "The crash proved fatal.",
+   "example_tr": "Kaza ölümcül oldu.",
+   "note": "fatal disease/accident (ölümcül hastalık/kaza)"
+  },
+  {
+   "word": "transmit",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "iletmek",
+    "bulaştırmak"
+   ],
+   "example_en": "Mosquitoes transmit malaria.",
+   "example_tr": "Sivrisinekler sıtma bulaştırır.",
+   "note": "transmit signals (sinyal iletmek) veya hastalık bulaştırmak."
+  },
+  {
+   "word": "benign",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "iyi huylu",
+    "zararsız"
+   ],
+   "example_en": "The tumour is benign.",
+   "example_tr": "Tümör iyi huyludur.",
+   "note": "Zıttı: malignant (kötü huylu)."
+  },
+  {
+   "word": "impairment",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "bozukluk",
+    "zayıflama"
+   ],
+   "example_en": "It causes memory impairment.",
+   "example_tr": "Hafıza bozukluğuna neden olur.",
+   "note": "hearing/visual impairment (işitme/görme bozukluğu)"
+  },
+  {
+   "word": "dosage",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "doz",
+    "dozaj"
+   ],
+   "example_en": "Do not exceed the stated dosage.",
+   "example_tr": "Belirtilen dozu aşmayın."
+  },
+  {
+   "word": "sterile",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "steril",
+    "mikropsuz",
+    "kısır"
+   ],
+   "example_en": "Use a sterile needle only.",
+   "example_tr": "Sadece steril bir iğne kullanın."
+  },
+  {
+   "word": "respiration",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "solunum",
+    "nefes alma"
+   ],
+   "example_en": "Fish use gills for respiration.",
+   "example_tr": "Balıklar solunum için solungaçlarını kullanır.",
+   "note": "respiratory system (solunum sistemi)"
+  },
+  {
+   "word": "paralyse",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "felç etmek"
+   ],
+   "example_en": "The poison can paralyse you.",
+   "example_tr": "Zehir sizi felç edebilir.",
+   "note": "İngiliz İngilizcesinde 'paralyse', Amerikan İngilizcesinde 'paralyze'."
+  },
+  {
+   "word": "settlement",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yerleşim yeri",
+    "anlaşma"
+   ],
+   "example_en": "They found a Roman settlement.",
+   "example_tr": "Roma dönemine ait bir yerleşim yeri buldular.",
+   "note": "Hem fiziki 'yerleşim yeri' hem de hukuki 'uzlaşma' anlamı vardır."
+  },
+  {
+   "word": "ancestor",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ata",
+    "cet"
+   ],
+   "example_en": "Humans and apes share a common ancestor.",
+   "example_tr": "İnsanlar ve maymunlar ortak bir atadan gelir.",
+   "note": "common ancestor (ortak ata)"
+  },
+  {
+   "word": "epoch",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "çağ",
+    "dönem"
+   ],
+   "example_en": "It marks a new epoch.",
+   "example_tr": "Bu yeni bir çağı işaret eder.",
+   "note": "Eş anlamlıları: era, age, period."
+  },
+  {
+   "word": "invader",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "işgalci",
+    "istilacı"
+   ],
+   "example_en": "The invaders destroyed the town.",
+   "example_tr": "İşgalciler kasabayı yıktı.",
+   "note": "Fiil hali: invade (işgal etmek)"
+  },
+  {
+   "word": "tribe",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kabile",
+    "aşiret"
+   ],
+   "example_en": "The local tribe fishes here.",
+   "example_tr": "Yerel kabile burada balık tutar."
+  },
+  {
+   "word": "chronological",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kronolojik"
+   ],
+   "example_en": "List the events in chronological order.",
+   "example_tr": "Olayları kronolojik sırayla listeleyin.",
+   "note": "chronological order (kronolojik sıra)"
+  },
+  {
+   "word": "sovereign",
+   "pos": "adj",
+   "level": "C2",
+   "tr": [
+    "egemen",
+    "bağımsız"
+   ],
+   "example_en": "Every sovereign state has its own laws.",
+   "example_tr": "Her egemen devletin kendi yasaları vardır.",
+   "note": "İsim olarak 'hükümdar' anlamına da gelir."
+  },
+  {
+   "word": "hierarchy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hiyerarşi",
+    "sıradüzen"
+   ],
+   "example_en": "Lions have a strict hierarchy.",
+   "example_tr": "Aslanların sıkı bir hiyerarşisi vardır.",
+   "note": "social hierarchy (sosyal hiyerarşi)"
+  },
+  {
+   "word": "uncover",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ortaya çıkarmak",
+    "bulmak"
+   ],
+   "example_en": "Archaeologists uncover old ruins.",
+   "example_tr": "Arkeologlar eski kalıntıları gün yüzüne çıkarıyor.",
+   "note": "Eş anlamlıları: reveal, discover, unearth."
+  },
+  {
+   "word": "simulation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "simülasyon",
+    "benzetim"
+   ],
+   "example_en": "Run a climate simulation.",
+   "example_tr": "Bir iklim simülasyonu çalıştırın."
+  },
+  {
+   "word": "density",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yoğunluk",
+    "sıklık"
+   ],
+   "example_en": "Bone density drops with age.",
+   "example_tr": "Kemik yoğunluğu yaşla birlikte azalır.",
+   "note": "population density (nüfus yoğunluğu)"
+  },
+  {
+   "word": "mechanism",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mekanizma",
+    "düzenek"
+   ],
+   "example_en": "The body has a defence mechanism.",
+   "example_tr": "Vücudun bir savunma mekanizması vardır.",
+   "note": "defence mechanism (savunma mekanizması)"
+  },
+  {
+   "word": "component",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bileşen",
+    "parça"
+   ],
+   "example_en": "Trust is a key component.",
+   "example_tr": "Güven temel bir bileşendir.",
+   "note": "key component (önemli parça/bileşen)"
+  },
+  {
+   "word": "modification",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "değişiklik",
+    "uyarlama"
+   ],
+   "example_en": "The plan needs modification.",
+   "example_tr": "Planın değişikliğe ihtiyacı var.",
+   "note": "genetic modification (genetik değişiklik)"
+  },
+  {
+   "word": "insight",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kavrayış",
+    "içgörü"
+   ],
+   "example_en": "The study gives new insight into ageing.",
+   "example_tr": "Çalışma, yaşlanmaya dair yeni bir kavrayış sunuyor.",
+   "note": "insight into (bir şeyin içyüzünü kavrama)"
+  },
+  {
+   "word": "behaviour",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "davranış",
+    "tutum"
+   ],
+   "example_en": "Watch their social behaviour.",
+   "example_tr": "Onların sosyal davranışlarını izleyin.",
+   "note": "Amerikan İngilizcesinde 'behavior' olarak yazılır."
+  },
+  {
+   "word": "adolescent",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ergen",
+    "genç"
+   ],
+   "example_en": "Adolescents need more sleep.",
+   "example_tr": "Ergenlerin daha fazla uykuya ihtiyacı var.",
+   "note": "Sıfat olarak 'ergenliğe ait' anlamına gelir."
+  },
+  {
+   "word": "compulsory",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "zorunlu",
+    "mecburi"
+   ],
+   "example_en": "Primary education is compulsory.",
+   "example_tr": "İlköğretim zorunludur.",
+   "note": "compulsory education (zorunlu eğitim)"
+  },
+  {
+   "word": "juvenile",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "genç",
+    "çocuk",
+    "çocuksu"
+   ],
+   "example_en": "Juvenile crime has fallen.",
+   "example_tr": "Çocuk suçları azaldı.",
+   "note": "juvenile delinquency (çocuk suçluluğu)"
+  },
+  {
+   "word": "cognition",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "biliş",
+    "kavrama"
+   ],
+   "example_en": "Sleep affects cognition.",
+   "example_tr": "Uyku bilişi etkiler.",
+   "note": "Sıfat hali: cognitive (bilişsel, zihinsel)"
+  },
+  {
+   "word": "marginalise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "dışlamak",
+    "önemsizleştirmek"
+   ],
+   "example_en": "Society can marginalise them.",
+   "example_tr": "Toplum onları dışlayabilir.",
+   "note": "Genellikle pasif kullanılır: be marginalised (dışlanmak)"
+  },
+  {
+   "word": "furthermore",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "dahası",
+    "üstelik"
+   ],
+   "example_en": "The test is quick; furthermore, it is cheap.",
+   "example_tr": "Test hızlıdır; üstelik ucuzdur.",
+   "note": "moreover ve in addition ile eş anlamlıdır."
+  },
+  {
+   "word": "hamper",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "engellemek",
+    "aksatmak"
+   ],
+   "example_en": "Bad weather can hamper rescue efforts.",
+   "example_tr": "Kötü hava kurtarma çalışmalarını aksatabilir.",
+   "note": "hamper progress/efforts (ilerlemeyi/çabaları engellemek)"
+  },
+  {
+   "word": "comprise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "içermek",
+    "-den oluşmak"
+   ],
+   "example_en": "The team comprises ten scientists.",
+   "example_tr": "Ekip on bilim insanından oluşur.",
+   "note": "'consist of' ile aynı anlamdadır; 'comprise of' denmez."
+  },
+  {
+   "word": "relatively",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "nispeten",
+    "görece"
+   ],
+   "example_en": "The new treatment is relatively safe.",
+   "example_tr": "Yeni tedavi nispeten güvenlidir."
+  },
+  {
+   "word": "regulate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "düzenlemek",
+    "kontrol etmek"
+   ],
+   "example_en": "Hormones help to regulate body temperature.",
+   "example_tr": "Hormonlar vücut sıcaklığını düzenlemeye yardımcı olur."
+  },
+  {
+   "word": "treaty",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "antlaşma"
+   ],
+   "example_en": "They signed a peace treaty to end the war.",
+   "example_tr": "Savaşı bitirmek için bir barış antlaşması imzaladılar.",
+   "note": "sign a treaty (antlaşma imzalamak)"
+  },
+  {
+   "word": "abolish",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yürürlükten kaldırmak"
+   ],
+   "example_en": "The government may abolish the old tax law.",
+   "example_tr": "Hükümet eski vergi yasasını yürürlükten kaldırabilir.",
+   "note": "genellikle yasa, kölelik veya sistemler için kullanılır."
+  },
+  {
+   "word": "parliament",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "parlamento",
+    "meclis"
+   ],
+   "example_en": "The parliament will vote on the bill today.",
+   "example_tr": "Meclis bugün yasa tasarısını oylayacak."
+  },
+  {
+   "word": "accumulate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "birikmek",
+    "biriktirmek"
+   ],
+   "example_en": "Toxins can accumulate in the liver over time.",
+   "example_tr": "Toksinler zamanla karaciğerde birikebilir."
+  },
+  {
+   "word": "prominent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "önemli",
+    "seçkin",
+    "belirgin"
+   ],
+   "example_en": "She is a prominent scientist in the field.",
+   "example_tr": "O, bu alanda seçkin bir bilim insanıdır.",
+   "note": "play a prominent role (önemli bir rol oynamak)"
+  },
+  {
+   "word": "devastate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "yıkmak",
+    "tahrip etmek"
+   ],
+   "example_en": "A strong earthquake can devastate a city.",
+   "example_tr": "Güçlü bir deprem bir şehri yıkabilir."
+  },
+  {
+   "word": "exploit",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "sömürmek",
+    "yararlanmak"
+   ],
+   "example_en": "Companies exploit natural resources for profit.",
+   "example_tr": "Şirketler kâr için doğal kaynaklardan faydalanır.",
+   "note": "Hem olumlu (yararlanmak) hem olumsuz (sömürmek) anlamı var."
+  },
+  {
+   "word": "agriculture",
+   "pos": "n",
+   "level": "B1",
+   "tr": [
+    "tarım",
+    "ziraat"
+   ],
+   "example_en": "Modern agriculture relies on heavy machinery.",
+   "example_tr": "Modern tarım ağır makinelere dayanır."
+  },
+  {
+   "word": "marine",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "denizle ilgili",
+    "deniz"
+   ],
+   "example_en": "Pollution threatens marine life in the oceans.",
+   "example_tr": "Kirlilik okyanuslardaki deniz yaşamını tehdit ediyor.",
+   "note": "marine life (deniz yaşamı), marine biologist vb."
+  },
+  {
+   "word": "atmosphere",
+   "pos": "n",
+   "level": "B1",
+   "tr": [
+    "atmosfer",
+    "hava"
+   ],
+   "example_en": "Gases in the atmosphere trap solar heat.",
+   "example_tr": "Atmosferdeki gazlar güneş ısısını hapseder."
+  },
+  {
+   "word": "incidence",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "görülme sıklığı",
+    "oran"
+   ],
+   "example_en": "The incidence of asthma is rising in cities.",
+   "example_tr": "Şehirlerde astım görülme sıklığı artmaktadır.",
+   "note": "high incidence of... (... nın yüksek görülme oranı)"
+  },
+  {
+   "word": "disorder",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bozukluk",
+    "rahatsızlık"
+   ],
+   "example_en": "Sleep disorders can affect mental health.",
+   "example_tr": "Uyku bozuklukları ruh sağlığını etkileyebilir.",
+   "note": "mental disorder / sleep disorder gibi kalıplar yaygındır."
+  },
+  {
+   "word": "longevity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "uzun ömürlülük"
+   ],
+   "example_en": "Good diet promotes health and longevity.",
+   "example_tr": "İyi beslenme sağlığı ve uzun ömrü destekler."
+  },
+  {
+   "word": "therapeutic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "tedavi edici"
+   ],
+   "example_en": "Music can have a therapeutic effect on stress.",
+   "example_tr": "Müziğin stres üzerinde tedavi edici etkisi olabilir."
+  },
+  {
+   "word": "clinical",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "klinik"
+   ],
+   "example_en": "The drug is now in the clinical trial phase.",
+   "example_tr": "İlaç şu an klinik deney aşamasındadır.",
+   "note": "clinical trials (klinik deneyler)"
+  },
+  {
+   "word": "anaesthesia",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "anestezi"
+   ],
+   "example_en": "Patients sleep deeply under general anaesthesia.",
+   "example_tr": "Hastalar genel anestezi altında derin uyurlar.",
+   "note": "under anaesthesia (anestezi altında)"
+  },
+  {
+   "word": "artery",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "atardamar",
+    "ana yol"
+   ],
+   "example_en": "A blocked artery can cause a heart attack.",
+   "example_tr": "Tıkalı bir atardamar kalp krizine neden olabilir."
+  },
+  {
+   "word": "excavate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "kazı yapmak",
+    "kazmak"
+   ],
+   "example_en": "Archaeologists excavate sites to find tools.",
+   "example_tr": "Arkeologlar aletleri bulmak için alanlarda kazı yapar."
+  },
+  {
+   "word": "unearth",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "gün ışığına çıkarmak"
+   ],
+   "example_en": "Researchers unearth new evidence every year.",
+   "example_tr": "Araştırmacılar her yıl yeni kanıtları ortaya çıkarır.",
+   "note": "Hem fiziksel hem de soyut (gerçekleri) çıkarmak için kullanılır."
+  },
+  {
+   "word": "descendant",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "torun",
+    "soyundan gelen"
+   ],
+   "example_en": "He is a direct descendant of a royal family.",
+   "example_tr": "O, bir kraliyet ailesinin soyundan geliyor."
+  },
+  {
+   "word": "dynasty",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hanedan"
+   ],
+   "example_en": "The Ming dynasty ruled China for centuries.",
+   "example_tr": "Ming hanedanı Çin'i yüzyıllarca yönetti."
+  },
+  {
+   "word": "empire",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "imparatorluk"
+   ],
+   "example_en": "The Roman Empire was vast and powerful.",
+   "example_tr": "Roma İmparatorluğu çok geniş ve güçlüydü."
+  },
+  {
+   "word": "nomadic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "göçebe"
+   ],
+   "example_en": "Many ancient tribes lived a nomadic lifestyle.",
+   "example_tr": "Birçok eski kabile göçebe bir yaşam tarzı sürdü.",
+   "note": "nomadic lifestyle / tribes"
+  },
+  {
+   "word": "myth",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mit",
+    "efsane",
+    "yanılgı"
+   ],
+   "example_en": "It is a myth that we use only 10% of our brain.",
+   "example_tr": "Beynin yalnızca %10'unu kullandığımız bir efsane.",
+   "note": "YDS'de genellikle 'doğru bilinen yanlış' anlamında çıkar."
+  },
+  {
+   "word": "tomb",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mezar",
+    "türbe"
+   ],
+   "example_en": "They discovered an ancient Egyptian tomb.",
+   "example_tr": "Eski bir Mısır mezarı keşfettiler."
+  },
+  {
+   "word": "monumental",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "devasa",
+    "anıtsal"
+   ],
+   "example_en": "Building the pyramids was a monumental task.",
+   "example_tr": "Piramitleri inşa etmek devasa bir görevdi."
+  },
+  {
+   "word": "evolution",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "evrim",
+    "gelişim"
+   ],
+   "example_en": "Fossils provide evidence for human evolution.",
+   "example_tr": "Fosiller insan evrimi için kanıt sağlar.",
+   "note": "theory of evolution (evrim teorisi)"
+  },
+  {
+   "word": "velocity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hız",
+    "sürat"
+   ],
+   "example_en": "Light travels at a constant velocity in space.",
+   "example_tr": "Işık uzayda sabit bir hızda ilerler.",
+   "note": "high velocity (yüksek hız)"
+  },
+  {
+   "word": "obsolete",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "modası geçmiş",
+    "eskimiş"
+   ],
+   "example_en": "Smartphones made many old cameras obsolete.",
+   "example_tr": "Akıllı telefonlar birçok eski kamerayı gereksiz kıldı.",
+   "note": "become obsolete (kullanımdan kalkmak)"
+  },
+  {
+   "word": "orbit",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yörünge"
+   ],
+   "example_en": "The Earth takes a year to complete one orbit.",
+   "example_tr": "Dünya bir yörünge turunu bir yılda tamamlar.",
+   "note": "in orbit (yörüngede)"
+  },
+  {
+   "word": "flaw",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kusur",
+    "hata"
+   ],
+   "example_en": "A tiny design flaw can cause engine failure.",
+   "example_tr": "Küçük bir tasarım kusuru motoru bozabilir.",
+   "note": "fatal flaw (ölümcül hata/kusur)"
+  },
+  {
+   "word": "accelerate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "hızlandırmak",
+    "ivmelenmek"
+   ],
+   "example_en": "Global warming may accelerate ice melting.",
+   "example_tr": "Küresel ısınma buz erimesini hızlandırabilir."
+  },
+  {
+   "word": "precise",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kesin",
+    "tam",
+    "hassas"
+   ],
+   "example_en": "Surgeons require highly precise instruments.",
+   "example_tr": "Cerrahlar oldukça hassas aletlere ihtiyaç duyar.",
+   "note": "precise measurement (kesin ölçüm)"
+  },
+  {
+   "word": "assess",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "değerlendirmek"
+   ],
+   "example_en": "Doctors will assess the patient's symptoms.",
+   "example_tr": "Doktorlar hastanın semptomlarını değerlendirecek.",
+   "note": "assess the damage (hasarı değerlendirmek)"
+  },
+  {
+   "word": "reinforce",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "güçlendirmek",
+    "pekiştirmek"
+   ],
+   "example_en": "Steel beams reinforce the concrete structure.",
+   "example_tr": "Çelik kirişler beton yapıyı güçlendirir.",
+   "note": "reinforce a behaviour (bir davranışı pekiştirmek)"
+  },
+  {
+   "word": "nurture",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "büyütmek",
+    "beslemek"
+   ],
+   "example_en": "Teachers must nurture young artistic talent.",
+   "example_tr": "Öğretmenler genç sanatsal yeteneği beslemelidir.",
+   "note": "nature vs. nurture (doğuştan gelen mi, sonradan kazanılan mı tartışması)"
+  },
+  {
+   "word": "aptitude",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yetenek",
+    "kabiliyet"
+   ],
+   "example_en": "She has an aptitude for languages.",
+   "example_tr": "Dillere karşı yeteneği var.",
+   "note": "have an aptitude for (-e yeteneği olmak)"
+  },
+  {
+   "word": "mainstream",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ana akım",
+    "yaygın"
+   ],
+   "example_en": "The idea is finally accepted by mainstream science.",
+   "example_tr": "Fikir sonunda ana akım bilim tarafından kabul edildi."
+  },
+  {
+   "word": "determine",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "belirlemek",
+    "saptamak"
+   ],
+   "example_en": "Tests determine the exact cause.",
+   "example_tr": "Testler kesin nedeni belirler."
+  },
+  {
+   "word": "impede",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "engellemek",
+    "sekte vurmak"
+   ],
+   "example_en": "Bad weather can impede progress.",
+   "example_tr": "Kötü hava ilerlemeyi engelleyebilir."
+  },
+  {
+   "word": "emphasise",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "vurgulamak"
+   ],
+   "example_en": "Experts emphasise the risks.",
+   "example_tr": "Uzmanlar riskleri vurgular.",
+   "note": "Genellikle 'emphasise that' yapısıyla kullanılır."
+  },
+  {
+   "word": "initially",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "başlangıçta",
+    "ilk olarak"
+   ],
+   "example_en": "They initially rejected the plan.",
+   "example_tr": "Başlangıçta planı reddettiler."
+  },
+  {
+   "word": "amend",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "değiştirmek",
+    "düzeltmek"
+   ],
+   "example_en": "They plan to amend the law.",
+   "example_tr": "Yasayı değiştirmeyi planlıyorlar.",
+   "note": "Genellikle yasa veya belge değiştirmek için kullanılır."
+  },
+  {
+   "word": "intervene",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "müdahale etmek",
+    "araya girmek"
+   ],
+   "example_en": "The state must intervene now.",
+   "example_tr": "Devlet şimdi müdahale etmelidir.",
+   "note": "'intervene in' edatıyla sıkça kullanılır."
+  },
+  {
+   "word": "ratify",
+   "pos": "v",
+   "level": "C2",
+   "tr": [
+    "onaylamak",
+    "tasdik etmek"
+   ],
+   "example_en": "Parliament must ratify the treaty.",
+   "example_tr": "Meclisin antlaşmayı onaylaması gerekir.",
+   "note": "Sadece resmi anlaşma veya yasalar için kullanılır."
+  },
+  {
+   "word": "ally",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "müttefik",
+    "dost"
+   ],
+   "example_en": "France was a loyal ally.",
+   "example_tr": "Fransa sadık bir müttefikti."
+  },
+  {
+   "word": "plummet",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "hızla düşmek",
+    "çakılmak"
+   ],
+   "example_en": "Stock prices could plummet.",
+   "example_tr": "Hisse fiyatları çakılabilir."
+  },
+  {
+   "word": "sue",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "dava açmak",
+    "mahkemeye vermek"
+   ],
+   "example_en": "The family decided to sue the hospital.",
+   "example_tr": "Aile hastaneye dava açmaya karar verdi.",
+   "note": "'sue someone for something' kalıbı yaygındır."
+  },
+  {
+   "word": "contaminate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "kirletmek",
+    "bulaştırmak"
+   ],
+   "example_en": "Chemicals contaminate the soil.",
+   "example_tr": "Kimyasallar toprağı kirletir."
+  },
+  {
+   "word": "precipitation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yağış"
+   ],
+   "example_en": "High precipitation causes floods.",
+   "example_tr": "Yüksek yağış sellere neden olur.",
+   "note": "Hem yağmur hem de kar yağışı için kullanılır."
+  },
+  {
+   "word": "reservoir",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "baraj gölü",
+    "rezervuar"
+   ],
+   "example_en": "The reservoir supplies the city with water.",
+   "example_tr": "Baraj gölü şehre su sağlar."
+  },
+  {
+   "word": "terrestrial",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "karasal",
+    "yeryüzüne ait"
+   ],
+   "example_en": "Terrestrial animals live on land.",
+   "example_tr": "Karasal hayvanlar karada yaşar."
+  },
+  {
+   "word": "eradicate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kökünü kazımak",
+    "yok etmek"
+   ],
+   "example_en": "Vaccines help eradicate polio.",
+   "example_tr": "Aşılar çocuk felcini yok etmeye yardım eder.",
+   "note": "Genellikle hastalık veya yoksulluk için kullanılır."
+  },
+  {
+   "word": "mortality",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ölüm oranı",
+    "ölümlülük"
+   ],
+   "example_en": "Infant mortality is declining.",
+   "example_tr": "Bebek ölüm oranı düşüyor."
+  },
+  {
+   "word": "contagious",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "bulaşıcı"
+   ],
+   "example_en": "The virus is highly contagious.",
+   "example_tr": "Virüs son derece bulaşıcıdır."
+  },
+  {
+   "word": "cardiovascular",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kalp-damar"
+   ],
+   "example_en": "Obesity raises cardiovascular risk.",
+   "example_tr": "Obezite kalp-damar riskini artırır.",
+   "note": "'cardiovascular disease' sık görülen bir tamlamadır."
+  },
+  {
+   "word": "remedy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "çare",
+    "deva",
+    "ilaç"
+   ],
+   "example_en": "Honey is a natural remedy.",
+   "example_tr": "Bal doğal bir devadır."
+  },
+  {
+   "word": "syndrome",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sendrom"
+   ],
+   "example_en": "This syndrome affects the brain.",
+   "example_tr": "Bu sendrom beyni etkiler."
+  },
+  {
+   "word": "anatomy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "anatomi"
+   ],
+   "example_en": "Human anatomy is complex.",
+   "example_tr": "İnsan anatomisi karmaşıktır."
+  },
+  {
+   "word": "vein",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "toplardamar"
+   ],
+   "example_en": "A vein carries blood to the heart.",
+   "example_tr": "Bir toplardamar kanı kalbe taşır."
+  },
+  {
+   "word": "artefact",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "eser",
+    "tarihi eser"
+   ],
+   "example_en": "They found an ancient artefact.",
+   "example_tr": "Antik bir eser buldular."
+  },
+  {
+   "word": "remains",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kalıntılar",
+    "naaş"
+   ],
+   "example_en": "The remains belong to a king.",
+   "example_tr": "Kalıntılar bir krala ait.",
+   "note": "Her zaman çoğul kullanılır."
+  },
+  {
+   "word": "antiquity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ilkçağ",
+    "eski çağ"
+   ],
+   "example_en": "Rome was a power in antiquity.",
+   "example_tr": "Roma eski çağda bir güçtü."
+  },
+  {
+   "word": "legacy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "miras"
+   ],
+   "example_en": "The empire left a rich legacy.",
+   "example_tr": "İmparatorluk zengin bir miras bıraktı."
+  },
+  {
+   "word": "ruin",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "harabe",
+    "yıkıntı"
+   ],
+   "example_en": "The castle is now in ruins.",
+   "example_tr": "Kale artık yıkık durumda."
+  },
+  {
+   "word": "trace",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "iz",
+    "kalıntı"
+   ],
+   "example_en": "There is no trace of poison.",
+   "example_tr": "Zehir izi yok."
+  },
+  {
+   "word": "tradition",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "gelenek",
+    "adet"
+   ],
+   "example_en": "Tea is a British tradition.",
+   "example_tr": "Çay bir İngiliz geleneğidir."
+  },
+  {
+   "word": "burial",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "gömme",
+    "defin"
+   ],
+   "example_en": "The burial took place today.",
+   "example_tr": "Defin işlemi bugün gerçekleşti.",
+   "note": "'burial site' (mezar yeri) olarak çok sık geçer."
+  },
+  {
+   "word": "derive",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "türetmek",
+    "elde etmek"
+   ],
+   "example_en": "Many words derive from Latin.",
+   "example_tr": "Pek çok kelime Latinceden türemiştir.",
+   "note": "Hemen daima 'from' edatıyla kullanılır."
+  },
+  {
+   "word": "devise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "tasarlamak",
+    "icat etmek"
+   ],
+   "example_en": "Engineers devise new methods.",
+   "example_tr": "Mühendisler yeni yöntemler tasarlar."
+  },
+  {
+   "word": "observation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "gözlem",
+    "gözlemleme"
+   ],
+   "example_en": "Careful observation is needed.",
+   "example_tr": "Dikkatli gözlem gereklidir."
+  },
+  {
+   "word": "synthetic",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "sentetik",
+    "yapay"
+   ],
+   "example_en": "They produce synthetic rubber.",
+   "example_tr": "Sentetik kauçuk üretiyorlar."
+  },
+  {
+   "word": "radiation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "radyasyon",
+    "ışınım"
+   ],
+   "example_en": "The sun emits radiation.",
+   "example_tr": "Güneş radyasyon yayar."
+  },
+  {
+   "word": "procedure",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "prosedür",
+    "işlem"
+   ],
+   "example_en": "The surgical procedure is safe.",
+   "example_tr": "Cerrahi işlem güvenlidir."
+  },
+  {
+   "word": "specimen",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "örnek",
+    "numune"
+   ],
+   "example_en": "They collect a blood specimen.",
+   "example_tr": "Bir kan numunesi topluyorlar."
+  },
+  {
+   "word": "manipulate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "manipüle etmek",
+    "yönlendirmek"
+   ],
+   "example_en": "Scientists can manipulate genes in the lab.",
+   "example_tr": "Bilim insanları laboratuvarda genlerle oynayabilir."
+  },
+  {
+   "word": "perceive",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "algılamak",
+    "sezmek"
+   ],
+   "example_en": "Dogs perceive sounds well.",
+   "example_tr": "Köpekler sesleri iyi algılar."
+  },
+  {
+   "word": "literacy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "okuryazarlık"
+   ],
+   "example_en": "Basic literacy is vital.",
+   "example_tr": "Temel okuryazarlık hayatidir."
+  },
+  {
+   "word": "conform",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "uymak",
+    "boyun eğmek"
+   ],
+   "example_en": "Products must conform to rules.",
+   "example_tr": "Ürünler kurallara uymalıdır.",
+   "note": "Her zaman 'to' veya 'with' alır."
+  },
+  {
+   "word": "suppress",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "bastırmak",
+    "engellemek"
+   ],
+   "example_en": "Drugs suppress the immune system.",
+   "example_tr": "İlaçlar bağışıklık sistemini bastırır."
+  },
+  {
+   "word": "deprivation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yoksunluk",
+    "mahrumiyet"
+   ],
+   "example_en": "Sleep deprivation ruins health.",
+   "example_tr": "Uyku yoksunluğu sağlığı bozar.",
+   "note": "'sleep deprivation' YDS'de klasikleşmiş bir ifadedir."
+  },
+  {
+   "word": "alter",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "değiştirmek",
+    "başkalaştırmak"
+   ],
+   "example_en": "Climate change can alter habitats.",
+   "example_tr": "İklim değişikliği habitatları değiştirebilir."
+  },
+  {
+   "word": "beneficial",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "faydalı",
+    "yararlı"
+   ],
+   "example_en": "Sunlight is beneficial for plants.",
+   "example_tr": "Güneş ışığı bitkiler için faydalıdır.",
+   "note": "be beneficial to/for (bir şeye/birine faydalı olmak)"
+  },
+  {
+   "word": "susceptible",
+   "pos": "adj",
+   "level": "C2",
+   "tr": [
+    "yatkın",
+    "duyarlı",
+    "savunmasız"
+   ],
+   "example_en": "Children are susceptible to colds.",
+   "example_tr": "Çocuklar soğuk algınlığına yatkındır.",
+   "note": "susceptible to (bir şeye karşı duyarlı/savunmasız)"
+  },
+  {
+   "word": "vital",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "hayati",
+    "çok önemli"
+   ],
+   "example_en": "Water is vital for all life forms.",
+   "example_tr": "Su, tüm yaşam formları için hayatidir.",
+   "note": "play a vital role (hayati bir rol oynamak)"
+  },
+  {
+   "word": "enforce",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "uygulamak",
+    "zorlamak"
+   ],
+   "example_en": "Police enforce the traffic laws.",
+   "example_tr": "Polis trafik kurallarını uygular.",
+   "note": "enforce a law/rule (bir yasayı/kuralı uygulamak)"
+  },
+  {
+   "word": "justify",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "haklı çıkarmak",
+    "savunmak"
+   ],
+   "example_en": "Results justify the high expenses.",
+   "example_tr": "Sonuçlar yüksek masrafları haklı çıkarıyor."
+  },
+  {
+   "word": "expenditure",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "harcama",
+    "gider"
+   ],
+   "example_en": "Public expenditure must be cut.",
+   "example_tr": "Kamu harcamaları kesilmelidir."
+  },
+  {
+   "word": "convict",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "mahkûm etmek",
+    "suçlu bulmak"
+   ],
+   "example_en": "The court may convict him of fraud.",
+   "example_tr": "Mahkeme onu dolandırıcılıktan mahkûm edebilir.",
+   "note": "convict of a crime (bir suçtan mahkum etmek)"
+  },
+  {
+   "word": "surge",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "aniden artmak",
+    "fırlamak"
+   ],
+   "example_en": "Prices surge during a crisis.",
+   "example_tr": "Kriz sırasında fiyatlar aniden artar."
+  },
+  {
+   "word": "constitution",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "anayasa",
+    "bünye"
+   ],
+   "example_en": "The constitution protects free speech.",
+   "example_tr": "Anayasa ifade özgürlüğünü korur."
+  },
+  {
+   "word": "conserve",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "korumak",
+    "tasarruf etmek"
+   ],
+   "example_en": "We must conserve water in summer.",
+   "example_tr": "Yazın su tasarrufu yapmalıyız.",
+   "note": "conserve energy (enerji tasarrufu yapmak)"
+  },
+  {
+   "word": "famine",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kıtlık",
+    "açlık"
+   ],
+   "example_en": "Drought can cause severe famine.",
+   "example_tr": "Kuraklık şiddetli kıtlığa neden olabilir."
+  },
+  {
+   "word": "pollutant",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kirletici madde"
+   ],
+   "example_en": "Lead is a dangerous pollutant.",
+   "example_tr": "Kurşun tehlikeli bir kirleticidir."
+  },
+  {
+   "word": "vegetation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bitki örtüsü",
+    "bitkiler"
+   ],
+   "example_en": "Dense vegetation covers the area.",
+   "example_tr": "Bölgeyi yoğun bir bitki örtüsü kaplıyor."
+  },
+  {
+   "word": "diagnose",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "teşhis etmek",
+    "tanı koymak"
+   ],
+   "example_en": "Doctors diagnose rare diseases.",
+   "example_tr": "Doktorlar nadir hastalıkları teşhis eder.",
+   "note": "be diagnosed with (... teşhisi konmak)"
+  },
+  {
+   "word": "epidemic",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "salgın hastalık",
+    "salgın"
+   ],
+   "example_en": "A flu epidemic hit the whole town.",
+   "example_tr": "Grip salgını bütün kasabayı vurdu."
+  },
+  {
+   "word": "malignant",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kötü huylu",
+    "kötücül"
+   ],
+   "example_en": "They removed a malignant tumour.",
+   "example_tr": "Kötü huylu bir tümörü aldılar.",
+   "note": "benign (iyi huylu) kelimesinin zıddıdır."
+  },
+  {
+   "word": "deficiency",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "eksiklik",
+    "yetersizlik"
+   ],
+   "example_en": "Iron deficiency causes extreme fatigue.",
+   "example_tr": "Demir eksikliği aşırı yorgunluğa neden olur."
+  },
+  {
+   "word": "prescribe",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "reçete etmek",
+    "öngörmek"
+   ],
+   "example_en": "Doctors often prescribe antibiotics.",
+   "example_tr": "Doktorlar sıklıkla antibiyotik yazar."
+  },
+  {
+   "word": "hygiene",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "hijyen",
+    "temizlik"
+   ],
+   "example_en": "Good hygiene prevents infections.",
+   "example_tr": "İyi hijyen enfeksiyonları önler.",
+   "note": "personal hygiene (kişisel temizlik)"
+  },
+  {
+   "word": "metabolism",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "metabolizma"
+   ],
+   "example_en": "Exercise speeds up metabolism.",
+   "example_tr": "Egzersiz metabolizmayı hızlandırır."
+  },
+  {
+   "word": "inject",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "enjekte etmek",
+    "iğne yapmak"
+   ],
+   "example_en": "Nurses inject the new vaccine.",
+   "example_tr": "Hemşireler yeni aşıyı enjekte eder.",
+   "note": "inject into (bir şeye enjekte etmek)"
+  },
+  {
+   "word": "civilisation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "uygarlık",
+    "medeniyet"
+   ],
+   "example_en": "The Maya civilisation left great cities.",
+   "example_tr": "Maya uygarlığı büyük şehirler bıraktı."
+  },
+  {
+   "word": "inhabitant",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sakin",
+    "oturan"
+   ],
+   "example_en": "Every inhabitant pays local taxes.",
+   "example_tr": "Her sakin yerel vergi öder."
+  },
+  {
+   "word": "era",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "çağ",
+    "dönem"
+   ],
+   "example_en": "We live in a digital era.",
+   "example_tr": "Dijital bir çağda yaşıyoruz."
+  },
+  {
+   "word": "conquer",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "fethetmek",
+    "yenmek"
+   ],
+   "example_en": "Armies conquer foreign lands.",
+   "example_tr": "Ordular yabancı toprakları fetheder."
+  },
+  {
+   "word": "prehistoric",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "tarih öncesi"
+   ],
+   "example_en": "We found prehistoric cave art.",
+   "example_tr": "Tarih öncesi mağara sanatı bulduk."
+  },
+  {
+   "word": "primitive",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "ilkel",
+    "basit"
+   ],
+   "example_en": "Early humans made primitive tools.",
+   "example_tr": "İlk insanlar ilkel aletler yaptılar."
+  },
+  {
+   "word": "reign",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "saltanat",
+    "hükümdarlık"
+   ],
+   "example_en": "His reign brought long peace.",
+   "example_tr": "Onun saltanatı uzun bir barış getirdi."
+  },
+  {
+   "word": "relic",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kalıntı",
+    "yadigâr"
+   ],
+   "example_en": "The coin is a relic of the Roman era.",
+   "example_tr": "Bu sikke Roma döneminden kalma bir yadigâr."
+  },
+  {
+   "word": "colonise",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "sömürgeleştirmek",
+    "yerleşmek"
+   ],
+   "example_en": "Europeans began to colonise Africa.",
+   "example_tr": "Avrupalılar Afrika'yı sömürgeleştirmeye başladı."
+  },
+  {
+   "word": "fundamental",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "temel",
+    "esas"
+   ],
+   "example_en": "Freedom is a fundamental right.",
+   "example_tr": "Özgürlük temel bir haktır."
+  },
+  {
+   "word": "generate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "üretmek",
+    "oluşturmak"
+   ],
+   "example_en": "Solar panels generate clean energy.",
+   "example_tr": "Güneş panelleri temiz enerji üretir.",
+   "note": "generate income/revenue (gelir üretmek)"
+  },
+  {
+   "word": "gravity",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yerçekimi",
+    "ciddiyet"
+   ],
+   "example_en": "Earth has strong gravity.",
+   "example_tr": "Dünya güçlü bir yerçekimine sahiptir."
+  },
+  {
+   "word": "pioneer",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "öncü"
+   ],
+   "example_en": "She was a pioneer of modern physics.",
+   "example_tr": "O, modern fiziğin öncülerinden biriydi."
+  },
+  {
+   "word": "trait",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "özellik",
+    "karakteristik"
+   ],
+   "example_en": "Honesty is a good personality trait.",
+   "example_tr": "Dürüstlük iyi bir kişilik özelliğidir."
+  },
+  {
+   "word": "detect",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "tespit etmek",
+    "fark etmek"
+   ],
+   "example_en": "Radars easily detect small ships.",
+   "example_tr": "Radarlar küçük gemileri kolayca tespit eder."
+  },
+  {
+   "word": "assumption",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "varsayım",
+    "farz etme"
+   ],
+   "example_en": "His assumption was totally wrong.",
+   "example_tr": "Onun varsayımı tamamen yanlıştı.",
+   "note": "make an assumption (varsayımda bulunmak)"
+  },
+  {
+   "word": "interaction",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "etkileşim"
+   ],
+   "example_en": "Social interaction aids mental health.",
+   "example_tr": "Sosyal etkileşim ruh sağlığına yardımcı olur."
+  },
+  {
+   "word": "integrate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "entegre etmek",
+    "kaynaştırmak"
+   ],
+   "example_en": "Schools integrate tech into class.",
+   "example_tr": "Okullar teknolojiyi derse entegre eder.",
+   "note": "integrate into (bir şeye entegre olmak/etmek)"
+  },
+  {
+   "word": "innate",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "doğuştan gelen"
+   ],
+   "example_en": "Birds have innate navigation skills.",
+   "example_tr": "Kuşların doğuştan gelen yön bulma becerileri vardır."
+  },
+  {
+   "word": "alienate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yabancılaştırmak"
+   ],
+   "example_en": "Harsh rules alienate the public.",
+   "example_tr": "Sert kurallar halkı yabancılaştırır.",
+   "note": "alienate from (bir şeyden/birinden uzaklaştırmak)"
+  },
+  {
+   "word": "retention",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "elde tutma",
+    "koruma"
+   ],
+   "example_en": "Staff retention is a major problem.",
+   "example_tr": "Çalışanları elde tutmak büyük bir sorun."
+  }
+ ]
+}

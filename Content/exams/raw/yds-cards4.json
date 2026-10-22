@@ -1,0 +1,514 @@
+{
+ "cards": [
+  {
+   "word": "alter",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "değiştirmek",
+    "başkalaştırmak"
+   ],
+   "example_en": "Climate change can alter habitats.",
+   "example_tr": "İklim değişikliği habitatları değiştirebilir.",
+   "note": ""
+  },
+  {
+   "word": "beneficial",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "faydalı",
+    "yararlı"
+   ],
+   "example_en": "Sunlight is beneficial for plants.",
+   "example_tr": "Güneş ışığı bitkiler için faydalıdır.",
+   "note": "be beneficial to/for (bir şeye/birine faydalı olmak)"
+  },
+  {
+   "word": "susceptible",
+   "pos": "adj",
+   "level": "C2",
+   "tr": [
+    "yatkın",
+    "duyarlı",
+    "savunmasız"
+   ],
+   "example_en": "Children are susceptible to colds.",
+   "example_tr": "Çocuklar soğuk algınlığına yatkındır.",
+   "note": "susceptible to (bir şeye karşı duyarlı/savunmasız)"
+  },
+  {
+   "word": "vital",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "hayati",
+    "çok önemli"
+   ],
+   "example_en": "Water is vital for all life forms.",
+   "example_tr": "Su, tüm yaşam formları için hayatidir.",
+   "note": "play a vital role (hayati bir rol oynamak)"
+  },
+  {
+   "word": "enforce",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "uygulamak",
+    "zorlamak"
+   ],
+   "example_en": "Police enforce the traffic laws.",
+   "example_tr": "Polis trafik kurallarını uygular.",
+   "note": "enforce a law/rule (bir yasayı/kuralı uygulamak)"
+  },
+  {
+   "word": "justify",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "haklı çıkarmak",
+    "savunmak"
+   ],
+   "example_en": "Results justify the high expenses.",
+   "example_tr": "Sonuçlar yüksek masrafları haklı çıkarıyor.",
+   "note": ""
+  },
+  {
+   "word": "expenditure",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "harcama",
+    "gider"
+   ],
+   "example_en": "Public expenditure must be cut.",
+   "example_tr": "Kamu harcamaları kesilmelidir.",
+   "note": ""
+  },
+  {
+   "word": "convict",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "mahkûm etmek",
+    "suçlu bulmak"
+   ],
+   "example_en": "The court may convict him of fraud.",
+   "example_tr": "Mahkeme onu dolandırıcılıktan mahkûm edebilir.",
+   "note": "convict of a crime (bir suçtan mahkum etmek)"
+  },
+  {
+   "word": "surge",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "aniden artmak",
+    "fırlamak"
+   ],
+   "example_en": "Prices surge during a crisis.",
+   "example_tr": "Kriz sırasında fiyatlar aniden artar.",
+   "note": ""
+  },
+  {
+   "word": "constitution",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "anayasa",
+    "bünye"
+   ],
+   "example_en": "The constitution protects free speech.",
+   "example_tr": "Anayasa ifade özgürlüğünü korur.",
+   "note": ""
+  },
+  {
+   "word": "conserve",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "korumak",
+    "tasarruf etmek"
+   ],
+   "example_en": "We must conserve water in summer.",
+   "example_tr": "Yazın su tasarrufu yapmalıyız.",
+   "note": "conserve energy (enerji tasarrufu yapmak)"
+  },
+  {
+   "word": "famine",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kıtlık",
+    "açlık"
+   ],
+   "example_en": "Drought can cause severe famine.",
+   "example_tr": "Kuraklık şiddetli kıtlığa neden olabilir.",
+   "note": ""
+  },
+  {
+   "word": "pollutant",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kirletici madde"
+   ],
+   "example_en": "Lead is a dangerous pollutant.",
+   "example_tr": "Kurşun tehlikeli bir kirleticidir.",
+   "note": ""
+  },
+  {
+   "word": "vegetation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bitki örtüsü",
+    "bitkiler"
+   ],
+   "example_en": "Dense vegetation covers the area.",
+   "example_tr": "Bölgeyi yoğun bir bitki örtüsü kaplıyor.",
+   "note": ""
+  },
+  {
+   "word": "diagnose",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "teşhis etmek",
+    "tanı koymak"
+   ],
+   "example_en": "Doctors diagnose rare diseases.",
+   "example_tr": "Doktorlar nadir hastalıkları teşhis eder.",
+   "note": "be diagnosed with (... teşhisi konmak)"
+  },
+  {
+   "word": "epidemic",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "salgın hastalık",
+    "salgın"
+   ],
+   "example_en": "A flu epidemic hit the whole town.",
+   "example_tr": "Grip salgını bütün kasabayı vurdu.",
+   "note": ""
+  },
+  {
+   "word": "malignant",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kötü huylu",
+    "kötücül"
+   ],
+   "example_en": "They removed a malignant tumour.",
+   "example_tr": "Kötü huylu bir tümörü aldılar.",
+   "note": "benign (iyi huylu) kelimesinin zıddıdır."
+  },
+  {
+   "word": "deficiency",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "eksiklik",
+    "yetersizlik"
+   ],
+   "example_en": "Iron deficiency causes extreme fatigue.",
+   "example_tr": "Demir eksikliği aşırı yorgunluğa neden olur.",
+   "note": ""
+  },
+  {
+   "word": "prescribe",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "reçete etmek",
+    "öngörmek"
+   ],
+   "example_en": "Doctors often prescribe antibiotics.",
+   "example_tr": "Doktorlar sıklıkla antibiyotik yazar.",
+   "note": ""
+  },
+  {
+   "word": "hygiene",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "hijyen",
+    "temizlik"
+   ],
+   "example_en": "Good hygiene prevents infections.",
+   "example_tr": "İyi hijyen enfeksiyonları önler.",
+   "note": "personal hygiene (kişisel temizlik)"
+  },
+  {
+   "word": "metabolism",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "metabolizma"
+   ],
+   "example_en": "Exercise speeds up metabolism.",
+   "example_tr": "Egzersiz metabolizmayı hızlandırır.",
+   "note": ""
+  },
+  {
+   "word": "inject",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "enjekte etmek",
+    "iğne yapmak"
+   ],
+   "example_en": "Nurses inject the new vaccine.",
+   "example_tr": "Hemşireler yeni aşıyı enjekte eder.",
+   "note": "inject into (bir şeye enjekte etmek)"
+  },
+  {
+   "word": "civilisation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "uygarlık",
+    "medeniyet"
+   ],
+   "example_en": "The Maya civilisation left great cities.",
+   "example_tr": "Maya uygarlığı büyük şehirler bıraktı.",
+   "note": ""
+  },
+  {
+   "word": "inhabitant",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sakin",
+    "oturan"
+   ],
+   "example_en": "Every inhabitant pays local taxes.",
+   "example_tr": "Her sakin yerel vergi öder.",
+   "note": ""
+  },
+  {
+   "word": "era",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "çağ",
+    "dönem"
+   ],
+   "example_en": "We live in a digital era.",
+   "example_tr": "Dijital bir çağda yaşıyoruz.",
+   "note": ""
+  },
+  {
+   "word": "conquer",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "fethetmek",
+    "yenmek"
+   ],
+   "example_en": "Armies conquer foreign lands.",
+   "example_tr": "Ordular yabancı toprakları fetheder.",
+   "note": ""
+  },
+  {
+   "word": "prehistoric",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "tarih öncesi"
+   ],
+   "example_en": "We found prehistoric cave art.",
+   "example_tr": "Tarih öncesi mağara sanatı bulduk.",
+   "note": ""
+  },
+  {
+   "word": "primitive",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "ilkel",
+    "basit"
+   ],
+   "example_en": "Early humans made primitive tools.",
+   "example_tr": "İlk insanlar ilkel aletler yaptılar.",
+   "note": ""
+  },
+  {
+   "word": "reign",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "saltanat",
+    "hükümdarlık"
+   ],
+   "example_en": "His reign brought long peace.",
+   "example_tr": "Onun saltanatı uzun bir barış getirdi.",
+   "note": ""
+  },
+  {
+   "word": "relic",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kalıntı",
+    "yadigâr"
+   ],
+   "example_en": "The coin is a relic of the Roman era.",
+   "example_tr": "Bu sikke Roma döneminden kalma bir yadigâr.",
+   "note": ""
+  },
+  {
+   "word": "colonise",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "sömürgeleştirmek",
+    "yerleşmek"
+   ],
+   "example_en": "Europeans began to colonise Africa.",
+   "example_tr": "Avrupalılar Afrika'yı sömürgeleştirmeye başladı.",
+   "note": ""
+  },
+  {
+   "word": "fundamental",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "temel",
+    "esas"
+   ],
+   "example_en": "Freedom is a fundamental right.",
+   "example_tr": "Özgürlük temel bir haktır.",
+   "note": ""
+  },
+  {
+   "word": "generate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "üretmek",
+    "oluşturmak"
+   ],
+   "example_en": "Solar panels generate clean energy.",
+   "example_tr": "Güneş panelleri temiz enerji üretir.",
+   "note": "generate income/revenue (gelir üretmek)"
+  },
+  {
+   "word": "gravity",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yerçekimi",
+    "ciddiyet"
+   ],
+   "example_en": "Earth has strong gravity.",
+   "example_tr": "Dünya güçlü bir yerçekimine sahiptir.",
+   "note": ""
+  },
+  {
+   "word": "pioneer",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "öncü"
+   ],
+   "example_en": "She was a pioneer of modern physics.",
+   "example_tr": "O, modern fiziğin öncülerinden biriydi.",
+   "note": ""
+  },
+  {
+   "word": "trait",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "özellik",
+    "karakteristik"
+   ],
+   "example_en": "Honesty is a good personality trait.",
+   "example_tr": "Dürüstlük iyi bir kişilik özelliğidir.",
+   "note": ""
+  },
+  {
+   "word": "detect",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "tespit etmek",
+    "fark etmek"
+   ],
+   "example_en": "Radars easily detect small ships.",
+   "example_tr": "Radarlar küçük gemileri kolayca tespit eder.",
+   "note": ""
+  },
+  {
+   "word": "assumption",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "varsayım",
+    "farz etme"
+   ],
+   "example_en": "His assumption was totally wrong.",
+   "example_tr": "Onun varsayımı tamamen yanlıştı.",
+   "note": "make an assumption (varsayımda bulunmak)"
+  },
+  {
+   "word": "interaction",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "etkileşim"
+   ],
+   "example_en": "Social interaction aids mental health.",
+   "example_tr": "Sosyal etkileşim ruh sağlığına yardımcı olur.",
+   "note": ""
+  },
+  {
+   "word": "integrate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "entegre etmek",
+    "kaynaştırmak"
+   ],
+   "example_en": "Schools integrate tech into class.",
+   "example_tr": "Okullar teknolojiyi derse entegre eder.",
+   "note": "integrate into (bir şeye entegre olmak/etmek)"
+  },
+  {
+   "word": "innate",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "doğuştan gelen"
+   ],
+   "example_en": "Birds have innate navigation skills.",
+   "example_tr": "Kuşların doğuştan gelen yön bulma becerileri vardır.",
+   "note": ""
+  },
+  {
+   "word": "alienate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yabancılaştırmak"
+   ],
+   "example_en": "Harsh rules alienate the public.",
+   "example_tr": "Sert kurallar halkı yabancılaştırır.",
+   "note": "alienate from (bir şeyden/birinden uzaklaştırmak)"
+  },
+  {
+   "word": "retention",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "elde tutma",
+    "koruma"
+   ],
+   "example_en": "Staff retention is a major problem.",
+   "example_tr": "Çalışanları elde tutmak büyük bir sorun.",
+   "note": ""
+  }
+ ]
+}

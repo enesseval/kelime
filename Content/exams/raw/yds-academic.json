@@ -1,0 +1,255 @@
+{
+ "topic": "general academic verbs, adjectives and adverbs, and the linking words (contrast, cause, result, addition, concession) that YDS sentence completion and cloze questions test",
+ "words": [
+  {
+   "word": "however",
+   "pos": "adv",
+   "level": "B1"
+  },
+  {
+   "word": "although",
+   "pos": "conj",
+   "level": "B1"
+  },
+  {
+   "word": "therefore",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "moreover",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "whereas",
+   "pos": "conj",
+   "level": "B2"
+  },
+  {
+   "word": "nevertheless",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "despite",
+   "pos": "prep",
+   "level": "B1"
+  },
+  {
+   "word": "consequently",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "furthermore",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "thus",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "hence",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "nonetheless",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "significant",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "indicate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "reveal",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "crucial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "determine",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "establish",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "alter",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "inevitable",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "trigger",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "vulnerable",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "investigate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "analyse",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "facilitate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "hinder",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "hamper",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "impede",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "unprecedented",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "adverse",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "beneficial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "profound",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "fluctuate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "emerge",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "comprise",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "constitute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "emphasise",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "ambiguous",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "susceptible",
+   "pos": "adj",
+   "level": "C2"
+  },
+  {
+   "word": "subsequently",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "relatively",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "initially",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "ultimately",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "vital",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "apparent",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "virtually",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "predominantly",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "substantial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "entail",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "assert",
+   "pos": "v",
+   "level": "C1"
+  }
+ ]
+}

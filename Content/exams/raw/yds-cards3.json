@@ -1,0 +1,512 @@
+{
+ "cards": [
+  {
+   "word": "determine",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "belirlemek",
+    "saptamak"
+   ],
+   "example_en": "Tests determine the exact cause.",
+   "example_tr": "Testler kesin nedeni belirler.",
+   "note": ""
+  },
+  {
+   "word": "impede",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "engellemek",
+    "sekte vurmak"
+   ],
+   "example_en": "Bad weather can impede progress.",
+   "example_tr": "Kötü hava ilerlemeyi engelleyebilir.",
+   "note": ""
+  },
+  {
+   "word": "emphasise",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "vurgulamak"
+   ],
+   "example_en": "Experts emphasise the risks.",
+   "example_tr": "Uzmanlar riskleri vurgular.",
+   "note": "Genellikle 'emphasise that' yapısıyla kullanılır."
+  },
+  {
+   "word": "initially",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "başlangıçta",
+    "ilk olarak"
+   ],
+   "example_en": "They initially rejected the plan.",
+   "example_tr": "Başlangıçta planı reddettiler.",
+   "note": ""
+  },
+  {
+   "word": "amend",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "değiştirmek",
+    "düzeltmek"
+   ],
+   "example_en": "They plan to amend the law.",
+   "example_tr": "Yasayı değiştirmeyi planlıyorlar.",
+   "note": "Genellikle yasa veya belge değiştirmek için kullanılır."
+  },
+  {
+   "word": "intervene",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "müdahale etmek",
+    "araya girmek"
+   ],
+   "example_en": "The state must intervene now.",
+   "example_tr": "Devlet şimdi müdahale etmelidir.",
+   "note": "'intervene in' edatıyla sıkça kullanılır."
+  },
+  {
+   "word": "ratify",
+   "pos": "v",
+   "level": "C2",
+   "tr": [
+    "onaylamak",
+    "tasdik etmek"
+   ],
+   "example_en": "Parliament must ratify the treaty.",
+   "example_tr": "Meclisin antlaşmayı onaylaması gerekir.",
+   "note": "Sadece resmi anlaşma veya yasalar için kullanılır."
+  },
+  {
+   "word": "ally",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "müttefik",
+    "dost"
+   ],
+   "example_en": "France was a loyal ally.",
+   "example_tr": "Fransa sadık bir müttefikti.",
+   "note": ""
+  },
+  {
+   "word": "plummet",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "hızla düşmek",
+    "çakılmak"
+   ],
+   "example_en": "Stock prices could plummet.",
+   "example_tr": "Hisse fiyatları çakılabilir.",
+   "note": ""
+  },
+  {
+   "word": "sue",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "dava açmak",
+    "mahkemeye vermek"
+   ],
+   "example_en": "The family decided to sue the hospital.",
+   "example_tr": "Aile hastaneye dava açmaya karar verdi.",
+   "note": "'sue someone for something' kalıbı yaygındır."
+  },
+  {
+   "word": "contaminate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "kirletmek",
+    "bulaştırmak"
+   ],
+   "example_en": "Chemicals contaminate the soil.",
+   "example_tr": "Kimyasallar toprağı kirletir.",
+   "note": ""
+  },
+  {
+   "word": "precipitation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yağış"
+   ],
+   "example_en": "High precipitation causes floods.",
+   "example_tr": "Yüksek yağış sellere neden olur.",
+   "note": "Hem yağmur hem de kar yağışı için kullanılır."
+  },
+  {
+   "word": "reservoir",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "baraj gölü",
+    "rezervuar"
+   ],
+   "example_en": "The reservoir supplies the city with water.",
+   "example_tr": "Baraj gölü şehre su sağlar.",
+   "note": ""
+  },
+  {
+   "word": "terrestrial",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "karasal",
+    "yeryüzüne ait"
+   ],
+   "example_en": "Terrestrial animals live on land.",
+   "example_tr": "Karasal hayvanlar karada yaşar.",
+   "note": ""
+  },
+  {
+   "word": "eradicate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kökünü kazımak",
+    "yok etmek"
+   ],
+   "example_en": "Vaccines help eradicate polio.",
+   "example_tr": "Aşılar çocuk felcini yok etmeye yardım eder.",
+   "note": "Genellikle hastalık veya yoksulluk için kullanılır."
+  },
+  {
+   "word": "mortality",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ölüm oranı",
+    "ölümlülük"
+   ],
+   "example_en": "Infant mortality is declining.",
+   "example_tr": "Bebek ölüm oranı düşüyor.",
+   "note": ""
+  },
+  {
+   "word": "contagious",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "bulaşıcı"
+   ],
+   "example_en": "The virus is highly contagious.",
+   "example_tr": "Virüs son derece bulaşıcıdır.",
+   "note": ""
+  },
+  {
+   "word": "cardiovascular",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kalp-damar"
+   ],
+   "example_en": "Obesity raises cardiovascular risk.",
+   "example_tr": "Obezite kalp-damar riskini artırır.",
+   "note": "'cardiovascular disease' sık görülen bir tamlamadır."
+  },
+  {
+   "word": "remedy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "çare",
+    "deva",
+    "ilaç"
+   ],
+   "example_en": "Honey is a natural remedy.",
+   "example_tr": "Bal doğal bir devadır.",
+   "note": ""
+  },
+  {
+   "word": "syndrome",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sendrom"
+   ],
+   "example_en": "This syndrome affects the brain.",
+   "example_tr": "Bu sendrom beyni etkiler.",
+   "note": ""
+  },
+  {
+   "word": "anatomy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "anatomi"
+   ],
+   "example_en": "Human anatomy is complex.",
+   "example_tr": "İnsan anatomisi karmaşıktır.",
+   "note": ""
+  },
+  {
+   "word": "vein",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "toplardamar"
+   ],
+   "example_en": "A vein carries blood to the heart.",
+   "example_tr": "Bir toplardamar kanı kalbe taşır.",
+   "note": ""
+  },
+  {
+   "word": "artefact",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "eser",
+    "tarihi eser"
+   ],
+   "example_en": "They found an ancient artefact.",
+   "example_tr": "Antik bir eser buldular.",
+   "note": ""
+  },
+  {
+   "word": "remains",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kalıntılar",
+    "naaş"
+   ],
+   "example_en": "The remains belong to a king.",
+   "example_tr": "Kalıntılar bir krala ait.",
+   "note": "Her zaman çoğul kullanılır."
+  },
+  {
+   "word": "antiquity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ilkçağ",
+    "eski çağ"
+   ],
+   "example_en": "Rome was a power in antiquity.",
+   "example_tr": "Roma eski çağda bir güçtü.",
+   "note": ""
+  },
+  {
+   "word": "legacy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "miras"
+   ],
+   "example_en": "The empire left a rich legacy.",
+   "example_tr": "İmparatorluk zengin bir miras bıraktı.",
+   "note": ""
+  },
+  {
+   "word": "ruin",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "harabe",
+    "yıkıntı"
+   ],
+   "example_en": "The castle is now in ruins.",
+   "example_tr": "Kale artık yıkık durumda.",
+   "note": ""
+  },
+  {
+   "word": "trace",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "iz",
+    "kalıntı"
+   ],
+   "example_en": "There is no trace of poison.",
+   "example_tr": "Zehir izi yok.",
+   "note": ""
+  },
+  {
+   "word": "tradition",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "gelenek",
+    "adet"
+   ],
+   "example_en": "Tea is a British tradition.",
+   "example_tr": "Çay bir İngiliz geleneğidir.",
+   "note": ""
+  },
+  {
+   "word": "burial",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "gömme",
+    "defin"
+   ],
+   "example_en": "The burial took place today.",
+   "example_tr": "Defin işlemi bugün gerçekleşti.",
+   "note": "'burial site' (mezar yeri) olarak çok sık geçer."
+  },
+  {
+   "word": "derive",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "türetmek",
+    "elde etmek"
+   ],
+   "example_en": "Many words derive from Latin.",
+   "example_tr": "Pek çok kelime Latinceden türemiştir.",
+   "note": "Hemen daima 'from' edatıyla kullanılır."
+  },
+  {
+   "word": "devise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "tasarlamak",
+    "icat etmek"
+   ],
+   "example_en": "Engineers devise new methods.",
+   "example_tr": "Mühendisler yeni yöntemler tasarlar.",
+   "note": ""
+  },
+  {
+   "word": "observation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "gözlem",
+    "gözlemleme"
+   ],
+   "example_en": "Careful observation is needed.",
+   "example_tr": "Dikkatli gözlem gereklidir.",
+   "note": ""
+  },
+  {
+   "word": "synthetic",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "sentetik",
+    "yapay"
+   ],
+   "example_en": "They produce synthetic rubber.",
+   "example_tr": "Sentetik kauçuk üretiyorlar.",
+   "note": ""
+  },
+  {
+   "word": "radiation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "radyasyon",
+    "ışınım"
+   ],
+   "example_en": "The sun emits radiation.",
+   "example_tr": "Güneş radyasyon yayar.",
+   "note": ""
+  },
+  {
+   "word": "procedure",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "prosedür",
+    "işlem"
+   ],
+   "example_en": "The surgical procedure is safe.",
+   "example_tr": "Cerrahi işlem güvenlidir.",
+   "note": ""
+  },
+  {
+   "word": "specimen",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "örnek",
+    "numune"
+   ],
+   "example_en": "They collect a blood specimen.",
+   "example_tr": "Bir kan numunesi topluyorlar.",
+   "note": ""
+  },
+  {
+   "word": "manipulate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "manipüle etmek",
+    "yönlendirmek"
+   ],
+   "example_en": "Scientists can manipulate genes in the lab.",
+   "example_tr": "Bilim insanları laboratuvarda genlerle oynayabilir.",
+   "note": ""
+  },
+  {
+   "word": "perceive",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "algılamak",
+    "sezmek"
+   ],
+   "example_en": "Dogs perceive sounds well.",
+   "example_tr": "Köpekler sesleri iyi algılar.",
+   "note": ""
+  },
+  {
+   "word": "literacy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "okuryazarlık"
+   ],
+   "example_en": "Basic literacy is vital.",
+   "example_tr": "Temel okuryazarlık hayatidir.",
+   "note": ""
+  },
+  {
+   "word": "conform",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "uymak",
+    "boyun eğmek"
+   ],
+   "example_en": "Products must conform to rules.",
+   "example_tr": "Ürünler kurallara uymalıdır.",
+   "note": "Her zaman 'to' veya 'with' alır."
+  },
+  {
+   "word": "suppress",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "bastırmak",
+    "engellemek"
+   ],
+   "example_en": "Drugs suppress the immune system.",
+   "example_tr": "İlaçlar bağışıklık sistemini bastırır.",
+   "note": ""
+  },
+  {
+   "word": "deprivation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yoksunluk",
+    "mahrumiyet"
+   ],
+   "example_en": "Sleep deprivation ruins health.",
+   "example_tr": "Uyku yoksunluğu sağlığı bozar.",
+   "note": "'sleep deprivation' YDS'de klasikleşmiş bir ifadedir."
+  }
+ ]
+}
