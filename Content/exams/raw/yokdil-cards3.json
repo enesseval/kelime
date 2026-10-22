@@ -1,0 +1,380 @@
+{
+ "cards": [
+  {
+   "word": "identify",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "belirlemek",
+    "teşhis etmek"
+   ],
+   "example_en": "Doctors can identify the virus.",
+   "example_tr": "Doktorlar virüsü teşhis edebilir.",
+   "note": "identify with (ile özdeşleştirmek)"
+  },
+  {
+   "word": "diverse",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "çeşitli",
+    "farklı"
+   ],
+   "example_en": "This region has diverse flora.",
+   "example_tr": "Bu bölge çeşitli bitki örtüsüne sahiptir.",
+   "note": "diverse backgrounds (farklı geçmişler)"
+  },
+  {
+   "word": "distinguish",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ayırt etmek",
+    "ayrım yapmak"
+   ],
+   "example_en": "It is hard to distinguish them.",
+   "example_tr": "Onları ayırt etmek zordur.",
+   "note": "distinguish between (ikisi arasında ayrım yapmak)"
+  },
+  {
+   "word": "acute",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "akut",
+    "şiddetli",
+    "keskin"
+   ],
+   "example_en": "The patient has acute pain.",
+   "example_tr": "Hastanın şiddetli ağrısı var.",
+   "note": "acute shortage (ciddi kıtlık)"
+  },
+  {
+   "word": "prevalence",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yaygınlık",
+    "görülme sıklığı"
+   ],
+   "example_en": "The prevalence of asthma is high.",
+   "example_tr": "Astımın görülme sıklığı yüksektir.",
+   "note": ""
+  },
+  {
+   "word": "complication",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "komplikasyon",
+    "karmaşa"
+   ],
+   "example_en": "Infection is a common complication of surgery.",
+   "example_tr": "Enfeksiyon ameliyatın yaygın bir komplikasyonudur.",
+   "note": ""
+  },
+  {
+   "word": "surgical",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "cerrahi",
+    "ameliyat"
+   ],
+   "example_en": "The patient needs surgical care.",
+   "example_tr": "Hastanın cerrahi bakıma ihtiyacı var.",
+   "note": "surgical intervention (cerrahi müdahale)"
+  },
+  {
+   "word": "robust",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "güçlü",
+    "sağlam",
+    "dinç"
+   ],
+   "example_en": "The study provides robust evidence.",
+   "example_tr": "Çalışma güçlü kanıt sunuyor.",
+   "note": "robust evidence (güçlü kanıt)"
+  },
+  {
+   "word": "injection",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "iğne",
+    "enjeksiyon"
+   ],
+   "example_en": "The vaccine needs one injection.",
+   "example_tr": "Aşı tek bir enjeksiyon gerektirir.",
+   "note": ""
+  },
+  {
+   "word": "sedentary",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "hareketsiz",
+    "yerleşik"
+   ],
+   "example_en": "A sedentary life causes obesity.",
+   "example_tr": "Hareketsiz bir yaşam obeziteye neden olur.",
+   "note": "sedentary lifestyle (hareketsiz yaşam tarzı)"
+  },
+  {
+   "word": "intake",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "alım",
+    "tüketim"
+   ],
+   "example_en": "High salt intake is bad for you.",
+   "example_tr": "Yüksek tuz alımı sizin için kötüdür.",
+   "note": "daily intake (günlük alım)"
+  },
+  {
+   "word": "outbreak",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "salgın",
+    "patlak verme"
+   ],
+   "example_en": "We must stop the viral outbreak.",
+   "example_tr": "Viral salgını durdurmalıyız.",
+   "note": "cholera outbreak (kolera salgını)"
+  },
+  {
+   "word": "sanitation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sanitasyon",
+    "temizlik"
+   ],
+   "example_en": "Poor sanitation spreads disease.",
+   "example_tr": "Yetersiz sanitasyon hastalık yayar.",
+   "note": "water and sanitation (su ve sanitasyon)"
+  },
+  {
+   "word": "substance",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "madde"
+   ],
+   "example_en": "Water is a vital substance.",
+   "example_tr": "Su hayati bir maddedir.",
+   "note": "toxic substance (zehirli madde)"
+  },
+  {
+   "word": "convert",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "dönüştürmek",
+    "çevirmek"
+   ],
+   "example_en": "Plants convert light into food.",
+   "example_tr": "Bitkiler ışığı besine dönüştürür.",
+   "note": "convert into (bir şeye dönüştürmek)"
+  },
+  {
+   "word": "proportion",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "oran",
+    "orantı"
+   ],
+   "example_en": "A high proportion of cells died.",
+   "example_tr": "Hücrelerin büyük bir kısmı öldü.",
+   "note": "in proportion to (ile orantılı olarak)"
+  },
+  {
+   "word": "dimension",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "boyut",
+    "ebat"
+   ],
+   "example_en": "Time is the fourth dimension.",
+   "example_tr": "Zaman dördüncü boyuttur.",
+   "note": "add a new dimension (yeni bir boyut katmak)"
+  },
+  {
+   "word": "friction",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sürtünme",
+    "anlaşmazlık"
+   ],
+   "example_en": "Oil reduces friction in engines.",
+   "example_tr": "Yağ motorlardaki sürtünmeyi azaltır.",
+   "note": "cause friction (anlaşmazlığa neden olmak)"
+  },
+  {
+   "word": "absorb",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "emmek",
+    "içine çekmek"
+   ],
+   "example_en": "Dark colours absorb more heat.",
+   "example_tr": "Koyu renkler daha fazla ısı emer.",
+   "note": "absorb information (bilgiyi özümsemek)"
+  },
+  {
+   "word": "dense",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "yoğun",
+    "sık"
+   ],
+   "example_en": "The forest is very dense.",
+   "example_tr": "Orman çok sıktır.",
+   "note": "dense fog (yoğun sis)"
+  },
+  {
+   "word": "successive",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ardışık",
+    "art arda gelen"
+   ],
+   "example_en": "It rained for five successive days.",
+   "example_tr": "Beş gün art arda yağmur yağdı.",
+   "note": "successive generations (birbirini izleyen nesiller)"
+  },
+  {
+   "word": "cultivate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yetiştirmek",
+    "işlemek"
+   ],
+   "example_en": "Farmers cultivate rice here.",
+   "example_tr": "Çiftçiler burada pirinç yetiştirir.",
+   "note": "cultivate crops (ekin yetiştirmek)"
+  },
+  {
+   "word": "degrade",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "bozulmak",
+    "bozmak",
+    "indirgemek"
+   ],
+   "example_en": "Plastics degrade very slowly.",
+   "example_tr": "Plastikler çok yavaş bozulur.",
+   "note": "degrade the environment (çevreye zarar vermek)"
+  },
+  {
+   "word": "harvest",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "hasat etmek",
+    "toplamak"
+   ],
+   "example_en": "They harvest wheat in autumn.",
+   "example_tr": "Sonbaharda buğday hasat ederler.",
+   "note": ""
+  },
+  {
+   "word": "sequence",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sıra",
+    "dizi",
+    "silsile"
+   ],
+   "example_en": "DNA has a specific sequence.",
+   "example_tr": "DNA'nın belirli bir dizilimi vardır.",
+   "note": "in sequence (sırayla)"
+  },
+  {
+   "word": "underlie",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "altında yatmak",
+    "temeli olmak"
+   ],
+   "example_en": "Many factors underlie this issue.",
+   "example_tr": "Bu sorunun altında birçok faktör yatar.",
+   "note": "underlying cause (temelde yatan neden)"
+  },
+  {
+   "word": "conformity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "uyum",
+    "uygunluk"
+   ],
+   "example_en": "Society often rewards conformity.",
+   "example_tr": "Toplum çoğu zaman uyumu ödüllendirir.",
+   "note": "conformity to rules (kurallara uyum)"
+  },
+  {
+   "word": "ethics",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "etik",
+    "ahlak"
+   ],
+   "example_en": "Medical ethics is a vital field.",
+   "example_tr": "Tıbbi etik hayati bir alandır.",
+   "note": "business ethics (iş etiği)"
+  },
+  {
+   "word": "entity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "varlık",
+    "kurum",
+    "tüzel kişi"
+   ],
+   "example_en": "The bank is a legal entity.",
+   "example_tr": "Banka bir tüzel kişiliktir.",
+   "note": "separate entity (ayrı kurum/varlık)"
+  },
+  {
+   "word": "regime",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "rejim",
+    "yönetim biçimi"
+   ],
+   "example_en": "The new regime changed the laws.",
+   "example_tr": "Yeni rejim yasaları değiştirdi.",
+   "note": "strict regime (sıkı rejim)"
+  },
+  {
+   "word": "decree",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kararname",
+    "hüküm"
+   ],
+   "example_en": "The king issued a new decree.",
+   "example_tr": "Kral yeni bir kararname çıkardı.",
+   "note": "issue a decree (kararname çıkarmak)"
+  }
+ ]
+}

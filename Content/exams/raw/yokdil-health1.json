@@ -1,0 +1,255 @@
+{
+ "topic": "Sağlık Bilimleri: medicine, nursing, pharmacy and dentistry",
+ "words": [
+  {
+   "word": "diagnose",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "symptom",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "chronic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "severe",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "infection",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "therapy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "surgery",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prescribe",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "fatal",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "immune",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "acute",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "contagious",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "disorder",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "susceptible",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "transmit",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "alleviate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "deteriorate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "administer",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "deficiency",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "vulnerable",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "evaluate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "assess",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "respiratory",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "prevalence",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "incidence",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "mortality",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "intervention",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "epidemic",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "pandemic",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "complication",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "malignant",
+   "pos": "adj",
+   "level": "C2"
+  },
+  {
+   "word": "benign",
+   "pos": "adj",
+   "level": "C2"
+  },
+  {
+   "word": "impairment",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "trigger",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "manifest",
+   "pos": "v",
+   "level": "C2"
+  },
+  {
+   "word": "morbidity",
+   "pos": "n",
+   "level": "C2"
+  },
+  {
+   "word": "surgical",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "hygiene",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prognosis",
+   "pos": "n",
+   "level": "C2"
+  },
+  {
+   "word": "cardiovascular",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "cognitive",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "paediatric",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "sterile",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "robust",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "medication",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "dose",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "injection",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "vaccination",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "eradicate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "heal",
+   "pos": "v",
+   "level": "B2"
+  }
+ ]
+}

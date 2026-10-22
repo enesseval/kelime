@@ -1,0 +1,386 @@
+{
+ "cards": [
+  {
+   "word": "significantly",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "önemli ölçüde",
+    "büyük oranda"
+   ],
+   "example_en": "The results differ significantly.",
+   "example_tr": "Sonuçlar önemli ölçüde farklılık gösterir.",
+   "note": "differ significantly (önemli ölçüde farklı olmak)"
+  },
+  {
+   "word": "observe",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "gözlemlemek",
+    "uymak"
+   ],
+   "example_en": "Scientists observe the effects.",
+   "example_tr": "Bilim insanları etkileri gözlemler.",
+   "note": "observe a rule (bir kurala uymak)"
+  },
+  {
+   "word": "promote",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "teşvik etmek",
+    "desteklemek"
+   ],
+   "example_en": "Good sleep can promote healing.",
+   "example_tr": "İyi uyku iyileşmeyi teşvik edebilir.",
+   "note": ""
+  },
+  {
+   "word": "occur",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "meydana gelmek",
+    "olmak"
+   ],
+   "example_en": "Errors may occur in the test.",
+   "example_tr": "Testte hatalar meydana gelebilir.",
+   "note": "occur to somebody (birinin aklına gelmek)"
+  },
+  {
+   "word": "administer",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "uygulamak",
+    "yönetmek"
+   ],
+   "example_en": "Nurses administer the vaccine.",
+   "example_tr": "Hemşireler aşıyı uygular.",
+   "note": "administer a drug/vaccine (ilaç/aşı uygulamak)"
+  },
+  {
+   "word": "intervention",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "müdahale",
+    "araya girme"
+   ],
+   "example_en": "Early intervention saves lives.",
+   "example_tr": "Erken müdahale hayat kurtarır.",
+   "note": ""
+  },
+  {
+   "word": "manifest",
+   "pos": "v",
+   "level": "C2",
+   "tr": [
+    "göstermek",
+    "belirtmek"
+   ],
+   "example_en": "Symptoms manifest after a week.",
+   "example_tr": "Belirtiler bir hafta sonra kendini gösterir.",
+   "note": ""
+  },
+  {
+   "word": "prognosis",
+   "pos": "n",
+   "level": "C2",
+   "tr": [
+    "prognoz",
+    "hastalığın seyri"
+   ],
+   "example_en": "The overall prognosis is good.",
+   "example_tr": "Hastalığın seyri genel olarak iyi.",
+   "note": ""
+  },
+  {
+   "word": "medication",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ilaç",
+    "ilaç tedavisi"
+   ],
+   "example_en": "Take the medication with food.",
+   "example_tr": "İlacı yiyecekle birlikte alın.",
+   "note": ""
+  },
+  {
+   "word": "vaccination",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "aşılama",
+    "aşı"
+   ],
+   "example_en": "Mass vaccination can stop epidemics.",
+   "example_tr": "Toplu aşılama salgınları durdurabilir.",
+   "note": ""
+  },
+  {
+   "word": "efficacy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "etkinlik",
+    "etkililik"
+   ],
+   "example_en": "They test the drug's efficacy.",
+   "example_tr": "İlacın etkinliğini test ediyorlar.",
+   "note": ""
+  },
+  {
+   "word": "placebo",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "plasebo",
+    "etkisiz ilaç"
+   ],
+   "example_en": "Half the group got a placebo.",
+   "example_tr": "Grubun yarısı plasebo aldı.",
+   "note": ""
+  },
+  {
+   "word": "pathogen",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "patojen",
+    "hastalık etkeni"
+   ],
+   "example_en": "A new pathogen can spread fast.",
+   "example_tr": "Yeni bir patojen hızla yayılabilir.",
+   "note": ""
+  },
+  {
+   "word": "measure",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "ölçmek",
+    "değerlendirmek"
+   ],
+   "example_en": "Doctors measure blood pressure.",
+   "example_tr": "Doktorlar kan basıncını ölçer.",
+   "note": ""
+  },
+  {
+   "word": "particle",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "parçacık",
+    "zerre"
+   ],
+   "example_en": "Dust particles float in the air.",
+   "example_tr": "Toz parçacıkları havada süzülür.",
+   "note": ""
+  },
+  {
+   "word": "principle",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ilke",
+    "prensip"
+   ],
+   "example_en": "Equality is a basic principle of law.",
+   "example_tr": "Eşitlik, hukukun temel ilkesidir.",
+   "note": ""
+  },
+  {
+   "word": "abundant",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "bol",
+    "bereketli"
+   ],
+   "example_en": "Fish are abundant in these waters.",
+   "example_tr": "Bu sularda balık boldur.",
+   "note": ""
+  },
+  {
+   "word": "equation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "denklem",
+    "eşitlik"
+   ],
+   "example_en": "We must solve this equation.",
+   "example_tr": "Bu denklemi çözmeliyiz.",
+   "note": ""
+  },
+  {
+   "word": "synthesise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "sentezlemek",
+    "üretmek"
+   ],
+   "example_en": "Plants synthesise their food.",
+   "example_tr": "Bitkiler kendi besinlerini sentezler.",
+   "note": ""
+  },
+  {
+   "word": "radiate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yaymak",
+    "ışımak"
+   ],
+   "example_en": "Hot objects radiate heat.",
+   "example_tr": "Sıcak nesneler ısı yayar.",
+   "note": ""
+  },
+  {
+   "word": "thermal",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "ısıl",
+    "termal"
+   ],
+   "example_en": "Thermal energy moves from hot to cold.",
+   "example_tr": "Isıl enerji sıcaktan soğuğa geçer.",
+   "note": ""
+  },
+  {
+   "word": "validity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "geçerlilik",
+    "doğruluk"
+   ],
+   "example_en": "Researchers question the study's validity.",
+   "example_tr": "Araştırmacılar çalışmanın geçerliliğini sorguluyor.",
+   "note": ""
+  },
+  {
+   "word": "pesticide",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "tarım ilacı",
+    "böcek ilacı"
+   ],
+   "example_en": "Farmers use a strong pesticide.",
+   "example_tr": "Çiftçiler güçlü bir tarım ilacı kullanır.",
+   "note": ""
+  },
+  {
+   "word": "offspring",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yavru",
+    "döl"
+   ],
+   "example_en": "Birds protect their offspring.",
+   "example_tr": "Kuşlar yavrularını korur.",
+   "note": ""
+  },
+  {
+   "word": "layer",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "tabaka",
+    "katman"
+   ],
+   "example_en": "The ozone layer blocks UV rays.",
+   "example_tr": "Ozon tabakası UV ışınlarını engeller.",
+   "note": ""
+  },
+  {
+   "word": "domesticate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "evcilleştirmek"
+   ],
+   "example_en": "Early humans began to domesticate animals.",
+   "example_tr": "İlk insanlar hayvanları evcilleştirmeye başladı.",
+   "note": ""
+  },
+  {
+   "word": "acquisition",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "edinim",
+    "satın alma"
+   ],
+   "example_en": "Children's language acquisition is fast.",
+   "example_tr": "Çocuklarda dil edinimi hızlıdır.",
+   "note": ""
+  },
+  {
+   "word": "stimulus",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "uyarıcı",
+    "teşvik"
+   ],
+   "example_en": "Light is a stimulus for plants.",
+   "example_tr": "Işık bitkiler için bir uyarıcıdır.",
+   "note": "Çoğulu: stimuli"
+  },
+  {
+   "word": "moral",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "ahlaki",
+    "manevi"
+   ],
+   "example_en": "They face a complex moral issue.",
+   "example_tr": "Karmaşık bir ahlaki sorunla karşılaşıyorlar.",
+   "note": ""
+  },
+  {
+   "word": "logic",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "mantık"
+   ],
+   "example_en": "We need basic logic to solve it.",
+   "example_tr": "Bunu çözmek için temel mantığa ihtiyacımız var.",
+   "note": ""
+  },
+  {
+   "word": "domestic",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "iç",
+    "yerli",
+    "evcil"
+   ],
+   "example_en": "The domestic market is growing.",
+   "example_tr": "İç pazar büyüyor.",
+   "note": ""
+  },
+  {
+   "word": "diplomacy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "diplomasi"
+   ],
+   "example_en": "They prefer quiet diplomacy.",
+   "example_tr": "Sessiz diplomasiyi tercih ederler.",
+   "note": ""
+  }
+ ]
+}

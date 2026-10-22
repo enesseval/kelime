@@ -4,7 +4,7 @@
 Each Content/exams/<exam>.json (exam is yds, yokdil or ielts) holds
   "words": [{"word", "pos", "level"}, ...]  the words the exam deck should have, and
   "cards": [{"word", "pos", "level", "tr", "example_en", "example_tr", "note"?}, ...]
-           full cards for words that no course teaches.
+           full cards for words that no course teaches (shared by every exam that lists the word).
 
 A word a course already teaches gets the exam tag on that course card (same part of speech
 first, then any). Other words become exam-only cards, id "exam-<word>", with only exam decks,
@@ -32,14 +32,17 @@ def main():
         if c["pos"] != "phrase":
             by_word.setdefault(c["word"].lower(), []).append(c)
 
-    exam_only = {}
-    missing = {}
+    specs = {}
     for exam in EXAMS:
         file = ROOT / "Content" / "exams" / f"{exam}.json"
-        if not file.exists():
-            continue
-        spec = json.loads(file.read_text(encoding="utf-8"))
-        defs = {d["word"].lower(): d for d in spec.get("cards", [])}
+        if file.exists():
+            specs[exam] = json.loads(file.read_text(encoding="utf-8"))
+    # A card written for one exam serves every exam that lists the word.
+    defs = {d["word"].lower(): d for spec in specs.values() for d in spec.get("cards", [])}
+
+    exam_only = {}
+    missing = {}
+    for exam, spec in specs.items():
         tagged = added = 0
         for w in spec["words"]:
             word = w["word"].lower()

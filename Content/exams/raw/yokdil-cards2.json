@@ -1,0 +1,383 @@
+{
+ "cards": [
+  {
+   "word": "contribute",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "katkıda bulunmak"
+   ],
+   "example_en": "Many factors contribute to this disease.",
+   "example_tr": "Birçok faktör bu hastalığa katkıda bulunur.",
+   "note": "Genellikle 'to' edatı ile kullanılır."
+  },
+  {
+   "word": "increasingly",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "giderek",
+    "artan bir şekilde"
+   ],
+   "example_en": "Climate change is increasingly severe.",
+   "example_tr": "İklim değişikliği giderek şiddetleniyor.",
+   "note": ""
+  },
+  {
+   "word": "widespread",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "yaygın",
+    "geniş çaplı"
+   ],
+   "example_en": "The disease became widespread in Europe.",
+   "example_tr": "Hastalık Avrupa'da yaygın hale geldi.",
+   "note": ""
+  },
+  {
+   "word": "subsequent",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "sonraki",
+    "izleyen"
+   ],
+   "example_en": "The subsequent tests confirmed the theory.",
+   "example_tr": "Sonraki testler teoriyi doğruladı.",
+   "note": "subsequent to: -den sonra"
+  },
+  {
+   "word": "respiratory",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "solunumla ilgili"
+   ],
+   "example_en": "Asthma is a chronic respiratory condition.",
+   "example_tr": "Astım kronik bir solunum rahatsızlığıdır.",
+   "note": "respiratory system: solunum sistemi"
+  },
+  {
+   "word": "pandemic",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "pandemi",
+    "küresel salgın"
+   ],
+   "example_en": "The viral pandemic affected global markets.",
+   "example_tr": "Viral pandemi küresel piyasaları etkiledi.",
+   "note": ""
+  },
+  {
+   "word": "morbidity",
+   "pos": "n",
+   "level": "C2",
+   "tr": [
+    "hastalık oranı",
+    "morbidite"
+   ],
+   "example_en": "Obesity increases the risk of morbidity.",
+   "example_tr": "Obezite hastalık riskini artırır.",
+   "note": "mortality (ölüm oranı) ile karıştırılmamalıdır."
+  },
+  {
+   "word": "paediatric",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "pediatrik",
+    "çocuk sağlığı"
+   ],
+   "example_en": "He works in a paediatric ward.",
+   "example_tr": "Bir çocuk servisinde çalışıyor.",
+   "note": "Amerikan İngilizcesinde 'pediatric' olarak yazılır."
+  },
+  {
+   "word": "dose",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "doz",
+    "miktar"
+   ],
+   "example_en": "A single dose can cure the infection.",
+   "example_tr": "Tek bir doz enfeksiyonu iyileştirebilir.",
+   "note": "high/low dose: yüksek/düşük doz"
+  },
+  {
+   "word": "hereditary",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kalıtsal",
+    "irsî"
+   ],
+   "example_en": "Colour blindness is a hereditary trait.",
+   "example_tr": "Renk körlüğü kalıtsal bir özelliktir.",
+   "note": "hereditary disease: kalıtsal hastalık"
+  },
+  {
+   "word": "dietary",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "beslenmeyle ilgili"
+   ],
+   "example_en": "Poor dietary habits can cause obesity.",
+   "example_tr": "Kötü beslenme alışkanlıkları obeziteye yol açabilir.",
+   "note": "dietary habits: beslenme alışkanlıkları"
+  },
+  {
+   "word": "prevention",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "önleme",
+    "korunma"
+   ],
+   "example_en": "Disease prevention is a public priority.",
+   "example_tr": "Hastalığı önleme kamusal bir önceliktir.",
+   "note": ""
+  },
+  {
+   "word": "maternal",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "anneye ait",
+    "annelik"
+   ],
+   "example_en": "High maternal age increases certain risks.",
+   "example_tr": "İleri anne yaşı belirli riskleri artırır.",
+   "note": "paternal (babaya ait) kelimesinin zıddıdır."
+  },
+  {
+   "word": "property",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "özellik",
+    "mülk"
+   ],
+   "example_en": "Water has a unique chemical property.",
+   "example_tr": "Suyun eşsiz bir kimyasal özelliği vardır.",
+   "note": "Fen metinlerinde genelde 'özellik' anlamında çıkar."
+  },
+  {
+   "word": "compound",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "bileşik",
+    "karışım"
+   ],
+   "example_en": "Salt is a common chemical compound.",
+   "example_tr": "Tuz yaygın bir kimyasal bileşiktir.",
+   "note": ""
+  },
+  {
+   "word": "initial",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "ilk",
+    "başlangıç"
+   ],
+   "example_en": "The initial results were very promising.",
+   "example_tr": "İlk sonuçlar oldukça umut vericiydi.",
+   "note": "initially (adv): başlangıçta"
+  },
+  {
+   "word": "ratio",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "oran",
+    "nispet"
+   ],
+   "example_en": "The ratio of men to women is high here.",
+   "example_tr": "Burada erkeklerin kadınlara oranı yüksektir.",
+   "note": "ratio of X to Y: X'in Y'ye oranı"
+  },
+  {
+   "word": "volume",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "hacim",
+    "cilt"
+   ],
+   "example_en": "The gas expanded to twice its volume.",
+   "example_tr": "Gaz, hacminin iki katına kadar genleşti.",
+   "note": ""
+  },
+  {
+   "word": "extract",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "çıkarmak",
+    "özünü almak"
+   ],
+   "example_en": "Chemists extract oil from these seeds.",
+   "example_tr": "Kimyagerler bu tohumlardan yağ çıkarır.",
+   "note": ""
+  },
+  {
+   "word": "dissolve",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "çözünmek",
+    "çözmek"
+   ],
+   "example_en": "Sugar will dissolve in warm water.",
+   "example_tr": "Şeker ılık suda çözünür.",
+   "note": ""
+  },
+  {
+   "word": "distinct",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "farklı",
+    "belirgin"
+   ],
+   "example_en": "The brain has many distinct regions.",
+   "example_tr": "Beynin birçok farklı bölgesi vardır.",
+   "note": "distinct from: -den farklı"
+  },
+  {
+   "word": "apparatus",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "cihaz",
+    "aygıt",
+    "alet"
+   ],
+   "example_en": "We need special apparatus for the test.",
+   "example_tr": "Test için özel bir cihaza ihtiyacımız var.",
+   "note": ""
+  },
+  {
+   "word": "fertiliser",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "gübre"
+   ],
+   "example_en": "Farmers use chemical fertiliser for crops.",
+   "example_tr": "Çiftçiler ekinler için kimyasal gübre kullanır.",
+   "note": "İngiliz İngilizcesi yazımıdır (Amerikan: fertilizer)."
+  },
+  {
+   "word": "breed",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "üremek",
+    "yetiştirmek"
+   ],
+   "example_en": "Many animals breed in the spring season.",
+   "example_tr": "Birçok hayvan ilkbaharda ürer.",
+   "note": ""
+  },
+  {
+   "word": "thrive",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "gelişmek",
+    "büyümek"
+   ],
+   "example_en": "Certain plants thrive in harsh climates.",
+   "example_tr": "Bazı bitkiler sert iklimlerde iyi gelişir.",
+   "note": "thrive on: ... ile güçlenmek, ... sayesinde gelişmek"
+  },
+  {
+   "word": "abstract",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "soyut"
+   ],
+   "example_en": "Maths relies on abstract concepts.",
+   "example_tr": "Matematik soyut kavramlara dayanır.",
+   "note": ""
+  },
+  {
+   "word": "attribute",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "atfetmek",
+    "bağlamak"
+   ],
+   "example_en": "Experts attribute this to climate change.",
+   "example_tr": "Uzmanlar bunu iklim değişikliğine bağlıyor.",
+   "note": "attribute X to Y: X'i Y'ye bağlamak/atfetmek"
+  },
+  {
+   "word": "comprehend",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "anlamak",
+    "kavramak"
+   ],
+   "example_en": "We cannot fully comprehend the universe.",
+   "example_tr": "Evreni tam olarak kavrayamayız.",
+   "note": "reading comprehension: okuduğunu anlama"
+  },
+  {
+   "word": "existence",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "varlık",
+    "mevcudiyet"
+   ],
+   "example_en": "Scientists doubt the existence of aliens.",
+   "example_tr": "Bilim insanları uzaylıların varlığından şüphe ediyor.",
+   "note": "come into existence: var olmak"
+  },
+  {
+   "word": "consciousness",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "bilinç",
+    "şuur"
+   ],
+   "example_en": "Human consciousness remains a mystery.",
+   "example_tr": "İnsan bilinci bir sır olarak kalmaya devam ediyor.",
+   "note": "lose consciousness: bilincini kaybetmek"
+  },
+  {
+   "word": "prohibit",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "yasaklamak"
+   ],
+   "example_en": "New laws prohibit smoking in all parks.",
+   "example_tr": "Yeni yasalar tüm parklarda sigara içmeyi yasaklıyor.",
+   "note": "prohibit X from doing Y kalıbıyla da kullanılır."
+  },
+  {
+   "word": "dominant",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "baskın",
+    "egemen"
+   ],
+   "example_en": "Brown eyes are a dominant genetic trait.",
+   "example_tr": "Kahverengi gözler baskın bir genetik özelliktir.",
+   "note": ""
+  }
+ ]
+}
