@@ -1,0 +1,528 @@
+{
+  "id": "c2-finance",
+  "level": "C2",
+  "title": "Finans dünyası",
+  "placement": "any",
+  "goal": "Finansal piyasaları, yatırım araçlarını ve riskleri doğru terimlerle anlatır, bir ekonomik kararın uzun vadeli etkilerini tartışır.",
+  "words": [
+    {
+      "id": "c2-speculation",
+      "word": "speculation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "spekülasyon"
+          ],
+          "example_en": "Market speculation caused the currency to fluctuate.",
+          "example_tr": "Piyasa spekülasyonu para birimini dalgalandırdı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-leverage",
+      "word": "leverage",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kaldıraç"
+          ],
+          "example_en": "We can use our capital as leverage to negotiate.",
+          "example_tr": "Sermayemizi kaldıraç olarak kullanabiliriz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-collateral",
+      "word": "collateral",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "teminat"
+          ],
+          "example_en": "The bank needs your house as collateral for the loan.",
+          "example_tr": "Banka, kredi için evini teminat olarak istiyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-dividend",
+      "word": "dividend",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "temettü",
+            "kâr payı"
+          ],
+          "example_en": "The company will pay a substantial dividend this year.",
+          "example_tr": "Şirket bu yıl yüklü bir temettü ödeyecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-portfolio",
+      "word": "portfolio",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "portföy"
+          ],
+          "example_en": "You must mitigate risk with a strong portfolio.",
+          "example_tr": "Dengeli bir portföy riski azaltmaya yardımcı olur.",
+          "example": "A balanced portfolio helps to mitigate risk."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-hedge",
+      "word": "hedge",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "riskten korunmak"
+          ],
+          "example_en": "They buy gold to hedge against inflation.",
+          "example_tr": "Enflasyona karşı korunmak için altın alıyorlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-insolvency",
+      "word": "insolvency",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ödeme aczi",
+            "iflas"
+          ],
+          "example_en": "The business is facing insolvency due to bad debt.",
+          "example_tr": "Şirket, borçları yüzünden iflasla karşı karşıya.",
+          "example": "The company is facing insolvency because of its debts."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-deflation",
+      "word": "deflation",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "deflasyon"
+          ],
+          "example_en": "Deflation is a serious threat to the economy.",
+          "example_tr": "Deflasyon ekonomi için ciddi bir tehdittir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-asset",
+      "word": "asset",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "varlık"
+          ],
+          "example_en": "The entrepreneur sold every asset to pay the debt.",
+          "example_tr": "Girişimci borcu ödemek için her varlığını sattı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-monopoly",
+      "word": "monopoly",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tekel"
+          ],
+          "example_en": "The government will not allow a monopoly in the market.",
+          "example_tr": "Hükümet piyasada tekel oluşmasına izin vermeyecek."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-shareholder",
+      "word": "shareholder",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hissedar"
+          ],
+          "example_en": "Every shareholder was angry about the bad news.",
+          "example_tr": "Tüm hissedarlar kötü habere öfkelendi."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-entrepreneur",
+      "word": "entrepreneur",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "girişimci"
+          ],
+          "example_en": "A successful entrepreneur learns from early failures.",
+          "example_tr": "Başarılı bir girişimci ilk hatalarından ders alır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-venture",
+      "word": "venture",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "girişim",
+            "proje"
+          ],
+          "example_en": "This new venture is a very lucrative opportunity.",
+          "example_tr": "Bu yeni girişim çok kazançlı bir fırsat."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-capital",
+      "word": "capital",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sermaye"
+          ],
+          "example_en": "We need more capital to expand our operations.",
+          "example_tr": "Büyümek için daha fazla sermayeye ihtiyacımız var.",
+          "example": "We need more capital to grow."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-yield",
+      "word": "yield",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "getiri"
+          ],
+          "example_en": "The bond has a very high yield.",
+          "example_tr": "Tahvilin çok yüksek bir getirisi var."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-fluctuate",
+      "word": "fluctuate",
+      "senses": [
+        {
+          "pos": "v",
+          "tr": [
+            "dalgalanmak"
+          ],
+          "example_en": "Prices tend to fluctuate during a crisis.",
+          "example_tr": "Kriz sırasında fiyatlar dalgalanma eğilimindedir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-solvent",
+      "word": "solvent",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "borcunu ödeyebilen"
+          ],
+          "example_en": "The bank must remain solvent to protect your money.",
+          "example_tr": "Banka paranızı korumak için ödeme gücünü sürdürmelidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-frugal",
+      "word": "frugal",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tutumlu"
+          ],
+          "example_en": "He is very frugal; he never spends money on luxury.",
+          "example_tr": "Çok tutumludur; lükse asla para harcamaz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-extravagant",
+      "word": "extravagant",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "müsrif"
+          ],
+          "example_en": "Her extravagant lifestyle led to massive debt.",
+          "example_tr": "Müsrif yaşam tarzı devasa bir borca yol açtı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-windfall",
+      "word": "windfall",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "beklenmedik kazanç"
+          ],
+          "example_en": "They used the sudden windfall to buy a new house.",
+          "example_tr": "Beklenmedik kazancı yeni bir ev almak için kullandılar."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c2-p-strike-it-rich",
+      "text": "Strike it rich.",
+      "tr": "Köşeyi dönmek.",
+      "example_en": "He hopes to strike it rich with his new venture.",
+      "example_tr": "Yeni girişimiyle köşeyi dönmeyi umuyor.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-tighten-belt",
+      "text": "Tighten one's belt.",
+      "tr": "Kemer sıkmak.",
+      "example_en": "We must tighten our belt during the recession.",
+      "example_tr": "Resesyon sırasında kemer sıkmalıyız.",
+      "note": "",
+      "example": "We must tighten our belts during the recession."
+    },
+    {
+      "id": "c2-p-cut-corners",
+      "text": "Cut corners.",
+      "tr": "Kolaya kaçmak.",
+      "example_en": "Never cut corners when you build a house.",
+      "example_tr": "Ev inşa ederken asla kolaya kaçma.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-cash-cow",
+      "text": "A cash cow.",
+      "tr": "Para basan iş.",
+      "example_en": "This product is a real cash cow for the company.",
+      "example_tr": "Bu ürün şirket için tam bir para basma makinesi.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-money-talks",
+      "text": "Money talks.",
+      "tr": "Para her kapıyı açar.",
+      "example_en": "Why did he win? – Money talks, my friend.",
+      "example_tr": "Neden o kazandı? – Para her kapıyı açar, dostum.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c2-finance-1",
+      "title": "Girişimci Ruhu",
+      "names": [
+        "Ali"
+      ],
+      "lines": [
+        {
+          "en": "Ali is a very frugal entrepreneur.",
+          "tr": "Ali çok tutumlu bir girişimci."
+        },
+        {
+          "en": "He needs capital for his new venture.",
+          "tr": "Yeni girişimi için sermayeye ihtiyacı var."
+        },
+        {
+          "en": "He cannot use his house as collateral.",
+          "tr": "Evini teminat olarak kullanamaz."
+        },
+        {
+          "en": "He will not cut corners to save money.",
+          "tr": "Tasarruf etmek için kolaya kaçmayacak."
+        },
+        {
+          "en": "If this works, it will be a cash cow.",
+          "tr": "İşler yolunda giderse, bu bir para basma makinesi olacak."
+        },
+        {
+          "en": "He hopes to strike it rich soon.",
+          "tr": "Yakında köşeyi dönmeyi umuyor."
+        }
+      ]
+    },
+    {
+      "id": "c2-finance-2",
+      "title": "Zor Zamanlar",
+      "names": [
+        "Leyla",
+        "Murat"
+      ],
+      "lines": [
+        {
+          "en": "Leyla and Murat discuss their portfolio.",
+          "tr": "Leyla ve Murat portföylerini tartışıyorlar."
+        },
+        {
+          "en": "The market is volatile. Prices fluctuate every day.",
+          "tr": "Piyasa çok oynak. Fiyatlar her gün dalgalanıyor."
+        },
+        {
+          "en": "We must tighten our belts this year.",
+          "tr": "Bu yıl kemer sıkmalıyız."
+        },
+        {
+          "en": "Yes, our extravagant lifestyle is a problem.",
+          "tr": "Evet, müsrif yaşam tarzımız bir problem."
+        },
+        {
+          "en": "We must hedge against deflation.",
+          "tr": "Deflasyona karşı riskten korunmalıyız."
+        },
+        {
+          "en": "Let's sell an asset to remain solvent.",
+          "tr": "Ödeme gücümüzü korumak için bir varlık satalım."
+        }
+      ]
+    },
+    {
+      "id": "c2-finance-3",
+      "title": "Beklenmedik Kazanç",
+      "names": [
+        "Ayşe"
+      ],
+      "lines": [
+        {
+          "en": "Ayşe is a lucky shareholder.",
+          "tr": "Ayşe şanslı bir hissedar."
+        },
+        {
+          "en": "The company paid a massive dividend today.",
+          "tr": "Şirket bugün devasa bir temettü ödedi."
+        },
+        {
+          "en": "This windfall is a big surprise.",
+          "tr": "Bu beklenmedik kazanç büyük bir sürpriz."
+        },
+        {
+          "en": "I can finally pay my bank loan.",
+          "tr": "Sonunda banka kredimi ödeyebilirim."
+        },
+        {
+          "en": "She will add the money to her portfolio.",
+          "tr": "Parayı portföyüne ekleyecek."
+        },
+        {
+          "en": "Money talks, and now people listen to her.",
+          "tr": "Para her kapıyı açar; artık herkes onu dinliyor."
+        }
+      ]
+    },
+    {
+      "id": "c2-finance-4",
+      "title": "Kötü Haberler",
+      "names": [
+        "Kenan",
+        "Istanbul"
+      ],
+      "lines": [
+        {
+          "en": "Kenan works in a big bank in Istanbul.",
+          "tr": "Kenan İstanbul'da büyük bir bankada çalışıyor."
+        },
+        {
+          "en": "A local company is facing insolvency.",
+          "tr": "Yerel bir şirket iflasla karşı karşıya."
+        },
+        {
+          "en": "Using so much leverage was a terrible strategy.",
+          "tr": "Bu kadar kaldıraç kullanmak berbat bir stratejiydi."
+        },
+        {
+          "en": "It stands to reason that they will fail.",
+          "tr": "Başarısız olacakları gayet açık."
+        },
+        {
+          "en": "They have no capital to offset the debt.",
+          "tr": "Borcu dengeleyecek sermayeleri yok."
+        },
+        {
+          "en": "Nobody wants their bonds, even with a high yield.",
+          "tr": "Yüksek getiriye rağmen kimse tahvillerini istemiyor."
+        }
+      ]
+    },
+    {
+      "id": "c2-finance-5",
+      "title": "Spekülasyon",
+      "names": [
+        "London",
+        "Selim"
+      ],
+      "lines": [
+        {
+          "en": "Selim is an investor in London.",
+          "tr": "Selim Londra'da bir yatırımcı."
+        },
+        {
+          "en": "He makes money from speculation.",
+          "tr": "Spekülasyondan para kazanıyor."
+        },
+        {
+          "en": "His portfolio is very risky.",
+          "tr": "Portföyü çok riskli."
+        },
+        {
+          "en": "If the market goes down, he will lose everything.",
+          "tr": "Eğer piyasa düşerse her şeyini kaybedecek."
+        },
+        {
+          "en": "But if he succeeds, he will strike it rich.",
+          "tr": "Ama başarırsa köşeyi dönecek."
+        },
+        {
+          "en": "Needless to say, it is a dangerous game.",
+          "tr": "Söylemeye gerek yok, bu tehlikeli bir oyun."
+        }
+      ]
+    }
+  ]
+}

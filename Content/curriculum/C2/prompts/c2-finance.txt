@@ -7,8 +7,8 @@ id: c2-finance
 title: Finans dünyası
 placement: any
 goal (what the learner can do after this unit): Finansal piyasaları, yatırım araçlarını ve riskleri doğru terimlerle anlatır, bir ekonomik kararın uzun vadeli etkilerini tartışır.
-words (write one card for each, in this order): speculation, leverage, collateral, dividend, portfolio, hedge, insolvency, deflation, asset, monopoly, cartel, entrepreneur, venture, capital, yield, fluctuate, solvent, frugal, extravagant, windfall
-phrases (write one phrase card for each; you may polish the wording): Make a killing. | Tighten one's belt. | Cut corners. | A cash cow. | Money talks.
+words (write one card for each, in this order): speculation, leverage, collateral, dividend, portfolio, hedge, insolvency, deflation, asset, monopoly, shareholder, entrepreneur, venture, capital, yield, fluctuate, solvent, frugal, extravagant, windfall
+phrases (write one phrase card for each; you may polish the wording): Strike it rich. | Tighten one's belt. | Cut corners. | A cash cow. | Money talks.
 
 VOCABULARY RULE
 Learners may study this unit before any other unit except the core. So every example sentence and every story line may use ONLY: the grammar words, earlier levels, the core words and phrases, this unit's words and phrases, and names. Nothing else. If a sentence needs another word, write a different sentence. At C2, everyday English words that any B2 learner knows (link, choice, previous, provide, discuss) are fine too; rare, academic or literary words only from the lists.
