@@ -78,7 +78,7 @@ IRREGULAR = {
     "been": "be", "done": "do", "gone": "go", "seen": "see", "eaten": "eat", "written": "write",
     "taken": "take", "given": "give", "known": "know", "flown": "fly", "chosen": "choose",
     "grown": "grow", "stolen": "steal", "driven": "drive", "spoken": "speak", "got": "get",
-    "overcame": "overcome", "laid": "lay", "better": "better", "best": "best", "worse": "worse", "worst": "worse",
+    "overcame": "overcome", "laid": "lay", "sought": "seek", "better": "better", "best": "best", "worse": "worse", "worst": "worse",
 }
 
 

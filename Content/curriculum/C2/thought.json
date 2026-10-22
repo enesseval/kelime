@@ -1,0 +1,523 @@
+{
+  "id": "c2-thought",
+  "level": "C2",
+  "title": "Felsefe ve düşünce",
+  "placement": "any",
+  "goal": "Felsefi kavramları doğru kullanır, bir düşünce sistemini açıklar ve ona karşı çıkar, ahlaki ikilemleri tartışır.",
+  "words": [
+    {
+      "id": "c2-epistemology",
+      "word": "epistemology",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "epistemoloji"
+          ],
+          "example_en": "Epistemology explores how we acquire knowledge.",
+          "example_tr": "Epistemoloji bilgiyi nasıl edindiğimizi inceler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-metaphysics",
+      "word": "metaphysics",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "metafizik"
+          ],
+          "example_en": "Metaphysics asks what lies beyond the physical.",
+          "example_tr": "Metafizik fiziksel olanın ötesinde ne olduğunu sorar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-existential",
+      "word": "existential",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "varoluşsal"
+          ],
+          "example_en": "He experienced a profound existential crisis.",
+          "example_tr": "Derin bir varoluşsal kriz yaşadı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-nihilism",
+      "word": "nihilism",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "nihilizm",
+            "hiçleyicilik"
+          ],
+          "example_en": "Nihilism argues that life has no inherent purpose.",
+          "example_tr": "Nihilizm hayatın doğal bir amacı olmadığını savunur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-determinism",
+      "word": "determinism",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "determinizm"
+          ],
+          "example_en": "If determinism is true, do we have free will?",
+          "example_tr": "Eğer determinizm doğruysa, özgür irademiz var mı?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-axiom",
+      "word": "axiom",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "aksiyom",
+            "belit"
+          ],
+          "example_en": "We must establish a basic axiom before we argue.",
+          "example_tr": "Tartışmadan önce temel bir aksiyom belirlemeliyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-dogma",
+      "word": "dogma",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "dogma",
+            "inak"
+          ],
+          "example_en": "You must challenge traditional dogma with evidence.",
+          "example_tr": "Geleneksel dogmalara kanıtla meydan okumalısın."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-empiricism",
+      "word": "empiricism",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ampirizm",
+            "deneyimcilik"
+          ],
+          "example_en": "Empiricism relies on evidence from experience.",
+          "example_tr": "Ampirizm deneyimden gelen kanıta dayanır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-rationale",
+      "word": "rationale",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "gerekçe"
+          ],
+          "example_en": "What is the rationale behind this new policy?",
+          "example_tr": "Bu yeni politikanın arkasındaki gerekçe nedir?"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-paradox",
+      "word": "paradox",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "paradoks",
+            "çelişki"
+          ],
+          "example_en": "It is a paradox that the affluent feel so empty.",
+          "example_tr": "Varlıklı kişilerin bu kadar boş hissetmesi paradokstur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-tautology",
+      "word": "tautology",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "totoloji",
+            "tekrarlama"
+          ],
+          "example_en": "'A free gift' is a tautology.",
+          "example_tr": "'Bedava hediye' bir totolojidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-utilitarian",
+      "word": "utilitarian",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "faydacı",
+            "yararcı"
+          ],
+          "example_en": "A utilitarian approach seeks the greatest good.",
+          "example_tr": "Faydacı yaklaşım en büyük iyiliği hedefler."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-virtue",
+      "word": "virtue",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "erdem",
+            "fazilet"
+          ],
+          "example_en": "Patience is a crucial virtue in difficult times.",
+          "example_tr": "Sabır zor zamanlarda çok önemli bir erdemdir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-subjective",
+      "word": "subjective",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "öznel",
+            "sübjektif"
+          ],
+          "example_en": "Beauty is subjective and a matter of opinion.",
+          "example_tr": "Güzellik özneldir ve bir görüş meselesidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-transcendent",
+      "word": "transcendent",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "aşkın"
+          ],
+          "example_en": "The artist sought a transcendent experience in nature.",
+          "example_tr": "Sanatçı doğada aşkın bir deneyim aradı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-sacred",
+      "word": "sacred",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "kutsal"
+          ],
+          "example_en": "This ancient river is sacred to the local people.",
+          "example_tr": "Bu antik nehir yerel halk için kutsaldır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-conscience",
+      "word": "conscience",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "vicdan"
+          ],
+          "example_en": "My conscience tells me to protect the vulnerable.",
+          "example_tr": "Vicdanım bana savunmasızları korumamı söylüyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-fallible",
+      "word": "fallible",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yanılabilir",
+            "kusurlu"
+          ],
+          "example_en": "Human memory is fallible, so we must rely on data.",
+          "example_tr": "İnsan hafızası yanılabilir, veriye güvenmeliyiz."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-absolute",
+      "word": "absolute",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "mutlak",
+            "kesin"
+          ],
+          "example_en": "There is no absolute truth in this situation.",
+          "example_tr": "Bu durumda mutlak bir doğru yoktur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-relativism",
+      "word": "relativism",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "görecelilik",
+            "rölativizm"
+          ],
+          "example_en": "Relativism claims that rules depend on culture.",
+          "example_tr": "Görecelilik kuralların kültüre bağlı olduğunu savunur."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c2-p-food-for-thought",
+      "text": "Food for thought.",
+      "tr": "Düşündürücü bir konu.",
+      "example_en": "It gave us some serious food for thought.",
+      "example_tr": "Bize düşünecek epey şey verdi.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-moot-point",
+      "text": "A moot point.",
+      "tr": "Artık önemsiz bir konu.",
+      "example_en": "He quit, so his salary is a moot point.",
+      "example_tr": "İstifa etti, yani maaşı artık önemsiz bir konu.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-devils-advocate",
+      "text": "Play devil's advocate.",
+      "tr": "Şeytanın avukatlığı yapmak",
+      "example_en": "Let me play devil's advocate for a moment.",
+      "example_tr": "Biraz şeytanın avukatlığını yapayım.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-begs-the-question",
+      "text": "It begs the question…",
+      "tr": "Akla şu soruyu getiriyor…",
+      "example_en": "His sudden wealth begs the question: how?",
+      "example_tr": "Ani zenginliği akla şu soruyu getiriyor: nasıl?",
+      "note": ""
+    },
+    {
+      "id": "c2-p-matter-of-opinion",
+      "text": "A matter of opinion.",
+      "tr": "Görüş meselesi.",
+      "example_en": "Whether it is good is a matter of opinion.",
+      "example_tr": "İyi olup olmaması bir görüş meselesidir.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c2-thought-1",
+      "title": "Üniversitede felsefe dersi",
+      "names": [
+        "Ali",
+        "Sarah"
+      ],
+      "lines": [
+        {
+          "en": "That philosophy lecture was interesting.",
+          "tr": "O felsefe dersi ilginçti."
+        },
+        {
+          "en": "Yes, it gave me a lot of food for thought.",
+          "tr": "Evet, bana düşünecek çok şey verdi."
+        },
+        {
+          "en": "Do you believe in absolute truth, or is everything subjective?",
+          "tr": "Mutlak doğruya inanır mısın, yoksa her şey öznel midir?"
+        },
+        {
+          "en": "I lean towards relativism. Culture shapes our reality.",
+          "tr": "Ben göreceliliğe eğilimliyim. Gerçekliğimizi kültür şekillendirir."
+        },
+        {
+          "en": "Let me play devil's advocate. Are human rights not universal?",
+          "tr": "Şeytanın avukatlığını yapayım. İnsan hakları evrensel değil mi?"
+        },
+        {
+          "en": "That is a paradoxical situation, I admit.",
+          "tr": "Bunun çelişkili bir durum olduğunu kabul ediyorum."
+        }
+      ]
+    },
+    {
+      "id": "c2-thought-2",
+      "title": "Etik bir ikilem",
+      "names": [
+        "Zeynep",
+        "Mark"
+      ],
+      "lines": [
+        {
+          "en": "Our new app is efficient, but is it ethical?",
+          "tr": "Yeni uygulamamız verimli, peki ama etik mi?"
+        },
+        {
+          "en": "The rationale is utilitarian: we help the majority.",
+          "tr": "Gerekçe faydacı: Çoğunluğa yardım ediyoruz."
+        },
+        {
+          "en": "But we infringe on privacy. I feel guilty.",
+          "tr": "Ancak gizliliği ihlal ediyoruz. Kendimi suçlu hissediyorum."
+        },
+        {
+          "en": "Which begs the question: is privacy a sacred right?",
+          "tr": "Bu da akla şu soruyu getiriyor: gizlilik kutsal bir hak mıdır?"
+        },
+        {
+          "en": "Some people think privacy is a moot point today.",
+          "tr": "Bazılarına göre gizlilik artık önemsiz bir konu."
+        }
+      ]
+    },
+    {
+      "id": "c2-thought-3",
+      "title": "Kader mi, seçim mi?",
+      "names": [
+        "Emre",
+        "John"
+      ],
+      "lines": [
+        {
+          "en": "I feel like my whole life is a series of accidents.",
+          "tr": "Tüm hayatım bir kazalar dizisiymiş gibi hissediyorum."
+        },
+        {
+          "en": "Do you believe in nihilism now?",
+          "tr": "Şimdi de nihilizme mi inanıyorsun?"
+        },
+        {
+          "en": "No, just an existential crisis. I hate determinism.",
+          "tr": "Hayır, sadece varoluşsal bir kriz. Determinizmden nefret ediyorum."
+        },
+        {
+          "en": "Well, we are fallible humans, not perfect machines.",
+          "tr": "Eh, biz kusurlu insanlarız, mükemmel makineler değil."
+        },
+        {
+          "en": "True. I suppose finding meaning is a personal choice.",
+          "tr": "Doğru. Sanırım anlam bulmak kişisel bir seçim."
+        }
+      ]
+    },
+    {
+      "id": "c2-thought-4",
+      "title": "Akademik bir tartışma",
+      "names": [
+        "Aylin",
+        "David"
+      ],
+      "lines": [
+        {
+          "en": "Your thesis relies too much on empiricism.",
+          "tr": "Tezin fazlasıyla ampirizme dayanıyor."
+        },
+        {
+          "en": "Because we need tangible data, not just metaphysics.",
+          "tr": "Çünkü sadece metafiziğe değil, somut veriye ihtiyacımız var."
+        },
+        {
+          "en": "But you accept certain theories as absolute dogma!",
+          "tr": "Ama belirli teorileri mutlak dogma olarak kabul ediyorsun!"
+        },
+        {
+          "en": "Every discipline starts with a basic axiom.",
+          "tr": "Her disiplin temel bir aksiyomla başlar."
+        },
+        {
+          "en": "Whether that axiom is true is a matter of opinion.",
+          "tr": "O aksiyomun doğru olup olmaması bir görüş meselesidir."
+        }
+      ]
+    },
+    {
+      "id": "c2-thought-5",
+      "title": "Değerlerimiz",
+      "names": [
+        "Canan",
+        "Paul"
+      ],
+      "lines": [
+        {
+          "en": "Honesty is my most important virtue.",
+          "tr": "Dürüstlük benim en önemli erdemimdir."
+        },
+        {
+          "en": "Saying you are always honest is almost a tautology.",
+          "tr": "Her zaman dürüst olduğunu söylemek neredeyse bir totolojidir."
+        },
+        {
+          "en": "How so?",
+          "tr": "Nasıl yani?"
+        },
+        {
+          "en": "Because everyone thinks they have integrity.",
+          "tr": "Çünkü herkes dürüstlüğe sahip olduğunu düşünür."
+        },
+        {
+          "en": "Perhaps. But I still seek a transcendent purpose.",
+          "tr": "Belki. Ama ben hâlâ aşkın bir amaç arıyorum."
+        },
+        {
+          "en": "In the end, we are all just trying to survive.",
+          "tr": "Sonuçta hepimiz sadece hayatta kalmaya çalışıyoruz."
+        }
+      ]
+    }
+  ]
+}
