@@ -1,0 +1,533 @@
+{
+"id": "c2-identity",
+"level": "C2",
+"title": "Kültür ve kimlik",
+"placement": "any",
+"goal": "Kültürel kimlik, göç ve aidiyet üzerine çok boyutlu bir tartışma yürütür, toplumsal önyargıları adlandırır.",
+"words": [
+{
+"id": "c2-assimilation",
+"word": "assimilation",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"asimilasyon",
+"özümseme"
+],
+"example_en": "Assimilation is inevitable for many immigrants.",
+"example_tr": "Asimilasyon birçok göçmen için kaçınılmazdır."
+}
+],
+"note": ""
+},
+{
+"id": "c2-diaspora",
+"word": "diaspora",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"diaspora",
+"kopuk topluluk"
+],
+"example_en": "The diaspora maintains a great bond with their culture.",
+"example_tr": "Diaspora kültürüyle büyük bir bağ sürdürüyor."
+}
+],
+"note": ""
+},
+{
+"id": "c2-ethnicity",
+"word": "ethnicity",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"etnik köken"
+],
+"example_en": "People of any ethnicity can achieve success.",
+"example_tr": "Herhangi bir etnik kökenden insanlar başarı elde edebilir."
+}
+],
+"note": ""
+},
+{
+"id": "c2-heritage",
+"word": "heritage",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"miras",
+"kültürel miras"
+],
+"example_en": "We must protect the heritage of our culture.",
+"example_tr": "Kültürümüzün mirasını korumalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "c2-xenophobia",
+"word": "xenophobia",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yabancı düşmanlığı"
+],
+"example_en": "Xenophobia is a catastrophic problem for any community.",
+"example_tr": "Yabancı düşmanlığı herhangi bir toplum için yıkıcıdır."
+}
+],
+"note": ""
+},
+{
+"id": "c2-cosmopolitan",
+"word": "cosmopolitan",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kozmopolit",
+"çok kültürlü"
+],
+"example_en": "London is a very cosmopolitan city.",
+"example_tr": "Londra çok kozmopolit bir şehirdir."
+}
+],
+"note": ""
+},
+{
+"id": "c2-parochial",
+"word": "parochial",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"dar görüşlü",
+"yerel"
+],
+"example_en": "His parochial perspective precludes understanding.",
+"example_tr": "Dar görüşlü perspektifi anlamayı engelliyor."
+}
+],
+"note": ""
+},
+{
+"id": "c2-stereotype",
+"word": "stereotype",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"basmakalıp",
+"önyargı"
+],
+"example_en": "We need to challenge this stereotype.",
+"example_tr": "Bu önyargıya meydan okumamız gerek."
+}
+],
+"note": ""
+},
+{
+"id": "c2-taboo",
+"word": "taboo",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"tabu"
+],
+"example_en": "Mental health is still a taboo in many families.",
+"example_tr": "Ruh sağlığı birçok ailede hala bir tabu."
+}
+],
+"note": ""
+},
+{
+"id": "c2-ritual",
+"word": "ritual",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ritüel",
+"adet"
+],
+"example_en": "Making coffee is my morning ritual.",
+"example_tr": "Kahve yapmak benim sabah ritüelimdir."
+}
+],
+"note": ""
+},
+{
+"id": "c2-folklore",
+"word": "folklore",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"folklor",
+"halk bilimi"
+],
+"example_en": "Local folklore explores the mysteries of nature.",
+"example_tr": "Yerel folklor doğanın gizemlerini keşfeder."
+}
+],
+"note": ""
+},
+{
+"id": "c2-secular",
+"word": "secular",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"laik",
+"seküler"
+],
+"example_en": "They live in a secular community.",
+"example_tr": "Laik bir toplumda yaşıyorlar."
+}
+],
+"note": ""
+},
+{
+"id": "c2-pluralism",
+"word": "pluralism",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"çoğulculuk"
+],
+"example_en": "Pluralism is essential for democracy.",
+"example_tr": "Çoğulculuk demokrasi için elzemdir."
+}
+],
+"note": ""
+},
+{
+"id": "c2-homogeneous",
+"word": "homogeneous",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"homojen",
+"türdeş"
+],
+"example_en": "The neighbourhood is quite homogeneous.",
+"example_tr": "Mahalle oldukça homojen."
+}
+],
+"note": ""
+},
+{
+"id": "c2-subculture",
+"word": "subculture",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"alt kültür"
+],
+"example_en": "This subculture makes beautiful music.",
+"example_tr": "Bu alt kültür güzel müzik yapıyor."
+}
+],
+"note": ""
+},
+{
+"id": "c2-zeitgeist",
+"word": "zeitgeist",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"zamanın ruhu"
+],
+"example_en": "The film epitomizes the zeitgeist.",
+"example_tr": "Film zamanın ruhunu özetliyor."
+}
+],
+"note": ""
+},
+{
+"id": "c2-gentrification",
+"word": "gentrification",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"soylulaştırma"
+],
+"example_en": "Gentrification changes the local culture.",
+"example_tr": "Soylulaştırma yerel kültürü değiştirir."
+}
+],
+"note": ""
+},
+{
+"id": "c2-alienation",
+"word": "alienation",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yabancılaşma"
+],
+"example_en": "Alienation is a prevalent problem for immigrants.",
+"example_tr": "Yabancılaşma göçmenler için yaygın bir sorundur."
+}
+],
+"note": ""
+},
+{
+"id": "c2-solidarity",
+"word": "solidarity",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"dayanışma"
+],
+"example_en": "We must show solidarity with the marginalized.",
+"example_tr": "Dışlananlarla dayanışma göstermeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "c2-egalitarian",
+"word": "egalitarian",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"eşitlikçi"
+],
+"example_en": "They prefer an egalitarian approach.",
+"example_tr": "Eşitlikçi bir yaklaşımı tercih ediyorlar."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c2-p-melting-pot",
+"text": "A melting pot.",
+"tr": "Bir erime potası.",
+"example_en": "This city is a melting pot.",
+"example_tr": "Bu şehir bir erime potası.",
+"note": ""
+},
+{
+"id": "c2-p-fish-out",
+"text": "A fish out of water.",
+"tr": "Sudan çıkmış balık.",
+"example_en": "I feel like a fish out of water here.",
+"example_tr": "Burada kendimi sudan çıkmış balık gibi hissediyorum.",
+"note": ""
+},
+{
+"id": "c2-p-when-in-rome",
+"text": "When in Rome…",
+"tr": "Roma'dayken...",
+"example_en": "Eat the local food. When in Rome…",
+"example_tr": "Yerel yemeği ye. Roma'dayken...",
+"note": ""
+},
+{
+"id": "c2-p-feel-at-home",
+"text": "Feel at home.",
+"tr": "Evinde hissetmek.",
+"example_en": "I finally feel at home here.",
+"example_tr": "Sonunda burada evimde hissediyorum.",
+"note": ""
+},
+{
+"id": "c2-p-bridge-the-gap",
+"text": "Bridge the gap.",
+"tr": "Arayı kapatmak.",
+"example_en": "We must bridge the gap between cultures.",
+"example_tr": "Kültürler arasında köprü kurmalıyız.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c2-identity-1",
+"title": "Taşınma",
+"names": [
+"Ali",
+"London"
+],
+"lines": [
+{
+"en": "Ali is an immigrant in London.",
+"tr": "Ali Londra'da bir göçmen."
+},
+{
+"en": "On the face of it, the city is very cosmopolitan.",
+"tr": "Görünüşe göre, şehir çok kozmopolit."
+},
+{
+"en": "But he feels alienation.",
+"tr": "Ama yabancılaşma hissediyor."
+},
+{
+"en": "He is a fish out of water.",
+"tr": "O sudan çıkmış bir balık."
+},
+{
+"en": "He wants to find the diaspora.",
+"tr": "Diasporayı bulmak istiyor."
+},
+{
+"en": "Solidarity is important for him.",
+"tr": "Dayanışma onun için önemli."
+}
+]
+},
+{
+"id": "c2-identity-2",
+"title": "Eski ve Yeni",
+"names": [
+"Zeynep",
+"Istanbul"
+],
+"lines": [
+{
+"en": "Gentrification is changing this neighbourhood.",
+"tr": "Soylulaştırma bu mahalleyi değiştiriyor."
+},
+{
+"en": "It gets too homogeneous.",
+"tr": "Çok homojenleşiyor."
+},
+{
+"en": "We lose the local subculture.",
+"tr": "Yerel alt kültürü kaybediyoruz."
+},
+{
+"en": "It stands to reason that people are angry.",
+"tr": "İnsanların kızgın olması mantıklı."
+},
+{
+"en": "We need to protect our heritage.",
+"tr": "Mirasımızı korumamız gerek."
+},
+{
+"en": "We must bridge the gap.",
+"tr": "Arayı kapatmalıyız."
+}
+]
+},
+{
+"id": "c2-identity-3",
+"title": "Yeni İş",
+"names": [
+"Emre",
+"Berlin"
+],
+"lines": [
+{
+"en": "Emre works in Berlin.",
+"tr": "Emre Berlin'de çalışıyor."
+},
+{
+"en": "The company has an egalitarian culture.",
+"tr": "Şirketin eşitlikçi bir kültürü var."
+},
+{
+"en": "He doesn't like assimilation.",
+"tr": "Asimilasyondan hoşlanmıyor."
+},
+{
+"en": "He wants to remember his ethnicity.",
+"tr": "Etnik kökenini hatırlamak istiyor."
+},
+{
+"en": "When in Rome…",
+"tr": "Roma'dayken..."
+},
+{
+"en": "He tries to adapt.",
+"tr": "Uyum sağlamaya çalışıyor."
+}
+]
+},
+{
+"id": "c2-identity-4",
+"title": "Değişen Zamanlar",
+"names": [
+"Ayşe",
+"Paris"
+],
+"lines": [
+{
+"en": "Ayşe studies the zeitgeist.",
+"tr": "Ayşe zamanın ruhunu inceliyor."
+},
+{
+"en": "She investigates a secular community.",
+"tr": "Laik bir topluluğu araştırıyor."
+},
+{
+"en": "They have an interesting ritual.",
+"tr": "İlginç bir ritüelleri var."
+},
+{
+"en": "Is it a taboo?",
+"tr": "Bu bir tabu mu?"
+},
+{
+"en": "No, it is just folklore.",
+"tr": "Hayır, sadece folklor."
+},
+{
+"en": "They are a melting pot.",
+"tr": "Onlar bir erime potası."
+}
+]
+},
+{
+"id": "c2-identity-5",
+"title": "Önyargıyı Aşmak",
+"names": [
+"Defne",
+"Toronto"
+],
+"lines": [
+{
+"en": "Defne lives in Toronto.",
+"tr": "Defne Toronto'da yaşıyor."
+},
+{
+"en": "Xenophobia is a bad stereotype.",
+"tr": "Yabancı düşmanlığı kötü bir önyargıdır."
+},
+{
+"en": "Pluralism can ameliorate this.",
+"tr": "Çoğulculuk bunu iyileştirebilir."
+},
+{
+"en": "Her parochial colleague does not understand.",
+"tr": "Dar görüşlü meslektaşı anlamıyor."
+},
+{
+"en": "She helps him.",
+"tr": "Ona yardım ediyor."
+},
+{
+"en": "Now they feel at home.",
+"tr": "Artık evlerinde hissediyorlar."
+}
+]
+}
+]
+}

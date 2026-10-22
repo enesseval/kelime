@@ -75,9 +75,8 @@
           "tr": [
             "portföy"
           ],
-          "example_en": "You must mitigate risk with a strong portfolio.",
-          "example_tr": "Dengeli bir portföy riski azaltmaya yardımcı olur.",
-          "example": "A balanced portfolio helps to mitigate risk."
+          "example_en": "A balanced portfolio helps to mitigate risk.",
+          "example_tr": "Dengeli bir portföy riski azaltmaya yardımcı olur."
         }
       ],
       "note": ""
@@ -107,9 +106,8 @@
             "ödeme aczi",
             "iflas"
           ],
-          "example_en": "The business is facing insolvency due to bad debt.",
-          "example_tr": "Şirket, borçları yüzünden iflasla karşı karşıya.",
-          "example": "The company is facing insolvency because of its debts."
+          "example_en": "The company is facing insolvency because of its debts.",
+          "example_tr": "Şirket, borçları yüzünden iflasla karşı karşıya."
         }
       ],
       "note": ""
@@ -214,9 +212,8 @@
           "tr": [
             "sermaye"
           ],
-          "example_en": "We need more capital to expand our operations.",
-          "example_tr": "Büyümek için daha fazla sermayeye ihtiyacımız var.",
-          "example": "We need more capital to grow."
+          "example_en": "We need more capital to grow.",
+          "example_tr": "Büyümek için daha fazla sermayeye ihtiyacımız var."
         }
       ],
       "note": ""
