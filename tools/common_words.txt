@@ -1,0 +1,40 @@
+# Everyday English words a C2 learner knows that the A1-C1 course never taught as cards.
+# check_unit.py allows them from C2 on. Add a word only after checking it is common
+# (B2 or easier, everyday meaning); rare or academic words must come from a unit instead.
+lie
+link
+extra
+decoration
+conclusion
+entirely
+upon
+amount
+logic
+violence
+strict
+choice
+arrival
+project
+joke
+clearly
+scientist
+fire
+previous
+statement
+wide
+range
+duty
+completely
+become
+voice
+discuss
+actual
+mere
+inconsistent
+immense
+current
+difference
+strong
+feeling
+clash
+provide

@@ -1,0 +1,643 @@
+{
+"id": "c2-core",
+"level": "C2",
+"title": "Çekirdek",
+"placement": "first",
+"goal": "Karmaşık bir düşünceyi en ince ayrımlarıyla, kusursuz bir mantık zinciriyle ve yerinde bir üslupla ifade eder.",
+"words": [
+{
+"id": "c2-notwithstanding",
+"word": "notwithstanding",
+"senses": [
+{
+"pos": "prep",
+"tr": ["rağmen", "karşın"],
+"example_en": "Notwithstanding the bad weather, we went out.",
+"example_tr": "Kötü havaya rağmen dışarı çıktık."
+}
+],
+"note": ""
+},
+{
+"id": "c2-inasmuch",
+"word": "inasmuch",
+"senses": [
+{
+"pos": "conj",
+"tr": ["-dığı ölçüde", "-diği için"],
+"example_en": "He is guilty, inasmuch as he knew about the fraud.",
+"example_tr": "Suçlu, çünkü sahtekarlığı biliyordu."
+}
+],
+"note": ""
+},
+{
+"id": "c2-whilst",
+"word": "whilst",
+"senses": [
+{
+"pos": "conj",
+"tr": ["iken", "rağmen"],
+"example_en": "Whilst I understand your point, I disagree.",
+"example_tr": "Görüşünü anlamakla birlikte, katılmıyorum."
+}
+],
+"note": "While ile aynıdır, daha resmidir."
+},
+{
+"id": "c2-thus",
+"word": "thus",
+"senses": [
+{
+"pos": "adv",
+"tr": ["böylece", "bu nedenle"],
+"example_en": "He was tired, and thus he went to bed early.",
+"example_tr": "Yorgundu, bu yüzden yatağa erken gitti."
+}
+],
+"note": ""
+},
+{
+"id": "c2-therein",
+"word": "therein",
+"senses": [
+{
+"pos": "adv",
+"tr": ["orada", "bu noktada"],
+"example_en": "He works hard; therein lies his success.",
+"example_tr": "Çok çalışır; başarısı burada yatar."
+}
+],
+"note": ""
+},
+{
+"id": "c2-tenuous",
+"word": "tenuous",
+"senses": [
+{
+"pos": "adj",
+"tr": ["zayıf", "ince"],
+"example_en": "The link between the two events is tenuous.",
+"example_tr": "İki olay arasındaki bağlantı zayıf."
+}
+],
+"note": ""
+},
+{
+"id": "c2-cogent",
+"word": "cogent",
+"senses": [
+{
+"pos": "adj",
+"tr": ["ikna edici", "güçlü"],
+"example_en": "She made a cogent argument for reform.",
+"example_tr": "Reform için ikna edici bir argüman sundu."
+}
+],
+"note": ""
+},
+{
+"id": "c2-salient",
+"word": "salient",
+"senses": [
+{
+"pos": "adj",
+"tr": ["göze çarpan", "belirgin"],
+"example_en": "Please summarize the salient points.",
+"example_tr": "Lütfen göze çarpan noktaları özetle."
+}
+],
+"note": ""
+},
+{
+"id": "c2-pertinent",
+"word": "pertinent",
+"senses": [
+{
+"pos": "adj",
+"tr": ["ilgili", "yerinde"],
+"example_en": "He asked a very pertinent question.",
+"example_tr": "Çok yerinde bir soru sordu."
+}
+],
+"note": ""
+},
+{
+"id": "c2-tangible",
+"word": "tangible",
+"senses": [
+{
+"pos": "adj",
+"tr": ["somut", "elle tutulur"],
+"example_en": "We need tangible evidence, not just rumours.",
+"example_tr": "Sadece söylenti değil, somut kanıt lazım."
+}
+],
+"note": ""
+},
+{
+"id": "c2-superfluous",
+"word": "superfluous",
+"senses": [
+{
+"pos": "adj",
+"tr": ["gereksiz", "fazla"],
+"example_en": "The extra decorations were superfluous.",
+"example_tr": "Ekstra süslemeler gereksizdi."
+}
+],
+"note": ""
+},
+{
+"id": "c2-erroneous",
+"word": "erroneous",
+"senses": [
+{
+"pos": "adj",
+"tr": ["hatalı", "yanlış"],
+"example_en": "His conclusion is entirely erroneous.",
+"example_tr": "Onun sonucu tamamen hatalı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-conducive",
+"word": "conducive",
+"senses": [
+{
+"pos": "adj",
+"tr": ["elverişli", "olanak sağlayan"],
+"example_en": "A quiet room is conducive to sleep.",
+"example_tr": "Sessiz bir oda uykuya elverişlidir."
+}
+],
+"note": ""
+},
+{
+"id": "c2-contingent",
+"word": "contingent",
+"senses": [
+{
+"pos": "adj",
+"tr": ["bağlı", "koşullu"],
+"example_en": "Our success is contingent upon your help.",
+"example_tr": "Başarımız senin yardımına bağlı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-inordinate",
+"word": "inordinate",
+"senses": [
+{
+"pos": "adj",
+"tr": ["aşırı", "ölçüsüz"],
+"example_en": "He spends an inordinate amount of time online.",
+"example_tr": "İnternette aşırı vakit harcıyor."
+}
+],
+"note": ""
+},
+{
+"id": "c2-paradoxical",
+"word": "paradoxical",
+"senses": [
+{
+"pos": "adj",
+"tr": ["çelişkili"],
+"example_en": "It is paradoxical that it is so cheap yet so good.",
+"example_tr": "Bu kadar ucuz ama iyi olması çelişkili."
+}
+],
+"note": ""
+},
+{
+"id": "c2-unequivocal",
+"word": "unequivocal",
+"senses": [
+{
+"pos": "adj",
+"tr": ["açık", "net"],
+"example_en": "Her answer was an unequivocal no.",
+"example_tr": "Cevabı net bir hayırdı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-irrefutable",
+"word": "irrefutable",
+"senses": [
+{
+"pos": "adj",
+"tr": ["çürütülemez", "kesin"],
+"example_en": "The logic behind his plan is irrefutable.",
+"example_tr": "Planının arkasındaki mantık çürütülemez."
+}
+],
+"note": ""
+},
+{
+"id": "c2-conjecture",
+"word": "conjecture",
+"senses": [
+{
+"pos": "n",
+"tr": ["varsayım", "tahmin"],
+"example_en": "That is merely conjecture, not a fact.",
+"example_tr": "Bu sadece bir varsayım, gerçek değil."
+}
+],
+"note": ""
+},
+{
+"id": "c2-corollary",
+"word": "corollary",
+"senses": [
+{
+"pos": "n",
+"tr": ["doğal sonuç"],
+"example_en": "Violence is the inevitable corollary of inequality.",
+"example_tr": "Şiddet eşitsizliğin kaçınılmaz doğal sonucudur."
+}
+],
+"note": ""
+},
+{
+"id": "c2-caveat",
+"word": "caveat",
+"senses": [
+{
+"pos": "n",
+"tr": ["uyarı", "şart"],
+"example_en": "He accepted the deal, but with one caveat.",
+"example_tr": "Anlaşmayı kabul etti ama tek bir şartla."
+}
+],
+"note": ""
+},
+{
+"id": "c2-dichotomy",
+"word": "dichotomy",
+"senses": [
+{
+"pos": "n",
+"tr": ["ikilem", "bölünme"],
+"example_en": "There is a strict dichotomy between good and bad.",
+"example_tr": "İyi ve kötü arasında kesin bir ayrım var."
+}
+],
+"note": ""
+},
+{
+"id": "c2-juxtaposition",
+"word": "juxtaposition",
+"senses": [
+{
+"pos": "n",
+"tr": ["yan yana koyma"],
+"example_en": "The juxtaposition of the two photos is interesting.",
+"example_tr": "İki fotoğrafın yan yana konması ilginç."
+}
+],
+"note": ""
+},
+{
+"id": "c2-ramification",
+"word": "ramification",
+"senses": [
+{
+"pos": "n",
+"tr": ["sonuç", "etki"],
+"example_en": "Consider the ramification of your choice.",
+"example_tr": "Seçiminin olası sonuçlarını düşün."
+}
+],
+"note": ""
+},
+{
+"id": "c2-impetus",
+"word": "impetus",
+"senses": [
+{
+"pos": "n",
+"tr": ["itici güç", "ivme"],
+"example_en": "His arrival gave fresh impetus to the project.",
+"example_tr": "Gelişi projeye yeni bir ivme kazandırdı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-propensity",
+"word": "propensity",
+"senses": [
+{
+"pos": "n",
+"tr": ["eğilim", "meyil"],
+"example_en": "He has a propensity to talk too much.",
+"example_tr": "Çok konuşma eğilimi var."
+}
+],
+"note": ""
+},
+{
+"id": "c2-preclude",
+"word": "preclude",
+"senses": [
+{
+"pos": "v",
+"tr": ["engellemek", "önlemek"],
+"example_en": "His injury will preclude him from playing.",
+"example_tr": "Sakatlığı onun oynamasını engelleyecek."
+}
+],
+"note": ""
+},
+{
+"id": "c2-elicit",
+"word": "elicit",
+"senses": [
+{
+"pos": "v",
+"tr": ["ortaya çıkarmak", "almak"],
+"example_en": "The joke failed to elicit a laugh.",
+"example_tr": "Şaka bir gülüş bile koparamadı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-ameliorate",
+"word": "ameliorate",
+"senses": [
+{
+"pos": "v",
+"tr": ["iyileştirmek", "düzeltmek"],
+"example_en": "We must try to ameliorate the situation.",
+"example_tr": "Durumu iyileştirmeye çalışmalıyız."
+}
+],
+"note": ""
+},
+{
+"id": "c2-substantiate",
+"word": "substantiate",
+"senses": [
+{
+"pos": "v",
+"tr": ["kanıtlamak", "doğrulamak"],
+"example_en": "Can you substantiate your claim?",
+"example_tr": "İddianı kanıtlayabilir misin?"
+}
+],
+"note": ""
+},
+{
+"id": "c2-delineate",
+"word": "delineate",
+"senses": [
+{
+"pos": "v",
+"tr": ["betimlemek", "çizmek"],
+"example_en": "The law must delineate our rights clearly.",
+"example_tr": "Yasa haklarımızı net bir şekilde çizmeli."
+}
+],
+"note": ""
+},
+{
+"id": "c2-posit",
+"word": "posit",
+"senses": [
+{
+"pos": "v",
+"tr": ["öne sürmek", "varsaymak"],
+"example_en": "Scientists posit that the climate is changing.",
+"example_tr": "Bilim insanları iklimin değiştiğini öne sürüyor."
+}
+],
+"note": ""
+},
+{
+"id": "c2-purport",
+"word": "purport",
+"senses": [
+{
+"pos": "v",
+"tr": ["iddia etmek"],
+"example_en": "The letter purports to be from the boss.",
+"example_tr": "Mektup patrondan gelmiş gibi görünüyor."
+}
+],
+"note": ""
+},
+{
+"id": "c2-ascertain",
+"word": "ascertain",
+"senses": [
+{
+"pos": "v",
+"tr": ["anlamak", "tespit etmek"],
+"example_en": "We need to ascertain the cause of the fire.",
+"example_tr": "Yangının nedenini tespit etmeliyiz."
+}
+],
+"note": ""
+},
+{
+"id": "c2-discern",
+"word": "discern",
+"senses": [
+{
+"pos": "v",
+"tr": ["fark etmek", "ayırt etmek"],
+"example_en": "I could discern a subtle change in his tone.",
+"example_tr": "Ses tonundaki hafif değişimi fark edebildim."
+}
+],
+"note": ""
+},
+{
+"id": "c2-reiterate",
+"word": "reiterate",
+"senses": [
+{
+"pos": "v",
+"tr": ["tekrarlamak", "yinelemek"],
+"example_en": "Let me reiterate my previous statement.",
+"example_tr": "Önceki ifademi tekrar edeyim."
+}
+],
+"note": ""
+},
+{
+"id": "c2-encompass",
+"word": "encompass",
+"senses": [
+{
+"pos": "v",
+"tr": ["kapsamak", "içermek"],
+"example_en": "Her job encompasses a wide range of duties.",
+"example_tr": "İşi geniş bir görev yelpazesini kapsıyor."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c2-p-needless-to-say",
+"text": "Needless to say, …",
+"tr": "Söylemeye gerek yok, …",
+"example_en": "Needless to say, he was completely exhausted.",
+"example_tr": "Söylemeye gerek yok, tamamen tükenmişti.",
+"note": ""
+},
+{
+"id": "c2-p-by-the-same-token",
+"text": "By the same token, …",
+"tr": "Aynı şekilde, …",
+"example_en": "By the same token, we cannot accept this excuse.",
+"example_tr": "Aynı şekilde, bu mazereti kabul edemeyiz.",
+"note": ""
+},
+{
+"id": "c2-p-stands-to-reason",
+"text": "It stands to reason that …",
+"tr": "… olması mantıklıdır",
+"example_en": "It stands to reason that we must invest more.",
+"example_tr": "Daha fazla yatırım yapmamız mantıklıdır.",
+"note": ""
+},
+{
+"id": "c2-p-on-the-face",
+"text": "On the face of it, …",
+"tr": "Görünüşe göre, …",
+"example_en": "On the face of it, the plan seems perfect.",
+"example_tr": "Görünüşe göre plan kusursuz duruyor.",
+"note": ""
+},
+{
+"id": "c2-p-not-least",
+"text": "Not least because …",
+"tr": "Bilhassa … olduğu için",
+"example_en": "I am worried, not least because it is dangerous.",
+"example_tr": "Endişeliyim, bilhassa da tehlikeli olduğu için.",
+"note": ""
+},
+{
+"id": "c2-p-as-it-were",
+"text": "…, as it were",
+"tr": "sanki, bir nevi",
+"example_en": "He became the voice of the city, as it were.",
+"example_tr": "Bir nevi, şehrin sesi oldu.",
+"note": ""
+},
+{
+"id": "c2-p-in-hindsight",
+"text": "In hindsight, …",
+"tr": "Geriye dönüp bakınca, …",
+"example_en": "In hindsight, I should have listened to you.",
+"example_tr": "Geriye dönüp bakınca, seni dinlemeliydim.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c2-core-1",
+"title": "Açık Karar",
+"names": ["Ahmet", "John"],
+"lines": [
+{
+"en": "Ahmet and John discuss a new business strategy.",
+"tr": "Ahmet ve John yeni bir iş stratejisini tartışıyorlar."
+},
+{
+"en": "On the face of it, the idea seems cogent and pertinent.",
+"tr": "Görünüşe göre fikir güçlü ve yerinde duruyor."
+},
+{
+"en": "However, we must ascertain the actual costs.",
+"tr": "Ancak gerçek maliyetleri tespit etmeliyiz."
+},
+{
+"en": "By the same token, any superfluous expense will preclude success.",
+"tr": "Aynı şekilde, gereksiz her masraf başarıyı engelleyecektir."
+},
+{
+"en": "It stands to reason that we need a tangible budget.",
+"tr": "Somut bir bütçeye ihtiyacımız olması mantıklıdır."
+},
+{
+"en": "I agree. We cannot rely on mere conjecture.",
+"tr": "Katılıyorum. Sadece varsayıma bel bağlayamayız."
+}
+]
+},
+{
+"id": "c2-core-2",
+"title": "Yanlış Anlaşılma",
+"names": ["Zeynep", "London"],
+"lines": [
+{
+"en": "Zeynep lives in London and works as a lawyer.",
+"tr": "Zeynep Londra'da yaşıyor ve avukat olarak çalışıyor."
+},
+{
+"en": "In hindsight, my previous argument was entirely erroneous.",
+"tr": "Geriye dönüp bakınca, önceki argümanım tamamen hatalıydı."
+},
+{
+"en": "Let me reiterate: the evidence does not substantiate the claim.",
+"tr": "Tekrarlayayım: kanıtlar iddiayı doğrulamıyor."
+},
+{
+"en": "Not least because the witness was inconsistent.",
+"tr": "Bilhassa da tanık tutarsız olduğu için."
+},
+{
+"en": "The ramification of this mistake is immense.",
+"tr": "Bu hatanın sonucu çok büyük."
+},
+{
+"en": "Thus, we must delineate a new approach.",
+"tr": "Bu nedenle yeni bir yaklaşım çizmeliyiz."
+}
+]
+},
+{
+"id": "c2-core-3",
+"title": "Zorlu Bir Toplantı",
+"names": ["Mary", "Ali"],
+"lines": [
+{
+"en": "Mary wants to ameliorate the current work environment.",
+"tr": "Mary mevcut çalışma ortamını iyileştirmek istiyor."
+},
+{
+"en": "Therein lies a paradoxical dichotomy.",
+"tr": "Çelişkili bir ikilem bu noktada yatıyor."
+},
+{
+"en": "She wants less pressure, whilst Ali posits that pressure brings results.",
+"tr": "O daha az baskı istiyor, Ali ise baskının sonuç getirdiğini öne sürüyor."
+},
+{
+"en": "Needless to say, this difference elicits strong feelings.",
+"tr": "Söylemeye gerek yok, bu fark güçlü duygular ortaya çıkarıyor."
+},
+{
+"en": "It is an unequivocal clash of cultures, as it were.",
+"tr": "Bir nevi, net bir kültür çatışması."
+},
+{
+"en": "They must find a compromise to provide fresh impetus to the team.",
+"tr": "Ekibe yeni bir ivme kazandırmak için bir uzlaşma bulmalılar."
+}
+]
+}
+]
+}

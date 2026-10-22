@@ -114,6 +114,9 @@ def build(level, spec, core, example):
                       "example sentence and every story line may use ONLY: the grammar words, earlier "
                       "levels, the core words and phrases, this unit's words and phrases, and names. "
                       "Nothing else. If a sentence needs another word, write a different sentence.")
+    if level == "C2":
+        vocab_rule += (" At C2, everyday English words that any B2 learner knows (link, choice, previous, "
+                       "provide, discuss) are fine too; rare, academic or literary words only from the lists.")
     stories = 3 if spec["placement"] == "first" else 5
     return f"""You are a senior English-Turkish lexicographer and an experienced teacher of English to
 Turkish speakers. You are writing one unit of an {NAMES[level]} course in a vocabulary app. Cards

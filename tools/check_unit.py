@@ -137,9 +137,17 @@ def earlier(level):
     return vocab, function | LEVEL_FUNCTION_WORDS.get(level, set()), words
 
 
+def common_words():
+    """tools/common_words.txt: everyday words allowed from C2 on (see the file)."""
+    path = ROOT / "tools" / "common_words.txt"
+    return {l.strip() for l in path.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")}
+
+
 def check(level):
     units = load_units(level)
     prior_vocab, function_words, prior_words = earlier(level)
+    if LEVELS.index(level) >= LEVELS.index("C2"):
+        prior_vocab |= common_words()
     core = next((u for u in units.values() if u.get("placement") == "first"), None)
     core_vocab = vocabulary(core) if core else set()
     level_vocab = set().union(*(vocabulary(u) for u in units.values())) if units else set()
