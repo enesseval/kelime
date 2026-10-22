@@ -1,5 +1,5 @@
 {
- "contentVersion": 11,
+ "contentVersion": 12,
  "cards": [
   {
    "id": "a2-think",
@@ -9934,6 +9934,7 @@
    "example_tr": "Soğuk olmasına rağmen dışarı çıktık.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ],
@@ -9952,6 +9953,7 @@
    "example_tr": "Bu arabayı seviyorum. Ancak çok pahalı.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -10872,7 +10874,8 @@
    "example_en": "They always argue about money.",
    "example_tr": "Hep para hakkında tartışırlar.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -11111,7 +11114,8 @@
    "example_en": "What qualifications do you have?",
    "example_tr": "Ne gibi nitelikleriniz var?",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -12209,7 +12213,8 @@
    "example_en": "The broadcast starts at eight.",
    "example_tr": "Yayın sekizde başlıyor.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ],
    "senses": [
     {
@@ -12927,6 +12932,7 @@
    "example_tr": "Bu eski bir âdettir.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -13562,6 +13568,7 @@
    "example_tr": "Ateş ilk belirtidir.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -14078,7 +14085,8 @@
    "example_en": "The new sports facility is great.",
    "example_tr": "Yeni spor tesisi harika.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -14122,7 +14130,8 @@
    "example_en": "The residents are angry.",
    "example_tr": "Mahalle sakinleri kızgın.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -14701,6 +14710,7 @@
    "example_tr": "Sonucu kabul etmelisin.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ],
@@ -14761,6 +14771,7 @@
    "example_tr": "Gizemli bir hayvan gördüklerini iddia ediyorlar.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -14971,6 +14982,7 @@
    "example_tr": "Yağmura rağmen yürüdük.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -14988,6 +15000,7 @@
    "example_tr": "Ben çay severim, oysa o kahve tercih eder.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -15005,6 +15018,7 @@
    "example_tr": "Hastaydım; bu nedenle evde kaldım.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -15022,6 +15036,7 @@
    "example_tr": "Ucuz; dahası, iyi.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -15054,6 +15069,7 @@
    "example_tr": "Zordu; yine de denedim.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -15181,6 +15197,7 @@
    "example_tr": "Belirgin bir artış var.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -15198,6 +15215,7 @@
    "example_tr": "Buna kayda değer zaman harcadık.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -15794,6 +15812,7 @@
    "example_tr": "Onlarla iyi bir ilişki sürdürmeliyiz.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -15827,7 +15846,8 @@
    "example_en": "A good manager must delegate work to the team.",
    "example_tr": "İyi bir yönetici işleri ekibe devretmelidir.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -15857,7 +15877,8 @@
    "example_en": "Our first objective is to expand the company.",
    "example_tr": "İlk hedefimiz şirketi büyütmektir.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -15903,6 +15924,7 @@
    "example_tr": "Kârlarımız bu yıl düşebilir.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -16184,6 +16206,7 @@
    "example_tr": "Verileri analiz etmeliyiz.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ],
@@ -16252,6 +16275,7 @@
    "example_tr": "Yeni beceriler edindi.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -16281,6 +16305,7 @@
    "example_tr": "Daha fazla yeniliğe ihtiyacımız var.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -16298,6 +16323,7 @@
    "example_tr": "Bu önemli bir gelişme.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -16313,6 +16339,7 @@
    "example_tr": "Bu genetik bir sorun.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -16327,7 +16354,8 @@
    "example_en": "We had a virtual meeting.",
    "example_tr": "Sanal bir toplantı yaptık.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -16521,6 +16549,7 @@
    "example_tr": "Çocuklar bu durumda savunmasızdır.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -16907,6 +16936,7 @@
    "example_tr": "Yeni politika işsizliği azaltacak.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ],
@@ -16966,7 +16996,8 @@
    "example_en": "We need equality at work.",
    "example_tr": "İş yerinde eşitliğe ihtiyacımız var.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -16980,7 +17011,8 @@
    "example_en": "Discrimination is a significant problem.",
    "example_tr": "Ayrımcılık önemli bir sorundur.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -17032,7 +17064,8 @@
    "example_en": "The vast majority agree with this.",
    "example_tr": "Büyük çoğunluk buna katılıyor.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -17046,7 +17079,8 @@
    "example_en": "Only a small minority voted for him.",
    "example_tr": "Sadece küçük bir azınlık ona oy verdi.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -17061,6 +17095,7 @@
    "example_tr": "Burada birçok aile yoksulluk içinde yaşıyor.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -17090,7 +17125,8 @@
    "example_en": "The government must improve welfare.",
    "example_tr": "Hükümet refahı artırmalı.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -17150,7 +17186,8 @@
    "example_en": "The younger generation uses apps more.",
    "example_tr": "Genç nesil uygulamaları daha çok kullanıyor.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -17411,7 +17448,8 @@
    "example_en": "It was a significant offence.",
    "example_tr": "Ciddi bir suçtu.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -17694,6 +17732,7 @@
    "example_tr": "Kronik bir hastalığı var.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -17766,6 +17805,7 @@
    "example_tr": "Yarın ameliyat olacak.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -17858,6 +17898,7 @@
    "example_tr": "Obezite önemli bir sorundur.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -17874,6 +17915,7 @@
    "example_tr": "İyi beslenme şarttır.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -17888,7 +17930,8 @@
    "example_en": "Sugar addiction is a big problem.",
    "example_tr": "Şeker bağımlılığı büyük bir sorundur.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -18244,7 +18287,8 @@
    "example_en": "What is the benefit of this?",
    "example_tr": "Bunun faydası nedir?",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ],
    "senses": [
     {
@@ -18414,7 +18458,8 @@
    "example_en": "We need a sustainable lifestyle.",
    "example_tr": "Sürdürülebilir bir yaşama ihtiyacımız var.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -18429,6 +18474,7 @@
    "example_tr": "Güneş enerjisi yenilenebilir bir kaynaktır.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -18446,6 +18492,7 @@
    "example_tr": "Karbon emisyonlarını azaltmalıyız.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -18476,6 +18523,7 @@
    "example_tr": "Yaban hayatını korumak esastır.",
    "decks": [
     "general",
+    "ielts",
     "yokdil"
    ]
   },
@@ -18490,7 +18538,8 @@
    "example_en": "Many species are almost extinct.",
    "example_tr": "Pek çok türün nesli tükenmek üzere.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -18505,6 +18554,7 @@
    "example_tr": "Onun yaşam alanını yok ediyorlar.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -18521,6 +18571,7 @@
    "example_tr": "Kuraklık bitkileri yok edecek.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -18564,7 +18615,8 @@
    "example_en": "Solar energy is cheap and clean.",
    "example_tr": "Güneş enerjisi ucuz ve temizdir.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -18579,6 +18631,7 @@
    "example_tr": "Sera etkisi tehlikelidir.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -18608,6 +18661,7 @@
    "example_tr": "Ormansızlaşma çevreyi mahvediyor.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -18623,6 +18677,7 @@
    "example_tr": "Her bitki ekosistem için önemlidir.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -18639,6 +18694,7 @@
    "example_tr": "Biyoçeşitliliği korumalıyız.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -18842,7 +18898,8 @@
    "example_en": "Did you get a scholarship?",
    "example_tr": "Burs aldın mı?",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -18857,6 +18914,7 @@
    "example_tr": "Yeni müfredat zor.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -18904,6 +18962,7 @@
    "example_tr": "Burada okul ücreti pahalı.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -18918,7 +18977,8 @@
    "example_en": "You need discipline to succeed.",
    "example_tr": "Başarmak için disipline ihtiyacın var.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -18977,6 +19037,7 @@
    "example_tr": "Sonuçları değerlendirmeliyiz.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -19068,7 +19129,8 @@
    "example_en": "The faculty is very good.",
    "example_tr": "Fakülte çok iyi.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -19405,6 +19467,7 @@
    "example_tr": "Üç kardeşim var: iki kız kardeş ve bir erkek kardeş.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -19562,7 +19625,8 @@
    "example_en": "Travelling abroad changes your perspective.",
    "example_tr": "Yurtdışına çıkmak bakış açınızı değiştirir.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -19591,7 +19655,8 @@
    "example_en": "We had no alternative but to cancel the meeting.",
    "example_tr": "Toplantıyı iptal etmekten başka seçeneğimiz yoktu.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ],
    "senses": [
     {
@@ -19749,7 +19814,8 @@
    "example_en": "There was a dramatic shift in his attitude.",
    "example_tr": "Tavrında çarpıcı bir değişim vardı.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -19918,6 +19984,7 @@
    "example_tr": "Seçimi kaybetti; bu yüzden kariyeri bitti.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -20176,6 +20243,7 @@
    "example_tr": "Bu buluş akademik paradigmayı değiştirecek.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -20226,6 +20294,7 @@
    "example_tr": "Yoksulluğun kaçınılmaz olduğu fikrini kabul etmiyorum.",
    "decks": [
     "general",
+    "ielts",
     "yokdil"
    ]
   },
@@ -20242,6 +20311,7 @@
    "example_tr": "Finansal sonuçlarını değerlendirmeliyiz.",
    "decks": [
     "general",
+    "ielts",
     "yokdil"
    ]
   },
@@ -20272,6 +20342,7 @@
    "example_tr": "Bu yıl büyük bir kâr yaptılar.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -20288,6 +20359,7 @@
    "example_tr": "Bu gelenek kırsalda yaygındır.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -20397,6 +20469,7 @@
    "example_tr": "Bu hatalar açık bir suç oluşturuyor.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -20442,6 +20515,7 @@
    "example_tr": "Hükümet inovasyonu teşvik etmek istiyor.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ],
@@ -20619,7 +20693,8 @@
    "example_en": "The evidence refutes his claim.",
    "example_tr": "Kanıt onun iddiasını çürütüyor.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -20634,7 +20709,8 @@
    "example_en": "I concede that you are right.",
    "example_tr": "Haklı olduğunuzu kabul ediyorum.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -20650,6 +20726,7 @@
    "example_tr": "Planın güvenli olduğunu ileri sürüyor.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -20665,7 +20742,8 @@
    "example_en": "Many contend that the policy will fail.",
    "example_tr": "Çoğu kişi politikanın başarısız olacağını iddia ediyor.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -20721,6 +20799,7 @@
    "example_tr": "Bu makale siyasi önyargı gösteriyor.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -20782,6 +20861,7 @@
    "example_tr": "Bu çok tartışmalı bir mesele.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -20797,7 +20877,8 @@
    "example_en": "The government changed its stance.",
    "example_tr": "Hükümet tutumunu değiştirdi.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -20855,7 +20936,8 @@
    "example_en": "Is this a credible source?",
    "example_tr": "Bu güvenilir bir kaynak mı?",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -20885,7 +20967,8 @@
    "example_en": "We must acknowledge the risks.",
    "example_tr": "Riskleri kabul etmeliyiz.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -21017,6 +21100,7 @@
    "example_tr": "Yeni kuralı uygulamalıyız.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -21076,7 +21160,8 @@
    "example_en": "It was a brave initiative.",
    "example_tr": "Cesur bir girişimdi.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -21254,6 +21339,7 @@
    "example_tr": "Buna daha fazla zaman ayırın.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -21385,6 +21471,7 @@
    "example_tr": "Bu bölgedeki yoksulluğu hafifletmeliyiz.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -21435,6 +21522,7 @@
    "example_tr": "Yoksul bölgede durum hızla kötüleşti.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -21468,6 +21556,7 @@
    "example_tr": "Bu büyük uçurumu nasıl telafi edebiliriz?",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -21619,6 +21708,7 @@
    "example_tr": "Yeni yasa haklarımızı koruyor.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -21781,6 +21871,7 @@
    "example_tr": "Uyku bilişsel becerileri geliştirir.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -22165,6 +22256,7 @@
    "example_tr": "Sadece teori değil, ampirik kanıt lazım.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -22274,6 +22366,7 @@
    "example_tr": "Verileri doğrulamak için daha fazla araştırma şart.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -22305,6 +22398,7 @@
    "example_tr": "Araştırmamız gereken tuhaf bir olgudur.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ],
    "note": "Çoğulu 'phenomena' şeklindedir."
@@ -22321,6 +22415,7 @@
    "example_tr": "İklimi simüle etmek için bilgisayar kullanıyoruz.",
    "decks": [
     "general",
+    "ielts",
     "yokdil"
    ]
   },
@@ -22365,7 +22460,8 @@
    "example_en": "The vaccine went through rigorous trials.",
    "example_tr": "Aşı titiz denemelerden geçti.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -22396,6 +22492,7 @@
    "example_tr": "Makalesi meslektaşları tarafından incelendi.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ],
@@ -22471,7 +22568,8 @@
    "example_en": "We need more data to verify these unexpected results.",
    "example_tr": "Bu beklenmedik sonuçları teyit etmek için veri lazım.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -22975,6 +23073,7 @@
    "example_tr": "Mahkemenin bu konuda yargı yetkisi yoktur.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -23067,7 +23166,8 @@
    "example_en": "The police kept the house under surveillance.",
    "example_tr": "Polis evi gözetim altında tuttu.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -23130,6 +23230,7 @@
    "example_tr": "Hükümet yöneticiye dava açmaya karar verdi.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -23567,7 +23668,8 @@
    "example_en": "This is a very lucrative investment.",
    "example_tr": "Bu çok kazançlı bir yatırım.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -23668,7 +23770,8 @@
    "example_en": "The ecological damage might be irreversible.",
    "example_tr": "Ekolojik hasar geri döndürülemez olabilir.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -23776,6 +23879,7 @@
    "example_tr": "Burada bir selin feci sonuçları olur.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -23791,7 +23895,8 @@
    "example_en": "They want to protect this pristine forest.",
    "example_tr": "Bu bozulmamış ormanı korumak istiyorlar.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -23806,6 +23911,7 @@
    "example_tr": "Fosil yakıt tüketimini bırakmalıyız.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -23837,6 +23943,7 @@
    "example_tr": "Sürdürülebilirlik gezegenimiz için çok önemlidir.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -23854,6 +23961,7 @@
    "example_tr": "Zehirli kirlilik nehir ekosistemini yok eder.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -24472,6 +24580,7 @@
    "example_tr": "İş sıkıcı; yine de uygulanabilir.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -24804,6 +24913,7 @@
    "example_tr": "Yorgundu, bu yüzden yatağa erken gitti.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -25014,7 +25124,8 @@
    "example_en": "The logic behind his plan is irrefutable.",
    "example_tr": "Planının arkasındaki mantık çürütülemez.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -26255,7 +26366,8 @@
    "example_en": "The election gave them a strong mandate.",
    "example_tr": "Seçim onlara güçlü bir yetki verdi.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -26327,7 +26439,8 @@
    "example_en": "Censorship of the internet is ubiquitous.",
    "example_tr": "İnternet sansürü her yerde yaygın.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -27050,7 +27163,8 @@
    "example_en": "Beauty is subjective and a matter of opinion.",
    "example_tr": "Güzellik özneldir ve bir görüş meselesidir.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -27251,7 +27365,8 @@
    "example_en": "We need a catalyst for the experiment.",
    "example_tr": "Deney için bir katalizöre ihtiyacımız var.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -27311,6 +27426,7 @@
    "example_tr": "Türler zamanla evrimleşir.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -27385,6 +27501,7 @@
    "example_tr": "Bu veriden ne çıkarabiliriz?",
    "decks": [
     "general",
+    "ielts",
     "yokdil"
    ]
   },
@@ -27743,7 +27860,8 @@
    "example_en": "A successful entrepreneur learns from early failures.",
    "example_tr": "Başarılı bir girişimci ilk hatalarından ders alır.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -27787,6 +27905,7 @@
    "example_tr": "Tahvilin çok yüksek bir getirisi var.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -27803,6 +27922,7 @@
    "example_tr": "Kriz sırasında fiyatlar dalgalanma eğilimindedir.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -28415,6 +28535,7 @@
    "example_tr": "Bu bitkiler adaya özgüdür.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -28431,7 +28552,8 @@
    "example_en": "The local flora is beautiful but toxic.",
    "example_tr": "Yerel bitki örtüsü güzel ama zehirlidir.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -28446,7 +28568,8 @@
    "example_en": "The island's fauna includes many different birds.",
    "example_tr": "Adanın faunası birçok farklı kuşu içerir.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -28476,6 +28599,7 @@
    "example_tr": "Büyük buzul her yıl daha hızlı eriyor.",
    "decks": [
     "general",
+    "ielts",
     "yds"
    ]
   },
@@ -28726,6 +28850,7 @@
    "example_tr": "Kültürel mirasımızı korumalıyız.",
    "decks": [
     "general",
+    "ielts",
     "yds",
     "yokdil"
    ]
@@ -28756,7 +28881,8 @@
    "example_en": "Our city is very cosmopolitan.",
    "example_tr": "Şehrimiz çok kozmopolit.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -28786,7 +28912,8 @@
    "example_en": "We need to question this stereotype.",
    "example_tr": "Bu kalıp yargıyı sorgulamamız gerek.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -28846,7 +28973,8 @@
    "example_en": "The school is secular, not religious.",
    "example_tr": "Okul dinî değil, laik.",
    "decks": [
-    "general"
+    "general",
+    "ielts"
    ]
   },
   {
@@ -29383,7 +29511,8 @@
    "example_en": "Prices rose; consequently, sales fell.",
    "example_tr": "Fiyatlar arttı; sonuç olarak satışlar düştü.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "Genellikle cümle başında veya ortasında bağlaç gibi kullanılır."
   },
@@ -29400,7 +29529,8 @@
    "example_tr": "Test hızlıdır; üstelik ucuzdur.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "moreover ve in addition ile eş anlamlıdır."
   },
@@ -29496,7 +29626,8 @@
    "example_en": "Sunlight is beneficial for plants.",
    "example_tr": "Güneş ışığı bitkiler için faydalıdır.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "be beneficial to/for (bir şeye/birine faydalı olmak)"
   },
@@ -29529,7 +29660,8 @@
    "example_en": "The team comprises ten scientists.",
    "example_tr": "Ekip on bilim insanından oluşur.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "'consist of' ile aynı anlamdadır; 'comprise of' denmez."
   },
@@ -29545,7 +29677,8 @@
    "example_tr": "Uzmanlar riskleri vurgular.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "Genellikle 'emphasise that' yapısıyla kullanılır."
   },
@@ -29563,7 +29696,8 @@
    "example_tr": "Çocuklar soğuk algınlığına yatkındır.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "susceptible to (bir şeye karşı duyarlı/savunmasız)"
   },
@@ -29659,7 +29793,8 @@
    "example_en": "Hormones help to regulate body temperature.",
    "example_tr": "Hormonlar vücut sıcaklığını düzenlemeye yardımcı olur.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ]
   },
   {
@@ -29691,7 +29826,8 @@
    "example_tr": "Polis trafik kurallarını uygular.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "enforce a law/rule (bir yasayı/kuralı uygulamak)"
   },
@@ -29755,7 +29891,8 @@
    "example_en": "Results justify the high expenses.",
    "example_tr": "Sonuçlar yüksek masrafları haklı çıkarıyor.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ]
   },
   {
@@ -29835,7 +29972,8 @@
    "example_en": "Some robots are fully autonomous.",
    "example_tr": "Bazı robotlar tamamen otonomdur.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ]
   },
   {
@@ -29929,7 +30067,8 @@
    "example_en": "Stock prices could plummet.",
    "example_tr": "Hisse fiyatları çakılabilir.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ]
   },
   {
@@ -29944,7 +30083,8 @@
    "example_en": "Prices surge during a crisis.",
    "example_tr": "Kriz sırasında fiyatlar aniden artar.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ]
   },
   {
@@ -30025,7 +30165,8 @@
    "example_tr": "İnsanlar doğal kaynakları hızla tüketiyor.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "deplete resources (kaynakları tüketmek)"
   },
@@ -30057,7 +30198,8 @@
    "example_tr": "Kimyasallar toprağı kirletir.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -30104,7 +30246,8 @@
    "example_en": "Companies exploit natural resources for profit.",
    "example_tr": "Şirketler kâr için doğal kaynaklardan faydalanır.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "Hem olumlu (yararlanmak) hem olumsuz (sömürmek) anlamı var."
   },
@@ -30120,7 +30263,8 @@
    "example_tr": "Yüksek yağış sellere neden olur.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "Hem yağmur hem de kar yağışı için kullanılır."
   },
@@ -30152,7 +30296,8 @@
    "example_tr": "Ormanı korumalıyız.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "preserve the environment (çevreyi korumak)"
   },
@@ -30169,7 +30314,8 @@
    "example_tr": "Modern tarım ağır makinelere dayanır.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -30199,7 +30345,8 @@
    "example_tr": "Kurşun tehlikeli bir kirleticidir.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -30215,7 +30362,8 @@
    "example_tr": "Bölge şiddetli bir kuraklıkla karşı karşıya.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "severe weather (şiddetli hava), severe pain (ciddi ağrı)"
   },
@@ -30232,7 +30380,8 @@
    "example_tr": "Kirlilik okyanuslardaki deniz yaşamını tehdit ediyor.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "marine life (deniz yaşamı), marine biologist vb."
   },
@@ -30249,7 +30398,8 @@
    "example_tr": "Karasal hayvanlar karada yaşar.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -30265,7 +30415,8 @@
    "example_tr": "Bölgeyi yoğun bir bitki örtüsü kaplıyor.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -30329,7 +30480,8 @@
    "example_tr": "Doktorlar nadir hastalıkları teşhis eder.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "be diagnosed with (... teşhisi konmak)"
   },
@@ -30380,7 +30532,8 @@
    "example_tr": "Bebek ölüm oranı düşüyor.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -30396,7 +30549,8 @@
    "example_tr": "Grip salgını bütün kasabayı vurdu.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -30494,7 +30648,8 @@
    "example_tr": "İyi beslenme sağlığı ve uzun ömrü destekler.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -30651,7 +30806,8 @@
    "example_tr": "İyi hijyen enfeksiyonları önler.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "personal hygiene (kişisel temizlik)"
   },
@@ -31280,7 +31436,8 @@
    "example_en": "Lions have a strict hierarchy.",
    "example_tr": "Aslanların sıkı bir hiyerarşisi vardır.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "social hierarchy (sosyal hiyerarşi)"
   },
@@ -31454,7 +31611,8 @@
    "example_tr": "Güneş panelleri temiz enerji üretir.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "generate income/revenue (gelir üretmek)"
   },
@@ -31486,7 +31644,8 @@
    "example_en": "Smartphones made many old cameras obsolete.",
    "example_tr": "Akıllı telefonlar birçok eski kamerayı gereksiz kıldı.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "become obsolete (kullanımdan kalkmak)"
   },
@@ -31503,7 +31662,8 @@
    "example_tr": "Sentetik kauçuk üretiyorlar.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -31580,7 +31740,8 @@
    "example_en": "She was a pioneer of modern physics.",
    "example_tr": "O, modern fiziğin öncülerinden biriydi.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ]
   },
   {
@@ -31612,7 +31773,8 @@
    "example_en": "A tiny design flaw can cause engine failure.",
    "example_tr": "Küçük bir tasarım kusuru motoru bozabilir.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "fatal flaw (ölümcül hata/kusur)"
   },
@@ -31756,7 +31918,8 @@
    "example_en": "Scientists can manipulate genes in the lab.",
    "example_tr": "Bilim insanları laboratuvarda genlerle oynayabilir.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ]
   },
   {
@@ -31805,7 +31968,8 @@
    "example_tr": "Doktorlar hastanın semptomlarını değerlendirecek.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "assess the damage (hasarı değerlendirmek)"
   },
@@ -31852,7 +32016,8 @@
    "example_en": "Adolescents need more sleep.",
    "example_tr": "Ergenlerin daha fazla uykuya ihtiyacı var.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "Sıfat olarak 'ergenliğe ait' anlamına gelir."
   },
@@ -31884,7 +32049,8 @@
    "example_tr": "Temel okuryazarlık hayatidir.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -31900,7 +32066,8 @@
    "example_tr": "Okullar teknolojiyi derse entegre eder.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "integrate into (bir şeye entegre olmak/etmek)"
   },
@@ -31917,7 +32084,8 @@
    "example_tr": "İlköğretim zorunludur.",
    "decks": [
     "yds",
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "compulsory education (zorunlu eğitim)"
   },
@@ -31933,7 +32101,8 @@
    "example_en": "Teachers must nurture young artistic talent.",
    "example_tr": "Öğretmenler genç sanatsal yeteneği beslemelidir.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "nature vs. nurture (doğuştan gelen mi, sonradan kazanılan mı tartışması)"
   },
@@ -31981,7 +32150,8 @@
    "example_en": "Juvenile crime has fallen.",
    "example_tr": "Çocuk suçları azaldı.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ],
    "note": "juvenile delinquency (çocuk suçluluğu)"
   },
@@ -32059,7 +32229,8 @@
    "example_en": "The idea is finally accepted by mainstream science.",
    "example_tr": "Fikir sonunda ana akım bilim tarafından kabul edildi.",
    "decks": [
-    "yds"
+    "yds",
+    "ielts"
    ]
   },
   {
@@ -32121,7 +32292,8 @@
    "example_en": "The results differ significantly.",
    "example_tr": "Sonuçlar önemli ölçüde farklılık gösterir.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "differ significantly (önemli ölçüde farklı olmak)"
   },
@@ -32277,7 +32449,8 @@
    "example_en": "The subsequent tests confirmed the theory.",
    "example_tr": "Sonraki testler teoriyi doğruladı.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "subsequent to: -den sonra"
   },
@@ -32371,7 +32544,8 @@
    "example_en": "The viral pandemic affected global markets.",
    "example_tr": "Viral pandemi küresel piyasaları etkiledi.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -32573,7 +32747,8 @@
    "example_en": "A sedentary life causes obesity.",
    "example_tr": "Hareketsiz bir yaşam obeziteye neden olur.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "sedentary lifestyle (hareketsiz yaşam tarzı)"
   },
@@ -32696,7 +32871,8 @@
    "example_en": "High maternal age increases certain risks.",
    "example_tr": "İleri anne yaşı belirli riskleri artırır.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "paternal (babaya ait) kelimesinin zıddıdır."
   },
@@ -32712,7 +32888,8 @@
    "example_en": "Poor sanitation spreads disease.",
    "example_tr": "Yetersiz sanitasyon hastalık yayar.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "water and sanitation (su ve sanitasyon)"
   },
@@ -32835,7 +33012,8 @@
    "example_en": "The initial results were very promising.",
    "example_tr": "İlk sonuçlar oldukça umut vericiydi.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "initially (adv): başlangıçta"
   },
@@ -32851,7 +33029,8 @@
    "example_en": "A high proportion of cells died.",
    "example_tr": "Hücrelerin büyük bir kısmı öldü.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "in proportion to (ile orantılı olarak)"
   },
@@ -32960,7 +33139,8 @@
    "example_en": "Plants synthesise their food.",
    "example_tr": "Bitkiler kendi besinlerini sentezler.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -33099,7 +33279,8 @@
    "example_en": "Researchers question the study's validity.",
    "example_tr": "Araştırmacılar çalışmanın geçerliliğini sorguluyor.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -33160,7 +33341,8 @@
    "example_en": "Farmers use chemical fertiliser for crops.",
    "example_tr": "Çiftçiler ekinler için kimyasal gübre kullanır.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "İngiliz İngilizcesi yazımıdır (Amerikan: fertilizer)."
   },
@@ -33177,7 +33359,8 @@
    "example_en": "Plastics degrade very slowly.",
    "example_tr": "Plastikler çok yavaş bozulur.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "degrade the environment (çevreye zarar vermek)"
   },
@@ -33193,7 +33376,8 @@
    "example_en": "Birds protect their offspring.",
    "example_tr": "Kuşlar yavrularını korur.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -33223,7 +33407,8 @@
    "example_en": "They harvest wheat in autumn.",
    "example_tr": "Sonbaharda buğday hasat ederler.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ]
   },
   {
@@ -33253,7 +33438,8 @@
    "example_en": "Certain plants thrive in harsh climates.",
    "example_tr": "Bazı bitkiler sert iklimlerde iyi gelişir.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "thrive on: ... ile güçlenmek, ... sayesinde gelişmek"
   },
@@ -33270,7 +33456,8 @@
    "example_en": "DNA has a specific sequence.",
    "example_tr": "DNA'nın belirli bir dizilimi vardır.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "in sequence (sırayla)"
   },
@@ -33345,7 +33532,8 @@
    "example_en": "Experts attribute this to climate change.",
    "example_tr": "Uzmanlar bunu iklim değişikliğine bağlıyor.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "attribute X to Y: X'i Y'ye bağlamak/atfetmek"
   },
@@ -33534,7 +33722,8 @@
    "example_en": "New laws prohibit smoking in all parks.",
    "example_tr": "Yeni yasalar tüm parklarda sigara içmeyi yasaklıyor.",
    "decks": [
-    "yokdil"
+    "yokdil",
+    "ielts"
    ],
    "note": "prohibit X from doing Y kalıbıyla da kullanılır."
   },
@@ -33582,6 +33771,939 @@
    "decks": [
     "yokdil"
    ]
+  },
+  {
+   "id": "exam-infrastructure",
+   "word": "infrastructure",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "altyapı"
+   ],
+   "example_en": "Poor infrastructure limits trade.",
+   "example_tr": "Kötü altyapı ticareti sınırlar.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-urban",
+   "word": "urban",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kentsel",
+    "şehre ait"
+   ],
+   "example_en": "Most jobs are in urban areas.",
+   "example_tr": "Çoğu iş kentsel alanlardadır.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "urban sprawl (kentsel yayılma) şeklinde sıkça karşınıza çıkar."
+  },
+  {
+   "id": "exam-authority",
+   "word": "authority",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yetki",
+    "otorite"
+   ],
+   "example_en": "The council has no legal authority.",
+   "example_tr": "Konseyin yasal yetkisi yoktur.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "have authority over sth (bir şey üzerinde yetkisi olmak)"
+  },
+  {
+   "id": "exam-commute",
+   "word": "commute",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "işe gidip gelmek"
+   ],
+   "example_en": "Many people commute by train.",
+   "example_tr": "Birçok kişi işe trenle gider.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-subsidise",
+   "word": "subsidise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "sübvanse etmek"
+   ],
+   "example_en": "Governments often subsidise farming.",
+   "example_tr": "Hükümetler tarımı sıkça sübvanse eder.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-pedestrian",
+   "word": "pedestrian",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yaya"
+   ],
+   "example_en": "Pedestrians must use the crossing.",
+   "example_tr": "Yayalar yaya geçidini kullanmalıdır.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-metropolis",
+   "word": "metropolis",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "büyükşehir",
+    "metropol"
+   ],
+   "example_en": "London is a bustling metropolis.",
+   "example_tr": "Londra hareketli bir metropoldür.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-gridlock",
+   "word": "gridlock",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "trafik kilidi",
+    "tıkanıklık"
+   ],
+   "example_en": "Heavy snow caused gridlock.",
+   "example_tr": "Yoğun kar trafik tıkanıklığına yol açtı.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-transparency",
+   "word": "transparency",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "şeffaflık"
+   ],
+   "example_en": "We need more financial transparency.",
+   "example_tr": "Daha fazla mali şeffaflığa ihtiyacımız var.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-itinerary",
+   "word": "itinerary",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "seyahat programı",
+    "rota"
+   ],
+   "example_en": "The itinerary includes Paris.",
+   "example_tr": "Seyahat programı Paris'i içerir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-provincial",
+   "word": "provincial",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "taşraya ait",
+    "yerel"
+   ],
+   "example_en": "Provincial towns are often quieter.",
+   "example_tr": "Taşra kasabaları genellikle daha sakindir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-civic",
+   "word": "civic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "yurttaşlık",
+    "sivil"
+   ],
+   "example_en": "Voting is a civic duty.",
+   "example_tr": "Oy kullanmak bir yurttaşlık görevidir.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "civic duty (vatandaşlık görevi) kalıbı okuma parçalarında sıkça geçer."
+  },
+  {
+   "id": "exam-productivity",
+   "word": "productivity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "üretkenlik",
+    "verimlilik"
+   ],
+   "example_en": "High stress reduces productivity.",
+   "example_tr": "Yüksek stres verimliliği azaltır.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-undertake",
+   "word": "undertake",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "üstlenmek",
+    "yapmak"
+   ],
+   "example_en": "The team will undertake new research.",
+   "example_tr": "Ekip yeni bir araştırma üstlenecek.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-theoretical",
+   "word": "theoretical",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "teorik",
+    "kuramsal"
+   ],
+   "example_en": "The course is purely theoretical.",
+   "example_tr": "Kurs tamamen teoriktir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-remuneration",
+   "word": "remuneration",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ücret",
+    "maaş"
+   ],
+   "example_en": "Fair remuneration is vital.",
+   "example_tr": "Adil ücret çok önemlidir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-numeracy",
+   "word": "numeracy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sayısal beceri"
+   ],
+   "example_en": "Basic numeracy is vital for jobs.",
+   "example_tr": "Temel sayısal beceri iş için şarttır.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "literacy (okuryazarlık) ile birlikte sıkça kullanılır."
+  },
+  {
+   "id": "exam-redundancy",
+   "word": "redundancy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "işten çıkarma",
+    "fazlalık"
+   ],
+   "example_en": "The factory faces mass redundancy.",
+   "example_tr": "Fabrika toplu işten çıkarmalarla karşı karşıya.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "make somebody redundant (birini işten çıkarmak)"
+  },
+  {
+   "id": "exam-apprentice",
+   "word": "apprentice",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "çırak"
+   ],
+   "example_en": "The apprentice learns fast.",
+   "example_tr": "Çırak hızlı öğrenir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-advancement",
+   "word": "advancement",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ilerleme",
+    "gelişme"
+   ],
+   "example_en": "Technological advancement is rapid.",
+   "example_tr": "Teknolojik ilerleme çok hızlı.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-resign",
+   "word": "resign",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "istifa etmek",
+    "ayrılmak"
+   ],
+   "example_en": "Some staff resign each year.",
+   "example_tr": "Bazı çalışanlar her yıl istifa eder.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "resign from (bir yerden istifa etmek) şeklinde preposition alır."
+  },
+  {
+   "id": "exam-administrative",
+   "word": "administrative",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "idari",
+    "yönetimsel"
+   ],
+   "example_en": "The school has administrative staff.",
+   "example_tr": "Okulun idari personeli vardır.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-tenure",
+   "word": "tenure",
+   "pos": "n",
+   "level": "C2",
+   "tr": [
+    "görev süresi",
+    "kadro"
+   ],
+   "example_en": "His tenure as mayor ends this year.",
+   "example_tr": "Belediye başkanı olarak görev süresi bu yıl bitiyor.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-vacancy",
+   "word": "vacancy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "açık pozisyon",
+    "boşluk"
+   ],
+   "example_en": "There is a vacancy in sales.",
+   "example_tr": "Satış departmanında açık pozisyon var.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "job vacancy (iş ilanı/açık pozisyon) sıkça kullanılır."
+  },
+  {
+   "id": "exam-footprint",
+   "word": "footprint",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ayak izi",
+    "etki"
+   ],
+   "example_en": "We must reduce our carbon footprint.",
+   "example_tr": "Karbon ayak izimizi azaltmalıyız.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "carbon footprint (karbon ayak izi) çok yaygındır."
+  },
+  {
+   "id": "exam-atmospheric",
+   "word": "atmospheric",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "atmosferik",
+    "havaya ait"
+   ],
+   "example_en": "Atmospheric pressure falls with height.",
+   "example_tr": "Atmosfer basıncı yükseklikle azalır.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-urbanisation",
+   "word": "urbanisation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kentleşme"
+   ],
+   "example_en": "Rapid urbanisation harms nature.",
+   "example_tr": "Hızlı kentleşme doğaya zarar verir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-algorithm",
+   "word": "algorithm",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "algoritma"
+   ],
+   "example_en": "The new algorithm is very efficient.",
+   "example_tr": "Yeni algoritma çok verimlidir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-disseminate",
+   "word": "disseminate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yaymak",
+    "dağıtmak"
+   ],
+   "example_en": "They disseminate new ideas.",
+   "example_tr": "Yeni fikirleri yayarlar.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "disseminate information (bilgi yaymak) çok yaygın bir kalıptır."
+  },
+  {
+   "id": "exam-patent",
+   "word": "patent",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "patent"
+   ],
+   "example_en": "She applied for a patent.",
+   "example_tr": "O bir patent için başvurdu.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "apply for a patent (patent başvurusu yapmak)"
+  },
+  {
+   "id": "exam-prototype",
+   "word": "prototype",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "prototip",
+    "ilk örnek"
+   ],
+   "example_en": "They built a working prototype.",
+   "example_tr": "Çalışan bir prototip ürettiler.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-interactive",
+   "word": "interactive",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "etkileşimli",
+    "interaktif"
+   ],
+   "example_en": "We use interactive software.",
+   "example_tr": "Etkileşimli yazılım kullanırız.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-scrutiny",
+   "word": "scrutiny",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "inceleme",
+    "denetim"
+   ],
+   "example_en": "The plan requires close scrutiny.",
+   "example_tr": "Plan yakın bir inceleme gerektiriyor.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "under scrutiny (mercek altında, incelenmekte)"
+  },
+  {
+   "id": "exam-correlate",
+   "word": "correlate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ilişkili olmak",
+    "bağdaştırmak"
+   ],
+   "example_en": "Income levels correlate with health.",
+   "example_tr": "Gelir düzeyi sağlıkla ilişkilidir.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "correlate with (ile ilişkili olmak) yapısıyla kullanılır."
+  },
+  {
+   "id": "exam-demographic",
+   "word": "demographic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "demografik"
+   ],
+   "example_en": "We see huge demographic changes.",
+   "example_tr": "Büyük demografik değişiklikler görüyoruz.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-upbringing",
+   "word": "upbringing",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yetiştirilme",
+    "terbiye"
+   ],
+   "example_en": "His strict upbringing helped.",
+   "example_tr": "Sıkı terbiyesi ona yardımcı oldu.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-immunity",
+   "word": "immunity",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bağışıklık",
+    "muafiyet"
+   ],
+   "example_en": "Vaccines provide strong immunity.",
+   "example_tr": "Aşılar güçlü bağışıklık sağlar.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-physiological",
+   "word": "physiological",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "fizyolojik",
+    "bedensel"
+   ],
+   "example_en": "Hunger is a physiological need.",
+   "example_tr": "Açlık fizyolojik bir ihtiyaçtır.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-household",
+   "word": "household",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ev halkı",
+    "hane"
+   ],
+   "example_en": "Many households now own two cars.",
+   "example_tr": "Artık birçok hanenin iki arabası var.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-norm",
+   "word": "norm",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "norm",
+    "olağan durum"
+   ],
+   "example_en": "Remote work is now the norm.",
+   "example_tr": "Uzaktan çalışma artık olağan hale geldi.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-illustrate",
+   "word": "illustrate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "göstermek",
+    "örneklemek"
+   ],
+   "example_en": "These data illustrate the problem.",
+   "example_tr": "Bu veriler sorunu açıkça gösteriyor.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-percentage",
+   "word": "percentage",
+   "pos": "n",
+   "level": "B1",
+   "tr": [
+    "yüzde",
+    "oran"
+   ],
+   "example_en": "The percentage of working mothers rose.",
+   "example_tr": "Çalışan annelerin yüzdesi arttı.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-steadily",
+   "word": "steadily",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "düzenli olarak",
+    "istikrarla"
+   ],
+   "example_en": "Global temperatures rise steadily.",
+   "example_tr": "Küresel sıcaklıklar istikrarlı biçimde artıyor.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-overall",
+   "word": "overall",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "genel",
+    "toplam"
+   ],
+   "example_en": "The overall cost of the project is high.",
+   "example_tr": "Projenin genel maliyeti yüksektir.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "Sıklıkla 'overall effect' veya 'overall cost' şeklinde kullanılır."
+  },
+  {
+   "id": "exam-soar",
+   "word": "soar",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "fırlamak",
+    "hızla artmak"
+   ],
+   "example_en": "Prices can soar after a bad harvest.",
+   "example_tr": "Kötü bir hasattan sonra fiyatlar fırlayabilir.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "Grafik betimlemede sıkça kullanılır."
+  },
+  {
+   "id": "exam-peak",
+   "word": "peak",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "zirveye ulaşmak"
+   ],
+   "example_en": "Sales peak in December.",
+   "example_tr": "Satışlar aralıkta zirveye ulaşır.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "İsim olarak da (zirve, tepe) çok sık karşınıza çıkar."
+  },
+  {
+   "id": "exam-substantially",
+   "word": "substantially",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "büyük ölçüde"
+   ],
+   "example_en": "Profits grew substantially last year.",
+   "example_tr": "Kârlar geçen yıl büyük ölçüde arttı.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-considerably",
+   "word": "considerably",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "önemli ölçüde",
+    "oldukça"
+   ],
+   "example_en": "Temperatures have risen considerably.",
+   "example_tr": "Sıcaklıklar önemli ölçüde arttı.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "Artış veya azalış bildiren fiillerle (rise, drop) sıkça kullanılır."
+  },
+  {
+   "id": "exam-steeply",
+   "word": "steeply",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "keskin bir şekilde",
+    "hızla"
+   ],
+   "example_en": "Sales fell steeply in March.",
+   "example_tr": "Satışlar Mart ayında keskin bir şekilde düştü.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-sharply",
+   "word": "sharply",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "keskin bir şekilde",
+    "hızla"
+   ],
+   "example_en": "Sales of electric cars rose sharply.",
+   "example_tr": "Elektrikli araba satışları hızla arttı.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "IELTS Task 1 grafik yazılarında (fall/rise sharply) çok yaygındır."
+  },
+  {
+   "id": "exam-upward",
+   "word": "upward",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "yukarı doğru",
+    "artan"
+   ],
+   "example_en": "There is an upward trend in sales.",
+   "example_tr": "Satışlarda artan bir eğilim vardır.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-downward",
+   "word": "downward",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "aşağı doğru",
+    "düşüşte"
+   ],
+   "example_en": "There is a downward trend.",
+   "example_tr": "Aşağı doğru bir eğilim var.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "downward trend (düşüş eğilimi) grafik sorularında çok işe yarar."
+  },
+  {
+   "id": "exam-steady",
+   "word": "steady",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "sabit",
+    "istikrarlı"
+   ],
+   "example_en": "There was a steady rise in sales.",
+   "example_tr": "Satışlarda istikrarlı bir artış oldu.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-noticeable",
+   "word": "noticeable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "fark edilebilir",
+    "belirgin"
+   ],
+   "example_en": "The change is highly noticeable.",
+   "example_tr": "Değişim oldukça belirgindir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-dip",
+   "word": "dip",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "düşmek"
+   ],
+   "example_en": "Prices may dip in the summer.",
+   "example_tr": "Fiyatlar yazın düşebilir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-hover",
+   "word": "hover",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "civarında seyretmek"
+   ],
+   "example_en": "Prices hover around ten euros.",
+   "example_tr": "Fiyatlar on avro civarında seyrediyor.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "Task 1 grafik sorularında rakamların sabit seyrini anlatırken kullanılır."
+  },
+  {
+   "id": "exam-drawback",
+   "word": "drawback",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "dezavantaj",
+    "engel"
+   ],
+   "example_en": "The main drawback is the high cost.",
+   "example_tr": "Ana dezavantaj yüksek maliyettir.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-outweigh",
+   "word": "outweigh",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "daha ağır basmak"
+   ],
+   "example_en": "The benefits outweigh the risks.",
+   "example_tr": "Faydalar risklerden daha ağır basar.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-additionally",
+   "word": "additionally",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "ayrıca",
+    "buna ek olarak"
+   ],
+   "example_en": "Additionally, the plan saves money.",
+   "example_tr": "Ayrıca plan para tasarrufu sağlar.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-admittedly",
+   "word": "admittedly",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "kabul etmek gerekir ki"
+   ],
+   "example_en": "It is admittedly a hard task.",
+   "example_tr": "Kabul etmek gerekir ki bu zor bir görev.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-undeniable",
+   "word": "undeniable",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "inkâr edilemez",
+    "yadsınamaz"
+   ],
+   "example_en": "The benefits of exercise are undeniable.",
+   "example_tr": "Egzersizin faydaları inkâr edilemez.",
+   "decks": [
+    "ielts"
+   ]
+  },
+  {
+   "id": "exam-highlight",
+   "word": "highlight",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "vurgulamak",
+    "dikkat çekmek"
+   ],
+   "example_en": "The results highlight the need for change.",
+   "example_tr": "Sonuçlar değişim ihtiyacını vurguluyor.",
+   "decks": [
+    "ielts"
+   ],
+   "note": "Araştırma bulgularını (results, findings) sunarken sıkça kullanılır."
   }
  ],
  "units": [

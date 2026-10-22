@@ -99,6 +99,16 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
+## Exam decks (content v12)
+
+Content/exams/<exam>.json holds each exam's word list (from Gemini 3.1 Pro, asked topic by topic,
+50 words at a time; one long list was refused as if copied) and full cards for words no course
+teaches. tools/build_exams.py tags the course card when a course teaches the word, otherwise adds
+an exam-only card ("exam-<word>", exam decks only, so it never reaches a level course); a card
+written for one exam serves the others. Run it after build_curriculum.py. Decks: YDS 355, YÖKDİL
+309, IELTS 270. IELTS still lists 72 words without a card (build_exams.py prints them); Gemini
+kept erroring or refusing those batches ("credentials", "deter", "terminate" look like triggers).
+
 ## C2 course (content v9)
 
 All twelve C2 units (core, rhetoric, character, power, justice, thought, science, finance,

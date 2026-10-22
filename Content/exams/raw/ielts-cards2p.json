@@ -1,0 +1,64 @@
+{
+ "cards": [
+  {
+   "word": "percentage",
+   "pos": "n",
+   "level": "B1",
+   "tr": [
+    "yüzde",
+    "oran"
+   ],
+   "example_en": "The percentage of working mothers rose.",
+   "example_tr": "Çalışan annelerin yüzdesi arttı.",
+   "note": ""
+  },
+  {
+   "word": "overall",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "genel",
+    "toplam"
+   ],
+   "example_en": "The overall cost of the project is high.",
+   "example_tr": "Projenin genel maliyeti yüksektir.",
+   "note": "Sıklıkla 'overall effect' veya 'overall cost' şeklinde kullanılır."
+  },
+  {
+   "word": "considerably",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "önemli ölçüde",
+    "oldukça"
+   ],
+   "example_en": "Temperatures have risen considerably.",
+   "example_tr": "Sıcaklıklar önemli ölçüde arttı.",
+   "note": "Artış veya azalış bildiren fiillerle (rise, drop) sıkça kullanılır."
+  },
+  {
+   "word": "sharply",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "keskin bir şekilde",
+    "hızla"
+   ],
+   "example_en": "Sales of electric cars rose sharply.",
+   "example_tr": "Elektrikli araba satışları hızla arttı.",
+   "note": "IELTS Task 1 grafik yazılarında (fall/rise sharply) çok yaygındır."
+  },
+  {
+   "word": "highlight",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "vurgulamak",
+    "dikkat çekmek"
+   ],
+   "example_en": "The results highlight the need for change.",
+   "example_tr": "Sonuçlar değişim ihtiyacını vurguluyor.",
+   "note": "Araştırma bulgularını (results, findings) sunarken sıkça kullanılır."
+  }
+ ]
+}

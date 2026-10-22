@@ -712,11 +712,6 @@
    "level": "B2"
   },
   {
-   "word": "industrialisation",
-   "pos": "n",
-   "level": "B2"
-  },
-  {
    "word": "catastrophic",
    "pos": "adj",
    "level": "C1"
@@ -1662,5 +1657,691 @@
    "level": "B2"
   }
  ],
- "cards": []
+ "cards": [
+  {
+   "word": "infrastructure",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "altyapı"
+   ],
+   "example_en": "Poor infrastructure limits trade.",
+   "example_tr": "Kötü altyapı ticareti sınırlar."
+  },
+  {
+   "word": "authority",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yetki",
+    "otorite"
+   ],
+   "example_en": "The council has no legal authority.",
+   "example_tr": "Konseyin yasal yetkisi yoktur.",
+   "note": "have authority over sth (bir şey üzerinde yetkisi olmak)"
+  },
+  {
+   "word": "subsidise",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "sübvanse etmek"
+   ],
+   "example_en": "Governments often subsidise farming.",
+   "example_tr": "Hükümetler tarımı sıkça sübvanse eder."
+  },
+  {
+   "word": "pedestrian",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yaya"
+   ],
+   "example_en": "Pedestrians must use the crossing.",
+   "example_tr": "Yayalar yaya geçidini kullanmalıdır."
+  },
+  {
+   "word": "metropolis",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "büyükşehir",
+    "metropol"
+   ],
+   "example_en": "London is a bustling metropolis.",
+   "example_tr": "Londra hareketli bir metropoldür."
+  },
+  {
+   "word": "transparency",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "şeffaflık"
+   ],
+   "example_en": "We need more financial transparency.",
+   "example_tr": "Daha fazla mali şeffaflığa ihtiyacımız var."
+  },
+  {
+   "word": "provincial",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "taşraya ait",
+    "yerel"
+   ],
+   "example_en": "Provincial towns are often quieter.",
+   "example_tr": "Taşra kasabaları genellikle daha sakindir."
+  },
+  {
+   "word": "productivity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "üretkenlik",
+    "verimlilik"
+   ],
+   "example_en": "High stress reduces productivity.",
+   "example_tr": "Yüksek stres verimliliği azaltır."
+  },
+  {
+   "word": "theoretical",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "teorik",
+    "kuramsal"
+   ],
+   "example_en": "The course is purely theoretical.",
+   "example_tr": "Kurs tamamen teoriktir."
+  },
+  {
+   "word": "numeracy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sayısal beceri"
+   ],
+   "example_en": "Basic numeracy is vital for jobs.",
+   "example_tr": "Temel sayısal beceri iş için şarttır.",
+   "note": "literacy (okuryazarlık) ile birlikte sıkça kullanılır."
+  },
+  {
+   "word": "redundancy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "işten çıkarma",
+    "fazlalık"
+   ],
+   "example_en": "The factory faces mass redundancy.",
+   "example_tr": "Fabrika toplu işten çıkarmalarla karşı karşıya.",
+   "note": "make somebody redundant (birini işten çıkarmak)"
+  },
+  {
+   "word": "advancement",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ilerleme",
+    "gelişme"
+   ],
+   "example_en": "Technological advancement is rapid.",
+   "example_tr": "Teknolojik ilerleme çok hızlı."
+  },
+  {
+   "word": "administrative",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "idari",
+    "yönetimsel"
+   ],
+   "example_en": "The school has administrative staff.",
+   "example_tr": "Okulun idari personeli vardır."
+  },
+  {
+   "word": "tenure",
+   "pos": "n",
+   "level": "C2",
+   "tr": [
+    "görev süresi",
+    "kadro"
+   ],
+   "example_en": "His tenure as mayor ends this year.",
+   "example_tr": "Belediye başkanı olarak görev süresi bu yıl bitiyor."
+  },
+  {
+   "word": "footprint",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ayak izi",
+    "etki"
+   ],
+   "example_en": "We must reduce our carbon footprint.",
+   "example_tr": "Karbon ayak izimizi azaltmalıyız.",
+   "note": "carbon footprint (karbon ayak izi) çok yaygındır."
+  },
+  {
+   "word": "urbanisation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "kentleşme"
+   ],
+   "example_en": "Rapid urbanisation harms nature.",
+   "example_tr": "Hızlı kentleşme doğaya zarar verir."
+  },
+  {
+   "word": "algorithm",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "algoritma"
+   ],
+   "example_en": "The new algorithm is very efficient.",
+   "example_tr": "Yeni algoritma çok verimlidir."
+  },
+  {
+   "word": "patent",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "patent"
+   ],
+   "example_en": "She applied for a patent.",
+   "example_tr": "O bir patent için başvurdu.",
+   "note": "apply for a patent (patent başvurusu yapmak)"
+  },
+  {
+   "word": "prototype",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "prototip",
+    "ilk örnek"
+   ],
+   "example_en": "They built a working prototype.",
+   "example_tr": "Çalışan bir prototip ürettiler."
+  },
+  {
+   "word": "scrutiny",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "inceleme",
+    "denetim"
+   ],
+   "example_en": "The plan requires close scrutiny.",
+   "example_tr": "Plan yakın bir inceleme gerektiriyor.",
+   "note": "under scrutiny (mercek altında, incelenmekte)"
+  },
+  {
+   "word": "demographic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "demografik"
+   ],
+   "example_en": "We see huge demographic changes.",
+   "example_tr": "Büyük demografik değişiklikler görüyoruz."
+  },
+  {
+   "word": "immunity",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "bağışıklık",
+    "muafiyet"
+   ],
+   "example_en": "Vaccines provide strong immunity.",
+   "example_tr": "Aşılar güçlü bağışıklık sağlar."
+  },
+  {
+   "word": "household",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "ev halkı",
+    "hane"
+   ],
+   "example_en": "Many households now own two cars.",
+   "example_tr": "Artık birçok hanenin iki arabası var."
+  },
+  {
+   "word": "illustrate",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "göstermek",
+    "örneklemek"
+   ],
+   "example_en": "These data illustrate the problem.",
+   "example_tr": "Bu veriler sorunu açıkça gösteriyor."
+  },
+  {
+   "word": "steadily",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "düzenli olarak",
+    "istikrarla"
+   ],
+   "example_en": "Global temperatures rise steadily.",
+   "example_tr": "Küresel sıcaklıklar istikrarlı biçimde artıyor."
+  },
+  {
+   "word": "soar",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "fırlamak",
+    "hızla artmak"
+   ],
+   "example_en": "Prices can soar after a bad harvest.",
+   "example_tr": "Kötü bir hasattan sonra fiyatlar fırlayabilir.",
+   "note": "Grafik betimlemede sıkça kullanılır."
+  },
+  {
+   "word": "substantially",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "büyük ölçüde"
+   ],
+   "example_en": "Profits grew substantially last year.",
+   "example_tr": "Kârlar geçen yıl büyük ölçüde arttı."
+  },
+  {
+   "word": "steeply",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "keskin bir şekilde",
+    "hızla"
+   ],
+   "example_en": "Sales fell steeply in March.",
+   "example_tr": "Satışlar Mart ayında keskin bir şekilde düştü."
+  },
+  {
+   "word": "upward",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "yukarı doğru",
+    "artan"
+   ],
+   "example_en": "There is an upward trend in sales.",
+   "example_tr": "Satışlarda artan bir eğilim vardır."
+  },
+  {
+   "word": "steady",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "sabit",
+    "istikrarlı"
+   ],
+   "example_en": "There was a steady rise in sales.",
+   "example_tr": "Satışlarda istikrarlı bir artış oldu."
+  },
+  {
+   "word": "dip",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "düşmek"
+   ],
+   "example_en": "Prices may dip in the summer.",
+   "example_tr": "Fiyatlar yazın düşebilir."
+  },
+  {
+   "word": "drawback",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "dezavantaj",
+    "engel"
+   ],
+   "example_en": "The main drawback is the high cost.",
+   "example_tr": "Ana dezavantaj yüksek maliyettir."
+  },
+  {
+   "word": "additionally",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "ayrıca",
+    "buna ek olarak"
+   ],
+   "example_en": "Additionally, the plan saves money.",
+   "example_tr": "Ayrıca plan para tasarrufu sağlar."
+  },
+  {
+   "word": "undeniable",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "inkâr edilemez",
+    "yadsınamaz"
+   ],
+   "example_en": "The benefits of exercise are undeniable.",
+   "example_tr": "Egzersizin faydaları inkâr edilemez."
+  },
+  {
+   "word": "urban",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kentsel",
+    "şehre ait"
+   ],
+   "example_en": "Most jobs are in urban areas.",
+   "example_tr": "Çoğu iş kentsel alanlardadır.",
+   "note": "urban sprawl (kentsel yayılma) şeklinde sıkça karşınıza çıkar."
+  },
+  {
+   "word": "commute",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "işe gidip gelmek"
+   ],
+   "example_en": "Many people commute by train.",
+   "example_tr": "Birçok kişi işe trenle gider."
+  },
+  {
+   "word": "gridlock",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "trafik kilidi",
+    "tıkanıklık"
+   ],
+   "example_en": "Heavy snow caused gridlock.",
+   "example_tr": "Yoğun kar trafik tıkanıklığına yol açtı."
+  },
+  {
+   "word": "itinerary",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "seyahat programı",
+    "rota"
+   ],
+   "example_en": "The itinerary includes Paris.",
+   "example_tr": "Seyahat programı Paris'i içerir."
+  },
+  {
+   "word": "civic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "yurttaşlık",
+    "sivil"
+   ],
+   "example_en": "Voting is a civic duty.",
+   "example_tr": "Oy kullanmak bir yurttaşlık görevidir.",
+   "note": "civic duty (vatandaşlık görevi) kalıbı okuma parçalarında sıkça geçer."
+  },
+  {
+   "word": "undertake",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "üstlenmek",
+    "yapmak"
+   ],
+   "example_en": "The team will undertake new research.",
+   "example_tr": "Ekip yeni bir araştırma üstlenecek."
+  },
+  {
+   "word": "remuneration",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ücret",
+    "maaş"
+   ],
+   "example_en": "Fair remuneration is vital.",
+   "example_tr": "Adil ücret çok önemlidir."
+  },
+  {
+   "word": "apprentice",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "çırak"
+   ],
+   "example_en": "The apprentice learns fast.",
+   "example_tr": "Çırak hızlı öğrenir."
+  },
+  {
+   "word": "resign",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "istifa etmek",
+    "ayrılmak"
+   ],
+   "example_en": "Some staff resign each year.",
+   "example_tr": "Bazı çalışanlar her yıl istifa eder.",
+   "note": "resign from (bir yerden istifa etmek) şeklinde preposition alır."
+  },
+  {
+   "word": "vacancy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "açık pozisyon",
+    "boşluk"
+   ],
+   "example_en": "There is a vacancy in sales.",
+   "example_tr": "Satış departmanında açık pozisyon var.",
+   "note": "job vacancy (iş ilanı/açık pozisyon) sıkça kullanılır."
+  },
+  {
+   "word": "atmospheric",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "atmosferik",
+    "havaya ait"
+   ],
+   "example_en": "Atmospheric pressure falls with height.",
+   "example_tr": "Atmosfer basıncı yükseklikle azalır."
+  },
+  {
+   "word": "disseminate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yaymak",
+    "dağıtmak"
+   ],
+   "example_en": "They disseminate new ideas.",
+   "example_tr": "Yeni fikirleri yayarlar.",
+   "note": "disseminate information (bilgi yaymak) çok yaygın bir kalıptır."
+  },
+  {
+   "word": "interactive",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "etkileşimli",
+    "interaktif"
+   ],
+   "example_en": "We use interactive software.",
+   "example_tr": "Etkileşimli yazılım kullanırız."
+  },
+  {
+   "word": "correlate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ilişkili olmak",
+    "bağdaştırmak"
+   ],
+   "example_en": "Income levels correlate with health.",
+   "example_tr": "Gelir düzeyi sağlıkla ilişkilidir.",
+   "note": "correlate with (ile ilişkili olmak) yapısıyla kullanılır."
+  },
+  {
+   "word": "upbringing",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yetiştirilme",
+    "terbiye"
+   ],
+   "example_en": "His strict upbringing helped.",
+   "example_tr": "Sıkı terbiyesi ona yardımcı oldu."
+  },
+  {
+   "word": "physiological",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "fizyolojik",
+    "bedensel"
+   ],
+   "example_en": "Hunger is a physiological need.",
+   "example_tr": "Açlık fizyolojik bir ihtiyaçtır."
+  },
+  {
+   "word": "norm",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "norm",
+    "olağan durum"
+   ],
+   "example_en": "Remote work is now the norm.",
+   "example_tr": "Uzaktan çalışma artık olağan hale geldi."
+  },
+  {
+   "word": "peak",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "zirveye ulaşmak"
+   ],
+   "example_en": "Sales peak in December.",
+   "example_tr": "Satışlar aralıkta zirveye ulaşır.",
+   "note": "İsim olarak da (zirve, tepe) çok sık karşınıza çıkar."
+  },
+  {
+   "word": "downward",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "aşağı doğru",
+    "düşüşte"
+   ],
+   "example_en": "There is a downward trend.",
+   "example_tr": "Aşağı doğru bir eğilim var.",
+   "note": "downward trend (düşüş eğilimi) grafik sorularında çok işe yarar."
+  },
+  {
+   "word": "noticeable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "fark edilebilir",
+    "belirgin"
+   ],
+   "example_en": "The change is highly noticeable.",
+   "example_tr": "Değişim oldukça belirgindir."
+  },
+  {
+   "word": "hover",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "civarında seyretmek"
+   ],
+   "example_en": "Prices hover around ten euros.",
+   "example_tr": "Fiyatlar on avro civarında seyrediyor.",
+   "note": "Task 1 grafik sorularında rakamların sabit seyrini anlatırken kullanılır."
+  },
+  {
+   "word": "outweigh",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "daha ağır basmak"
+   ],
+   "example_en": "The benefits outweigh the risks.",
+   "example_tr": "Faydalar risklerden daha ağır basar."
+  },
+  {
+   "word": "admittedly",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "kabul etmek gerekir ki"
+   ],
+   "example_en": "It is admittedly a hard task.",
+   "example_tr": "Kabul etmek gerekir ki bu zor bir görev."
+  },
+  {
+   "word": "percentage",
+   "pos": "n",
+   "level": "B1",
+   "tr": [
+    "yüzde",
+    "oran"
+   ],
+   "example_en": "The percentage of working mothers rose.",
+   "example_tr": "Çalışan annelerin yüzdesi arttı."
+  },
+  {
+   "word": "overall",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "genel",
+    "toplam"
+   ],
+   "example_en": "The overall cost of the project is high.",
+   "example_tr": "Projenin genel maliyeti yüksektir.",
+   "note": "Sıklıkla 'overall effect' veya 'overall cost' şeklinde kullanılır."
+  },
+  {
+   "word": "considerably",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "önemli ölçüde",
+    "oldukça"
+   ],
+   "example_en": "Temperatures have risen considerably.",
+   "example_tr": "Sıcaklıklar önemli ölçüde arttı.",
+   "note": "Artış veya azalış bildiren fiillerle (rise, drop) sıkça kullanılır."
+  },
+  {
+   "word": "sharply",
+   "pos": "adv",
+   "level": "B2",
+   "tr": [
+    "keskin bir şekilde",
+    "hızla"
+   ],
+   "example_en": "Sales of electric cars rose sharply.",
+   "example_tr": "Elektrikli araba satışları hızla arttı.",
+   "note": "IELTS Task 1 grafik yazılarında (fall/rise sharply) çok yaygındır."
+  },
+  {
+   "word": "highlight",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "vurgulamak",
+    "dikkat çekmek"
+   ],
+   "example_en": "The results highlight the need for change.",
+   "example_tr": "Sonuçlar değişim ihtiyacını vurguluyor.",
+   "note": "Araştırma bulgularını (results, findings) sunarken sıkça kullanılır."
+  }
+ ]
 }

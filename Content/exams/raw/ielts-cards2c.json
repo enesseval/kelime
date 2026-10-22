@@ -1,0 +1,285 @@
+{
+ "cards": [
+  {
+   "word": "urban",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "kentsel",
+    "şehre ait"
+   ],
+   "example_en": "Most jobs are in urban areas.",
+   "example_tr": "Çoğu iş kentsel alanlardadır.",
+   "note": "urban sprawl (kentsel yayılma) şeklinde sıkça karşınıza çıkar."
+  },
+  {
+   "word": "commute",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "işe gidip gelmek"
+   ],
+   "example_en": "Many people commute by train.",
+   "example_tr": "Birçok kişi işe trenle gider.",
+   "note": ""
+  },
+  {
+   "word": "gridlock",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "trafik kilidi",
+    "tıkanıklık"
+   ],
+   "example_en": "Heavy snow caused gridlock.",
+   "example_tr": "Yoğun kar trafik tıkanıklığına yol açtı.",
+   "note": ""
+  },
+  {
+   "word": "itinerary",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "seyahat programı",
+    "rota"
+   ],
+   "example_en": "The itinerary includes Paris.",
+   "example_tr": "Seyahat programı Paris'i içerir.",
+   "note": ""
+  },
+  {
+   "word": "civic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "yurttaşlık",
+    "sivil"
+   ],
+   "example_en": "Voting is a civic duty.",
+   "example_tr": "Oy kullanmak bir yurttaşlık görevidir.",
+   "note": "civic duty (vatandaşlık görevi) kalıbı okuma parçalarında sıkça geçer."
+  },
+  {
+   "word": "undertake",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "üstlenmek",
+    "yapmak"
+   ],
+   "example_en": "The team will undertake new research.",
+   "example_tr": "Ekip yeni bir araştırma üstlenecek.",
+   "note": ""
+  },
+  {
+   "word": "remuneration",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ücret",
+    "maaş"
+   ],
+   "example_en": "Fair remuneration is vital.",
+   "example_tr": "Adil ücret çok önemlidir.",
+   "note": ""
+  },
+  {
+   "word": "apprentice",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "çırak"
+   ],
+   "example_en": "The apprentice learns fast.",
+   "example_tr": "Çırak hızlı öğrenir.",
+   "note": ""
+  },
+  {
+   "word": "resign",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "istifa etmek",
+    "ayrılmak"
+   ],
+   "example_en": "Some staff resign each year.",
+   "example_tr": "Bazı çalışanlar her yıl istifa eder.",
+   "note": "resign from (bir yerden istifa etmek) şeklinde preposition alır."
+  },
+  {
+   "word": "vacancy",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "açık pozisyon",
+    "boşluk"
+   ],
+   "example_en": "There is a vacancy in sales.",
+   "example_tr": "Satış departmanında açık pozisyon var.",
+   "note": "job vacancy (iş ilanı/açık pozisyon) sıkça kullanılır."
+  },
+  {
+   "word": "atmospheric",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "atmosferik",
+    "havaya ait"
+   ],
+   "example_en": "Atmospheric pressure falls with height.",
+   "example_tr": "Atmosfer basıncı yükseklikle azalır.",
+   "note": ""
+  },
+  {
+   "word": "industrialisation",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "sanayileşme"
+   ],
+   "example_en": "Fast industrialisation harms nature.",
+   "example_tr": "Hızlı sanayileşme doğaya zarar verir.",
+   "note": ""
+  },
+  {
+   "word": "disseminate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yaymak",
+    "dağıtmak"
+   ],
+   "example_en": "They disseminate new ideas.",
+   "example_tr": "Yeni fikirleri yayarlar.",
+   "note": "disseminate information (bilgi yaymak) çok yaygın bir kalıptır."
+  },
+  {
+   "word": "interactive",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "etkileşimli",
+    "interaktif"
+   ],
+   "example_en": "We use interactive software.",
+   "example_tr": "Etkileşimli yazılım kullanırız.",
+   "note": ""
+  },
+  {
+   "word": "correlate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ilişkili olmak",
+    "bağdaştırmak"
+   ],
+   "example_en": "Income levels correlate with health.",
+   "example_tr": "Gelir düzeyi sağlıkla ilişkilidir.",
+   "note": "correlate with (ile ilişkili olmak) yapısıyla kullanılır."
+  },
+  {
+   "word": "upbringing",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "yetiştirilme",
+    "terbiye"
+   ],
+   "example_en": "His strict upbringing helped.",
+   "example_tr": "Sıkı terbiyesi ona yardımcı oldu.",
+   "note": ""
+  },
+  {
+   "word": "physiological",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "fizyolojik",
+    "bedensel"
+   ],
+   "example_en": "Hunger is a physiological need.",
+   "example_tr": "Açlık fizyolojik bir ihtiyaçtır.",
+   "note": ""
+  },
+  {
+   "word": "norm",
+   "pos": "n",
+   "level": "B2",
+   "tr": [
+    "norm",
+    "olağan durum"
+   ],
+   "example_en": "Remote work is now the norm.",
+   "example_tr": "Uzaktan çalışma artık olağan hale geldi.",
+   "note": ""
+  },
+  {
+   "word": "peak",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "zirveye ulaşmak"
+   ],
+   "example_en": "Sales peak in December.",
+   "example_tr": "Satışlar aralıkta zirveye ulaşır.",
+   "note": "İsim olarak da (zirve, tepe) çok sık karşınıza çıkar."
+  },
+  {
+   "word": "downward",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "aşağı doğru",
+    "düşüşte"
+   ],
+   "example_en": "There is a downward trend.",
+   "example_tr": "Aşağı doğru bir eğilim var.",
+   "note": "downward trend (düşüş eğilimi) grafik sorularında çok işe yarar."
+  },
+  {
+   "word": "noticeable",
+   "pos": "adj",
+   "level": "B2",
+   "tr": [
+    "fark edilebilir",
+    "belirgin"
+   ],
+   "example_en": "The change is highly noticeable.",
+   "example_tr": "Değişim oldukça belirgindir.",
+   "note": ""
+  },
+  {
+   "word": "hover",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "civarında seyretmek"
+   ],
+   "example_en": "Prices hover around ten euros.",
+   "example_tr": "Fiyatlar on avro civarında seyrediyor.",
+   "note": "Task 1 grafik sorularında rakamların sabit seyrini anlatırken kullanılır."
+  },
+  {
+   "word": "outweigh",
+   "pos": "v",
+   "level": "B2",
+   "tr": [
+    "daha ağır basmak"
+   ],
+   "example_en": "The benefits outweigh the risks.",
+   "example_tr": "Faydalar risklerden daha ağır basar.",
+   "note": ""
+  },
+  {
+   "word": "admittedly",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "kabul etmek gerekir ki"
+   ],
+   "example_en": "It is admittedly a hard task.",
+   "example_tr": "Kabul etmek gerekir ki bu zor bir görev.",
+   "note": ""
+  }
+ ]
+}
