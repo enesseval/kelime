@@ -99,6 +99,16 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
+## C2 course (content v9)
+
+All twelve C2 units (core, rhetoric, character, power, justice, thought, science, finance,
+literature, earth, identity, mastery; 317 cards) were written by Gemini 3.1 Pro in Chrome the same
+way and reviewed card by card. From C2 on, check_unit.py also accepts tools/common_words.txt, a
+reviewed list of everyday words that earlier levels never taught as cards. Gemini refused or
+errored on some prompts: "cartel" and "Make a killing" were swapped out of finance, and mastery's
+prompt uses the standalone-unit rules instead of the long list of other units' words (its JSON is
+saved with placement "last"). Content now holds 1941 cards; every level A1-C2 is a course.
+
 ## C1 course (content v8)
 
 All twelve C1 units were written by Gemini 3.1 Pro in Chrome (one chat per unit, model checked

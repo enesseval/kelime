@@ -197,12 +197,14 @@ public enum Curriculum {
     /// "cafe"). Other units keep their plan order.
     static let goalTopics: [LearningGoal: [String]] = [
         .travel: ["cafe", "city", "shopping", "free-time", "feelings", "travel", "food", "plans", "nature",
-                  "trips", "culture", "money", "arts", "language"],
+                  "trips", "culture", "money", "arts", "language", "literature", "identity"],
         .work: ["day", "city", "cafe", "feelings", "work", "tech", "people", "career", "media", "learning",
-                "business", "academic", "economy", "leadership", "global", "argument"],
+                "business", "academic", "economy", "leadership", "global", "argument", "rhetoric", "finance",
+                "character", "power"],
         // Exam texts lean on science, education and society.
         .yds: ["life", "work", "learning", "media", "environment", "science", "academic", "society", "medicine",
-               "economy", "planet", "research", "argument", "society", "ethics", "earth", "language"],
+               "economy", "planet", "research", "argument", "society", "ethics", "earth", "language", "thought",
+               "justice", "rhetoric"],
     ]
 
     /// `units` in the order the learner meets them: core, the any-order units by goal, bridge.
