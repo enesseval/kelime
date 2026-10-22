@@ -79,11 +79,11 @@ struct QueriesTests {
             #expect(try WordQueries.list(segment: .learned, db: db).map(\.id) == ["b1-reliable"])
             #expect(try WordQueries.list(segment: .favorites, db: db).map(\.id) == ["b1-curious"])
             let all = try WordQueries.list(segment: .all, db: db)
-            #expect(all.count == 1332) // A1-B2 courses (285 + 356 + 337 + 323), 31 C1 words
+            #expect(all.count == 1624) // the A1-C1 courses
             #expect(all.map(\.card.word) == all.map(\.card.word).sorted())
             // English word, Turkish meaning, Turkish casing and missing diacritics.
             #expect(try WordQueries.list(segment: .all, search: "relu", db: db).map(\.id) == ["b2-reluctant", "b2-reluctantly"])
-            #expect(try WordQueries.list(segment: .all, search: "GÜVENİLİR", db: db).map(\.id) == ["b1-reliable"])
+            #expect(try WordQueries.list(segment: .all, search: "GÜVENİLİR", db: db).map(\.id).contains("b1-reliable"))
             #expect(try WordQueries.list(segment: .all, search: "isteksiz", db: db).map(\.id) == ["b2-reluctant", "b2-reluctantly"])
             #expect(try WordQueries.list(segment: .all, search: "merakli", db: db).map(\.id) == ["b1-curious"])
             #expect(try WordQueries.list(segment: .struggling, search: "curious", db: db).isEmpty)

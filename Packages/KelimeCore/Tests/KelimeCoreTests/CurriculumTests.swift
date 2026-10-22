@@ -190,6 +190,9 @@ struct CurriculumTests {
 
     @Test func levelsWithoutUnitsKeepTheirDecks() throws {
         let db = try makeDatabase(Preferences(level: .c1))
+        try db.writer.write { db in
+            try db.execute(sql: "DELETE FROM unit_card WHERE unit_id LIKE 'c1-%'; DELETE FROM unit WHERE level = 'C1'")
+        }
         #expect(try db.reader.read { db in try Curriculum.state(db: db) } == nil)
     }
 

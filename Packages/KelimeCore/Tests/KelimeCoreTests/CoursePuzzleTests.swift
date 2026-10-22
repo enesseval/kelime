@@ -56,6 +56,8 @@ struct CoursePuzzleTests {
     @Test func levelsWithoutUnitsKeepNoGrid() throws {
         let db = try makeDatabase()
         try db.writer.write { db in
+            // A level without units yet (as a new level is while it is being written).
+            try db.execute(sql: "DELETE FROM unit_card WHERE unit_id LIKE 'c1-%'; DELETE FROM unit WHERE level = 'C1'")
             try Preferences(level: .c1).save(db)
             try CoursePuzzle.keepToday(clock: clock, db: db)
         }

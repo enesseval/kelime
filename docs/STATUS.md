@@ -99,6 +99,15 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
+## C1 course (content v8)
+
+All twelve C1 units were written by Gemini 3.1 Pro in Chrome (one chat per unit, model checked
+before each send), saved from Gemini's copy button and checked: check_unit.py, then a review of
+every card and story line. The prompt gained rules along the way: natural collocations, idioms in
+real Turkish ("Huylu huyundan vazgeçmez"), and "the lists say what is allowed, not what to use"
+after Gemini kept forcing core words (profound, prevalent) into sentences. Every level is now a
+course; the bundled puzzle files are gone. Exam tags are unchanged (YDS 71, YÖKDİL 27, IELTS 18).
+
 ## Watch in step for three days (after build 17)
 
 The widget queue now holds three days of slots (`WidgetQueue.horizon`) and the watch payload

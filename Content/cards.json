@@ -1,509 +1,6 @@
 {
- "contentVersion": 7,
+ "contentVersion": 8,
  "cards": [
-  {
-   "id": "c1-ambiguous",
-   "word": "ambiguous",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "belirsiz",
-    "muğlak"
-   ],
-   "example_en": "The message was ambiguous.",
-   "example_tr": "Mesaj muğlaktı.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-arbitrary",
-   "word": "arbitrary",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "keyfi"
-   ],
-   "example_en": "The rule seems arbitrary.",
-   "example_tr": "Kural keyfi görünüyor.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-coherent",
-   "word": "coherent",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "tutarlı"
-   ],
-   "example_en": "Give a coherent answer.",
-   "example_tr": "Tutarlı bir cevap ver.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil",
-    "ielts"
-   ]
-  },
-  {
-   "id": "c1-comprehensive",
-   "word": "comprehensive",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "kapsamlı"
-   ],
-   "example_en": "We need a comprehensive plan.",
-   "example_tr": "Kapsamlı bir plana ihtiyacımız var.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-explicit",
-   "word": "explicit",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "açık",
-    "net"
-   ],
-   "example_en": "The rules are explicit.",
-   "example_tr": "Kurallar açık.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-feasible",
-   "word": "feasible",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "uygulanabilir"
-   ],
-   "example_en": "Is the plan feasible?",
-   "example_tr": "Plan uygulanabilir mi?",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil",
-    "ielts"
-   ]
-  },
-  {
-   "id": "c1-inherent",
-   "word": "inherent",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "doğasında olan"
-   ],
-   "example_en": "Risk is inherent in business.",
-   "example_tr": "Risk işin doğasında vardır.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-meticulous",
-   "word": "meticulous",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "titiz",
-    "özenli"
-   ],
-   "example_en": "She is a meticulous editor.",
-   "example_tr": "O titiz bir editör.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "c1-plausible",
-   "word": "plausible",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "akla yatkın"
-   ],
-   "example_en": "His story sounds plausible.",
-   "example_tr": "Hikâyesi akla yatkın geliyor.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-profound",
-   "word": "profound",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "derin"
-   ],
-   "example_en": "The book had a profound effect.",
-   "example_tr": "Kitabın derin bir etkisi oldu.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-redundant",
-   "word": "redundant",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "gereksiz",
-    "fazla"
-   ],
-   "example_en": "This step is redundant.",
-   "example_tr": "Bu adım gereksiz.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-subtle",
-   "word": "subtle",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "ince",
-    "belli belirsiz"
-   ],
-   "example_en": "There is a subtle difference.",
-   "example_tr": "İnce bir fark var.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "c1-tedious",
-   "word": "tedious",
-   "pos": "adj",
-   "level": "C1",
-   "tr": [
-    "sıkıcı",
-    "usandırıcı"
-   ],
-   "example_en": "The work was tedious.",
-   "example_tr": "İş sıkıcıydı.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "c1-undermine",
-   "word": "undermine",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "baltalamak"
-   ],
-   "example_en": "Lies undermine trust.",
-   "example_tr": "Yalanlar güveni baltalar.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-alleviate",
-   "word": "alleviate",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "hafifletmek"
-   ],
-   "example_en": "This will alleviate the pain.",
-   "example_tr": "Bu acıyı hafifletecek.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-compensate",
-   "word": "compensate",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "telafi etmek"
-   ],
-   "example_en": "Nothing can compensate for it.",
-   "example_tr": "Hiçbir şey bunu telafi edemez.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-deteriorate",
-   "word": "deteriorate",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "kötüleşmek"
-   ],
-   "example_en": "His health began to deteriorate.",
-   "example_tr": "Sağlığı kötüleşmeye başladı.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-exacerbate",
-   "word": "exacerbate",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "şiddetlendirmek"
-   ],
-   "example_en": "Stress can exacerbate pain.",
-   "example_tr": "Stres ağrıyı şiddetlendirebilir.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-facilitate",
-   "word": "facilitate",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "kolaylaştırmak"
-   ],
-   "example_en": "Maps facilitate travel.",
-   "example_tr": "Haritalar seyahati kolaylaştırır.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil",
-    "ielts"
-   ]
-  },
-  {
-   "id": "c1-hinder",
-   "word": "hinder",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "engellemek"
-   ],
-   "example_en": "Noise can hinder sleep.",
-   "example_tr": "Gürültü uykuyu engelleyebilir.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-mitigate",
-   "word": "mitigate",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "azaltmak",
-    "hafifletmek"
-   ],
-   "example_en": "Trees mitigate the heat.",
-   "example_tr": "Ağaçlar sıcağı azaltır.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil",
-    "ielts"
-   ]
-  },
-  {
-   "id": "c1-scrutinize",
-   "word": "scrutinize",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "incelemek"
-   ],
-   "example_en": "They scrutinize every detail.",
-   "example_tr": "Her ayrıntıyı incelerler.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-advocate",
-   "word": "advocate",
-   "pos": "v",
-   "level": "C1",
-   "tr": [
-    "savunmak"
-   ],
-   "example_en": "They advocate free education.",
-   "example_tr": "Ücretsiz eğitimi savunuyorlar.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil",
-    "ielts"
-   ]
-  },
-  {
-   "id": "c1-discrepancy",
-   "word": "discrepancy",
-   "pos": "n",
-   "level": "C1",
-   "tr": [
-    "tutarsızlık"
-   ],
-   "example_en": "There is a discrepancy here.",
-   "example_tr": "Burada bir tutarsızlık var.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-dilemma",
-   "word": "dilemma",
-   "pos": "n",
-   "level": "C1",
-   "tr": [
-    "ikilem"
-   ],
-   "example_en": "She faced a moral dilemma.",
-   "example_tr": "Ahlaki bir ikilemle karşılaştı.",
-   "decks": [
-    "general"
-   ]
-  },
-  {
-   "id": "c1-hypothesis",
-   "word": "hypothesis",
-   "pos": "n",
-   "level": "C1",
-   "tr": [
-    "hipotez"
-   ],
-   "example_en": "Test your hypothesis.",
-   "example_tr": "Hipotezini test et.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil",
-    "ielts"
-   ]
-  },
-  {
-   "id": "c1-paradigm",
-   "word": "paradigm",
-   "pos": "n",
-   "level": "C1",
-   "tr": [
-    "paradigma"
-   ],
-   "example_en": "This is a new paradigm.",
-   "example_tr": "Bu yeni bir paradigma.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-scarcity",
-   "word": "scarcity",
-   "pos": "n",
-   "level": "C1",
-   "tr": [
-    "kıtlık"
-   ],
-   "example_en": "Scarcity raises prices.",
-   "example_tr": "Kıtlık fiyatları artırır.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-consensus",
-   "word": "consensus",
-   "pos": "n",
-   "level": "C1",
-   "tr": [
-    "fikir birliği",
-    "uzlaşma"
-   ],
-   "example_en": "They reached a consensus.",
-   "example_tr": "Fikir birliğine vardılar.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil",
-    "ielts"
-   ]
-  },
-  {
-   "id": "c1-predominantly",
-   "word": "predominantly",
-   "pos": "adv",
-   "level": "C1",
-   "tr": [
-    "ağırlıklı olarak"
-   ],
-   "example_en": "The area is predominantly rural.",
-   "example_tr": "Bölge ağırlıklı olarak kırsal.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
-  {
-   "id": "c1-inevitably",
-   "word": "inevitably",
-   "pos": "adv",
-   "level": "C1",
-   "tr": [
-    "kaçınılmaz olarak"
-   ],
-   "example_en": "Prices inevitably rose.",
-   "example_tr": "Fiyatlar kaçınılmaz olarak arttı.",
-   "decks": [
-    "general",
-    "yds",
-    "yokdil"
-   ]
-  },
   {
    "id": "a2-think",
    "word": "think",
@@ -20274,6 +19771,4791 @@
    "decks": [
     "general"
    ]
+  },
+  {
+   "id": "c1-albeit",
+   "word": "albeit",
+   "pos": "conj",
+   "level": "C1",
+   "tr": [
+    "gerçi",
+    "-mesine rağmen"
+   ],
+   "example_en": "He was a good colleague, albeit a nervous one.",
+   "example_tr": "Biraz gergin olsa da iyi bir iş arkadaşıydı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-whereby",
+   "word": "whereby",
+   "pos": "conj",
+   "level": "C1",
+   "tr": [
+    "ki bu sayede",
+    "-ecek şekilde"
+   ],
+   "example_en": "We agreed a contract whereby they pay the debt.",
+   "example_tr": "Borcu ödeyecekleri bir sözleşme üzerinde anlaştık.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-hence",
+   "word": "hence",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "bundan dolayı",
+    "bu yüzden"
+   ],
+   "example_en": "She lost the election; hence, her career is over.",
+   "example_tr": "Seçimi kaybetti; bu yüzden kariyeri bitti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-thereby",
+   "word": "thereby",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "böylece"
+   ],
+   "example_en": "She studied hard, thereby improving her grammar.",
+   "example_tr": "Çok çalıştı, böylece dilbilgisini geliştirdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-inherent",
+   "word": "inherent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "doğasında olan"
+   ],
+   "example_en": "Risk is inherent in any investment.",
+   "example_tr": "Risk, herhangi bir yatırımın doğasında vardır.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-explicit",
+   "word": "explicit",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "açık",
+    "belirgin"
+   ],
+   "example_en": "He gave explicit directions.",
+   "example_tr": "Açık talimatlar verdi.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-implicit",
+   "word": "implicit",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "üstü kapalı",
+    "örtük"
+   ],
+   "example_en": "There was an implicit threat in his message.",
+   "example_tr": "Mesajında üstü kapalı bir tehdit vardı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-coherent",
+   "word": "coherent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "tutarlı"
+   ],
+   "example_en": "Her argument was quite coherent.",
+   "example_tr": "Argümanı oldukça tutarlıydı.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-comprehensive",
+   "word": "comprehensive",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kapsamlı"
+   ],
+   "example_en": "They made a comprehensive report about the economy.",
+   "example_tr": "Ekonomi hakkında kapsamlı bir rapor yaptılar.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-plausible",
+   "word": "plausible",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "akla yatkın"
+   ],
+   "example_en": "That is a plausible reason.",
+   "example_tr": "Bu akla yatkın bir sebep.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-profound",
+   "word": "profound",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "derin",
+    "büyük"
+   ],
+   "example_en": "The book had a profound impact on her life.",
+   "example_tr": "Kitabın hayatında derin bir etkisi oldu.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-subtle",
+   "word": "subtle",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ince",
+    "belli belirsiz"
+   ],
+   "example_en": "His polite attitude was a subtle warning.",
+   "example_tr": "Kibar tavrı ince bir uyarıydı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-arbitrary",
+   "word": "arbitrary",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "keyfi"
+   ],
+   "example_en": "The judge made an arbitrary decision.",
+   "example_tr": "Yargıç keyfi bir karar verdi.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-ambiguous",
+   "word": "ambiguous",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "belirsiz"
+   ],
+   "example_en": "The ending of the novel was ambiguous.",
+   "example_tr": "Romanın sonu belirsizdi.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-redundant",
+   "word": "redundant",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "gereksiz",
+    "işsiz"
+   ],
+   "example_en": "His job in the company was redundant.",
+   "example_tr": "Şirketteki işi gereksizdi.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ],
+   "note": "İngiliz İngilizcesinde 'be made redundant': işten çıkarılmak."
+  },
+  {
+   "id": "c1-predominantly",
+   "word": "predominantly",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "ağırlıklı olarak"
+   ],
+   "example_en": "The audience was predominantly young.",
+   "example_tr": "Seyirci ağırlıklı olarak gençti.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-inevitably",
+   "word": "inevitably",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "kaçınılmaz olarak"
+   ],
+   "example_en": "Inevitably, the crisis will destroy the economy.",
+   "example_tr": "Kaçınılmaz olarak, kriz ekonomiyi mahvedecek.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-consensus",
+   "word": "consensus",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "fikir birliği"
+   ],
+   "example_en": "There is no consensus about the plan.",
+   "example_tr": "Plan hakkında bir fikir birliği yok.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-paradigm",
+   "word": "paradigm",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "paradigma"
+   ],
+   "example_en": "This breakthrough will change the academic paradigm.",
+   "example_tr": "Bu buluş akademik paradigmayı değiştirecek.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-hypothesis",
+   "word": "hypothesis",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hipotez"
+   ],
+   "example_en": "The experiment supports the hypothesis.",
+   "example_tr": "Deney hipotezi destekliyor.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-discrepancy",
+   "word": "discrepancy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "tutarsızlık"
+   ],
+   "example_en": "There is a significant discrepancy in the data.",
+   "example_tr": "Verilerde belirgin bir tutarsızlık var.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-notion",
+   "word": "notion",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "düşünce",
+    "kavram"
+   ],
+   "example_en": "I don't accept the notion that poverty is inevitable.",
+   "example_tr": "Yoksulluğun kaçınılmaz olduğu fikrini kabul etmiyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-implication",
+   "word": "implication",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sonuç",
+    "ima"
+   ],
+   "example_en": "We must consider the financial implications.",
+   "example_tr": "Finansal sonuçlarını değerlendirmeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-underlying",
+   "word": "underlying",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "altında yatan"
+   ],
+   "example_en": "The underlying cause of the disease is genetic.",
+   "example_tr": "Hastalığın altında yatan sebep genetiktir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-substantial",
+   "word": "substantial",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "önemli",
+    "büyük"
+   ],
+   "example_en": "They made a substantial profit this year.",
+   "example_tr": "Bu yıl büyük bir kâr yaptılar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-prevalent",
+   "word": "prevalent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "yaygın"
+   ],
+   "example_en": "The custom is prevalent in the countryside.",
+   "example_tr": "Bu gelenek kırsalda yaygındır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-intrinsic",
+   "word": "intrinsic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "içsel",
+    "özünde olan"
+   ],
+   "example_en": "Freedom has intrinsic value.",
+   "example_tr": "Özgürlüğün içsel bir değeri vardır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-nuance",
+   "word": "nuance",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "nüans",
+    "incelik"
+   ],
+   "example_en": "He can't see the nuances of the language.",
+   "example_tr": "Dilin inceliklerini göremiyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-framework",
+   "word": "framework",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "çerçeve",
+    "yapı"
+   ],
+   "example_en": "We need a framework for the new policy.",
+   "example_tr": "Yeni politika için bir çerçeveye ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-criteria",
+   "word": "criteria",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kriterler"
+   ],
+   "example_en": "What are your criteria for a good candidate?",
+   "example_tr": "İyi bir aday için kriterleriniz nelerdir?",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğuldur; tekili 'criterion'."
+  },
+  {
+   "id": "c1-deem",
+   "word": "deem",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "saymak",
+    "addetmek"
+   ],
+   "example_en": "The boss deemed the programme a success.",
+   "example_tr": "Patron programı bir başarı saydı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-entail",
+   "word": "entail",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "gerektirmek"
+   ],
+   "example_en": "The promotion will entail more travel.",
+   "example_tr": "Terfi daha fazla seyahat gerektirecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-constitute",
+   "word": "constitute",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "oluşturmak",
+    "teşkil etmek"
+   ],
+   "example_en": "These mistakes constitute an obvious offence.",
+   "example_tr": "Bu hatalar açık bir suç oluşturuyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-pertain",
+   "word": "pertain",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ile ilgili olmak"
+   ],
+   "example_en": "The rules pertain to all residents.",
+   "example_tr": "Kurallar tüm sakinlerle ilgilidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-warrant",
+   "word": "warrant",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "haklı kılmak"
+   ],
+   "example_en": "His bad attitude warrants a punishment.",
+   "example_tr": "Kötü tavrı bir cezayı haklı kılıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-foster",
+   "word": "foster",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "teşvik etmek",
+    "geliştirmek"
+   ],
+   "example_en": "The government wants to foster innovation.",
+   "example_tr": "Hükümet inovasyonu teşvik etmek istiyor.",
+   "decks": [
+    "general"
+   ],
+   "note": "foster family: koruyucu aile."
+  },
+  {
+   "id": "c1-p-by-and-large",
+   "word": "By and large…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Genel olarak…"
+   ],
+   "example_en": "By and large, the weather is warm in spring.",
+   "example_tr": "Genel olarak, ilkbaharda hava sıcaktır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-to-a-certain-extent",
+   "word": "To a certain extent…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Belirli bir dereceye kadar…"
+   ],
+   "example_en": "To a certain extent, I agree with your assessment.",
+   "example_tr": "Belirli bir dereceye kadar değerlendirmene katılıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-goes-without-saying",
+   "word": "It goes without saying that…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Söylemeye gerek yok ki…"
+   ],
+   "example_en": "It goes without saying that knowledge is important.",
+   "example_tr": "Bilginin önemli olduğunu söylemeye gerek bile yok.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-that-said",
+   "word": "That said,…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Bununla birlikte,…"
+   ],
+   "example_en": "It is expensive. That said, it is worth the money.",
+   "example_tr": "Pahalı. Bununla birlikte, paraya değer.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-with-regard-to",
+   "word": "With regard to…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "…ile ilgili olarak"
+   ],
+   "example_en": "With regard to your email, I can't attend.",
+   "example_tr": "E-postan ile ilgili olarak, katılamam.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-be-that-as-it-may",
+   "word": "Be that as it may,…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Öyle olsa bile,…"
+   ],
+   "example_en": "He was late. Be that as it may, he apologized.",
+   "example_tr": "Geç kaldı. Öyle olsa bile, özür diledi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-in-the-light-of",
+   "word": "In the light of…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "…ışığında"
+   ],
+   "example_en": "In the light of the new evidence, he is innocent.",
+   "example_tr": "Yeni kanıtların ışığında, o masum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-advocate",
+   "word": "advocate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "savunmak",
+    "desteklemek"
+   ],
+   "example_en": "We advocate equality for all.",
+   "example_tr": "Herkes için eşitliği savunuyoruz.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds",
+    "yokdil"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "savunucu"
+     ],
+     "example_en": "He is an advocate for animal rights.",
+     "example_tr": "O, hayvan hakları savunucusudur."
+    }
+   ]
+  },
+  {
+   "id": "c1-undermine",
+   "word": "undermine",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "sarsmak",
+    "zayıflatmak"
+   ],
+   "example_en": "This mistake undermines his theory.",
+   "example_tr": "Bu hata onun teorisini sarsıyor.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-scrutinize",
+   "word": "scrutinize",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "incelemek",
+    "irdelemek"
+   ],
+   "example_en": "We must scrutinize every aspect of the proposal.",
+   "example_tr": "Teklifin her yönünü dikkatle incelemeliyiz.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-refute",
+   "word": "refute",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "çürütmek",
+    "yalanlamak"
+   ],
+   "example_en": "The evidence refutes his claim.",
+   "example_tr": "Kanıt onun iddiasını çürütüyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-concede",
+   "word": "concede",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kabul etmek",
+    "teslim etmek"
+   ],
+   "example_en": "I concede that you are right.",
+   "example_tr": "Haklı olduğunuzu kabul ediyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-assert",
+   "word": "assert",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ileri sürmek",
+    "iddia etmek"
+   ],
+   "example_en": "He asserts that the plan is safe.",
+   "example_tr": "Planın güvenli olduğunu ileri sürüyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-contend",
+   "word": "contend",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "iddia etmek",
+    "öne sürmek"
+   ],
+   "example_en": "Many contend that the policy will fail.",
+   "example_tr": "Çoğu kişi politikanın başarısız olacağını iddia ediyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-dispute",
+   "word": "dispute",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "itiraz etmek"
+   ],
+   "example_en": "Nobody can dispute this evidence.",
+   "example_tr": "Kimse bu kanıta itiraz edemez.",
+   "decks": [
+    "general"
+   ],
+   "senses": [
+    {
+     "pos": "n",
+     "tr": [
+      "anlaşmazlık"
+     ],
+     "example_en": "We have a dispute over the contract.",
+     "example_tr": "Sözleşme konusunda anlaşmazlığımız var."
+    }
+   ]
+  },
+  {
+   "id": "c1-rhetoric",
+   "word": "rhetoric",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hitabet",
+    "söylem"
+   ],
+   "example_en": "His political rhetoric is persuasive.",
+   "example_tr": "Siyasi söylemi ikna edici.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-bias",
+   "word": "bias",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "önyargı",
+    "taraf tutma"
+   ],
+   "example_en": "This article shows political bias.",
+   "example_tr": "Bu makale siyasi önyargı gösteriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-fallacy",
+   "word": "fallacy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "mantık hatası",
+    "yanılgı"
+   ],
+   "example_en": "It is a fallacy to assume this.",
+   "example_tr": "Bunu varsaymak bir yanılgıdır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-premise",
+   "word": "premise",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "öncül",
+    "temel dayanak"
+   ],
+   "example_en": "His theory rests on a poor premise.",
+   "example_tr": "Teorisi zayıf bir öncüle dayanıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-compelling",
+   "word": "compelling",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ikna edici",
+    "inandırıcı"
+   ],
+   "example_en": "She made a compelling argument.",
+   "example_tr": "İkna edici bir argüman sundu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-controversial",
+   "word": "controversial",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "tartışmalı"
+   ],
+   "example_en": "This is a very controversial issue.",
+   "example_tr": "Bu çok tartışmalı bir mesele.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-stance",
+   "word": "stance",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "duruş",
+    "tutum"
+   ],
+   "example_en": "The government changed its stance.",
+   "example_tr": "Hükümet tutumunu değiştirdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-endorse",
+   "word": "endorse",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "onaylamak",
+    "desteklemek"
+   ],
+   "example_en": "I cannot endorse this decision.",
+   "example_tr": "Bu kararı onaylayamam.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-objection",
+   "word": "objection",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "itiraz"
+   ],
+   "example_en": "Does anyone have an objection?",
+   "example_tr": "İtirazı olan var mı?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-persuasive",
+   "word": "persuasive",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ikna edici"
+   ],
+   "example_en": "Your essay is very persuasive.",
+   "example_tr": "Makalen çok ikna edici.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-credible",
+   "word": "credible",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "güvenilir",
+    "inandırıcı"
+   ],
+   "example_en": "Is this a credible source?",
+   "example_tr": "Bu güvenilir bir kaynak mı?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-dismiss",
+   "word": "dismiss",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "reddetmek",
+    "geçiştirmek"
+   ],
+   "example_en": "Do not dismiss my concerns.",
+   "example_tr": "Endişelerimi geçiştirme.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-acknowledge",
+   "word": "acknowledge",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kabul etmek",
+    "tanımak"
+   ],
+   "example_en": "We must acknowledge the risks.",
+   "example_tr": "Riskleri kabul etmeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-counter",
+   "word": "counter",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "karşılık vermek",
+    "çürütmek"
+   ],
+   "example_en": "How do you counter this argument?",
+   "example_tr": "Bu argümana nasıl karşılık verirsin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-go-as-far",
+   "word": "I'd go as far as to say…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Şunu bile söyleyebilirim ki…"
+   ],
+   "example_en": "I'd go as far as to say he is very clever.",
+   "example_tr": "Onun çok zeki olduğunu bile söyleyebilirim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-beside-point",
+   "word": "That's beside the point.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Konumuz bu değil."
+   ],
+   "example_en": "Maybe, but that's beside the point.",
+   "example_tr": "Olabilir ama konumuz bu değil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-have-point",
+   "word": "You have a point there.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Bu konuda haklısın."
+   ],
+   "example_en": "You have a point there, I agree.",
+   "example_tr": "Bu konuda haklısın, katılıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-agree-disagree",
+   "word": "Let's agree to disagree.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Fikirlerimiz farklı, kabul."
+   ],
+   "example_en": "We will never agree. Let's agree to disagree.",
+   "example_tr": "Anlaşamayacağız. Farklı düşündüğümüzü kabul edelim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-fact-matter",
+   "word": "The fact of the matter is…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "İşin aslı şu ki…"
+   ],
+   "example_en": "The fact of the matter is, we have no money.",
+   "example_tr": "İşin aslı şu ki, hiç paramız yok.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-facilitate",
+   "word": "facilitate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kolaylaştırmak"
+   ],
+   "example_en": "The internet facilitates learning.",
+   "example_tr": "İnternet öğrenmeyi kolaylaştırır.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-oversee",
+   "word": "oversee",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "denetlemek",
+    "yönetmek"
+   ],
+   "example_en": "She will oversee the campaign.",
+   "example_tr": "Kampanyayı o yönetecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-implement",
+   "word": "implement",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "uygulamak"
+   ],
+   "example_en": "We must implement the new rule.",
+   "example_tr": "Yeni kuralı uygulamalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-streamline",
+   "word": "streamline",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "sadeleştirmek",
+    "düzene sokmak"
+   ],
+   "example_en": "We must streamline our work.",
+   "example_tr": "İşimizi sadeleştirmeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-accountability",
+   "word": "accountability",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hesap verebilirlik"
+   ],
+   "example_en": "Accountability is crucial here.",
+   "example_tr": "Burada hesap verebilirlik çok önemlidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-stakeholder",
+   "word": "stakeholder",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "paydaş"
+   ],
+   "example_en": "Every stakeholder agreed.",
+   "example_tr": "Her paydaş aynı fikirdeydi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-initiative",
+   "word": "initiative",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "girişim",
+    "inisiyatif"
+   ],
+   "example_en": "It was a brave initiative.",
+   "example_tr": "Cesur bir girişimdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-incentive",
+   "word": "incentive",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "teşvik"
+   ],
+   "example_en": "We need a financial incentive.",
+   "example_tr": "Mali bir teşvike ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-benchmark",
+   "word": "benchmark",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ölçüt",
+    "kıyas noktası"
+   ],
+   "example_en": "This is our new benchmark.",
+   "example_tr": "Bu bizim yeni kriterimiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-feasible",
+   "word": "feasible",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "yapılabilir",
+    "mümkün"
+   ],
+   "example_en": "Is this plan feasible?",
+   "example_tr": "Bu plan mümkün mü?",
+   "decks": [
+    "general",
+    "ielts",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-viable",
+   "word": "viable",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "uygulanabilir"
+   ],
+   "example_en": "It is not a viable alternative.",
+   "example_tr": "Uygulanabilir bir alternatif değil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-restructure",
+   "word": "restructure",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yeniden yapılandırmak"
+   ],
+   "example_en": "We have to restructure the team.",
+   "example_tr": "Ekibi yeniden yapılandırmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-merger",
+   "word": "merger",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "birleşme"
+   ],
+   "example_en": "The merger was a success.",
+   "example_tr": "Birleşme başarılı oldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-meticulous",
+   "word": "meticulous",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "titiz"
+   ],
+   "example_en": "She is meticulous at work.",
+   "example_tr": "İşinde titizdir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-diligent",
+   "word": "diligent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "çalışkan",
+    "gayretli"
+   ],
+   "example_en": "He is a diligent student.",
+   "example_tr": "O gayretli bir öğrencidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-tedious",
+   "word": "tedious",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "sıkıcı",
+    "bıktırıcı"
+   ],
+   "example_en": "This job is very tedious.",
+   "example_tr": "Bu iş çok sıkıcı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-burnout",
+   "word": "burnout",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "tükenmişlik"
+   ],
+   "example_en": "Burnout is a big problem.",
+   "example_tr": "Tükenmişlik büyük bir sorundur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-workload",
+   "word": "workload",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "iş yükü"
+   ],
+   "example_en": "My workload is heavy.",
+   "example_tr": "İş yüküm ağır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-allocate",
+   "word": "allocate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ayırmak",
+    "tahsis etmek"
+   ],
+   "example_en": "Allocate more time to this.",
+   "example_tr": "Buna daha fazla zaman ayırın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-prioritize",
+   "word": "prioritize",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "öncelik vermek"
+   ],
+   "example_en": "You must prioritize this issue.",
+   "example_tr": "Bu soruna öncelik vermelisin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-consolidate",
+   "word": "consolidate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "birleştirmek",
+    "pekiştirmek"
+   ],
+   "example_en": "We will consolidate our debts.",
+   "example_tr": "Borçlarımızı birleştireceğiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-transparent",
+   "word": "transparent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "şeffaf"
+   ],
+   "example_en": "We are quite transparent.",
+   "example_tr": "Biz oldukça şeffafız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-touch-base",
+   "word": "Let's touch base.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Sonra haberleşelim."
+   ],
+   "example_en": "Let's touch base next week.",
+   "example_tr": "Haftaya haberleşelim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-outside-box",
+   "word": "Think outside the box.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Kalıpların dışında düşün."
+   ],
+   "example_en": "We must think outside the box.",
+   "example_tr": "Kalıpların dışında düşünmeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-not-my-call",
+   "word": "It's not my call.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Benim kararım değil."
+   ],
+   "example_en": "I'm sorry, it's not my call.",
+   "example_tr": "Üzgünüm, benim kararım değil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-in-the-loop",
+   "word": "Keep me in the loop.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Beni haberdar et."
+   ],
+   "example_en": "Please keep me in the loop.",
+   "example_tr": "Lütfen beni haberdar et.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-take-it-from-here",
+   "word": "Let's take it from here.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Gerisini biz hallederiz."
+   ],
+   "example_en": "Thanks. Let's take it from here.",
+   "example_tr": "Teşekkürler. Gerisini biz hallederiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-alleviate",
+   "word": "alleviate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "hafifletmek",
+    "azaltmak"
+   ],
+   "example_en": "We must alleviate the poverty in this area.",
+   "example_tr": "Bu bölgedeki yoksulluğu hafifletmeliyiz.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-exacerbate",
+   "word": "exacerbate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kötüleştirmek"
+   ],
+   "example_en": "The new policy will inevitably exacerbate inequality.",
+   "example_tr": "Yeni politika eşitsizliği daha da kötüleştirecek.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-mitigate",
+   "word": "mitigate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "hafifletmek",
+    "azaltmak"
+   ],
+   "example_en": "They try to mitigate the impact of the crisis.",
+   "example_tr": "Krizin etkisini hafifletmeye çalışıyorlar.",
+   "decks": [
+    "general",
+    "ielts",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-deteriorate",
+   "word": "deteriorate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kötüleşmek"
+   ],
+   "example_en": "The situation rapidly deteriorated in the poor area.",
+   "example_tr": "Yoksul bölgede durum hızla kötüleşti.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-hinder",
+   "word": "hinder",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "engellemek",
+    "aksatmak"
+   ],
+   "example_en": "Prejudice inevitably hinders community cohesion.",
+   "example_tr": "Önyargı, toplumun uyumunu kaçınılmaz olarak engeller.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-compensate",
+   "word": "compensate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "telafi etmek"
+   ],
+   "example_en": "How can we compensate for this substantial disparity?",
+   "example_tr": "Bu büyük uçurumu nasıl telafi edebiliriz?",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-scarcity",
+   "word": "scarcity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kıtlık",
+    "darlık"
+   ],
+   "example_en": "The scarcity of cheap houses is a critical problem.",
+   "example_tr": "Ucuz ev kıtlığı kritik bir sorun.",
+   "decks": [
+    "general",
+    "yds",
+    "yokdil"
+   ]
+  },
+  {
+   "id": "c1-marginalized",
+   "word": "marginalized",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "dışlanmış"
+   ],
+   "example_en": "We must empower marginalized people in our community.",
+   "example_tr": "Toplumumuzdaki dışlanmış insanları güçlendirmeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-inequality",
+   "word": "inequality",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "eşitsizlik"
+   ],
+   "example_en": "Wealth inequality is a prevalent problem today.",
+   "example_tr": "Servet eşitsizliği günümüzde yaygın bir sorundur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-prejudice",
+   "word": "prejudice",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "önyargı"
+   ],
+   "example_en": "We must reduce prejudice to foster integration.",
+   "example_tr": "Entegrasyonu teşvik etmek için önyargıyı azaltmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-cohesion",
+   "word": "cohesion",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "uyum",
+    "bütünlük"
+   ],
+   "example_en": "Community cohesion prevents unrest.",
+   "example_tr": "Toplum uyumu huzursuzluğu önler.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-integration",
+   "word": "integration",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "entegrasyon",
+    "bütünleşme"
+   ],
+   "example_en": "Their integration into the local culture was rapid.",
+   "example_tr": "Yerel kültüre entegrasyonları hızlı oldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-displacement",
+   "word": "displacement",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yerinden edilme"
+   ],
+   "example_en": "The drought caused the displacement of many residents.",
+   "example_tr": "Kuraklık birçok sakinin yerinden edilmesine neden oldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-unrest",
+   "word": "unrest",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "huzursuzluk",
+    "kargaşa"
+   ],
+   "example_en": "The bad economy caused significant political unrest.",
+   "example_tr": "Kötü ekonomi önemli bir siyasi kargaşaya neden oldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-reform",
+   "word": "reform",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "reform",
+    "ıslahat"
+   ],
+   "example_en": "They demand a comprehensive tax reform.",
+   "example_tr": "Kapsamlı bir vergi reformu talep ediyorlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-legislation",
+   "word": "legislation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "mevzuat",
+    "yasa"
+   ],
+   "example_en": "The new legislation protects our rights.",
+   "example_tr": "Yeni yasa haklarımızı koruyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-empower",
+   "word": "empower",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "güçlendirmek",
+    "yetki vermek"
+   ],
+   "example_en": "The new curriculum empowers young people.",
+   "example_tr": "Yeni müfredat gençleri güçlendiriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-disparity",
+   "word": "disparity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "eşitsizlik",
+    "farklılık"
+   ],
+   "example_en": "The income disparity between men and women is obvious.",
+   "example_tr": "Kadın ve erkek arasındaki gelir eşitsizliği bariz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-affluent",
+   "word": "affluent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "zengin",
+    "varlıklı"
+   ],
+   "example_en": "Affluent families can afford expensive schools.",
+   "example_tr": "Varlıklı aileler pahalı okulları karşılayabilir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-deprived",
+   "word": "deprived",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "yoksul",
+    "mahrum"
+   ],
+   "example_en": "Deprived neighbourhoods need better schools.",
+   "example_tr": "Yoksul mahallelerin daha iyi okullara ihtiyacı var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-grassroots",
+   "word": "grassroots",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "tabandan gelen"
+   ],
+   "example_en": "It started as a grassroots campaign.",
+   "example_tr": "Tabandan gelen bir kampanya olarak başladı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-vicious-circle",
+   "word": "It's a vicious circle.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Kısır döngü."
+   ],
+   "example_en": "Poor areas get poorer. It's a vicious circle.",
+   "example_tr": "Yoksul bölgeler daha da yoksullaşıyor. Kısır döngü.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-tip-iceberg",
+   "word": "It's the tip of the iceberg.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Buzdağının görünen kısmı."
+   ],
+   "example_en": "This problem is merely the tip of the iceberg.",
+   "example_tr": "Bu sorun buzdağının yalnızca görünen kısmı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-fine-line",
+   "word": "There's a fine line between…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "…arasında ince çizgi var."
+   ],
+   "example_en": "There's a fine line between debate and conflict.",
+   "example_tr": "Tartışma ve çatışma arasında ince bir çizgi var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-thorny-issue",
+   "word": "It remains a thorny issue.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Bu çetrefilli bir konu."
+   ],
+   "example_en": "Tax reform is necessary, but it remains a thorny issue.",
+   "example_tr": "Vergi reformu şart ama hâlâ çetrefilli bir konu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-talk-cheap",
+   "word": "Talk is cheap.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Lafla peynir gemisi yürümez."
+   ],
+   "example_en": "They promise reform, but talk is cheap.",
+   "example_tr": "Reform sözü veriyorlar ama lafla peynir gemisi yürümez.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-cognitive",
+   "word": "cognitive",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "bilişsel",
+    "zihinsel"
+   ],
+   "example_en": "Sleep improves cognitive skills.",
+   "example_tr": "Uyku bilişsel becerileri geliştirir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-perception",
+   "word": "perception",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "algı"
+   ],
+   "example_en": "Public perception is inevitably changing.",
+   "example_tr": "Halkın algısı kaçınılmaz olarak değişiyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-resilience",
+   "word": "resilience",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "direnç",
+    "toparlanma gücü"
+   ],
+   "example_en": "Her resilience is a substantial advantage.",
+   "example_tr": "Onun direnci önemli bir avantaj.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-empathy",
+   "word": "empathy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "empati",
+    "duygudaşlık"
+   ],
+   "example_en": "We need to foster empathy in our community.",
+   "example_tr": "Toplumumuzda empatiyi teşvik etmeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-introvert",
+   "word": "introvert",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "içe dönük"
+   ],
+   "example_en": "As an introvert, I avoid crowded parties.",
+   "example_tr": "İçe dönük biri olarak kalabalık partilerden kaçınırım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-extrovert",
+   "word": "extrovert",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "dışa dönük"
+   ],
+   "example_en": "My partner is an extrovert who loves talking.",
+   "example_tr": "Partnerim konuşmayı seven dışa dönük biridir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-subconscious",
+   "word": "subconscious",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "bilinçaltı"
+   ],
+   "example_en": "It was a subconscious decision.",
+   "example_tr": "Bu bilinçaltı bir karardı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-trauma",
+   "word": "trauma",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "travma",
+    "sarsıntı"
+   ],
+   "example_en": "The therapy helps you cope with past trauma.",
+   "example_tr": "Terapi, geçmiş travmayla başa çıkmanıza yardım eder.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-anxiety",
+   "word": "anxiety",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kaygı",
+    "endişe"
+   ],
+   "example_en": "His anxiety is quite overwhelming.",
+   "example_tr": "Kaygısı oldukça bunaltıcı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-intuition",
+   "word": "intuition",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sezgi",
+    "içgüdü"
+   ],
+   "example_en": "I always trust my intuition.",
+   "example_tr": "Sezgilerime her zaman güvenirim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-dilemma",
+   "word": "dilemma",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ikilem",
+    "çıkmaz"
+   ],
+   "example_en": "This is a difficult dilemma.",
+   "example_tr": "Bu zor bir ikilem.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-rational",
+   "word": "rational",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "akılcı",
+    "mantıklı"
+   ],
+   "example_en": "We must find a rational solution.",
+   "example_tr": "Akılcı bir çözüm bulmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-impulsive",
+   "word": "impulsive",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "dürtüsel",
+    "fevri"
+   ],
+   "example_en": "Buying that expensive car was impulsive.",
+   "example_tr": "O pahalı arabayı almak fevri bir davranıştı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-apathy",
+   "word": "apathy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ilgisizlik",
+    "kayıtsızlık"
+   ],
+   "example_en": "Public apathy is a prevalent problem.",
+   "example_tr": "Halkın ilgisizliği yaygın bir sorun.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-ambivalent",
+   "word": "ambivalent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kararsız",
+    "çelişkili"
+   ],
+   "example_en": "I feel ambivalent about this new policy.",
+   "example_tr": "Bu yeni politika hakkında kararsızım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-self-esteem",
+   "word": "self-esteem",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "öz saygı",
+    "özgüven"
+   ],
+   "example_en": "Unemployment damages your self-esteem.",
+   "example_tr": "İşsizlik öz saygınıza zarar verir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-denial",
+   "word": "denial",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "inkar",
+    "kabullenmeme"
+   ],
+   "example_en": "It is obvious that he is in denial.",
+   "example_tr": "İnkâr içinde olduğu çok açık.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-compulsive",
+   "word": "compulsive",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kompülsif",
+    "takıntılı"
+   ],
+   "example_en": "He has a compulsive need to buy shoes.",
+   "example_tr": "Ayakkabı almak için takıntılı bir ihtiyacı var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-nostalgia",
+   "word": "nostalgia",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "nostalji",
+    "geçmişe özlem"
+   ],
+   "example_en": "I feel nostalgia when I see old photos.",
+   "example_tr": "Eski fotoğrafları görünce nostalji hissediyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-insecure",
+   "word": "insecure",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "özgüvensiz",
+    "güvensiz"
+   ],
+   "example_en": "Many young people feel insecure.",
+   "example_tr": "Birçok genç kendini güvensiz hissediyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-conscientious",
+   "word": "conscientious",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "sorumluluk sahibi"
+   ],
+   "example_en": "She is a conscientious and loyal colleague.",
+   "example_tr": "Sorumluluk sahibi ve sadık bir meslektaştır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-cant-put-finger",
+   "word": "I can't put my finger on it.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Adını koyamıyorum."
+   ],
+   "example_en": "Is there a problem? – I can't put my finger on it.",
+   "example_tr": "Bir sorun mu var? – Adını tam koyamıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-all-in-mind",
+   "word": "It's all in the mind.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Her şey kafada bitiyor."
+   ],
+   "example_en": "You are not sick. It's all in the mind.",
+   "example_tr": "Hasta değilsin. Her şey kafada bitiyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-rough-patch",
+   "word": "It's a rough patch.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Zor bir dönem."
+   ],
+   "example_en": "We will overcome this. It's a rough patch.",
+   "example_tr": "Bunu aşacağız. Sadece zor bir dönem.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-open-book",
+   "word": "She's an open book.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "İçi dışı bir."
+   ],
+   "example_en": "You can trust her. She's an open book.",
+   "example_tr": "Ona güvenebilirsin. İçi dışı birdir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-old-habits",
+   "word": "Old habits die hard.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Huylu huyundan vazgeçmez."
+   ],
+   "example_en": "He still smokes. Old habits die hard.",
+   "example_tr": "Hâlâ sigara içiyor. Huylu huyundan vazgeçmez.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-empirical",
+   "word": "empirical",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ampirik",
+    "deneysel"
+   ],
+   "example_en": "We need empirical evidence, not just a theory.",
+   "example_tr": "Sadece teori değil, ampirik kanıt lazım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-methodology",
+   "word": "methodology",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yöntembilim",
+    "yöntem"
+   ],
+   "example_en": "We can't accept their methodology.",
+   "example_tr": "Yöntemlerini kabul edemeyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-variable",
+   "word": "variable",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "değişken"
+   ],
+   "example_en": "Every variable must be known during the experiment.",
+   "example_tr": "Deney sırasında her değişken bilinmelidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-correlation",
+   "word": "correlation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "korelasyon",
+    "ilişki"
+   ],
+   "example_en": "A correlation between diet and disease was evident.",
+   "example_tr": "Diyet ve hastalık arasındaki korelasyon açıktı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-sample",
+   "word": "sample",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "örneklem"
+   ],
+   "example_en": "The sample is too small to validate these findings.",
+   "example_tr": "Örneklem, bu bulguları doğrulamak için çok küçük.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-replicate",
+   "word": "replicate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "tekrarlamak",
+    "yinelemek"
+   ],
+   "example_en": "We must replicate the experiment without a mistake.",
+   "example_tr": "Deneyi hatasız bir şekilde tekrarlamalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-anomaly",
+   "word": "anomaly",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "anomali",
+    "sapma"
+   ],
+   "example_en": "This anomaly cannot be explained by any known theory.",
+   "example_tr": "Bu anomali bilinen hiçbir teoriyle açıklanamaz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-validate",
+   "word": "validate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "doğrulamak",
+    "onaylamak"
+   ],
+   "example_en": "Further research is needed to validate the data.",
+   "example_tr": "Verileri doğrulamak için daha fazla araştırma şart.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-quantify",
+   "word": "quantify",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ölçmek",
+    "sayısallaştırmak"
+   ],
+   "example_en": "It is difficult to quantify the impact of the policy.",
+   "example_tr": "Politikanın etkisini ölçmek zordur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-phenomenon",
+   "word": "phenomenon",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "olgu",
+    "fenomen"
+   ],
+   "example_en": "It is a strange phenomenon that we must investigate.",
+   "example_tr": "Araştırmamız gereken tuhaf bir olgudur.",
+   "decks": [
+    "general"
+   ],
+   "note": "Çoğulu 'phenomena' şeklindedir."
+  },
+  {
+   "id": "c1-simulate",
+   "word": "simulate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "simüle etmek"
+   ],
+   "example_en": "We use a computer to simulate the climate.",
+   "example_tr": "İklimi simüle etmek için bilgisayar kullanıyoruz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-parameter",
+   "word": "parameter",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "parametre"
+   ],
+   "example_en": "Every parameter was revised before starting the trial.",
+   "example_tr": "Denemeye başlamadan önce her parametre revize edildi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-preliminary",
+   "word": "preliminary",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ilk",
+    "ön"
+   ],
+   "example_en": "Our preliminary findings suggest the vaccine is safe.",
+   "example_tr": "İlk bulgularımız aşının güvenli olduğunu gösteriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-rigorous",
+   "word": "rigorous",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "titiz",
+    "sıkı"
+   ],
+   "example_en": "The vaccine went through rigorous trials.",
+   "example_tr": "Aşı titiz denemelerden geçti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-inconclusive",
+   "word": "inconclusive",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "sonuçsuz",
+    "kesin olmayan"
+   ],
+   "example_en": "The evidence is inconclusive; we cannot accuse him.",
+   "example_tr": "Kanıtlar kesin değil; onu suçlayamayız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-peer",
+   "word": "peer",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "meslektaş",
+    "akran"
+   ],
+   "example_en": "His article was reviewed by his peers.",
+   "example_tr": "Makalesi meslektaşları tarafından incelendi.",
+   "decks": [
+    "general"
+   ],
+   "note": "Akademide makaleleri aynı alandaki uzmanlar (peer) inceler."
+  },
+  {
+   "id": "c1-findings",
+   "word": "findings",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "bulgular"
+   ],
+   "example_en": "The findings suggest that the treatment works.",
+   "example_tr": "Bulgular tedavinin işe yaradığını gösteriyor.",
+   "decks": [
+    "general"
+   ],
+   "note": "Araştırma sonuçları için genellikle çoğul kullanılır."
+  },
+  {
+   "id": "c1-causal",
+   "word": "causal",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "nedensel"
+   ],
+   "example_en": "A causal relationship between the events is unlikely.",
+   "example_tr": "Olaylar arasında nedensel bir ilişki olması zor.",
+   "decks": [
+    "general"
+   ],
+   "note": "'Casual' (gündelik) ile karıştırmayın."
+  },
+  {
+   "id": "c1-outlier",
+   "word": "outlier",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "aykırı değer"
+   ],
+   "example_en": "We should ignore this outlier in our data.",
+   "example_tr": "Verimizdeki bu aykırı değeri göz ardı etmeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-interpret",
+   "word": "interpret",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yorumlamak"
+   ],
+   "example_en": "How we interpret the data will decide our strategy.",
+   "example_tr": "Veriyi nasıl yorumladığımız stratejimizi belirleyecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-verify",
+   "word": "verify",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "doğrulamak",
+    "teyit etmek"
+   ],
+   "example_en": "We need more data to verify these unexpected results.",
+   "example_tr": "Bu beklenmedik sonuçları teyit etmek için veri lazım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-findings-suggest",
+   "word": "The findings suggest that…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Bulgular şunu gösteriyor…"
+   ],
+   "example_en": "The findings suggest that you inherit this disease.",
+   "example_tr": "Bulgular bu hastalığın kalıtsal olduğunu gösteriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-correlation",
+   "word": "Correlation isn't causation.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "İlişki, neden demek değil."
+   ],
+   "example_en": "They happen together, but correlation isn't causation.",
+   "example_tr": "Birlikte oluyorlar ama ilişki, neden demek değil.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-further-research",
+   "word": "Further research is needed.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Daha fazla araştırma şart."
+   ],
+   "example_en": "It is interesting, but further research is needed.",
+   "example_tr": "İlginç ama daha fazla araştırmaya ihtiyaç var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-inconclusive",
+   "word": "It's far from conclusive.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Kesin olmaktan çok uzak."
+   ],
+   "example_en": "Do you have an answer? – No, it's far from conclusive.",
+   "example_tr": "Cevabınız var mı? – Hayır, kesin olmaktan çok uzak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-data-speaks",
+   "word": "The data speaks for itself.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Veriler ortada."
+   ],
+   "example_en": "We do not need to argue; the data speaks for itself.",
+   "example_tr": "Tartışmaya gerek yok; veriler ortada.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-aesthetic",
+   "word": "aesthetic",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "estetik"
+   ],
+   "example_en": "The new painting has a beautiful aesthetic.",
+   "example_tr": "Yeni tablonun güzel bir estetiği var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-critique",
+   "word": "critique",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "eleştiri"
+   ],
+   "example_en": "His critique of the novel was fair.",
+   "example_tr": "Romanla ilgili eleştirisi adildi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-genre",
+   "word": "genre",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "tür"
+   ],
+   "example_en": "Which film genre do you prefer?",
+   "example_tr": "Hangi film türünü tercih edersin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-narrative",
+   "word": "narrative",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "anlatı",
+    "hikaye"
+   ],
+   "example_en": "The novel's underlying narrative is quite ambiguous.",
+   "example_tr": "Romanın temel anlatısı oldukça belirsiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-metaphor",
+   "word": "metaphor",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "metafor",
+    "mecaz"
+   ],
+   "example_en": "The island is a subtle metaphor for freedom.",
+   "example_tr": "Ada, özgürlük için ince bir metafordur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-satire",
+   "word": "satire",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hiciv",
+    "taşlama"
+   ],
+   "example_en": "The documentary is a clever satire of politics.",
+   "example_tr": "Belgesel, siyasetin zekice bir hicvi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-masterpiece",
+   "word": "masterpiece",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "başyapıt"
+   ],
+   "example_en": "It goes without saying that it is a masterpiece.",
+   "example_tr": "Bunun bir başyapıt olduğunu söylemeye gerek yok.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-acclaimed",
+   "word": "acclaimed",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "beğeni toplayan"
+   ],
+   "example_en": "The acclaimed author will attend the festival.",
+   "example_tr": "Beğeni toplayan yazar festivale katılacak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-evocative",
+   "word": "evocative",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "çağrışım yapan"
+   ],
+   "example_en": "Her paintings are very evocative of her childhood.",
+   "example_tr": "Tabloları çocukluğunu çok çağrıştırıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-portray",
+   "word": "portray",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "canlandırmak",
+    "resmetmek"
+   ],
+   "example_en": "The actor portrays a vulnerable doctor.",
+   "example_tr": "Oyuncu kırılgan bir doktoru canlandırıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-depict",
+   "word": "depict",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "tasvir etmek",
+    "betimlemek"
+   ],
+   "example_en": "The exhibition depicts the consequences of poverty.",
+   "example_tr": "Sergi, yoksulluğun sonuçlarını tasvir ediyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-symbolism",
+   "word": "symbolism",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sembolizm",
+    "simgecilik"
+   ],
+   "example_en": "The film uses a lot of symbolism.",
+   "example_tr": "Film çok fazla sembolizm kullanıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-mundane",
+   "word": "mundane",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "sıradan",
+    "tekdüze"
+   ],
+   "example_en": "He transforms the mundane into the beautiful.",
+   "example_tr": "Sıradan olanı güzele dönüştürür.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-eloquent",
+   "word": "eloquent",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "etkileyici",
+    "güzel konuşan"
+   ],
+   "example_en": "She gave an eloquent lecture about equality.",
+   "example_tr": "Eşitlik üzerine etkileyici bir ders verdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-poignant",
+   "word": "poignant",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "dokunaklı"
+   ],
+   "example_en": "It is a poignant story of a lost childhood.",
+   "example_tr": "Kayıp bir çocukluğun dokunaklı bir hikayesidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-provocative",
+   "word": "provocative",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kışkırtıcı"
+   ],
+   "example_en": "His provocative exhibition challenges the consensus.",
+   "example_tr": "Kışkırtıcı sergisi fikir birliğine meydan okuyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-contemporary",
+   "word": "contemporary",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "çağdaş",
+    "güncel"
+   ],
+   "example_en": "I predominantly read contemporary novels.",
+   "example_tr": "Ağırlıklı olarak çağdaş romanlar okurum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-allegory",
+   "word": "allegory",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "alegori"
+   ],
+   "example_en": "The novel is an allegory of contemporary politics.",
+   "example_tr": "Roman, çağdaş siyasetin bir alegorisidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-protagonist",
+   "word": "protagonist",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ana karakter"
+   ],
+   "example_en": "The protagonist is an anxious young woman.",
+   "example_tr": "Ana karakter endişeli genç bir kadındır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-medium",
+   "word": "medium",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "araç",
+    "mecra"
+   ],
+   "example_en": "The internet is a popular medium for artists.",
+   "example_tr": "İnternet sanatçılar için popüler bir mecra.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-stayed-with-me",
+   "word": "It stayed with me.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Aklımdan çıkmadı."
+   ],
+   "example_en": "The poignant ending? It stayed with me.",
+   "example_tr": "O dokunaklı son mu? Aklımdan çıkmadı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-acquired-taste",
+   "word": "It's an acquired taste.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Zamanla sevilir."
+   ],
+   "example_en": "This provocative genre? It's an acquired taste.",
+   "example_tr": "Bu kışkırtıcı tür mü? Zamanla sevilen bir şey.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-overrated",
+   "word": "It's overrated.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Abartılıyor."
+   ],
+   "example_en": "The acclaimed masterpiece? I think it's overrated.",
+   "example_tr": "Şu övülen başyapıt mı? Bence abartılıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-strikes-a-chord",
+   "word": "It strikes a chord.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "İnsanın içine dokunuyor."
+   ],
+   "example_en": "Her story is mundane, but it strikes a chord.",
+   "example_tr": "Hikâyesi sıradan ama insanın içine dokunuyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-open-interpretation",
+   "word": "It's open to interpretation.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Yoruma açık."
+   ],
+   "example_en": "The allegory is ambiguous; it's open to interpretation.",
+   "example_tr": "Alegori belirsiz; yoruma açık.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-ethical",
+   "word": "ethical",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ahlaki",
+    "etik"
+   ],
+   "example_en": "His decision was very ethical.",
+   "example_tr": "Kararı çok ahlakiydi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-integrity",
+   "word": "integrity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "dürüstlük",
+    "bütünlük"
+   ],
+   "example_en": "We trust her integrity.",
+   "example_tr": "Onun dürüstlüğüne güveniyoruz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-liability",
+   "word": "liability",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hukuki sorumluluk"
+   ],
+   "example_en": "The company denied any liability for the damage.",
+   "example_tr": "Şirket hasar için hiçbir sorumluluğu kabul etmedi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-compliance",
+   "word": "compliance",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "uyum",
+    "riayet"
+   ],
+   "example_en": "Compliance with the new policy is essential.",
+   "example_tr": "Yeni politikaya uyum şarttır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-jurisdiction",
+   "word": "jurisdiction",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yargı yetkisi"
+   ],
+   "example_en": "The court has no jurisdiction over this issue.",
+   "example_tr": "Mahkemenin bu konuda yargı yetkisi yoktur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-legitimate",
+   "word": "legitimate",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "meşru",
+    "yasal"
+   ],
+   "example_en": "They have a legitimate reason to complain.",
+   "example_tr": "Şikayet etmek için meşru bir nedenleri var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-unlawful",
+   "word": "unlawful",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "yasadışı",
+    "kanunsuz"
+   ],
+   "example_en": "Their methods were deemed unlawful.",
+   "example_tr": "Yöntemleri yasadışı sayıldı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-infringe",
+   "word": "infringe",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ihlal etmek",
+    "çiğnemek"
+   ],
+   "example_en": "Do not infringe on their rights.",
+   "example_tr": "Onların haklarını ihlal etmeyin.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-consent",
+   "word": "consent",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "rıza",
+    "onay"
+   ],
+   "example_en": "He did not give his consent for the surgery.",
+   "example_tr": "Ameliyat için rızasını vermedi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-confidential",
+   "word": "confidential",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "gizli",
+    "mahrem"
+   ],
+   "example_en": "This data is very confidential.",
+   "example_tr": "Bu veriler çok gizlidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-surveillance",
+   "word": "surveillance",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "gözetim",
+    "yakın takip"
+   ],
+   "example_en": "The police kept the house under surveillance.",
+   "example_tr": "Polis evi gözetim altında tuttu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-whistleblower",
+   "word": "whistleblower",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ihbarcı",
+    "muhbir"
+   ],
+   "example_en": "The whistleblower revealed the fraud.",
+   "example_tr": "İhbarcı dolandırıcılığı ortaya çıkardı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-precedent",
+   "word": "precedent",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "emsal",
+    "örnek"
+   ],
+   "example_en": "This decision will establish a dangerous precedent.",
+   "example_tr": "Bu karar tehlikeli bir emsal oluşturacak.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-testimony",
+   "word": "testimony",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "tanıklık",
+    "ifade"
+   ],
+   "example_en": "Her testimony convinced the judge.",
+   "example_tr": "İfadesi hakimi ikna etti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-prosecute",
+   "word": "prosecute",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kovuşturmak",
+    "dava açmak"
+   ],
+   "example_en": "The government decided to prosecute the manager.",
+   "example_tr": "Hükümet yöneticiye dava açmaya karar verdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-acquit",
+   "word": "acquit",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "beraat ettirmek"
+   ],
+   "example_en": "The court will probably acquit him.",
+   "example_tr": "Mahkeme muhtemelen onu beraat ettirecek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-breach",
+   "word": "breach",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ihlal",
+    "bozulma"
+   ],
+   "example_en": "It is an obvious breach of our contract.",
+   "example_tr": "Bu, sözleşmemizin bariz bir ihlalidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-loophole",
+   "word": "loophole",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yasal boşluk",
+    "açık kapı"
+   ],
+   "example_en": "The lawyer found a loophole in the new law.",
+   "example_tr": "Avukat yeni yasada bir boşluk buldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-accountable",
+   "word": "accountable",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "sorumlu",
+    "hesap verebilir"
+   ],
+   "example_en": "They must be accountable to the public.",
+   "example_tr": "Halka hesap verebilir olmalılar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-impartial",
+   "word": "impartial",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "tarafsız",
+    "yansız"
+   ],
+   "example_en": "A judge must be impartial.",
+   "example_tr": "Bir hakim tarafsız olmalıdır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-grey-area",
+   "word": "It's a grey area.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Bu gri bir alan."
+   ],
+   "example_en": "Is this legitimate? – It's a grey area.",
+   "example_tr": "Bu meşru mu? – Bu gri bir alan.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-ignorance",
+   "word": "Ignorance is no excuse.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Bilmemek mazeret değildir."
+   ],
+   "example_en": "I didn't know the rule! – Ignorance is no excuse.",
+   "example_tr": "Kuralı bilmiyordum! – Bilmemek mazeret değildir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-slippery-slope",
+   "word": "It's a slippery slope.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Bu tehlikeli bir gidişat."
+   ],
+   "example_en": "We shouldn't do this. It's a slippery slope.",
+   "example_tr": "Bunu yapmamalıyız. Bu tehlikeli bir gidişat.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-double-edged",
+   "word": "It's a double-edged sword.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "İki ucu keskin kılıç."
+   ],
+   "example_en": "The internet is a double-edged sword.",
+   "example_tr": "İnternet iki ucu keskin bir kılıçtır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-matter-of-principle",
+   "word": "It's a matter of principle.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Bu bir prensip meselesi."
+   ],
+   "example_en": "Why did you quit? – It's a matter of principle.",
+   "example_tr": "Neden istifa ettin? – Bu bir prensip meselesi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-fiscal",
+   "word": "fiscal",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "mali",
+    "finansal"
+   ],
+   "example_en": "The government announced a new fiscal policy.",
+   "example_tr": "Hükümet yeni bir mali politika duyurdu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-monetary",
+   "word": "monetary",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "parasal"
+   ],
+   "example_en": "Inflation is a monetary problem.",
+   "example_tr": "Enflasyon parasal bir sorundur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-austerity",
+   "word": "austerity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kemer sıkma",
+    "tasarruf"
+   ],
+   "example_en": "Austerity is inevitable in a crisis.",
+   "example_tr": "Krizde kemer sıkma kaçınılmazdır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-deficit",
+   "word": "deficit",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "açık",
+    "eksiklik"
+   ],
+   "example_en": "We must reduce the budget deficit.",
+   "example_tr": "Bütçe açığını azaltmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-surplus",
+   "word": "surplus",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "fazla",
+    "fazlalık"
+   ],
+   "example_en": "We have a budget surplus this year.",
+   "example_tr": "Bu yıl bütçe fazlamız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-tariff",
+   "word": "tariff",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "gümrük vergisi",
+    "tarife"
+   ],
+   "example_en": "They will increase the tariff on plastic.",
+   "example_tr": "Plastikteki gümrük vergisini artıracaklar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-globalization",
+   "word": "globalization",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "küreselleşme"
+   ],
+   "example_en": "Globalization transforms local markets.",
+   "example_tr": "Küreselleşme yerel piyasaları dönüştürüyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-outsource",
+   "word": "outsource",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "dışarıya vermek"
+   ],
+   "example_en": "Many companies outsource their work.",
+   "example_tr": "Çoğu şirket işini dışarıya veriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-volatile",
+   "word": "volatile",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "dalgalı",
+    "istikrarsız"
+   ],
+   "example_en": "The currency market is very volatile.",
+   "example_tr": "Döviz piyasası çok dalgalı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-commodity",
+   "word": "commodity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ticari mal",
+    "emtia"
+   ],
+   "example_en": "Coffee is a global commodity.",
+   "example_tr": "Kahve küresel bir emtiadır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-stagnation",
+   "word": "stagnation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "durgunluk"
+   ],
+   "example_en": "The economy is in stagnation.",
+   "example_tr": "Ekonomi durgunluk içinde.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-prosperity",
+   "word": "prosperity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "refah",
+    "zenginlik"
+   ],
+   "example_en": "The new jobs brought prosperity to the city.",
+   "example_tr": "Yeni işler şehre refah getirdi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-subsidy",
+   "word": "subsidy",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sübvansiyon",
+    "devlet desteği"
+   ],
+   "example_en": "The government gives a fuel subsidy.",
+   "example_tr": "Hükümet yakıt desteği veriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-revenue",
+   "word": "revenue",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "gelir"
+   ],
+   "example_en": "Our tax revenue is declining.",
+   "example_tr": "Vergi gelirimiz düşüyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-equity",
+   "word": "equity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "öz sermaye",
+    "hisse"
+   ],
+   "example_en": "Selling equity is a risk.",
+   "example_tr": "Hisse satmak bir risktir.",
+   "decks": [
+    "general"
+   ],
+   "note": "Eşitlik/adalet anlamı da yaygındır."
+  },
+  {
+   "id": "c1-liquidity",
+   "word": "liquidity",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "likidite",
+    "nakit akışı"
+   ],
+   "example_en": "The bank has a liquidity problem.",
+   "example_tr": "Bankanın likidite sorunu var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-bankrupt",
+   "word": "bankrupt",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "iflas etmiş",
+    "batık"
+   ],
+   "example_en": "The company went bankrupt yesterday.",
+   "example_tr": "Şirket dün iflas etti.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-downturn",
+   "word": "downturn",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "gerileme",
+    "düşüş"
+   ],
+   "example_en": "A market downturn is inevitable.",
+   "example_tr": "Piyasada düşüş kaçınılmazdır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-lucrative",
+   "word": "lucrative",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kazançlı",
+    "kârlı"
+   ],
+   "example_en": "This is a very lucrative investment.",
+   "example_tr": "Bu çok kazançlı bir yatırım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-sanction",
+   "word": "sanction",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yaptırım"
+   ],
+   "example_en": "They will apply a new sanction.",
+   "example_tr": "Yeni bir yaptırım uygulayacaklar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-buyers-market",
+   "word": "It's a buyer's market.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Piyasa alıcıdan yana."
+   ],
+   "example_en": "Houses are cheap. It's a buyer's market.",
+   "example_tr": "Evler ucuz. Piyasa alıcıdan yana.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-in-the-red",
+   "word": "We're in the red.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Zarardayız."
+   ],
+   "example_en": "Our profits declined, so we're in the red.",
+   "example_tr": "Kârımız düştü, bu yüzden zarardayız.",
+   "decks": [
+    "general"
+   ],
+   "note": "Banka hesabının eksiye düşmesinden gelir."
+  },
+  {
+   "id": "c1-p-down-the-drain",
+   "word": "It's money down the drain.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Sokağa atılan para."
+   ],
+   "example_en": "Buying a broken car is money down the drain.",
+   "example_tr": "Bozuk araba almak sokağa atılan paradır.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-bottom-line",
+   "word": "The bottom line is…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "İşin özü…"
+   ],
+   "example_en": "The bottom line is we need more money.",
+   "example_tr": "İşin özü, daha fazla paraya ihtiyacımız var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-times-tough",
+   "word": "Times are tough.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Zor zamanlar."
+   ],
+   "example_en": "The economy is bad. Times are tough.",
+   "example_tr": "Ekonomi kötü. Zor zamanlardayız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-ecological",
+   "word": "ecological",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "ekolojik"
+   ],
+   "example_en": "The ecological damage might be irreversible.",
+   "example_tr": "Ekolojik hasar geri döndürülemez olabilir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-depletion",
+   "word": "depletion",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "tükenme",
+    "azalma"
+   ],
+   "example_en": "Resource depletion is a critical issue.",
+   "example_tr": "Kaynak tükenmesi kritik bir sorundur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-contamination",
+   "word": "contamination",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "kirlenme",
+    "bulaşma"
+   ],
+   "example_en": "Water contamination makes animals ill.",
+   "example_tr": "Su kirliliği hayvanları hasta ediyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-arid",
+   "word": "arid",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kurak"
+   ],
+   "example_en": "The arid land cannot support local plants.",
+   "example_tr": "Kurak arazi yerel bitkileri destekleyemez.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-erosion",
+   "word": "erosion",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "erozyon",
+    "aşınma"
+   ],
+   "example_en": "Deforestation inevitably causes erosion.",
+   "example_tr": "Ormansızlaşma kaçınılmaz olarak erozyona neden olur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-irrigation",
+   "word": "irrigation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sulama"
+   ],
+   "example_en": "Good irrigation saves a lot of water.",
+   "example_tr": "İyi bir sulama çok su tasarrufu sağlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-resilient",
+   "word": "resilient",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "dirençli",
+    "esnek"
+   ],
+   "example_en": "We must develop a resilient food supply.",
+   "example_tr": "Dirençli bir gıda tedariki geliştirmeliyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-catastrophic",
+   "word": "catastrophic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "feci",
+    "yıkıcı"
+   ],
+   "example_en": "A flood here would have catastrophic consequences.",
+   "example_tr": "Burada bir selin feci sonuçları olur.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-pristine",
+   "word": "pristine",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "bozulmamış",
+    "tertemiz"
+   ],
+   "example_en": "They want to protect this pristine forest.",
+   "example_tr": "Bu bozulmamış ormanı korumak istiyorlar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-fossil",
+   "word": "fossil",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "fosil"
+   ],
+   "example_en": "We must abandon fossil fuel consumption.",
+   "example_tr": "Fosil yakıt tüketimini bırakmalıyız.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-hazardous",
+   "word": "hazardous",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "tehlikeli",
+    "riskli"
+   ],
+   "example_en": "This toxic waste is very hazardous.",
+   "example_tr": "Bu zehirli atık çok tehlikeli.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-sustainability",
+   "word": "sustainability",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "sürdürülebilirlik"
+   ],
+   "example_en": "Sustainability is crucial for our planet.",
+   "example_tr": "Sürdürülebilirlik gezegenimiz için çok önemlidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-toxic",
+   "word": "toxic",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "zehirli",
+    "toksik"
+   ],
+   "example_en": "Toxic pollution destroys the river ecosystem.",
+   "example_tr": "Zehirli kirlilik nehir ekosistemini yok eder.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-degradation",
+   "word": "degradation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "bozulma",
+    "kötüleşme"
+   ],
+   "example_en": "Habitat degradation hurts many animal species.",
+   "example_tr": "Habitat bozulması birçok hayvan türüne zarar verir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-scarce",
+   "word": "scarce",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kıt",
+    "nadir"
+   ],
+   "example_en": "Fresh water is very scarce here.",
+   "example_tr": "Burada tatlı su çok kıt.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-offset",
+   "word": "offset",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "dengelemek",
+    "telafi etmek"
+   ],
+   "example_en": "We plant trees to offset our carbon emissions.",
+   "example_tr": "Karbon emisyonlarımızı dengelemek için ağaç dikeriz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-adverse",
+   "word": "adverse",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "olumsuz",
+    "ters"
+   ],
+   "example_en": "Pollution has adverse effects on our bodies.",
+   "example_tr": "Kirliliğin vücudumuza olumsuz etkileri var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-landfill",
+   "word": "landfill",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "çöp sahası"
+   ],
+   "example_en": "The city sends all rubbish to a big landfill.",
+   "example_tr": "Şehir tüm çöpleri büyük bir çöp sahasına gönderir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-emit",
+   "word": "emit",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "yaymak",
+    "salmak"
+   ],
+   "example_en": "Old cars emit a lot of carbon.",
+   "example_tr": "Eski arabalar çok karbon salar.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-flourish",
+   "word": "flourish",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "gelişmek",
+    "serpilmek"
+   ],
+   "example_en": "Without pollution, wildlife can flourish.",
+   "example_tr": "Kirlilik olmazsa yaban hayatı gelişebilir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-race-against-time",
+   "word": "It's a race against time.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Zamana karşı bir yarış bu."
+   ],
+   "example_en": "We must stop the disaster; it's a race against time.",
+   "example_tr": "Felaketi durdurmalıyız; zamana karşı bir yarış bu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-tipping-point",
+   "word": "It's a tipping point.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Kritik eşikteyiz."
+   ],
+   "example_en": "We can't wait any longer; it's a tipping point.",
+   "example_tr": "Daha fazla bekleyemeyiz; kritik eşikteyiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-no-quick-fix",
+   "word": "There's no quick fix.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Kısa yoldan çözümü yok."
+   ],
+   "example_en": "For ecological degradation, there's no quick fix.",
+   "example_tr": "Ekolojik bozulmanın kısa yoldan çözümü yok.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-drop-in-ocean",
+   "word": "It's a drop in the ocean.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Okyanusta bir damla."
+   ],
+   "example_en": "My money is merely a drop in the ocean.",
+   "example_tr": "Benim param okyanusta sadece bir damla.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-time-running-out",
+   "word": "Time is running out.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Zaman daralıyor."
+   ],
+   "example_en": "We must protect the forest. Time is running out.",
+   "example_tr": "Ormanı korumalıyız. Zaman daralıyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-articulate",
+   "word": "articulate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "açıkça ifade etmek"
+   ],
+   "example_en": "He could not articulate his opinion.",
+   "example_tr": "Fikrini açıkça ifade edemedi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-connotation",
+   "word": "connotation",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yan anlam",
+    "çağrışım"
+   ],
+   "example_en": "This sentence has a bad connotation.",
+   "example_tr": "Bu cümlenin kötü bir yan anlamı var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-idiom",
+   "word": "idiom",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "deyim"
+   ],
+   "example_en": "This idiom is hard to translate.",
+   "example_tr": "Bu deyimi çevirmek zor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-jargon",
+   "word": "jargon",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "jargon",
+    "mesleki dil"
+   ],
+   "example_en": "This article has too much academic jargon.",
+   "example_tr": "Bu makalede çok fazla akademik jargon var.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-colloquial",
+   "word": "colloquial",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "gündelik",
+    "konuşma diline ait"
+   ],
+   "example_en": "Don't use colloquial words in an essay.",
+   "example_tr": "Kompozisyonda gündelik kelimeler kullanma.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-register",
+   "word": "register",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "üslup",
+    "dil düzeyi"
+   ],
+   "example_en": "You must use an academic register here.",
+   "example_tr": "Burada akademik bir üslup kullanmalısın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-tone",
+   "word": "tone",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "ses tonu",
+    "tavır"
+   ],
+   "example_en": "I do not like your angry tone.",
+   "example_tr": "Bu sinirli ses tonundan hoşlanmıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-paraphrase",
+   "word": "paraphrase",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "kendi sözleriyle anlatmak"
+   ],
+   "example_en": "Can you paraphrase this sentence?",
+   "example_tr": "Bu cümleyi başka kelimelerle ifade edebilir misin?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-convey",
+   "word": "convey",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "iletmek",
+    "aktarmak"
+   ],
+   "example_en": "How can I convey this message?",
+   "example_tr": "Bu mesajı nasıl iletebilirim?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-imply",
+   "word": "imply",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "ima etmek"
+   ],
+   "example_en": "What does this sentence imply?",
+   "example_tr": "Bu cümle ne ima ediyor?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-infer",
+   "word": "infer",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "çıkarım yapmak"
+   ],
+   "example_en": "What can we infer from this data?",
+   "example_tr": "Bu veriden ne çıkarabiliriz?",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-discourse",
+   "word": "discourse",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "söylem"
+   ],
+   "example_en": "Political discourse today is quite rude.",
+   "example_tr": "Bugünkü siyasi söylem oldukça kaba.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-proficiency",
+   "word": "proficiency",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "yeterlilik",
+    "uzmanlık"
+   ],
+   "example_en": "I need to improve my language proficiency.",
+   "example_tr": "Dil yeterliliğimi geliştirmem gerek.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-dialect",
+   "word": "dialect",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "lehçe",
+    "ağız"
+   ],
+   "example_en": "He speaks a local dialect.",
+   "example_tr": "Yerel bir lehçe konuşuyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-verbatim",
+   "word": "verbatim",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "kelimesi kelimesine"
+   ],
+   "example_en": "I remember his promise verbatim.",
+   "example_tr": "Sözünü kelimesi kelimesine hatırlıyorum.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-concise",
+   "word": "concise",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "özlü",
+    "kısa ve net"
+   ],
+   "example_en": "Please give a concise answer.",
+   "example_tr": "Lütfen özlü bir cevap ver.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-eloquence",
+   "word": "eloquence",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "hitabet",
+    "güzel konuşma"
+   ],
+   "example_en": "His eloquence is obvious.",
+   "example_tr": "Güzel konuşması ortada.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-literal",
+   "word": "literal",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "kelimesi kelimesine",
+    "düz"
+   ],
+   "example_en": "The literal meaning is different.",
+   "example_tr": "Kelimesi kelimesine anlamı farklı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-fluency",
+   "word": "fluency",
+   "pos": "n",
+   "level": "C1",
+   "tr": [
+    "akıcılık"
+   ],
+   "example_en": "Fluency is essential for this job.",
+   "example_tr": "Bu iş için akıcılık şart.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-nuanced",
+   "word": "nuanced",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "incelikli",
+    "ayrıntılı"
+   ],
+   "example_en": "This problem requires a nuanced approach.",
+   "example_tr": "Bu sorun incelikli bir yaklaşım gerektiriyor.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-read-between",
+   "word": "Read between the lines.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Satır aralarını oku."
+   ],
+   "example_en": "You must read between the lines.",
+   "example_tr": "Satır aralarını okumalısın.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-lost-translation",
+   "word": "It got lost in translation.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Çeviride kayboldu."
+   ],
+   "example_en": "My message got lost in translation.",
+   "example_tr": "Mesajım çeviride kayboldu.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-let-me-rephrase",
+   "word": "Let me rephrase that.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Şöyle ifade edeyim."
+   ],
+   "example_en": "Let me rephrase that. I am not angry.",
+   "example_tr": "Şöyle ifade edeyim. Kızgın değilim.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-put-it-mildly",
+   "word": "To put it mildly,…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Hafif tabirle,…"
+   ],
+   "example_en": "To put it mildly, the food was bad.",
+   "example_tr": "Hafif tabirle, yemek kötüydü.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-loss-for-words",
+   "word": "I'm at a loss for words.",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Diyecek söz bulamıyorum."
+   ],
+   "example_en": "I'm at a loss for words. I am very grateful.",
+   "example_tr": "Diyecek söz bulamıyorum. Çok minnettarım.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-hitherto",
+   "word": "hitherto",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "şimdiye dek",
+    "şu ana kadar"
+   ],
+   "example_en": "Hitherto, the results have been inconclusive.",
+   "example_tr": "Şimdiye dek sonuçlar kesin değildi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-henceforth",
+   "word": "henceforth",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "bundan böyle",
+    "bundan sonra"
+   ],
+   "example_en": "Henceforth, we will prioritize sustainability.",
+   "example_tr": "Bundan böyle sürdürülebilirliğe öncelik vereceğiz.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-seldom",
+   "word": "seldom",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "nadiren"
+   ],
+   "example_en": "Seldom have I seen a genuine masterpiece.",
+   "example_tr": "Böylesine gerçek bir şaheseri nadiren gördüm.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-scarcely",
+   "word": "scarcely",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "hemen hemen hiç",
+    "güçlükle"
+   ],
+   "example_en": "Scarcely had she spoken when the audience laughed.",
+   "example_tr": "O konuşur konuşmaz seyirciler güldü.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-nonetheless",
+   "word": "nonetheless",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "yine de",
+    "buna rağmen"
+   ],
+   "example_en": "The work is tedious; nonetheless, it is viable.",
+   "example_tr": "İş sıkıcı; yine de uygulanabilir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-ostensibly",
+   "word": "ostensibly",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "görünüşte",
+    "sözde"
+   ],
+   "example_en": "Ostensibly, the subsidy was for ecological research.",
+   "example_tr": "Sözde bu destek ekolojik araştırma içindi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-insofar",
+   "word": "insofar",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "-dığı ölçüde"
+   ],
+   "example_en": "Data is important insofar as it is accurate.",
+   "example_tr": "Veri doğru olduğu ölçüde önemlidir.",
+   "decks": [
+    "general"
+   ],
+   "note": "Genellikle 'insofar as' yapısıyla kullanılır."
+  },
+  {
+   "id": "c1-thereafter",
+   "word": "thereafter",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "ondan sonra",
+    "ardından"
+   ],
+   "example_en": "She retired, and thereafter lived in a quiet village.",
+   "example_tr": "Emekli oldu ve ondan sonra sessiz bir köyde yaşadı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-unprecedented",
+   "word": "unprecedented",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "eşi görülmemiş"
+   ],
+   "example_en": "The flood caused unprecedented damage.",
+   "example_tr": "Sel eşi görülmemiş bir hasara yol açtı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-paramount",
+   "word": "paramount",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "son derece önemli",
+    "başlıca"
+   ],
+   "example_en": "Patient privacy is paramount in this hospital.",
+   "example_tr": "Bu hastanede hasta mahremiyeti her şeyden önemlidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-intricate",
+   "word": "intricate",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "karmaşık",
+    "çetrefilli"
+   ],
+   "example_en": "The plot of the novel is intricate.",
+   "example_tr": "Romanın olay örgüsü çok karmaşık.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-culminate",
+   "word": "culminate",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "sonuçlanmak",
+    "zirveye ulaşmak"
+   ],
+   "example_en": "The long dispute will culminate in a new contract.",
+   "example_tr": "Uzun anlaşmazlık yeni bir sözleşmeyle sonuçlanacak.",
+   "decks": [
+    "general"
+   ],
+   "note": "Genellikle 'in' veya 'with' edatlarıyla kullanılır."
+  },
+  {
+   "id": "c1-epitomize",
+   "word": "epitomize",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "simgelemek",
+    "ta kendisi olmak"
+   ],
+   "example_en": "He epitomizes the diligent student.",
+   "example_tr": "O, çalışkan öğrencinin ta kendisi.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-ubiquitous",
+   "word": "ubiquitous",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "her yerde bulunan",
+    "yaygın"
+   ],
+   "example_en": "Plastic pollution is now ubiquitous in our seas.",
+   "example_tr": "Plastik kirliliği artık denizlerimizde her yerde.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-pivotal",
+   "word": "pivotal",
+   "pos": "adj",
+   "level": "C1",
+   "tr": [
+    "çok önemli",
+    "kritik"
+   ],
+   "example_en": "Empathy is a pivotal factor in any relationship.",
+   "example_tr": "Empati her ilişkide kritik bir faktördür.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-exemplify",
+   "word": "exemplify",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "örneklemek",
+    "örneği olmak"
+   ],
+   "example_en": "These stories exemplify true resilience.",
+   "example_tr": "Bu hikâyeler gerçek direncin örneğidir.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-commence",
+   "word": "commence",
+   "pos": "v",
+   "level": "C1",
+   "tr": [
+    "başlamak"
+   ],
+   "example_en": "The seminar will commence tomorrow afternoon.",
+   "example_tr": "Seminer yarın öğleden sonra başlayacak.",
+   "decks": [
+    "general"
+   ],
+   "note": "Start kelimesinin çok daha resmî halidir."
+  },
+  {
+   "id": "c1-notably",
+   "word": "notably",
+   "pos": "adv",
+   "level": "C1",
+   "tr": [
+    "özellikle",
+    "bilhassa"
+   ],
+   "example_en": "The climate is changing, notably in arid areas.",
+   "example_tr": "İklim değişiyor, özellikle de kurak bölgelerde.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-seldom-have",
+   "word": "Seldom have I seen…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Nadiren … gördüm."
+   ],
+   "example_en": "Seldom have I seen a genuine masterpiece.",
+   "example_tr": "Böylesine gerçek bir şaheseri nadiren gördüm.",
+   "decks": [
+    "general"
+   ],
+   "note": "Olumsuz zarfla başlayan devrik (inversion) yapı."
+  },
+  {
+   "id": "c1-p-no-sooner",
+   "word": "No sooner had… than…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "… olur olmaz … oldu."
+   ],
+   "example_en": "No sooner had we arrived than it started to rain.",
+   "example_tr": "Biz varır varmaz yağmur başladı.",
+   "decks": [
+    "general"
+   ]
+  },
+  {
+   "id": "c1-p-were-it-not",
+   "word": "Were it not for…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "… olmasaydı"
+   ],
+   "example_en": "Were it not for your advice, I would be bankrupt.",
+   "example_tr": "Tavsiyen olmasaydı iflas ederdim.",
+   "decks": [
+    "general"
+   ],
+   "note": "'If it weren't for' yapısının daha resmî ve devrik halidir."
+  },
+  {
+   "id": "c1-p-under-no",
+   "word": "Under no circumstances…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Hiçbir koşulda…"
+   ],
+   "example_en": "Under no circumstances should you abandon this plan.",
+   "example_tr": "Hiçbir koşulda bu planı terk etmemelisin.",
+   "decks": [
+    "general"
+   ],
+   "note": "Yardımcı fiil öznenin önüne geçer."
+  },
+  {
+   "id": "c1-p-little-did",
+   "word": "Little did I know…",
+   "pos": "phrase",
+   "level": "C1",
+   "tr": [
+    "Nereden bilebilirdim ki…"
+   ],
+   "example_en": "Little did I know that he was the whistleblower.",
+   "example_tr": "Onun ihbarcı olduğunu nereden bilebilirdim?",
+   "decks": [
+    "general"
+   ]
   }
  ],
  "units": [
@@ -28885,6 +33167,2093 @@
     "b2-p-not-only",
     "b2-p-id-rather",
     "b2-p-looking-back"
+   ]
+  },
+  {
+   "id": "c1-core",
+   "level": "C1",
+   "title": "Çekirdek",
+   "goal": "Soyut ve akademik konularda ince ayrımlarla konuşur, varsayım ve çıkarımları açıkça ayırır, düşüncesini sıkı bağlaçlarla kurar.",
+   "placement": "first",
+   "position": 0,
+   "stories": [
+    {
+     "id": "c1-core-1",
+     "title": "Akademik Tartışma",
+     "lines": [
+      {
+       "en": "There is an obvious discrepancy in your data.",
+       "tr": "Verilerinde belirgin bir tutarsızlık var."
+      },
+      {
+       "en": "By and large, the underlying hypothesis is plausible.",
+       "tr": "Genel olarak, altında yatan hipotez akla yatkın."
+      },
+      {
+       "en": "That said, you must consider the financial implications.",
+       "tr": "Bununla birlikte, finansal sonuçlarını da değerlendirmelisin."
+      },
+      {
+       "en": "I deem your criteria quite arbitrary.",
+       "tr": "Kriterlerini oldukça keyfi sayıyorum."
+      },
+      {
+       "en": "Be that as it may, this framework constitutes a breakthrough.",
+       "tr": "Öyle olsa bile, bu çerçeve bir buluş oluşturuyor."
+      }
+     ]
+    },
+    {
+     "id": "c1-core-2",
+     "title": "Yeni Politika",
+     "lines": [
+      {
+       "en": "With regard to the new policy, we need a consensus.",
+       "tr": "Yeni politika ile ilgili olarak, bir fikir birliğine ihtiyacımız var."
+      },
+      {
+       "en": "It will inevitably entail a substantial investment.",
+       "tr": "Kaçınılmaz olarak büyük bir yatırım gerektirecek."
+      },
+      {
+       "en": "We must foster innovation, albeit with a small budget.",
+       "tr": "İnovasyonu teşvik etmeliyiz, gerçi küçük bir bütçeyle."
+      },
+      {
+       "en": "It goes without saying that the risks are inherent.",
+       "tr": "Risklerin işin doğasında olduğunu söylemeye gerek bile yok."
+      },
+      {
+       "en": "Our explicit goal is to maintain our reputation, thereby getting more customers.",
+       "tr": "Açık hedefimiz itibarımızı korumak, böylece daha çok müşteri çekmek."
+      }
+     ]
+    },
+    {
+     "id": "c1-core-3",
+     "title": "Zor Karar",
+     "lines": [
+      {
+       "en": "The notion of quitting my job is always in my head.",
+       "tr": "İşimi bırakma düşüncesi hep aklımda."
+      },
+      {
+       "en": "To a certain extent, the situation warrants a dramatic change.",
+       "tr": "Belirli bir dereceye kadar, durum dramatik bir değişimi haklı kılıyor."
+      },
+      {
+       "en": "In the light of the crisis, my promotion is redundant.",
+       "tr": "Krizin ışığında terfim gereksiz kaldı."
+      },
+      {
+       "en": "There is a subtle nuance here.",
+       "tr": "Burada ince bir nüans var."
+      },
+      {
+       "en": "We must agree on a method whereby we can recover.",
+       "tr": "Toparlanabileceğimiz bir yöntem üzerinde anlaşmalıyız."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-albeit",
+    "c1-whereby",
+    "c1-hence",
+    "c1-thereby",
+    "c1-inherent",
+    "c1-explicit",
+    "c1-implicit",
+    "c1-coherent",
+    "c1-comprehensive",
+    "c1-plausible",
+    "c1-profound",
+    "c1-subtle",
+    "c1-arbitrary",
+    "c1-ambiguous",
+    "c1-redundant",
+    "c1-predominantly",
+    "c1-inevitably",
+    "c1-consensus",
+    "c1-paradigm",
+    "c1-hypothesis",
+    "c1-discrepancy",
+    "c1-notion",
+    "c1-implication",
+    "c1-underlying",
+    "c1-substantial",
+    "c1-prevalent",
+    "c1-intrinsic",
+    "c1-nuance",
+    "c1-framework",
+    "c1-criteria",
+    "c1-deem",
+    "c1-entail",
+    "c1-constitute",
+    "c1-pertain",
+    "c1-warrant",
+    "c1-foster",
+    "c1-p-by-and-large",
+    "c1-p-to-a-certain-extent",
+    "c1-p-goes-without-saying",
+    "c1-p-that-said",
+    "c1-p-with-regard-to",
+    "c1-p-be-that-as-it-may",
+    "c1-p-in-the-light-of"
+   ]
+  },
+  {
+   "id": "c1-argument",
+   "level": "C1",
+   "title": "Tartışma ve ikna",
+   "goal": "Bir görüşü kanıtla savunur, karşı görüşü çürütür ya da kısmen kabul eder, bir argümandaki önyargıyı ve mantık hatasını gösterir.",
+   "placement": "any",
+   "position": 1,
+   "stories": [
+    {
+     "id": "c1-argument-1",
+     "title": "İklim tartışması",
+     "lines": [
+      {
+       "en": "The new climate policy is very controversial.",
+       "tr": "Yeni iklim politikası çok tartışmalı."
+      },
+      {
+       "en": "What is your stance on it?",
+       "tr": "Bu konudaki duruşun ne?"
+      },
+      {
+       "en": "I endorse it. I'd go as far as to say it is essential.",
+       "tr": "Onaylıyorum. Hatta şart olduğunu bile söyleyebilirim."
+      },
+      {
+       "en": "But how do you counter the financial objections?",
+       "tr": "Peki finansal itirazlara nasıl karşı çıkıyorsun?"
+      },
+      {
+       "en": "The research evidence is compelling.",
+       "tr": "Araştırma kanıtları ikna edici."
+      }
+     ]
+    },
+    {
+     "id": "c1-argument-2",
+     "title": "Akademik anlaşmazlık",
+     "lines": [
+      {
+       "en": "I dispute the underlying premise of your thesis.",
+       "tr": "Tezinin temel öncülüne itiraz ediyorum."
+      },
+      {
+       "en": "Why? Do you think it is a fallacy?",
+       "tr": "Neden? Bunun bir yanılgı olduğunu mu düşünüyorsunuz?"
+      },
+      {
+       "en": "Yes. I can refute your claims with new data.",
+       "tr": "Evet. İddialarını yeni verilerle çürütebilirim."
+      },
+      {
+       "en": "I concede that the data is different.",
+       "tr": "Verilerin farklı olduğunu kabul ediyorum."
+      },
+      {
+       "en": "The fact of the matter is, your hypothesis is not accurate.",
+       "tr": "İşin aslı şu ki, hipotezin doğru değil."
+      }
+     ]
+    },
+    {
+     "id": "c1-argument-3",
+     "title": "Toplantı odası",
+     "lines": [
+      {
+       "en": "The manager asserts that we need a new strategy.",
+       "tr": "Müdür yeni bir stratejiye ihtiyacımız olduğunu iddia ediyor."
+      },
+      {
+       "en": "His rhetoric is always very confident.",
+       "tr": "Söylemi her zaman çok kendinden emin."
+      },
+      {
+       "en": "We shouldn't merely dismiss his opinions.",
+       "tr": "Fikirlerini öylece geçiştirmemeliyiz."
+      },
+      {
+       "en": "You have a point there. I acknowledge my bias.",
+       "tr": "Bu konuda haklısın. Önyargımı kabul ediyorum."
+      }
+     ]
+    },
+    {
+     "id": "c1-argument-4",
+     "title": "Haber eleştirisi",
+     "lines": [
+      {
+       "en": "This journalist advocates for political change.",
+       "tr": "Bu gazeteci siyasi değişimi savunuyor."
+      },
+      {
+       "en": "But her last article undermines her reputation.",
+       "tr": "Fakat son makalesi itibarını sarsıyor."
+      },
+      {
+       "en": "Is she a credible source?",
+       "tr": "Güvenilir bir kaynak mı?"
+      },
+      {
+       "en": "That's beside the point. Her argument is persuasive.",
+       "tr": "Konumuz bu değil. Argümanı ikna edici."
+      },
+      {
+       "en": "I still don't always trust her.",
+       "tr": "Yine de ona her zaman güvenmiyorum."
+      }
+     ]
+    },
+    {
+     "id": "c1-argument-5",
+     "title": "Yatırım riski",
+     "lines": [
+      {
+       "en": "I contend that this investment is a big risk.",
+       "tr": "Bu yatırımın büyük bir risk olduğunu iddia ediyorum."
+      },
+      {
+       "en": "If you scrutinize the market, you will see the profit.",
+       "tr": "Piyasayı dikkatle incelersen, kârı göreceksin."
+      },
+      {
+       "en": "Our views are very different.",
+       "tr": "Görüşlerimiz çok farklı."
+      },
+      {
+       "en": "Yes, they are. Let's agree to disagree.",
+       "tr": "Evet, öyle. Farklı düşündüğümüzü kabul edelim."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-advocate",
+    "c1-undermine",
+    "c1-scrutinize",
+    "c1-refute",
+    "c1-concede",
+    "c1-assert",
+    "c1-contend",
+    "c1-dispute",
+    "c1-rhetoric",
+    "c1-bias",
+    "c1-fallacy",
+    "c1-premise",
+    "c1-compelling",
+    "c1-controversial",
+    "c1-stance",
+    "c1-endorse",
+    "c1-objection",
+    "c1-persuasive",
+    "c1-credible",
+    "c1-dismiss",
+    "c1-acknowledge",
+    "c1-counter",
+    "c1-p-go-as-far",
+    "c1-p-beside-point",
+    "c1-p-have-point",
+    "c1-p-agree-disagree",
+    "c1-p-fact-matter"
+   ]
+  },
+  {
+   "id": "c1-leadership",
+   "level": "C1",
+   "title": "Liderlik ve yönetim",
+   "goal": "Bir ekibi ve projeyi yönetmeyi anlatır, sorumluluk ve hesap verebilirliği tartışır, iş yükü ve tükenmişlik üzerine konuşur.",
+   "placement": "any",
+   "position": 2,
+   "stories": [
+    {
+     "id": "c1-leadership-1",
+     "title": "Zor Bir Karar",
+     "lines": [
+      {
+       "en": "Leyla and John work in an office.",
+       "tr": "Leyla ve John bir ofiste çalışıyor."
+      },
+      {
+       "en": "Is the new plan feasible, John?",
+       "tr": "Yeni plan yapılabilir mi, John?"
+      },
+      {
+       "en": "I doubt it. We must prioritize our budget.",
+       "tr": "Şüpheliyim. Bütçemize öncelik vermeliyiz."
+      },
+      {
+       "en": "Can we restructure the team instead?",
+       "tr": "Onun yerine ekibi yeniden yapılandıramaz mıyız?"
+      },
+      {
+       "en": "It's not my call. The manager decides.",
+       "tr": "Benim kararım değil. Yönetici karar verir."
+      },
+      {
+       "en": "Keep me in the loop, please.",
+       "tr": "Beni haberdar et, lütfen."
+      }
+     ]
+    },
+    {
+     "id": "c1-leadership-2",
+     "title": "Birleşme Toplantısı",
+     "lines": [
+      {
+       "en": "Mehmet will oversee the new merger.",
+       "tr": "Mehmet yeni birleşmeyi yönetecek."
+      },
+      {
+       "en": "Every stakeholder is nervous about it.",
+       "tr": "Her paydaş bu konuda gergin."
+      },
+      {
+       "en": "We must streamline the plan.",
+       "tr": "Planı sadeleştirmeliyiz."
+      },
+      {
+       "en": "Yes, we have to be transparent.",
+       "tr": "Evet, şeffaf olmak zorundayız."
+      },
+      {
+       "en": "Let's touch base next week.",
+       "tr": "Haftaya haberleşelim."
+      },
+      {
+       "en": "Perfect. Let's take it from here.",
+       "tr": "Harika. Gerisini biz hallederiz."
+      }
+     ]
+    },
+    {
+     "id": "c1-leadership-3",
+     "title": "İş Yükü",
+     "lines": [
+      {
+       "en": "Ayşe is a meticulous and diligent worker.",
+       "tr": "Ayşe titiz ve gayretli bir çalışandır."
+      },
+      {
+       "en": "However, her workload is very heavy.",
+       "tr": "Ancak, iş yükü çok ağır."
+      },
+      {
+       "en": "Every day is the same and tedious.",
+       "tr": "Her gün aynı ve bıktırıcı."
+      },
+      {
+       "en": "She is afraid of burnout.",
+       "tr": "Tükenmişlikten korkuyor."
+      },
+      {
+       "en": "I need a financial incentive.",
+       "tr": "Mali bir teşvike ihtiyacım var."
+      },
+      {
+       "en": "We must think outside the box to help her.",
+       "tr": "Ona yardım etmek için kalıpların dışında düşünmeliyiz."
+      }
+     ]
+    },
+    {
+     "id": "c1-leadership-4",
+     "title": "Yeni Girişim",
+     "lines": [
+      {
+       "en": "Ali is in London for a big meeting.",
+       "tr": "Ali büyük bir toplantı için Londra'da."
+      },
+      {
+       "en": "They want to implement a new initiative.",
+       "tr": "Yeni bir girişim uygulamak istiyorlar."
+      },
+      {
+       "en": "Is it a viable idea?",
+       "tr": "Uygulanabilir bir fikir mi?"
+      },
+      {
+       "en": "Yes, but they must allocate more money.",
+       "tr": "Evet, ama daha fazla para ayırmalılar."
+      },
+      {
+       "en": "Accountability is the key to success.",
+       "tr": "Başarının anahtarı hesap verebilirlik."
+      },
+      {
+       "en": "I will oversee the start.",
+       "tr": "Başlangıcı ben yöneteceğim."
+      }
+     ]
+    },
+    {
+     "id": "c1-leadership-5",
+     "title": "Borçları Yönetmek",
+     "lines": [
+      {
+       "en": "Kemal and Emma talk about their budget.",
+       "tr": "Kemal ve Emma bütçeleri hakkında konuşuyor."
+      },
+      {
+       "en": "We must consolidate our debts, Emma.",
+       "tr": "Borçlarımızı birleştirmeliyiz, Emma."
+      },
+      {
+       "en": "That is a feasible strategy.",
+       "tr": "Bu yapılabilir bir strateji."
+      },
+      {
+       "en": "It will make paying easier.",
+       "tr": "Ödemeyi kolaylaştıracak."
+      },
+      {
+       "en": "By and large, I agree with you.",
+       "tr": "Genel olarak sana katılıyorum."
+      },
+      {
+       "en": "Let's touch base next week about this.",
+       "tr": "Haftaya bunun hakkında haberleşelim."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-facilitate",
+    "c1-oversee",
+    "c1-implement",
+    "c1-streamline",
+    "c1-accountability",
+    "c1-stakeholder",
+    "c1-initiative",
+    "c1-incentive",
+    "c1-benchmark",
+    "c1-feasible",
+    "c1-viable",
+    "c1-restructure",
+    "c1-merger",
+    "c1-meticulous",
+    "c1-diligent",
+    "c1-tedious",
+    "c1-burnout",
+    "c1-workload",
+    "c1-allocate",
+    "c1-prioritize",
+    "c1-consolidate",
+    "c1-transparent",
+    "c1-p-touch-base",
+    "c1-p-outside-box",
+    "c1-p-not-my-call",
+    "c1-p-in-the-loop",
+    "c1-p-take-it-from-here"
+   ]
+  },
+  {
+   "id": "c1-society",
+   "level": "C1",
+   "title": "Toplumsal değişim",
+   "goal": "Toplumsal eşitsizliğin nedenlerini ve sonuçlarını ayrıntılı tartışır, politikaların etkisini değerlendirir, reform önerir.",
+   "placement": "any",
+   "position": 3,
+   "stories": [
+    {
+     "id": "c1-society-1",
+     "title": "Tabandan Gelen Güç",
+     "lines": [
+      {
+       "en": "Zeynep, this grassroots campaign is crucial for our neighbourhood.",
+       "tr": "Zeynep, tabandan gelen bu kampanya mahallemiz için çok önemli."
+      },
+      {
+       "en": "I agree, Ali. The scarcity of clean water here is a prevalent problem.",
+       "tr": "Katılıyorum, Ali. Buradaki temiz su kıtlığı yaygın bir sorun."
+      },
+      {
+       "en": "The local government promised a comprehensive reform last year.",
+       "tr": "Yerel yönetim geçen yıl kapsamlı bir reform sözü verdi."
+      },
+      {
+       "en": "Talk is cheap. We must empower the deprived residents ourselves.",
+       "tr": "Lafla peynir gemisi yürümez. Yoksul sakinleri kendimiz güçlendirmeliyiz."
+      },
+      {
+       "en": "True. Cohesion is our only advantage.",
+       "tr": "Doğru. Uyum tek avantajımız."
+      }
+     ]
+    },
+    {
+     "id": "c1-society-2",
+     "title": "Politika Tartışması",
+     "lines": [
+      {
+       "en": "Bora, will this legislation alleviate the wealth disparity?",
+       "tr": "Bora, bu mevzuat servet eşitsizliğini hafifletecek mi?"
+      },
+      {
+       "en": "I hope so, Elif. Inequality inevitably hinders progress.",
+       "tr": "Umarım öyle olur Elif. Eşitsizlik ilerlemeyi kaçınılmaz olarak engeller."
+      },
+      {
+       "en": "But affluent citizens might protest this new tax.",
+       "tr": "Fakat varlıklı vatandaşlar bu yeni vergiyi protesto edebilir."
+      },
+      {
+       "en": "That said, we must compensate for past mistakes.",
+       "tr": "Yine de geçmiş hataları telafi etmeliyiz."
+      },
+      {
+       "en": "It remains a thorny issue. The debate will be long.",
+       "tr": "Bu çetrefilli bir konu olmaya devam ediyor. Tartışma uzun sürecek."
+      }
+     ]
+    },
+    {
+     "id": "c1-society-3",
+     "title": "Kısır Döngü",
+     "lines": [
+      {
+       "en": "The situation in the city deteriorated rapidly after the flood.",
+       "tr": "Selden sonra şehirdeki durum hızla kötüleşti."
+      },
+      {
+       "en": "Yes, and the displacement of families exacerbates the crisis.",
+       "tr": "Evet ve ailelerin yerinden edilmesi krizi daha da kötüleştiriyor."
+      },
+      {
+       "en": "Without jobs, crime increases. It's a vicious circle.",
+       "tr": "İşsiz kalınca suç artıyor. Bu bir kısır döngü."
+      },
+      {
+       "en": "Poverty and prejudice always go together.",
+       "tr": "Yoksulluk ve önyargı her zaman bir arada gider."
+      },
+      {
+       "en": "We must mitigate these bad outcomes.",
+       "tr": "Bu kötü sonuçları hafifletmeliyiz."
+      }
+     ]
+    },
+    {
+     "id": "c1-society-4",
+     "title": "Buzdağının Görünmeyen Yüzü",
+     "lines": [
+      {
+       "en": "The unrest in the city is getting worse.",
+       "tr": "Şehirdeki huzursuzluk giderek kötüleşiyor."
+      },
+      {
+       "en": "I agree. It's the tip of the iceberg.",
+       "tr": "Katılıyorum. Bu, buzdağının görünen kısmı."
+      },
+      {
+       "en": "Marginalized communities feel angry and frustrated.",
+       "tr": "Dışlanmış topluluklar öfkeli ve hüsran içinde."
+      },
+      {
+       "en": "There's a fine line between a protest and a disaster.",
+       "tr": "Protesto ile felaket arasında ince bir çizgi var."
+      },
+      {
+       "en": "Integration is the only plausible solution.",
+       "tr": "Entegrasyon tek akla yatkın çözüm."
+      }
+     ]
+    },
+    {
+     "id": "c1-society-5",
+     "title": "Yeni Çerçeve",
+     "lines": [
+      {
+       "en": "Teacher Emre, does this paradigm foster community integration?",
+       "tr": "Emre Hoca, bu paradigma toplum entegrasyonunu teşvik ediyor mu?"
+      },
+      {
+       "en": "To a certain extent, Canan. However, it ignores underlying disparity.",
+       "tr": "Belirli bir ölçüde, Canan. Ancak, altta yatan eşitsizliği göz ardı ediyor."
+      },
+      {
+       "en": "Does it exacerbate the scarcity of resources?",
+       "tr": "Kaynakların kıtlığını daha da kötüleştiriyor mu?"
+      },
+      {
+       "en": "By and large, yes. Our hypothesis was a big mistake.",
+       "tr": "Genel olarak, evet. Hipotezimiz büyük bir hataydı."
+      },
+      {
+       "en": "In the light of this evidence, we must revise our framework.",
+       "tr": "Bu kanıtların ışığında çerçevemizi revize etmeliyiz."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-alleviate",
+    "c1-exacerbate",
+    "c1-mitigate",
+    "c1-deteriorate",
+    "c1-hinder",
+    "c1-compensate",
+    "c1-scarcity",
+    "c1-marginalized",
+    "c1-inequality",
+    "c1-prejudice",
+    "c1-cohesion",
+    "c1-integration",
+    "c1-displacement",
+    "c1-unrest",
+    "c1-reform",
+    "c1-legislation",
+    "c1-empower",
+    "c1-disparity",
+    "c1-affluent",
+    "c1-deprived",
+    "c1-grassroots",
+    "c1-p-vicious-circle",
+    "c1-p-tip-iceberg",
+    "c1-p-fine-line",
+    "c1-p-thorny-issue",
+    "c1-p-talk-cheap"
+   ]
+  },
+  {
+   "id": "c1-mind",
+   "level": "C1",
+   "title": "Psikoloji",
+   "goal": "Duygu ve davranışların arkasındaki psikolojik süreçleri anlatır, kişilik farklılıklarını ve ruh sağlığını hassasiyetle tartışır.",
+   "placement": "any",
+   "position": 4,
+   "stories": [
+    {
+     "id": "c1-mind-1",
+     "title": "İkilem",
+     "lines": [
+      {
+       "en": "Ali and doctor Ozan are talking.",
+       "tr": "Ali ve doktor Ozan konuşuyorlar."
+      },
+      {
+       "en": "I feel anxious, but I can't put my finger on it.",
+       "tr": "Endişeli hissediyorum ama adını tam koyamıyorum."
+      },
+      {
+       "en": "I see. Tell me more.",
+       "tr": "Anlıyorum. Bana daha fazlasını anlatın."
+      },
+      {
+       "en": "I have a lot of anxiety.",
+       "tr": "Çok fazla kaygım var."
+      },
+      {
+       "en": "We can try cognitive therapy. Trust your intuition.",
+       "tr": "Bilişsel terapiyi deneyebiliriz. Sezgilerinize güvenin."
+      },
+      {
+       "en": "It is a good approach.",
+       "tr": "Bu iyi bir yaklaşım."
+      }
+     ]
+    },
+    {
+     "id": "c1-mind-2",
+     "title": "Kişilikler",
+     "lines": [
+      {
+       "en": "Zeynep and Clara are flatmates in London.",
+       "tr": "Zeynep ve Clara Londra'da ev arkadaşılar."
+      },
+      {
+       "en": "Clara is an extrovert. She is an open book.",
+       "tr": "Clara dışa dönük biri. İçi dışı birdir."
+      },
+      {
+       "en": "Zeynep is an introvert. She is quite shy.",
+       "tr": "Zeynep içe dönük biri. Oldukça utangaçtır."
+      },
+      {
+       "en": "Let's go to a party tonight!",
+       "tr": "Bu gece bir partiye gidelim!"
+      },
+      {
+       "en": "I feel ambivalent about it. Parties are crowded.",
+       "tr": "Bu konuda kararsız hissediyorum. Partiler kalabalık oluyor."
+      },
+      {
+       "en": "Come on! It will be a good experience.",
+       "tr": "Hadi ama! İyi bir deneyim olacak."
+      }
+     ]
+    },
+    {
+     "id": "c1-mind-3",
+     "title": "Zor Dönem",
+     "lines": [
+      {
+       "en": "Mert lost his job recently.",
+       "tr": "Mert yakın zamanda işini kaybetti."
+      },
+      {
+       "en": "How are you, Mert?",
+       "tr": "Nasılsın, Mert?"
+      },
+      {
+       "en": "I feel only apathy. I feel empty.",
+       "tr": "Sadece kayıtsızlık hissediyorum. İçim bomboş."
+      },
+      {
+       "en": "It's a rough patch. You have great resilience.",
+       "tr": "Zor bir dönem. Harika bir toparlanma gücün var."
+      },
+      {
+       "en": "Losing my job was a trauma for me.",
+       "tr": "İşimi kaybetmek benim için bir travmaydı."
+      },
+      {
+       "en": "You will overcome this soon.",
+       "tr": "Bunu yakında aşacaksın."
+      }
+     ]
+    },
+    {
+     "id": "c1-mind-4",
+     "title": "Eski Alışkanlıklar",
+     "lines": [
+      {
+       "en": "Selin has a compulsive tendency to spend money.",
+       "tr": "Selin'in para harcamaya yönelik kompülsif bir eğilimi var."
+      },
+      {
+       "en": "She bought an expensive bag yesterday.",
+       "tr": "Dün pahalı bir çanta aldı."
+      },
+      {
+       "en": "That was an impulsive decision.",
+       "tr": "O fevri bir karardı."
+      },
+      {
+       "en": "She knows she must be rational.",
+       "tr": "Mantıklı olması gerektiğini biliyor."
+      },
+      {
+       "en": "But she bought shoes today. Old habits die hard.",
+       "tr": "Ama bugün de ayakkabı aldı. Huylu huyundan vazgeçmez."
+      }
+     ]
+    },
+    {
+     "id": "c1-mind-5",
+     "title": "Nostalji ve Algı",
+     "lines": [
+      {
+       "en": "Hasan looks at old photos from Paris.",
+       "tr": "Hasan Paris'ten eski fotoğraflara bakıyor."
+      },
+      {
+       "en": "He feels nostalgia.",
+       "tr": "Nostalji hissediyor."
+      },
+      {
+       "en": "You were very insecure then.",
+       "tr": "O zamanlar çok öz güvensizdin."
+      },
+      {
+       "en": "I was in denial about my problems.",
+       "tr": "Sorunlarımı inkâr ediyordum."
+      },
+      {
+       "en": "Your perception of yourself was different.",
+       "tr": "Kendine bakışın farklıydı."
+      },
+      {
+       "en": "It's all in the mind. I am more confident now.",
+       "tr": "Her şey kafada bitiyor. Artık kendime daha çok güveniyorum."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-cognitive",
+    "c1-perception",
+    "c1-resilience",
+    "c1-empathy",
+    "c1-introvert",
+    "c1-extrovert",
+    "c1-subconscious",
+    "c1-trauma",
+    "c1-anxiety",
+    "c1-intuition",
+    "c1-dilemma",
+    "c1-rational",
+    "c1-impulsive",
+    "c1-apathy",
+    "c1-ambivalent",
+    "c1-self-esteem",
+    "c1-denial",
+    "c1-compulsive",
+    "c1-nostalgia",
+    "c1-insecure",
+    "c1-conscientious",
+    "c1-p-cant-put-finger",
+    "c1-p-all-in-mind",
+    "c1-p-rough-patch",
+    "c1-p-open-book",
+    "c1-p-old-habits"
+   ]
+  },
+  {
+   "id": "c1-research",
+   "level": "C1",
+   "title": "Araştırma yöntemleri",
+   "goal": "Bir çalışmanın yöntemini, verisini ve sınırlılıklarını açıklar, sonuçların güvenilirliğini eleştirel biçimde değerlendirir.",
+   "placement": "any",
+   "position": 5,
+   "stories": [
+    {
+     "id": "c1-research-1",
+     "title": "Laboratuvar Toplantısı",
+     "lines": [
+      {
+       "en": "Ayşe and Tom evaluate the preliminary findings of their new experiment.",
+       "tr": "Ayşe ve Tom, yeni deneylerinin ilk bulgularını değerlendiriyorlar."
+      },
+      {
+       "en": "The findings suggest that too much sugar causes obesity.",
+       "tr": "Bulgular fazla şekerin obeziteye yol açtığını gösteriyor."
+      },
+      {
+       "en": "However, Tom has doubts about the methodology.",
+       "tr": "Ancak Tom'un yöntem hakkında şüpheleri var."
+      },
+      {
+       "en": "We need empirical evidence to validate this.",
+       "tr": "Bunu doğrulamak için ampirik kanıta ihtiyacımız var."
+      },
+      {
+       "en": "I agree. Further research is needed.",
+       "tr": "Katılıyorum. Daha fazla araştırmaya ihtiyaç var."
+      }
+     ]
+    },
+    {
+     "id": "c1-research-2",
+     "title": "Veri Analizi",
+     "lines": [
+      {
+       "en": "Burak is looking at the data on his laptop.",
+       "tr": "Burak dizüstü bilgisayarındaki verilere bakıyor."
+      },
+      {
+       "en": "There is a significant correlation between these two variables.",
+       "tr": "Bu iki değişken arasında anlamlı bir korelasyon var."
+      },
+      {
+       "en": "Wait, what is this anomaly?",
+       "tr": "Bekle, bu anomali ne?"
+      },
+      {
+       "en": "That is just an outlier; we should ignore it.",
+       "tr": "O sadece aykırı bir değer; onu görmezden gelmeliyiz."
+      },
+      {
+       "en": "But if we delete it, we might miss a crucial phenomenon.",
+       "tr": "Ama onu silersek, önemli bir olguyu gözden kaçırabiliriz."
+      }
+     ]
+    },
+    {
+     "id": "c1-research-3",
+     "title": "Akademik İnceleme",
+     "lines": [
+      {
+       "en": "Zeynep reads a new article by her colleague Mark.",
+       "tr": "Zeynep, meslektaşı Mark'ın yeni bir makalesini okuyor."
+      },
+      {
+       "en": "As a peer, she must evaluate his research.",
+       "tr": "Bir meslektaş olarak, araştırmasını değerlendirmek zorunda."
+      },
+      {
+       "en": "His attempt to quantify the results is interesting, but not rigorous enough.",
+       "tr": "Sonuçları sayılarla ifade etme girişimi ilginç ama yeterince titiz değil."
+      },
+      {
+       "en": "The evidence he shows is quite inconclusive.",
+       "tr": "Gösterdiği kanıtlar hiç kesin değil."
+      },
+      {
+       "en": "It's far from conclusive; he cannot share this yet.",
+       "tr": "Kesin olmaktan çok uzak; bunu henüz paylaşamaz."
+      }
+     ]
+    },
+    {
+     "id": "c1-research-4",
+     "title": "Çevreyi Simüle Etmek",
+     "lines": [
+      {
+       "en": "David and Elif try to simulate the effects of deforestation.",
+       "tr": "David ve Elif ormansızlaşmanın etkilerini simüle etmeye çalışıyorlar."
+      },
+      {
+       "en": "Did you revise every parameter in the programme?",
+       "tr": "Programdaki her parametreyi gözden geçirdin mi?"
+      },
+      {
+       "en": "Yes, but I cannot replicate the past results.",
+       "tr": "Evet ama geçmiş sonuçları tekrarlayamıyorum."
+      },
+      {
+       "en": "We must verify the data before another attempt.",
+       "tr": "Bir deneme daha yapmadan önce veriyi doğrulamalıyız."
+      }
+     ]
+    },
+    {
+     "id": "c1-research-5",
+     "title": "Medyaya Karşı Bilim",
+     "lines": [
+      {
+       "en": "Ahmet reads a dramatic headline about coffee and cancer.",
+       "tr": "Ahmet kahve ve kanser hakkında çarpıcı bir manşet okuyor."
+      },
+      {
+       "en": "It claims that a causal relationship was discovered.",
+       "tr": "Nedensel bir ilişkinin keşfedildiğini iddia ediyor."
+      },
+      {
+       "en": "Journalists usually interpret these findings badly.",
+       "tr": "Gazeteciler genellikle bu bulguları kötü yorumlarlar."
+      },
+      {
+       "en": "Correlation isn't causation.",
+       "tr": "Korelasyon nedensellik değildir."
+      },
+      {
+       "en": "It is obvious; the data speaks for itself.",
+       "tr": "Bu çok açık; veriler ortada."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-empirical",
+    "c1-methodology",
+    "c1-variable",
+    "c1-correlation",
+    "c1-sample",
+    "c1-replicate",
+    "c1-anomaly",
+    "c1-validate",
+    "c1-quantify",
+    "c1-phenomenon",
+    "c1-simulate",
+    "c1-parameter",
+    "c1-preliminary",
+    "c1-rigorous",
+    "c1-inconclusive",
+    "c1-peer",
+    "c1-findings",
+    "c1-causal",
+    "c1-outlier",
+    "c1-interpret",
+    "c1-verify",
+    "c1-p-findings-suggest",
+    "c1-p-correlation",
+    "c1-p-further-research",
+    "c1-p-inconclusive",
+    "c1-p-data-speaks"
+   ]
+  },
+  {
+   "id": "c1-arts",
+   "level": "C1",
+   "title": "Sanat ve eleştiri",
+   "goal": "Bir eseri biçim ve anlam açısından çözümler, eleştirel bir değerlendirme yazar, beğenisini gerekçelendirir.",
+   "placement": "any",
+   "position": 6,
+   "stories": [
+    {
+     "id": "c1-arts-1",
+     "title": "Sergide",
+     "lines": [
+      {
+       "en": "Leyla is at an exhibition in London.",
+       "tr": "Leyla Londra'da bir sergide."
+      },
+      {
+       "en": "The exhibition depicts the consequences of city poverty.",
+       "tr": "Sergi şehirdeki yoksulluğun sonuçlarını tasvir ediyor."
+      },
+      {
+       "en": "What do you think of this contemporary painting?",
+       "tr": "Bu çağdaş tablo hakkında ne düşünüyorsun?"
+      },
+      {
+       "en": "To a certain extent, it strikes a chord.",
+       "tr": "Belli bir ölçüde insanın içine dokunuyor."
+      },
+      {
+       "en": "It is quite provocative and evocative.",
+       "tr": "Oldukça kışkırtıcı ve çağrışımlarla dolu."
+      },
+      {
+       "en": "Yes, but I think it's overrated.",
+       "tr": "Evet, ama bence abartılıyor."
+      },
+      {
+       "en": "Perhaps. The symbolism is open to interpretation.",
+       "tr": "Belki. Sembolizm yoruma açık."
+      }
+     ]
+    },
+    {
+     "id": "c1-arts-2",
+     "title": "Yeni bir roman",
+     "lines": [
+      {
+       "en": "Canan reads a new novel in Izmir.",
+       "tr": "Canan İzmir'de yeni bir roman okuyor."
+      },
+      {
+       "en": "The protagonist is a young author.",
+       "tr": "Ana karakter genç bir yazar."
+      },
+      {
+       "en": "The narrative is a subtle allegory of democracy.",
+       "tr": "Anlatı, demokrasinin ince bir alegorisidir."
+      },
+      {
+       "en": "Did you read it? It stayed with me.",
+       "tr": "Okudun mu? Aklımdan çıkmadı."
+      },
+      {
+       "en": "I did. The ending is very poignant.",
+       "tr": "Okudum. Sonu çok dokunaklı."
+      },
+      {
+       "en": "The author uses eloquent metaphors.",
+       "tr": "Yazar etkili metaforlar kullanıyor."
+      },
+      {
+       "en": "By and large, it is a masterpiece.",
+       "tr": "Genel hatlarıyla bu bir başyapıt."
+      }
+     ]
+    },
+    {
+     "id": "c1-arts-3",
+     "title": "Belgesel filmi",
+     "lines": [
+      {
+       "en": "Emre and Thomas watch a film in Berlin.",
+       "tr": "Emre ve Thomas Berlin'de bir film izliyor."
+      },
+      {
+       "en": "It is an acclaimed documentary about wildlife.",
+       "tr": "Vahşi yaşam hakkında beğeni toplayan bir belgesel."
+      },
+      {
+       "en": "I don't understand the artist's aesthetic.",
+       "tr": "Sanatçının estetiğini anlamıyorum."
+      },
+      {
+       "en": "It's an acquired taste.",
+       "tr": "Zamanla sevilir."
+      },
+      {
+       "en": "The mundane scenes are very slow.",
+       "tr": "Sıradan sahneler çok yavaş."
+      },
+      {
+       "en": "Be that as it may, it portrays the animals' habitat well.",
+       "tr": "Öyle de olsa, hayvanların yaşam alanını iyi canlandırıyor."
+      }
+     ]
+    },
+    {
+     "id": "c1-arts-4",
+     "title": "Tiyatro eleştirisi",
+     "lines": [
+      {
+       "en": "Zeynep reviews a popular play.",
+       "tr": "Zeynep popüler bir tiyatro oyununu eleştiriyor."
+      },
+      {
+       "en": "The play is a satire of contemporary politics.",
+       "tr": "Oyun, çağdaş siyasetin bir hicvidir."
+      },
+      {
+       "en": "It is a difficult genre to evaluate.",
+       "tr": "Değerlendirmesi zor bir tür."
+      },
+      {
+       "en": "Do you deem it a success?",
+       "tr": "Bunu bir başarı olarak görüyor musun?"
+      },
+      {
+       "en": "Yes. It shows how different the lives of rich and poor people are.",
+       "tr": "Evet. Zenginlerle yoksulların hayatının ne kadar farklı olduğunu gösteriyor."
+      },
+      {
+       "en": "Hence, the audience leaves the theatre thinking.",
+       "tr": "Bu yüzden izleyici tiyatrodan düşünerek çıkıyor."
+      }
+     ]
+    },
+    {
+     "id": "c1-arts-5",
+     "title": "Medya ve sanat",
+     "lines": [
+      {
+       "en": "Ali is an artist in New York.",
+       "tr": "Ali, New York'ta bir sanatçı."
+      },
+      {
+       "en": "His favourite medium is video.",
+       "tr": "En sevdiği mecra video."
+      },
+      {
+       "en": "He develops provocative narratives.",
+       "tr": "Kışkırtıcı hikayeler geliştirir."
+      },
+      {
+       "en": "His new exhibition makes the media curious.",
+       "tr": "Yeni sergisi medyanın merakını uyandırıyor."
+      },
+      {
+       "en": "The underlying message is explicitly political.",
+       "tr": "Temel mesaj açıkça siyasidir."
+      },
+      {
+       "en": "Some journalists disagree with him, but he has loyal friends.",
+       "tr": "Bazı gazeteciler onunla aynı fikirde değil ama sadık dostları var."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-aesthetic",
+    "c1-critique",
+    "c1-genre",
+    "c1-narrative",
+    "c1-metaphor",
+    "c1-satire",
+    "c1-masterpiece",
+    "c1-acclaimed",
+    "c1-evocative",
+    "c1-portray",
+    "c1-depict",
+    "c1-symbolism",
+    "c1-mundane",
+    "c1-eloquent",
+    "c1-poignant",
+    "c1-provocative",
+    "c1-contemporary",
+    "c1-allegory",
+    "c1-protagonist",
+    "c1-medium",
+    "c1-p-stayed-with-me",
+    "c1-p-acquired-taste",
+    "c1-p-overrated",
+    "c1-p-strikes-a-chord",
+    "c1-p-open-interpretation"
+   ]
+  },
+  {
+   "id": "c1-ethics",
+   "level": "C1",
+   "title": "Hukuk ve etik",
+   "goal": "Etik ikilemleri ve hukuki sorumluluğu tartışır, gizlilik ve gözetim gibi hassas konularda dengeli bir görüş sunar.",
+   "placement": "any",
+   "position": 7,
+   "stories": [
+    {
+     "id": "c1-ethics-1",
+     "title": "Gizli Bilgi",
+     "lines": [
+      {
+       "en": "Did you read the new data?",
+       "tr": "Yeni verileri okudun mu?"
+      },
+      {
+       "en": "Yes, but it is confidential.",
+       "tr": "Evet, ama gizli."
+      },
+      {
+       "en": "I know. The underlying issue is substantial.",
+       "tr": "Biliyorum. Altta yatan sorun ciddi."
+      },
+      {
+       "en": "If we reveal it, it's a breach of our contract.",
+       "tr": "Eğer açıklarsak, bu sözleşmemizin ihlalidir."
+      },
+      {
+       "en": "True. A whistleblower could be arrested.",
+       "tr": "Doğru. İhbarcı tutuklanabilir."
+      },
+      {
+       "en": "We must maintain our integrity.",
+       "tr": "Dürüstlüğümüzü korumalıyız."
+      }
+     ]
+    },
+    {
+     "id": "c1-ethics-2",
+     "title": "Kamera Gözetimi",
+     "lines": [
+      {
+       "en": "The company wants surveillance in the office.",
+       "tr": "Şirket ofiste gözetim istiyor."
+      },
+      {
+       "en": "They need our explicit consent for that.",
+       "tr": "Bunun için açık rızamıza ihtiyaçları var."
+      },
+      {
+       "en": "I think it will infringe on our privacy.",
+       "tr": "Bence bu gizliliğimizi ihlal edecek."
+      },
+      {
+       "en": "In my opinion, it's a slippery slope.",
+       "tr": "Bence bu tehlikeli bir gidişat."
+      },
+      {
+       "en": "We should complain to the manager.",
+       "tr": "Yöneticiye şikayet etmeliyiz."
+      }
+     ]
+    },
+    {
+     "id": "c1-ethics-3",
+     "title": "Hukuki Boşluk",
+     "lines": [
+      {
+       "en": "Emre is a lawyer. He found a loophole.",
+       "tr": "Emre bir avukattır. Bir boşluk buldu."
+      },
+      {
+       "en": "His client wants to avoid tax.",
+       "tr": "Müvekkili vergi ödemekten kaçınmak istiyor."
+      },
+      {
+       "en": "This method is unlawful.",
+       "tr": "Bu yöntem yasadışıdır."
+      },
+      {
+       "en": "But we can use the loophole!",
+       "tr": "Ama boşluğu kullanabiliriz!"
+      },
+      {
+       "en": "No, I will not do it. It's a matter of principle.",
+       "tr": "Hayır, bunu yapmayacağım. Bu bir prensip meselesi."
+      },
+      {
+       "en": "He is very ethical.",
+       "tr": "Çok etik biri."
+      }
+     ]
+    },
+    {
+     "id": "c1-ethics-4",
+     "title": "Mahkemede",
+     "lines": [
+      {
+       "en": "Zeynep is at a court in London.",
+       "tr": "Zeynep Londra'da bir mahkemede."
+      },
+      {
+       "en": "The judge must be impartial.",
+       "tr": "Hakim tarafsız olmalıdır."
+      },
+      {
+       "en": "A witness gives testimony.",
+       "tr": "Bir tanık ifade veriyor."
+      },
+      {
+       "en": "Did you know the plan was unlawful?",
+       "tr": "Planın yasadışı olduğunu biliyor muydunuz?"
+      },
+      {
+       "en": "I didn't know the law.",
+       "tr": "Yasayı bilmiyordum."
+      },
+      {
+       "en": "Ignorance is no excuse. We will prosecute you.",
+       "tr": "Bilmemek mazeret değildir. Size dava açacağız."
+      },
+      {
+       "en": "The court has jurisdiction here.",
+       "tr": "Mahkemenin burada yargı yetkisi var."
+      }
+     ]
+    },
+    {
+     "id": "c1-ethics-5",
+     "title": "Sorumluluk",
+     "lines": [
+      {
+       "en": "Who is accountable for this online mistake?",
+       "tr": "Bu çevrimiçi hatadan kim sorumlu?"
+      },
+      {
+       "en": "The company has the liability.",
+       "tr": "Hukuki sorumluluk şirkette."
+      },
+      {
+       "en": "Will the court acquit them?",
+       "tr": "Mahkeme onları beraat ettirecek mi?"
+      },
+      {
+       "en": "It's a grey area. There is no obvious precedent.",
+       "tr": "Bu gri bir alan. Bariz bir emsal yok."
+      },
+      {
+       "en": "Their reason is not legitimate.",
+       "tr": "Nedenleri meşru değil."
+      },
+      {
+       "en": "Yes. The internet is a double-edged sword.",
+       "tr": "Evet. İnternet iki ucu keskin bir kılıçtır."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-ethical",
+    "c1-integrity",
+    "c1-liability",
+    "c1-compliance",
+    "c1-jurisdiction",
+    "c1-legitimate",
+    "c1-unlawful",
+    "c1-infringe",
+    "c1-consent",
+    "c1-confidential",
+    "c1-surveillance",
+    "c1-whistleblower",
+    "c1-precedent",
+    "c1-testimony",
+    "c1-prosecute",
+    "c1-acquit",
+    "c1-breach",
+    "c1-loophole",
+    "c1-accountable",
+    "c1-impartial",
+    "c1-p-grey-area",
+    "c1-p-ignorance",
+    "c1-p-slippery-slope",
+    "c1-p-double-edged",
+    "c1-p-matter-of-principle"
+   ]
+  },
+  {
+   "id": "c1-global",
+   "level": "C1",
+   "title": "Küresel ekonomi",
+   "goal": "Ekonomi politikalarını ve küresel piyasaları açıklar, krizlerin nedenlerini ve etkilerini çok yönlü tartışır.",
+   "placement": "any",
+   "position": 8,
+   "stories": [
+    {
+     "id": "c1-global-1",
+     "title": "Kriz",
+     "lines": [
+      {
+       "en": "Ali works in a bank in Istanbul.",
+       "tr": "Ali İstanbul'da bir bankada çalışıyor."
+      },
+      {
+       "en": "The market downturn is a big problem.",
+       "tr": "Piyasadaki düşüş büyük bir sorun."
+      },
+      {
+       "en": "Are we bankrupt?",
+       "tr": "İflas mı ettik?"
+      },
+      {
+       "en": "No, but times are tough.",
+       "tr": "Hayır ama zor zamanlardayız."
+      },
+      {
+       "en": "We need an austerity policy.",
+       "tr": "Kemer sıkma politikasına ihtiyacımız var."
+      },
+      {
+       "en": "Yes, the bottom line is we have a deficit.",
+       "tr": "Evet, işin özü açığımız var."
+      }
+     ]
+    },
+    {
+     "id": "c1-global-2",
+     "title": "Kahve Piyasası",
+     "lines": [
+      {
+       "en": "Maria buys and sells coffee in Brazil.",
+       "tr": "Maria Brezilya'da kahve alıp satıyor."
+      },
+      {
+       "en": "Coffee is a very lucrative commodity.",
+       "tr": "Kahve çok kazançlı bir emtiadır."
+      },
+      {
+       "en": "But the global market is volatile.",
+       "tr": "Ama küresel piyasa istikrarsız."
+      },
+      {
+       "en": "The price is going down.",
+       "tr": "Fiyat düşüyor."
+      },
+      {
+       "en": "We're in the red this week.",
+       "tr": "Bu hafta zarardayız."
+      },
+      {
+       "en": "Wait until next week.",
+       "tr": "Haftaya kadar bekle."
+      }
+     ]
+    },
+    {
+     "id": "c1-global-3",
+     "title": "Küresel Kararlar",
+     "lines": [
+      {
+       "en": "David has a company in London.",
+       "tr": "David'in Londra'da bir şirketi var."
+      },
+      {
+       "en": "Because of globalization, they outsource work.",
+       "tr": "Küreselleşme yüzünden işi dışarıya veriyorlar."
+      },
+      {
+       "en": "Can we outsource the work abroad?",
+       "tr": "İşi yurt dışına verebilir miyiz?"
+      },
+      {
+       "en": "No, there is a sanction.",
+       "tr": "Hayır, yaptırım var."
+      },
+      {
+       "en": "It's money down the drain if we try.",
+       "tr": "Denersek sokağa atılan para olur."
+      },
+      {
+       "en": "I agree, it is a bad strategy.",
+       "tr": "Katılıyorum, bu kötü bir strateji."
+      }
+     ]
+    },
+    {
+     "id": "c1-global-4",
+     "title": "Vergi ve Destek",
+     "lines": [
+      {
+       "en": "Elif evaluates government policy in Ankara.",
+       "tr": "Elif Ankara'da hükümet politikasını değerlendiriyor."
+      },
+      {
+       "en": "We have a budget surplus this year.",
+       "tr": "Bu yıl bütçe fazlamız var."
+      },
+      {
+       "en": "Let's give a fuel subsidy to citizens.",
+       "tr": "Vatandaşlara yakıt desteği verelim."
+      },
+      {
+       "en": "And what about the tariff on plastic?",
+       "tr": "Peki ya plastikteki gümrük vergisi?"
+      },
+      {
+       "en": "We should cancel that tariff.",
+       "tr": "O gümrük vergisini iptal etmeliyiz."
+      },
+      {
+       "en": "This will help local companies.",
+       "tr": "Bu yerel şirketlere yardımcı olacak."
+      }
+     ]
+    },
+    {
+     "id": "c1-global-5",
+     "title": "Finansal Kriz",
+     "lines": [
+      {
+       "en": "Mert evaluates monetary and fiscal policy.",
+       "tr": "Mert parasal ve mali politikayı değerlendiriyor."
+      },
+      {
+       "en": "The economy is in stagnation.",
+       "tr": "Ekonomi durgunluk içinde."
+      },
+      {
+       "en": "Our revenue is declining.",
+       "tr": "Gelirimiz düşüyor."
+      },
+      {
+       "en": "We need liquidity, or we will go bankrupt.",
+       "tr": "Likiditeye ihtiyacımız var yoksa iflas edeceğiz."
+      },
+      {
+       "en": "Should we sell equity? Not now, it's a buyer's market.",
+       "tr": "Hisse satalım mı? Şimdi değil, piyasa alıcıdan yana."
+      },
+      {
+       "en": "Austerity and monetary changes are inevitable.",
+       "tr": "Kemer sıkma ve parasal değişiklikler kaçınılmaz."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-fiscal",
+    "c1-monetary",
+    "c1-austerity",
+    "c1-deficit",
+    "c1-surplus",
+    "c1-tariff",
+    "c1-globalization",
+    "c1-outsource",
+    "c1-volatile",
+    "c1-commodity",
+    "c1-stagnation",
+    "c1-prosperity",
+    "c1-subsidy",
+    "c1-revenue",
+    "c1-equity",
+    "c1-liquidity",
+    "c1-bankrupt",
+    "c1-downturn",
+    "c1-lucrative",
+    "c1-sanction",
+    "c1-p-buyers-market",
+    "c1-p-in-the-red",
+    "c1-p-down-the-drain",
+    "c1-p-bottom-line",
+    "c1-p-times-tough"
+   ]
+  },
+  {
+   "id": "c1-earth",
+   "level": "C1",
+   "title": "Gezegenin geleceği",
+   "goal": "Çevre krizinin bilimsel ve toplumsal boyutlarını ayrıntılı tartışır, uzun vadeli çözümleri ve bedellerini karşılaştırır.",
+   "placement": "any",
+   "position": 9,
+   "stories": [
+    {
+     "id": "c1-earth-1",
+     "title": "Zor kararlar",
+     "lines": [
+      {
+       "en": "Defne and David are at a climate meeting.",
+       "tr": "Defne ve David bir iklim toplantısındalar."
+      },
+      {
+       "en": "If we had reduced fossil fuels earlier, we wouldn't be here.",
+       "tr": "Fosil yakıtları daha erken azaltsaydık, burada olmazdık."
+      },
+      {
+       "en": "It is said that the ecological damage will be catastrophic.",
+       "tr": "Ekolojik hasarın feci olacağı söyleniyor."
+      },
+      {
+       "en": "What we must do is offset our emissions.",
+       "tr": "Yapmamız gereken emisyonlarımızı dengelemektir."
+      },
+      {
+       "en": "Yes, it's a race against time.",
+       "tr": "Evet, zamana karşı bir yarış bu."
+      }
+     ]
+    },
+    {
+     "id": "c1-earth-2",
+     "title": "Kuruyan nehir",
+     "lines": [
+      {
+       "en": "The pristine river is gone. Ali looks at the arid land.",
+       "tr": "Tertemiz nehir artık yok. Ali kurak araziye bakıyor."
+      },
+      {
+       "en": "Water is very scarce today.",
+       "tr": "Su bugün çok kıt."
+      },
+      {
+       "en": "There's no quick fix.",
+       "tr": "Kısa yoldan çözümü yok."
+      },
+      {
+       "en": "If I had bought a solar irrigation device, the land would be resilient.",
+       "tr": "Güneş enerjili bir sulama cihazı alsaydım, arazi dirençli olurdu."
+      },
+      {
+       "en": "I shouldn't have ignored the drought.",
+       "tr": "Kuraklığı görmezden gelmemeliydim."
+      }
+     ]
+    },
+    {
+     "id": "c1-earth-3",
+     "title": "Şehrin atıkları",
+     "lines": [
+      {
+       "en": "Ayşe and Mark debate the new city landfill.",
+       "tr": "Ayşe ve Mark yeni şehir çöp sahasını tartışıyorlar."
+      },
+      {
+       "en": "The toxic waste has caused substantial contamination.",
+       "tr": "Zehirli atık büyük bir kirlenmeye yol açtı."
+      },
+      {
+       "en": "This is a tipping point for the local ecosystem.",
+       "tr": "Yerel ekosistem için kritik bir eşik bu."
+      },
+      {
+       "en": "What we need is a sustainable solution.",
+       "tr": "İhtiyacımız olan sürdürülebilir bir çözüm."
+      },
+      {
+       "en": "Otherwise, the disease will destroy the city.",
+       "tr": "Aksi takdirde, hastalık şehri yok edecek."
+      }
+     ]
+    },
+    {
+     "id": "c1-earth-4",
+     "title": "Kötü alışkanlıklar",
+     "lines": [
+      {
+       "en": "Canan visits John's company.",
+       "tr": "Canan John'un şirketini ziyaret eder."
+      },
+      {
+       "en": "It is obvious that your devices emit hazardous smoke.",
+       "tr": "Cihazlarınızın tehlikeli duman saldığı bariz."
+      },
+      {
+       "en": "We try to recycle, albeit reluctantly.",
+       "tr": "Gönülsüzce de olsa geri dönüşüm yapmaya çalışıyoruz."
+      },
+      {
+       "en": "Recycling a little plastic is a drop in the ocean.",
+       "tr": "Biraz plastik geri dönüştürmek okyanusta bir damla."
+      },
+      {
+       "en": "Resource depletion is a much worse problem.",
+       "tr": "Kaynak tükenmesi çok daha kötü bir sorun."
+      }
+     ]
+    },
+    {
+     "id": "c1-earth-5",
+     "title": "Ormanın umudu",
+     "lines": [
+      {
+       "en": "Emre explores the mountain.",
+       "tr": "Emre dağı keşfe çıkıyor."
+      },
+      {
+       "en": "Land erosion and habitat degradation are evident everywhere.",
+       "tr": "Arazi erozyonu ve habitat bozulması her yerde açıkça görülüyor."
+      },
+      {
+       "en": "To a certain extent, the adverse effects are irreversible.",
+       "tr": "Belirli bir dereceye kadar, olumsuz etkiler geri döndürülemez."
+      },
+      {
+       "en": "Yet, if we protect the trees, the forest could flourish.",
+       "tr": "Yine de, ağaçları korursak orman gelişebilir."
+      },
+      {
+       "en": "He plants a tree.",
+       "tr": "Bir ağaç dikiyor."
+      },
+      {
+       "en": "Time is running out.",
+       "tr": "Zaman daralıyor."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-ecological",
+    "c1-depletion",
+    "c1-contamination",
+    "c1-arid",
+    "c1-erosion",
+    "c1-irrigation",
+    "c1-resilient",
+    "c1-catastrophic",
+    "c1-pristine",
+    "c1-fossil",
+    "c1-hazardous",
+    "c1-sustainability",
+    "c1-toxic",
+    "c1-degradation",
+    "c1-scarce",
+    "c1-offset",
+    "c1-adverse",
+    "c1-landfill",
+    "c1-emit",
+    "c1-flourish",
+    "c1-p-race-against-time",
+    "c1-p-tipping-point",
+    "c1-p-no-quick-fix",
+    "c1-p-drop-in-ocean",
+    "c1-p-time-running-out"
+   ]
+  },
+  {
+   "id": "c1-language",
+   "level": "C1",
+   "title": "Dil ve iletişim",
+   "goal": "Üslubu ve tonu duruma göre ayarlar, ima ile açık anlatımı ayırır, dil öğrenimi ve iletişim üzerine derinlemesine konuşur.",
+   "placement": "any",
+   "position": 10,
+   "stories": [
+    {
+     "id": "c1-language-1",
+     "title": "Zor bir ders",
+     "lines": [
+      {
+       "en": "Ali is a student. He listens to a lecture by Clark.",
+       "tr": "Ali bir öğrenci. Clark'ın bir dersini dinliyor."
+      },
+      {
+       "en": "I do not understand this academic jargon.",
+       "tr": "Bu akademik jargonu anlamıyorum."
+      },
+      {
+       "en": "Can you paraphrase it, please?",
+       "tr": "Bunu kendi kelimelerinizle ifade edebilir misiniz, lütfen?"
+      },
+      {
+       "en": "Let me rephrase that. The underlying theory is easy.",
+       "tr": "Şöyle ifade edeyim. Temeldeki teori kolay."
+      },
+      {
+       "en": "Your new message is very concise.",
+       "tr": "Yeni mesajınız çok özlü."
+      },
+      {
+       "en": "You must articulate your opinions in an academic register.",
+       "tr": "Fikirlerinizi akademik bir üslupla açıkça ifade etmelisiniz."
+      }
+     ]
+    },
+    {
+     "id": "c1-language-2",
+     "title": "Londra'da yanlış anlama",
+     "lines": [
+      {
+       "en": "Zeynep lives in London. Ben speaks a local dialect.",
+       "tr": "Zeynep Londra'da yaşıyor. Ben yerel bir lehçe konuşuyor."
+      },
+      {
+       "en": "His colloquial words are difficult.",
+       "tr": "Gündelik kelimeleri zor."
+      },
+      {
+       "en": "Did he say that verbatim?",
+       "tr": "Bunu kelimesi kelimesine mi söyledi?"
+      },
+      {
+       "en": "Yes, but do not be so literal.",
+       "tr": "Evet, ama bu kadar gerçek anlamıyla alma."
+      },
+      {
+       "en": "It got lost in translation. I apologize.",
+       "tr": "Çeviride kayboldu. Özür dilerim."
+      }
+     ]
+    },
+    {
+     "id": "c1-language-3",
+     "title": "Siyasi tartışma",
+     "lines": [
+      {
+       "en": "Maria watches a political debate on the internet.",
+       "tr": "Maria internette siyasi bir tartışma izliyor."
+      },
+      {
+       "en": "The eloquence of the candidate is obvious.",
+       "tr": "Adayın hitabet yeteneği ortada."
+      },
+      {
+       "en": "What does his comment imply?",
+       "tr": "Onun yorumu ne ima ediyor?"
+      },
+      {
+       "en": "His answer is quite nuanced.",
+       "tr": "Cevabı oldukça incelikli."
+      },
+      {
+       "en": "Political discourse is very sensitive.",
+       "tr": "Siyasi söylem çok hassastır."
+      }
+     ]
+    },
+    {
+     "id": "c1-language-4",
+     "title": "İş görüşmesi",
+     "lines": [
+      {
+       "en": "Ayşe is at a job interview.",
+       "tr": "Ayşe bir iş görüşmesinde."
+      },
+      {
+       "en": "We need advanced language proficiency and fluency.",
+       "tr": "İleri düzey dil yeterliliğine ve akıcılığa ihtiyacımız var."
+      },
+      {
+       "en": "I am confident in my fluency.",
+       "tr": "Akıcılığım konusunda kendime güveniyorum."
+      },
+      {
+       "en": "To put it mildly, your tone was a little rude.",
+       "tr": "Hafif tabirle, ses tonunuz biraz kabaydı."
+      },
+      {
+       "en": "I'm at a loss for words. I apologize.",
+       "tr": "Diyecek söz bulamıyorum. Özür dilerim."
+      }
+     ]
+    },
+    {
+     "id": "c1-language-5",
+     "title": "Gizli anlamlar",
+     "lines": [
+      {
+       "en": "Emre and Sarah read a novel.",
+       "tr": "Emre ve Sarah bir roman okuyor."
+      },
+      {
+       "en": "This idiom does not convey the message.",
+       "tr": "Bu deyim mesajı iletmiyor."
+      },
+      {
+       "en": "It has a bad connotation.",
+       "tr": "Kötü bir yan anlamı var."
+      },
+      {
+       "en": "You must read between the lines.",
+       "tr": "Satır aralarını okumalısın."
+      },
+      {
+       "en": "Now I understand the underlying nuance.",
+       "tr": "Şimdi alttaki ince ayrıntıyı anlıyorum."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-articulate",
+    "c1-connotation",
+    "c1-idiom",
+    "c1-jargon",
+    "c1-colloquial",
+    "c1-register",
+    "c1-tone",
+    "c1-paraphrase",
+    "c1-convey",
+    "c1-imply",
+    "c1-infer",
+    "c1-discourse",
+    "c1-proficiency",
+    "c1-dialect",
+    "c1-verbatim",
+    "c1-concise",
+    "c1-eloquence",
+    "c1-literal",
+    "c1-fluency",
+    "c1-nuanced",
+    "c1-p-read-between",
+    "c1-p-lost-translation",
+    "c1-p-let-me-rephrase",
+    "c1-p-put-it-mildly",
+    "c1-p-loss-for-words"
+   ]
+  },
+  {
+   "id": "c1-bridge",
+   "level": "C1",
+   "title": "Ustalık",
+   "goal": "Devrik yapılar (Seldom have I…), ortaç cümleleri ve resmî üslupla etkileyici bir anlatı ya da konuşma kurar; C2'ye köprü.",
+   "placement": "last",
+   "position": 11,
+   "stories": [
+    {
+     "id": "c1-bridge-1",
+     "title": "Şirket birleşmesi",
+     "lines": [
+      {
+       "en": "The two companies commenced their merger meeting yesterday.",
+       "tr": "İki şirket birleşme toplantılarına dün başladı."
+      },
+      {
+       "en": "Hitherto, their relationship was ostensibly polite but cold.",
+       "tr": "Şimdiye dek ilişkileri görünüşte kibar ama soğuktu."
+      },
+      {
+       "en": "We must prioritize integration, notably in the big office.",
+       "tr": "Özellikle büyük ofiste entegrasyona öncelik vermeliyiz."
+      },
+      {
+       "en": "It is an intricate situation, but it will culminate in success.",
+       "tr": "Bu karmaşık bir durum ama başarıyla sonuçlanacak."
+      },
+      {
+       "en": "Under no circumstances should we allow a financial deficit.",
+       "tr": "Hiçbir koşulda mali açığa izin vermemeliyiz."
+      },
+      {
+       "en": "Henceforth, we are accountable to every stakeholder.",
+       "tr": "Bundan böyle her paydaşa karşı sorumluyuz."
+      }
+     ]
+    },
+    {
+     "id": "c1-bridge-2",
+     "title": "Akademik bir keşif",
+     "lines": [
+      {
+       "en": "The new methodology was quite unprecedented.",
+       "tr": "Yeni metodoloji oldukça eşi görülmemişti."
+      },
+      {
+       "en": "No sooner had she shared the findings than the debate commenced.",
+       "tr": "Bulguları paylaşır paylaşmaz tartışma başladı."
+      },
+      {
+       "en": "Scarcely anybody believed her empirical evidence.",
+       "tr": "Neredeyse hiç kimse onun ampirik kanıtlarına inanmadı."
+      },
+      {
+       "en": "Nonetheless, the findings were accurate.",
+       "tr": "Yine de bulgular doğruydu."
+      },
+      {
+       "en": "Were it not for her rigorous work, we would not know this.",
+       "tr": "Titiz çalışması olmasaydı, bunu bilemezdik."
+      },
+      {
+       "en": "This paradigm is now ubiquitous in academic research.",
+       "tr": "Bu paradigma artık akademik araştırmalarda her yerde bulunuyor."
+      }
+     ]
+    },
+    {
+     "id": "c1-bridge-3",
+     "title": "Sanat sergisi",
+     "lines": [
+      {
+       "en": "We are at an exhibition by a famous contemporary artist.",
+       "tr": "Ünlü bir çağdaş sanatçının sergisindeyiz."
+      },
+      {
+       "en": "Seldom have I seen a more evocative masterpiece.",
+       "tr": "Daha duygu yüklü bir şaheseri nadiren gördüm."
+      },
+      {
+       "en": "These paintings epitomize life in the countryside.",
+       "tr": "Bu tablolar kırsal hayatın simgesi."
+      },
+      {
+       "en": "The aesthetic value is paramount here.",
+       "tr": "Estetik değer burada çok önemlidir."
+      },
+      {
+       "en": "I concede that the tone is very poignant.",
+       "tr": "Tonun çok dokunaklı olduğunu kabul ediyorum."
+      }
+     ]
+    },
+    {
+     "id": "c1-bridge-4",
+     "title": "Hukuki anlaşmazlık",
+     "lines": [
+      {
+       "en": "The lawyer scrutinized the new legislation.",
+       "tr": "Avukat yeni mevzuatı dikkatle inceledi."
+      },
+      {
+       "en": "Little did I know that the contract had a loophole.",
+       "tr": "Sözleşmede bir boşluk olduğunu nereden bilebilirdim?"
+      },
+      {
+       "en": "We are accountable insofar as we have jurisdiction.",
+       "tr": "Yargı yetkimiz olduğu ölçüde sorumluyuz."
+      },
+      {
+       "en": "The judge dismissed the liability claim.",
+       "tr": "Hakim yükümlülük iddiasını reddetti."
+      },
+      {
+       "en": "Thereafter, the controversial policy was restructured.",
+       "tr": "Ondan sonra tartışmalı politika yeniden yapılandırıldı."
+      },
+      {
+       "en": "It was a pivotal time for local rights.",
+       "tr": "Yerel haklar için kritik bir zamandı."
+      }
+     ]
+    },
+    {
+     "id": "c1-bridge-5",
+     "title": "Çevre kampanyası",
+     "lines": [
+      {
+       "en": "The drought will exacerbate the water scarcity.",
+       "tr": "Kuraklık su kıtlığını daha da kötüleştirecek."
+      },
+      {
+       "en": "These bad weather events exemplify the climate crisis.",
+       "tr": "Bu kötü hava olayları iklim krizine örnek teşkil ediyor."
+      },
+      {
+       "en": "We must implement viable solutions to mitigate the damage.",
+       "tr": "Hasarı hafifletmek için uygulanabilir çözümler hayata geçirmeliyiz."
+      },
+      {
+       "en": "Grassroots initiatives are paramount for a sustainable future.",
+       "tr": "Sürdürülebilir bir gelecek için tabandan gelen girişimler son derece önemlidir."
+      },
+      {
+       "en": "Otherwise, the depletion of resources is inevitable.",
+       "tr": "Aksi takdirde, kaynakların tükenmesi kaçınılmazdır."
+      }
+     ]
+    }
+   ],
+   "cards": [
+    "c1-hitherto",
+    "c1-henceforth",
+    "c1-seldom",
+    "c1-scarcely",
+    "c1-nonetheless",
+    "c1-ostensibly",
+    "c1-insofar",
+    "c1-thereafter",
+    "c1-unprecedented",
+    "c1-paramount",
+    "c1-intricate",
+    "c1-culminate",
+    "c1-epitomize",
+    "c1-ubiquitous",
+    "c1-pivotal",
+    "c1-exemplify",
+    "c1-commence",
+    "c1-notably",
+    "c1-p-seldom-have",
+    "c1-p-no-sooner",
+    "c1-p-were-it-not",
+    "c1-p-under-no",
+    "c1-p-little-did"
    ]
   }
  ]

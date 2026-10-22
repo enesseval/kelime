@@ -1,0 +1,486 @@
+{
+"id": "c1-bridge",
+"level": "C1",
+"title": "Ustalık",
+"placement": "last",
+"goal": "Devrik yapılar (Seldom have I…), ortaç cümleleri ve resmî üslupla etkileyici bir anlatı ya da konuşma kurar; C2'ye köprü.",
+"words": [
+{
+"id": "c1-hitherto",
+"word": "hitherto",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"şimdiye dek",
+"şu ana kadar"
+],
+"example_en": "Hitherto, the results have been inconclusive.",
+"example_tr": "Şimdiye dek sonuçlar kesin değildi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-henceforth",
+"word": "henceforth",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"bundan böyle",
+"bundan sonra"
+],
+"example_en": "Henceforth, we will prioritize sustainability.",
+"example_tr": "Bundan böyle sürdürülebilirliğe öncelik vereceğiz."
+}
+],
+"note": ""
+},
+{
+"id": "c1-seldom",
+"word": "seldom",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"nadiren"
+],
+"example_en": "Seldom have I seen a genuine masterpiece.",
+"example_tr": "Böylesine gerçek bir şaheseri nadiren gördüm."
+}
+],
+"note": ""
+},
+{
+"id": "c1-scarcely",
+"word": "scarcely",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"hemen hemen hiç",
+"güçlükle"
+],
+"example_en": "Scarcely had she spoken when the audience laughed.",
+"example_tr": "O konuşur konuşmaz seyirciler güldü."
+}
+],
+"note": ""
+},
+{
+"id": "c1-nonetheless",
+"word": "nonetheless",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"yine de",
+"buna rağmen"
+],
+"example_en": "The work is tedious; nonetheless, it is viable.",
+"example_tr": "İş sıkıcı; yine de uygulanabilir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-ostensibly",
+"word": "ostensibly",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"görünüşte",
+"sözde"
+],
+"example_en": "Ostensibly, the subsidy was for ecological research.",
+"example_tr": "Görünüşte ödenek ekolojik araştırma içindi."
+}
+],
+"note": ""
+},
+{
+"id": "c1-insofar",
+"word": "insofar",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"-dığı kadarıyla"
+],
+"example_en": "The data is important insofar as it supports the theory.",
+"example_tr": "Veriler, teoriyi desteklediği ölçüde önemlidir."
+}
+],
+"note": "Genellikle 'insofar as' yapısıyla kullanılır."
+},
+{
+"id": "c1-thereafter",
+"word": "thereafter",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"ondan sonra",
+"ardından"
+],
+"example_en": "She retired, and thereafter lived in a quiet village.",
+"example_tr": "Emekli oldu ve ondan sonra sessiz bir köyde yaşadı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-unprecedented",
+"word": "unprecedented",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"eşi görülmemiş"
+],
+"example_en": "The new tariff caused an unprecedented financial crisis.",
+"example_tr": "Yeni gümrük vergisi eşi görülmemiş bir krize yol açtı."
+}
+],
+"note": ""
+},
+{
+"id": "c1-paramount",
+"word": "paramount",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"son derece önemli",
+"başlıca"
+],
+"example_en": "Patient privacy is paramount in this hospital.",
+"example_tr": "Bu hastanede hasta mahremiyeti her şeyden önemlidir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-intricate",
+"word": "intricate",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"karmaşık",
+"çetrefilli"
+],
+"example_en": "The protagonist's motivation is profound and intricate.",
+"example_tr": "Ana karakterin motivasyonu derin ve karmaşıktır."
+}
+],
+"note": ""
+},
+{
+"id": "c1-culminate",
+"word": "culminate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"sonuçlanmak",
+"zirveye ulaşmak"
+],
+"example_en": "The long dispute will culminate in a new contract.",
+"example_tr": "Uzun süren anlaşmazlık yeni bir sözleşmeyle son bulacak."
+}
+],
+"note": "Genellikle 'in' veya 'with' edatlarıyla kullanılır."
+},
+{
+"id": "c1-epitomize",
+"word": "epitomize",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"simgesi olmak",
+"örneği olmak"
+],
+"example_en": "These paintings epitomize countryside nostalgia.",
+"example_tr": "Bu resimler kırsal nostaljisini kusursuz simgeler."
+}
+],
+"note": ""
+},
+{
+"id": "c1-ubiquitous",
+"word": "ubiquitous",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"her yerde bulunan",
+"yaygın"
+],
+"example_en": "Plastic pollution is now ubiquitous in our seas.",
+"example_tr": "Plastik kirliliği artık denizlerimizde her yerde."
+}
+],
+"note": ""
+},
+{
+"id": "c1-pivotal",
+"word": "pivotal",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"çok önemli",
+"kritik"
+],
+"example_en": "Empathy is a pivotal factor in any relationship.",
+"example_tr": "Empati her ilişkide kritik bir faktördür."
+}
+],
+"note": ""
+},
+{
+"id": "c1-exemplify",
+"word": "exemplify",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"örneklendirmek",
+"örnek teşkil etmek"
+],
+"example_en": "Her diligent study habits exemplify true resilience.",
+"example_tr": "Disiplinli çalışma alışkanlıkları gerçek azmi örneklendirir."
+}
+],
+"note": ""
+},
+{
+"id": "c1-commence",
+"word": "commence",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"başlamak"
+],
+"example_en": "The seminar will commence tomorrow afternoon.",
+"example_tr": "Seminer yarın öğleden sonra başlayacak."
+}
+],
+"note": "Start kelimesinin çok daha resmî halidir."
+},
+{
+"id": "c1-notably",
+"word": "notably",
+"senses": [
+{
+"pos": "adv",
+"tr": [
+"özellikle",
+"bilhassa"
+],
+"example_en": "The climate is changing, notably in arid areas.",
+"example_tr": "İklim değişiyor, özellikle de kurak bölgelerde."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c1-p-seldom-have",
+"text": "Seldom have I seen…",
+"tr": "Nadiren … gördüm.",
+"example_en": "Seldom have I seen a genuine masterpiece.",
+"example_tr": "Böylesine gerçek bir şaheseri nadiren gördüm.",
+"note": "Olumsuz zarfla başlayan devrik (inversion) yapı."
+},
+{
+"id": "c1-p-no-sooner",
+"text": "No sooner had… than…",
+"tr": "… olur olmaz … oldu.",
+"example_en": "No sooner had the rain started than the storm commenced.",
+"example_tr": "Yağmur başlar başlamaz fırtına da başladı.",
+"note": ""
+},
+{
+"id": "c1-p-were-it-not",
+"text": "Were it not for…",
+"tr": "… olmasaydı",
+"example_en": "Were it not for your advice, I would be bankrupt.",
+"example_tr": "Tavsiyen olmasaydı iflas ederdim.",
+"note": "'If it weren't for' yapısının daha resmî ve devrik halidir."
+},
+{
+"id": "c1-p-under-no",
+"text": "Under no circumstances…",
+"tr": "Hiçbir koşulda…",
+"example_en": "Under no circumstances should you abandon this plan.",
+"example_tr": "Hiçbir koşulda bu planı terk etmemelisin.",
+"note": "Yardımcı fiil öznenin önüne geçer."
+},
+{
+"id": "c1-p-little-did",
+"text": "Little did I know…",
+"tr": "Nereden bilebilirdim ki…",
+"example_en": "Little did I know that he was the whistleblower.",
+"example_tr": "Onun muhbir olduğunu nereden bilebilirdim ki.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c1-bridge-1",
+"title": "A Business Merger",
+"names": [],
+"lines": [
+{
+"en": "The two companies commenced their merger meeting yesterday.",
+"tr": "İki şirket birleşme toplantılarına dün başladı."
+},
+{
+"en": "Hitherto, their relationship was ostensibly polite but cold.",
+"tr": "Şimdiye dek ilişkileri görünüşte kibar ama soğuktu."
+},
+{
+"en": "We must prioritize integration, notably in the big office.",
+"tr": "Özellikle büyük ofiste entegrasyona öncelik vermeliyiz."
+},
+{
+"en": "It is an intricate situation, but it will culminate in success.",
+"tr": "Bu karmaşık bir durum ama başarıyla sonuçlanacak."
+},
+{
+"en": "Under no circumstances should we allow a financial deficit.",
+"tr": "Hiçbir koşulda mali açığa izin vermemeliyiz."
+},
+{
+"en": "Henceforth, we are accountable to every stakeholder.",
+"tr": "Bundan böyle her paydaşa karşı sorumluyuz."
+}
+]
+},
+{
+"id": "c1-bridge-2",
+"title": "An Academic Discovery",
+"names": [],
+"lines": [
+{
+"en": "The new methodology was quite unprecedented.",
+"tr": "Yeni metodoloji oldukça eşi görülmemişti."
+},
+{
+"en": "No sooner had she shared the findings than the debate commenced.",
+"tr": "Bulguları paylaşır paylaşmaz tartışma başladı."
+},
+{
+"en": "Scarcely anybody believed her empirical evidence.",
+"tr": "Neredeyse hiç kimse onun ampirik kanıtlarına inanmadı."
+},
+{
+"en": "Nonetheless, the findings were prevalent and accurate.",
+"tr": "Yine de bulgular yaygın ve doğruydu."
+},
+{
+"en": "Were it not for her rigorous work, we would not know this.",
+"tr": "Titiz çalışması olmasaydı, bunu bilemezdik."
+},
+{
+"en": "This paradigm is now ubiquitous in academic research.",
+"tr": "Bu paradigma artık akademik araştırmalarda her yerde bulunuyor."
+}
+]
+},
+{
+"id": "c1-bridge-3",
+"title": "Art Exhibition",
+"names": [
+"London"
+],
+"lines": [
+{
+"en": "We are at an exhibition by a famous contemporary artist.",
+"tr": "Ünlü bir çağdaş sanatçının sergisindeyiz."
+},
+{
+"en": "Seldom have I seen a more evocative masterpiece.",
+"tr": "Daha duygu yüklü bir şaheseri nadiren gördüm."
+},
+{
+"en": "These paintings epitomize a pristine, affluent lifestyle.",
+"tr": "Bu resimler bozulmamış, zengin bir yaşam tarzını simgeliyor."
+},
+{
+"en": "The aesthetic value is paramount here.",
+"tr": "Estetik değer burada çok önemlidir."
+},
+{
+"en": "I concede that the tone has a profound nostalgia.",
+"tr": "Tonun derin bir nostalji barındırdığını kabul ediyorum."
+}
+]
+},
+{
+"id": "c1-bridge-4",
+"title": "The Legal Dispute",
+"names": [],
+"lines": [
+{
+"en": "The lawyer scrutinized the new legislation.",
+"tr": "Avukat yeni mevzuatı dikkatle inceledi."
+},
+{
+"en": "Little did I know about the loophole in the contract.",
+"tr": "Sözleşmedeki boşluk hakkında hiçbir şey bilmiyordum."
+},
+{
+"en": "We are accountable insofar as we have jurisdiction.",
+"tr": "Yargı yetkimiz olduğu ölçüde sorumluyuz."
+},
+{
+"en": "The judge dismissed the liability claim.",
+"tr": "Hakim yükümlülük iddiasını reddetti."
+},
+{
+"en": "Thereafter, the controversial policy was restructured.",
+"tr": "Ondan sonra tartışmalı politika yeniden yapılandırıldı."
+},
+{
+"en": "It was a pivotal time for local rights.",
+"tr": "Yerel haklar için kritik bir zamandı."
+}
+]
+},
+{
+"id": "c1-bridge-5",
+"title": "The Environmental Campaign",
+"names": [],
+"lines": [
+{
+"en": "The drought will exacerbate the water scarcity.",
+"tr": "Kuraklık su kıtlığını daha da kötüleştirecek."
+},
+{
+"en": "These bad weather events exemplify the climate crisis.",
+"tr": "Bu kötü hava olayları iklim krizine örnek teşkil ediyor."
+},
+{
+"en": "We must implement viable solutions to mitigate the damage.",
+"tr": "Hasarı hafifletmek için uygulanabilir çözümler hayata geçirmeliyiz."
+},
+{
+"en": "Grassroots initiatives are paramount for a sustainable future.",
+"tr": "Sürdürülebilir bir gelecek için tabandan gelen girişimler son derece önemlidir."
+},
+{
+"en": "Otherwise, the depletion of resources is inevitable.",
+"tr": "Aksi takdirde, kaynakların tükenmesi kaçınılmazdır."
+}
+]
+}
+]
+}

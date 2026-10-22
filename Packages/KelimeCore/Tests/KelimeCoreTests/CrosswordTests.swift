@@ -20,6 +20,8 @@ struct CrosswordTests {
 
     static func puzzleFiles() throws -> [URL] {
         let dir = TestSupport.repoRoot.appendingPathComponent("Content/puzzles")
+        // Every level is a course now and makes its puzzles from its units.
+        guard FileManager.default.fileExists(atPath: dir.path) else { return [] }
         return try FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: nil)
             .filter { $0.pathExtension == "json" }
             .sorted { $0.lastPathComponent < $1.lastPathComponent }
@@ -54,7 +56,7 @@ struct CrosswordTests {
     @Test func everyBundledPuzzleIsValid() throws {
         let cards = try Self.cards()
         let files = try Self.puzzleFiles()
-        #expect(files.map(\.lastPathComponent) == ["C1.json"])
+        #expect(files.isEmpty)
         for url in files {
             let file = try DailyPuzzle.decode(Data(contentsOf: url))
             #expect(file.puzzles.count >= 365, "\(url.lastPathComponent) has too few puzzles")
