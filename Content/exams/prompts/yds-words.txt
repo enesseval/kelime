@@ -1,0 +1,14 @@
+You are an experienced YDS (ÖSYM Yabancı Dil Sınavı, English) teacher and an English-Turkish lexicographer. I am building the YDS word deck of a vocabulary app for Turkish learners.
+
+Task: list the 300 single words that matter most for YDS: the words that appear again and again in YDS reading passages, sentence completion, cloze and vocabulary questions (academic texts on science, health, history, society, economy and the environment). Choose words a B1-C1 learner preparing for YDS must know to score well; leave out words every A2 learner already knows (house, happy, go).
+
+Rules:
+- Single words only, no phrasal verbs or multi-word phrases. Base forms (analyse, not analysed).
+- British spelling (analyse, behaviour, colour).
+- Linking words that YDS tests count (nevertheless, whereas, albeit, thereby).
+- pos is one of: n, v, adj, adv, prep, conj. If a word is tested in two parts of speech, give the one YDS uses most.
+- level is your honest CEFR estimate: B1, B2, C1 or C2.
+- No duplicates. Exactly 300 entries.
+
+Output only JSON, no comments, in this form:
+{"exam":"yds","words":[{"word":"consequence","pos":"n","level":"B2"},{"word":"albeit","pos":"conj","level":"C1"}]}

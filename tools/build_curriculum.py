@@ -70,11 +70,12 @@ def main():
     # same word at another level, so the exam decks keep their words.
     tags = {}
     for c in data["cards"]:
-        if c["level"] == level:
+        if c["level"] == level and "general" in c["decks"]:
             tags.setdefault(c["word"].lower(), set()).update(d for d in c["decks"] if d != "general")
     for card in cards.values():
         card["decks"] = ["general"] + sorted(tags.pop(card["word"].lower(), set()))
-    data["cards"] = [c for c in data["cards"] if c["level"] != level] + list(cards.values())
+    # Exam-only cards (no general deck, from tools/build_exams.py) are not part of the course.
+    data["cards"] = [c for c in data["cards"] if c["level"] != level or "general" not in c["decks"]] + list(cards.values())
     for word, extra in tags.items():
         if not extra:
             continue
