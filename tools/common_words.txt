@@ -87,3 +87,11 @@ risky
 surprise
 add
 even
+poet
+poem
+written
+narrator
+image
+appear
+tragic
+plain

@@ -1,0 +1,545 @@
+{
+  "id": "c2-literature",
+  "level": "C2",
+  "title": "Edebiyat",
+  "placement": "any",
+  "goal": "Edebi türleri ve teknikleri adıyla anar, bir metnin üslubunu ve havasını incelikle betimler.",
+  "words": [
+    {
+      "id": "c2-prose",
+      "word": "prose",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "düzyazı"
+          ],
+          "example_en": "Her eloquent prose ameliorates the mundane plot.",
+          "example_tr": "Düzyazısı açık ve zarif.",
+          "example": "His prose is clear and elegant."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-verse",
+      "word": "verse",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "nazım",
+            "dize"
+          ],
+          "example_en": "The protagonist speaks in verse.",
+          "example_tr": "Oyun manzum olarak yazılmış.",
+          "example": "The play is written in verse."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-stanza",
+      "word": "stanza",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kıta (şiir)"
+          ],
+          "example_en": "The first stanza is poignant.",
+          "example_tr": "İlk kıta çok dokunaklı."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-sonnet",
+      "word": "sonnet",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sone"
+          ],
+          "example_en": "He read a poignant sonnet.",
+          "example_tr": "Dokunaklı bir sone okudu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-antagonist",
+      "word": "antagonist",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "kötü karakter",
+            "antagonist"
+          ],
+          "example_en": "The antagonist is a nuanced character.",
+          "example_tr": "Kötü karakter çok katmanlı biri."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-denouement",
+      "word": "denouement",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "çözüm bölümü"
+          ],
+          "example_en": "The denouement is quite controversial.",
+          "example_tr": "Çözüm bölümü tüm gizemleri açıklıyor.",
+          "example": "The denouement explains every mystery."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-foreshadowing",
+      "word": "foreshadowing",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "sezdirme",
+            "ön işaret"
+          ],
+          "example_en": "The author uses clever foreshadowing.",
+          "example_tr": "Yazar ustaca sezdirmeler kullanıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-pathos",
+      "word": "pathos",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "acındırma",
+            "duygusal etki"
+          ],
+          "example_en": "The victim elicits profound pathos.",
+          "example_tr": "Son sahne derin bir acıma duygusuyla dolu.",
+          "example": "The final scene is full of pathos."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-motif",
+      "word": "motif",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "motif",
+            "yinelenen öğe"
+          ],
+          "example_en": "The river is a ubiquitous motif.",
+          "example_tr": "Nehir, eserde sık tekrarlanan bir motif."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-archetype",
+      "word": "archetype",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "arketip"
+          ],
+          "example_en": "The honest police is a traditional archetype.",
+          "example_tr": "Bilge yaşlı adam klasik bir arketiptir.",
+          "example": "The wise old man is a classic archetype."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-lyrical",
+      "word": "lyrical",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "lirik",
+            "coşkulu"
+          ],
+          "example_en": "The narrative is very lyrical.",
+          "example_tr": "Anlatı oldukça lirik."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-sublime",
+      "word": "sublime",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yüce",
+            "ulvi"
+          ],
+          "example_en": "The mountain scenery is sublime.",
+          "example_tr": "Dağ manzarası ulvi bir güzellikte."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-melancholy",
+      "word": "melancholy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "melankoli",
+            "hüzün"
+          ],
+          "example_en": "A profound melancholy is evident.",
+          "example_tr": "Derin bir melankoli göze çarpıyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-whimsical",
+      "word": "whimsical",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "oyunbaz",
+            "hayal dolu"
+          ],
+          "example_en": "The character has a whimsical tendency.",
+          "example_tr": "Kitabın oyunbaz bir mizah anlayışı var.",
+          "example": "The book has a whimsical sense of humour."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-grotesque",
+      "word": "grotesque",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "grotesk",
+            "ucube gibi"
+          ],
+          "example_en": "The injury is grotesque.",
+          "example_tr": "Tablo grotesk yüzler gösteriyor.",
+          "example": "The painting shows grotesque faces."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-macabre",
+      "word": "macabre",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "dehşet verici",
+            "ürkütücü"
+          ],
+          "example_en": "The crime scene is macabre.",
+          "example_tr": "Olay yeri dehşet verici."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-elegy",
+      "word": "elegy",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ağıt"
+          ],
+          "example_en": "The music is an elegy for the lost city.",
+          "example_tr": "Şiir, babası için yazılmış bir ağıt.",
+          "example": "The poem is an elegy for his father."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-epic",
+      "word": "epic",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "destan"
+          ],
+          "example_en": "The journey is an epic.",
+          "example_tr": "Homeros iki büyük destan yazdı.",
+          "example": "Homer wrote two great epics."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-omniscient",
+      "word": "omniscient",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "her şeyi bilen"
+          ],
+          "example_en": "The author uses an omniscient perspective.",
+          "example_tr": "Hikâyenin her şeyi bilen bir anlatıcısı var.",
+          "example": "The story has an omniscient narrator."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-pastiche",
+      "word": "pastiche",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "pastiş",
+            "öykünme"
+          ],
+          "example_en": "The film is a clever pastiche.",
+          "example_tr": "Film zekice bir pastiş."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c2-p-page-turner",
+      "text": "A page-turner.",
+      "tr": "Sürükleyici kitap.",
+      "example_en": "This novel is a page-turner.",
+      "example_tr": "Bu roman çok sürükleyici.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-judge-book",
+      "text": "Judge a book by its cover.",
+      "tr": "Görünüşe göre yargılamak.",
+      "example_en": "Never judge a book by its cover.",
+      "example_tr": "Asla görünüşe aldanma.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-poetic-licence",
+      "text": "Poetic licence.",
+      "tr": "Sanatsal özgürlük.",
+      "example_en": "The poet uses some poetic licence.",
+      "example_tr": "Şair biraz sanatsal özgürlük kullanıyor.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-read-novel",
+      "text": "Read like a novel.",
+      "tr": "Roman gibi okunmak.",
+      "example_en": "His life story reads like a novel.",
+      "example_tr": "Hayat hikâyesi bir roman gibi.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-plot-thickens",
+      "text": "The plot thickens.",
+      "tr": "İşler iyice karışıyor.",
+      "example_en": "The money is lost. The plot thickens!",
+      "example_tr": "Para kayıp. İşler iyice karışıyor!",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c2-literature-1",
+      "title": "Yeni Bir Kitap",
+      "names": [
+        "Ayşe",
+        "Tom"
+      ],
+      "lines": [
+        {
+          "en": "Ayşe and Tom read a new book.",
+          "tr": "Ayşe ve Tom yeni bir kitap okuyor."
+        },
+        {
+          "en": "Is it in prose?",
+          "tr": "Düzyazı mı?"
+        },
+        {
+          "en": "No, it is written in verse. It is very lyrical.",
+          "tr": "Hayır, manzum yazılmış. Oldukça lirik."
+        },
+        {
+          "en": "Read the first stanza.",
+          "tr": "İlk kıtayı oku."
+        },
+        {
+          "en": "It is a poignant sonnet.",
+          "tr": "Dokunaklı bir sone."
+        },
+        {
+          "en": "This is a page-turner!",
+          "tr": "Bu çok sürükleyici!"
+        }
+      ]
+    },
+    {
+      "id": "c2-literature-2",
+      "title": "Londra'da Okuma",
+      "names": [
+        "Ali",
+        "London"
+      ],
+      "lines": [
+        {
+          "en": "Ali is in London. He is reading a long novel.",
+          "tr": "Ali Londra'da. Uzun bir roman okuyor."
+        },
+        {
+          "en": "The protagonist is a traditional archetype.",
+          "tr": "Başkarakter geleneksel bir arketip."
+        },
+        {
+          "en": "What about the antagonist?",
+          "tr": "Peki ya kötü karakter?"
+        },
+        {
+          "en": "The antagonist is very strange.",
+          "tr": "Kötü karakter çok tuhaf."
+        },
+        {
+          "en": "The narrator is omniscient.",
+          "tr": "Anlatıcı her şeyi biliyor."
+        },
+        {
+          "en": "The author uses subtle foreshadowing. The plot thickens!",
+          "tr": "Yazar ince sezdirmeler kullanıyor. İşler iyice karışıyor!"
+        }
+      ]
+    },
+    {
+      "id": "c2-literature-3",
+      "title": "Derin Duygular",
+      "names": [
+        "Zeynep",
+        "Maria"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep, do you like this poem?",
+          "tr": "Zeynep, bu şiiri beğendin mi?"
+        },
+        {
+          "en": "Yes, Maria. The language is sublime.",
+          "tr": "Evet Maria. Dili ulvi bir güzellikte."
+        },
+        {
+          "en": "It is an elegy for a lost village.",
+          "tr": "Kayıp bir köy için yazılmış bir ağıt."
+        },
+        {
+          "en": "A profound melancholy is evident. It elicits pathos.",
+          "tr": "Derin bir hüzün göze çarpıyor. Acıma duygusu uyandırıyor."
+        },
+        {
+          "en": "Is it a pastiche?",
+          "tr": "Bir pastiş mi?"
+        },
+        {
+          "en": "No, the narrative is genuine.",
+          "tr": "Hayır, anlatı sahici."
+        }
+      ]
+    },
+    {
+      "id": "c2-literature-4",
+      "title": "Eski Bir Roman",
+      "names": [
+        "Cem",
+        "Paris"
+      ],
+      "lines": [
+        {
+          "en": "Cem buys an old book in Paris.",
+          "tr": "Cem Paris'te eski bir kitap alıyor."
+        },
+        {
+          "en": "At first, the story is whimsical and funny.",
+          "tr": "Başlarda hikaye uçuk kaçık ve komik."
+        },
+        {
+          "en": "Then, grotesque images appear.",
+          "tr": "Sonra grotesk imgeler beliriyor."
+        },
+        {
+          "en": "The narrative gets very macabre.",
+          "tr": "Anlatı çok ürkütücü bir hal alıyor."
+        },
+        {
+          "en": "It is an epic journey.",
+          "tr": "Bu destansı bir yolculuk."
+        },
+        {
+          "en": "The denouement is tragic.",
+          "tr": "Çözüm bölümü trajik."
+        }
+      ]
+    },
+    {
+      "id": "c2-literature-5",
+      "title": "Yazar ve Dostu",
+      "names": [
+        "David",
+        "Elif"
+      ],
+      "lines": [
+        {
+          "en": "David, your new book is an epic!",
+          "tr": "David, yeni kitabın tam bir destan!"
+        },
+        {
+          "en": "I am grateful, Elif. In it, I explore my childhood.",
+          "tr": "Minnettarım Elif. Kitapta çocukluğumu irdeliyorum."
+        },
+        {
+          "en": "It reads like a novel.",
+          "tr": "Bir roman gibi okunuyor."
+        },
+        {
+          "en": "I use some poetic licence.",
+          "tr": "Biraz sanatsal özgürlük kullanıyorum."
+        },
+        {
+          "en": "The cover is plain, but don't judge a book by its cover.",
+          "tr": "Kapağı sade ama görünüşe aldanmamak lazım."
+        },
+        {
+          "en": "Needless to say, it is a masterpiece.",
+          "tr": "Söylemeye gerek yok, bu bir şaheser."
+        }
+      ]
+    }
+  ]
+}
