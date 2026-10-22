@@ -1,0 +1,513 @@
+{
+"id": "c2-justice",
+"level": "C2",
+"title": "Yargı",
+"placement": "any",
+"goal": "Bir davanın taraflarını, sürecini ve hukuki terimlerini doğru kullanır, cezanın amacını tartışır.",
+"words": [
+{
+"id": "c2-plaintiff",
+"word": "plaintiff",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"davacı"
+],
+"example_en": "The plaintiff lost the trial.",
+"example_tr": "Davacı davayı kaybetti."
+}
+],
+"note": ""
+},
+{
+"id": "c2-defendant",
+"word": "defendant",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"sanık",
+"davalı"
+],
+"example_en": "The defendant was innocent.",
+"example_tr": "Sanık masumdu."
+}
+],
+"note": ""
+},
+{
+"id": "c2-litigation",
+"word": "litigation",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"dava süreci",
+"yargılama"
+],
+"example_en": "Litigation is usually expensive.",
+"example_tr": "Dava süreci genellikle pahalıdır."
+}
+],
+"note": ""
+},
+{
+"id": "c2-indictment",
+"word": "indictment",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"iddianame"
+],
+"example_en": "I read the new indictment.",
+"example_tr": "Yeni iddianameyi okudum."
+}
+],
+"note": ""
+},
+{
+"id": "c2-perjury",
+"word": "perjury",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yalan yere yemin"
+],
+"example_en": "He went to prison for perjury.",
+"example_tr": "Yalan yere yemin yüzünden hapse girdi."
+}
+],
+"note": ""
+},
+{
+"id": "c2-alibi",
+"word": "alibi",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"mazeret"
+],
+"example_en": "The suspect had a credible alibi.",
+"example_tr": "Şüphelinin inandırıcı bir mazereti vardı."
+}
+],
+"note": "Suç anında başka yerde olduğunu kanıtlama."
+},
+{
+"id": "c2-acquittal",
+"word": "acquittal",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"beraat"
+],
+"example_en": "The trial resulted in an acquittal.",
+"example_tr": "Dava beraatle sonuçlandı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-statute",
+"word": "statute",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"yasa",
+"kanun"
+],
+"example_en": "The statute is very obvious.",
+"example_tr": "Kanun son derece açık."
+}
+],
+"note": ""
+},
+{
+"id": "c2-injunction",
+"word": "injunction",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"mahkeme emri"
+],
+"example_en": "The judge issued an injunction.",
+"example_tr": "Yargıç mahkeme emri çıkardı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-tribunal",
+"word": "tribunal",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"mahkeme"
+],
+"example_en": "The tribunal will decide tomorrow.",
+"example_tr": "Mahkeme yarın karar verecek."
+}
+],
+"note": ""
+},
+{
+"id": "c2-lenient",
+"word": "lenient",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"hoşgörülü",
+"hafif"
+],
+"example_en": "The punishment was too lenient.",
+"example_tr": "Ceza fazla hafifti."
+}
+],
+"note": ""
+},
+{
+"id": "c2-punitive",
+"word": "punitive",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"cezalandırıcı"
+],
+"example_en": "These are punitive sanctions.",
+"example_tr": "Bunlar cezalandırıcı yaptırımlar."
+}
+],
+"note": ""
+},
+{
+"id": "c2-culpable",
+"word": "culpable",
+"senses": [
+{
+"pos": "adj",
+"tr": [
+"kusurlu",
+"suçlu"
+],
+"example_en": "She is culpable for the accident.",
+"example_tr": "Kazadan o sorumlu."
+}
+],
+"note": ""
+},
+{
+"id": "c2-exonerate",
+"word": "exonerate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"temize çıkarmak"
+],
+"example_en": "The new evidence will exonerate him.",
+"example_tr": "Yeni deliller onu temize çıkaracak."
+}
+],
+"note": ""
+},
+{
+"id": "c2-adjudicate",
+"word": "adjudicate",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"hükme bağlamak"
+],
+"example_en": "A judge must adjudicate the dispute.",
+"example_tr": "Bir yargıç anlaşmazlığı hükme bağlamalı."
+}
+],
+"note": ""
+},
+{
+"id": "c2-appeal",
+"word": "appeal",
+"senses": [
+{
+"pos": "v",
+"tr": [
+"temyize gitmek"
+],
+"example_en": "We will appeal the verdict.",
+"example_tr": "Kararı temyiz edeceğiz."
+}
+],
+"note": ""
+},
+{
+"id": "c2-custody",
+"word": "custody",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"gözaltı",
+"velayet"
+],
+"example_en": "The police kept him in custody.",
+"example_tr": "Polis onu gözaltında tuttu."
+}
+],
+"note": ""
+},
+{
+"id": "c2-deterrent",
+"word": "deterrent",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"caydırıcı"
+],
+"example_en": "Prison is a significant deterrent.",
+"example_tr": "Hapis önemli bir caydırıcıdır."
+}
+],
+"note": ""
+},
+{
+"id": "c2-clemency",
+"word": "clemency",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"af",
+"merhamet"
+],
+"example_en": "The government offered clemency.",
+"example_tr": "Hükümet af teklif etti."
+}
+],
+"note": ""
+},
+{
+"id": "c2-felony",
+"word": "felony",
+"senses": [
+{
+"pos": "n",
+"tr": [
+"ağır suç"
+],
+"example_en": "This crime is a felony.",
+"example_tr": "Bu suç bir ağır suçtur."
+}
+],
+"note": ""
+}
+],
+"phrases": [
+{
+"id": "c2-p-beyond-doubt",
+"text": "Beyond reasonable doubt.",
+"tr": "Şüpheden uzak.",
+"example_en": "He is guilty beyond reasonable doubt.",
+"example_tr": "Şüpheye yer bırakmayacak şekilde suçlu.",
+"note": ""
+},
+{
+"id": "c2-p-lay-law",
+"text": "Lay down the law.",
+"tr": "Kuralları koymak.",
+"example_en": "The manager laid down the law.",
+"example_tr": "Müdür kuralları kesin bir dille koydu.",
+"note": ""
+},
+{
+"id": "c2-p-scot-free",
+"text": "Get off scot-free.",
+"tr": "Cezasız kurtulmak.",
+"example_en": "The defendant got off scot-free.",
+"example_tr": "Sanık ceza almadan kurtuldu.",
+"note": ""
+},
+{
+"id": "c2-p-letter-law",
+"text": "The letter of the law.",
+"tr": "Kanunun lafzı.",
+"example_en": "We must respect the letter of the law.",
+"example_tr": "Kanunun lafzına saygı duymalıyız.",
+"note": ""
+},
+{
+"id": "c2-p-above-law",
+"text": "Above the law.",
+"tr": "Kanunların üstünde.",
+"example_en": "Nobody is above the law.",
+"example_tr": "Hiç kimse kanunların üstünde değildir.",
+"note": ""
+}
+],
+"stories": [
+{
+"id": "c2-justice-1",
+"title": "Dava Başlıyor",
+"names": [
+"Arthur",
+"Maria"
+],
+"lines": [
+{
+"en": "Arthur is the plaintiff.",
+"tr": "Arthur davacı."
+},
+{
+"en": "Maria is the defendant.",
+"tr": "Maria ise sanık."
+},
+{
+"en": "The litigation is very expensive.",
+"tr": "Dava süreci çok pahalı."
+},
+{
+"en": "Maria has a good alibi.",
+"tr": "Maria'nın iyi bir mazereti var."
+},
+{
+"en": "She wants an acquittal.",
+"tr": "Beraat istiyor."
+}
+]
+},
+{
+"id": "c2-justice-2",
+"title": "Ağır Suç",
+"names": [
+"Clark",
+"Tom"
+],
+"lines": [
+{
+"en": "Judge Clark will adjudicate the trial.",
+"tr": "Yargıç Clark davayı hükme bağlayacak."
+},
+{
+"en": "Tom's crime is a felony.",
+"tr": "Tom'un suçu bir ağır suç."
+},
+{
+"en": "The evidence is beyond reasonable doubt.",
+"tr": "Deliller şüpheye yer bırakmıyor."
+},
+{
+"en": "He is culpable.",
+"tr": "O kusurlu."
+},
+{
+"en": "The police will keep him in custody.",
+"tr": "Polis onu gözaltında tutacak."
+}
+]
+},
+{
+"id": "c2-justice-3",
+"title": "Katı Karar",
+"names": [
+"Sara"
+],
+"lines": [
+{
+"en": "Sara reads the indictment.",
+"tr": "Sara iddianameyi okuyor."
+},
+{
+"en": "The statute is very rigorous.",
+"tr": "Kanun çok katı."
+},
+{
+"en": "The tribunal does not offer clemency.",
+"tr": "Mahkeme af teklif etmiyor."
+},
+{
+"en": "It is a punitive decision.",
+"tr": "Bu cezalandırıcı bir karar."
+},
+{
+"en": "They want a deterrent.",
+"tr": "Bir caydırıcı istiyorlar."
+}
+]
+},
+{
+"id": "c2-justice-4",
+"title": "Kanunun Lafzı",
+"names": [
+"John",
+"Anna"
+],
+"lines": [
+{
+"en": "John committed perjury.",
+"tr": "John yalan yere yemin etti."
+},
+{
+"en": "But he got off scot-free!",
+"tr": "Ama ceza almadan kurtuldu!"
+},
+{
+"en": "The lawyer respects the letter of the law.",
+"tr": "Avukat kanunun lafzına saygı duyuyor."
+},
+{
+"en": "Nobody is above the law.",
+"tr": "Hiç kimse kanunların üstünde değildir."
+},
+{
+"en": "Anna will appeal the verdict.",
+"tr": "Anna kararı temyiz edecek."
+}
+]
+},
+{
+"id": "c2-justice-5",
+"title": "Sonuç",
+"names": [
+"David",
+"London"
+],
+"lines": [
+{
+"en": "David is in London.",
+"tr": "David Londra'da."
+},
+{
+"en": "The new video will exonerate him.",
+"tr": "Yeni video onu temize çıkaracak."
+},
+{
+"en": "The judge issued an injunction.",
+"tr": "Yargıç bir mahkeme emri çıkardı."
+},
+{
+"en": "He is not guilty.",
+"tr": "O suçlu değil."
+},
+{
+"en": "The court is lenient today.",
+"tr": "Mahkeme bugün hoşgörülü."
+},
+{
+"en": "David laid down the law.",
+"tr": "David kuralları kesin bir dille koydu."
+}
+]
+}
+]
+}
