@@ -193,28 +193,12 @@ public enum Curriculum {
     /// before the current ones run out.
     public static let advanceAt = 0.8
 
-    /// Topics each goal puts first, matched against unit ids without the level ("a1-cafe" is
-    /// "cafe"). Other units keep their plan order.
-    static let goalTopics: [LearningGoal: [String]] = [
-        .travel: ["cafe", "city", "shopping", "free-time", "feelings", "travel", "food", "plans", "nature",
-                  "trips", "culture", "money", "arts", "language", "literature", "identity"],
-        .work: ["day", "city", "cafe", "feelings", "work", "tech", "people", "career", "media", "learning",
-                "business", "academic", "economy", "leadership", "global", "argument", "rhetoric", "finance",
-                "character", "power"],
-        // Exam texts lean on science, education and society.
-        .yds: ["life", "work", "learning", "media", "environment", "science", "academic", "society", "medicine",
-               "economy", "planet", "research", "argument", "society", "ethics", "earth", "language", "thought",
-               "justice", "rhetoric"],
-    ]
-
-    /// `units` in the order the learner meets them: core, the any-order units by goal, bridge.
-    public static func ordered<T>(_ units: [T], goal: LearningGoal?, unit: (T) -> CurriculumUnit) -> [T] {
-        let topics = goal.flatMap { goalTopics[$0] } ?? []
-        func key(_ item: T) -> (Int, Int, Int) {
+    /// `units` in the order the learner meets them: core, the any-order units in plan order, bridge.
+    public static func ordered<T>(_ units: [T], unit: (T) -> CurriculumUnit) -> [T] {
+        func key(_ item: T) -> (Int, Int) {
             let u = unit(item)
             let placement = switch u.placement { case .first: 0; case .any: 1; case .last: 2 }
-            let topic = u.id.split(separator: "-", maxSplits: 1).last.map(String.init) ?? u.id
-            return (placement, topics.firstIndex(of: topic) ?? topics.count, u.position)
+            return (placement, u.position)
         }
         return units.sorted { key($0) < key($1) }
     }
@@ -223,8 +207,7 @@ public enum Curriculum {
     /// uses the old word decks).
     public static func state(db: Database) throws -> CourseState? {
         let level = try Preferences.load(db).level
-        let goal = try Settings.string(.goal, in: db).flatMap(LearningGoal.init(rawValue:))
-        let units = ordered(try progress(level: level, db: db), goal: goal) { $0.unit }
+        let units = ordered(try progress(level: level, db: db)) { $0.unit }
         guard !units.isEmpty else { return nil }
 
         let stored = try Settings.string(.currentUnit, in: db)

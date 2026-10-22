@@ -82,9 +82,7 @@ final class AppModel {
 
     /// Starts a Quick Review, or shows the paywall when today's free session is used.
     func startQuickReview() async {
-        let clock = clock
-        let remaining = await read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } ?? nil
-        router.startQuickReview(remaining: remaining)
+        router.startQuickReview()
     }
 
     // MARK: - Writes (each one refreshes widgets)

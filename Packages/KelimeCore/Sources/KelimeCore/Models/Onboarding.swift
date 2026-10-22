@@ -29,49 +29,21 @@ public enum WidgetThemeID: String, Codable, Sendable, CaseIterable, Identifiable
     }
 }
 
-/// Why the user is learning English (onboarding step 2).
-public enum LearningGoal: String, Codable, Sendable, CaseIterable, Identifiable {
-    case general
-    case yds
-    case work
-    case travel
-
-    public var id: String { rawValue }
-
-    public var label: String {
-        switch self {
-        case .general: "Genel İngilizce"
-        case .yds: "YDS / YÖKDİL"
-        case .work: "İş hayatı"
-        case .travel: "Seyahat ve dizi"
-        }
-    }
-}
-
 /// Everything onboarding collects. Saved in one transaction when the user finishes.
 public struct OnboardingChoices: Sendable, Equatable {
-    public var goal: LearningGoal
-    public var examDate: LocalDate?
     public var level: CEFRLevel
-    public var rotation: RotationInterval
     /// Minutes after midnight, or nil when the user skipped the reminder.
     public var reminderMinutes: Int?
 
-    public init(goal: LearningGoal = .general, examDate: LocalDate? = nil, level: CEFRLevel = .b1, rotation: RotationInterval = .default, reminderMinutes: Int? = nil) {
-        self.goal = goal
-        self.examDate = examDate
+    public init(level: CEFRLevel = .b1, reminderMinutes: Int? = nil) {
         self.level = level
-        self.rotation = rotation
         self.reminderMinutes = reminderMinutes
     }
 
-    /// Decks the widget starts with: the level deck, plus the exam deck for YDS goals.
-    /// Pro decks stay in the list so they switch on after a purchase; free users fall back to
-    /// the free decks through `DeckID.entitled`.
+    /// Decks the widget starts with: the level deck, plus the basic word decks below B2.
     public var decks: [DeckID] {
         var decks: [DeckID] = []
         if let levelDeck = DeckID.allCases.first(where: { $0.level == level }) { decks.append(levelDeck) }
-        if goal == .yds { decks.append(.yds) }
         // Beginners stay in the A1 course; others get the basic word decks as well.
         if level > .a1 {
             for basic in DeckID.basicDecks where !decks.contains(basic) && level <= .b1 { decks.append(basic) }
@@ -82,15 +54,40 @@ public struct OnboardingChoices: Sendable, Equatable {
     public func save(db: Database) throws {
         var prefs = try Preferences.load(db)
         prefs.level = level
-        // A level with units is the whole content: only its course (and an exam deck).
-        prefs.enabledDecks = try Curriculum.levels(db: db).contains(level) ? decks.filter { $0.level == level || $0.tag != nil } : decks
-        // No paywall in onboarding: Pro-only rhythms can't be chosen there.
-        prefs.rotationInterval = rotation.isPro && !prefs.isPro ? .default : rotation
+        // A level with units is the whole content: only its course.
+        prefs.enabledDecks = try Curriculum.levels(db: db).contains(level) ? decks.filter { $0.level == level } : decks
         try prefs.save(db)
-        try Settings.set(.goal, goal.rawValue, in: db)
-        try Settings.set(.examDate, goal == .yds ? examDate : nil, in: db)
         try Settings.set(.reminderTime, reminderMinutes, in: db)
         try Settings.set(.onboardingDone, true, in: db)
+    }
+}
+
+/// The optional exam countdown on Bugün, set in Ayarlar.
+public enum ExamCountdown {
+    public static let exams: [DeckID] = [.yds, .yokdil, .ielts]
+
+    /// The exam and its date, or nil when none is set.
+    public static func load(db: Database) throws -> (exam: DeckID, date: LocalDate)? {
+        guard let date = try Settings.date(.examDate, in: db) else { return nil }
+        // Installs from before the exam choice only had a date, for YDS.
+        let exam = try Settings.string(.exam, in: db).flatMap(DeckID.init(rawValue:)) ?? .yds
+        return (exam, date)
+    }
+
+    /// Days left until the exam, or nil when none is set or it is over.
+    public static func daysLeft(db: Database, clock: AppClock) throws -> (exam: DeckID, days: Int)? {
+        guard let plan = try load(db: db), let days = StatsQueries.daysUntilExam(plan.date, clock: clock) else { return nil }
+        return (plan.exam, days)
+    }
+
+    public static func set(_ exam: DeckID, date: LocalDate, db: Database) throws {
+        try Settings.set(.exam, exam.rawValue, in: db)
+        try Settings.set(.examDate, date, in: db)
+    }
+
+    public static func clear(db: Database) throws {
+        try Settings.set(.exam, nil as String?, in: db)
+        try Settings.set(.examDate, nil as LocalDate?, in: db)
     }
 }
 

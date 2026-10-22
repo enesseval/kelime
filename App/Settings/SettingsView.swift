@@ -6,8 +6,8 @@ struct SettingsData: Sendable {
     var prefs: Preferences
     /// Levels with units; the others come as they are built.
     var levels: [CEFRLevel]
-    var goal: LearningGoal
-    var examDate: LocalDate?
+    /// The optional exam countdown.
+    var exam: (exam: DeckID, date: LocalDate)?
     var reminderMinutes: Int?
     var speechRate: Float
 
@@ -15,8 +15,7 @@ struct SettingsData: Sendable {
         SettingsData(
             prefs: try Preferences.load(db),
             levels: try Curriculum.levels(db: db),
-            goal: try Settings.string(.goal, in: db).flatMap(LearningGoal.init(rawValue:)) ?? .general,
-            examDate: try Settings.date(.examDate, in: db),
+            exam: try ExamCountdown.load(db: db),
             reminderMinutes: try Settings.int(.reminderTime, in: db),
             speechRate: try Settings.string(.speechRate, in: db).flatMap(Float.init) ?? 0.9
         )
@@ -39,7 +38,7 @@ struct SettingsView: View {
                     levelSection(data)
                     widgetSection(data)
                     reminderSection(data)
-                    proSection
+                    if PurchaseManager.isOnSale { proSection }
                     resetSection
                     if DevTools.isAvailable { developerSection }
                     about
@@ -61,7 +60,7 @@ struct SettingsView: View {
     // MARK: - Sections
 
     private func levelSection(_ data: SettingsData) -> some View {
-        SettingsSection("SEVİYE VE HEDEF") {
+        SettingsSection("SEVİYE VE SINAV") {
             SettingsRow("Seviye") {
                 Menu {
                     ForEach(CEFRLevel.allCases, id: \.self) { level in
@@ -74,20 +73,32 @@ struct SettingsView: View {
                 } label: { valueLabel(data.prefs.level.rawValue) }
             }
             Divider().overlay(Palette.line)
-            SettingsRow("Hedef") {
-                Menu {
-                    ForEach(LearningGoal.allCases) { goal in
-                        Button(goal.label) { Task { await app.setSetting(.goal, goal.rawValue) } }
+            SettingsRow("Sınav geri sayımı") {
+                Toggle("", isOn: Binding(
+                    get: { data.exam != nil },
+                    set: { on in
+                        let date = LocalDate(Calendar.current.date(byAdding: .month, value: 2, to: .now) ?? .now, calendar: .current)
+                        Task { await setExam(on ? (.yds, date) : nil) }
                     }
-                } label: { valueLabel(data.goal.label) }
+                ))
+                .labelsHidden()
+                .tint(Palette.green)
             }
-            if data.goal == .yds {
+            if let exam = data.exam {
+                Divider().overlay(Palette.line)
+                SettingsRow("Sınav") {
+                    Menu {
+                        ForEach(ExamCountdown.exams, id: \.self) { kind in
+                            Button(kind.rawValue) { Task { await setExam((kind, exam.date)) } }
+                        }
+                    } label: { valueLabel(exam.exam.rawValue) }
+                }
                 Divider().overlay(Palette.line)
                 SettingsRow("Sınav tarihi") {
                     DatePicker("", selection: Binding(
-                        get: { data.examDate?.startDate(in: .current) ?? .now },
-                        set: { date in Task { await app.setSetting(.examDate, LocalDate(date, calendar: .current).string) } }
-                    ), displayedComponents: .date)
+                        get: { exam.date.startDate(in: .current) },
+                        set: { date in Task { await setExam((exam.exam, LocalDate(date, calendar: .current))) } }
+                    ), in: Date.now..., displayedComponents: .date)
                     .labelsHidden()
                     .environment(\.locale, Locale(identifier: "tr_TR"))
                 }
@@ -97,27 +108,8 @@ struct SettingsView: View {
 
     private func widgetSection(_ data: SettingsData) -> some View {
         SettingsSection("WIDGET") {
-            SettingsRow("Değişim sıklığı") {
-                Menu {
-                    ForEach(RotationInterval.allCases, id: \.self) { interval in
-                        Button(interval.isPro && !data.prefs.isPro ? "\(interval.label) · Pro" : interval.label) {
-                            if interval.isPro && !data.prefs.isPro {
-                                app.router.showPaywall(.rotation)
-                            } else {
-                                Task { await app.updatePreferences { $0.rotationInterval = interval } }
-                            }
-                        }
-                    }
-                } label: { valueLabel(data.prefs.effectiveRotation.label) }
-            }
-            Divider().overlay(Palette.line)
             NavigationLink(value: Route.widgetMode) {
                 SettingsRowLabel("Kilit ekranı görünümü", value: data.prefs.defaultWidgetMode.label)
-            }
-            .buttonStyle(.plain)
-            Divider().overlay(Palette.line)
-            NavigationLink(value: Route.themePicker) {
-                SettingsRowLabel("Tema", value: data.prefs.effectiveTheme.name)
             }
             .buttonStyle(.plain)
             Divider().overlay(Palette.line)
@@ -212,7 +204,7 @@ struct SettingsView: View {
                 Button("Sıfırla ve baştan başla", role: .destructive) { Task { await app.resetProgress() } }
                 Button("Vazgeç", role: .cancel) {}
             } message: {
-                Text("Öğrendiğin ve zorlandığın kelimeler, bölümler, bulmacalar ve seçimlerin silinir; seviyeni yeniden seçersin. Pro aboneliğin etkilenmez.")
+                Text("Öğrendiğin ve zorlandığın kelimeler, bölümler, bulmacalar ve seçimlerin silinir; seviyeni yeniden seçersin.")
             }
         }
     }
@@ -220,29 +212,26 @@ struct SettingsView: View {
     /// Debug and TestFlight only (see DevTools).
     private var developerSection: some View {
         SettingsSection("GELİŞTİRİCİ") {
-            Toggle(isOn: Binding(
-                get: { DevTools.forcePro },
-                set: { on in
-                    DevTools.forcePro = on
-                    Task {
-                        await app.purchases.refreshEntitlement()
-                        toast = on ? "Tüm Pro özellikleri açık" : "Ücretsiz sürüm gibi davranıyor"
+            if PurchaseManager.isOnSale {
+                Toggle(isOn: Binding(
+                    get: { DevTools.forcePro },
+                    set: { on in
+                        DevTools.forcePro = on
+                        Task {
+                            await app.purchases.refreshEntitlement()
+                            toast = on ? "Tüm Pro özellikleri açık" : "Ücretsiz sürüm gibi davranıyor"
+                        }
                     }
+                )) {
+                    Text("Pro'yu aç (satın almadan)")
+                        .font(KelimeFont.ui(15, relativeTo: .body))
+                        .foregroundStyle(Palette.ink)
                 }
-            )) {
-                Text("Pro'yu aç (satın almadan)")
-                    .font(KelimeFont.ui(15, relativeTo: .body))
-                    .foregroundStyle(Palette.ink)
+                .tint(Palette.accent)
+                .padding(.horizontal, 16)
+                .frame(minHeight: 50)
+                Divider().overlay(Palette.line)
             }
-            .tint(Palette.accent)
-            .padding(.horizontal, 16)
-            .frame(minHeight: 50)
-            Divider().overlay(Palette.line)
-            NavigationLink(value: Route.proAudit) {
-                SettingsRowLabel("Pro vaatlerini kontrol et", value: "")
-            }
-            .buttonStyle(.plain)
-            Divider().overlay(Palette.line)
             NavigationLink(value: Route.widgetLog) {
                 SettingsRowLabel("Widget günlüğü ve ölçüm modu", value: "")
             }
@@ -252,12 +241,6 @@ struct SettingsView: View {
                 let clock = app.clock
                 await app.write(rebuildQueue: false) { db in try DevTools.resetTodaysPuzzles(db: db, clock: clock) }
                 toast = "Bulmacalar sıfırlandı"
-            }
-            Divider().overlay(Palette.line)
-            devButton("Hızlı tekrar hakkını sıfırla") {
-                let clock = app.clock
-                await app.write(rebuildQueue: false) { db in try DevTools.resetQuickReviewLimit(db: db, clock: clock) }
-                toast = "Hızlı tekrar hakkı yenilendi"
             }
             Divider().overlay(Palette.line)
             devButton("Tanıtımı yeniden göster") {
@@ -283,6 +266,8 @@ struct SettingsView: View {
             Text("Kelime listesi: New General Service List, CC BY-SA 4.0")
             Text("İçerik yapay zekâ ile üretildi ve kontrol edildi")
             HStack(spacing: 6) {
+                Button("Öneri gönder") { openURL(Legal.feedbackURL) }
+                Text("·")
                 Button("Gizlilik") { openURL(Legal.privacyURL) }
                 Text("·")
                 Button("Koşullar") { openURL(Legal.termsURL) }
@@ -299,6 +284,16 @@ struct SettingsView: View {
 
     private func setLevel(_ level: CEFRLevel) async {
         await app.changeLevel(to: level)
+    }
+
+    private func setExam(_ exam: (DeckID, LocalDate)?) async {
+        await app.write(rebuildQueue: false) { db in
+            if let exam {
+                try ExamCountdown.set(exam.0, date: exam.1, db: db)
+            } else {
+                try ExamCountdown.clear(db: db)
+            }
+        }
     }
 
     private func setReminder(_ minutes: Int?) async {

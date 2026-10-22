@@ -21,19 +21,16 @@ struct ProEntitlementTests {
         }
     }
 
-    @Test func proUnlocksGates() throws {
+    @Test func proUnlocksFasterRotation() throws {
         let db = try AppDatabase.inMemory()
-        let clock = AppClock.fixed(Date(timeIntervalSince1970: 1_800_000_000), timeZone: .gmt)
         try db.writer.write { db throws in
-            try LearningStore.record(.answered(correct: true), cardID: "x", source: .quickReview, clock: clock, sessionID: "s", db: db)
-            #expect(try QuickReviewLimit.remaining(db: db, clock: clock) == 0)
-            try ProEntitlement.cache(true, db: db)
-            #expect(try QuickReviewLimit.remaining(db: db, clock: clock) == nil)
             var prefs = try Preferences.load(db)
             prefs.rotationInterval = .thirtyMinutes
-            prefs.enabledDecks = [.yds]
+            #expect(prefs.effectiveRotation == .threeHours)
+            try ProEntitlement.cache(true, db: db)
+            prefs = try Preferences.load(db)
+            prefs.rotationInterval = .thirtyMinutes
             #expect(prefs.effectiveRotation == .thirtyMinutes)
-            #expect(prefs.entitledDecks == [.yds])
         }
     }
 }

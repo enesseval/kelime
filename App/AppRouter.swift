@@ -11,9 +11,7 @@ enum AppTab: Hashable {
 enum Route: Hashable {
     case word(String)
     case puzzleArchive
-    case themePicker
     case widgetMode
-    case proAudit
     case widgetLog
     case unit(String)
     case story(String, String)
@@ -60,13 +58,9 @@ final class AppRouter {
         }
     }
 
-    /// Opens a Quick Review session; the free daily limit sends free users to the paywall.
-    func startQuickReview(remaining: Int?) {
-        if remaining == 0 {
-            showPaywall(.reviewLimit)
-        } else {
-            reviewPresented = true
-        }
+    /// Opens a Quick Review session. Quick Review is unlimited.
+    func startQuickReview() {
+        reviewPresented = true
     }
 
     /// Opens a daily crossword (today by default).
@@ -74,23 +68,15 @@ final class AppRouter {
         puzzle = PuzzleRequest(source: .daily(day))
     }
 
-    /// The Pro personal puzzle; free users see the paywall.
-    func openPersonalPuzzle(isPro: Bool) {
-        if isPro {
-            puzzle = PuzzleRequest(source: .personal)
-        } else {
-            showPaywall(.personalPuzzle)
-        }
+    /// The personal puzzle. Not shown for now: it returns with Pro.
+    func openPersonalPuzzle() {
+        puzzle = PuzzleRequest(source: .personal)
     }
 
-    /// The Pro archive; free users see the paywall.
-    func openArchive(isPro: Bool) {
-        if isPro {
-            tab = .play
-            playPath.append(.puzzleArchive)
-        } else {
-            showPaywall(.archive)
-        }
+    /// The puzzle archive. Not shown for now: it returns with Pro.
+    func openArchive() {
+        tab = .play
+        playPath.append(.puzzleArchive)
     }
 
     func showPaywall(_ trigger: PaywallTrigger, deck: DeckID? = nil) {

@@ -61,7 +61,7 @@ struct CurriculumTests {
         let db = try makeDatabase(Preferences())
         let ids = try db.reader.read { db in try CardQueries.candidates(in: DeckID.basicDecks, db: db) }
         #expect(ids.count == 109) // the A2 and B1 cores (always started)
-        #expect(!DeckID.basicDecks.contains(.a1) && !DeckID.a1.isPro)
+        #expect(!DeckID.basicDecks.contains(.a1))
     }
 
     func learn(_ fraction: Double, of unitID: String, in db: AppDatabase) throws {
@@ -73,11 +73,10 @@ struct CurriculumTests {
         }
     }
 
-    @Test func goalOrdersTheUnits() throws {
+    @Test func unitsComeInPlanOrder() throws {
         let db = try makeDatabase()
-        try db.writer.write { db in try Settings.set(.goal, LearningGoal.travel.rawValue, in: db) }
         let state = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
-        #expect(state.units.prefix(3).map(\.id) == ["a1-core", "a1-cafe", "a1-city"])
+        #expect(state.units.prefix(3).map(\.id) == ["a1-core", "a1-family", "a1-home"])
         #expect(state.units.last?.id == "a1-bridge")
         #expect(state.currentID == "a1-core")
         #expect(state.nextLevel == nil)
@@ -95,14 +94,13 @@ struct CurriculumTests {
         #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == nil)
     }
 
-    @Test func travelHandsOverOnce() throws {
+    @Test func handsOverOnce() throws {
         let db = try makeDatabase()
-        try db.writer.write { db in try Settings.set(.goal, LearningGoal.travel.rawValue, in: db) }
         try db.writer.write { db in _ = try Curriculum.advance(db: db) }
         try learn(0.85, of: "a1-core", in: db)
-        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == "a1-cafe")
+        #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == "a1-family")
         #expect(try db.writer.write { db in try Curriculum.advance(db: db) } == nil)
-        #expect(try db.reader.read { db in try Curriculum.state(db: db)?.currentID } == "a1-cafe")
+        #expect(try db.reader.read { db in try Curriculum.state(db: db)?.currentID } == "a1-family")
     }
 
     @Test func aStartedUnitIsPickedUpBeforeANewOne() throws {
@@ -126,12 +124,11 @@ struct CurriculumTests {
         #expect(state.currentID == "a1-shopping")
     }
 
-    @Test func importsTheA2CourseInGoalOrder() throws {
+    @Test func importsTheA2Course() throws {
         let db = try makeDatabase(Preferences(level: .a2, enabledDecks: [.a2]))
-        try db.writer.write { db in try Settings.set(.goal, LearningGoal.work.rawValue, in: db) }
         let state = try #require(try db.reader.read { db in try Curriculum.state(db: db) })
         #expect(state.units.count == 12)
-        #expect(state.units.prefix(4).map(\.id) == ["a2-core", "a2-work", "a2-tech", "a2-people"])
+        #expect(state.units.prefix(3).map(\.id) == ["a2-core", "a2-travel", "a2-work"])
         #expect(state.units.last?.id == "a2-bridge")
         let because = try #require(try db.reader.read { db in try Card.fetchOne(db, key: "a2-because") })
         #expect(because.pos == .conjunction)
@@ -139,8 +136,8 @@ struct CurriculumTests {
 
     @Test func anA2StarterGetsOnlyTheA2Course() throws {
         let db = try makeDatabase(Preferences())
-        try db.writer.write { db in try OnboardingChoices(goal: .yds, level: .a2).save(db: db) }
-        #expect(try db.reader.read { db in try Preferences.load(db).enabledDecks } == [.a2, .yds])
+        try db.writer.write { db in try OnboardingChoices(level: .a2).save(db: db) }
+        #expect(try db.reader.read { db in try Preferences.load(db).enabledDecks } == [.a2])
     }
 
     @Test func examDecksTakeCourseWordsWithoutStartingUnits() throws {

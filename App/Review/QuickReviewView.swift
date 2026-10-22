@@ -12,13 +12,12 @@ struct QuickReviewView: View {
     @State private var typed = ""
     @State private var lastCorrect: Bool?
     @State private var isSaving = false
-    @State private var remainingAfter: Int?
 
     var body: some View {
         Group {
             if let session {
                 if session.isFinished {
-                    ReviewSummaryView(session: session, remaining: remainingAfter) { dismiss() } onMore: {
+                    ReviewSummaryView(session: session) { dismiss() } onMore: {
                         Task { await startAnotherRound() }
                     }
                 } else if let question = session.current {
@@ -45,13 +44,6 @@ struct QuickReviewView: View {
     }
 
     private func startAnotherRound() async {
-        let clock = model.clock
-        let remaining = await model.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } ?? nil
-        if remaining == 0 {
-            dismiss()
-            model.router.showPaywall(.reviewLimit)
-            return
-        }
         session = nil
         picked = nil
         typed = ""
@@ -258,15 +250,7 @@ struct QuickReviewView: View {
         picked = nil
         typed = ""
         lastCorrect = nil
-        if current.isFinished {
-            let clock = model.clock
-            Task {
-                remainingAfter = await model.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } ?? nil
-                withAnimation { session = current }
-            }
-        } else {
-            withAnimation { session = current }
-        }
+        withAnimation { session = current }
     }
 }
 
@@ -285,8 +269,6 @@ struct InkButtonStyle: ButtonStyle {
 
 struct ReviewSummaryView: View {
     let session: ReviewSession
-    /// Sessions left today (nil = Pro, unlimited).
-    let remaining: Int?
     let onDone: () -> Void
     let onMore: () -> Void
 
@@ -314,21 +296,9 @@ struct ReviewSummaryView: View {
             }
             Spacer()
             Button("Bitti", action: onDone).buttonStyle(PrimaryButtonStyle(height: 52))
-            if remaining == 0 {
-                Button(action: onMore) {
-                    HStack(spacing: 8) { Text("Bir tur daha"); ProBadge() }
-                }
+            Button("Bir tur daha", action: onMore)
                 .buttonStyle(OutlineButtonStyle())
                 .frame(maxWidth: .infinity)
-                Text("ya da yarın devam")
-                    .font(KelimeFont.ui(13, relativeTo: .footnote))
-                    .foregroundStyle(Palette.ink2)
-                    .frame(maxWidth: .infinity)
-            } else {
-                Button("Bir tur daha", action: onMore)
-                    .buttonStyle(OutlineButtonStyle())
-                    .frame(maxWidth: .infinity)
-            }
         }
         .padding(.horizontal, 20)
         .padding(.top, 30)

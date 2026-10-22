@@ -56,22 +56,3 @@ public enum StatsQueries {
         return days >= 0 ? days : nil
     }
 }
-
-/// The free Quick Review allowance: one session per local day; Pro is unlimited.
-public enum QuickReviewLimit {
-    public static let freeSessionsPerDay = 1
-
-    /// Distinct Quick Review sessions with at least one answer today.
-    public static func sessionsToday(db: Database, clock: AppClock) throws -> Int {
-        try Int.fetchOne(db, sql: """
-            SELECT COUNT(DISTINCT session_id) FROM review_log
-            WHERE source = ? AND answered_on = ? AND session_id IS NOT NULL
-            """, arguments: [ReviewSource.quickReview, clock.today]) ?? 0
-    }
-
-    /// Sessions left today, or nil for unlimited (Pro).
-    public static func remaining(db: Database, clock: AppClock) throws -> Int? {
-        if try Settings.bool(.isPro, in: db) { return nil }
-        return max(freeSessionsPerDay - (try sessionsToday(db: db, clock: clock)), 0)
-    }
-}

@@ -4,7 +4,8 @@ import GRDB
 /// Keys of the key-value `settings` table.
 public enum SettingKey: String, CaseIterable, Sendable {
     case level
-    case goal
+    /// The exam of the optional countdown on Bugün (a DeckID raw value, e.g. "YDS").
+    case exam
     case examDate = "exam_date"
     case enabledDecks = "enabled_decks"
     case rotationInterval = "rotation_interval"

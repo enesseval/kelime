@@ -94,18 +94,11 @@ struct WidgetQueueTests {
         #expect(future == 4)
     }
 
-    @Test func proDecksRequirePro() throws {
+    @Test func examDecksAreFree() throws {
         let free = try makeDatabase(Preferences(enabledDecks: [.yds], isPro: false))
-        let pro = try makeDatabase(Preferences(enabledDecks: [.yds], isPro: true))
-        let freeEntries = try refill(free, at: clock())
-        let proEntries = try refill(pro, at: clock())
+        let entries = try refill(free, at: clock())
         try free.reader.read { db throws in
-            for e in freeEntries {
-                #expect([CEFRLevel.a2, .b1].contains(try Card.fetchOne(db, key: e.cardID)!.level))
-            }
-        }
-        try pro.reader.read { db throws in
-            for e in proEntries {
+            for e in entries {
                 #expect(try CardDeck.filter(Column("card_id") == e.cardID && Column("deck") == DeckTag.yds).fetchCount(db) == 1)
             }
         }

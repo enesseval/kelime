@@ -102,17 +102,8 @@ struct WidgetSchedulerTests {
         #expect(daily == [cal.startOfDay(for: at), nextMidnight])
     }
 
-    @Test func proIntervalsFallBackForFreeUsers() {
-        #expect(RotationInterval.thirtyMinutes.effective(isPro: false) == .threeHours)
-        #expect(RotationInterval.oneHour.effective(isPro: false) == .threeHours)
-        #expect(RotationInterval.daily.effective(isPro: false) == .daily)
-        #expect(RotationInterval.thirtyMinutes.effective(isPro: true) == .thirtyMinutes)
-    }
-
     @Test func deckEntitlement() {
-        #expect(DeckID.entitled(enabled: [.b1, .yds], isPro: false) == [.b1])
-        #expect(DeckID.entitled(enabled: [.yds], isPro: false) == [.a2, .b1])
-        #expect(DeckID.entitled(enabled: [], isPro: true) == [.a2, .b1])
-        #expect(DeckID.entitled(enabled: [.c1, .yds], isPro: true) == [.c1, .yds])
+        #expect(DeckID.entitled(enabled: [.b1, .yds]) == [.b1, .yds])
+        #expect(DeckID.entitled(enabled: []) == [.a2, .b1])
     }
 }

@@ -204,44 +204,23 @@ struct DeckCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text(deck.deck.rawValue).font(KelimeFont.english(24, relativeTo: .title2))
-                Spacer()
-                if deck.locked {
-                    Image(systemName: "lock.fill").font(.system(size: 11)).foregroundStyle(Palette.ink2)
-                        .accessibilityLabel("Pro")
-                }
-            }
+            Text(deck.deck.rawValue).font(KelimeFont.english(24, relativeTo: .title2))
             Text(deck.isFinished ? "Bu desteyi bitirdin 🎉" : countText)
                 .font(KelimeFont.ui(12, relativeTo: .caption))
                 .foregroundStyle(Palette.ink2)
                 .lineLimit(2)
             ThinProgressBar(fraction: deck.fraction)
-            if deck.locked {
-                HStack {
-                    Text("Widget'ta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
-                    Spacer()
-                    ProBadge()
-                }
-                .frame(minHeight: 31)
-            } else {
-                Toggle(isOn: Binding(
-                    get: { deck.enabled },
-                    set: { value in Task { await model.setDeck(deck.deck, enabled: value) } }
-                )) {
-                    Text("Widget'ta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
-                }
-                .tint(Palette.green)
-                .disabled(deck.total == 0)
+            Toggle(isOn: Binding(
+                get: { deck.enabled },
+                set: { value in Task { await model.setDeck(deck.deck, enabled: value) } }
+            )) {
+                Text("Widget'ta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
             }
+            .tint(Palette.green)
+            .disabled(deck.total == 0)
         }
         .foregroundStyle(Palette.ink)
         .surfaceCard(radius: 18, padding: 14)
-        .opacity(deck.locked ? 0.7 : 1)
-        .contentShape(Rectangle())
-        .onTapGesture {
-            if deck.locked { model.router.showPaywall(.proDeck, deck: deck.deck) }
-        }
         .accessibilityElement(children: .contain)
     }
 

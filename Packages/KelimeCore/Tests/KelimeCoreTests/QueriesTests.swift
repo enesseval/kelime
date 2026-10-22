@@ -49,24 +49,6 @@ struct QueriesTests {
         #expect(StatsQueries.daysUntilExam(nil, clock: clock) == nil)
     }
 
-    @Test func quickReviewAllowance() throws {
-        let db = try makeDatabase()
-        #expect(try db.reader.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } == 1)
-        try db.writer.write { db in
-            try LearningStore.record(.answered(correct: true), cardID: "b1-curious", source: .quickReview, clock: clock, sessionID: "s1", db: db)
-            try LearningStore.record(.answered(correct: true), cardID: "b1-honest", source: .quickReview, clock: clock, sessionID: "s1", db: db)
-            // Widget answers and yesterday's sessions don't count.
-            try LearningStore.record(.answered(correct: true), cardID: "b1-patient", source: .widget, clock: clock, db: db)
-            try LearningStore.record(.answered(correct: true), cardID: "b1-patient", source: .quickReview, clock: clock(daysAgo: 1), sessionID: "s0", db: db)
-        }
-        try db.reader.read { db throws in
-            #expect(try QuickReviewLimit.sessionsToday(db: db, clock: clock) == 1)
-            #expect(try QuickReviewLimit.remaining(db: db, clock: clock) == 0)
-        }
-        try db.writer.write { db in try Settings.set(.isPro, true, in: db) }
-        #expect(try db.reader.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } == nil)
-    }
-
     @Test func wordListSegmentsAndSearch() throws {
         let db = try makeDatabase()
         try db.writer.write { db in
@@ -110,18 +92,14 @@ struct QueriesTests {
         let byID = Dictionary(uniqueKeysWithValues: progress.map { ($0.deck, $0) })
         #expect(progress.map(\.deck) == DeckID.allCases)
         #expect(byID[.a2]?.total == 356 && byID[.b1]?.learned == 1)
-        #expect(byID[.a1]?.total == 285 && byID[.a1]?.locked == false && byID[.a1]?.enabled == false)
-        #expect(byID[.yds]?.total == 355 && byID[.yds]?.locked == true)
-        #expect(byID[.b1]?.enabled == true && byID[.b1]?.locked == false)
+        #expect(byID[.a1]?.total == 285 && byID[.a1]?.enabled == false)
+        #expect(byID[.yds]?.total == 355)
+        #expect(byID[.b1]?.enabled == true)
 
-        let changedLocked = try db.writer.write { db in try DeckQueries.setEnabled(true, deck: .yds, db: db) }
-        #expect(!changedLocked)
         try db.writer.write { db in try DeckQueries.setEnabled(false, deck: .a2, db: db) }
         #expect(try db.reader.read { db in try Preferences.load(db).enabledDecks } == [.b1])
-        try db.writer.write { db in
-            try Settings.set(.isPro, true, in: db)
-            try DeckQueries.setEnabled(true, deck: .yds, db: db)
-        }
+        // Every deck is free: exam decks switch on without Pro.
+        try db.writer.write { db in try DeckQueries.setEnabled(true, deck: .yds, db: db) }
         #expect(try db.reader.read { db in try Preferences.load(db).enabledDecks } == [.b1, .yds])
     }
 }

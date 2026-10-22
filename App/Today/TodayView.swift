@@ -7,10 +7,9 @@ import WidgetKit
 struct TodayData: Sendable {
     var hero: WordItem?
     var strugglingCount: Int
-    var reviewsRemaining: Int?
     var stats: WeekStats
-    var examDays: Int?
-    var examName: String
+    /// "YDS'ye 42 gün", when the user set an exam date in Ayarlar.
+    var examCountdown: String?
     var bannerDismissed: Bool
     var level: CEFRLevel
     var puzzle: DailyPuzzleInfo?
@@ -23,15 +22,12 @@ struct TodayData: Sendable {
             heroID = try CardQueries.candidates(in: prefs.entitledDecks, db: db).first?.cardID
         }
         let stats = try StatsQueries.week(db: db, clock: clock)
-        let goal = try Settings.string(.goal, in: db)
-        let examDays = goal == "yds" ? StatsQueries.daysUntilExam(try Settings.date(.examDate, in: db), clock: clock) : nil
+        let exam = try ExamCountdown.daysLeft(db: db, clock: clock)
         return TodayData(
             hero: try heroID.flatMap { try WordQueries.item(id: $0, db: db) },
             strugglingCount: stats.strugglingNow,
-            reviewsRemaining: try QuickReviewLimit.remaining(db: db, clock: clock),
             stats: stats,
-            examDays: examDays,
-            examName: "YDS",
+            examCountdown: exam.map { "\($0.exam.rawValue)\($0.exam == .yds ? "'ye" : "'e") \($0.days) gün" },
             bannerDismissed: try Settings.bool(.widgetBannerDismissed, in: db),
             level: prefs.level,
             puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
@@ -61,7 +57,7 @@ struct TodayView: View {
                     if let course = data.course {
                         CurrentUnitCard(course: course)
                     }
-                    QuickReviewCard(strugglingCount: data.strugglingCount, remaining: data.reviewsRemaining)
+                    QuickReviewCard(strugglingCount: data.strugglingCount)
                     PuzzleCard(level: data.level, info: data.puzzle)
                     WeekStatsRow(stats: data.stats)
                 }
@@ -84,8 +80,8 @@ struct TodayView: View {
         HStack(alignment: .bottom) {
             ScreenTitle(title: "Bugün", kicker: TurkishDate.header(model.clock.now))
             Spacer()
-            if let days = data?.examDays, let name = data?.examName {
-                Text("\(name)'ye \(days) gün")
+            if let countdown = data?.examCountdown {
+                Text(countdown)
                     .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
                     .foregroundStyle(Palette.ink2)
                     .padding(.vertical, 7)
@@ -171,8 +167,6 @@ struct HeroCard: View {
 struct QuickReviewCard: View {
     @Environment(AppModel.self) private var model
     let strugglingCount: Int
-    /// nil = unlimited (Pro).
-    let remaining: Int?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -181,28 +175,17 @@ struct QuickReviewCard: View {
                 Spacer()
                 Text("10 kelime").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
             }
-            if remaining == 0 {
-                HStack(spacing: 12) {
-                    Text("Yarın tekrar · ya da Pro ile sınırsız")
-                        .font(KelimeFont.ui(15, relativeTo: .subheadline))
-                        .foregroundStyle(Palette.ink2)
-                    Spacer()
-                    Button("Pro'ya bak") { model.router.showPaywall(.reviewLimit) }
-                        .buttonStyle(OutlineButtonStyle())
+            Group {
+                if strugglingCount > 0 {
+                    Text("\(strugglingCount) zorlandığın kelime").foregroundStyle(Palette.amberInk).fontWeight(.semibold)
+                        + Text(" seni bekliyor").foregroundStyle(Palette.ink2)
+                } else {
+                    Text("Yeni kelimelerle kısa bir tur").foregroundStyle(Palette.ink2)
                 }
-            } else {
-                Group {
-                    if strugglingCount > 0 {
-                        Text("\(strugglingCount) zorlandığın kelime").foregroundStyle(Palette.amberInk).fontWeight(.semibold)
-                            + Text(" seni bekliyor").foregroundStyle(Palette.ink2)
-                    } else {
-                        Text("Yeni kelimelerle kısa bir tur").foregroundStyle(Palette.ink2)
-                    }
-                }
-                .font(KelimeFont.ui(15, relativeTo: .subheadline))
-                Button("Başla · 2 dk") { Task { await model.startQuickReview() } }
-                    .buttonStyle(PrimaryButtonStyle())
             }
+            .font(KelimeFont.ui(15, relativeTo: .subheadline))
+            Button("Başla · 2 dk") { Task { await model.startQuickReview() } }
+                .buttonStyle(PrimaryButtonStyle())
         }
         .surfaceCard()
     }

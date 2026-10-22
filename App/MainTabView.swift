@@ -93,9 +93,7 @@ extension View {
             switch route {
             case .word(let id): WordDetailView(cardID: id)
             case .puzzleArchive: PuzzleArchiveView()
-            case .themePicker: ThemePickerView()
             case .widgetMode: WidgetModePickerView()
-            case .proAudit: ProAuditView()
             case .widgetLog: WidgetLogView()
             case .unit(let id): UnitView(unitID: id)
             case .story(let unit, let story): StoryView(unitID: unit, storyID: story)
@@ -104,13 +102,10 @@ extension View {
     }
 }
 
-/// Oyna hub: Quick Review, today's crossword (milestone 6) and the Pro archive.
+/// Oyna hub: Quick Review and today's crossword.
 struct PlayView: View {
     @Environment(AppModel.self) private var model
-    @State private var remaining: Int?
     @State private var puzzle: DailyPuzzleInfo?
-    @State private var isPro = false
-    @State private var examDeckCount: Int?
 
     var body: some View {
         ScrollView {
@@ -121,9 +116,6 @@ struct PlayView: View {
                         Text("Hızlı Tekrar").font(KelimeFont.english(30, relativeTo: .title))
                         Text("10 kelime · yaklaşık 2 dakika").font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
                         HStack {
-                            Text(remainingText)
-                                .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
-                                .foregroundStyle(Palette.ink2)
                             Spacer()
                             Text("Başla")
                                 .font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
@@ -139,79 +131,17 @@ struct PlayView: View {
                 }
                 .buttonStyle(.plain)
 
-                VStack(spacing: 0) {
-                    Button { model.router.openPuzzle() } label: {
-                        HStack(spacing: 18) {
-                            PuzzleThumbnail(cell: 8, gap: 2, cells: puzzle?.thumbnail ?? PuzzleThumbnail.sample)
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text("Günün Bulmacası").font(KelimeFont.english(30, relativeTo: .title))
-                                Text(puzzleSubtitle).font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
-                            }
-                            Spacer(minLength: 0)
+                Button { model.router.openPuzzle() } label: {
+                    HStack(spacing: 18) {
+                        PuzzleThumbnail(cell: 8, gap: 2, cells: puzzle?.thumbnail ?? PuzzleThumbnail.sample)
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("Günün Bulmacası").font(KelimeFont.english(30, relativeTo: .title))
+                            Text(puzzleSubtitle).font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
                         }
-                        .padding(20)
-                        .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    Rectangle().fill(Palette.line).frame(height: 1)
-                    Button { model.router.openArchive(isPro: isPro) } label: {
-                        HStack {
-                            Text("Arşiv").font(KelimeFont.ui(15, relativeTo: .body))
-                            Spacer()
-                            if isPro {
-                                Image(systemName: "chevron.right").foregroundStyle(Palette.ink2)
-                            } else {
-                                ProBadge()
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                        .frame(minHeight: 52)
-                        .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                }
-                .foregroundStyle(Palette.ink)
-                .surfaceCard(padding: 0)
-
-                if let examDeckCount {
-                    Button {
-                        if isPro {
-                            Task { await model.startQuickReview() }
-                        } else {
-                            model.router.showPaywall(.proDeck, deck: .yds)
-                        }
-                    } label: {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text("Sınav Destesi Tekrarı").font(KelimeFont.ui(16, weight: .semibold, relativeTo: .headline))
-                                Text("YDS · \(examDeckCount) kelime").font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
-                            }
-                            Spacer()
-                            if !isPro { ProBadge() }
-                        }
-                        .foregroundStyle(Palette.ink)
-                        .padding(.vertical, 18)
-                        .padding(.horizontal, 20)
-                        .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Palette.line, style: StrokeStyle(lineWidth: 1, dash: isPro ? [] : [4, 4])))
-                        .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                }
-
-                Button { model.router.openPersonalPuzzle(isPro: isPro) } label: {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text("Sana Özel Bulmaca").font(KelimeFont.ui(16, weight: .semibold, relativeTo: .headline))
-                            Text("Zorlandığın kelimelerle").font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
-                        }
-                        Spacer()
-                        if !isPro { ProBadge() }
+                        Spacer(minLength: 0)
                     }
                     .foregroundStyle(Palette.ink)
-                    .padding(.vertical, 18)
-                    .padding(.horizontal, 20)
-                    .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Palette.line, style: StrokeStyle(lineWidth: 1, dash: isPro ? [] : [4, 4])))
-                    .contentShape(Rectangle())
+                    .surfaceCard(padding: 20)
                 }
                 .buttonStyle(.plain)
             }
@@ -224,27 +154,12 @@ struct PlayView: View {
         .hiddenNavigationBar()
         .task(id: model.dataVersion) {
             let clock = model.clock
-            remaining = await model.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } ?? nil
             puzzle = await model.read { db in try DailyPuzzleInfo.load(db: db, clock: clock) } ?? nil
-            isPro = await model.read { db in try Settings.bool(.isPro, in: db) } ?? false
-            examDeckCount = await model.read { db -> Int? in
-                guard try Settings.string(.goal, in: db) == LearningGoal.yds.rawValue else { return nil }
-                return try DeckQueries.progress(db: db).first { $0.deck == .yds }?.total
-            } ?? nil
         }
     }
 
     private var puzzleSubtitle: String {
-        guard let puzzle else { return "ipuçları Türkçe" }
+        guard let puzzle else { return "Şu anki bölümünden · ipuçları Türkçe" }
         return puzzle.completed ? "Tamamlandı · yarın yenisi" : "\(puzzle.solved)/\(puzzle.total) kelime · ipuçları Türkçe"
     }
-
-    private var remainingText: String {
-        switch remaining {
-        case nil: "Sınırsız tur"
-        case 0?: "Bugünkü ücretsiz tur bitti"
-        case let n?: "Bugün \(n) ücretsiz tur kaldı"
-        }
-    }
 }
-

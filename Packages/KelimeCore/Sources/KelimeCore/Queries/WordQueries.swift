@@ -99,7 +99,6 @@ public struct DeckProgress: Sendable, Equatable, Identifiable {
     public var total: Int
     public var learned: Int
     public var enabled: Bool
-    public var locked: Bool
 
     public var id: String { deck.rawValue }
     public var fraction: Double { total == 0 ? 0 : Double(learned) / Double(total) }
@@ -111,7 +110,7 @@ public enum DeckQueries {
         let prefs = try Preferences.load(db)
         return try DeckID.allCases.map { deck in
             guard let filter = CardQueries.deckFilter([deck]) else {
-                return DeckProgress(deck: deck, total: 0, learned: 0, enabled: false, locked: deck.isPro && !prefs.isPro)
+                return DeckProgress(deck: deck, total: 0, learned: 0, enabled: false)
             }
             let row = try Row.fetchOne(db, SQLRequest<Row>("""
                 SELECT COUNT(*) AS total, SUM(CASE WHEN s.state = 'learned' THEN 1 ELSE 0 END) AS learned
@@ -122,23 +121,19 @@ public enum DeckQueries {
                 deck: deck,
                 total: row?["total"] ?? 0,
                 learned: row?["learned"] ?? 0,
-                enabled: prefs.enabledDecks.contains(deck),
-                locked: deck.isPro && !prefs.isPro
+                enabled: prefs.enabledDecks.contains(deck)
             )
         }
     }
 
-    /// Turns "widget'ta göster" on or off for a deck. Locked decks are left unchanged.
-    @discardableResult
-    public static func setEnabled(_ enabled: Bool, deck: DeckID, db: Database) throws -> Bool {
+    /// Turns "widget'ta göster" on or off for a deck.
+    public static func setEnabled(_ enabled: Bool, deck: DeckID, db: Database) throws {
         var prefs = try Preferences.load(db)
-        guard !deck.isPro || prefs.isPro else { return false }
         if enabled {
             if !prefs.enabledDecks.contains(deck) { prefs.enabledDecks.append(deck) }
         } else {
             prefs.enabledDecks.removeAll { $0 == deck }
         }
         try prefs.save(db)
-        return true
     }
 }

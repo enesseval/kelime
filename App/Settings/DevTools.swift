@@ -33,14 +33,6 @@ enum DevTools {
         try Settings.set(.dailyPuzzleSummary, nil as String?, in: db)
     }
 
-    /// Removes today's Quick Review sessions, so the free daily limit is available again.
-    static func resetQuickReviewLimit(db: Database, clock: AppClock) throws {
-        try db.execute(
-            sql: "UPDATE review_log SET session_id = NULL WHERE source = ? AND answered_on = ?",
-            arguments: [ReviewSource.quickReview, clock.today]
-        )
-    }
-
     // MARK: - Widget check reminders
 
     static let checkReminderPrefix = "dev.check."

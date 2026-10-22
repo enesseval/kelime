@@ -9,6 +9,10 @@ import StoreKit
 @MainActor
 @Observable
 final class PurchaseManager {
+    /// Pro is not sold yet: it returns with the user's own word lists. Until then nobody is Pro,
+    /// the paywall and the PRO section stay hidden, and every feature the app has is free.
+    static let isOnSale = false
+
     enum PurchaseResult {
         case purchased, pending, cancelled
     }
@@ -39,7 +43,7 @@ final class PurchaseManager {
         }
         Task {
             await refreshEntitlement()
-            await loadProducts()
+            if Self.isOnSale { await loadProducts() }
         }
     }
 
@@ -104,7 +108,7 @@ final class PurchaseManager {
                 active.append(transaction.productID)
             }
         }
-        let pro = ProEntitlement.isPro(activeProductIDs: active) || DevTools.forcePro
+        let pro = Self.isOnSale && (ProEntitlement.isPro(activeProductIDs: active) || DevTools.forcePro)
         isPro = pro
         guard let app, let database = app.database else { return }
         let changed = (try? await database.writer.write { db in try ProEntitlement.cache(pro, db: db) }) ?? false

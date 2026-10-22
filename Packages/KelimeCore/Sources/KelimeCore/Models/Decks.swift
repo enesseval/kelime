@@ -12,14 +12,6 @@ public enum DeckID: String, Codable, Sendable, CaseIterable {
     case yokdil = "YÖKDİL"
     case ielts = "IELTS"
 
-    /// Free users get the A1 course and the A2 and B1 general words; everything else is Pro.
-    public var isPro: Bool {
-        switch self {
-        case .a1, .a2, .b1: false
-        default: true
-        }
-    }
-
     /// For level decks, the level they hold.
     public var level: CEFRLevel? {
         switch self {
@@ -43,16 +35,13 @@ public enum DeckID: String, Codable, Sendable, CaseIterable {
         }
     }
 
-    public static let freeDecks: [DeckID] = allCases.filter { !$0.isPro }
-
     /// The default word decks for a learner past the beginner course: A2 and B1. A1 is a
     /// course of its own and is only on for learners who pick it.
     public static let basicDecks: [DeckID] = [.a2, .b1]
 
-    /// Enabled decks the user may actually use. Falls back to the basic decks so the widget
+    /// The decks the widget and reviews draw from. Falls back to the basic decks so the widget
     /// always has something to show.
-    public static func entitled(enabled: [DeckID], isPro: Bool) -> [DeckID] {
-        let allowed = enabled.filter { isPro || !$0.isPro }
-        return allowed.isEmpty ? basicDecks : allowed
+    public static func entitled(enabled: [DeckID]) -> [DeckID] {
+        enabled.isEmpty ? basicDecks : enabled
     }
 }

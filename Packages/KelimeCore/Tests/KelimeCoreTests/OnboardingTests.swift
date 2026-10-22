@@ -5,40 +5,47 @@ import Testing
 struct OnboardingTests {
     @Test func savesChoicesAndFinishesOnboarding() throws {
         let db = try AppDatabase.inMemory()
-        let choices = OnboardingChoices(goal: .yds, examDate: LocalDate(year: 2026, month: 11, day: 16), level: .b2, rotation: .daily, reminderMinutes: 20 * 60 + 30)
+        let choices = OnboardingChoices(level: .b2, reminderMinutes: 20 * 60 + 30)
         try db.writer.write { db in try choices.save(db: db) }
         try db.reader.read { db throws in
             let prefs = try Preferences.load(db)
             #expect(prefs.level == .b2)
-            #expect(prefs.enabledDecks == [.b2, .yds])
-            #expect(prefs.rotationInterval == .daily)
-            #expect(try Settings.string(.goal, in: db) == "yds")
-            #expect(try Settings.date(.examDate, in: db)?.string == "2026-11-16")
+            #expect(prefs.enabledDecks == [.b2])
+            #expect(prefs.effectiveRotation == .threeHours)
+            #expect(try ExamCountdown.load(db: db) == nil)
             #expect(try Settings.int(.reminderTime, in: db) == 1230)
             #expect(try Settings.bool(.onboardingDone, in: db))
         }
     }
 
-    @Test func noProChoicesWithoutPro() throws {
-        let db = try AppDatabase.inMemory()
-        try db.writer.write { db in
-            try OnboardingChoices(goal: .general, examDate: LocalDate(year: 2026, month: 1, day: 1), level: .a2, rotation: .thirtyMinutes).save(db: db)
-        }
-        try db.reader.read { db throws in
-            let prefs = try Preferences.load(db)
-            #expect(prefs.rotationInterval == .threeHours)
-            #expect(prefs.enabledDecks == [.a2, .b1])
-            // The exam date only applies to the YDS goal.
-            #expect(try Settings.date(.examDate, in: db) == nil)
-            #expect(try Settings.int(.reminderTime, in: db) == nil)
+    @Test func everyDeckIsFree() {
+        let choices = OnboardingChoices(level: .c1)
+        #expect(choices.decks == [.c1])
+        #expect(DeckID.entitled(enabled: choices.decks) == [.c1])
+        #expect(DeckID.entitled(enabled: []) == DeckID.basicDecks)
+    }
+
+    @Test func withoutProTheWidgetChangesEveryThreeHours() {
+        for interval in RotationInterval.allCases {
+            #expect(interval.effective(isPro: false) == .threeHours)
+            #expect(interval.effective(isPro: true) == interval)
         }
     }
 
-    @Test func freeUsersAtHigherLevelsFallBackToFreeDecks() {
-        let choices = OnboardingChoices(level: .c1)
-        #expect(choices.decks == [.c1])
-        #expect(DeckID.entitled(enabled: choices.decks, isPro: false) == [.a2, .b1])
-        #expect(DeckID.entitled(enabled: choices.decks, isPro: true) == [.c1])
+    @Test func examCountdown() throws {
+        let db = try AppDatabase.inMemory()
+        let clock = AppClock.fixed(try Date("2026-10-22T09:00:00Z", strategy: .iso8601), timeZone: TimeZone(identifier: "Europe/Istanbul")!)
+        try db.writer.write { db in
+            // Installs from before the exam choice only stored a YDS date.
+            try Settings.set(.examDate, LocalDate(year: 2026, month: 11, day: 1), in: db)
+        }
+        #expect(try db.reader.read { db in try ExamCountdown.daysLeft(db: db, clock: clock) }.map { "\($0.exam.rawValue) \($0.days)" } == "YDS 10")
+        try db.writer.write { db in try ExamCountdown.set(.ielts, date: LocalDate(year: 2026, month: 10, day: 21), db: db) }
+        // A past exam shows no countdown.
+        #expect(try db.reader.read { db in try ExamCountdown.daysLeft(db: db, clock: clock) } == nil)
+        #expect(try db.reader.read { db in try ExamCountdown.load(db: db)?.exam } == .ielts)
+        try db.writer.write { db in try ExamCountdown.clear(db: db) }
+        #expect(try db.reader.read { db in try ExamCountdown.load(db: db) } == nil)
     }
 
     @Test func themesFollowEntitlement() throws {

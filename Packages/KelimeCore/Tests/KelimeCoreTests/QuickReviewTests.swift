@@ -96,13 +96,4 @@ struct QuickReviewTests {
         #expect(s.newlyStruggling.map(\.word) == ["reliable"])
         #expect(s.progress == 1)
     }
-
-    @Test func answersCountTowardsTheDailyLimit() throws {
-        let db = try makeDatabase()
-        let q = try #require(try questions(db).first)
-        try db.writer.write { db in
-            try LearningStore.record(.answered(correct: true), cardID: q.id, source: .quickReview, clock: clock, sessionID: "abc", db: db)
-        }
-        #expect(try db.reader.read { db in try QuickReviewLimit.remaining(db: db, clock: clock) } == 0)
-    }
 }

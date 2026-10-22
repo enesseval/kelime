@@ -11,14 +11,11 @@ public enum RotationInterval: Int, Codable, Sendable, CaseIterable {
     public var minutes: Int { rawValue }
     public var seconds: TimeInterval { TimeInterval(rawValue * 60) }
 
-    /// 30 minutes and 1 hour are Pro.
-    public var isPro: Bool { self == .thirtyMinutes || self == .oneHour }
-
     public static let `default` = RotationInterval.threeHours
 
-    /// The interval actually used: Pro-only choices fall back to the default for free users.
+    /// The interval actually used: without Pro every widget changes every 3 hours.
     public func effective(isPro: Bool) -> RotationInterval {
-        self.isPro && !isPro ? .default : self
+        isPro ? self : .default
     }
 }
 
@@ -79,7 +76,7 @@ public struct Preferences: Sendable, Equatable {
     }
 
     /// Decks the widget and reviews may draw from.
-    public var entitledDecks: [DeckID] { DeckID.entitled(enabled: enabledDecks, isPro: isPro) }
+    public var entitledDecks: [DeckID] { DeckID.entitled(enabled: enabledDecks) }
 
     public var effectiveRotation: RotationInterval { rotationInterval.effective(isPro: isPro) }
     public var effectiveTheme: WidgetThemeID { theme.effective(isPro: isPro) }
