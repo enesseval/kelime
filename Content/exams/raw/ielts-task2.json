@@ -1,0 +1,255 @@
+{
+ "topic": "Writing Task 2 and Speaking: words for giving opinions, arguing, weighing advantages and disadvantages, and the linking words of contrast, cause, result, addition and concession",
+ "words": [
+  {
+   "word": "however",
+   "pos": "adv",
+   "level": "B1"
+  },
+  {
+   "word": "furthermore",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "moreover",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "therefore",
+   "pos": "adv",
+   "level": "B1"
+  },
+  {
+   "word": "although",
+   "pos": "conj",
+   "level": "B1"
+  },
+  {
+   "word": "whereas",
+   "pos": "conj",
+   "level": "B2"
+  },
+  {
+   "word": "despite",
+   "pos": "prep",
+   "level": "B1"
+  },
+  {
+   "word": "consequently",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "nevertheless",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "benefit",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "drawback",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "outweigh",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "argue",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "claim",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "assert",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "perspective",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "maintain",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "contend",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "advocate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "justify",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "thus",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "hence",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "conversely",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "alternatively",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "additionally",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "nonetheless",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "admittedly",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "contradict",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "refute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "acknowledge",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "concede",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "compensate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "mitigate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "detrimental",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "beneficial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "merit",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "flaw",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "consequence",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "implication",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "outcome",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "stance",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "notion",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "undeniable",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "irrefutable",
+   "pos": "adj",
+   "level": "C2"
+  },
+  {
+   "word": "emphasise",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "highlight",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "propose",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "attribute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "evaluate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "assess",
+   "pos": "v",
+   "level": "B2"
+  }
+ ]
+}

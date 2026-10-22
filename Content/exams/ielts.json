@@ -1,0 +1,1666 @@
+{
+ "exam": "ielts",
+ "words": [
+  {
+   "word": "infrastructure",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "policy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "urban",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "congestion",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "legislation",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "implement",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "tackle",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "authority",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "regulate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "allocate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "commute",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "resident",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "deter",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "facility",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "emission",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "sustainable",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "enforce",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "offence",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "penalty",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "initiative",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "subsidise",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "rehabilitate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "amenity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "influx",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "pedestrian",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "heritage",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "alleviate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "mitigate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "prohibit",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "corruption",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "prosecute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "juvenile",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "surveillance",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "sprawl",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "dweller",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "metropolis",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "gridlock",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "cosmopolitan",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "pristine",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "ecotourism",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "bureaucracy",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "mandate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "transparency",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "consensus",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "jurisdiction",
+   "pos": "n",
+   "level": "C2"
+  },
+  {
+   "word": "itinerary",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "hospitality",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "preservation",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "provincial",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "civic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "evaluate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "acquire",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "curriculum",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "compulsory",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "assessment",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "qualification",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "expertise",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "vocational",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "productivity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "undertake",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "foster",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "recruitment",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "autonomous",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "competence",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "theoretical",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "remuneration",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "hierarchy",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "rigorous",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "tertiary",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "prerequisite",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "tuition",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "literacy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "numeracy",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "plagiarise",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "dissertation",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "syllabus",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "redundancy",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "apprentice",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "internship",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "placement",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "entrepreneur",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "lucrative",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "delegate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "advancement",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "resign",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "terminate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "pension",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "administrative",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "credentials",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "peer",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "discipline",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "faculty",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "scholarship",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "alumni",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "pedagogy",
+   "pos": "n",
+   "level": "C2"
+  },
+  {
+   "word": "tenure",
+   "pos": "n",
+   "level": "C2"
+  },
+  {
+   "word": "vacancy",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "renewable",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "sustainability",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "ecosystem",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "biodiversity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "conservation",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "deforestation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "deplete",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "habitat",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "fossil",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "preserve",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "pollutant",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "resource",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "generate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "alternative",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "ecological",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "extinct",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "agriculture",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "consume",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "toxic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "disposal",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "drought",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "vegetation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "contaminate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "deteriorate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "vulnerable",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "footprint",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "exploit",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "yield",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "degrade",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "precipitation",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "glacier",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "thrive",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "marine",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "terrestrial",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "flora",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "fauna",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "atmospheric",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "indigenous",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "severe",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "geothermal",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "harvest",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "organic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "solar",
+   "pos": "adj",
+   "level": "B1"
+  },
+  {
+   "word": "greenhouse",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "urbanisation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "industrialisation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "catastrophic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "fertiliser",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "analyse",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "innovation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "hypothesis",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "phenomenon",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "bias",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "controversial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "empirical",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "breakthrough",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "obsolete",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "manipulate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "implication",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "influential",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "objective",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "subjective",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "automation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "algorithm",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "disseminate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "authentic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "distort",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "prevalent",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "feasible",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "patent",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "simulate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "broadcast",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "censorship",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "synthetic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "genetic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "paradigm",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "verify",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "sensationalism",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "anonymous",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "pervasive",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "mainstream",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "catalyst",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "evolve",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "susceptible",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "prototype",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "deduce",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "validity",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "credible",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "interactive",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "formulate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "pioneer",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "superficial",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "validate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "scrutiny",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "virtual",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "correlate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "synthesise",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "consequence",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "societal",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "detrimental",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "sedentary",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "obesity",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "demographic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "upbringing",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "offspring",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "adolescent",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "nurture",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "diversity",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "integrate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "assimilate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "stereotype",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "discrimination",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "poverty",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "welfare",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "equality",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "chronic",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "epidemic",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "pandemic",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "immunity",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "nutrition",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "hygiene",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "sanitation",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "diagnose",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "symptom",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "cognitive",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "physiological",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "psychological",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "longevity",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "mortality",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "addiction",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "maternal",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "paternal",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "sibling",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "household",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "generation",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "norm",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "custom",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "secular",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "migrate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "rural",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "illustrate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "proportion",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "percentage",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "fluctuate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "decline",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "significantly",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "dramatically",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "gradually",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "steadily",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "overall",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "plateau",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "plummet",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "plunge",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "soar",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "surge",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "peak",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "stabilise",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "respectively",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "substantially",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "considerably",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "marginally",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "slightly",
+   "pos": "adv",
+   "level": "B1"
+  },
+  {
+   "word": "steeply",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "sharply",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "approximately",
+   "pos": "adv",
+   "level": "B1"
+  },
+  {
+   "word": "majority",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "minority",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "fraction",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "upward",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "downward",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "significant",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "dramatic",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "substantial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "considerable",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "marginal",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "gradual",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "steady",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "noticeable",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "striking",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "consecutive",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "initial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "subsequent",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "dip",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "hover",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "represent",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "comprise",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "constitute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "undergo",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "stage",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "sequence",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "however",
+   "pos": "adv",
+   "level": "B1"
+  },
+  {
+   "word": "furthermore",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "moreover",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "therefore",
+   "pos": "adv",
+   "level": "B1"
+  },
+  {
+   "word": "although",
+   "pos": "conj",
+   "level": "B1"
+  },
+  {
+   "word": "whereas",
+   "pos": "conj",
+   "level": "B2"
+  },
+  {
+   "word": "despite",
+   "pos": "prep",
+   "level": "B1"
+  },
+  {
+   "word": "consequently",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "nevertheless",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "benefit",
+   "pos": "n",
+   "level": "B1"
+  },
+  {
+   "word": "drawback",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "outweigh",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "argue",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "claim",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "assert",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "perspective",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "maintain",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "contend",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "advocate",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "justify",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "thus",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "hence",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "conversely",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "alternatively",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "additionally",
+   "pos": "adv",
+   "level": "B2"
+  },
+  {
+   "word": "nonetheless",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "admittedly",
+   "pos": "adv",
+   "level": "C1"
+  },
+  {
+   "word": "contradict",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "refute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "acknowledge",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "concede",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "compensate",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "beneficial",
+   "pos": "adj",
+   "level": "B2"
+  },
+  {
+   "word": "merit",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "flaw",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "outcome",
+   "pos": "n",
+   "level": "B2"
+  },
+  {
+   "word": "stance",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "notion",
+   "pos": "n",
+   "level": "C1"
+  },
+  {
+   "word": "undeniable",
+   "pos": "adj",
+   "level": "C1"
+  },
+  {
+   "word": "irrefutable",
+   "pos": "adj",
+   "level": "C2"
+  },
+  {
+   "word": "emphasise",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "highlight",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "propose",
+   "pos": "v",
+   "level": "B2"
+  },
+  {
+   "word": "attribute",
+   "pos": "v",
+   "level": "C1"
+  },
+  {
+   "word": "assess",
+   "pos": "v",
+   "level": "B2"
+  }
+ ],
+ "cards": []
+}
