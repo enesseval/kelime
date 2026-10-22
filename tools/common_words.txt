@@ -95,3 +95,7 @@ image
 appear
 tragic
 plain
+movement
+effort
+soil
+plate

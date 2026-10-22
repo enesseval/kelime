@@ -1,0 +1,537 @@
+{
+  "id": "c2-earth",
+  "level": "C2",
+  "title": "Doğanın dengesi",
+  "placement": "any",
+  "goal": "Ekosistemleri ve coğrafi süreçleri bilimsel terimlerle betimler, insanın doğadaki dengeye etkisini tartışır.",
+  "words": [
+    {
+      "id": "c2-equilibrium",
+      "word": "equilibrium",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "denge"
+          ],
+          "example_en": "The ecosystem maintains a subtle equilibrium.",
+          "example_tr": "Ekosistem hassas bir dengeyi korur.",
+          "example": "The ecosystem maintains a delicate equilibrium."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-symbiosis",
+      "word": "symbiosis",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "ortak yaşam",
+            "simbiyoz"
+          ],
+          "example_en": "Both species live in mutual symbiosis.",
+          "example_tr": "Bu iki tür ortak yaşam içinde yaşar.",
+          "example": "These two species live in symbiosis."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-predator",
+      "word": "predator",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "yırtıcı",
+            "avcı"
+          ],
+          "example_en": "The animal is a dangerous predator.",
+          "example_tr": "Bu hayvan tehlikeli bir yırtıcıdır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-prey",
+      "word": "prey",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "av"
+          ],
+          "example_en": "The predator found its prey in the forest.",
+          "example_tr": "Yırtıcı, ormanda avını buldu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-migration",
+      "word": "migration",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "göç"
+          ],
+          "example_en": "The birds start their long migration in autumn.",
+          "example_tr": "Kuşlar sonbaharda uzun göçlerine başlar."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-dormant",
+      "word": "dormant",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "uykuda",
+            "hareketsiz"
+          ],
+          "example_en": "The plant stays dormant during winter.",
+          "example_tr": "Bitki kış boyunca uykuda kalır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-extinction",
+      "word": "extinction",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "nesli tükenme"
+          ],
+          "example_en": "The species is vulnerable to extinction.",
+          "example_tr": "Tür, nesli tükenmeye karşı savunmasızdır."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-indigenous",
+      "word": "indigenous",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "yerli",
+            "yöreye özgü"
+          ],
+          "example_en": "These plants are indigenous to the island.",
+          "example_tr": "Bu bitkiler adaya özgüdür."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-flora",
+      "word": "flora",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "bitki örtüsü",
+            "flora"
+          ],
+          "example_en": "The local flora is beautiful but toxic.",
+          "example_tr": "Yerel bitki örtüsü güzel ama zehirlidir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-fauna",
+      "word": "fauna",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "hayvan topluluğu",
+            "fauna"
+          ],
+          "example_en": "The island's fauna includes many different birds.",
+          "example_tr": "Adanın faunası birçok farklı kuşu içerir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-terrain",
+      "word": "terrain",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "arazi",
+            "yer"
+          ],
+          "example_en": "The mountain terrain is very hard to walk on.",
+          "example_tr": "Dağlık arazide yürümek çok zordur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-glacier",
+      "word": "glacier",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "buzul"
+          ],
+          "example_en": "The big glacier melts faster every year.",
+          "example_tr": "Büyük buzul her yıl daha hızlı eriyor."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-archipelago",
+      "word": "archipelago",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "takımada"
+          ],
+          "example_en": "The archipelago consists of fifty small islands.",
+          "example_tr": "Takımada elli küçük adadan oluşur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-volcanic",
+      "word": "volcanic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "volkanik"
+          ],
+          "example_en": "The land is rich because of volcanic sediment.",
+          "example_tr": "Arazi, volkanik toprak sayesinde verimlidir.",
+          "example": "The land is fertile thanks to volcanic soil."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-tectonic",
+      "word": "tectonic",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "tektonik"
+          ],
+          "example_en": "Tectonic shifts cause catastrophic earthquakes.",
+          "example_tr": "Tektonik plakalar hareket eder ve depremlere yol açar.",
+          "example": "Tectonic plates move and cause earthquakes."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-estuary",
+      "word": "estuary",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "haliç",
+            "nehir ağzı"
+          ],
+          "example_en": "The river meets the sea at the estuary.",
+          "example_tr": "Nehir, denizle haliçte buluşur."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-fertile",
+      "word": "fertile",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "verimli",
+            "bereketli"
+          ],
+          "example_en": "People grow vegetables in the fertile land.",
+          "example_tr": "İnsanlar verimli arazide sebze yetiştirir."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-barren",
+      "word": "barren",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "çorak",
+            "verimsiz"
+          ],
+          "example_en": "Nothing can grow in this barren area.",
+          "example_tr": "Bu çorak alanda hiçbir şey yetişemez."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-torrential",
+      "word": "torrential",
+      "senses": [
+        {
+          "pos": "adj",
+          "tr": [
+            "sel gibi",
+            "şiddetli (yağmur)"
+          ],
+          "example_en": "Torrential rain caused a catastrophic flood.",
+          "example_tr": "Şiddetli yağmur feci bir sele neden oldu."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c2-sediment",
+      "word": "sediment",
+      "senses": [
+        {
+          "pos": "n",
+          "tr": [
+            "tortu",
+            "çökelti"
+          ],
+          "example_en": "The river carries sediment to the estuary.",
+          "example_tr": "Nehir tortuyu halice taşır."
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "phrases": [
+    {
+      "id": "c2-p-calm-storm",
+      "text": "The calm before the storm.",
+      "tr": "Fırtına öncesi sessizlik.",
+      "example_en": "It is quiet now, but it's the calm before the storm.",
+      "example_tr": "Şu an sessiz ama bu fırtına öncesi sessizlik.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-fresh-air",
+      "text": "A breath of fresh air.",
+      "tr": "Temiz bir nefes, yenilik.",
+      "example_en": "Her new perspective is a breath of fresh air.",
+      "example_tr": "Onun yeni bakış açısı insana iyi geliyor.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-drop-bucket",
+      "text": "A drop in the bucket.",
+      "tr": "Devede kulak.",
+      "example_en": "This money is only a drop in the bucket.",
+      "example_tr": "Bu para devede kulak.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-weather-storm",
+      "text": "Weather the storm.",
+      "tr": "Zorlukları atlatmak.",
+      "example_en": "We must stay together to weather the storm.",
+      "example_tr": "Zorlukları atlatmak için bir arada kalmalıyız.",
+      "note": ""
+    },
+    {
+      "id": "c2-p-mother-nature",
+      "text": "Mother Nature.",
+      "tr": "Doğa Ana.",
+      "example_en": "We cannot stop Mother Nature.",
+      "example_tr": "Doğa Ana'yı durduramayız.",
+      "note": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "c2-earth-1",
+      "title": "Ada Hayatı",
+      "names": [
+        "Zeynep"
+      ],
+      "lines": [
+        {
+          "en": "Zeynep lives on an island in a small archipelago.",
+          "tr": "Zeynep küçük bir takımadadaki bir adada yaşıyor."
+        },
+        {
+          "en": "The indigenous flora and fauna are beautiful.",
+          "tr": "Yerel bitki örtüsü ve hayvan topluluğu çok güzel."
+        },
+        {
+          "en": "Plants and birds live in mutual symbiosis.",
+          "tr": "Bitkiler ve kuşlar karşılıklı bir ortak yaşam sürüyor."
+        },
+        {
+          "en": "We must protect Mother Nature.",
+          "tr": "Doğa Ana'yı korumalıyız."
+        },
+        {
+          "en": "Yes, we must not destroy this fertile land.",
+          "tr": "Evet, bu verimli araziyi yok etmemeliyiz."
+        },
+        {
+          "en": "It stands to reason that we are responsible.",
+          "tr": "Sorumlu olduğumuz gün gibi ortada."
+        }
+      ]
+    },
+    {
+      "id": "c2-earth-2",
+      "title": "Deprem ve Volkan",
+      "names": [
+        "David",
+        "Italy"
+      ],
+      "lines": [
+        {
+          "en": "David studies tectonic movements in Italy.",
+          "tr": "David, İtalya'daki tektonik hareketleri inceliyor."
+        },
+        {
+          "en": "The area is volcanic, and the big mountain is dormant.",
+          "tr": "Bölge volkanik ve büyük dağ uykuda."
+        },
+        {
+          "en": "Will a disaster happen soon?",
+          "tr": "Yakında bir felaket olacak mı?"
+        },
+        {
+          "en": "We hope not.",
+          "tr": "Umarız olmaz."
+        },
+        {
+          "en": "After torrential rain, the sun is a breath of fresh air.",
+          "tr": "Şiddetli yağmurdan sonra güneş insana çok iyi geliyor."
+        },
+        {
+          "en": "The weather is finally nice.",
+          "tr": "Hava sonunda güzelleşti."
+        }
+      ]
+    },
+    {
+      "id": "c2-earth-3",
+      "title": "Buzullar ve Göç",
+      "names": [
+        "Elena",
+        "Canada"
+      ],
+      "lines": [
+        {
+          "en": "Elena visits a barren terrain in Canada.",
+          "tr": "Elena, Kanada'da çorak bir araziyi ziyaret ediyor."
+        },
+        {
+          "en": "The glacier melts very fast every summer.",
+          "tr": "Buzul her yaz çok hızlı eriyor."
+        },
+        {
+          "en": "This changes the migration of many birds.",
+          "tr": "Bu durum birçok kuşun göçünü değiştiriyor."
+        },
+        {
+          "en": "They must fly far to find food.",
+          "tr": "Yiyecek bulmak için uzağa uçmaları gerekiyor."
+        },
+        {
+          "en": "Can they weather the storm of climate change?",
+          "tr": "İklim değişikliğinin zorluklarını atlatabilirler mi?"
+        },
+        {
+          "en": "It is a serious problem.",
+          "tr": "Bu ciddi bir sorun."
+        }
+      ]
+    },
+    {
+      "id": "c2-earth-4",
+      "title": "Nehir Ağzında",
+      "names": [
+        "Ali",
+        "Turkey"
+      ],
+      "lines": [
+        {
+          "en": "Ali walks near the estuary in Turkey.",
+          "tr": "Ali, Türkiye'deki halicin yakınında yürüyor."
+        },
+        {
+          "en": "The river brings sediment from the mountains.",
+          "tr": "Nehir, dağlardan tortu getiriyor."
+        },
+        {
+          "en": "A predator watches its prey in the water.",
+          "tr": "Bir yırtıcı, sudaki avını izliyor."
+        },
+        {
+          "en": "Ali cleans some rubbish from the coast.",
+          "tr": "Ali, kıyıdan biraz çöp temizliyor."
+        },
+        {
+          "en": "It is only a drop in the bucket.",
+          "tr": "Bu devede kulak."
+        },
+        {
+          "en": "But every small effort is essential.",
+          "tr": "Ama her küçük çaba çok önemli."
+        }
+      ]
+    },
+    {
+      "id": "c2-earth-5",
+      "title": "Nesli Tükenme Riski",
+      "names": [
+        "Maria"
+      ],
+      "lines": [
+        {
+          "en": "Maria reads a report about extinction.",
+          "tr": "Maria, nesli tükenme hakkında bir rapor okuyor."
+        },
+        {
+          "en": "We lose biodiversity every day.",
+          "tr": "Her gün biyoçeşitliliği kaybediyoruz."
+        },
+        {
+          "en": "The ecosystem's equilibrium is vulnerable.",
+          "tr": "Ekosistemin dengesi oldukça kırılgan."
+        },
+        {
+          "en": "Thus, we must mitigate the damage.",
+          "tr": "Bu yüzden, hasarı hafifletmeliyiz."
+        },
+        {
+          "en": "Is this quiet the calm before the storm?",
+          "tr": "Bu sessizlik fırtına öncesi sessizlik mi?"
+        },
+        {
+          "en": "Yes, we must work to ameliorate the situation.",
+          "tr": "Evet, durumu iyileştirmek için çalışmalıyız."
+        }
+      ]
+    }
+  ]
+}
