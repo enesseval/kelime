@@ -9,9 +9,10 @@ import StoreKit
 @MainActor
 @Observable
 final class PurchaseManager {
-    /// Pro is not sold yet: it returns with the user's own word lists. Until then nobody is Pro,
-    /// the paywall and the PRO section stay hidden, and every feature the app has is free.
-    static let isOnSale = false
+    /// Pro is sold: own lists beyond the first, sharing, the exam plan, faster widget changes and
+    /// the personal puzzle with the archive. Off makes nobody Pro and hides the paywall and the
+    /// PRO section, with the purchase code kept.
+    static let isOnSale = true
 
     enum PurchaseResult {
         case purchased, pending, cancelled

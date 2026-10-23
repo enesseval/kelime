@@ -286,15 +286,18 @@ struct OnboardingView: View {
 }
 
 extension RotationInterval {
-    /// Turkish label: 30 dk / 1 saat / 3 saat / Günde bir.
+    /// Turkish label. No exact interval is promised: iOS decides when a widget really reloads.
     var label: String {
         switch self {
-        case .thirtyMinutes: "30 dk"
-        case .oneHour: "1 saat"
-        case .threeHours: "3 saat"
+        case .thirtyMinutes: "Çok sık"
+        case .oneHour: "Sık"
+        case .threeHours: "Normal"
         case .daily: "Günde bir"
         }
     }
+
+    /// The choices in Ayarlar: normal is free, the faster ones are Pro.
+    static let choices: [RotationInterval] = [.threeHours, .oneHour, .thirtyMinutes]
 }
 
 /// A phone lock screen with the rectangular widget, for onboarding.

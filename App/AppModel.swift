@@ -121,6 +121,63 @@ final class AppModel {
         }
     }
 
+    // MARK: - Own lists
+
+    /// Pro, as the purchase manager knows it (false while Pro is not on sale).
+    var isPro: Bool { purchases.isPro }
+
+    /// Creates a list; free users with a list of their own get the paywall instead.
+    func createList(title: String) async -> UserList? {
+        guard let database else { return nil }
+        let pro = isPro
+        do {
+            let list = try await database.writer.write { db in try UserLists.create(title: title, isPro: pro, db: db) }
+            dataVersion += 1
+            return list
+        } catch UserListError.limitReached {
+            router.showPaywall(.lists)
+        } catch {}
+        return nil
+    }
+
+    /// Runs a list change; the widget rebuilds because its pool may have changed.
+    func editList(_ body: @escaping @Sendable (Database) throws -> Void) async throws {
+        guard let database else { return }
+        try await database.writer.write(body)
+        dataVersion += 1
+        await WidgetRefresher.rebuild(database)
+    }
+
+    /// Writes the list to a temporary `.kelimelist` file to share.
+    func exportList(_ id: String) async -> URL? {
+        guard let shared = await read({ db in try UserLists.export(id, db: db) }) ?? nil,
+              let data = try? shared.encoded() else { return nil }
+        let name = shared.title.replacingOccurrences(of: "/", with: "-")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("\(name).\(SharedList.fileExtension)")
+        do {
+            try data.write(to: url, options: .atomic)
+            return url
+        } catch {
+            return nil
+        }
+    }
+
+    /// Opens a shared `.kelimelist` file: the list is added and Listeler opens. Returns a message.
+    func importList(from url: URL) async -> String {
+        let scoped = url.startAccessingSecurityScopedResource()
+        defer { if scoped { url.stopAccessingSecurityScopedResource() } }
+        guard let data = try? Data(contentsOf: url), let shared = try? SharedList.decode(data) else {
+            return "Bu dosya bir kelime listesi değil"
+        }
+        do {
+            try await editList { db in try UserLists.import(shared, db: db) }
+        } catch {
+            return "Liste eklenemedi"
+        }
+        router.openLists()
+        return "\(shared.title) eklendi · \(shared.cards.count) kelime"
+    }
+
     func completeOnboarding(_ choices: OnboardingChoices) async {
         guard let database else { return }
         try? await database.writer.write { db in try choices.save(db: db) }

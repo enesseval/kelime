@@ -40,7 +40,8 @@ public enum DailyPuzzle {
     }
 }
 
-/// Builds the Pro personal puzzle from the user's struggling words and enabled decks.
+/// Builds the Pro personal puzzle: struggling words as seeds, filled with learned words (to keep
+/// them fresh), or with the other words of the enabled decks while few are learned.
 public enum PersonalPuzzle {
     public static func make(db: Database, clock: AppClock, seed: UInt64) throws -> Crossword? {
         let prefs = try Preferences.load(db)
@@ -50,9 +51,11 @@ public enum PersonalPuzzle {
         let levelDeck = DeckID.allCases.first { $0.level == prefs.level }
         let decks = prefs.entitledDecks + (levelDeck.map { [$0] } ?? [])
         let ids = try CardQueries.candidates(in: decks, db: db).map(\.cardID)
-        let fillers = try Card.fetchAll(db, keys: ids)
+        let usable = try Card.fetchAll(db, keys: ids)
             .filter { $0.isSingleWord && (3...CrosswordGenerator.maxSize).contains($0.word.count) }
-            .map(CrosswordGenerator.Word.init(card:))
+        let learnedIDs = Set(try String.fetchAll(db, sql: "SELECT card_id FROM card_state WHERE state = ?", arguments: [LearningState.learned]))
+        let learned = usable.filter { learnedIDs.contains($0.id) }
+        let fillers = (learned.count >= 12 ? learned : usable).map(CrosswordGenerator.Word.init(card:))
         return CrosswordGenerator.generate(
             id: "personal-\(clock.today.string)-\(seed)",
             seeds: Array(seeds),

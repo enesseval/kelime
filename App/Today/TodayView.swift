@@ -26,9 +26,11 @@ struct TodayData: Sendable {
         let stats = try StatsQueries.week(db: db, clock: clock)
         let exam = try ExamCountdown.daysLeft(db: db, clock: clock)
         let courses = try Curriculum.levels(db: db)
-        let sources = prefs.entitledDecks.map { deck in
+        let lists = try UserLists.summaries(db: db).filter { $0.list.enabled && $0.total > 0 }.map(\.list.title)
+        let decks = prefs.enabledDecks.isEmpty && !lists.isEmpty ? [] : prefs.entitledDecks
+        let sources = decks.map { deck in
             deck.level.map { courses.contains($0) ? "\($0.rawValue) kursu" : $0.rawValue } ?? deck.rawValue
-        }
+        } + lists
         return TodayData(
             hero: try heroID.flatMap { try WordQueries.item(id: $0, db: db) },
             strugglingCount: stats.strugglingNow,

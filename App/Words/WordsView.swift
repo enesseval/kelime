@@ -23,6 +23,7 @@ struct WordsView: View {
     @State private var items: [WordItem] = []
     @State private var stats: WeekStats?
     @State private var decks: [DeckProgress] = []
+    @State private var ownLists: [UserListSummary] = []
     @State private var course: CourseState?
     @State private var openRow: String?
     private let swipeTip = SwipeTip()
@@ -76,7 +77,7 @@ struct WordsView: View {
     /// same card; the last list that is on cannot be switched off.
     @ViewBuilder
     private var lists: some View {
-        let onCount = decks.filter(\.enabled).count
+        let onCount = decks.filter(\.enabled).count + ownLists.filter { $0.list.enabled && $0.total > 0 }.count
         VStack(alignment: .leading, spacing: 18) {
             if let course {
                 caption("KURS")
@@ -84,6 +85,8 @@ struct WordsView: View {
                     DeckCard(deck: deck, title: "\(course.level.rawValue) kursu", keepOn: deck.enabled && onCount == 1)
                 }
                 UnitList(course: course)
+                caption("KENDİ LİSTELERİM")
+                OwnListsSection(lists: ownLists, keepOn: { $0.list.enabled && $0.total > 0 && onCount == 1 })
                 let exams = decks.filter { $0.deck.tag != nil }
                 if !exams.isEmpty {
                     caption("SINAV LİSTELERİ")
@@ -163,6 +166,7 @@ struct WordsView: View {
         course = await model.read { db in try Curriculum.state(db: db) } ?? nil
         if showDecks {
             decks = await model.read { db in try DeckQueries.progress(db: db) } ?? []
+            ownLists = await model.read { db in try UserLists.summaries(db: db) } ?? []
         } else {
             let segment = segment, search = search, sort = sort
             let filter = segment == .all ? filter : WordFilter()

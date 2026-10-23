@@ -17,12 +17,13 @@ struct PaywallView: View {
 
     private var purchases: PurchaseManager { app.purchases }
 
+    /// What Pro adds. Everything else stays free.
     static let benefits = [
-        "Sınırsız Hızlı Tekrar",
-        "YDS · YÖKDİL · IELTS desteleri",
-        "B2–C1 kelimeler",
-        "Bulmaca arşivi",
-        "Tüm temalar ve 30 dk değişim",
+        "Sınırsız kendi listen, widget'ta",
+        "Listelerini paylaş",
+        "Sınav planı: sınav gününe göre günlük hedef",
+        "Widget'ta daha sık yeni kelime",
+        "Sana özel bulmaca ve bulmaca arşivi",
     ]
 
     var body: some View {
@@ -116,13 +117,13 @@ struct PaywallView: View {
 
     private var subtitle: String {
         switch request.trigger {
-        case .reviewLimit: "Bugünkü ücretsiz turunu bitirdin. Pro ile istediğin kadar tekrar et."
-        case .proDeck: "Sınav ve üst seviye desteleri widget'ına ekle."
+        case .lists: "Ücretsizde bir listen var. Pro ile istediğin kadar liste oluştur."
+        case .share: "Listeni arkadaşlarına, öğrencilerine gönder; açan herkes kendi widget'ına ekler."
+        case .rotation: "Kelimen saatte bir ya da yarım saatte bir değişsin."
+        case .personalPuzzle: "Zorlandığın ve öğrendiğin kelimelerden karışık bir bulmaca."
         case .archive: "Kaçırdığın günlerin bulmacalarını çöz."
-        case .theme: "Kilit ekranına en çok yakışan temayı seç."
-        case .rotation: "Kelimen 30 dakikada bir yenilensin."
-        case .personalPuzzle: "Zorlandığın kelimelerle sana özel bir bulmaca."
-        case .base: "Widget'ını sınırsız kullan."
+        case .examPlan: "Sınav gününe kadar her gün kaç kelime çalışman gerektiğini görelim."
+        case .base: "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."
         }
     }
 

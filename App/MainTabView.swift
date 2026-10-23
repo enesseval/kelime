@@ -5,6 +5,7 @@ import SwiftUI
 /// The four tabs, each with its own navigation stack.
 struct MainTabView: View {
     @Environment(AppModel.self) private var model
+    @State private var importMessage: String?
 
     init() {
         Self.configureTabBarAppearance()
@@ -40,9 +41,15 @@ struct MainTabView: View {
         .tint(Palette.accent)
         .modifier(GlassTabBarBehavior())
         .onOpenURL { url in
+            // A shared .kelimelist file opens the list import.
+            if url.isFileURL {
+                Task { importMessage = await model.importList(from: url) }
+                return
+            }
             Task { await model.logWidgetOpen(url) }
             router.handle(url)
         }
+        .toast($importMessage)
         .sheet(item: $router.paywall) { request in
             PaywallView(request: request).environment(model)
         }
@@ -97,6 +104,7 @@ extension View {
             case .widgetLog: WidgetLogView()
             case .usageCounters: UsageCountersView()
             case .unit(let id): UnitView(unitID: id)
+            case .userList(let id): UserListView(listID: id)
             case .story(let unit, let story): StoryView(unitID: unit, storyID: story)
             }
         }
@@ -132,6 +140,7 @@ struct PlayView: View {
                 }
                 .buttonStyle(.plain)
 
+                VStack(spacing: 0) {
                 Button { model.router.openPuzzle() } label: {
                     HStack(spacing: 18) {
                         PuzzleThumbnail(cell: 8, gap: 2, cells: puzzle?.thumbnail ?? PuzzleThumbnail.sample)
@@ -141,8 +150,30 @@ struct PlayView: View {
                         }
                         Spacer(minLength: 0)
                     }
+                    .padding(20)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                Rectangle().fill(Palette.line).frame(height: 1)
+                proRow("Arşiv") { model.isPro ? model.router.openArchive() : model.router.showPaywall(.archive) }
+                }
+                .foregroundStyle(Palette.ink)
+                .surfaceCard(padding: 0)
+
+                Button { model.isPro ? model.router.openPersonalPuzzle() : model.router.showPaywall(.personalPuzzle) } label: {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Sana Özel Bulmaca").font(KelimeFont.ui(16, weight: .semibold, relativeTo: .headline))
+                            Text("Zorlandığın ve öğrendiğin kelimelerden").font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
+                        }
+                        Spacer()
+                        if !model.isPro { ProBadge() } else { Image(systemName: "chevron.right").foregroundStyle(Palette.ink2) }
+                    }
                     .foregroundStyle(Palette.ink)
-                    .surfaceCard(padding: 20)
+                    .padding(.vertical, 18)
+                    .padding(.horizontal, 20)
+                    .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Palette.line, style: StrokeStyle(lineWidth: 1, dash: model.isPro ? [] : [4, 4])))
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             }
@@ -157,6 +188,24 @@ struct PlayView: View {
             let clock = model.clock
             puzzle = await model.read { db in try DailyPuzzleInfo.load(db: db, clock: clock) } ?? nil
         }
+    }
+
+    private func proRow(_ title: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack {
+                Text(title).font(KelimeFont.ui(15, relativeTo: .body))
+                Spacer()
+                if model.isPro {
+                    Image(systemName: "chevron.right").foregroundStyle(Palette.ink2)
+                } else {
+                    ProBadge()
+                }
+            }
+            .padding(.horizontal, 20)
+            .frame(minHeight: 52)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
     }
 
     private var puzzleSubtitle: String {

@@ -15,6 +15,7 @@ enum Route: Hashable {
     case widgetLog
     case usageCounters
     case unit(String)
+    case userList(String)
     case story(String, String)
 }
 
