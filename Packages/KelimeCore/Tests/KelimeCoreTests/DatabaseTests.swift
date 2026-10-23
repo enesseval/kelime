@@ -9,7 +9,7 @@ struct DatabaseTests {
         let tables = try db.reader.read { db throws in
             try String.fetchAll(db, sql: "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE 'grdb_%'")
         }
-        #expect(Set(tables) == ["card", "card_deck", "card_state", "widget_queue", "settings", "review_log", "puzzle_progress", "widget_log", "unit", "unit_card"])
+        #expect(Set(tables) == ["card", "card_deck", "card_state", "widget_queue", "settings", "review_log", "puzzle_progress", "widget_log", "unit", "unit_card", "user_list", "user_list_card"])
     }
 
     @Test func sharedPoolUsesWAL() throws {
