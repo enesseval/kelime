@@ -3,7 +3,11 @@ import SwiftUI
 
 /// How often testers use each feature, to decide what Pro should hold. Counted on the device
 /// only, in Debug and TestFlight builds (never in App Store builds), and never sent anywhere.
+/// These are also the events an anonymous analytics service (TelemetryDeck) will send once its
+/// app id is set: `count` is the one place to hook it in.
 enum UsageCounter: String, CaseIterable {
+    case onboardingDone = "Tanıtım tamamlandı"
+    case widgetInstalled = "Widget eklendi (ilk görülüş)"
     case quickReview = "Hızlı Tekrar başlatıldı"
     case puzzle = "Günün Bulmacası açıldı"
     case wordDetail = "Kelime detayı açıldı"
@@ -11,6 +15,12 @@ enum UsageCounter: String, CaseIterable {
     case filter = "Tümü filtresi kullanıldı"
     case sort = "Sıralama değiştirildi"
     case examCountdown = "Sınav geri sayımı açıldı"
+    case listCreated = "Kendi listesi oluşturuldu"
+    case listShared = "Liste paylaşıldı"
+    case listImported = "Liste içe aktarıldı"
+    case paywallShown = "Pro ekranı açıldı"
+    case purchase = "Pro satın alındı"
+    case placementTest = "Seviye testi bitti"
 
     private var key: String { "usage." + String(describing: self) }
 

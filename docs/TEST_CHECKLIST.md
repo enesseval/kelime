@@ -62,11 +62,11 @@ Aksi yazmıyorsa iPhone'da, TestFlight sürümüyle.
 - [ ] 10 soruluk tur açılıyor, sorular ve şıklar doğru
 - [ ] Doğru ve yanlış cevaplar işaretleniyor, ilerleme çubuğu ilerliyor
 - [ ] Tur sonu özeti: skor, öğrenilen ve zorlanılan kelimeler
-- [ ] "Bir tur daha" sınırsız; günde birden fazla tur açılabiliyor, Pro uyarısı hiç çıkmıyor
+- [ ] "Bir tur daha" sınırsız; günde birden fazla tur açılabiliyor
 - [ ] Hatırlatma bildirimine dokununca Hızlı Tekrar açılıyor
 
 ## 6. Oyna
-- [ ] Yalnızca Hızlı Tekrar ve Günün Bulmacası var (arşiv ve sana özel bulmaca yok)
+- [ ] Hızlı Tekrar ve Günün Bulmacası ücretsiz; Arşiv ve Sana Özel Bulmaca Pro
 - [ ] Bulmaca şu anki bölümün kelimelerinden oluşuyor, zorlanılan kelimeler içinde
 - [ ] Gün içinde hep aynı bulmaca açılıyor; yarım bırakınca ilerleme korunuyor
 - [ ] İpucu, harf girişi, silme ve yön değiştirme çalışıyor
@@ -98,7 +98,7 @@ Aksi yazmıyorsa iPhone'da, TestFlight sürümüyle.
 - [ ] "Kelimeler" düğmesiyle kelime listesine dönülüyor
 
 ## 9. Ayarlar
-- [ ] PRO bölümü, değişim sıklığı ve tema satırı yok
+- [ ] Tema satırı yok
 - [ ] Seviye değiştirince Bugün, widget, Hızlı Tekrar ve bulmaca yeni seviyeye geçiyor
 - [ ] Sınav geri sayımı: aç → sınav (YDS, YÖKDİL, IELTS) ve tarih seç; geçmiş tarih seçilemiyor; kapatınca Bugün'den kalkıyor
 - [ ] Kilit ekranı görünümü modu değişince widget güncelleniyor
@@ -120,18 +120,37 @@ Aksi yazmıyorsa iPhone'da, TestFlight sürümüyle.
 - [ ] Hareketi Azalt açıkken tanıtım ve animasyonlar sade
 - [ ] VoiceOver: sekmeler, butonlar ve kelime satırları okunuyor
 
+## 9b. Pro ve yeni özellikler
+- [ ] Ayarlar'da PRO bölümü ve "Satın alımları geri yükle" var; Geliştirici › "Pro'yu aç" ile Pro açılıp kapanıyor
+- [ ] Ödeme ekranı: yeni Pro maddeleri, fiyatlar yükleniyor, satın alma (sandbox) ve geri yükleme çalışıyor
+- [ ] Değişim sıklığı: Normal ücretsiz; Sık ve Çok sık Pro değilken ödeme ekranını açıyor, Pro'da seçiliyor
+- [ ] Kendi listelerim: ilk liste ücretsiz oluşuyor; ikinci liste Pro değilken ödeme ekranı açıyor
+- [ ] Listeye uygulamadan kelime ekleme (arama, ✓ işareti, aynı kelime ikinci kez eklenmiyor)
+- [ ] Kendi kelimeni yazma: kelime ve anlam zorunlu, tür seçimi, örnek isteğe bağlı; örneksiz kelime detayda ÖRNEK göstermiyor
+- [ ] Listeden kelime çıkarma (basılı tut), adını değiştirme, silme
+- [ ] Liste "Widget'ta" açıkken widget ve Hızlı Tekrar'a listenin kelimeleri karışıyor; Bugün'deki satırda listenin adı görünüyor
+- [ ] Kursu kapatıp yalnızca listeyi açınca widget sadece liste kelimelerini gösteriyor
+- [ ] Paylaş: Pro değilken ödeme ekranı; Pro'da paylaşma penceresi .kelimelist dosyasıyla açılıyor
+- [ ] Başka bir cihazda (ya da Dosyalar'dan) .kelimelist açınca liste ekleniyor, mesaj çıkıyor, Listeler açılıyor
+- [ ] Sınav planı: sınav geri sayımı açıkken Bugün'de kart; Pro değilken Pro rozeti ve ödeme ekranı; Pro'da günlük hedef, ilerleme ve "Sınav tekrarı" yalnızca o sınav listesinden soruyor
+- [ ] Oyna: Arşiv ve Sana Özel Bulmaca Pro değilken ödeme ekranı, Pro'da açılıyor
+- [ ] Seviye testi: tanıtımda "Seviyemi bilmiyorum", sorular, Bilmiyorum, sonuç ve "… ile başla" seviyeyi seçiyor
+- [ ] Öğrenilen bir kelimenin detayında "Sonraki tekrar" tarihi; zamanı gelince widget'ta ve Hızlı Tekrar'da çıkıyor
+- [ ] Kelime detayında "Bu kartta hata mı var? Bildir" formu kelimeyle dolu açılıyor
+- [ ] Geliştirici › Kullanım sayaçları yeni olayları sayıyor
+
 ## 12. Eski sürümden güncelleme
-- [ ] Önceden Pro görünen test hesabı ücretsize geçiyor, hata yok
+- [ ] Sandbox ile Pro alınmış test hesabı Pro olarak kalıyor
 - [ ] İlerleme, favoriler ve seçili seviye korunuyor
 - [ ] Önceden girilmiş YDS tarihi sınav geri sayımı olarak duruyor
-- [ ] Eskiden 30 dk, 1 saat veya günlük seçilmişse widget artık ayar olmadan normal hızda değişiyor
+- [ ] Eskiden seçilen değişim sıklığı Pro değilse Normal'e düşüyor
 - [ ] Eski saat uygulaması güncellenmiyor (elle silinebilir)
 
 ## 13. App Store'a göndermeden önce (App Store Connect)
 - [ ] Sürüm 1.0 için doğru build seçildi
-- [ ] Uygulama içi satın alma ürünleri bu sürüme eklenmedi
+- [ ] Uygulama içi satın alma ürünleri (ömür boyu, yıllık) bu sürüme eklendi; açıklamaları docs/APP_STORE.md
 - [ ] App Privacy: "Data Not Collected"
-- [ ] Açıklama ve ekran görüntülerinde Pro, abonelik, Apple Watch veya "3 saatte bir" geçmiyor
+- [ ] Açıklama ve ekran görüntüleri docs/APP_STORE.md ile aynı; Apple Watch ve belirli yenileme aralığı vaadi yok
 - [ ] Destek ve gizlilik URL'leri: enesseval.github.io/kelime/
 - [ ] Yaş derecelendirmesi ve kategori (Eğitim) dolduruldu
-- [ ] Review notu: "Hesap gerekmez, tüm özellikler ücretsiz."
+- [ ] Review notu docs/APP_STORE.md'deki metin

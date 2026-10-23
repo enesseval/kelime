@@ -97,6 +97,7 @@ final class AppRouter {
     }
 
     func showPaywall(_ trigger: PaywallTrigger, deck: DeckID? = nil) {
+        UsageCounter.count(.paywallShown)
         paywall = PaywallRequest(trigger: trigger, deck: deck)
     }
 

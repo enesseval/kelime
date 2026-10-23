@@ -147,6 +147,7 @@ struct PlacementTestView: View {
                 withAnimation { level = next }
             } else {
                 withAnimation { result = PlacementTest.result(scores, available: levels) }
+                UsageCounter.count(.placementTest)
             }
         }
     }

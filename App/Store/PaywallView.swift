@@ -184,7 +184,9 @@ struct PaywallView: View {
         working = true
         defer { working = false }
         switch await purchases.purchase(product) {
-        case .purchased: dismiss()
+        case .purchased:
+            UsageCounter.count(.purchase)
+            dismiss()
         case .pending: toast = "Satın alma onay bekliyor"
         case .cancelled: if let error = purchases.lastError { toast = error }
         }

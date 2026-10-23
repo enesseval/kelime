@@ -101,6 +101,10 @@ struct TodayView: View {
             let clock = model.clock
             data = await model.read { db in try TodayData.load(db: db, clock: clock) }
             widgetInstalled = await Self.hasInstalledWidget()
+            if widgetInstalled && !UserDefaults.standard.bool(forKey: "usage.widgetSeen") {
+                UserDefaults.standard.set(true, forKey: "usage.widgetSeen")
+                UsageCounter.count(.widgetInstalled)
+            }
         }
         .sheet(isPresented: $showGuide) { WidgetGuideView() }
     }

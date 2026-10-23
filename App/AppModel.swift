@@ -133,6 +133,7 @@ final class AppModel {
         do {
             let list = try await database.writer.write { db in try UserLists.create(title: title, isPro: pro, db: db) }
             dataVersion += 1
+            UsageCounter.count(.listCreated)
             return list
         } catch UserListError.limitReached {
             router.showPaywall(.lists)
@@ -156,6 +157,7 @@ final class AppModel {
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("\(name).\(SharedList.fileExtension)")
         do {
             try data.write(to: url, options: .atomic)
+            UsageCounter.count(.listShared)
             return url
         } catch {
             return nil
@@ -175,6 +177,7 @@ final class AppModel {
             return "Liste eklenemedi"
         }
         router.openLists()
+        UsageCounter.count(.listImported)
         return "\(shared.title) eklendi · \(shared.cards.count) kelime"
     }
 
@@ -184,6 +187,7 @@ final class AppModel {
         // The level may have changed: the word on the widget now must come from the new course too.
         await WidgetRefresher.rebuild(database, includingCurrent: true)
         dataVersion += 1
+        UsageCounter.count(.onboardingDone)
         if let minutes = choices.reminderMinutes { await Reminder.schedule(minutes: minutes) }
         showOnboarding = false
     }

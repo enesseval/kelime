@@ -99,6 +99,26 @@ never write questions or crossword words, and only compete with phrases as quiz 
 Units have stories (Turkish on demand, tap to hear), phrases and words. Word detail shows
 extra senses and the note.
 
+## First release with Pro (docs/RELEASE_PLAN.md)
+
+`PurchaseManager.isOnSale = true`. Free: the course, exam lists, Quick Review, the daily puzzle,
+one own list, normal widget pace. Pro: unlimited own lists, sharing, the exam plan, faster widget
+(Sık, Çok sık; no exact interval promised), the personal puzzle and the archive.
+
+- Own lists (UserLists, migration v5): words from the app or typed by the learner ("user-" ids that
+  content updates never delete); enabled lists feed the widget and Quick Review; a list travels
+  as a .kelimelist file (Pro to send, free to open). Listeler › KENDİ LİSTELERİM.
+- Exam plan (ExamPlan): the exam list's words not yet learned over the days left; Bugün card with
+  an exam-only Quick Review.
+- Spaced review (SpacedReview): learned words come back after 3, 7, 21, 60, 120 days; due words
+  weigh 2 on the widget and lead Quick Review after the struggling ones; the word detail shows the
+  next review day.
+- Placement test (PlacementTest): optional in onboarding, two words per level, stops after two
+  missed levels.
+- Hata bildir / Öneri gönder: a prefilled GitHub issue until `Legal.supportEmail` is set.
+- Usage counters gained the events an analytics service would send (TelemetryDeck once an app id
+  exists). App Store texts: docs/APP_STORE.md. Site terms and privacy describe Pro again.
+
 ## Free release (for production after the build is tested)
 
 Everything the app has is free: every level and exam deck, unlimited Quick Review, one daily
