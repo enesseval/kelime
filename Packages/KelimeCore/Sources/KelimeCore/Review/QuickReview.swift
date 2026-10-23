@@ -48,12 +48,20 @@ public enum QuickReview {
 
     /// Picks up to 10 cards: struggling first, then new words the widget has already shown,
     /// then other new words; learned words only if the deck runs short.
+    /// `deck` limits the round to one deck (the exam plan's review); nil uses the widget's sources.
     public static func makeQuestions(
         db: Database,
+        deck: DeckID? = nil,
         using rng: inout some RandomNumberGenerator
     ) throws -> [ReviewQuestion] {
         let prefs = try Preferences.load(db)
-        guard let filter = try CardQueries.sourceFilter(prefs.entitledDecks, db: db) else { return [] }
+        let source: SQL?
+        if let deck {
+            source = CardQueries.deckFilter([deck])
+        } else {
+            source = try CardQueries.sourceFilter(prefs.entitledDecks, db: db)
+        }
+        guard let filter = source else { return [] }
         let rows = try Row.fetchAll(db, SQLRequest<Row>("""
             SELECT c.id, COALESCE(s.state, 'new') AS state, COALESCE(s.times_shown, 0) AS shown,
                    s.last_answered_on AS answered

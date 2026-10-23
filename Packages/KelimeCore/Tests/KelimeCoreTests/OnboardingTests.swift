@@ -62,6 +62,27 @@ struct OnboardingTests {
         #expect(prefs.theme == .mono && prefs.effectiveTheme == .paper)
     }
 
+    @Test func examPlanSpreadsTheListOverTheDaysLeft() throws {
+        let db = try AppDatabase.inMemory()
+        let file = try ContentImporter.decode(Data(contentsOf: TestSupport.bundledCardsURL))
+        let clock = AppClock.fixed(try Date("2026-10-22T09:00:00Z", strategy: .iso8601), timeZone: TimeZone(identifier: "Europe/Istanbul")!)
+        try db.writer.write { db in
+            try ContentImporter.apply(file, in: db, progress: { _ in })
+            try Preferences(level: .b1, enabledDecks: [.b1]).save(db)
+        }
+        #expect(try db.reader.read { db in try ExamPlan.status(db: db, clock: clock) } == nil)
+        try db.writer.write { db in
+            try ExamCountdown.set(.yds, date: LocalDate(year: 2026, month: 11, day: 1), db: db)
+            try LearningStore.record(.answered(correct: true), cardID: "exam-hamper", source: .quickReview, clock: clock, db: db)
+        }
+        let plan = try #require(try db.reader.read { db in try ExamPlan.status(db: db, clock: clock) })
+        let total = try db.reader.read { db in try DeckQueries.progress(db: db).first { $0.deck == .yds }!.total }
+        #expect(plan.exam == .yds && plan.daysLeft == 10)
+        #expect(plan.remaining == total - 1)
+        #expect(plan.dailyTarget == Int((Double(total - 1) / 10).rounded(.up)))
+        #expect(plan.doneToday == 1 && !plan.listOnWidget)
+    }
+
     @Test func levelSamplesHaveThreeWords() {
         for level in CEFRLevel.allCases {
             #expect(LevelSamples.words(for: level).count == 3)

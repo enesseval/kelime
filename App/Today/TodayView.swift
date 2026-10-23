@@ -16,6 +16,7 @@ struct TodayData: Sendable {
     var level: CEFRLevel
     var puzzle: DailyPuzzleInfo?
     var course: CourseState?
+    var examPlan: ExamPlanStatus?
 
     static func load(db: Database, clock: AppClock) throws -> TodayData {
         let prefs = try Preferences.load(db)
@@ -40,7 +41,8 @@ struct TodayData: Sendable {
             bannerDismissed: try Settings.bool(.widgetBannerDismissed, in: db),
             level: prefs.level,
             puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
-            course: try Curriculum.state(db: db)
+            course: try Curriculum.state(db: db),
+            examPlan: try ExamPlan.status(db: db, clock: clock)
         )
     }
 }
@@ -80,6 +82,9 @@ struct TodayView: View {
                     .accessibilityLabel("Widget'ında \(data.widgetSources). Listeleri değiştir")
                     if let course = data.course {
                         CurrentUnitCard(course: course)
+                    }
+                    if let plan = data.examPlan {
+                        ExamPlanCard(plan: plan)
                     }
                     QuickReviewCard(strugglingCount: data.strugglingCount)
                     PuzzleCard(level: data.level, info: data.puzzle)
@@ -185,6 +190,54 @@ struct HeroCard: View {
         .surfaceCard(radius: 26, padding: 21)
         .accessibilityElement(children: .combine)
         .accessibilityHint("Kelime detayını açar")
+    }
+}
+
+/// Bugün's exam plan (Pro): today's share of the exam list until the exam day. Free users see
+/// the card with a Pro badge; tapping it explains Pro.
+struct ExamPlanCard: View {
+    @Environment(AppModel.self) private var model
+    let plan: ExamPlanStatus
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("SINAV PLANI · \(plan.exam.rawValue)")
+                    .font(KelimeFont.ui(11, weight: .semibold, relativeTo: .caption2))
+                    .tracking(0.9)
+                    .foregroundStyle(Palette.ink2)
+                Spacer()
+                if model.isPro {
+                    Text("\(plan.daysLeft) gün").font(KelimeFont.ui(12, weight: .semibold)).foregroundStyle(Palette.accent)
+                } else {
+                    ProBadge()
+                }
+            }
+            if plan.remaining == 0 {
+                Text("Listedeki bütün kelimeleri öğrendin 🎉").font(KelimeFont.ui(17, weight: .semibold, relativeTo: .headline))
+            } else {
+                (Text("Bugün ").foregroundStyle(Palette.ink2)
+                    + Text("\(min(plan.doneToday, plan.dailyTarget)) / \(plan.dailyTarget) kelime").fontWeight(.semibold)
+                    + Text(" · kalan \(plan.remaining)").foregroundStyle(Palette.ink2))
+                    .font(KelimeFont.ui(16, relativeTo: .body))
+                ThinProgressBar(fraction: model.isPro ? plan.fraction : 0.35, color: Palette.green)
+                    .blur(radius: model.isPro ? 0 : 2)
+                HStack(spacing: 10) {
+                    Button("Sınav tekrarı") {
+                        if model.isPro { Task { model.router.startQuickReview(deck: plan.exam) } } else { model.router.showPaywall(.examPlan) }
+                    }
+                    .buttonStyle(PrimaryButtonStyle(height: 44))
+                    if model.isPro && !plan.listOnWidget {
+                        Button("Widget'a ekle") { Task { await model.setDeck(plan.exam, enabled: true) } }
+                            .buttonStyle(OutlineButtonStyle())
+                    }
+                }
+            }
+        }
+        .foregroundStyle(Palette.ink)
+        .surfaceCard()
+        .contentShape(Rectangle())
+        .onTapGesture { if !model.isPro { model.router.showPaywall(.examPlan) } }
     }
 }
 

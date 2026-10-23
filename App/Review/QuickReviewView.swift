@@ -35,9 +35,10 @@ struct QuickReviewView: View {
 
     private func load() async {
         guard session == nil else { return }
+        let deck = model.router.reviewDeck
         let questions: [ReviewQuestion] = await model.read { db -> [ReviewQuestion] in
             var rng = SystemRandomNumberGenerator()
-            return try QuickReview.makeQuestions(db: db, using: &rng)
+            return try QuickReview.makeQuestions(db: db, deck: deck, using: &rng)
         } ?? []
         if questions.isEmpty { dismiss(); return }
         session = ReviewSession(questions: questions)

@@ -41,6 +41,8 @@ final class AppRouter {
     var paywall: PaywallRequest?
     /// Presents a Quick Review session full screen.
     var reviewPresented = false
+    /// The deck of the presented Quick Review, for the exam plan; nil uses the widget's sources.
+    var reviewDeck: DeckID?
     /// Presents a crossword full screen.
     var puzzle: PuzzleRequest?
     /// Set by `openLists`; Kelimelerim shows Listeler and clears it.
@@ -71,8 +73,9 @@ final class AppRouter {
     }
 
     /// Opens a Quick Review session. Quick Review is unlimited.
-    func startQuickReview() {
+    func startQuickReview(deck: DeckID? = nil) {
         UsageCounter.count(.quickReview)
+        reviewDeck = deck
         reviewPresented = true
     }
 

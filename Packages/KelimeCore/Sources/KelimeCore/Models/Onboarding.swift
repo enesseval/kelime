@@ -104,3 +104,45 @@ public enum LevelSamples {
         }
     }
 }
+
+/// Where the learner stands on the exam plan (Pro): the words of the exam's list still to learn,
+/// spread over the days left.
+public struct ExamPlanStatus: Sendable, Equatable {
+    public var exam: DeckID
+    public var daysLeft: Int
+    /// Words of the exam list not learned yet.
+    public var remaining: Int
+    /// Words to study today to finish the list by the exam.
+    public var dailyTarget: Int
+    /// Words of the exam list answered today.
+    public var doneToday: Int
+    /// The exam list is on the widget.
+    public var listOnWidget: Bool
+
+    public var fraction: Double { dailyTarget == 0 ? 1 : min(Double(doneToday) / Double(dailyTarget), 1) }
+}
+
+public enum ExamPlan {
+    public static func status(db: Database, clock: AppClock) throws -> ExamPlanStatus? {
+        guard let countdown = try ExamCountdown.daysLeft(db: db, clock: clock),
+              let filter = CardQueries.deckFilter([countdown.exam]) else { return nil }
+        let remaining = try Int.fetchOne(db, SQLRequest<Int>("""
+            SELECT COUNT(*) FROM card c LEFT JOIN card_state s ON s.card_id = c.id
+            WHERE \(filter) AND COALESCE(s.state, 'new') <> 'learned'
+            """)) ?? 0
+        let doneToday = try Int.fetchOne(db, SQLRequest<Int>("""
+            SELECT COUNT(DISTINCT r.card_id) FROM review_log r JOIN card c ON c.id = r.card_id
+            WHERE r.answered_on = \(clock.today) AND \(filter)
+            """)) ?? 0
+        let days = max(countdown.days, 1)
+        let target = remaining == 0 ? 0 : min(max(Int((Double(remaining) / Double(days)).rounded(.up)), 1), remaining)
+        return ExamPlanStatus(
+            exam: countdown.exam,
+            daysLeft: countdown.days,
+            remaining: remaining,
+            dailyTarget: target,
+            doneToday: doneToday,
+            listOnWidget: try Preferences.load(db).enabledDecks.contains(countdown.exam)
+        )
+    }
+}
