@@ -97,3 +97,32 @@ struct QuickReviewTests {
         #expect(s.progress == 1)
     }
 }
+
+struct PlacementTestTests {
+    @Test func everyLevelHasTwoQuestionsWithFourMeanings() throws {
+        let db = try AppDatabase.inMemory()
+        let file = try ContentImporter.decode(Data(contentsOf: TestSupport.bundledCardsURL))
+        try db.writer.write { db in try ContentImporter.apply(file, in: db, progress: { _ in }) }
+        var rng = SeededGenerator(seed: 3)
+        let questions = try db.reader.read { db in try PlacementTest.questions(db: db, using: &rng) }
+        #expect(Set(questions.keys) == Set(CEFRLevel.allCases))
+        for (_, list) in questions {
+            #expect(list.count == 2)
+            for q in list {
+                #expect(q.options.count == 4 && Set(q.options).count == 4 && q.options.contains(q.answer))
+            }
+        }
+    }
+
+    @Test func stopsAfterTwoMissedLevelsAndPicksTheHighestKnown() {
+        let all = CEFRLevel.allCases
+        #expect(PlacementTest.nextLevel(after: [], available: all) == .a1)
+        #expect(PlacementTest.nextLevel(after: [(.a1, 2), (.a2, 2)], available: all) == .b1)
+        #expect(PlacementTest.nextLevel(after: [(.a1, 2), (.a2, 2), (.b1, 1), (.b2, 0)], available: all) == nil)
+        #expect(PlacementTest.result([(.a1, 2), (.a2, 2), (.b1, 1), (.b2, 0)], available: all) == .a2)
+        // One miss, then a known level: it goes on, and a lucky high level still counts.
+        #expect(PlacementTest.nextLevel(after: [(.a1, 2), (.a2, 1), (.b1, 2)], available: all) == .b2)
+        #expect(PlacementTest.result([(.a1, 0), (.a2, 0)], available: all) == .a1)
+        #expect(PlacementTest.result([(.a1, 2), (.a2, 2), (.b1, 2), (.b2, 2), (.c1, 2), (.c2, 2)], available: all) == .c2)
+    }
+}

@@ -19,6 +19,7 @@ struct OnboardingView: View {
     /// Level cards come in one after another.
     @State private var levelsShown = false
     @State private var showHomeSteps = false
+    @State private var showPlacement = false
 
     var body: some View {
         ZStack {
@@ -169,7 +170,26 @@ struct OnboardingView: View {
     // MARK: - 2 Level
 
     private var level: some View {
-        page(title: "Seviyen hangisi?", subtitle: "Bölümler seviye seviye hazırlanıyor. Hazır olanlardan başla; sıradaki seviye gelince bitirdiğin yerden geçersin.") {
+        page(title: "Seviyen hangisi?", subtitle: "Emin değilsen 2 dakikalık testle bulalım; seviyeni sonra Ayarlar'dan da değiştirebilirsin.") {
+            Button { showPlacement = true } label: {
+                HStack(spacing: 10) {
+                    Image(systemName: "sparkles")
+                    Text("Seviyemi bilmiyorum · 2 dk test")
+                    Spacer()
+                    Image(systemName: "chevron.right").font(.system(size: 13, weight: .semibold))
+                }
+                .font(KelimeFont.ui(16, weight: .semibold, relativeTo: .body))
+                .foregroundStyle(Palette.accent)
+                .padding(.horizontal, 18)
+                .frame(minHeight: 56)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).strokeBorder(Palette.accent.opacity(0.6)))
+            }
+            .buttonStyle(.plain)
+            .fullScreenCover(isPresented: $showPlacement) {
+                PlacementTestView(available: levels) { result in choices.level = result }
+                    .environment(app)
+            }
             VStack(spacing: 10) {
                 ForEach(Array(CEFRLevel.allCases.enumerated()), id: \.element) { index, level in
                     let available = levels.contains(level)
