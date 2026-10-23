@@ -138,6 +138,7 @@ Aksi yazmıyorsa iPhone'da, TestFlight sürümüyle.
 - [ ] Öğrenilen bir kelimenin detayında "Sonraki tekrar" tarihi; zamanı gelince widget'ta ve Hızlı Tekrar'da çıkıyor
 - [ ] Kelime detayında "Bu kartta hata mı var? Bildir" formu kelimeyle dolu açılıyor
 - [ ] Geliştirici › Kullanım sayaçları yeni olayları sayıyor
+- [ ] TestFlight build'inde birkaç işlem yap; TelemetryDeck panelinde (Test Mode açık) "Usage." sinyalleri görünüyor
 
 ## 12. Eski sürümden güncelleme
 - [ ] Sandbox ile Pro alınmış test hesabı Pro olarak kalıyor
@@ -149,7 +150,7 @@ Aksi yazmıyorsa iPhone'da, TestFlight sürümüyle.
 ## 13. App Store'a göndermeden önce (App Store Connect)
 - [ ] Sürüm 1.0 için doğru build seçildi
 - [ ] Uygulama içi satın alma ürünleri (ömür boyu, yıllık) bu sürüme eklendi; açıklamaları docs/APP_STORE.md
-- [ ] App Privacy: "Data Not Collected"
+- [ ] App Privacy: Kullanım Verileri › Ürün Etkileşimi, analiz, kimliğe bağlı değil, izleme yok
 - [ ] Açıklama ve ekran görüntüleri docs/APP_STORE.md ile aynı; Apple Watch ve belirli yenileme aralığı vaadi yok
 - [ ] Destek ve gizlilik URL'leri: enesseval.github.io/kelime/
 - [ ] Yaş derecelendirmesi ve kategori (Eğitim) dolduruldu

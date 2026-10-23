@@ -1,10 +1,9 @@
 import KelimeUI
 import SwiftUI
 
-/// How often testers use each feature, to decide what Pro should hold. Counted on the device
-/// only, in Debug and TestFlight builds (never in App Store builds), and never sent anywhere.
-/// These are also the events an anonymous analytics service (TelemetryDeck) will send once its
-/// app id is set: `count` is the one place to hook it in.
+/// The app's usage events. Each one goes to TelemetryDeck as an anonymous signal (see
+/// `Analytics`); Debug and TestFlight builds also count them on the device for Geliştirici ›
+/// Kullanım sayaçları.
 enum UsageCounter: String, CaseIterable {
     case onboardingDone = "Tanıtım tamamlandı"
     case widgetInstalled = "Widget eklendi (ilk görülüş)"
@@ -25,6 +24,7 @@ enum UsageCounter: String, CaseIterable {
     private var key: String { "usage." + String(describing: self) }
 
     static func count(_ counter: UsageCounter) {
+        Analytics.send(counter)
         guard DevTools.isAvailable else { return }
         UserDefaults.standard.set(counter.value + 1, forKey: counter.key)
     }
@@ -47,7 +47,7 @@ struct UsageCountersView: View {
                     LabeledContent(counter.rawValue, value: "\(counter.value)")
                 }
             } footer: {
-                Text("Yalnızca bu cihazda, TestFlight ve geliştirme sürümlerinde sayılır; hiçbir yere gönderilmez.")
+                Text("Bu sayılar yalnızca bu cihazda, TestFlight ve geliştirme sürümlerinde tutulur. Olaylar ayrıca kimliksiz olarak TelemetryDeck'e gider (geliştirme sürümünden gitmez).")
             }
             Button("Sıfırla", role: .destructive) {
                 UsageCounter.reset()

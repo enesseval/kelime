@@ -9,6 +9,7 @@ struct KelimeWidgetApp: App {
 
     init() {
         try? Tips.configure()
+        Analytics.start()
     }
 
     var body: some Scene {

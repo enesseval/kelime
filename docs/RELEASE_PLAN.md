@@ -6,7 +6,7 @@ Acele yok: ilk sürüm işe yarayacak her şeyle ve Pro ile çıkar. Sıra, yapt
 - [x] A1. Kelime detayında "Hata bildir" (enesseval@outlook.com): kelime ve kart kimliği hazır bir e-posta (adres: senden)
 - [x] A2. "Öneri gönder" de aynı e-postaya gitsin (şu an GitHub)
 - [x] A3. Seviye testi: tanıtımda isteğe bağlı, yaklaşık 2 dakika, seviyeye göre uyarlanan sorular; sonuç seviyeyi seçer
-- [~] A4. Gizlilik dostu ölçüm (olaylar hazır, cihazda sayılıyor; TelemetryDeck kimliği gelince gönderilecek) (TelemetryDeck): tanıtım bitti, widget eklendi, tekrar yapıldı, uygulama açıldı.
+- [x] A4. Gizlilik dostu ölçüm: TelemetryDeck (2.14), "Usage." sinyalleri; gizlilik sayfası güncellendi (TelemetryDeck): tanıtım bitti, widget eklendi, tekrar yapıldı, uygulama açıldı.
       Kimlik yok. Gizlilik sayfası ve App Privacy güncellenir (uygulama kimliği: senden)
 - [x] A5. App Store metinleri: ad, alt başlık, anahtar kelimeler, açıklama, ekran görüntüsü yazıları (docs/APP_STORE.md)
 

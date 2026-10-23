@@ -34,8 +34,13 @@ Adres: appstoreconnect.apple.com
 - Ülkeler: Tümü ya da yalnızca Türkiye. İçerik Türkçe konuşanlar için; tümü sorun değil.
 
 ## 4. Uygulama Gizliliği (App Privacy)
-- **Ölçüm (TelemetryDeck) eklenmediyse:** "Veri toplamıyoruz" (Data Not Collected) → Yayınla.
-- **TelemetryDeck eklenirse:** Kullanım Verileri › Ürün Etkileşimi → Analiz amaçlı → **Kimliğe bağlı değil** → **İzleme için kullanılmıyor**.
+Uygulama TelemetryDeck ile kimliksiz kullanım sayıları gönderiyor, bu yüzden "Veri toplamıyoruz" seçilmez:
+- **Başlayın › Evet, veri topluyoruz**
+- Veri türü: yalnızca **Kullanım Verileri › Ürün Etkileşimi**
+- Amaç: **Analiz**
+- Kimliğe bağlı mı: **Hayır**
+- İzleme için kullanılıyor mu: **Hayır**
+- Kaydet → **Yayınla**
 - Gizlilik politikası URL'si yukarıdakiyle aynı.
 
 ## 5. Uygulama içi satın almalar (Pro)

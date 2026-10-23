@@ -46,7 +46,7 @@ KELİME WIDGET PRO
 • Sana özel bulmaca ve bulmaca arşivi
 Pro ömür boyu tek seferlik ya da yıllık abonelikle alınır. Yıllık abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik yenilenir; App Store hesap ayarlarından yönetilir.
 
-Reklam yok. Hesap yok. İnternetsiz çalışır. Öğrendiğin her şey cihazında kalır.
+Reklam yok. Hesap yok. İnternetsiz çalışır. Öğrendiğin kelimeler ve listelerin cihazında kalır.
 
 Koşullar: https://enesseval.github.io/kelime/kosullar.html
 Gizlilik: https://enesseval.github.io/kelime/gizlilik.html
@@ -61,6 +61,10 @@ Gizlilik: https://enesseval.github.io/kelime/gizlilik.html
 
 Ekran görüntüleri için: tanıtım filmi (1–2), Bugün ve Listeler (3–4), Oyna (5), bir kendi listesi (6).
 Apple Watch, "3 saatte bir" ya da belirli bir yenileme aralığı vaadi kullanma.
+
+## App Privacy (Uygulama Gizliliği)
+Kullanım Verileri › Ürün Etkileşimi: Analiz · Kimliğe bağlı değil · İzleme yok (TelemetryDeck).
+Başka veri türü yok.
 
 ## Kategori
 Birincil: Eğitim. İkincil: Başvuru Kaynakları (isteğe bağlı).

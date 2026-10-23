@@ -11,6 +11,7 @@
 		AA0000000000000000000061 /* KelimeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000031 /* KelimeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA0000000000000000000062 /* KelimeCore in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000070 /* KelimeCore */; };
 		AA0000000000000000000063 /* KelimeUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000071 /* KelimeUI */; };
+		AC00000000000000000000002 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = AC00000000000000000000001 /* TelemetryDeck */; };
 		AA0000000000000000000064 /* KelimeCore in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000072 /* KelimeCore */; };
 		AA0000000000000000000065 /* KelimeUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000073 /* KelimeUI */; };
 		AA0000000000000000000066 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000001A /* Fonts */; };
@@ -134,6 +135,7 @@
 			files = (
 				AA0000000000000000000062 /* KelimeCore in Frameworks */,
 				AA0000000000000000000063 /* KelimeUI in Frameworks */,
+				AC00000000000000000000002 /* TelemetryDeck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +235,7 @@
 			packageProductDependencies = (
 				AA0000000000000000000070 /* KelimeCore */,
 				AA0000000000000000000071 /* KelimeUI */,
+				AC00000000000000000000001 /* TelemetryDeck */,
 			);
 			productName = KelimeWidget;
 			productReference = AA0000000000000000000030 /* KelimeWidget.app */;
@@ -347,6 +350,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				AA0000000000000000000020 /* XCLocalSwiftPackageReference "Packages/KelimeCore" */,
+				AC00000000000000000000000 /* XCRemoteSwiftPackageReference "SwiftSDK" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA0000000000000000000003 /* Products */;
@@ -739,7 +743,23 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		AC00000000000000000000000 /* XCRemoteSwiftPackageReference "SwiftSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TelemetryDeck/SwiftSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		AC00000000000000000000001 /* TelemetryDeck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC00000000000000000000000 /* XCRemoteSwiftPackageReference "SwiftSDK" */;
+			productName = TelemetryDeck;
+		};
 		AA0000000000000000000070 /* KelimeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AA0000000000000000000020 /* XCLocalSwiftPackageReference "Packages/KelimeCore" */;
