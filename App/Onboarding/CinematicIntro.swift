@@ -1,10 +1,10 @@
 import KelimeUI
 import SwiftUI
 
-/// The opening film of onboarding: a phone wakes with a word, a day passes with a new word at
-/// every glance, and the words of the day turn learned. Plays on its own (about 13 seconds); a
-/// tap moves to the next scene and "Atla" skips to the end. Drawn in code, no video. With
-/// Reduce Motion the scenes change with plain fades.
+/// The opening film of onboarding: at dawn a phone wakes with a word, the day passes over the
+/// sky with a new word at every glance, and at night the words of the day turn learned. Plays
+/// on its own (about 13 seconds); a tap moves to the next scene and "Atla" skips to the end.
+/// Drawn in code, no video. With Reduce Motion the scenes change with plain fades.
 struct CinematicIntro: View {
     let onFinish: () -> Void
 
@@ -14,18 +14,19 @@ struct CinematicIntro: View {
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var scene: Scene = .wake
+    @State private var hour: Double = 6.5
 
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                CinematicBackdrop(scene: scene)
+                OnboardingSky(hour: hour)
                 VStack(spacing: 0) {
                     HStack {
                         Spacer()
                         if scene != .learned {
                             Button("Atla") { scene = .learned }
                                 .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
-                                .foregroundStyle(.white.opacity(0.7))
+                                .foregroundStyle(.white.opacity(0.85))
                                 .frame(minWidth: 44, minHeight: 44)
                                 .padding(.horizontal, 12)
                         }
@@ -33,16 +34,16 @@ struct CinematicIntro: View {
                     .frame(height: 44)
                     Group {
                         switch scene {
-                        case .wake: WakeScene(reduceMotion: reduceMotion)
-                        case .day: DayScene(reduceMotion: reduceMotion)
-                        case .learned: LearnedScene(reduceMotion: reduceMotion, onStart: onFinish)
+                        case .wake: WakeScene(reduceMotion: reduceMotion, phoneHeight: phoneHeight(geo), hour: $hour)
+                        case .day: DayScene(reduceMotion: reduceMotion, phoneHeight: phoneHeight(geo), hour: $hour)
+                        case .learned: LearnedScene(reduceMotion: reduceMotion, hour: $hour, onStart: onFinish)
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .scaleEffect(min(1, geo.size.height / 760))
-                    .transition(reduceMotion ? .opacity : .asymmetric(
-                        insertion: .opacity.combined(with: .scale(scale: 1.04)),
-                        removal: .opacity.combined(with: .scale(scale: 0.97))
+                    // The old scene is gone before the new one fades in, so captions never overlap.
+                    .transition(.asymmetric(
+                        insertion: .opacity.animation(.easeIn(duration: 0.5).delay(0.3)),
+                        removal: .opacity.animation(.easeOut(duration: 0.25))
                     ))
                     .id(scene)
                 }
@@ -55,7 +56,7 @@ struct CinematicIntro: View {
             // Each scene plays for its length, then the next one starts.
             let seconds: Double = switch scene {
             case .wake: 4.2
-            case .day: 5.2
+            case .day: 5.6
             case .learned: 0
             }
             guard seconds > 0 else { return }
@@ -66,45 +67,23 @@ struct CinematicIntro: View {
         .statusBarHidden()
     }
 
+    /// The phone takes most of the screen, leaving room for the caption.
+    private func phoneHeight(_ geo: GeometryProxy) -> CGFloat {
+        min(600, geo.size.height * 0.62)
+    }
+
     private func advance() {
         guard let next = Scene(rawValue: scene.rawValue + 1) else { return }
         scene = next
     }
 }
 
-// MARK: - Backdrop
-
-/// Night black, warming to a morning glow during the day scene.
-private struct CinematicBackdrop: View {
-    let scene: CinematicIntro.Scene
-
-    var body: some View {
-        ZStack {
-            Color.black
-            RadialGradient(
-                colors: [glow.opacity(0.55), .clear],
-                center: .init(x: 0.5, y: 0.38),
-                startRadius: 10,
-                endRadius: 420
-            )
-            .animation(.easeInOut(duration: 1.2), value: scene)
-        }
-        .ignoresSafeArea()
-    }
-
-    private var glow: Color {
-        switch scene {
-        case .wake: Color(red: 0.25, green: 0.33, blue: 0.62)
-        case .day: Color(red: 0.95, green: 0.62, blue: 0.32)
-        case .learned: Color(red: 0.22, green: 0.55, blue: 0.40)
-        }
-    }
-}
-
-// MARK: - Scene 1: the phone wakes
+// MARK: - Scene 1: the phone wakes at dawn
 
 private struct WakeScene: View {
     let reduceMotion: Bool
+    let phoneHeight: CGFloat
+    @Binding var hour: Double
     @State private var phoneOn = false
     @State private var typed = 0
     @State private var meaning = false
@@ -113,19 +92,16 @@ private struct WakeScene: View {
     private let word = "serendipity"
 
     var body: some View {
-        VStack(spacing: 36) {
+        VStack(spacing: 28) {
             Spacer(minLength: 0)
-            CinematicPhone(
-                time: "08:00",
-                word: String(word.prefix(typed)),
-                meaning: meaning ? "mutlu tesadüf" : "",
-                lit: phoneOn
-            )
-            .scaleEffect(phoneOn || reduceMotion ? 1 : 0.92)
-            .opacity(phoneOn || reduceMotion ? 1 : 0.2)
+            LockScreenPhone(hour: hour, time: "07:00", word: String(word.prefix(typed)), meaning: meaning ? "mutlu tesadüf" : "", lit: phoneOn, height: phoneHeight)
+                .scaleEffect(phoneOn || reduceMotion ? 1 : 0.9)
+                .rotation3DEffect(.degrees(phoneOn || reduceMotion ? 0 : 14), axis: (x: 1, y: 0, z: 0))
+                .opacity(phoneOn || reduceMotion ? 1 : 0)
             Text("Telefonuna her baktığında…")
                 .font(KelimeFont.english(32, relativeTo: .largeTitle))
                 .foregroundStyle(.white)
+                .shadow(color: .black.opacity(0.4), radius: 8)
                 .opacity(caption ? 1 : 0)
                 .offset(y: caption || reduceMotion ? 0 : 12)
             Spacer(minLength: 0)
@@ -133,8 +109,9 @@ private struct WakeScene: View {
         .padding(.horizontal, 24)
         .sensoryFeedback(.impact(weight: .light), trigger: phoneOn)
         .task {
-            withAnimation(.easeOut(duration: reduceMotion ? 0.2 : 0.9)) { phoneOn = true }
-            try? await Task.sleep(for: .seconds(reduceMotion ? 0.2 : 0.9))
+            withAnimation(.easeInOut(duration: 2.5)) { hour = 7.2 }
+            withAnimation(.spring(response: reduceMotion ? 0.2 : 1.0, dampingFraction: 0.85)) { phoneOn = true }
+            try? await Task.sleep(for: .seconds(reduceMotion ? 0.2 : 1.0))
             if reduceMotion {
                 typed = word.count
             } else {
@@ -144,7 +121,7 @@ private struct WakeScene: View {
                 }
             }
             withAnimation(.easeOut(duration: 0.5)) { meaning = true }
-            try? await Task.sleep(for: .milliseconds(300))
+            try? await Task.sleep(for: .milliseconds(250))
             withAnimation(.easeOut(duration: 0.8)) { caption = true }
         }
     }
@@ -154,30 +131,33 @@ private struct WakeScene: View {
 
 private struct DayScene: View {
     let reduceMotion: Bool
+    let phoneHeight: CGFloat
+    @Binding var hour: Double
     @State private var index = 0
     @State private var caption = false
 
-    private let glances: [(time: String, word: String, meaning: String)] = [
-        ("08:00", "serendipity", "mutlu tesadüf"),
-        ("12:30", "journey", "yolculuk"),
-        ("18:15", "curious", "meraklı"),
-        ("22:40", "brave", "cesur"),
+    private let glances: [(hour: Double, time: String, word: String, meaning: String)] = [
+        (9, "09:00", "journey", "yolculuk"),
+        (13, "13:00", "curious", "meraklı"),
+        (18.3, "18:20", "brave", "cesur"),
+        (22.5, "22:30", "dream", "hayal"),
     ]
 
     var body: some View {
-        VStack(spacing: 36) {
+        VStack(spacing: 28) {
             Spacer(minLength: 0)
             let glance = glances[index]
-            CinematicPhone(time: glance.time, word: glance.word, meaning: glance.meaning, lit: true)
+            LockScreenPhone(hour: hour, time: glance.time, word: glance.word, meaning: glance.meaning, height: phoneHeight)
                 .animation(.easeInOut(duration: reduceMotion ? 0.2 : 0.45), value: index)
-            VStack(spacing: 10) {
+            VStack(spacing: 8) {
                 Text("…bir kelime.")
                     .font(KelimeFont.english(32, relativeTo: .largeTitle))
-                Text("Gün boyu, hiç uğraşmadan.")
-                    .font(KelimeFont.ui(17, relativeTo: .body))
-                    .foregroundStyle(.white.opacity(0.7))
+                Text("Günde 4'e kadar yeni kelime, hiç uğraşmadan.")
+                    .font(KelimeFont.ui(16, relativeTo: .body))
+                    .foregroundStyle(.white.opacity(0.85))
             }
             .foregroundStyle(.white)
+            .shadow(color: .black.opacity(0.4), radius: 8)
             .multilineTextAlignment(.center)
             .opacity(caption ? 1 : 0)
             Spacer(minLength: 0)
@@ -186,8 +166,10 @@ private struct DayScene: View {
         .sensoryFeedback(.selection, trigger: index)
         .task {
             withAnimation(.easeOut(duration: 0.8)) { caption = true }
+            withAnimation(.easeInOut(duration: 1.1)) { hour = glances[0].hour }
             for next in 1..<glances.count {
-                try? await Task.sleep(for: .milliseconds(1150))
+                try? await Task.sleep(for: .milliseconds(1250))
+                withAnimation(.easeInOut(duration: reduceMotion ? 0.3 : 1.1)) { hour = glances[next].hour }
                 index = next
             }
         }
@@ -198,32 +180,33 @@ private struct DayScene: View {
 
 private struct LearnedScene: View {
     let reduceMotion: Bool
+    @Binding var hour: Double
     let onStart: () -> Void
     @State private var dropped = 0
     @State private var learned = false
     @State private var title = false
 
-    private let words = ["serendipity", "journey", "curious", "brave", "kind", "dream"]
+    private let words = ["serendipity", "journey", "curious", "brave", "dream", "kind"]
 
     var body: some View {
         VStack(spacing: 30) {
             Spacer(minLength: 0)
-            FlowLayout(spacing: 10) {
+            CenteredFlow(spacing: 10) {
                 ForEach(Array(words.enumerated()), id: \.offset) { index, word in
                     chip(word, learned: learned && index != 2)
                         .opacity(index < dropped ? 1 : 0)
-                        .offset(y: index < dropped || reduceMotion ? 0 : -60)
-                        .rotationEffect(.degrees(index < dropped || reduceMotion ? 0 : Double(index % 2 == 0 ? -8 : 8)))
+                        .offset(y: index < dropped || reduceMotion ? 0 : -80)
+                        .rotationEffect(.degrees(index < dropped || reduceMotion ? 0 : Double(index % 2 == 0 ? -10 : 10)))
                 }
             }
-            .frame(maxWidth: 320)
+            .frame(maxWidth: 330)
             VStack(spacing: 12) {
                 Text("Kelime Widget")
-                    .font(KelimeFont.english(44, relativeTo: .largeTitle))
+                    .font(KelimeFont.english(46, relativeTo: .largeTitle))
                     .tracking(-0.8)
                 Text("Kilit ekranında öğren. Oyunla pekiştir.")
                     .font(KelimeFont.ui(17, relativeTo: .body))
-                    .foregroundStyle(.white.opacity(0.7))
+                    .foregroundStyle(.white.opacity(0.8))
             }
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)
@@ -238,6 +221,7 @@ private struct LearnedScene: View {
         .padding(.horizontal, 24)
         .sensoryFeedback(.success, trigger: learned)
         .task {
+            withAnimation(.easeInOut(duration: 1)) { hour = 23 }
             for count in 1...words.count {
                 withAnimation(reduceMotion ? .easeOut(duration: 0.2) : .spring(response: 0.5, dampingFraction: 0.62)) { dropped = count }
                 try? await Task.sleep(for: .milliseconds(reduceMotion ? 40 : 140))
@@ -255,82 +239,129 @@ private struct LearnedScene: View {
                 .font(.system(size: 13, weight: .semibold))
             Text(word).font(KelimeFont.english(19, relativeTo: .body))
         }
-        .foregroundStyle(learned ? Color(red: 0.55, green: 0.86, blue: 0.66) : .white.opacity(0.85))
+        .foregroundStyle(learned ? Color(red: 0.6, green: 0.9, blue: 0.7) : .white.opacity(0.9))
         .padding(.horizontal, 14)
         .frame(minHeight: 40)
-        .background(learned ? Color(red: 0.2, green: 0.45, blue: 0.32).opacity(0.55) : .white.opacity(0.1), in: Capsule())
-        .overlay(Capsule().strokeBorder(.white.opacity(learned ? 0 : 0.18)))
+        .background(learned ? Color(red: 0.2, green: 0.5, blue: 0.34).opacity(0.6) : .white.opacity(0.12), in: Capsule())
+        .overlay(Capsule().strokeBorder(.white.opacity(learned ? 0 : 0.22)))
     }
 }
 
-// MARK: - Phone
+/// Rows of chips, each row centred.
+private struct CenteredFlow: Layout {
+    var spacing: CGFloat = 8
 
-/// A phone lock screen drawn for the film: time, date and the rectangular widget.
-struct CinematicPhone: View {
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let rows = rows(width: proposal.width ?? .infinity, subviews: subviews)
+        let height = rows.map(\.height).reduce(0, +) + spacing * CGFloat(max(rows.count - 1, 0))
+        return CGSize(width: proposal.width ?? rows.map(\.width).max() ?? 0, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var y = bounds.minY
+        for row in rows(width: bounds.width, subviews: subviews) {
+            var x = bounds.midX - row.width / 2
+            for index in row.indices {
+                let size = subviews[index].sizeThatFits(.unspecified)
+                subviews[index].place(at: CGPoint(x: x, y: y), proposal: ProposedViewSize(size))
+                x += size.width + spacing
+            }
+            y += row.height + spacing
+        }
+    }
+
+    private func rows(width: CGFloat, subviews: Subviews) -> [(indices: [Int], width: CGFloat, height: CGFloat)] {
+        var rows: [(indices: [Int], width: CGFloat, height: CGFloat)] = []
+        var current: [Int] = [], rowWidth: CGFloat = 0, rowHeight: CGFloat = 0
+        for index in subviews.indices {
+            let size = subviews[index].sizeThatFits(.unspecified)
+            if !current.isEmpty && rowWidth + spacing + size.width > width {
+                rows.append((current, rowWidth, rowHeight))
+                current = []; rowWidth = 0; rowHeight = 0
+            }
+            rowWidth += (current.isEmpty ? 0 : spacing) + size.width
+            rowHeight = max(rowHeight, size.height)
+            current.append(index)
+        }
+        if !current.isEmpty { rows.append((current, rowWidth, rowHeight)) }
+        return rows
+    }
+}
+
+// MARK: - Lock screen
+
+/// The lock screen on the drawn phone: date, time and the rectangular widget.
+struct LockScreenPhone<Overlay: View>: View {
+    var hour: Double
     let time: String
     let word: String
     let meaning: String
     var lit = true
     /// False shows an empty widget slot (the widget is not added yet).
     var widget = true
+    var height: CGFloat = 560
+    @ViewBuilder var overlay: () -> Overlay
 
     var body: some View {
-        ZStack(alignment: .top) {
-            RoundedRectangle(cornerRadius: 44, style: .continuous)
-                .fill(LinearGradient(
-                    colors: lit ? [Color(red: 0.16, green: 0.19, blue: 0.27), Color(red: 0.05, green: 0.06, blue: 0.09)] : [.black, .black],
-                    startPoint: .top, endPoint: .bottom
-                ))
-            RoundedRectangle(cornerRadius: 44, style: .continuous)
-                .strokeBorder(.white.opacity(0.14), lineWidth: 1.5)
-            Capsule().fill(.black).frame(width: 82, height: 24).padding(.top, 12)
-            VStack(spacing: 2) {
-                Text(TurkishDate.header(.now))
-                    .font(KelimeFont.ui(13, weight: .semibold))
-                    .opacity(0.8)
-                Text(time)
-                    .font(.system(size: 66, weight: .semibold, design: .rounded))
-                    .contentTransition(.numericText())
-                if widget {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(word.isEmpty ? " " : word)
-                        .font(KelimeFont.english(24, relativeTo: .title3))
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.6)
-                        .contentTransition(.opacity)
-                    Text(meaning.isEmpty ? " " : meaning)
-                        .font(KelimeFont.ui(13, relativeTo: .footnote))
-                        .opacity(meaning.isEmpty ? 0 : 0.75)
+        let scale = height / 560
+        DevicePhone(hour: hour, height: height) {
+            ZStack(alignment: .top) {
+                VStack(spacing: 2) {
+                    Text(TurkishDate.header(.now))
+                        .font(KelimeFont.ui(15 * scale, weight: .semibold))
+                        .opacity(0.85)
+                    Text(time)
+                        .font(.system(size: 78 * scale, weight: .semibold, design: .rounded))
+                        .contentTransition(.numericText())
+                    Group {
+                        if widget {
+                            VStack(alignment: .leading, spacing: 2 * scale) {
+                                Text(word.isEmpty ? " " : word)
+                                    .font(KelimeFont.english(25 * scale))
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.6)
+                                    .contentTransition(.opacity)
+                                Text(meaning.isEmpty ? " " : meaning)
+                                    .font(KelimeFont.ui(14 * scale))
+                                    .opacity(meaning.isEmpty ? 0 : 0.8)
+                            }
+                            .frame(width: 190 * scale, alignment: .leading)
+                            .padding(12 * scale)
+                            .background(.ultraThinMaterial.opacity(0.9), in: RoundedRectangle(cornerRadius: 20 * scale, style: .continuous))
+                            .environment(\.colorScheme, .dark)
+                            .transition(.scale(scale: 0.8).combined(with: .opacity))
+                        } else {
+                            RoundedRectangle(cornerRadius: 20 * scale, style: .continuous)
+                                .strokeBorder(.white.opacity(0.5), style: StrokeStyle(lineWidth: 1.5, dash: [5, 4]))
+                                .frame(width: 214 * scale, height: 68 * scale)
+                        }
+                    }
+                    .padding(.top, 12 * scale)
                 }
-                .frame(width: 172, alignment: .leading)
-                .padding(12)
-                .background(.white.opacity(0.14), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                .padding(.top, 12)
-                .transition(.scale(scale: 0.8).combined(with: .opacity))
-                } else {
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .strokeBorder(.white.opacity(0.3), style: StrokeStyle(lineWidth: 1.5, dash: [5, 4]))
-                        .frame(width: 196, height: 62)
-                        .padding(.top, 12)
-                }
+                .foregroundStyle(.white)
+                .shadow(color: .black.opacity(0.25), radius: 6)
+                .padding(.top, 64 * scale)
+                overlay()
             }
-            .foregroundStyle(.white)
-            .padding(.top, 52)
             .opacity(lit ? 1 : 0)
         }
-        .frame(width: 236, height: 430)
-        .shadow(color: .black.opacity(0.5), radius: 30, y: 16)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("Kilit ekranında \(word) kelimesi: \(meaning)"))
+        .accessibilityLabel(Text(word.isEmpty ? "Kilit ekranı" : "Kilit ekranında \(word) kelimesi: \(meaning)"))
+    }
+}
+
+extension LockScreenPhone where Overlay == EmptyView {
+    init(hour: Double, time: String, word: String, meaning: String, lit: Bool = true, widget: Bool = true, height: CGFloat = 560) {
+        self.init(hour: hour, time: time, word: word, meaning: meaning, lit: lit, widget: widget, height: height) { EmptyView() }
     }
 }
 
 // MARK: - Widget guide animation
 
-/// Onboarding's widget step: the lock-screen steps played on a phone, in a loop, with the
+/// Onboarding's widget step: the lock-screen steps played on the phone, in a loop, with the
 /// current step written under it.
 struct WidgetAddAnimation: View {
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    var height: CGFloat = 470
     @State private var step = 0
 
     static let steps = [
@@ -342,35 +373,30 @@ struct WidgetAddAnimation: View {
 
     var body: some View {
         VStack(spacing: 18) {
-            ZStack(alignment: .bottom) {
-                CinematicPhone(time: "9:41", word: "serendipity", meaning: "mutlu tesadüf", widget: step == 3)
-                    .scaleEffect(step == 1 || step == 2 ? 0.94 : 1)
-                // 1: a long press on the lock screen.
-                if step == 0 {
-                    TouchDot(pressing: true).offset(y: -180)
-                }
-                // 2: the Özelleştir button.
-                if step == 1 {
-                    VStack(spacing: 10) {
+            LockScreenPhone(hour: 21, time: "21:00", word: "serendipity", meaning: "mutlu tesadüf", widget: step == 3, height: height) {
+                ZStack(alignment: .bottom) {
+                    Color.clear
+                    if step == 0 {
+                        TouchDot(pressing: true).frame(maxHeight: .infinity)
+                    }
+                    if step == 1 {
                         Text("Özelleştir")
                             .font(KelimeFont.ui(15, weight: .semibold))
                             .foregroundStyle(.white)
                             .padding(.horizontal, 22)
                             .frame(minHeight: 40)
-                            .background(.white.opacity(0.22), in: Capsule())
+                            .background(.white.opacity(0.25), in: Capsule())
                             .overlay(TouchDot(pressing: false).offset(x: 34, y: 6))
+                            .padding(.bottom, height * 0.1)
+                            .transition(.opacity.combined(with: .move(edge: .bottom)))
                     }
-                    .padding(.bottom, 46)
-                    .transition(.opacity.combined(with: .move(edge: .bottom)))
-                }
-                // 3: the widget gallery with the Kelime widget.
-                if step == 2 {
-                    WidgetGallerySheet()
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                    if step == 2 {
+                        WidgetGallerySheet()
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
                 }
             }
-            .frame(width: 236, height: 430)
-            .clipShape(RoundedRectangle(cornerRadius: 44, style: .continuous))
+            .scaleEffect(step == 1 || step == 2 ? 0.96 : 1)
             HStack(alignment: .firstTextBaseline, spacing: 12) {
                 Text("\(step + 1)")
                     .font(KelimeFont.ui(15, weight: .bold, relativeTo: .body))
@@ -379,11 +405,12 @@ struct WidgetAddAnimation: View {
                     .background(step == 3 ? Palette.green : Palette.accent, in: Circle())
                 Text(Self.steps[step])
                     .font(KelimeFont.ui(17, weight: .semibold, relativeTo: .body))
-                    .foregroundStyle(Palette.ink)
+                    .foregroundStyle(.white)
                     .contentTransition(.opacity)
+                Spacer(minLength: 0)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .surfaceCard(radius: 16, padding: 14)
+            .padding(14)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .combine)
         }
         .animation(.spring(response: 0.5, dampingFraction: 0.8), value: step)
@@ -442,6 +469,7 @@ private struct WidgetGallerySheet: View {
         }
         .foregroundStyle(.primary)
         .padding(16)
+        .padding(.bottom, 12)
         .frame(maxWidth: .infinity)
         .background(.regularMaterial, in: UnevenRoundedRectangle(topLeadingRadius: 22, topTrailingRadius: 22))
         .environment(\.colorScheme, .light)
@@ -450,16 +478,18 @@ private struct WidgetGallerySheet: View {
 
 // MARK: - Reminder preview
 
-/// Onboarding's reminder step: the daily notification dropping onto a lock screen at the
-/// chosen time.
+/// Onboarding's reminder step: the daily notification dropping onto the lock screen at the
+/// chosen time; the sky follows that hour.
 struct ReminderPreview: View {
     let time: Date
+    var height: CGFloat = 400
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var shown = false
 
     var body: some View {
-        ZStack(alignment: .top) {
-            CinematicPhone(time: time.formatted(.dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)), word: "", meaning: "", widget: false)
+        let c = Calendar.current.dateComponents([.hour, .minute], from: time)
+        let hour = Double(c.hour ?? 20) + Double(c.minute ?? 0) / 60
+        LockScreenPhone(hour: hour, time: time.formatted(.dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)), word: "", meaning: "", widget: false, height: height) {
             HStack(alignment: .top, spacing: 10) {
                 RoundedRectangle(cornerRadius: 7, style: .continuous)
                     .fill(Palette.accent)
@@ -477,15 +507,14 @@ struct ReminderPreview: View {
             }
             .foregroundStyle(.white)
             .padding(10)
-            .frame(width: 210)
-            .background(.white.opacity(0.18), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-            .padding(.top, 236)
+            .frame(width: height * 0.4)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .environment(\.colorScheme, .dark)
+            .padding(.top, height * 0.47)
             .offset(y: shown || reduceMotion ? 0 : -40)
             .opacity(shown ? 1 : 0)
         }
-        .frame(width: 236, height: 430)
-        .scaleEffect(0.8)
-        .frame(height: 350)
+        .animation(.easeInOut(duration: 0.8), value: hour)
         .sensoryFeedback(.impact(weight: .light), trigger: shown)
         .task(id: time) {
             shown = false

@@ -119,8 +119,14 @@ the user's own word lists, 1 hour / 30 minute rotation, Discover and mixed puzzl
   card with a "Widget'ta" switch; the last list that is on cannot be switched off. Bugün shows
   "Widget'ında: B1 kursu · YDS" under the hero card, opening Listeler. This is the first step
   towards one Listeler screen for the course, exam lists, own lists and Discover (with Pro).
-- Onboarding opens with a 13-second film drawn in code (CinematicIntro): a phone wakes with a
-  word, a day of glances, the words turn learned. It plays on its own, a tap moves on, "Atla"
+- Onboarding opens with a 13-second film drawn in code (CinematicIntro): at dawn a phone wakes
+  with a word, the day passes over a drawn sky (OnboardingSky: dawn, day, dusk, night with the
+  sun's arc, moon and stars) with a new word at every glance, at night the words turn learned.
+  The phone (DevicePhone) has a titanium band, side buttons and a wallpaper that follows the
+  hour; the steps after the film keep the sky, the reminder step's sky follows the chosen time,
+  and the buttons sit in a bottom inset so content scrolls above them. No promise of a rotation
+  rate: copy says "Günde 4'e kadar yeni kelime". Finishing onboarding rebuilds the widget queue
+  including the current word, so a new level shows at once. It plays on its own, a tap moves on, "Atla"
   skips; haptics, no sound; Reduce Motion uses plain fades. The widget step plays the lock-screen
   steps on a phone in a loop; the reminder step drops a sample notification at the chosen time.
 - Bugün shows a streak ("n gün üst üste") from two days on; a missed day shows nothing negative.

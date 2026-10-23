@@ -122,7 +122,11 @@ final class AppModel {
     }
 
     func completeOnboarding(_ choices: OnboardingChoices) async {
-        await write(rebuildQueue: true) { db in try choices.save(db: db) }
+        guard let database else { return }
+        try? await database.writer.write { db in try choices.save(db: db) }
+        // The level may have changed: the word on the widget now must come from the new course too.
+        await WidgetRefresher.rebuild(database, includingCurrent: true)
+        dataVersion += 1
         if let minutes = choices.reminderMinutes { await Reminder.schedule(minutes: minutes) }
         showOnboarding = false
     }

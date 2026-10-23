@@ -20,19 +20,26 @@ struct OnboardingView: View {
     @State private var levelsShown = false
 
     var body: some View {
-        VStack(spacing: 0) {
-            if step != .welcome { topBar }
-            Group {
-                switch step {
-                case .welcome: welcome
-                case .level: level
-                case .widget: widgetGuide
-                case .reminder: reminder
-                }
+        ZStack {
+            // The film draws its own sky; the steps after it keep one that follows the evening.
+            if step != .welcome {
+                OnboardingSky(hour: skyHour).animation(.easeInOut(duration: 1), value: skyHour)
             }
-            .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)).combined(with: .opacity))
+            VStack(spacing: 0) {
+                if step != .welcome { topBar }
+                Group {
+                    switch step {
+                    case .welcome: welcome
+                    case .level: level
+                    case .widget: widgetGuide
+                    case .reminder: reminder
+                    }
+                }
+                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)).combined(with: .opacity))
+            }
         }
-        .screenBackground()
+        .background(Color.black)
+        .preferredColorScheme(.dark)
         .animation(.snappy, value: step)
         .task {
             levels = await app.read { db in try Curriculum.levels(db: db) } ?? [.a1]
@@ -65,6 +72,18 @@ struct OnboardingView: View {
         .padding(.horizontal, 8)
     }
 
+    /// The sky of each step: dusk while choosing, night for the widget, and the reminder's own
+    /// hour on the reminder step.
+    private var skyHour: Double {
+        switch step {
+        case .welcome, .level: return 18.6
+        case .widget: return 21
+        case .reminder:
+            let c = Calendar.current.dateComponents([.hour, .minute], from: reminderTime)
+            return Double(c.hour ?? 20) + Double(c.minute ?? 0) / 60
+        }
+    }
+
     private func go(_ delta: Int) {
         if let next = Step(rawValue: step.rawValue + delta) { step = next }
     }
@@ -75,26 +94,31 @@ struct OnboardingView: View {
         @ViewBuilder content: () -> Content,
         @ViewBuilder footer: () -> Footer
     ) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 18) {
-                    Text(title)
-                        .font(KelimeFont.english(36, relativeTo: .largeTitle))
-                        .tracking(-0.7)
-                        .accessibilityAddTraits(.isHeader)
-                    if let subtitle {
-                        Text(subtitle).font(KelimeFont.ui(15, relativeTo: .body)).foregroundStyle(Palette.ink2)
-                    }
-                    content()
+        ScrollView {
+            VStack(alignment: .leading, spacing: 18) {
+                Text(title)
+                    .font(KelimeFont.english(36, relativeTo: .largeTitle))
+                    .tracking(-0.7)
+                    .foregroundStyle(.white)
+                    .accessibilityAddTraits(.isHeader)
+                if let subtitle {
+                    Text(subtitle).font(KelimeFont.ui(15, relativeTo: .body)).foregroundStyle(.white.opacity(0.75))
                 }
-                .padding(.horizontal, 20)
-                .padding(.top, 12)
-                .padding(.bottom, 20)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                content()
             }
+            .padding(.horizontal, 20)
+            .padding(.top, 12)
+            .padding(.bottom, 20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .scrollIndicators(.hidden)
+        // The buttons sit in the bottom inset: the content scrolls above them, never under.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
             VStack(spacing: 8) { footer() }
                 .padding(.horizontal, 20)
+                .padding(.top, 28)
                 .padding(.bottom, 16)
+                .background(LinearGradient(colors: [.clear, .black.opacity(0.75), .black.opacity(0.9)], startPoint: .top, endPoint: .bottom).ignoresSafeArea())
         }
     }
 
@@ -128,7 +152,7 @@ struct OnboardingView: View {
                         .foregroundStyle(Palette.ink)
                         .padding(.horizontal, 18)
                         .frame(minHeight: 64)
-                        .background(Palette.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
                         .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .strokeBorder(choices.level == level ? Palette.accent : Palette.line, lineWidth: choices.level == level ? 2 : 1))
                         .contentShape(Rectangle())
@@ -152,7 +176,8 @@ struct OnboardingView: View {
 
     private var widgetGuide: some View {
         page(title: "Widget'ı ekle", subtitle: "En önemli adım bu: kelimeler kilit ekranında görünsün. 30 saniye sürer.") {
-            WidgetAddAnimation()
+            WidgetAddAnimation(height: 470)
+                .frame(maxWidth: .infinity)
             DisclosureGroup("Ana ekrana eklemek istersen") {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(Array(WidgetGuideSteps.Place.home.steps.enumerated()), id: \.offset) { index, step in
@@ -178,7 +203,7 @@ struct OnboardingView: View {
 
     private var reminder: some View {
         page(title: "Günde bir hatırlatma: tekrar zamanı", subtitle: "İstersen her gün aynı saatte kısa bir tekrar hatırlatalım.") {
-            ReminderPreview(time: reminderTime)
+            ReminderPreview(time: reminderTime, height: 400)
                 .frame(maxWidth: .infinity)
             DatePicker("Saat", selection: $reminderTime, displayedComponents: .hourAndMinute)
                 .datePickerStyle(.wheel)

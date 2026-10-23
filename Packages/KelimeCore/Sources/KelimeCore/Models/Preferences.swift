@@ -45,7 +45,7 @@ public enum WidgetMode: String, Codable, Sendable, CaseIterable {
         case .dictionary: "Arka plansız, sözlük gibi: KELİME (tür) ve anlamı"
         case .wordAndSentence: "Kelime ve İngilizce örnek cümlesi"
         case .sentence: "İngilizce cümle, altında Türkçesi"
-        case .selfTest: "Önce anlam ve ilk harf, yarım saat içinde cevap"
+        case .selfTest: "Önce anlam ve ilk harf, biraz sonra cevap"
         }
     }
 }
