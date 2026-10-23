@@ -152,6 +152,7 @@ public enum WordQueries {
             let marks = units.isEmpty ? "NULL" : Array(repeating: "?", count: units.count).joined(separator: ",")
             conditions.append("""
                 (EXISTS (SELECT 1 FROM unit_card uc WHERE uc.card_id = c.id AND uc.unit_id IN (\(marks)))
+                 OR EXISTS (SELECT 1 FROM user_list_card ulc WHERE ulc.card_id = c.id)
                  OR s.state IN ('struggling', 'learned') OR s.favorite = 1)
                 """)
             arguments += units

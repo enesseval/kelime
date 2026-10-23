@@ -7,7 +7,7 @@ public enum CardQueries {
     /// Cards in any of `decks`, with their learning state. A card without a `card_state` row is new.
     /// Course cards count only once their unit is started.
     public static func candidates(in decks: [DeckID], db: Database) throws -> [SchedulerCandidate] {
-        guard let filter = try deckFilter(decks, started: Curriculum.startedFilter(db: db)) else { return [] }
+        guard let filter = try sourceFilter(decks, db: db) else { return [] }
         let request: SQLRequest<Row> = """
             SELECT c.id, COALESCE(s.state, 'new') AS state, s.last_shown_at
             FROM card c
@@ -20,6 +20,22 @@ public enum CardQueries {
                 state: LearningState(rawValue: row["state"]) ?? .new,
                 lastShownAt: row["last_shown_at"]
             )
+        }
+    }
+
+    /// SQL condition for what the widget and Quick Review draw from: `decks` (course cards of
+    /// started units only) and the learner's lists that are on. When every deck is off but a
+    /// list is on, only the lists count (the basic-deck fallback would bring in other words).
+    public static func sourceFilter(_ decks: [DeckID], db: Database) throws -> SQL? {
+        let prefs = try Preferences.load(db)
+        let lists = try UserLists.hasEnabledLists(db: db)
+        let decks = prefs.enabledDecks.isEmpty && lists ? [] : decks
+        let deckClause = deckFilter(decks, started: try Curriculum.startedFilter(db: db))
+        switch (deckClause, lists) {
+        case (let clause?, true): return "(\(clause) OR \(UserLists.enabledListsCondition))"
+        case (let clause?, false): return clause
+        case (nil, true): return UserLists.enabledListsCondition
+        case (nil, false): return nil
         }
     }
 

@@ -113,6 +113,25 @@ enum Migrations {
             }
         }
 
+        migrator.registerMigration("v5") { db in
+            // The learner's own word lists. Words they type themselves live in `card` with a
+            // "user-" id, which content updates never touch.
+            try db.create(table: "user_list") { t in
+                t.primaryKey("id", .text)
+                t.column("title", .text).notNull()
+                t.column("created_at", .datetime).notNull()
+                t.column("enabled", .boolean).notNull().defaults(to: true)
+                // Lists that came from someone else's file; they do not count towards the free limit.
+                t.column("imported", .boolean).notNull().defaults(to: false)
+            }
+            try db.create(table: "user_list_card") { t in
+                t.column("list_id", .text).notNull().references("user_list", onDelete: .cascade)
+                t.column("card_id", .text).notNull().indexed()
+                t.column("position", .integer).notNull()
+                t.primaryKey(["list_id", "card_id"])
+            }
+        }
+
         return migrator
     }
 }

@@ -45,13 +45,15 @@ public enum WidgetTimelineBuilder {
         var snapshots: [WidgetSnapshot] = []
         for entry in queue {
             guard let card = cards[entry.cardID] else { continue }
+            // A word the learner typed without an example shows as a card in the sentence modes.
+            let cardMode = card.exampleEN.isEmpty && (resolvedMode == .sentence || resolvedMode == .wordAndSentence) ? .card : resolvedMode
             let base = WidgetSnapshot(
                 date: entry.slotStart,
                 slotStart: entry.slotStart,
                 card: card,
                 state: states[card.id] ?? .new,
-                mode: resolvedMode,
-                phase: resolvedMode == .selfTest ? .question : .answer,
+                mode: cardMode,
+                phase: cardMode == .selfTest ? .question : .answer,
                 quizOptions: entry.quizOptions,
                 quizAnswer: entry.quizAnswer,
                 reviewedToday: try reviews(on: entry.slotStart),

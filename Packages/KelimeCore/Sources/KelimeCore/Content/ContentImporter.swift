@@ -75,7 +75,8 @@ public enum ContentImporter {
         let existingIDs = try Set(String.fetchAll(db, sql: "SELECT id FROM card"))
 
         // Cards dropped from the content disappear from rotation; their progress rows stay.
-        let removed = existingIDs.subtracting(incomingIDs)
+        // The learner's own words are not content and always stay.
+        let removed = existingIDs.subtracting(incomingIDs).filter { !$0.hasPrefix(UserLists.customPrefix) }
         if !removed.isEmpty {
             _ = try Card.filter(keys: Array(removed)).deleteAll(db)
         }
