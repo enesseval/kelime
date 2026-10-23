@@ -52,6 +52,13 @@ struct WordDetailView: View {
         .toast($toast)
     }
 
+    /// "Sonraki tekrar: 3 Kasım", or that the review is due.
+    private func nextReviewText(_ day: LocalDate) -> String {
+        if day.days(since: model.clock.today) <= 0 { return "Tekrar zamanı geldi; widget'ta ve Hızlı Tekrar'da çıkacak" }
+        let date = day.startDate(in: .current).formatted(.dateTime.day().month(.wide).locale(Locale(identifier: "tr_TR")))
+        return "Sonraki tekrar: \(date)"
+    }
+
     private func content(_ item: WordItem) -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
@@ -93,9 +100,18 @@ struct WordDetailView: View {
                 section("ANLAMI") {
                     Text(item.card.meaning).font(KelimeFont.ui(22, weight: .medium, relativeTo: .title2))
                 }
-                section("ÖRNEK") {
-                    Text(item.card.exampleEN).font(KelimeFont.english(22, relativeTo: .title2, italic: true))
-                    Text(item.card.exampleTR).font(KelimeFont.ui(15, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
+                if !item.card.exampleEN.isEmpty {
+                    section("ÖRNEK") {
+                        Text(item.card.exampleEN).font(KelimeFont.english(22, relativeTo: .title2, italic: true))
+                        if !item.card.exampleTR.isEmpty {
+                            Text(item.card.exampleTR).font(KelimeFont.ui(15, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
+                        }
+                    }
+                }
+                if let next = item.nextReview {
+                    Label(nextReviewText(next), systemImage: "arrow.clockwise")
+                        .font(KelimeFont.ui(13, relativeTo: .footnote))
+                        .foregroundStyle(Palette.ink2)
                 }
                 if let senses = item.card.senses, !senses.isEmpty {
                     section("DİĞER ANLAMLAR") {

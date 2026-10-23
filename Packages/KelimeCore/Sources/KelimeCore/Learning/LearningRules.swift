@@ -32,6 +32,7 @@ public enum LearningRules {
 
         case .markedKnown:
             next.state = .learned
+            next.correctStreak = max(current.correctStreak, 1)
 
         case .answered(correct: true):
             switch current.state {
@@ -48,7 +49,10 @@ public enum LearningRules {
                     next.state = .learned
                 }
             case .learned:
-                break
+                // A learned word answered again: one review step up, once a day.
+                if current.lastAnsweredOn != day {
+                    next.correctStreak += 1
+                }
             }
         }
 
@@ -56,5 +60,28 @@ public enum LearningRules {
             next.lastAnsweredOn = day
         }
         return next
+    }
+}
+
+/// When learned words come back so they are not forgotten: after about 3, 7, 21, 60 and then
+/// every 120 days, counted from the last answer. Each correct answer is a step; a wrong one
+/// makes the word struggling again.
+public enum SpacedReview {
+    static let intervals = [3, 7, 21, 60, 120]
+
+    /// Days to wait after the last answer, for a learned word at `streak`.
+    public static func interval(streak: Int) -> Int {
+        intervals[min(max(streak, 1), intervals.count) - 1]
+    }
+
+    /// The day a learned word is due again, or nil (not learned, or never answered).
+    public static func dueDate(_ state: CardState) -> LocalDate? {
+        guard state.state == .learned, let last = state.lastAnsweredOn else { return nil }
+        return last.adding(days: interval(streak: state.correctStreak))
+    }
+
+    public static func isDue(_ state: CardState, on day: LocalDate) -> Bool {
+        guard let due = dueDate(state) else { return false }
+        return due.days(since: day) <= 0
     }
 }

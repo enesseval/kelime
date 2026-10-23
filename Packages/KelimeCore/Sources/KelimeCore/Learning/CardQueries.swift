@@ -6,19 +6,27 @@ import GRDB
 public enum CardQueries {
     /// Cards in any of `decks`, with their learning state. A card without a `card_state` row is new.
     /// Course cards count only once their unit is started.
-    public static func candidates(in decks: [DeckID], db: Database) throws -> [SchedulerCandidate] {
+    /// `day` marks learned words due for review on that day.
+    public static func candidates(in decks: [DeckID], on day: LocalDate? = nil, db: Database) throws -> [SchedulerCandidate] {
         guard let filter = try sourceFilter(decks, db: db) else { return [] }
         let request: SQLRequest<Row> = """
-            SELECT c.id, COALESCE(s.state, 'new') AS state, s.last_shown_at
+            SELECT c.id, COALESCE(s.state, 'new') AS state, s.last_shown_at,
+                   COALESCE(s.correct_streak, 0) AS streak, s.last_answered_on
             FROM card c
             LEFT JOIN card_state s ON s.card_id = c.id
             WHERE \(filter)
             """
         return try request.fetchAll(db).map { row in
-            SchedulerCandidate(
+            let state = LearningState(rawValue: row["state"]) ?? .new
+            var due = false
+            if let day, state == .learned, let last = LocalDate(string: row["last_answered_on"] ?? "") {
+                due = SpacedReview.isDue(CardState(cardID: row["id"], state: state, correctStreak: row["streak"], lastAnsweredOn: last), on: day)
+            }
+            return SchedulerCandidate(
                 cardID: row["id"],
-                state: LearningState(rawValue: row["state"]) ?? .new,
-                lastShownAt: row["last_shown_at"]
+                state: state,
+                lastShownAt: row["last_shown_at"],
+                due: due
             )
         }
     }

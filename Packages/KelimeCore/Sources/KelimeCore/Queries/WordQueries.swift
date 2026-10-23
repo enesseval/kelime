@@ -7,11 +7,14 @@ public struct WordItem: Sendable, Equatable, Identifiable {
     public var state: LearningState
     public var favorite: Bool
     public var tags: [DeckTag]
+    /// For a learned word, the day it comes back for review.
+    public var nextReview: LocalDate?
 
     public var id: String { card.id }
 
     /// Deck chip on the word detail screen: the first exam deck, else "Genel".
     public var deckLabel: String {
+        if card.id.hasPrefix(UserLists.customPrefix) { return "Kendi kelimen" }
         if tags.contains(.yds) { return DeckID.yds.rawValue }
         if tags.contains(.yokdil) { return DeckID.yokdil.rawValue }
         if tags.contains(.ielts) { return DeckID.ielts.rawValue }
@@ -123,7 +126,8 @@ public enum WordQueries {
         guard let card = try Card.fetchOne(db, key: id) else { return nil }
         let state = try CardState.fetchOne(db, key: id)
         let tags = try DeckTag.fetchAll(db, sql: "SELECT deck FROM card_deck WHERE card_id = ? ORDER BY deck", arguments: [id])
-        return WordItem(card: card, state: state?.state ?? .new, favorite: state?.favorite ?? false, tags: tags)
+        return WordItem(card: card, state: state?.state ?? .new, favorite: state?.favorite ?? false, tags: tags,
+                        nextReview: state.flatMap(SpacedReview.dueDate))
     }
 
     /// Words for a Kelimelerim segment, filtered by `search` over the English word and the

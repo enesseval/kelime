@@ -48,7 +48,7 @@ public enum WidgetQueue {
         let existing = Set(future.map(\.slotStart)).intersection(wantedSet)
         let missing = wanted.filter { !existing.contains($0) }
         if !missing.isEmpty {
-            let candidates = try CardQueries.candidates(in: prefs.entitledDecks, db: db)
+            let candidates = try CardQueries.candidates(in: prefs.entitledDecks, on: clock.today, db: db)
             for slot in missing {
                 let recent = try String.fetchAll(
                     db,

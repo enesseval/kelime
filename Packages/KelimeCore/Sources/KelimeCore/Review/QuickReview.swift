@@ -49,9 +49,12 @@ public enum QuickReview {
     /// Picks up to 10 cards: struggling first, then new words the widget has already shown,
     /// then other new words; learned words only if the deck runs short.
     /// `deck` limits the round to one deck (the exam plan's review); nil uses the widget's sources.
+    /// With `today`, learned words due for review (see `SpacedReview`) come right after the
+    /// struggling ones.
     public static func makeQuestions(
         db: Database,
         deck: DeckID? = nil,
+        today: LocalDate? = nil,
         using rng: inout some RandomNumberGenerator
     ) throws -> [ReviewQuestion] {
         let prefs = try Preferences.load(db)
@@ -64,23 +67,30 @@ public enum QuickReview {
         guard let filter = source else { return [] }
         let rows = try Row.fetchAll(db, SQLRequest<Row>("""
             SELECT c.id, COALESCE(s.state, 'new') AS state, COALESCE(s.times_shown, 0) AS shown,
-                   s.last_answered_on AS answered
+                   s.last_answered_on AS answered, COALESCE(s.correct_streak, 0) AS streak
             FROM card c LEFT JOIN card_state s ON s.card_id = c.id
             WHERE \(filter)
             """))
 
-        var struggling: [(String, String)] = [], shownNew: [String] = [], otherNew: [String] = [], learned: [(String, String)] = []
+        var struggling: [(String, String)] = [], due: [(String, String)] = [], shownNew: [String] = [], otherNew: [String] = [], learned: [(String, String)] = []
         for row in rows {
             let id: String = row["id"]
             let answered: String = row["answered"] ?? ""
             switch LearningState(rawValue: row["state"]) ?? .new {
             case .struggling: struggling.append((id, answered))
             case .new: if (row["shown"] as Int) > 0 { shownNew.append(id) } else { otherNew.append(id) }
-            case .learned: learned.append((id, answered))
+            case .learned:
+                if let today, let last = LocalDate(string: answered),
+                   SpacedReview.isDue(CardState(cardID: id, state: .learned, correctStreak: row["streak"], lastAnsweredOn: last), on: today) {
+                    due.append((id, answered))
+                } else {
+                    learned.append((id, answered))
+                }
             }
         }
         // Least recently answered first within the ordered groups; shuffle within the new groups.
         let ordered = struggling.sorted { $0.1 < $1.1 }.map(\.0)
+            + due.sorted { $0.1 < $1.1 }.map(\.0)
             + shownNew.shuffled(using: &rng)
             + otherNew.shuffled(using: &rng)
             + learned.sorted { $0.1 < $1.1 }.map(\.0)

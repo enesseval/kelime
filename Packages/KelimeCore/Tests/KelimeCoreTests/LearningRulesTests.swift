@@ -36,6 +36,29 @@ struct LearningRulesTests {
         #expect(s.state == .learned)
     }
 
+    @Test func learnedWordsComeBackAtGrowingIntervals() {
+        // Learned on day 1 (streak 1): due after 3 days; each correct review steps up once a day.
+        var s = apply([(.answered(correct: true), day1)])
+        #expect(SpacedReview.dueDate(s) == day1.adding(days: 3))
+        #expect(!SpacedReview.isDue(s, on: day1.adding(days: 2)))
+        #expect(SpacedReview.isDue(s, on: day1.adding(days: 3)))
+        s = apply([(.answered(correct: true), day1.adding(days: 3)), (.answered(correct: true), day1.adding(days: 3))], from: s)
+        #expect(s.correctStreak == 2)
+        #expect(SpacedReview.dueDate(s) == day1.adding(days: 10))
+        #expect((1...7).map { SpacedReview.interval(streak: $0) } == [3, 7, 21, 60, 120, 120, 120])
+        // A wrong answer brings it back to struggling, with no review date.
+        s = apply([(.answered(correct: false), day1.adding(days: 10))], from: s)
+        #expect(s.state == .struggling && SpacedReview.dueDate(s) == nil)
+        // Marking a word known starts its reviews too.
+        #expect(SpacedReview.dueDate(apply([(.markedKnown, day1)])) == day1.adding(days: 3))
+    }
+
+    @Test func dueWordsWeighMoreThanOtherLearnedWords() {
+        let now = Date()
+        #expect(WidgetScheduler.weight(SchedulerCandidate(cardID: "a", state: .learned, lastShownAt: now, due: true), now: now) == 2)
+        #expect(WidgetScheduler.weight(SchedulerCandidate(cardID: "b", state: .learned, lastShownAt: now), now: now) == 0)
+    }
+
     @Test func twoCorrectSameDayIsNotEnough() {
         let s = apply([(.answered(correct: false), day1), (.answered(correct: true), day1), (.answered(correct: true), day1)])
         #expect(s.state == .struggling)

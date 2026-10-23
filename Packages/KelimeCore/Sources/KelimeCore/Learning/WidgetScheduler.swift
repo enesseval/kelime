@@ -5,17 +5,21 @@ public struct SchedulerCandidate: Sendable, Equatable {
     public var cardID: String
     public var state: LearningState
     public var lastShownAt: Date?
+    /// A learned word whose review day has come (see `SpacedReview`).
+    public var due: Bool
 
-    public init(cardID: String, state: LearningState, lastShownAt: Date? = nil) {
+    public init(cardID: String, state: LearningState, lastShownAt: Date? = nil, due: Bool = false) {
         self.cardID = cardID
         self.state = state
         self.lastShownAt = lastShownAt
+        self.due = due
     }
 }
 
 /// Pure selection logic for the widget rotation.
 ///
-/// Weights: struggling 3, new 1, learned 0.2 but only when last shown more than 14 days ago.
+/// Weights: struggling 3, a learned word due for review 2, new 1, other learned words 0.2 but
+/// only when last shown more than 14 days ago.
 /// A card never repeats within the last 20 slots.
 public enum WidgetScheduler {
     public static let recentWindow = 20
@@ -28,6 +32,7 @@ public enum WidgetScheduler {
         case .new:
             return 1
         case .learned:
+            if candidate.due { return 2 }
             guard let shown = candidate.lastShownAt else { return 0.2 }
             return now.timeIntervalSince(shown) > learnedCooldown ? 0.2 : 0
         }
