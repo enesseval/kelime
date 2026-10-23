@@ -16,6 +16,8 @@ struct OnboardingView: View {
     @State private var levels: [CEFRLevel] = [.a1]
     @State private var reminderTime = Calendar.current.date(from: DateComponents(hour: 20, minute: 30)) ?? .now
     @State private var finishing = false
+    /// Level cards come in one after another.
+    @State private var levelsShown = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -99,26 +101,7 @@ struct OnboardingView: View {
     // MARK: - 1 Welcome
 
     private var welcome: some View {
-        VStack(spacing: 28) {
-            Spacer(minLength: 12)
-            LockScreenMockup(entry: SampleContent.snapshot(SampleContent.happy, state: .struggling))
-                .frame(height: 300)
-            VStack(spacing: 10) {
-                Text("Telefonuna her baktığında bir kelime.")
-                    .font(KelimeFont.english(34, relativeTo: .largeTitle))
-                    .multilineTextAlignment(.center)
-                Text("Kelimeyi sadece oyunda öğrenmiyorsun; gün boyu kilit ekranında karşına çıkıyor.")
-                    .font(KelimeFont.ui(15, relativeTo: .body))
-                    .foregroundStyle(Palette.ink2)
-                    .multilineTextAlignment(.center)
-            }
-            .padding(.horizontal, 24)
-            Spacer()
-            Button("Başla") { go(1) }
-                .buttonStyle(PrimaryButtonStyle(height: 54))
-                .padding(.horizontal, 20)
-                .padding(.bottom, 16)
-        }
+        CinematicIntro { go(1) }
     }
 
     // MARK: - 2 Level
@@ -126,7 +109,7 @@ struct OnboardingView: View {
     private var level: some View {
         page(title: "Seviyen hangisi?", subtitle: "Bölümler seviye seviye hazırlanıyor. Hazır olanlardan başla; sıradaki seviye gelince bitirdiğin yerden geçersin.") {
             VStack(spacing: 10) {
-                ForEach(CEFRLevel.allCases, id: \.self) { level in
+                ForEach(Array(CEFRLevel.allCases.enumerated()), id: \.element) { index, level in
                     let available = levels.contains(level)
                     Button { choices.level = level } label: {
                         HStack(alignment: .firstTextBaseline, spacing: 14) {
@@ -154,8 +137,12 @@ struct OnboardingView: View {
                     .buttonStyle(.plain)
                     .disabled(!available)
                     .accessibilityAddTraits(choices.level == level ? .isSelected : [])
+                    .opacity(levelsShown ? 1 : 0)
+                    .offset(y: levelsShown ? 0 : 24)
+                    .animation(.spring(response: 0.55, dampingFraction: 0.8).delay(Double(index) * 0.07), value: levelsShown)
                 }
             }
+            .onAppear { levelsShown = true }
         } footer: {
             Button("Devam") { go(1) }.buttonStyle(PrimaryButtonStyle(height: 54))
         }
@@ -165,7 +152,19 @@ struct OnboardingView: View {
 
     private var widgetGuide: some View {
         page(title: "Widget'ı ekle", subtitle: "En önemli adım bu: kelimeler kilit ekranında görünsün. 30 saniye sürer.") {
-            WidgetGuideSteps()
+            WidgetAddAnimation()
+            DisclosureGroup("Ana ekrana eklemek istersen") {
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(Array(WidgetGuideSteps.Place.home.steps.enumerated()), id: \.offset) { index, step in
+                        Text("\(index + 1). \(step)").font(KelimeFont.ui(15, relativeTo: .body))
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 8)
+            }
+            .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
+            .tint(Palette.accent)
+            .foregroundStyle(Palette.ink)
         } footer: {
             Button("Ekledim") { go(1) }.buttonStyle(PrimaryButtonStyle(height: 54))
             Button("Sonra") { go(1) }
@@ -179,6 +178,8 @@ struct OnboardingView: View {
 
     private var reminder: some View {
         page(title: "Günde bir hatırlatma: tekrar zamanı", subtitle: "İstersen her gün aynı saatte kısa bir tekrar hatırlatalım.") {
+            ReminderPreview(time: reminderTime)
+                .frame(maxWidth: .infinity)
             DatePicker("Saat", selection: $reminderTime, displayedComponents: .hourAndMinute)
                 .datePickerStyle(.wheel)
                 .labelsHidden()

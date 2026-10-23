@@ -119,6 +119,10 @@ the user's own word lists, 1 hour / 30 minute rotation, Discover and mixed puzzl
   card with a "Widget'ta" switch; the last list that is on cannot be switched off. Bugün shows
   "Widget'ında: B1 kursu · YDS" under the hero card, opening Listeler. This is the first step
   towards one Listeler screen for the course, exam lists, own lists and Discover (with Pro).
+- Onboarding opens with a 13-second film drawn in code (CinematicIntro): a phone wakes with a
+  word, a day of glances, the words turn learned. It plays on its own, a tap moves on, "Atla"
+  skips; haptics, no sound; Reduce Motion uses plain fades. The widget step plays the lock-screen
+  steps on a phone in a loop; the reminder step drops a sample notification at the chosen time.
 - Bugün shows a streak ("n gün üst üste") from two days on; a missed day shows nothing negative.
 - Ayarlar › Öneri gönder opens GitHub issues. Geliştirici › Kullanım sayaçları counts feature use
   on the device in Debug and TestFlight builds only; nothing is sent.
