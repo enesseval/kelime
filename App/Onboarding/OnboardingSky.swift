@@ -5,6 +5,8 @@ import SwiftUI
 /// crossfades the sky and moves the sun.
 struct OnboardingSky: View {
     var hour: Double
+    /// Sun and moon; off on the phone's wallpaper, where they would sit on the clock.
+    var celestial = true
 
     enum Phase: CaseIterable {
         case night, dawn, day, dusk
@@ -47,14 +49,14 @@ struct OnboardingSky: View {
                         x: geo.size.width * (0.08 + 0.84 * progress),
                         y: geo.size.height * (0.42 - 0.32 * sin(.pi * progress))
                     )
-                    .opacity(phase == .night ? 0 : 1)
+                    .opacity(phase == .night || !celestial ? 0 : 1)
                 Circle()
                     .fill(Color(red: 0.95, green: 0.94, blue: 0.86))
                     .frame(width: 34, height: 34)
                     .overlay(Circle().fill(phase.colors[0]).frame(width: 30, height: 30).offset(x: 10, y: -6))
                     .shadow(color: .white.opacity(0.35), radius: 18)
                     .position(x: geo.size.width * 0.8, y: geo.size.height * 0.12)
-                    .opacity(phase == .night ? 1 : 0)
+                    .opacity(phase == .night && celestial ? 1 : 0)
                 // Soft horizon glow and a dark floor so white text stays readable.
                 LinearGradient(colors: [.clear, .black.opacity(0.55)], startPoint: .center, endPoint: .bottom)
             }
@@ -120,7 +122,7 @@ struct DevicePhone<Screen: View>: View {
                 .fill(.black)
                 .padding(bezel * 0.4)
             ZStack(alignment: .top) {
-                OnboardingSky(hour: hour)
+                OnboardingSky(hour: hour, celestial: false)
                     .overlay(Color.black.opacity(0.18))
                 screen()
                 Capsule().fill(.black).frame(width: width * 0.33, height: width * 0.095).padding(.top, width * 0.04)

@@ -18,6 +18,7 @@ struct OnboardingView: View {
     @State private var finishing = false
     /// Level cards come in one after another.
     @State private var levelsShown = false
+    @State private var showHomeSteps = false
 
     var body: some View {
         ZStack {
@@ -42,6 +43,13 @@ struct OnboardingView: View {
         .preferredColorScheme(.dark)
         .animation(.snappy, value: step)
         .task {
+            #if DEBUG
+            // Screenshots of one step: launch with `-onboardingStep widget` (Debug only).
+            if let name = UserDefaults.standard.string(forKey: "onboardingStep"),
+               let start = Step.allCases.first(where: { "\($0)" == name }) {
+                step = start
+            }
+            #endif
             levels = await app.read { db in try Curriculum.levels(db: db) } ?? [.a1]
             if !levels.contains(choices.level), let first = levels.first { choices.level = first }
         }
@@ -122,6 +130,36 @@ struct OnboardingView: View {
         }
     }
 
+    /// A step that fits the screen without scrolling: `content` gets the height left between the
+    /// title and the buttons, so the phone can size itself to it.
+    private func fittedPage<Content: View, Footer: View>(
+        title: String,
+        subtitle: String? = nil,
+        @ViewBuilder content: @escaping (CGFloat) -> Content,
+        @ViewBuilder footer: () -> Footer
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text(title)
+                .font(KelimeFont.english(32, relativeTo: .largeTitle))
+                .tracking(-0.6)
+                .foregroundStyle(.white)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
+                .accessibilityAddTraits(.isHeader)
+            if let subtitle {
+                Text(subtitle).font(KelimeFont.ui(15, relativeTo: .body)).foregroundStyle(.white.opacity(0.75))
+            }
+            GeometryReader { geo in
+                content(geo.size.height)
+                    .frame(width: geo.size.width, height: geo.size.height)
+            }
+            HStack(spacing: 12) { footer() }
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 8)
+        .padding(.bottom, 12)
+    }
+
     // MARK: - 1 Welcome
 
     private var welcome: some View {
@@ -175,42 +213,61 @@ struct OnboardingView: View {
     // MARK: - 3 Widget guide
 
     private var widgetGuide: some View {
-        page(title: "Widget'ı ekle", subtitle: "En önemli adım bu: kelimeler kilit ekranında görünsün. 30 saniye sürer.") {
-            WidgetAddAnimation(height: 470)
-                .frame(maxWidth: .infinity)
-            DisclosureGroup("Ana ekrana eklemek istersen") {
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach(Array(WidgetGuideSteps.Place.home.steps.enumerated()), id: \.offset) { index, step in
-                        Text("\(index + 1). \(step)").font(KelimeFont.ui(15, relativeTo: .body))
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 8)
+        fittedPage(title: "Widget'ı ekle", subtitle: "En önemli adım bu: kelimeler kilit ekranında görünsün. 30 saniye sürer.") { height in
+            VStack(spacing: 10) {
+                // The step caption (about 74 pt) and the home-screen link (44 pt) take the rest.
+                WidgetAddAnimation(height: max(240, height - 128))
+                Button("Ana ekrana eklemek için") { showHomeSteps = true }
+                    .font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
+                    .foregroundStyle(Palette.accent)
+                    .frame(minHeight: 44)
             }
-            .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
-            .tint(Palette.accent)
-            .foregroundStyle(Palette.ink)
         } footer: {
+            Button("Sonra") { go(1) }.buttonStyle(GlassButtonStyle())
             Button("Ekledim") { go(1) }.buttonStyle(PrimaryButtonStyle(height: 54))
-            Button("Sonra") { go(1) }
-                .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
-                .foregroundStyle(Palette.ink2)
-                .frame(maxWidth: .infinity, minHeight: 44)
+        }
+        .sheet(isPresented: $showHomeSteps) {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Ana ekrana ekle").font(KelimeFont.english(28, relativeTo: .title))
+                ForEach(Array(WidgetGuideSteps.Place.home.steps.enumerated()), id: \.offset) { index, step in
+                    Text("\(index + 1). \(step)").font(KelimeFont.ui(16, relativeTo: .body))
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(24)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .presentationDetents([.height(300)])
         }
     }
 
     // MARK: - 4 Reminder
 
     private var reminder: some View {
-        page(title: "Günde bir hatırlatma: tekrar zamanı", subtitle: "İstersen her gün aynı saatte kısa bir tekrar hatırlatalım.") {
-            ReminderPreview(time: reminderTime, height: 400)
-                .frame(maxWidth: .infinity)
-            DatePicker("Saat", selection: $reminderTime, displayedComponents: .hourAndMinute)
-                .datePickerStyle(.wheel)
-                .labelsHidden()
-                .environment(\.locale, Locale(identifier: "tr_TR"))
-                .frame(maxWidth: .infinity)
+        fittedPage(title: "Günde bir hatırlatma", subtitle: "İstersen her gün aynı saatte kısa bir tekrar hatırlatalım.") { height in
+            VStack(spacing: 14) {
+                ReminderPreview(time: reminderTime, height: max(240, height - 70))
+                HStack {
+                    Text("Saat").font(KelimeFont.ui(16, weight: .semibold, relativeTo: .body)).foregroundStyle(.white)
+                    Spacer()
+                    DatePicker("Saat", selection: $reminderTime, displayedComponents: .hourAndMinute)
+                        .datePickerStyle(.compact)
+                        .labelsHidden()
+                        .environment(\.locale, Locale(identifier: "tr_TR"))
+                }
+                .padding(.horizontal, 16)
+                .frame(minHeight: 56)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            }
         } footer: {
+            Button("Gerek yok") {
+                Task {
+                    finishing = true
+                    choices.reminderMinutes = nil
+                    await app.completeOnboarding(choices)
+                }
+            }
+            .buttonStyle(GlassButtonStyle())
+            .disabled(finishing)
             Button {
                 Task {
                     finishing = true
@@ -223,17 +280,6 @@ struct OnboardingView: View {
                 if finishing { ProgressView().tint(Palette.onAccent) } else { Text("İzin ver") }
             }
             .buttonStyle(PrimaryButtonStyle(height: 54))
-            .disabled(finishing)
-            Button("Gerek yok") {
-                Task {
-                    finishing = true
-                    choices.reminderMinutes = nil
-                    await app.completeOnboarding(choices)
-                }
-            }
-            .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
-            .foregroundStyle(Palette.ink2)
-            .frame(maxWidth: .infinity, minHeight: 44)
             .disabled(finishing)
         }
     }
@@ -314,5 +360,18 @@ enum Wallpaper: String, CaseIterable, Identifiable {
         case .dark, .solid:
             background
         }
+    }
+}
+
+/// The secondary onboarding button, next to the primary one: glass on the sky.
+struct GlassButtonStyle: ButtonStyle {
+    func makeBody(configuration: ButtonStyleConfiguration) -> some View {
+        configuration.label
+            .font(KelimeFont.ui(16, weight: .semibold, relativeTo: .body))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity, minHeight: 54)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .opacity(configuration.isPressed ? 0.7 : 1)
+            .contentShape(Rectangle())
     }
 }

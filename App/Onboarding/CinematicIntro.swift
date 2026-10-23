@@ -404,12 +404,21 @@ struct WidgetAddAnimation: View {
                     .frame(width: 28, height: 28)
                     .background(step == 3 ? Palette.green : Palette.accent, in: Circle())
                 Text(Self.steps[step])
-                    .font(KelimeFont.ui(17, weight: .semibold, relativeTo: .body))
+                    .font(KelimeFont.ui(16, weight: .semibold, relativeTo: .body))
                     .foregroundStyle(.white)
-                    .contentTransition(.opacity)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
                 Spacer(minLength: 0)
             }
+            // One step's caption replaces the other; they never show together.
+            .id(step)
+            .transition(.asymmetric(
+                insertion: .move(edge: .bottom).combined(with: .opacity),
+                removal: .move(edge: .top).combined(with: .opacity)
+            ))
+            .frame(minHeight: 46)
             .padding(14)
+            .clipped()
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .combine)
         }
