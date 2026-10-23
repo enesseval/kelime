@@ -220,13 +220,11 @@
 				AA0000000000000000000051 /* Frameworks */,
 				AA0000000000000000000052 /* Resources */,
 				AA0000000000000000000053 /* Embed Foundation Extensions */,
-				AB00000000000000000000047 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				AA0000000000000000000080 /* PBXTargetDependency */,
-				AB00000000000000000000060 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				AA0000000000000000000010 /* App */,

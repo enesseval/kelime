@@ -14,6 +14,10 @@ import WidgetKit
 final class PhoneWatchSync: NSObject {
     static let shared = PhoneWatchSync()
 
+    /// The watch app is not shipped for now (it is not embedded in the iPhone app), so the
+    /// link stays off. Turn this on together with "Embed Watch Content" to bring it back.
+    static let isEnabled = false
+
     private var database: AppDatabase?
     private var lastComplicationPush: Date?
     /// The payload (minus its timestamp) last sent to the complication, so an unchanged payload does not spend a push.
@@ -31,6 +35,7 @@ final class PhoneWatchSync: NSObject {
     private var session: WCSession? { WCSession.isSupported() ? WCSession.default : nil }
 
     func start(database: AppDatabase) {
+        guard Self.isEnabled else { return }
         self.database = database
         guard let session, session.delegate == nil else { return }
         session.delegate = self

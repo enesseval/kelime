@@ -119,6 +119,10 @@ the user's own word lists, 1 hour / 30 minute rotation, Discover and mixed puzzl
 - Ayarlar › Öneri gönder opens GitHub issues. Geliştirici › Kullanım sayaçları counts feature use
   on the device in Debug and TestFlight builds only; nothing is sent.
 - The site's terms and privacy pages say the app is free with no purchases.
+- The Apple Watch app is not shipped for now: the iPhone target no longer embeds it and
+  `PhoneWatchSync.isEnabled = false` keeps the link off. The watch targets and code stay; to bring
+  them back, re-add "Embed Watch Content" and the KelimeWatch dependency to the KelimeWidget
+  target and turn the flag on.
 - Before submitting: the IAP products in App Store Connect are simply not submitted with this
   version; App Privacy stays "Data Not Collected".
 
