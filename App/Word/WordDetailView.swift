@@ -4,6 +4,7 @@ import SwiftUI
 
 struct WordDetailView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.openURL) private var openURL
     let cardID: String
 
     @State private var item: WordItem?
@@ -135,6 +136,15 @@ struct WordDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .background(Palette.amberBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     }
+                }
+                if !item.card.id.hasPrefix(UserLists.customPrefix) {
+                    Button { openURL(Legal.errorReportURL(for: item.card)) } label: {
+                        Label("Bu kartta hata mı var? Bildir", systemImage: "exclamationmark.bubble")
+                            .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
+                            .foregroundStyle(Palette.ink2)
+                            .frame(minHeight: 44)
+                    }
+                    .padding(.top, 8)
                 }
             }
             .padding(.horizontal, 20)
