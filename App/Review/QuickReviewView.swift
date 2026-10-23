@@ -69,6 +69,13 @@ struct QuickReviewView: View {
                     switch question.kind {
                     case .meaning(let options):
                         options_(options, question: question).padding(.top, 16)
+                        if !session.awaitingContinue {
+                            Button("Bilmiyorum") { Task { await submit("", question: question) } }
+                                .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
+                                .foregroundStyle(Palette.ink2)
+                                .frame(maxWidth: .infinity, minHeight: 48)
+                                .disabled(isSaving)
+                        }
                     case .write:
                         writeArea(question).padding(.top, 12)
                     }
@@ -80,12 +87,19 @@ struct QuickReviewView: View {
             if session.awaitingContinue, let correct = lastCorrect {
                 feedback(question, correct: correct)
             } else if case .write = question.kind {
-                Button("Kontrol et") { Task { await submit(typedAnswer(question), question: question) } }
-                    .buttonStyle(PrimaryButtonStyle())
-                    .opacity(typed.count == question.card.word.count - 1 ? 1 : 0.5)
-                    .disabled(typed.count != question.card.word.count - 1 || isSaving)
-                    .padding(.horizontal, 12)
-                    .padding(.bottom, 10)
+                // "Bilmiyorum" counts as a wrong answer and shows the word.
+                HStack(spacing: 10) {
+                    Button("Bilmiyorum") { Task { await submit("", question: question) } }
+                        .buttonStyle(OutlineButtonStyle())
+                        .frame(minHeight: 50)
+                        .disabled(isSaving)
+                    Button("Kontrol et") { Task { await submit(typedAnswer(question), question: question) } }
+                        .buttonStyle(PrimaryButtonStyle())
+                        .opacity(typed.count == question.card.word.count - 1 ? 1 : 0.5)
+                        .disabled(typed.count != question.card.word.count - 1 || isSaving)
+                }
+                .padding(.horizontal, 12)
+                .padding(.bottom, 10)
                 LetterKeyboard { letter in
                     if typed.count < question.card.word.count - 1 { typed.append(letter) }
                 } onDelete: {
