@@ -3,7 +3,7 @@
 Acele yok: ilk sürüm işe yarayacak her şeyle ve Pro ile çıkar. Sıra, yaptıkça işaretlenir.
 
 ## A. Yayın öncesi temel
-- [x] A1. Kelime detayında "Hata bildir" (e-posta adresi gelene kadar GitHub formuna gidiyor): kelime ve kart kimliği hazır bir e-posta (adres: senden)
+- [x] A1. Kelime detayında "Hata bildir" (enesseval@outlook.com): kelime ve kart kimliği hazır bir e-posta (adres: senden)
 - [x] A2. "Öneri gönder" de aynı e-postaya gitsin (şu an GitHub)
 - [x] A3. Seviye testi: tanıtımda isteğe bağlı, yaklaşık 2 dakika, seviyeye göre uyarlanan sorular; sonuç seviyeyi seçer
 - [~] A4. Gizlilik dostu ölçüm (olaylar hazır, cihazda sayılıyor; TelemetryDeck kimliği gelince gönderilecek) (TelemetryDeck): tanıtım bitti, widget eklendi, tekrar yapıldı, uygulama açıldı.

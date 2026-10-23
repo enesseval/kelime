@@ -202,9 +202,8 @@ struct PaywallView: View {
 
 /// Legal links. Placeholders until the real pages exist.
 enum Legal {
-    /// Where feedback and error reports go. Nil until a support address is set: reports then
-    /// open a prefilled GitHub issue.
-    static let supportEmail: String? = nil
+    /// Where feedback and error reports go (a prefilled email; GitHub issues when nil).
+    static let supportEmail: String? = "enesseval@outlook.com"
 
     /// "Öneri gönder" in Ayarlar.
     static var feedbackURL: URL { report(subject: "Öneri", body: "") }
