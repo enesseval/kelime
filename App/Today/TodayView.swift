@@ -10,6 +10,8 @@ struct TodayData: Sendable {
     var stats: WeekStats
     /// "YDS'ye 42 gün", when the user set an exam date in Ayarlar.
     var examCountdown: String?
+    /// What the widget draws from, e.g. "B1 kursu · YDS".
+    var widgetSources: String
     var bannerDismissed: Bool
     var level: CEFRLevel
     var puzzle: DailyPuzzleInfo?
@@ -23,11 +25,16 @@ struct TodayData: Sendable {
         }
         let stats = try StatsQueries.week(db: db, clock: clock)
         let exam = try ExamCountdown.daysLeft(db: db, clock: clock)
+        let courses = try Curriculum.levels(db: db)
+        let sources = prefs.entitledDecks.map { deck in
+            deck.level.map { courses.contains($0) ? "\($0.rawValue) kursu" : $0.rawValue } ?? deck.rawValue
+        }
         return TodayData(
             hero: try heroID.flatMap { try WordQueries.item(id: $0, db: db) },
             strugglingCount: stats.strugglingNow,
             stats: stats,
             examCountdown: exam.map { "\($0.exam.rawValue)\($0.exam == .yds ? "'ye" : "'e") \($0.days) gün" },
+            widgetSources: sources.joined(separator: " · "),
             bannerDismissed: try Settings.bool(.widgetBannerDismissed, in: db),
             level: prefs.level,
             puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
@@ -54,6 +61,21 @@ struct TodayView: View {
                         Button { model.router.openWord(hero.id) } label: { HeroCard(item: hero) }
                             .buttonStyle(.plain)
                     }
+                    Button { model.router.openLists() } label: {
+                        HStack(spacing: 6) {
+                            (Text("Widget'ında: ").foregroundStyle(Palette.ink2) + Text(data.widgetSources).foregroundStyle(Palette.ink).fontWeight(.semibold))
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                            Spacer(minLength: 8)
+                            Text("Değiştir").foregroundStyle(Palette.accent).fontWeight(.semibold)
+                        }
+                        .font(KelimeFont.ui(13, relativeTo: .footnote))
+                        .padding(.horizontal, 4)
+                        .frame(minHeight: 32)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Widget'ında \(data.widgetSources). Listeleri değiştir")
                     if let course = data.course {
                         CurrentUnitCard(course: course)
                     }

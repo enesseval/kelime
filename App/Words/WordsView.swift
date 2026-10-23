@@ -34,24 +34,7 @@ struct WordsView: View {
                 VStack(alignment: .leading, spacing: 14) {
                     header.padding(.horizontal, 20)
                     if showDecks {
-                        VStack(alignment: .leading, spacing: 18) {
-                            if let course {
-                                UnitList(course: course)
-                                // Exam decks stay decks until they become courses.
-                                let exams = decks.filter { $0.deck.tag != nil }
-                                if !exams.isEmpty {
-                                    Text("SINAV DESTELERİ")
-                                        .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
-                                        .tracking(0.7)
-                                        .foregroundStyle(Palette.ink2)
-                                    DecksGrid(decks: exams)
-                                }
-                            } else {
-                                DecksGrid(decks: decks)
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 24)
+                        lists
                     } else {
                         listControls.padding(.horizontal, 20)
                         wordList
@@ -73,6 +56,11 @@ struct WordsView: View {
             WordFilterSheet(filter: $filter)
                 .presentationDetents([.medium, .large])
         }
+        .task(id: model.router.listsRequested) {
+            guard model.router.listsRequested else { return }
+            showDecks = true
+            model.router.listsRequested = false
+        }
         .onChange(of: sort) { UsageCounter.count(.sort) }
         .onChange(of: showFilters) { _, shown in if shown { UsageCounter.count(.filter) } }
         .onChange(of: showDecks) { _, shown in if shown { UsageCounter.count(.units) } }
@@ -82,6 +70,38 @@ struct WordsView: View {
         .task(id: ReloadKey(version: model.dataVersion, segment: segment, search: search, decks: showDecks, filter: filter, sort: sort)) {
             await reload()
         }
+    }
+
+    /// Listeler: what the widget and reviews draw from. The course and the exam lists use the
+    /// same card; the last list that is on cannot be switched off.
+    @ViewBuilder
+    private var lists: some View {
+        let onCount = decks.filter(\.enabled).count
+        VStack(alignment: .leading, spacing: 18) {
+            if let course {
+                caption("KURS")
+                if let deck = decks.first(where: { $0.deck.level == course.level }) {
+                    DeckCard(deck: deck, title: "\(course.level.rawValue) kursu", keepOn: deck.enabled && onCount == 1)
+                }
+                UnitList(course: course)
+                let exams = decks.filter { $0.deck.tag != nil }
+                if !exams.isEmpty {
+                    caption("SINAV LİSTELERİ")
+                    DecksGrid(decks: exams, keepOn: { $0.enabled && onCount == 1 })
+                }
+            } else {
+                DecksGrid(decks: decks, keepOn: { $0.enabled && onCount == 1 })
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 24)
+    }
+
+    private func caption(_ text: String) -> some View {
+        Text(text)
+            .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
+            .tracking(0.7)
+            .foregroundStyle(Palette.ink2)
     }
 
     /// The A–Z strip, for long alphabetical lists.
@@ -155,7 +175,7 @@ struct WordsView: View {
         HStack(alignment: .bottom) {
             ScreenTitle(title: "Kelimelerim")
             Spacer()
-            Button(showDecks ? "Kelimeler" : (course == nil ? "Desteler" : "Bölümler")) {
+            Button(showDecks ? "Kelimeler" : "Listeler") {
                 withAnimation(.snappy) { showDecks.toggle() }
             }
             .buttonStyle(TintedButtonStyle(fullWidth: false))
@@ -254,11 +274,12 @@ struct WordRow: View {
 struct DecksGrid: View {
     @Environment(AppModel.self) private var model
     let decks: [DeckProgress]
+    var keepOn: (DeckProgress) -> Bool = { _ in false }
 
     var body: some View {
         LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
             ForEach(decks) { deck in
-                DeckCard(deck: deck)
+                DeckCard(deck: deck, keepOn: keepOn(deck))
             }
         }
     }
@@ -267,11 +288,14 @@ struct DecksGrid: View {
 struct DeckCard: View {
     @Environment(AppModel.self) private var model
     let deck: DeckProgress
+    var title: String?
+    /// The only list that is on: switching it off would leave the widget empty.
+    var keepOn = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(deck.deck.rawValue).font(KelimeFont.english(24, relativeTo: .title2))
-            Text(deck.isFinished ? "Bu desteyi bitirdin 🎉" : countText)
+            Text(title ?? deck.deck.rawValue).font(KelimeFont.english(24, relativeTo: .title2))
+            Text(deck.isFinished ? "Bu listeyi bitirdin 🎉" : countText)
                 .font(KelimeFont.ui(12, relativeTo: .caption))
                 .foregroundStyle(Palette.ink2)
                 .lineLimit(2)
@@ -283,7 +307,7 @@ struct DeckCard: View {
                 Text("Widget'ta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
             }
             .tint(Palette.green)
-            .disabled(deck.total == 0)
+            .disabled(deck.total == 0 || keepOn)
         }
         .foregroundStyle(Palette.ink)
         .surfaceCard(radius: 18, padding: 14)

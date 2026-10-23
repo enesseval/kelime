@@ -42,11 +42,20 @@ final class AppRouter {
     var reviewPresented = false
     /// Presents a crossword full screen.
     var puzzle: PuzzleRequest?
+    /// Set by `openLists`; Kelimelerim shows Listeler and clears it.
+    var listsRequested = false
 
     struct PaywallRequest: Identifiable {
         let trigger: PaywallTrigger
         var deck: DeckID?
         var id: String { trigger.rawValue + (deck?.rawValue ?? "") }
+    }
+
+    /// Kelimelerim › Listeler, e.g. from Bugün's "Widget'ında" line.
+    func openLists() {
+        tab = .words
+        wordsPath = []
+        listsRequested = true
     }
 
     func openWord(_ id: String) {

@@ -111,7 +111,7 @@ public struct UnitProgress: Sendable, Equatable, Identifiable {
 /// on, and whether the next level is open to them.
 public struct CourseState: Sendable, Equatable {
     public var level: CEFRLevel
-    /// Core first, then the rest in the learner's goal order, the bridge last.
+    /// Core first, then the rest in plan order, the bridge last.
     public var units: [UnitProgress]
     public var currentID: String?
     /// Set when the level is nearly done and the next level has units of its own.

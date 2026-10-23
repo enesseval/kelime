@@ -115,6 +115,10 @@ the user's own word lists, 1 hour / 30 minute rotation, Discover and mixed puzzl
   missed) works on every tab and is remembered; Tümü has level, state and kind filters (reset each
   launch) and lists only words the learner met: started units, the current level's core, and any
   word with progress or a star. Long A–Z lists get a letter strip.
+- Kelimelerim › Listeler (was Bölümler): the course card ("B1 kursu") and the exam lists share one
+  card with a "Widget'ta" switch; the last list that is on cannot be switched off. Bugün shows
+  "Widget'ında: B1 kursu · YDS" under the hero card, opening Listeler. This is the first step
+  towards one Listeler screen for the course, exam lists, own lists and Discover (with Pro).
 - Bugün shows a streak ("n gün üst üste") from two days on; a missed day shows nothing negative.
 - Ayarlar › Öneri gönder opens GitHub issues. Geliştirici › Kullanım sayaçları counts feature use
   on the device in Debug and TestFlight builds only; nothing is sent.
