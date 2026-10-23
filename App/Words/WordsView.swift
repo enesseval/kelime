@@ -221,9 +221,10 @@ struct WordsView: View {
                     .frame(maxWidth: 180)
             }
         }
+        // Plain text on the page background, centred: an empty list needs no card.
+        .frame(maxWidth: .infinity)
         .padding(.vertical, 36)
         .padding(.horizontal, 24)
-        .surfaceCard(radius: 18, padding: 0)
     }
 }
 
