@@ -31,6 +31,7 @@ final class AppModel {
     /// Called when the app comes to the foreground.
     func becameActive() async {
         guard let database else { return }
+        await purchases.refreshEntitlement()
         await WidgetRefresher.refresh(database)
         dataVersion += 1
         await updateContent()
@@ -53,6 +54,15 @@ final class AppModel {
             showOnboarding = !((try? await db.reader.read { db in try Settings.bool(.onboardingDone, in: db) }) ?? false)
             phase = .ready(db)
             purchases.start(app: self)
+            #if DEBUG
+            // Screenshots of the paywall: launch with `-showPaywall lists` (Debug only).
+            if let name = UserDefaults.standard.string(forKey: "showPaywall"), let trigger = PaywallTrigger(rawValue: name) {
+                Task {
+                    try? await Task.sleep(for: .seconds(1.5))
+                    router.showPaywall(trigger)
+                }
+            }
+            #endif
             PhoneWatchSync.shared.start(database: db)
             await applySpeechRate()
             await WidgetRefresher.refresh(db)

@@ -3,7 +3,8 @@ import KelimeUI
 import RevenueCat
 import SwiftUI
 
-/// Soft, contextual paywall. Never shown on first launch; the headline follows the trigger.
+/// The Pro paywall: a night sky like onboarding, the reason it opened first, what Pro adds,
+/// and the three plans with the annual one chosen. Never shown on first launch.
 struct PaywallView: View {
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
@@ -14,120 +15,195 @@ struct PaywallView: View {
     @State private var plan: Plan = .annual
     @State private var working = false
     @State private var toast: String?
+    @State private var appeared = false
 
     private var purchases: PurchaseManager { app.purchases }
 
+    struct Feature: Identifiable {
+        let id: String
+        let symbol: String
+        let title: String
+        let detail: String
+    }
+
     /// What Pro adds. Everything else stays free.
-    static let benefits = [
-        "Sınırsız kendi listen, widget'ta",
-        "Listelerini paylaş",
-        "Sınav planı: sınav gününe göre günlük hedef",
-        "Widget'ta daha sık yeni kelime",
-        "Sana özel bulmaca ve bulmaca arşivi",
+    static let features = [
+        Feature(id: "lists", symbol: "list.bullet.rectangle.portrait", title: "Sınırsız kendi listen", detail: "İstediğin kadar liste, hepsi widget'ta"),
+        Feature(id: "share", symbol: "square.and.arrow.up", title: "Listeni paylaş", detail: "Arkadaşına ya da öğrencine gönder"),
+        Feature(id: "exam", symbol: "calendar.badge.clock", title: "Sınav planı", detail: "Sınav gününe göre günlük kelime hedefi"),
+        Feature(id: "rotation", symbol: "bolt.fill", title: "Daha sık yeni kelime", detail: "Widget'ta günde 24'e kadar kelime"),
+        Feature(id: "puzzle", symbol: "puzzlepiece.extension", title: "Sana özel bulmaca", detail: "Zorlandıklarınla; bulmaca arşivi de açılır"),
     ]
 
-    var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            HStack {
-                Spacer()
-                Button { dismiss() } label: {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundStyle(Palette.ink)
-                        .frame(width: 44, height: 44)
-                        .background(Palette.surface2, in: Circle())
-                }
-                .accessibilityLabel("Kapat")
-            }
-            .padding(.trailing, -8)
+    /// The feature that brought the learner here, shown first and highlighted.
+    private var focus: String? {
+        switch request.trigger {
+        case .lists: "lists"
+        case .share: "share"
+        case .examPlan: "exam"
+        case .rotation: "rotation"
+        case .personalPuzzle, .archive: "puzzle"
+        case .base: nil
+        }
+    }
 
+    private var orderedFeatures: [Feature] {
+        guard let focus else { return Self.features }
+        return Self.features.filter { $0.id == focus } + Self.features.filter { $0.id != focus }
+    }
+
+    var body: some View {
+        ZStack {
+            OnboardingSky(hour: 21.5)
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("KELİME WIDGET PRO")
-                            .font(KelimeFont.ui(12, weight: .bold, relativeTo: .caption))
-                            .tracking(1.2)
-                            .foregroundStyle(Palette.accent)
-                        Text(request.trigger.headline(deck: request.deck))
-                            .font(KelimeFont.english(44, relativeTo: .largeTitle))
-                            .tracking(-0.9)
-                            .fixedSize(horizontal: false, vertical: true)
-                        Text(subtitle)
-                            .font(KelimeFont.ui(15, relativeTo: .subheadline))
-                            .foregroundStyle(Palette.ink2)
-                    }
-                    VStack(alignment: .leading, spacing: 10) {
-                        ForEach(Self.benefits, id: \.self) { benefit in
-                            HStack(spacing: 12) {
-                                Text("✓")
-                                    .font(KelimeFont.ui(12, weight: .bold))
-                                    .foregroundStyle(Palette.accent)
-                                    .frame(width: 22, height: 22)
-                                    .background(Palette.accentSoft, in: Circle())
-                                Text(benefit).font(KelimeFont.ui(16, relativeTo: .body))
-                            }
+                VStack(spacing: 22) {
+                    hero
+                    LazyVGrid(columns: [GridItem(.flexible(), spacing: 8), GridItem(.flexible(), spacing: 8)], spacing: 8) {
+                        ForEach(Array(orderedFeatures.enumerated()), id: \.element.id) { index, feature in
+                            featureTile(feature, highlighted: feature.id == focus)
+                                .opacity(appeared ? 1 : 0)
+                                .offset(y: appeared ? 0 : 12)
+                                .animation(.spring(response: 0.5, dampingFraction: 0.85).delay(0.06 * Double(index)), value: appeared)
                         }
                     }
                     VStack(spacing: 10) {
-                        planCard(.annual, title: "Yıllık", price: purchases.annual?.storeProduct.localizedPriceString, note: annualNote, badge: purchases.annualSaving.map { "%\($0) tasarruf" } ?? "Önerilen")
+                        planCard(.annual, title: "Yıllık", price: purchases.annual?.storeProduct.localizedPriceString, note: annualNote,
+                                 badge: purchases.annualSaving.map { "%\($0) tasarruf" } ?? "En avantajlı")
                         planCard(.monthly, title: "Aylık", price: purchases.monthly?.storeProduct.localizedPriceString, note: "Her ay yenilenir, istediğin zaman iptal et", badge: nil)
                         planCard(.lifetime, title: "Ömür boyu", price: purchases.lifetime?.storeProduct.localizedPriceString, note: "Tek seferlik ödeme, abonelik yok", badge: nil)
                     }
-                    .padding(.top, 4)
+                    if purchases.packages.isEmpty && !purchases.loadingProducts {
+                        Button("Fiyatlar yüklenemedi · Tekrar dene") { Task { await purchases.loadProducts() } }
+                            .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
+                            .foregroundStyle(Palette.accent)
+                            .frame(minHeight: 32)
+                    }
                 }
+                .padding(.horizontal, 20)
+                .padding(.top, 40)
+                .padding(.bottom, 12)
             }
             .scrollIndicators(.hidden)
-
-            Button {
-                Task { await buy() }
-            } label: {
-                if working { ProgressView().tint(Palette.onAccent) } else { Text(ctaTitle) }
+            .safeAreaInset(edge: .bottom, spacing: 0) { footer }
+            VStack {
+                HStack {
+                    Spacer()
+                    Button { dismiss() } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 15, weight: .bold))
+                            .foregroundStyle(.white.opacity(0.9))
+                            .frame(width: 36, height: 36)
+                            .background(.ultraThinMaterial, in: Circle())
+                    }
+                    .frame(width: 44, height: 44)
+                    .accessibilityLabel("Kapat")
+                }
+                Spacer()
             }
-            .buttonStyle(PrimaryButtonStyle(height: 54))
-            .disabled(working || selectedPackage == nil)
-            .opacity(selectedPackage == nil ? 0.6 : 1)
-
-            if purchases.packages.isEmpty && !purchases.loadingProducts {
-                Button("Fiyatlar yüklenemedi · Tekrar dene") { Task { await purchases.loadProducts() } }
-                    .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
-                    .foregroundStyle(Palette.accent)
-                    .frame(maxWidth: .infinity, minHeight: 32)
-            }
-            if plan != .lifetime {
-                Text("Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik yenilenir. iPhone Ayarlar › Apple Kimliği › Abonelikler'den yönetebilirsin.")
-                    .font(KelimeFont.ui(11, relativeTo: .caption2))
-                    .foregroundStyle(Palette.ink2)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
-            }
-            Text("Reklam yok. Hesap yok. İnternetsiz çalışır.")
-                .font(KelimeFont.ui(13, relativeTo: .footnote))
-                .foregroundStyle(Palette.ink2)
-                .frame(maxWidth: .infinity)
-            HStack(spacing: 18) {
-                Button("Geri yükle") { Task { await restore() } }
-                Button("Koşullar") { openURL(Legal.termsURL) }
-                Button("Gizlilik") { openURL(Legal.privacyURL) }
-            }
-            .font(KelimeFont.ui(12, relativeTo: .caption))
-            .foregroundStyle(Palette.ink2)
-            .frame(maxWidth: .infinity, minHeight: 32)
+            .padding(.horizontal, 12)
+            .padding(.top, 8)
         }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 12)
-        .screenBackground()
+        .preferredColorScheme(.dark)
         .toast($toast)
-        .task { await purchases.loadProducts() }
+        .task {
+            appeared = true
+            await purchases.loadProducts()
+        }
         .onChange(of: purchases.isPro) { _, pro in
             if pro { dismiss() }
         }
     }
 
+    private var hero: some View {
+        VStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(RadialGradient(colors: [Palette.accent.opacity(0.65), .clear], center: .center, startRadius: 4, endRadius: 70))
+                    .frame(width: 110, height: 110)
+                    .scaleEffect(appeared ? 1 : 0.6)
+                Image(systemName: "sparkles")
+                    .font(.system(size: 30, weight: .semibold))
+                    .foregroundStyle(.white)
+                    .symbolEffect(.pulse, options: .repeating, isActive: appeared)
+            }
+            .frame(height: 64)
+            .animation(.spring(response: 0.8, dampingFraction: 0.7), value: appeared)
+            Text("KELİME WIDGET PRO")
+                .font(KelimeFont.ui(12, weight: .bold, relativeTo: .caption))
+                .tracking(1.4)
+                .foregroundStyle(Palette.accent)
+            Text(request.trigger.headline(deck: request.deck))
+                .font(KelimeFont.english(34, relativeTo: .largeTitle))
+                .tracking(-0.8)
+                .foregroundStyle(.white)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+            Text(subtitle)
+                .font(KelimeFont.ui(15, relativeTo: .subheadline))
+                .foregroundStyle(.white.opacity(0.75))
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    /// A compact feature: icon and title; the highlighted one (the reason the paywall opened)
+    /// also says what it does.
+    private func featureTile(_ feature: Feature, highlighted: Bool) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: feature.symbol)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(highlighted ? Palette.onAccent : Palette.accent)
+                .frame(width: 30, height: 30)
+                .background(highlighted ? AnyShapeStyle(Palette.accent) : AnyShapeStyle(Palette.accent.opacity(0.18)), in: RoundedRectangle(cornerRadius: 9, style: .continuous))
+            Text(feature.title)
+                .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
+                .lineLimit(2)
+                .minimumScaleFactor(0.85)
+            Spacer(minLength: 0)
+        }
+        .foregroundStyle(.white)
+        .padding(10)
+        .frame(minHeight: 54)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(highlighted ? Palette.accent.opacity(0.8) : .white.opacity(0.08)))
+        .accessibilityElement(children: .combine)
+        .accessibilityHint(feature.detail)
+    }
+
+    private var footer: some View {
+        VStack(spacing: 8) {
+            Button {
+                Task { await buy() }
+            } label: {
+                if working { ProgressView().tint(Palette.onAccent) } else { Text(ctaTitle) }
+            }
+            .buttonStyle(PrimaryButtonStyle(height: 56))
+            .disabled(working || selectedPackage == nil)
+            .opacity(selectedPackage == nil ? 0.6 : 1)
+            Text(plan == .lifetime ? "Bir kez öde, hep senin. Reklam yok, hesap gerekmez." : "Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse yenilenir. Ayarlar › Apple Kimliği › Abonelikler'den yönetilir.")
+                .font(KelimeFont.ui(11, relativeTo: .caption2))
+                .foregroundStyle(.white.opacity(0.6))
+                .multilineTextAlignment(.center)
+            HStack(spacing: 18) {
+                Button("Geri yükle") { Task { await restore() } }
+                Button("Koşullar") { openURL(Legal.termsURL) }
+                Button("Gizlilik") { openURL(Legal.privacyURL) }
+            }
+            .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
+            .foregroundStyle(.white.opacity(0.7))
+            .frame(minHeight: 30)
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 24)
+        .padding(.bottom, 8)
+        .background(LinearGradient(colors: [.clear, .black.opacity(0.85), .black], startPoint: .top, endPoint: .bottom).ignoresSafeArea())
+    }
+
     private var subtitle: String {
         switch request.trigger {
         case .lists: "Ücretsizde bir listen var. Pro ile istediğin kadar liste oluştur."
-        case .share: "Listeni arkadaşlarına, öğrencilerine gönder; açan herkes kendi widget'ına ekler."
-        case .rotation: "Kelimen saatte bir ya da yarım saatte bir değişsin."
+        case .share: "Listeni gönder; açan herkes kendi widget'ına ekler."
+        case .rotation: "Kilit ekranında gün boyu daha çok kelime."
         case .personalPuzzle: "Zorlandığın ve öğrendiğin kelimelerden karışık bir bulmaca."
         case .archive: "Kaçırdığın günlerin bulmacalarını çöz."
         case .examPlan: "Sınav gününe kadar her gün kaç kelime çalışman gerektiğini görelim."
@@ -143,13 +219,11 @@ struct PaywallView: View {
         }
     }
 
-    /// "7 gün ücretsiz, sonra yılda …" or the price per month.
+    /// "7 gün ücretsiz, sonra yıllık · ayda …".
     private var annualNote: String {
         let perMonth = purchases.annual?.storeProduct.localizedPricePerMonth.map { "ayda \($0)" }
-        if purchases.trialEligible {
-            return ["7 gün ücretsiz, sonra yıllık yenilenir", perMonth].compactMap { $0 }.joined(separator: " · ")
-        }
-        return ["Yıllık yenilenir", perMonth].compactMap { $0 }.joined(separator: " · ")
+        let lead = purchases.trialEligible ? "7 gün ücretsiz, sonra yıllık" : "Yıllık yenilenir"
+        return [lead, perMonth].compactMap { $0 }.joined(separator: " · ")
     }
 
     private var ctaTitle: String {
@@ -162,39 +236,40 @@ struct PaywallView: View {
 
     private func planCard(_ value: Plan, title: String, price: String?, note: String, badge: String?) -> some View {
         let selected = plan == value
-        return Button { plan = value } label: {
-            VStack(alignment: .leading, spacing: 4) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text(title).font(KelimeFont.ui(17, weight: .semibold, relativeTo: .headline))
-                    Spacer()
-                    if let price {
-                        Text(price).font(KelimeFont.ui(22, weight: .bold, relativeTo: .title3))
-                    } else if purchases.loadingProducts {
-                        ProgressView()
-                    } else {
-                        Text("—").font(KelimeFont.ui(22, weight: .bold, relativeTo: .title3)).foregroundStyle(Palette.ink2)
+        return Button {
+            withAnimation(.snappy) { plan = value }
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: selected ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 22))
+                    .foregroundStyle(selected ? Palette.accent : .white.opacity(0.4))
+                VStack(alignment: .leading, spacing: 3) {
+                    HStack(spacing: 8) {
+                        Text(title).font(KelimeFont.ui(17, weight: .semibold, relativeTo: .headline))
+                        if let badge {
+                            Text(badge)
+                                .font(KelimeFont.ui(11, weight: .bold))
+                                .foregroundStyle(Palette.onAccent)
+                                .padding(.vertical, 3)
+                                .padding(.horizontal, 7)
+                                .background(Palette.green, in: Capsule())
+                        }
                     }
+                    Text(note).font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(.white.opacity(0.7))
                 }
-                Text(note).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
+                Spacer(minLength: 8)
+                if let price {
+                    Text(price).font(KelimeFont.ui(18, weight: .bold, relativeTo: .title3))
+                } else if purchases.loadingProducts {
+                    ProgressView().tint(.white)
+                } else {
+                    Text("—").font(KelimeFont.ui(18, weight: .bold, relativeTo: .title3)).foregroundStyle(.white.opacity(0.5))
+                }
             }
-            .foregroundStyle(Palette.ink)
+            .foregroundStyle(.white)
             .padding(16)
-            .background(Palette.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .strokeBorder(selected ? Palette.accent : Palette.line, lineWidth: selected ? 2 : 1)
-            )
-            .overlay(alignment: .topTrailing) {
-                if let badge {
-                    Text(badge)
-                        .font(KelimeFont.ui(11, weight: .bold))
-                        .foregroundStyle(Palette.onAccent)
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 8)
-                        .background(Palette.accent, in: RoundedRectangle(cornerRadius: 6, style: .continuous))
-                        .offset(x: -14, y: -10)
-                }
-            }
+            .background(selected ? AnyShapeStyle(Palette.accent.opacity(0.18)) : AnyShapeStyle(.ultraThinMaterial), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(selected ? Palette.accent : .white.opacity(0.1), lineWidth: selected ? 2 : 1))
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

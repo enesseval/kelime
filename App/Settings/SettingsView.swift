@@ -108,20 +108,10 @@ struct SettingsView: View {
 
     private func widgetSection(_ data: SettingsData) -> some View {
         SettingsSection("WIDGET") {
-            SettingsRow("Değişim sıklığı") {
-                Menu {
-                    ForEach(RotationInterval.choices, id: \.self) { interval in
-                        let locked = interval != .threeHours && !data.prefs.isPro
-                        Button(locked ? "\(interval.label) · Pro" : interval.label) {
-                            if locked {
-                                app.router.showPaywall(.rotation)
-                            } else {
-                                Task { await app.updatePreferences { $0.rotationInterval = interval } }
-                            }
-                        }
-                    }
-                } label: { valueLabel(data.prefs.effectiveRotation.label) }
+            NavigationLink(value: Route.rotation) {
+                SettingsRowLabel("Değişim sıklığı", value: data.prefs.effectiveRotation.label)
             }
+            .buttonStyle(.plain)
             Divider().overlay(Palette.line)
             NavigationLink(value: Route.widgetMode) {
                 SettingsRowLabel("Kilit ekranı görünümü", value: data.prefs.defaultWidgetMode.label)
@@ -137,11 +127,6 @@ struct SettingsView: View {
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            Text("Widget'ın ne zaman yenileneceğine iOS karar verir; kelime bazen birkaç dakika geç değişebilir.")
-                .font(KelimeFont.ui(12, relativeTo: .caption))
-                .foregroundStyle(Palette.ink2)
-                .padding(.horizontal, 16)
-                .padding(.bottom, 12)
         }
     }
 

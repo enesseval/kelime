@@ -103,6 +103,7 @@ extension View {
             case .widgetMode: WidgetModePickerView()
             case .widgetLog: WidgetLogView()
             case .usageCounters: UsageCountersView()
+            case .rotation: RotationPickerView()
             case .unit(let id): UnitView(unitID: id)
             case .userList(let id): UserListView(listID: id)
             case .story(let unit, let story): StoryView(unitID: unit, storyID: story)

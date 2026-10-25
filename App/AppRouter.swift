@@ -12,6 +12,7 @@ enum Route: Hashable {
     case word(String)
     case puzzleArchive
     case widgetMode
+    case rotation
     case widgetLog
     case usageCounters
     case unit(String)
