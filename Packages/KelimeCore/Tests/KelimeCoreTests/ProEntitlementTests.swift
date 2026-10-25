@@ -7,7 +7,8 @@ struct ProEntitlementTests {
         #expect(ProEntitlement.isPro(activeProductIDs: ["pro.lifetime"]))
         #expect(ProEntitlement.isPro(activeProductIDs: ["other", "pro.yearly"]))
         #expect(!ProEntitlement.isPro(activeProductIDs: []))
-        #expect(!ProEntitlement.isPro(activeProductIDs: ["pro.monthly"]))
+        #expect(ProEntitlement.isPro(activeProductIDs: ["pro.monthly"]))
+        #expect(!ProEntitlement.isPro(activeProductIDs: ["pro.weekly"]))
     }
 
     @Test func cacheReportsChanges() throws {

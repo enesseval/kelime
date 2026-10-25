@@ -1,11 +1,11 @@
 import Foundation
 import KelimeCore
 import Observation
-import StoreKit
+import RevenueCat
 
-/// StoreKit 2 purchases: one non-consumable (lifetime) and one yearly subscription with a
-/// 7-day free trial. Entitlement comes from `Transaction.currentEntitlements` plus
-/// `Transaction.updates`, and is cached in the shared database for the widget and the gates.
+/// Pro through RevenueCat: the "pro" entitlement, bought with one of the packages of the
+/// current offering (monthly, annual with a 7-day trial, lifetime). The entitlement is cached
+/// in the shared database for the widget and the gates.
 @MainActor
 @Observable
 final class PurchaseManager {
@@ -13,12 +13,15 @@ final class PurchaseManager {
     /// the personal puzzle with the archive. Off makes nobody Pro and hides the paywall and the
     /// PRO section, with the purchase code kept.
     static let isOnSale = true
+    static let apiKey = "appl_JjGFzNpxOuvScWuVgPqyPEzDTeR"
+    static let entitlement = "pro"
 
     enum PurchaseResult {
         case purchased, pending, cancelled
     }
 
-    private(set) var products: [String: Product] = [:]
+    /// The current offering's packages, annual first, then monthly and lifetime.
+    private(set) var packages: [Package] = []
     private(set) var isPro = false
     private(set) var trialEligible = true
     private(set) var loadingProducts = false
@@ -27,63 +30,68 @@ final class PurchaseManager {
     private var updatesTask: Task<Void, Never>?
     private weak var app: AppModel?
 
-    var lifetime: Product? { products[ProEntitlement.lifetimeID] }
-    var yearly: Product? { products[ProEntitlement.yearlyID] }
+    var monthly: Package? { packages.first { $0.packageType == .monthly } }
+    var annual: Package? { packages.first { $0.packageType == .annual } }
+    var lifetime: Package? { packages.first { $0.packageType == .lifetime } }
 
-    /// Starts listening for transactions and refreshes the entitlement. Call once at launch.
+    /// How much cheaper a year is than twelve months, in percent, when both exist.
+    var annualSaving: Int? {
+        guard let monthly, let annual else { return nil }
+        let twelve = monthly.storeProduct.priceDecimalNumber.doubleValue * 12
+        guard twelve > 0 else { return nil }
+        let saving = Int(((1 - annual.storeProduct.priceDecimalNumber.doubleValue / twelve) * 100).rounded(.down))
+        return saving > 0 ? saving : nil
+    }
+
+    /// Configures RevenueCat and listens for entitlement changes. Call once at launch.
     func start(app: AppModel) {
         self.app = app
+        guard Self.isOnSale else {
+            Task { await apply(nil) }
+            return
+        }
         guard updatesTask == nil else { return }
+        if !Purchases.isConfigured {
+            Purchases.logLevel = .warn
+            Purchases.configure(withAPIKey: Self.apiKey)
+        }
         updatesTask = Task { [weak self] in
-            for await update in Transaction.updates {
-                if case .verified(let transaction) = update {
-                    await transaction.finish()
-                }
-                await self?.refreshEntitlement()
+            for await info in Purchases.shared.customerInfoStream {
+                await self?.apply(info)
             }
         }
-        Task {
-            await refreshEntitlement()
-            if Self.isOnSale { await loadProducts() }
-        }
+        Task { await loadProducts() }
     }
 
     func loadProducts() async {
-        guard products.isEmpty, !loadingProducts else { return }
+        guard Self.isOnSale, packages.isEmpty, !loadingProducts else { return }
         loadingProducts = true
         defer { loadingProducts = false }
         do {
-            let loaded = try await Product.products(for: ProEntitlement.allProductIDs)
-            products = Dictionary(uniqueKeysWithValues: loaded.map { ($0.id, $0) })
-            if loaded.isEmpty { lastError = "Ürünler yüklenemedi" }
-            if let subscription = yearly?.subscription {
-                trialEligible = await subscription.isEligibleForIntroOffer
+            let order: [PackageType] = [.annual, .monthly, .lifetime]
+            let available = try await Purchases.shared.offerings().current?.availablePackages ?? []
+            packages = available.sorted { (order.firstIndex(of: $0.packageType) ?? 9) < (order.firstIndex(of: $1.packageType) ?? 9) }
+            if packages.isEmpty { lastError = "Ürünler yüklenemedi" }
+            if let annual {
+                let status = await Purchases.shared.checkTrialOrIntroDiscountEligibility(product: annual.storeProduct)
+                trialEligible = status != .ineligible
             }
         } catch {
             lastError = "Ürünler yüklenemedi"
         }
     }
 
-    func purchase(_ product: Product) async -> PurchaseResult {
+    func purchase(_ package: Package) async -> PurchaseResult {
         lastError = nil
         do {
-            switch try await product.purchase() {
-            case .success(let verification):
-                guard case .verified(let transaction) = verification else {
-                    lastError = "Satın alma doğrulanamadı"
-                    return .cancelled
-                }
-                await transaction.finish()
-                await refreshEntitlement()
-                return .purchased
-            case .pending:
-                return .pending
-            case .userCancelled:
-                return .cancelled
-            @unknown default:
-                return .cancelled
-            }
+            let result = try await Purchases.shared.purchase(package: package)
+            if result.userCancelled { return .cancelled }
+            await apply(result.customerInfo)
+            return .purchased
         } catch {
+            let code = (error as NSError).code
+            if code == ErrorCode.paymentPendingError.rawValue { return .pending }
+            if code == ErrorCode.purchaseCancelledError.rawValue { return .cancelled }
             lastError = "Satın alma tamamlanamadı"
             return .cancelled
         }
@@ -93,23 +101,23 @@ final class PurchaseManager {
     func restore() async -> Bool {
         lastError = nil
         do {
-            try await AppStore.sync()
+            await apply(try await Purchases.shared.restorePurchases())
         } catch {
             lastError = "Geri yükleme tamamlanamadı"
         }
-        await refreshEntitlement()
         return isPro
     }
 
-    /// Reads current entitlements and caches the result; rebuilds widgets when it changes.
+    /// Reads the entitlement again (e.g. after the developer Pro switch).
     func refreshEntitlement() async {
-        var active: [String] = []
-        for await entitlement in Transaction.currentEntitlements {
-            if case .verified(let transaction) = entitlement, transaction.revocationDate == nil {
-                active.append(transaction.productID)
-            }
-        }
-        let pro = Self.isOnSale && (ProEntitlement.isPro(activeProductIDs: active) || DevTools.forcePro)
+        guard Self.isOnSale else { return await apply(nil) }
+        await apply(try? await Purchases.shared.customerInfo())
+    }
+
+    /// Caches the entitlement and rebuilds the widgets when it changes.
+    private func apply(_ info: CustomerInfo?) async {
+        let active = info?.entitlements[Self.entitlement]?.isActive ?? false
+        let pro = Self.isOnSale && (active || DevTools.forcePro)
         isPro = pro
         guard let app, let database = app.database else { return }
         let changed = (try? await database.writer.write { db in try ProEntitlement.cache(pro, db: db) }) ?? false

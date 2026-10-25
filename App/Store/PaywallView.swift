@@ -1,6 +1,6 @@
 import KelimeCore
 import KelimeUI
-import StoreKit
+import RevenueCat
 import SwiftUI
 
 /// Soft, contextual paywall. Never shown on first launch; the headline follows the trigger.
@@ -10,8 +10,8 @@ struct PaywallView: View {
     @Environment(\.openURL) private var openURL
     let request: AppRouter.PaywallRequest
 
-    enum Plan { case lifetime, yearly }
-    @State private var plan: Plan = .lifetime
+    enum Plan { case annual, monthly, lifetime }
+    @State private var plan: Plan = .annual
     @State private var working = false
     @State private var toast: String?
 
@@ -69,8 +69,9 @@ struct PaywallView: View {
                         }
                     }
                     VStack(spacing: 10) {
-                        planCard(.lifetime, title: "Ömür boyu", price: purchases.lifetime?.displayPrice, note: "Tek seferlik ödeme, abonelik yok", recommended: true)
-                        planCard(.yearly, title: "Yıllık", price: purchases.yearly?.displayPrice, note: purchases.trialEligible ? "7 gün ücretsiz dene" : "Yıllık yenilenir", recommended: false)
+                        planCard(.annual, title: "Yıllık", price: purchases.annual?.storeProduct.localizedPriceString, note: annualNote, badge: purchases.annualSaving.map { "%\($0) tasarruf" } ?? "Önerilen")
+                        planCard(.monthly, title: "Aylık", price: purchases.monthly?.storeProduct.localizedPriceString, note: "Her ay yenilenir, istediğin zaman iptal et", badge: nil)
+                        planCard(.lifetime, title: "Ömür boyu", price: purchases.lifetime?.storeProduct.localizedPriceString, note: "Tek seferlik ödeme, abonelik yok", badge: nil)
                     }
                     .padding(.top, 4)
                 }
@@ -83,14 +84,21 @@ struct PaywallView: View {
                 if working { ProgressView().tint(Palette.onAccent) } else { Text(ctaTitle) }
             }
             .buttonStyle(PrimaryButtonStyle(height: 54))
-            .disabled(working || selectedProduct == nil)
-            .opacity(selectedProduct == nil ? 0.6 : 1)
+            .disabled(working || selectedPackage == nil)
+            .opacity(selectedPackage == nil ? 0.6 : 1)
 
-            if purchases.products.isEmpty && !purchases.loadingProducts {
+            if purchases.packages.isEmpty && !purchases.loadingProducts {
                 Button("Fiyatlar yüklenemedi · Tekrar dene") { Task { await purchases.loadProducts() } }
                     .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
                     .foregroundStyle(Palette.accent)
                     .frame(maxWidth: .infinity, minHeight: 32)
+            }
+            if plan != .lifetime {
+                Text("Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik yenilenir. iPhone Ayarlar › Apple Kimliği › Abonelikler'den yönetebilirsin.")
+                    .font(KelimeFont.ui(11, relativeTo: .caption2))
+                    .foregroundStyle(Palette.ink2)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
             }
             Text("Reklam yok. Hesap yok. İnternetsiz çalışır.")
                 .font(KelimeFont.ui(13, relativeTo: .footnote))
@@ -127,18 +135,32 @@ struct PaywallView: View {
         }
     }
 
-    private var selectedProduct: Product? {
-        plan == .lifetime ? purchases.lifetime : purchases.yearly
+    private var selectedPackage: Package? {
+        switch plan {
+        case .annual: purchases.annual
+        case .monthly: purchases.monthly
+        case .lifetime: purchases.lifetime
+        }
+    }
+
+    /// "7 gün ücretsiz, sonra yılda …" or the price per month.
+    private var annualNote: String {
+        let perMonth = purchases.annual?.storeProduct.localizedPricePerMonth.map { "ayda \($0)" }
+        if purchases.trialEligible {
+            return ["7 gün ücretsiz, sonra yıllık yenilenir", perMonth].compactMap { $0 }.joined(separator: " · ")
+        }
+        return ["Yıllık yenilenir", perMonth].compactMap { $0 }.joined(separator: " · ")
     }
 
     private var ctaTitle: String {
         switch plan {
+        case .annual: purchases.trialEligible ? "7 gün ücretsiz dene" : "Yıllık başla"
+        case .monthly: "Aylık başla"
         case .lifetime: "Ömür boyu al"
-        case .yearly: purchases.trialEligible ? "7 gün ücretsiz dene" : "Yıllık başla"
         }
     }
 
-    private func planCard(_ value: Plan, title: String, price: String?, note: String, recommended: Bool) -> some View {
+    private func planCard(_ value: Plan, title: String, price: String?, note: String, badge: String?) -> some View {
         let selected = plan == value
         return Button { plan = value } label: {
             VStack(alignment: .leading, spacing: 4) {
@@ -163,8 +185,8 @@ struct PaywallView: View {
                     .strokeBorder(selected ? Palette.accent : Palette.line, lineWidth: selected ? 2 : 1)
             )
             .overlay(alignment: .topTrailing) {
-                if recommended {
-                    Text("Önerilen")
+                if let badge {
+                    Text(badge)
                         .font(KelimeFont.ui(11, weight: .bold))
                         .foregroundStyle(Palette.onAccent)
                         .padding(.vertical, 4)
@@ -180,10 +202,10 @@ struct PaywallView: View {
     }
 
     private func buy() async {
-        guard let product = selectedProduct else { return }
+        guard let package = selectedPackage else { return }
         working = true
         defer { working = false }
-        switch await purchases.purchase(product) {
+        switch await purchases.purchase(package) {
         case .purchased:
             UsageCounter.count(.purchase)
             dismiss()

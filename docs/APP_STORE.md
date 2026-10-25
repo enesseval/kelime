@@ -44,7 +44,7 @@ KELİME WIDGET PRO
 • Sınav planı: sınav gününe kadar her gün kaç kelime çalışacağını gösterir
 • Widget'ta daha sık yeni kelime
 • Sana özel bulmaca ve bulmaca arşivi
-Pro ömür boyu tek seferlik ya da yıllık abonelikle alınır. Yıllık abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik yenilenir; App Store hesap ayarlarından yönetilir.
+Pro aylık ya da yıllık abonelikle (yıllıkta 7 gün ücretsiz deneme) veya ömür boyu tek seferlik ödemeyle alınır. Abonelikler, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik yenilenir; App Store hesap ayarlarından yönetilir.
 
 Reklam yok. Hesap yok. İnternetsiz çalışır. Öğrendiğin kelimeler ve listelerin cihazında kalır.
 
@@ -63,7 +63,8 @@ Ekran görüntüleri için: tanıtım filmi (1–2), Bugün ve Listeler (3–4),
 Apple Watch, "3 saatte bir" ya da belirli bir yenileme aralığı vaadi kullanma.
 
 ## App Privacy (Uygulama Gizliliği)
-Kullanım Verileri › Ürün Etkileşimi: Analiz · Kimliğe bağlı değil · İzleme yok (TelemetryDeck).
+- Kullanım Verileri › Ürün Etkileşimi: Analiz · Kimliğe bağlı değil · İzleme yok (TelemetryDeck)
+- Satın Almalar › Satın Alma Geçmişi: Uygulama İşlevi · Kimliğe bağlı değil · İzleme yok (RevenueCat)
 Başka veri türü yok.
 
 ## Kategori
@@ -76,8 +77,9 @@ Birincil: Eğitim. İkincil: Başvuru Kaynakları (isteğe bağlı).
 Hesap gerekmez. Pro'yu denemek için uygulama içi satın almayı sandbox hesabıyla kullanabilirsiniz. Kendi listesi: Kelimelerim › Listeler › Kendi listelerim. Liste paylaşımı .kelimelist dosyasıyla yapılır; dosyayı açınca liste içe aktarılır. Widget'ı kilit ekranına ekleyince kelimeler orada görünür.
 
 ## Uygulama içi satın almalar (bu sürüme ekle)
-- Ömür boyu (tek seferlik): "Kelime Widget Pro, ömür boyu"
-- Yıllık (otomatik yenilenen, 7 gün ücretsiz deneme): "Kelime Widget Pro, yıllık"
+- Aylık (`pro.monthly`, otomatik yenilenen): "Kelime Widget Pro, aylık"
+- Yıllık (`pro.yearly`, otomatik yenilenen, 7 gün ücretsiz deneme): "Kelime Widget Pro, yıllık"
+- Ömür boyu (`pro.lifetime`, tek seferlik): "Kelime Widget Pro, ömür boyu"
 Açıklama (ikisi için): "Sınırsız kendi listesi, liste paylaşma, sınav planı, daha sık yeni kelime, sana özel bulmaca ve arşiv."
 
 ## Yenilikler (ilk sürüm)

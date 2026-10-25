@@ -1,80 +1,89 @@
 {
-  "identifier" : "E2AEFF37-AB2D-4A63-B2D2-F557503FACA4",
-  "nonRenewingSubscriptions" : [
-
-  ],
-  "products" : [
+  "identifier": "E2AEFF37-AB2D-4A63-B2D2-F557503FACA4",
+  "nonRenewingSubscriptions": [],
+  "products": [
     {
-      "displayPrice" : "249.99",
-      "familyShareable" : false,
-      "internalID" : "6700000001",
-      "localizations" : [
+      "displayPrice": "599.99",
+      "familyShareable": false,
+      "internalID": "6700000001",
+      "localizations": [
         {
-          "description" : "Tüm desteler, sınırsız tekrar, arşiv ve temalar. Tek seferlik ödeme.",
-          "displayName" : "Ömür boyu Pro",
-          "locale" : "tr"
+          "description": "Tüm desteler, sınırsız tekrar, arşiv ve temalar. Tek seferlik ödeme.",
+          "displayName": "Ömür boyu Pro",
+          "locale": "tr"
         }
       ],
-      "productID" : "pro.lifetime",
-      "referenceName" : "Pro Lifetime",
-      "type" : "NonConsumable"
+      "productID": "pro.lifetime",
+      "referenceName": "Pro Lifetime",
+      "type": "NonConsumable"
     }
   ],
-  "settings" : {
-    "_applicationInternalID" : "6700000000",
-    "_developerTeamID" : "",
-    "_failTransactionsEnabled" : false,
-    "_locale" : "tr",
-    "_storefront" : "TUR",
-    "_storeKitErrors" : [
-
-    ]
+  "settings": {
+    "_applicationInternalID": "6700000000",
+    "_developerTeamID": "",
+    "_failTransactionsEnabled": false,
+    "_locale": "tr",
+    "_storefront": "TUR",
+    "_storeKitErrors": []
   },
-  "subscriptionGroups" : [
+  "subscriptionGroups": [
     {
-      "id" : "21500000",
-      "localizations" : [
-
-      ],
-      "name" : "Pro",
-      "subscriptions" : [
+      "id": "21500000",
+      "localizations": [],
+      "name": "Pro",
+      "subscriptions": [
         {
-          "adHocOffers" : [
-
-          ],
-          "codeOffers" : [
-
-          ],
-          "displayPrice" : "149.99",
-          "familyShareable" : false,
-          "groupNumber" : 1,
-          "internalID" : "6700000002",
-          "introductoryOffer" : {
-            "internalID" : "6700000003",
-            "paymentMode" : "free",
-            "subscriptionPeriod" : "P1W"
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "249.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6700000002",
+          "introductoryOffer": {
+            "internalID": "6700000003",
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
           },
-          "localizations" : [
+          "localizations": [
             {
-              "description" : "Tüm Pro özellikleri, yıllık. İlk 7 gün ücretsiz.",
-              "displayName" : "Yıllık Pro",
-              "locale" : "tr"
+              "description": "Tüm Pro özellikleri, yıllık. İlk 7 gün ücretsiz.",
+              "displayName": "Yıllık Pro",
+              "locale": "tr"
             }
           ],
-          "productID" : "pro.yearly",
-          "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Pro Yearly",
-          "subscriptionGroupID" : "21500000",
-          "type" : "RecurringSubscription",
-          "winbackOffers" : [
-
-          ]
+          "productID": "pro.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Pro Yearly",
+          "subscriptionGroupID": "21500000",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "49.99",
+          "familyShareable": false,
+          "groupNumber": 2,
+          "internalID": "6700000004",
+          "localizations": [
+            {
+              "description": "Tüm Pro özellikleri, aylık.",
+              "displayName": "Aylık Pro",
+              "locale": "tr"
+            }
+          ],
+          "productID": "pro.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Pro Monthly",
+          "subscriptionGroupID": "21500000",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
         }
       ]
     }
   ],
-  "version" : {
-    "major" : 4,
-    "minor" : 0
+  "version": {
+    "major": 4,
+    "minor": 0
   }
 }

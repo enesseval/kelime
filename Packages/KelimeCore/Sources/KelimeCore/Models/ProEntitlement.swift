@@ -3,12 +3,13 @@ import GRDB
 
 /// Product ids and the Pro entitlement cache.
 ///
-/// StoreKit lives in the app; the result is cached in the shared database (`is_pro`) so the
+/// RevenueCat lives in the app (entitlement "pro"); the result is cached in the shared database (`is_pro`) so the
 /// widget, the scheduler and every gate read one value.
 public enum ProEntitlement {
     public static let lifetimeID = "pro.lifetime"
     public static let yearlyID = "pro.yearly"
-    public static let allProductIDs = [lifetimeID, yearlyID]
+    public static let monthlyID = "pro.monthly"
+    public static let allProductIDs = [lifetimeID, yearlyID, monthlyID]
 
     /// Pro when any active transaction is one of ours.
     public static func isPro(activeProductIDs: some Sequence<String>) -> Bool {
