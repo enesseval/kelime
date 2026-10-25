@@ -20,6 +20,7 @@ enum UsageCounter: String, CaseIterable {
     case paywallShown = "Pro ekranı açıldı"
     case purchase = "Pro satın alındı"
     case placementTest = "Seviye testi bitti"
+    case signedIn = "Apple ile giriş yapıldı"
 
     private var key: String { "usage." + String(describing: self) }
 

@@ -2,7 +2,7 @@ import KelimeCore
 import KelimeUI
 import SwiftUI
 
-/// The four tabs, each with its own navigation stack.
+/// The five tabs, each with its own navigation stack.
 struct MainTabView: View {
     @Environment(AppModel.self) private var model
     @State private var importMessage: String?
@@ -32,10 +32,16 @@ struct MainTabView: View {
             .tabItem { Label("Kelimelerim", systemImage: "text.book.closed") }
             .tag(AppTab.words)
 
+            NavigationStack(path: $router.discoverPath) {
+                DiscoverView().withRoutes()
+            }
+            .tabItem { Label("Keşfet", systemImage: "safari") }
+            .tag(AppTab.discover)
+
             NavigationStack(path: $router.settingsPath) {
                 SettingsView().withRoutes()
             }
-            .tabItem { Label("Ayarlar", systemImage: "gearshape") }
+            .tabItem { Label("Profil", systemImage: "person.crop.circle") }
             .tag(AppTab.settings)
         }
         .tint(Palette.accent)
@@ -107,6 +113,7 @@ extension View {
             case .unit(let id): UnitView(unitID: id)
             case .userList(let id): UserListView(listID: id)
             case .story(let unit, let story): StoryView(unitID: unit, storyID: story)
+            case .sharedList(let id): SharedListView(listID: id)
             }
         }
     }

@@ -13,6 +13,7 @@
 		AA0000000000000000000063 /* KelimeUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000071 /* KelimeUI */; };
 		AC00000000000000000000002 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = AC00000000000000000000001 /* TelemetryDeck */; };
 		AC00000000000000000000012 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = AC00000000000000000000011 /* RevenueCat */; };
+		AC00000000000000000000022 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = AC00000000000000000000021 /* Supabase */; };
 		AA0000000000000000000064 /* KelimeCore in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000072 /* KelimeCore */; };
 		AA0000000000000000000065 /* KelimeUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000073 /* KelimeUI */; };
 		AA0000000000000000000066 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000001A /* Fonts */; };
@@ -138,6 +139,7 @@
 				AA0000000000000000000063 /* KelimeUI in Frameworks */,
 				AC00000000000000000000002 /* TelemetryDeck in Frameworks */,
 				AC00000000000000000000012 /* RevenueCat in Frameworks */,
+				AC00000000000000000000022 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +241,7 @@
 				AA0000000000000000000071 /* KelimeUI */,
 				AC00000000000000000000001 /* TelemetryDeck */,
 				AC00000000000000000000011 /* RevenueCat */,
+				AC00000000000000000000021 /* Supabase */,
 			);
 			productName = KelimeWidget;
 			productReference = AA0000000000000000000030 /* KelimeWidget.app */;
@@ -355,6 +358,7 @@
 				AA0000000000000000000020 /* XCLocalSwiftPackageReference "Packages/KelimeCore" */,
 				AC00000000000000000000000 /* XCRemoteSwiftPackageReference "SwiftSDK" */,
 				AC00000000000000000000010 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+				AC00000000000000000000020 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA0000000000000000000003 /* Products */;
@@ -764,9 +768,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		AC00000000000000000000020 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AC00000000000000000000021 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC00000000000000000000020 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
 		AC00000000000000000000011 /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AC00000000000000000000010 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;

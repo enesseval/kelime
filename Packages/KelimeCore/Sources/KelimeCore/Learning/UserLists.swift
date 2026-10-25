@@ -10,13 +10,48 @@ public struct UserList: Codable, Sendable, Hashable, Identifiable, FetchableReco
     public var createdAt: Date
     /// On the widget and in Quick Review.
     public var enabled: Bool
-    /// Came from someone else's file; does not count towards the free limit.
+    /// Came from someone else's file or Keşfet; does not count towards the free limit and is
+    /// not synced to the account.
     public var imported: Bool
+    /// Who may open it once synced: private, link or public (Keşfet).
+    public var visibility: ListVisibility = .private
+    /// Last change on this device (title, words, visibility); nil before the first change.
+    public var updatedAt: Date?
+    /// The server's `updated_at` when this list last matched it; nil if never synced.
+    public var syncedAt: Date?
+    /// The Keşfet list this one was saved from.
+    public var sourceID: String?
+
+    public init(id: String, title: String, createdAt: Date, enabled: Bool, imported: Bool, visibility: ListVisibility = .private, updatedAt: Date? = nil, syncedAt: Date? = nil, sourceID: String? = nil) {
+        self.id = id
+        self.title = title
+        self.createdAt = createdAt
+        self.enabled = enabled
+        self.imported = imported
+        self.visibility = visibility
+        self.updatedAt = updatedAt
+        self.syncedAt = syncedAt
+        self.sourceID = sourceID
+    }
+
+    /// Changed here since it last matched the server.
+    public var needsUpload: Bool {
+        guard !imported else { return false }
+        guard let syncedAt else { return true }
+        return (updatedAt ?? .distantPast) > syncedAt
+    }
 
     enum CodingKeys: String, CodingKey {
-        case id, title, enabled, imported
+        case id, title, enabled, imported, visibility
         case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case syncedAt = "synced_at"
+        case sourceID = "source_id"
     }
+}
+
+public enum ListVisibility: String, Codable, Sendable, CaseIterable, DatabaseValueConvertible {
+    case `private`, link, `public`
 }
 
 struct UserListCard: Codable, Sendable, Hashable, FetchableRecord, PersistableRecord {
@@ -108,7 +143,7 @@ public enum UserLists {
     public static func create(title: String, isPro: Bool, now: Date = .now, db: Database) throws -> UserList {
         let title = try clean(title)
         guard try canCreate(isPro: isPro, db: db) else { throw UserListError.limitReached }
-        let list = UserList(id: UUID().uuidString, title: title, createdAt: now, enabled: true, imported: false)
+        let list = UserList(id: UUID().uuidString.lowercased(), title: title, createdAt: now, enabled: true, imported: false, updatedAt: now)
         try list.insert(db)
         return list
     }
@@ -116,7 +151,21 @@ public enum UserLists {
     public static func rename(_ id: String, to title: String, db: Database) throws {
         guard var list = try UserList.fetchOne(db, key: id) else { return }
         list.title = try clean(title)
+        list.updatedAt = .now
         try list.update(db)
+    }
+
+    /// Who may open the list once it is synced.
+    public static func setVisibility(_ visibility: ListVisibility, list id: String, db: Database) throws {
+        guard var list = try UserList.fetchOne(db, key: id), list.visibility != visibility else { return }
+        list.visibility = visibility
+        list.updatedAt = .now
+        try list.update(db)
+    }
+
+    /// Marks the list changed here, so the next sync uploads it.
+    static func touch(_ id: String, db: Database) throws {
+        try db.execute(sql: "UPDATE user_list SET updated_at = ? WHERE id = ?", arguments: [Date.now, id])
     }
 
     public static func setEnabled(_ enabled: Bool, list id: String, db: Database) throws {
@@ -128,6 +177,10 @@ public enum UserLists {
     /// Deletes the list; the learner's own words in no other list go too.
     public static func delete(_ id: String, db: Database) throws {
         let cards = try cardIDs(of: id, db: db)
+        // A list the server has must be deleted there too, at the next sync.
+        if let list = try UserList.fetchOne(db, key: id), list.syncedAt != nil {
+            try db.execute(sql: "INSERT OR IGNORE INTO user_list_deleted (id) VALUES (?)", arguments: [id])
+        }
         _ = try UserList.deleteOne(db, key: id)
         try removeOrphans(cards, db: db)
     }
@@ -152,6 +205,7 @@ public enum UserLists {
         }
         let next = (try Int.fetchOne(db, sql: "SELECT MAX(position) FROM user_list_card WHERE list_id = ?", arguments: [id]) ?? -1) + 1
         try UserListCard(listID: id, cardID: cardID, position: next).insert(db)
+        try touch(id, db: db)
     }
 
     /// Adds a word the learner typed. `level` is only used to pick wrong options in quizzes.
@@ -183,6 +237,7 @@ public enum UserLists {
     /// Removes a card from the list; the learner's own word goes if no other list holds it.
     public static func remove(cardID: String, from id: String, db: Database) throws {
         _ = try UserListCard.filter(Column("list_id") == id && Column("card_id") == cardID).deleteAll(db)
+        try touch(id, db: db)
         try removeOrphans([cardID], db: db)
     }
 
@@ -195,16 +250,34 @@ public enum UserLists {
     /// Adds a shared list. Words the app already has link to its cards (with their progress);
     /// other words become the learner's own. Importing is free and does not count as a list.
     @discardableResult
-    public static func `import`(_ shared: SharedList, now: Date = .now, db: Database) throws -> UserList {
+    public static func `import`(_ shared: SharedList, sourceID: String? = nil, now: Date = .now, db: Database) throws -> UserList {
         let title = (try? clean(shared.title)) ?? "Paylaşılan liste"
-        let list = UserList(id: UUID().uuidString, title: title, createdAt: now, enabled: true, imported: true)
+        let list = UserList(id: UUID().uuidString.lowercased(), title: title, createdAt: now, enabled: true, imported: true, sourceID: sourceID)
         try list.insert(db)
+        try insertCards(shared.cards, into: list.id, keepCustomIDs: false, db: db)
+        return list
+    }
+
+    /// Whether a Keşfet list was already saved here.
+    public static func savedCopy(of sourceID: String, db: Database) throws -> UserList? {
+        try UserList.filter(Column("source_id") == sourceID).fetchOne(db)
+    }
+
+    /// Fills a list with shared cards. Words the app has link to its cards; others become the
+    /// learner's own, under a new id unless `keepCustomIDs` (the learner's own lists coming back
+    /// from the account keep theirs, so the next upload sends the same ids).
+    static func insertCards(_ cards: [Card], into listID: String, keepCustomIDs: Bool, db: Database) throws {
         var position = 0
         var seen = Set<String>()
-        for card in shared.cards where seen.insert(card.word.lowercased()).inserted {
+        for card in cards where seen.insert(card.word.lowercased()).inserted {
             let id: String
             if !card.id.hasPrefix(customPrefix), try Card.exists(db, key: card.id) {
                 id = card.id
+            } else if keepCustomIDs, card.id.hasPrefix(customPrefix) {
+                var copy = card
+                copy.tr = Array(copy.tr.prefix(3))
+                try copy.save(db)
+                id = copy.id
             } else {
                 var copy = card
                 copy.id = customPrefix + UUID().uuidString
@@ -212,10 +285,9 @@ public enum UserLists {
                 try copy.insert(db)
                 id = copy.id
             }
-            try UserListCard(listID: list.id, cardID: id, position: position).insert(db)
+            try UserListCard(listID: listID, cardID: id, position: position).insert(db)
             position += 1
         }
-        return list
     }
 
     /// Course and exam words matching `search`, for adding to a list (English word or meaning).
@@ -249,7 +321,7 @@ public enum UserLists {
         return String(title.prefix(maxTitle))
     }
 
-    private static func removeOrphans(_ cardIDs: [String], db: Database) throws {
+    static func removeOrphans(_ cardIDs: [String], db: Database) throws {
         for id in cardIDs where id.hasPrefix(customPrefix) {
             let used = try UserListCard.filter(Column("card_id") == id).fetchCount(db)
             if used == 0 { _ = try Card.deleteOne(db, key: id) }

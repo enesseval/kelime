@@ -37,9 +37,17 @@ Adres: appstoreconnect.apple.com
 Uygulama TelemetryDeck ile kimliksiz kullanım sayıları gönderiyor, bu yüzden "Veri toplamıyoruz" seçilmez:
 - **Başlayın › Evet, veri topluyoruz**
 - **Kullanım Verileri › Ürün Etkileşimi** (TelemetryDeck): amaç **Analiz**, kimliğe bağlı **Hayır**, izleme **Hayır**
-- **Satın Almalar › Satın Alma Geçmişi** (RevenueCat): amaç **Uygulama İşlevi**, kimliğe bağlı **Hayır**, izleme **Hayır**
+- **Satın Almalar › Satın Alma Geçmişi** (RevenueCat): amaç **Uygulama İşlevi**, kimliğe bağlı **Evet** (girişte hesaba bağlanıyor), izleme **Hayır**
+- **Tanımlayıcılar › Kullanıcı Kimliği** (Supabase hesabı): amaç **Uygulama İşlevi**, kimliğe bağlı **Evet**, izleme **Hayır**
+- **İletişim Bilgileri › Ad** (profil adı): amaç **Uygulama İşlevi**, kimliğe bağlı **Evet**, izleme **Hayır**
+- **Kullanıcı İçeriği › Diğer Kullanıcı İçeriği** (listeler): amaç **Uygulama İşlevi**, kimliğe bağlı **Evet**, izleme **Hayır**
 - Kaydet → **Yayınla**
 - Gizlilik politikası URL'si yukarıdakiyle aynı.
+
+## 4b. Hesap ve kullanıcı içeriği (inceleme için)
+- Sign in with Apple: App ID'de yetenek açık olmalı (otomatik imzalama ekler). Supabase › Authentication › Providers › Apple: açık, Client IDs `com.enesseval.kelime`.
+- İnceleme notu: "Hesap isteğe bağlı (Profil › Apple ile devam et). Hesap silme: Profil › Hesabı sil. Keşfet'te listeler şikayet edilebilir ve kullanıcılar engellenebilir; 3 şikayet alan liste otomatik gizlenir, şikayetler 24 saat içinde incelenir."
+- Şikayetleri Supabase panelinde `reports` tablosundan incele; listeyi göstermek için `lists.hidden = false`.
 
 ## 5. Uygulama içi satın almalar (Pro) ve RevenueCat
 Kimlikler koddaki ve RevenueCat'tekiyle **birebir aynı** olmalı: `pro.monthly`, `pro.yearly`, `pro.lifetime`.

@@ -100,6 +100,8 @@ struct UserListView: View {
     @State private var newTitle = ""
     @State private var confirmDelete = false
     @State private var shareURL: URL?
+    @State private var visibilityList: UserList?
+    @State private var toast: String?
 
     var body: some View {
         ScrollView {
@@ -143,7 +145,10 @@ struct UserListView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
-                    Button("Paylaş", systemImage: "square.and.arrow.up") { Task { await share() } }
+                    if let list, !list.imported {
+                        Button("Paylaşım: \(list.visibility.label)", systemImage: list.visibility.symbol) { openVisibility(list) }
+                    }
+                    Button("Dosya olarak gönder", systemImage: "square.and.arrow.up") { Task { await share() } }
                         .disabled(cards.isEmpty)
                     Button("Adını değiştir", systemImage: "pencil") {
                         newTitle = list?.title ?? ""
@@ -162,6 +167,10 @@ struct UserListView: View {
         .sheet(item: $shareURL) { url in
             ShareSheet(url: url).presentationDetents([.medium, .large])
         }
+        .sheet(item: $visibilityList) { list in
+            VisibilitySheet(list: list).environment(model).presentationDetents([.medium, .large])
+        }
+        .toast($toast)
         .alert("Listenin adı", isPresented: $renaming) {
             TextField("Ad", text: $newTitle)
             Button("Vazgeç", role: .cancel) {}
@@ -197,6 +206,15 @@ struct UserListView: View {
         Task { try? await model.editList { db in try UserLists.remove(cardID: card, from: id, db: db) } }
     }
 
+    /// Link and Keşfet sharing go through the account.
+    private func openVisibility(_ list: UserList) {
+        guard model.account.isSignedIn else {
+            toast = "Paylaşmak için Profil'den Apple ile giriş yap"
+            return
+        }
+        visibilityList = list
+    }
+
     /// Sharing is Pro; the file opens in the app on any phone that has it.
     private func share() async {
         guard model.isPro else {
@@ -211,12 +229,15 @@ extension URL: @retroactive Identifiable {
     public var id: String { absoluteString }
 }
 
-/// The system share sheet for a file.
+/// The system share sheet for a file or a link.
 struct ShareSheet: UIViewControllerRepresentable {
-    let url: URL
+    let items: [Any]
+
+    init(url: URL) { items = [url] }
+    init(items: [Any]) { self.items = items }
 
     func makeUIViewController(context: Context) -> UIActivityViewController {
-        UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
     }
 
     func updateUIViewController(_ controller: UIActivityViewController, context: Context) {}

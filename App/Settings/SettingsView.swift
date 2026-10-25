@@ -33,7 +33,8 @@ struct SettingsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                ScreenTitle(title: "Ayarlar")
+                ScreenTitle(title: "Profil")
+                AccountSection()
                 if let data {
                     levelSection(data)
                     widgetSection(data)

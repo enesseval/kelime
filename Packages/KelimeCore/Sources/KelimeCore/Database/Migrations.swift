@@ -132,6 +132,21 @@ enum Migrations {
             }
         }
 
+        migrator.registerMigration("v6") { db in
+            // Account sync: who may open the list, when it last changed here and when it last
+            // matched the server, the Keşfet list a saved copy came from, and deletions still to
+            // send.
+            try db.alter(table: "user_list") { t in
+                t.add(column: "visibility", .text).notNull().defaults(to: "private")
+                t.add(column: "updated_at", .datetime)
+                t.add(column: "synced_at", .datetime)
+                t.add(column: "source_id", .text)
+            }
+            try db.create(table: "user_list_deleted") { t in
+                t.primaryKey("id", .text)
+            }
+        }
+
         return migrator
     }
 }

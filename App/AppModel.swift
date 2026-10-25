@@ -22,6 +22,7 @@ final class AppModel {
 
     let router = AppRouter()
     let purchases = PurchaseManager()
+    let account = AccountManager()
     let clock = AppClock.system
 
     var database: AppDatabase? {
@@ -34,7 +35,15 @@ final class AppModel {
         await purchases.refreshEntitlement()
         await WidgetRefresher.refresh(database)
         dataVersion += 1
+        await account.sync()
         await updateContent()
+    }
+
+    /// The account sync changed lists: screens and the widget pick them up.
+    func reloadAfterSync() async {
+        guard let database else { return }
+        dataVersion += 1
+        await WidgetRefresher.rebuild(database)
     }
 
     func start() async {
@@ -54,6 +63,7 @@ final class AppModel {
             showOnboarding = !((try? await db.reader.read { db in try Settings.bool(.onboardingDone, in: db) }) ?? false)
             phase = .ready(db)
             purchases.start(app: self)
+            account.start(app: self)
             #if DEBUG
             // Screenshots of the paywall: launch with `-showPaywall lists` (Debug only).
             if let name = UserDefaults.standard.string(forKey: "showPaywall"), let trigger = PaywallTrigger(rawValue: name) {
@@ -144,6 +154,7 @@ final class AppModel {
             let list = try await database.writer.write { db in try UserLists.create(title: title, isPro: pro, db: db) }
             dataVersion += 1
             UsageCounter.count(.listCreated)
+            Task { await account.sync() }
             return list
         } catch UserListError.limitReached {
             router.showPaywall(.lists)
@@ -157,6 +168,17 @@ final class AppModel {
         try await database.writer.write(body)
         dataVersion += 1
         await WidgetRefresher.rebuild(database)
+        Task { await account.sync() }
+    }
+
+    /// Saves a Keşfet or link list as the learner's; returns its local id.
+    func importShared(_ shared: SharedList, sourceID: String) async -> String? {
+        guard let database else { return nil }
+        guard let id = try? await database.writer.write({ db in try UserLists.import(shared, sourceID: sourceID, db: db).id }) else { return nil }
+        dataVersion += 1
+        await WidgetRefresher.rebuild(database)
+        UsageCounter.count(.listImported)
+        return id
     }
 
     /// Writes the list to a temporary `.kelimelist` file to share.

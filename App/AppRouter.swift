@@ -4,7 +4,7 @@ import Observation
 import SwiftUI
 
 enum AppTab: Hashable {
-    case today, play, words, settings
+    case today, play, words, discover, settings
 }
 
 /// Screens pushed onto a tab's navigation stack.
@@ -18,6 +18,7 @@ enum Route: Hashable {
     case unit(String)
     case userList(String)
     case story(String, String)
+    case sharedList(String)
 }
 
 struct PuzzleRequest: Identifiable {
@@ -38,6 +39,7 @@ final class AppRouter {
     var todayPath: [Route] = []
     var playPath: [Route] = []
     var wordsPath: [Route] = []
+    var discoverPath: [Route] = []
     var settingsPath: [Route] = []
     var paywall: PaywallRequest?
     /// Presents a Quick Review session full screen.
@@ -67,6 +69,7 @@ final class AppRouter {
         switch tab {
         case .words: wordsPath.append(.word(id))
         case .play: playPath.append(.word(id))
+        case .discover: discoverPath.append(.word(id))
         default:
             tab = .today
             todayPath.append(.word(id))
@@ -102,8 +105,20 @@ final class AppRouter {
         paywall = PaywallRequest(trigger: trigger, deck: deck)
     }
 
-    /// Handles `kelime://word/<id>` and `kelime://puzzle` from widgets.
+    /// A shared list from Keşfet or a link.
+    func openSharedList(_ id: String) {
+        tab = .discover
+        discoverPath = [.sharedList(id)]
+    }
+
+    /// Handles `kelime://word/<id>` and `kelime://puzzle` from widgets, `kelime://list/<id>` and
+    /// the web link `…/liste.html?id=<id>` for shared lists.
     func handle(_ url: URL) {
+        if url.scheme == "https", url.path().hasSuffix("liste.html"),
+           let id = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first(where: { $0.name == "id" })?.value {
+            openSharedList(id.lowercased())
+            return
+        }
         guard url.scheme == "kelime" else { return }
         paywall = nil
         reviewPresented = false
@@ -114,6 +129,10 @@ final class AppRouter {
             guard !id.isEmpty, id != "/" else { return }
             tab = .today
             todayPath = [.word(id)]
+        case "list":
+            let id = url.lastPathComponent
+            guard UUID(uuidString: id) != nil else { return }
+            openSharedList(id.lowercased())
         case "puzzle":
             tab = .play
             playPath = []
