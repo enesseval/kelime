@@ -101,6 +101,8 @@ struct UserListView: View {
     @State private var confirmDelete = false
     @State private var shareURL: URL?
     @State private var visibilityList: UserList?
+    /// The row whose swipe actions are showing.
+    @State private var openRow: String?
     @State private var toast: String?
 
     var body: some View {
@@ -122,16 +124,18 @@ struct UserListView: View {
                     .padding(.horizontal, 20)
                     LazyVStack(spacing: 0) {
                         ForEach(cards) { item in
-                            Button { model.router.openWord(item.id) } label: { WordRow(item: item) }
-                                .buttonStyle(.plain)
-                                .contextMenu {
-                                    Button("Listeden çıkar", systemImage: "minus.circle", role: .destructive) { remove(item) }
-                                }
+                            SwipeRow(id: item.id, actions: [
+                                SwipeRow.Action(title: "Listeden çıkar", systemImage: "trash", ink: .white, background: Palette.amberInk) { remove(item) },
+                            ], openRow: $openRow) {
+                                model.router.openWord(item.id)
+                            } content: {
+                                WordRow(item: item)
+                            }
                             Rectangle().fill(Palette.line).frame(height: 1).padding(.leading, 20)
                         }
                     }
                     if !cards.isEmpty {
-                        Text("Bir kelimeyi listeden çıkarmak için basılı tut.")
+                        Text("Bir kelimeyi listeden çıkarmak için sola kaydır.")
                             .font(KelimeFont.ui(12, relativeTo: .caption))
                             .foregroundStyle(Palette.ink2)
                             .frame(maxWidth: .infinity)
