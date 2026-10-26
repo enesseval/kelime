@@ -77,13 +77,22 @@ struct WordsView: View {
     /// same card; the last list that is on cannot be switched off.
     @ViewBuilder
     private var lists: some View {
-        let onCount = decks.filter(\.enabled).count + ownLists.filter { $0.list.enabled && $0.total > 0 }.count
+        // The course counts as one source: every level deck goes on and off with its card.
+        let courseOn = decks.contains { $0.deck.level != nil && $0.enabled }
+        let examsOn = decks.filter { $0.deck.tag != nil && $0.enabled }.count
+        let listsOn = ownLists.filter { $0.list.enabled && $0.total > 0 }.count
+        let onCount = course != nil ? (courseOn ? 1 : 0) + examsOn + listsOn : decks.filter(\.enabled).count + listsOn
         VStack(alignment: .leading, spacing: 18) {
             if let course {
                 caption("KURS")
                 if let deck = decks.first(where: { $0.deck.level == course.level }) {
-                    DeckCard(deck: deck, title: "\(course.level.rawValue) kursu", keepOn: deck.enabled && onCount == 1)
+                    DeckCard(deck: deck.with(enabled: courseOn), title: "\(course.level.rawValue) kursu", keepOn: courseOn && onCount == 1) { on in
+                        Task { await model.setCourse(enabled: on) }
+                    }
                 }
+                Text(courseOn ? "Kapatırsan widget'ta sadece açtığın sınav listeleri ve kendi listelerin döner." : "Kurs widget'ta kapalı; widget açtığın listelerden kelime gösteriyor.")
+                    .font(KelimeFont.ui(12, relativeTo: .caption))
+                    .foregroundStyle(Palette.ink2)
                 UnitList(course: course)
                 caption("KENDİ LİSTELERİM")
                 OwnListsSection(lists: ownLists, keepOn: { $0.list.enabled && $0.total > 0 && onCount == 1 })
@@ -295,6 +304,8 @@ struct DeckCard: View {
     var title: String?
     /// The only list that is on: switching it off would leave the widget empty.
     var keepOn = false
+    /// Replaces the deck switch (the course card turns every level deck at once).
+    var onToggle: ((Bool) -> Void)?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -306,7 +317,9 @@ struct DeckCard: View {
             ThinProgressBar(fraction: deck.fraction)
             Toggle(isOn: Binding(
                 get: { deck.enabled },
-                set: { value in Task { await model.setDeck(deck.deck, enabled: value) } }
+                set: { value in
+                    if let onToggle { onToggle(value) } else { Task { await model.setDeck(deck.deck, enabled: value) } }
+                }
             )) {
                 Text("Widget'ta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
             }

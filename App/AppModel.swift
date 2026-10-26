@@ -135,6 +135,11 @@ final class AppModel {
         }
     }
 
+    /// Kelimelerim › Listeler › kurs: the whole course on or off for the widget.
+    func setCourse(enabled: Bool) async {
+        await write(rebuildQueue: true) { db in try DeckQueries.setCourse(enabled, db: db) }
+    }
+
     func setDeck(_ deck: DeckID, enabled: Bool) async {
         await write(rebuildQueue: true) { db in
             try DeckQueries.setEnabled(enabled, deck: deck, db: db)

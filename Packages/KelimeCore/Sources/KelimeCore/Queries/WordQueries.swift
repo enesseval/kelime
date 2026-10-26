@@ -217,6 +217,12 @@ public struct DeckProgress: Sendable, Equatable, Identifiable {
     public var id: String { deck.rawValue }
     public var fraction: Double { total == 0 ? 0 : Double(learned) / Double(total) }
     public var isFinished: Bool { total > 0 && learned == total }
+
+    public func with(enabled: Bool) -> DeckProgress {
+        var copy = self
+        copy.enabled = enabled
+        return copy
+    }
 }
 
 public enum DeckQueries {
@@ -238,6 +244,26 @@ public enum DeckQueries {
                 enabled: prefs.enabledDecks.contains(deck)
             )
         }
+    }
+
+    /// Whether the course is on the widget: any level deck is on (earlier levels stay on after
+    /// moving up, so their struggling words keep coming back).
+    public static func courseEnabled(db: Database) throws -> Bool {
+        try Preferences.load(db).enabledDecks.contains { $0.level != nil }
+    }
+
+    /// Turns the whole course on or off for the widget and Quick Review. Off takes every level
+    /// deck out, so only exam lists and the learner's lists remain; on brings back the levels up
+    /// to the current one that have units.
+    public static func setCourse(_ enabled: Bool, db: Database) throws {
+        var prefs = try Preferences.load(db)
+        prefs.enabledDecks.removeAll { $0.level != nil }
+        if enabled {
+            let levels = try Curriculum.levels(db: db).filter { $0 <= prefs.level }
+            let decks = DeckID.allCases.filter { deck in deck.level.map(levels.contains) ?? false }
+            prefs.enabledDecks.append(contentsOf: decks.isEmpty ? DeckID.allCases.filter { $0.level == prefs.level } : decks)
+        }
+        try prefs.save(db)
     }
 
     /// Turns "widget'ta göster" on or off for a deck.

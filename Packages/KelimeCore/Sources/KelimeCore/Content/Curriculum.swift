@@ -143,7 +143,8 @@ public enum Curriculum {
         return Set(saved).union(core)
     }
 
-    /// Starts `unitID`: its cards join the widget, and its level deck is switched on.
+    /// Starts `unitID`: its cards join the widget, and its level deck is switched on while the
+    /// course is on.
     public static func start(_ unitID: String, db: Database) throws {
         guard let unit = try CurriculumUnit.fetchOne(db, key: unitID) else { return }
         var saved = (try Settings.string(.unitsStarted, in: db) ?? "").split(separator: ",").map(String.init)
@@ -151,8 +152,12 @@ public enum Curriculum {
             saved.append(unitID)
             try Settings.set(.unitsStarted, saved.joined(separator: ","), in: db)
         }
+        // The level deck joins only while the course is on: a learner who took the course off
+        // the widget for their own or exam lists keeps it off as units advance.
         var prefs = try Preferences.load(db)
-        if let deck = DeckID.allCases.first(where: { $0.level == unit.level }), !prefs.enabledDecks.contains(deck) {
+        let courseOn = prefs.enabledDecks.contains { $0.level != nil }
+        let nothingElse = try prefs.enabledDecks.isEmpty && !UserLists.hasEnabledLists(db: db)
+        if courseOn || nothingElse, let deck = DeckID.allCases.first(where: { $0.level == unit.level }), !prefs.enabledDecks.contains(deck) {
             prefs.enabledDecks.append(deck)
             try prefs.save(db)
         }
