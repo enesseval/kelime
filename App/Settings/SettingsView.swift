@@ -237,6 +237,18 @@ struct SettingsView: View {
                 .padding(.horizontal, 16)
                 .frame(minHeight: 50)
                 Divider().overlay(Palette.line)
+                Button { Task { await app.purchases.refreshEntitlement() } } label: {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("RevenueCat durumu · yenile").font(KelimeFont.ui(15, relativeTo: .body)).foregroundStyle(Palette.ink)
+                        Text(app.purchases.diagnostics).font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                Divider().overlay(Palette.line)
             }
             NavigationLink(value: Route.usageCounters) {
                 SettingsRowLabel("Kullanım sayaçları", value: "")

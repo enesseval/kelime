@@ -9,6 +9,7 @@ public enum PaywallTrigger: String, Sendable, CaseIterable, Identifiable {
     case personalPuzzle
     case archive
     case examPlan
+    case discover
 
     public var id: String { rawValue }
 
@@ -21,6 +22,7 @@ public enum PaywallTrigger: String, Sendable, CaseIterable, Identifiable {
         case .personalPuzzle: "Sana özel bulmaca"
         case .archive: "Bulmaca arşivi"
         case .examPlan: "Sınav planı"
+        case .discover: "Keşfet'ten hazır listeler"
         }
     }
 }

@@ -215,7 +215,10 @@ struct SharedListView: View {
                 .padding(.top, 4)
             } else {
                 Button { Task { await save(item) } } label: {
-                    Label("Listelerime ekle", systemImage: "plus")
+                    HStack(spacing: 8) {
+                        Label("Listelerime ekle", systemImage: "plus")
+                        if !app.isPro { ProBadge() }
+                    }
                 }
                 .buttonStyle(PrimaryButtonStyle(height: 50))
                 .padding(.top, 4)
@@ -254,6 +257,11 @@ struct SharedListView: View {
     }
 
     private func save(_ item: AccountManager.SharedItem) async {
+        // Adding other learners' lists is Pro; browsing them is free.
+        guard app.isPro else {
+            app.router.showPaywall(.discover)
+            return
+        }
         let shared = SharedList(title: item.title, cards: item.cards)
         guard let newID = await app.importShared(shared, sourceID: listID) else {
             toast = "Liste eklenemedi"

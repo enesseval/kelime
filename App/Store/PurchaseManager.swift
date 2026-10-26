@@ -26,6 +26,8 @@ final class PurchaseManager {
     private(set) var trialEligible = true
     private(set) var loadingProducts = false
     private(set) var lastError: String?
+    /// What RevenueCat last reported, for Geliştirici: active entitlements and products.
+    private(set) var diagnostics = "Henüz okunmadı"
 
     private var updatesTask: Task<Void, Never>?
     private weak var app: AppModel?
@@ -116,7 +118,15 @@ final class PurchaseManager {
 
     /// Caches the entitlement and rebuilds the widgets when it changes.
     private func apply(_ info: CustomerInfo?) async {
-        let active = info?.entitlements[Self.entitlement]?.isActive ?? false
+        // The entitlement, or any of our products owned directly: a product not attached to the
+        // entitlement in RevenueCat must not leave a paying learner on the free plan.
+        let entitled = info?.entitlements[Self.entitlement]?.isActive ?? false
+        let products = (info?.activeSubscriptions ?? []).union(info?.nonSubscriptions.map(\.productIdentifier) ?? [])
+        let active = entitled || ProEntitlement.isPro(activeProductIDs: products)
+        if let info {
+            let entitlements = info.entitlements.active.keys.sorted().joined(separator: ", ")
+            diagnostics = "Yetki: \(entitlements.isEmpty ? "yok" : entitlements) · Ürünler: \(products.isEmpty ? "yok" : products.sorted().joined(separator: ", "))"
+        }
         let pro = Self.isOnSale && (active || DevTools.forcePro)
         isPro = pro
         guard let app, let database = app.database else { return }

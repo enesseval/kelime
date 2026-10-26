@@ -29,7 +29,8 @@ struct PaywallView: View {
     /// What Pro adds. Everything else stays free.
     static let features = [
         Feature(id: "lists", symbol: "list.bullet.rectangle.portrait", title: "Sınırsız kendi listen", detail: "İstediğin kadar liste, hepsi widget'ta"),
-        Feature(id: "share", symbol: "square.and.arrow.up", title: "Listeni paylaş", detail: "Arkadaşına ya da öğrencine gönder"),
+        Feature(id: "share", symbol: "square.and.arrow.up", title: "Listeni paylaş", detail: "Linkle gönder ya da Keşfet'te herkese aç"),
+        Feature(id: "discover", symbol: "safari", title: "Keşfet'ten hazır listeler", detail: "Başkalarının listelerini tek dokunuşla ekle"),
         Feature(id: "exam", symbol: "calendar.badge.clock", title: "Sınav planı", detail: "Sınav gününe göre günlük kelime hedefi"),
         Feature(id: "rotation", symbol: "bolt.fill", title: "Daha sık yeni kelime", detail: "Widget'ta günde 24'e kadar kelime"),
         Feature(id: "puzzle", symbol: "puzzlepiece.extension", title: "Sana özel bulmaca", detail: "Zorlandıklarınla; bulmaca arşivi de açılır"),
@@ -43,6 +44,7 @@ struct PaywallView: View {
         case .examPlan: "exam"
         case .rotation: "rotation"
         case .personalPuzzle, .archive: "puzzle"
+        case .discover: "discover"
         case .base: nil
         }
     }
@@ -180,10 +182,13 @@ struct PaywallView: View {
             .buttonStyle(PrimaryButtonStyle(height: 56))
             .disabled(working || selectedPackage == nil)
             .opacity(selectedPackage == nil ? 0.6 : 1)
-            Text(plan == .lifetime ? "Bir kez öde, hep senin. Reklam yok, hesap gerekmez." : "Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse yenilenir. Ayarlar › Apple Kimliği › Abonelikler'den yönetilir.")
+            // Two lines kept for every plan, so the button does not move when the plan changes.
+            Text(plan == .lifetime ? "Tek seferlik ödeme; abonelik değildir, yenilenmez. Satın alımın Geri yükle ile her cihazına gelir." : "Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse yenilenir. Ayarlar › Apple Kimliği › Abonelikler'den yönetilir.")
                 .font(KelimeFont.ui(11, relativeTo: .caption2))
                 .foregroundStyle(.white.opacity(0.6))
                 .multilineTextAlignment(.center)
+                .lineLimit(2, reservesSpace: true)
+                .minimumScaleFactor(0.9)
             HStack(spacing: 18) {
                 Button("Geri yükle") { Task { await restore() } }
                 Button("Koşullar") { openURL(Legal.termsURL) }
@@ -207,6 +212,7 @@ struct PaywallView: View {
         case .personalPuzzle: "Zorlandığın ve öğrendiğin kelimelerden karışık bir bulmaca."
         case .archive: "Kaçırdığın günlerin bulmacalarını çöz."
         case .examPlan: "Sınav gününe kadar her gün kaç kelime çalışman gerektiğini görelim."
+        case .discover: "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında ve Hızlı Tekrar'da dönsün."
         case .base: "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."
         }
     }
@@ -228,9 +234,11 @@ struct PaywallView: View {
 
     private var ctaTitle: String {
         switch plan {
-        case .annual: purchases.trialEligible ? "7 gün ücretsiz dene" : "Yıllık başla"
-        case .monthly: "Aylık başla"
-        case .lifetime: "Ömür boyu al"
+        case .annual:
+            if purchases.trialEligible { "7 gün ücretsiz dene" }
+            else { purchases.annual.map { "Abone ol · \($0.storeProduct.localizedPriceString)/yıl" } ?? "Abone ol" }
+        case .monthly: purchases.monthly.map { "Abone ol · \($0.storeProduct.localizedPriceString)/ay" } ?? "Abone ol"
+        case .lifetime: purchases.lifetime.map { "Satın al · \($0.storeProduct.localizedPriceString)" } ?? "Satın al"
         }
     }
 
