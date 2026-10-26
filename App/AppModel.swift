@@ -72,6 +72,12 @@ final class AppModel {
                     router.showPaywall(trigger)
                 }
             }
+            if let name = UserDefaults.standard.string(forKey: "paywallDesign"), let design = PaywallDesign(rawValue: name) {
+                Task {
+                    try? await Task.sleep(for: .seconds(1.5))
+                    router.designPreview = design
+                }
+            }
             #endif
             PhoneWatchSync.shared.start(database: db)
             await applySpeechRate()

@@ -59,6 +59,9 @@ struct MainTabView: View {
         .sheet(item: $router.paywall) { request in
             PaywallView(request: request).environment(model)
         }
+        .sheet(item: $router.designPreview) { design in
+            PaywallDesignView(design: design, request: AppRouter.PaywallRequest(trigger: .base)).environment(model)
+        }
         .fullScreenCover(isPresented: $router.reviewPresented) {
             QuickReviewView().environment(model)
         }
@@ -114,6 +117,7 @@ extension View {
             case .userList(let id): UserListView(listID: id)
             case .story(let unit, let story): StoryView(unitID: unit, storyID: story)
             case .sharedList(let id): SharedListView(listID: id)
+            case .paywallGallery: PaywallGalleryView()
             }
         }
     }

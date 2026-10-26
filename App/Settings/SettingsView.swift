@@ -237,6 +237,11 @@ struct SettingsView: View {
                 .padding(.horizontal, 16)
                 .frame(minHeight: 50)
                 Divider().overlay(Palette.line)
+                NavigationLink(value: Route.paywallGallery) {
+                    SettingsRowLabel("Paywall tasarımları", value: "6")
+                }
+                .buttonStyle(.plain)
+                Divider().overlay(Palette.line)
                 Button { Task { await app.purchases.refreshEntitlement() } } label: {
                     VStack(alignment: .leading, spacing: 3) {
                         Text("RevenueCat durumu · yenile").font(KelimeFont.ui(15, relativeTo: .body)).foregroundStyle(Palette.ink)

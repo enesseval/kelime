@@ -19,6 +19,7 @@ enum Route: Hashable {
     case userList(String)
     case story(String, String)
     case sharedList(String)
+    case paywallGallery
 }
 
 struct PuzzleRequest: Identifiable {
@@ -42,6 +43,8 @@ final class AppRouter {
     var discoverPath: [Route] = []
     var settingsPath: [Route] = []
     var paywall: PaywallRequest?
+    /// Debug screenshots of a paywall design (`-paywallDesign wordCard`).
+    var designPreview: PaywallDesign?
     /// Presents a Quick Review session full screen.
     var reviewPresented = false
     /// The deck of the presented Quick Review, for the exam plan; nil uses the widget's sources.
