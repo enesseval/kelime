@@ -4,7 +4,7 @@ import RevenueCat
 import SwiftUI
 
 /// The Pro paywall: a night sky like onboarding, the reason it opened first, what Pro adds,
-/// and the three plans with the annual one chosen. Never shown on first launch.
+/// and the three plans (monthly, annual, lifetime) with the annual one chosen. Never shown on first launch.
 struct PaywallView: View {
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
@@ -67,9 +67,9 @@ struct PaywallView: View {
                         }
                     }
                     VStack(spacing: 10) {
+                        planCard(.monthly, title: "Aylık", price: purchases.monthly?.storeProduct.localizedPriceString, note: "Her ay yenilenir, istediğin zaman iptal et", badge: nil)
                         planCard(.annual, title: "Yıllık", price: purchases.annual?.storeProduct.localizedPriceString, note: annualNote,
                                  badge: purchases.annualSaving.map { "%\($0) tasarruf" } ?? "En avantajlı")
-                        planCard(.monthly, title: "Aylık", price: purchases.monthly?.storeProduct.localizedPriceString, note: "Her ay yenilenir, istediğin zaman iptal et", badge: nil)
                         planCard(.lifetime, title: "Ömür boyu", price: purchases.lifetime?.storeProduct.localizedPriceString, note: "Tek seferlik ödeme, abonelik yok", badge: nil)
                     }
                     if purchases.packages.isEmpty && !purchases.loadingProducts {

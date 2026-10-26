@@ -20,7 +20,7 @@ final class PurchaseManager {
         case purchased, pending, cancelled
     }
 
-    /// The current offering's packages, annual first, then monthly and lifetime.
+    /// The current offering's packages: monthly, annual, lifetime.
     private(set) var packages: [Package] = []
     private(set) var isPro = false
     private(set) var trialEligible = true
@@ -68,7 +68,7 @@ final class PurchaseManager {
         loadingProducts = true
         defer { loadingProducts = false }
         do {
-            let order: [PackageType] = [.annual, .monthly, .lifetime]
+            let order: [PackageType] = [.monthly, .annual, .lifetime]
             let available = try await Purchases.shared.offerings().current?.availablePackages ?? []
             packages = available.sorted { (order.firstIndex(of: $0.packageType) ?? 9) < (order.firstIndex(of: $1.packageType) ?? 9) }
             if packages.isEmpty { lastError = "Ürünler yüklenemedi" }
