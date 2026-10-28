@@ -11,14 +11,20 @@ struct OwnListsSection: View {
     let keepOn: (UserListSummary) -> Bool
     @State private var naming = false
     @State private var title = ""
+    /// The row whose delete button is showing, and the list waiting for confirmation.
+    @State private var openRow: String?
+    @State private var deleting: UserListSummary?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             ForEach(lists) { summary in
-                NavigationLink(value: Route.userList(summary.id)) {
+                SwipeRow(id: summary.id, actions: [
+                    SwipeRow.Action(title: "Listeyi sil", systemImage: "trash", ink: .white, background: Palette.amberInk) { deleting = summary },
+                ], openRow: $openRow) {
+                    model.router.wordsPath.append(.userList(summary.id))
+                } content: {
                     UserListCard(summary: summary, keepOn: keepOn(summary))
                 }
-                .buttonStyle(.plain)
             }
             Button {
                 title = ""
@@ -43,6 +49,19 @@ struct OwnListsSection: View {
                     .font(KelimeFont.ui(13, relativeTo: .footnote))
                     .foregroundStyle(Palette.ink2)
             }
+        }
+        .confirmationDialog("Liste silinsin mi?", isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }), titleVisibility: .visible, presenting: deleting) { summary in
+            Button("\(summary.list.title) listesini sil", role: .destructive) {
+                let id = summary.id, last = keepOn(summary)
+                Task {
+                    try? await model.editList { db in try UserLists.delete(id, db: db) }
+                    // The widget needs a source: the course comes back.
+                    if last { await model.setCourse(enabled: true) }
+                }
+            }
+            Button("Vazgeç", role: .cancel) {}
+        } message: { summary in
+            Text(keepOn(summary) ? "Widget'ta açık tek liste bu; silersen widget'ta kurs yeniden açılır." : "Kendi yazdığın kelimeler de silinir. Uygulamanın kelimeleri ve ilerlemen yerinde kalır.")
         }
         .alert("Yeni liste", isPresented: $naming) {
             TextField("Örn. İş toplantısı", text: $title)

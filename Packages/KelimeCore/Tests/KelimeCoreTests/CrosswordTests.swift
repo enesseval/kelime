@@ -103,8 +103,13 @@ struct CrosswordTests {
         for ch in "borrow" { game.type(ch) }
         #expect(game.isSolved(game.activeEntry) == false || game.activeEntry.id != "1a")
         #expect(game.isSolved(Self.sample.entries[0]))
-        // Solved, so the cursor moved to the next unsolved word (3 Yatay).
-        #expect(game.activeEntry.id == "3a")
+        // Solved, so the cursor moved to the next unsolved word by number (2 Dikey).
+        #expect(game.activeEntry.id == "2d")
+        // Tapping the solved crossing of 1 Yatay and 2 Dikey picks the unsolved 2 Dikey.
+        game.focus(Self.sample.entries.first { $0.id == "1a" }!)
+        game.select(GridPoint(0, 3))
+        #expect(game.activeEntry.id == "2d")
+        #expect(game.cursor != GridPoint(0, 3))
         #expect(game.solvedCount == 1)
     }
 
@@ -142,6 +147,8 @@ struct CrosswordTests {
         game.type("E")
         #expect(game.wrong.isEmpty)
 
+        game.step(1)
+        #expect(game.activeEntry.id == "4d") // by number: 4 Dikey comes before 5 Yatay
         game.step(1)
         #expect(game.activeEntry.id == "5a")
         game.revealLetter()

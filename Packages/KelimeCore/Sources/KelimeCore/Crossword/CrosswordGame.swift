@@ -20,7 +20,7 @@ public struct CrosswordGame: Sendable, Equatable {
     public init(puzzle: Crossword) {
         self.puzzle = puzzle
         solution = puzzle.solution
-        let first = puzzle.orderedEntries.first!
+        let first = puzzle.playOrder.first!
         activeEntryID = first.id
         cursor = first.cells[0]
     }
@@ -70,20 +70,29 @@ public struct CrosswordGame: Sendable, Equatable {
     }
 
     /// Tapping a cell selects it; tapping the cursor again switches direction at a crossing.
+    /// At a crossing with a solved word, the unsolved one is chosen: there is nothing left to do
+    /// in a solved word.
     public mutating func select(_ point: GridPoint) {
         let options = puzzle.entries(at: point)
         guard !options.isEmpty else { return }
-        if point == cursor, options.count > 1, let other = options.first(where: { $0.id != activeEntryID }) {
+        let unsolved = options.filter { !isSolved($0) }
+        let activeHere = options.contains { $0.id == activeEntryID }
+        if point == cursor, options.count > 1, let other = options.first(where: { $0.id != activeEntryID }), unsolved.count != 1 {
             activeEntryID = other.id
-        } else if !options.contains(where: { $0.id == activeEntryID }) {
-            activeEntryID = (options.first { $0.direction == .across } ?? options[0]).id
+        } else if !activeHere || (isSolved(activeEntry) && !unsolved.isEmpty) {
+            let pick = unsolved.first { $0.direction == .across } ?? unsolved.first ?? options.first { $0.direction == .across } ?? options[0]
+            activeEntryID = pick.id
         }
         cursor = point
+        // A locked cell (solved crossing or revealed) takes no letters: start at the first open one.
+        if isLocked(point), !isSolved(activeEntry), let open = activeEntry.cells.first(where: { !isLocked($0) && typed[$0] == nil }) ?? activeEntry.cells.first(where: { !isLocked($0) }) {
+            cursor = open
+        }
     }
 
-    /// Next (or previous) unsolved word in clue order; stays put when everything is solved.
+    /// Next (or previous) unsolved word by number; stays put when everything is solved.
     public mutating func step(_ delta: Int) {
-        let ordered = puzzle.orderedEntries
+        let ordered = puzzle.playOrder
         guard var index = ordered.firstIndex(where: { $0.id == activeEntryID }) else { return }
         for _ in 0..<ordered.count {
             index = (index + delta + ordered.count) % ordered.count
@@ -200,7 +209,7 @@ public struct CrosswordGame: Sendable, Equatable {
         wrong = Set(snapshot.wrong.compactMap(Self.point).filter { solution[$0] != nil })
         helped = Set(snapshot.helped)
         hintsUsed = snapshot.hintsUsed
-        if let next = puzzle.orderedEntries.first(where: { !isSolved($0) }) { focus(next) }
+        if let next = puzzle.playOrder.first(where: { !isSolved($0) }) { focus(next) }
     }
 
     public func encodedSnapshot() throws -> String {

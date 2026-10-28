@@ -1,7 +1,81 @@
 {
   "sourceLanguage" : "tr",
   "strings" : {
+    "Anlama bakıp doğru kelimeyi seç." : {
 
+    },
+    "Arka plansız: KELİME (tür) ve anlamı" : {
+
+    },
+    "Ayarlar › Görünüm" : {
+
+    },
+    "Biliyorum" : {
+
+    },
+    "Bugün kaç kelime tekrar ettiğini gösterir." : {
+
+    },
+    "Bugünkü tekrar" : {
+
+    },
+    "Cevapla" : {
+
+    },
+    "Görünüm" : {
+
+    },
+    "Gün boyu bir kelime, anlamı ve örnek cümlesi." : {
+
+    },
+    "Hangisi?" : {
+
+    },
+    "İngilizce cümle ve Türkçesi" : {
+
+    },
+    "Kart" : {
+
+    },
+    "Kelime" : {
+
+    },
+    "Kelime ve cümle" : {
+
+    },
+    "Kelime ve İngilizce örnek cümle" : {
+
+    },
+    "Kelime widget'ı" : {
+
+    },
+    "Kelime, türü ve Türkçe anlamı" : {
+
+    },
+    "Kendini sına" : {
+
+    },
+    "Önce soru, sonra cevap" : {
+
+    },
+    "Örnek cümle" : {
+
+    },
+    "Seçenek" : {
+
+    },
+    "Sözlük" : {
+
+    },
+    "Uygulamadaki seçim" : {
+
+    },
+    "Widget'ın görünüm modunu seç." : {
+
+    },
+    "Zorlanıyorum" : {
+
+    }
   },
   "version" : "1.0"
 }

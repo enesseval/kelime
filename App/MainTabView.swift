@@ -41,7 +41,7 @@ struct MainTabView: View {
             NavigationStack(path: $router.settingsPath) {
                 SettingsView().withRoutes()
             }
-            .tabItem { Label("Profil", systemImage: "person.crop.circle") }
+            .tabItem { Label("Profil", systemImage: Avatar.tabSymbol(model.account.profile)) }
             .tag(AppTab.settings)
         }
         .tint(Palette.accent)
@@ -57,7 +57,7 @@ struct MainTabView: View {
         }
         .toast($importMessage)
         .sheet(item: $router.paywall) { request in
-            PaywallView(request: request).environment(model)
+            WidgetPaywall(request: request).environment(model)
         }
         .sheet(item: $router.designPreview) { design in
             PaywallDesignView(design: design, request: AppRouter.PaywallRequest(trigger: .base)).environment(model)

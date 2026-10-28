@@ -13,6 +13,18 @@ enum Avatar {
         let color: Color
     }
 
+    /// The Profil tab icon: the chosen avatar's symbol, the name's letter in a circle, or the
+    /// plain person when signed out (tab icons take symbols only, tinted by the tab bar).
+    static func tabSymbol(_ profile: AccountManager.Profile?) -> String {
+        guard let profile else { return "person.crop.circle" }
+        if let preset = presets.first(where: { $0.id == profile.avatar }) { return preset.symbol }
+        let letter = profile.name.drop { $0 == "@" }.first.map { String($0).lowercased() } ?? ""
+        if letter.count == 1, let scalar = letter.unicodeScalars.first, ("a"..."z").contains(Character(scalar)) {
+            return "\(letter).circle.fill"
+        }
+        return "person.crop.circle.fill"
+    }
+
     static let presets: [Preset] = [
         Preset(id: "fox", symbol: "hare.fill", color: Color(red: 0.93, green: 0.49, blue: 0.27)),
         Preset(id: "tortoise", symbol: "tortoise.fill", color: Color(red: 0.36, green: 0.62, blue: 0.40)),

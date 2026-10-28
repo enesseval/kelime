@@ -182,6 +182,30 @@ final class AppModel {
         Task { await account.sync() }
     }
 
+    /// Geliştirici › Örnek listeler: three own lists of app words and one own word, to try lists,
+    /// the widget sources, swipe-to-delete and sharing without typing.
+    func createSampleLists() async -> String {
+        let samples: [(String, [String])] = [
+            ("Örnek · Seyahat", ["a1-airport", "a2-passport", "a1-ticket", "a2-luggage", "a1-hotel", "a2-journey", "a2-flight", "a2-delay"]),
+            ("Örnek · İş", ["a2-meeting", "a2-deadline", "a2-colleague", "b1-budget", "b1-contract", "b1-decision"]),
+            ("Örnek · Duygular", ["b2-anxious", "b2-grateful", "b1-jealous", "b1-proud", "b1-lonely", "b1-nervous", "b1-curious"]),
+        ]
+        do {
+            try await editList { db in
+                for (title, ids) in samples {
+                    let list = try UserLists.create(title: title, isPro: true, db: db)
+                    for id in ids { try? UserLists.add(cardID: id, to: list.id, db: db) }
+                    if title.hasSuffix("Seyahat") {
+                        try UserLists.addCustom(word: "boarding pass", meaning: "biniş kartı", pos: .phrase, level: .a2, to: list.id, db: db)
+                    }
+                }
+            }
+            return "3 örnek liste eklendi"
+        } catch {
+            return "Örnek listeler eklenemedi"
+        }
+    }
+
     /// Saves a Keşfet or link list as the learner's; returns its local id.
     func importShared(_ shared: SharedList, sourceID: String) async -> String? {
         guard let database else { return nil }

@@ -1,7 +1,967 @@
 {
   "sourceLanguage" : "tr",
   "strings" : {
+    "" : {
 
+    },
+    "  " : {
+
+    },
+    " · " : {
+
+    },
+    " · kalan %lld" : {
+
+    },
+    " · şu an " : {
+
+    },
+    " 30 saniye sürer." : {
+
+    },
+    " seni bekliyor" : {
+
+    },
+    "—" : {
+
+    },
+    "…bir kelime." : {
+
+    },
+    "·" : {
+
+    },
+    "“%@” kelimesini kendin ekle" : {
+
+    },
+    "@" : {
+
+    },
+    "/ %lld" : {
+
+    },
+    "%@ · %lld/%lld" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$lld/%3$lld"
+          }
+        }
+      }
+    },
+    "%@ · %lld/%lld kelime" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$lld/%3$lld kelime"
+          }
+        }
+      }
+    },
+    "%@ · yakında" : {
+
+    },
+    "%@ ›" : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%@ bitti 🎉" : {
+
+    },
+    "%@ bölümleri hazır." : {
+
+    },
+    "%@ filtresini kaldır" : {
+
+    },
+    "%@ ile başla" : {
+
+    },
+    "%@ seviyesine geç" : {
+
+    },
+    "%%%lld" : {
+
+    },
+    "%lld" : {
+
+    },
+    "%lld  " : {
+
+    },
+    "%lld / %lld kelime" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld / %2$lld kelime"
+          }
+        }
+      }
+    },
+    "%lld / %lld kelime öğrenildi" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld / %2$lld kelime öğrenildi"
+          }
+        }
+      }
+    },
+    "%lld %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld %2$@"
+          }
+        }
+      }
+    },
+    "%lld gün" : {
+
+    },
+    "%lld gün üst üste" : {
+
+    },
+    "%lld harf, ilk harf %@. Yazılan: %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld harf, ilk harf %2$@. Yazılan: %3$@"
+          }
+        }
+      }
+    },
+    "%lld kart" : {
+
+    },
+    "%lld kelime · %@ · %lld ipucu" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld kelime · %2$@ · %3$lld ipucu"
+          }
+        }
+      }
+    },
+    "%lld kelime,\n%lld dakika." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld kelime,\n%2$lld dakika."
+          }
+        }
+      }
+    },
+    "%lld öğrenildi" : {
+
+    },
+    "%lld satır" : {
+
+    },
+    "%lld zorlandığın kelime" : {
+
+    },
+    "%lld zorlanılan" : {
+
+    },
+    "%lld. %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld. %2$@"
+          }
+        }
+      }
+    },
+    "%lld. soru" : {
+
+    },
+    "%lld/%lld" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "%lld/%lld kart öğrenildi" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld kart öğrenildi"
+          }
+        }
+      }
+    },
+    "%lld/%lld kelime · %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld kelime · %3$@"
+          }
+        }
+      }
+    },
+    "✓" : {
+
+    },
+    "2 dakikalık tur seni bekliyor." : {
+
+    },
+    "9:41" : {
+
+    },
+    "09:41" : {
+
+    },
+    "10 kelime" : {
+
+    },
+    "10 kelime · yaklaşık 2 dakika" : {
+
+    },
+    "Aa" : {
+
+    },
+    "Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse yenilenir. Ayarlar › Apple Kimliği › Abonelikler'den yönetilir." : {
+
+    },
+    "Ad" : {
+
+    },
+    "Adım %lld / %lld" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Adım %1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "Adım: %@" : {
+
+    },
+    "Adın" : {
+
+    },
+    "Adını değiştir" : {
+
+    },
+    "adj." : {
+
+    },
+    "Ana ekrana ekle" : {
+
+    },
+    "Ana ekrana eklemek için" : {
+
+    },
+    "Anlamı (Türkçe; birden çoksa virgülle)" : {
+
+    },
+    "Arşiv" : {
+
+    },
+    "Atla" : {
+
+    },
+    "Avatar" : {
+
+    },
+    "Başla" : {
+
+    },
+    "Başla · 2 dk" : {
+
+    },
+    "Baştan başla" : {
+
+    },
+    "Biliyorum" : {
+
+    },
+    "Biliyorum ya da Zorlanıyorum diye işaretle." : {
+
+    },
+    "Bilmiyorum" : {
+
+    },
+    "Bir kelimeyi listeden çıkarmak için sola kaydır." : {
+
+    },
+    "Bir tur daha" : {
+
+    },
+    "Bitti" : {
+
+    },
+    "Bitti ✓" : {
+
+    },
+    "Bölümler sırayla açılır; biri bitmeye yakınken sıradaki başlar. İstersen başka bir bölüme geçebilirsin." : {
+
+    },
+    "Bu aramayla liste bulunamadı" : {
+
+    },
+    "Bu bölüme geç" : {
+
+    },
+    "Bu bölümü bitirdin" : {
+
+    },
+    "bu hafta" : {
+
+    },
+    "Bu hafta " : {
+
+    },
+    "Bu kartta hata mı var? Bildir" : {
+
+    },
+    "Bu kelimenin anlamı ne?" : {
+
+    },
+    "Bu kelimeyi widget'ında daha sık göreceksin" : {
+
+    },
+    "Bu kişinin listeleri artık Keşfet'te sana görünmez." : {
+
+    },
+    "Bu liste paylaşılmıyor" : {
+
+    },
+    "Bu sayılar yalnızca bu cihazda, TestFlight ve geliştirme sürümlerinde tutulur. Olaylar ayrıca kimliksiz olarak TelemetryDeck'e gider (geliştirme sürümünden gitmez)." : {
+
+    },
+    "Bu senin listen." : {
+
+    },
+    "Bugün" : {
+
+    },
+    "Bugün " : {
+
+    },
+    "Bulmaca baştan başlasın mı?" : {
+
+    },
+    "Bulmaca hazırlanamadı" : {
+
+    },
+    "BULMACA TAMAM" : {
+
+    },
+    "Bunlar gün boyu kilit ekranında" : {
+
+    },
+    "Çıkış yap" : {
+
+    },
+    "Çıkış yapılsın mı?" : {
+
+    },
+    "Değişim sıklığı" : {
+
+    },
+    "Değiştir" : {
+
+    },
+    "Devam" : {
+
+    },
+    "Devam et" : {
+
+    },
+    "Dinle" : {
+
+    },
+    "Dinlemek için dokun" : {
+
+    },
+    "Doğru" : {
+
+    },
+    "Doğru cevap: %@" : {
+
+    },
+    "Dosya olarak gönder" : {
+
+    },
+    "Düzenle ›" : {
+
+    },
+    "Ekle" : {
+
+    },
+    "Ekledim" : {
+
+    },
+    "Engelle" : {
+
+    },
+    "Every word sticks a little faster." : {
+
+    },
+    "Favorilerden çıkar" : {
+
+    },
+    "Favorilere ekle" : {
+
+    },
+    "Fiil" : {
+
+    },
+    "Filtrele" : {
+
+    },
+    "Filtrele, %lld filtre açık" : {
+
+    },
+    "Fiyatlar yüklenemedi · Tekrar dene" : {
+
+    },
+    "Gerek yok" : {
+
+    },
+    "Geri" : {
+
+    },
+    "Geri yükle" : {
+
+    },
+    "Gizlilik" : {
+
+    },
+    "Günde 4'e kadar yeni kelime, hiç uğraşmadan." : {
+
+    },
+    "Günlüğü paylaş" : {
+
+    },
+    "Günün Bulmacası" : {
+
+    },
+    "Henüz herkese açık liste yok" : {
+
+    },
+    "Henüz kelime yok" : {
+
+    },
+    "Her tasarım gerçek ürünler ve fiyatlarla açılır; satın alma da çalışır. Açılış sebebi başlığı ve öne çıkan özelliği değiştirir." : {
+
+    },
+    "Herkese açık listelerinin yanında adın ve avatarın görünür." : {
+
+    },
+    "Hesabı kalıcı olarak sil" : {
+
+    },
+    "Hesabın silinsin mi?" : {
+
+    },
+    "Hesabın, profilin ve sunucudaki listelerin silinir. Bu cihazdaki listeler ve ilerlemen kalır. Pro aboneliğini iptal etmek için iPhone Ayarlar › Abonelikler'i kullan." : {
+
+    },
+    "Hesabını bağla" : {
+
+    },
+    "Hikâye oku: %@" : {
+
+    },
+    "Hızlı Tekrar" : {
+
+    },
+    "İçerik yapay zekâ ile üretildi ve kontrol edildi" : {
+
+    },
+    "İlerlemen sıfırlansın mı?" : {
+
+    },
+    "İlerlemeyi sıfırla" : {
+
+    },
+    "İlk listeni oluştur" : {
+
+    },
+    "İnternet bağlantını kontrol edip tekrar dene." : {
+
+    },
+    "İPUÇLARI" : {
+
+    },
+    "İpuçları" : {
+
+    },
+    "İsim" : {
+
+    },
+    "İsteğe bağlı" : {
+
+    },
+    "İzin ver" : {
+
+    },
+    "Kalıp" : {
+
+    },
+    "Kapat" : {
+
+    },
+    "Kapatırsan widget'ta sadece açtığın sınav listeleri ve kendi listelerin döner." : {
+
+    },
+    "Kaydet" : {
+
+    },
+    "KAYITLAR" : {
+
+    },
+    "Kayıt yok." : {
+
+    },
+    "Kelime (İngilizce)" : {
+
+    },
+    "Kelime bulunamadı" : {
+
+    },
+    "Kelime detayını açar" : {
+
+    },
+    "Kelime ekle" : {
+
+    },
+    "Kelime listesi: New General Service List, CC BY-SA 4.0" : {
+
+    },
+    "Kelime Widget" : {
+
+    },
+    "KELİME WIDGET" : {
+
+    },
+    "KELİME WIDGET PRO" : {
+
+    },
+    "Kelime ya da anlam ara" : {
+
+    },
+    "Kelimeler" : {
+
+    },
+    "Kelimelerim" : {
+
+    },
+    "Kendi kelimelerini topla; widget'ta kursla birlikte dönsün." : {
+
+    },
+    "Kendi kelimen" : {
+
+    },
+    "Kendi kelimeni yaz" : {
+
+    },
+    "Kendi listeni Kelimelerim › Listeler'den herkese açabilirsin." : {
+
+    },
+    "Kendi yazdığın kelimeler de silinir. Uygulamanın kelimeleri ve ilerlemen yerinde kalır." : {
+
+    },
+    "Kendim seçeyim" : {
+
+    },
+    "Keşfet" : {
+
+    },
+    "Keşfet'e ulaşılamadı" : {
+
+    },
+    "Kilit ekranı" : {
+
+    },
+    "Kilit ekranı görünümü" : {
+
+    },
+    "Kilit ekranında %@ kelimesi" : {
+
+    },
+    "Kilit ekranında %@ kelimesi: %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kilit ekranında %1$@ kelimesi: %2$@"
+          }
+        }
+      }
+    },
+    "Kilit ekranında öğren. Oyunla pekiştir." : {
+
+    },
+    "Kilit ekranındaki dikdörtgen widget'ın nasıl görüneceğini seç. Her widget'ı ayrıca kendi düzenleme menüsünden değiştirebilirsin." : {
+
+    },
+    "Kilit ekranındaki kelimenin ne sıklıkla yenileneceğini seç. Widget'ın ne zaman yenileneceğine iOS karar verir; kelime bazen birkaç dakika geç değişebilir." : {
+
+    },
+    "Kolay ya da zor gelirse seviyeni istediğin zaman Ayarlar'dan değiştirebilirsin." : {
+
+    },
+    "Kontrol et" : {
+
+    },
+    "Koşullar" : {
+
+    },
+    "kullanici_adi" : {
+
+    },
+    "Kullanıcı engellensin mi?" : {
+
+    },
+    "Kullanıcıyı engelle" : {
+
+    },
+    "Kullanım sayaçları" : {
+
+    },
+    "Kurs ve bölümler · sınav listeleri · sınırsız Hızlı Tekrar · günün bulmacası · bir kendi listen · Keşfet'e göz atmak" : {
+
+    },
+    "Kurs widget'ta kapalı; widget açtığın listelerden kelime gösteriyor." : {
+
+    },
+    "Linki paylaş" : {
+
+    },
+    "Liste açılamadı" : {
+
+    },
+    "Liste ara" : {
+
+    },
+    "Liste hesabınla eşitlenir; değişikliklerin paylaştığın herkeste güncellenir." : {
+
+    },
+    "Liste seçenekleri" : {
+
+    },
+    "Liste silinsin mi?" : {
+
+    },
+    "Liste widget'ına ve Hızlı Tekrar'a eklenir. Bildiğin kelimeler ilerlemeni korur." : {
+
+    },
+    "Listedeki bütün kelimeleri öğrendin 🎉" : {
+
+    },
+    "Listeler" : {
+
+    },
+    "Listelerime ekle" : {
+
+    },
+    "Listelerin bu cihazda kalır; paylaşımları kapanır." : {
+
+    },
+    "Listelerin yedeklenir ve cihazlarında eşitlenir. Listelerini linkle paylaşabilir ya da Keşfet'te herkese açabilirsin. Pro'n da hesabına bağlanır." : {
+
+    },
+    "Listelerinde · aç" : {
+
+    },
+    "Listenin adı" : {
+
+    },
+    "Listeyi sil" : {
+
+    },
+    "Neden şikayet ediyorsun?" : {
+
+    },
+    "Öğrendiğin ve zorlandığın kelimeler, bölümler, bulmacalar ve seçimlerin silinir; seviyeni yeniden seçersin." : {
+
+    },
+    "Oluştur" : {
+
+    },
+    "Önceki ipucu" : {
+
+    },
+    "Öneri gönder" : {
+
+    },
+    "Önerilen seviyen" : {
+
+    },
+    "Örn. İş toplantısı" : {
+
+    },
+    "Örneğin Türkçesi" : {
+
+    },
+    "Örnek bildirim: Tekrar zamanı" : {
+
+    },
+    "Örnek cümle (İngilizce)" : {
+
+    },
+    "Oyna" : {
+
+    },
+    "Özelleştir" : {
+
+    },
+    "Paylaş" : {
+
+    },
+    "Paylaşım" : {
+
+    },
+    "Paylaşım: %@" : {
+
+    },
+    "Paywall tasarımları" : {
+
+    },
+    "PLAN" : {
+
+    },
+    "pro" : {
+
+    },
+    "Pro" : {
+
+    },
+    "PRO" : {
+
+    },
+    "Pro'yu aç (satın almadan)" : {
+
+    },
+    "Profil" : {
+
+    },
+    "Rastgele" : {
+
+    },
+    "RevenueCat durumu · yenile" : {
+
+    },
+    "Saat" : {
+
+    },
+    "Sahibi listeyi gizlemiş ya da silmiş olabilir." : {
+
+    },
+    "Sana Özel Bulmaca" : {
+
+    },
+    "Satın alımları geri yükle" : {
+
+    },
+    "Satıra dokun, dinle." : {
+
+    },
+    "Satırı sola kaydır" : {
+
+    },
+    "Seviyemi bilmiyorum · 2 dk test" : {
+
+    },
+    "Şikayet et" : {
+
+    },
+    "Sil" : {
+
+    },
+    "şimdi" : {
+
+    },
+    "SINAV PLANI · %@" : {
+
+    },
+    "Sıfat" : {
+
+    },
+    "Sıfırla" : {
+
+    },
+    "Sıfırla ve baştan başla" : {
+
+    },
+    "Sınav tekrarı" : {
+
+    },
+    "Sırala" : {
+
+    },
+    "Sırala: %@" : {
+
+    },
+    "Sonra" : {
+
+    },
+    "Sonraki ipucu" : {
+
+    },
+    "Sonraki seviyenin bölümleri hazırlanıyor. Zorlandığın kartlar widget'ında kalır." : {
+
+    },
+    "Sonucu gör" : {
+
+    },
+    "Sonucu paylaş" : {
+
+    },
+    "Şu an · %lld/%lld" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Şu an · %1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "Şu an bu bölümdesin, kartları widget'ında" : {
+
+    },
+    "ŞU AN WIDGET'INDA" : {
+
+    },
+    "ŞU ANKİ BÖLÜM" : {
+
+    },
+    "Süre %@" : {
+
+    },
+    "Tek seferlik ödeme; abonelik değildir, yenilenmez. Satın alımın Geri yükle ile her cihazına gelir." : {
+
+    },
+    "Tekrar dene" : {
+
+    },
+    "Tekrar zamanı" : {
+
+    },
+    "Telaffuzu dinle" : {
+
+    },
+    "Telefonuna her baktığında…" : {
+
+    },
+    "Temizle" : {
+
+    },
+    "Tüm ipuçlarını açar" : {
+
+    },
+    "TUR BİTTİ" : {
+
+    },
+    "Türkçesini gizle" : {
+
+    },
+    "Türkçesini göster" : {
+
+    },
+    "Türü" : {
+
+    },
+    "Ücretsiz" : {
+
+    },
+    "Uygulama açılamadı" : {
+
+    },
+    "Uygulamada olmayan bir kelimeyi anlamıyla birlikte ekleyebilirsin." : {
+
+    },
+    "Uygulamadaki kelimeler" : {
+
+    },
+    "Vazgeç" : {
+
+    },
+    "Widget ekle" : {
+
+    },
+    "Widget günlüğü" : {
+
+    },
+    "Widget nasıl eklenir?" : {
+
+    },
+    "Widget'a ekle" : {
+
+    },
+    "Widget'ı henüz eklemedin." : {
+
+    },
+    "Widget'ına eklenen kelimeler" : {
+
+    },
+    "Widget'ında %@. Listeleri değiştir" : {
+
+    },
+    "Widget'ında: " : {
+
+    },
+    "Widget'ta" : {
+
+    },
+    "Yakında" : {
+
+    },
+    "Yarın yeni bulmaca seni bekliyor." : {
+
+    },
+    "Yazdığın harfler ve süre silinir." : {
+
+    },
+    "Yeni kelimelerle kısa bir tur" : {
+
+    },
+    "Yeni liste" : {
+
+    },
+    "Yeniden çöz" : {
+
+    },
+    "Zarf" : {
+
+    },
+    "Zorlandığın ve öğrendiğin kelimelerden" : {
+
+    },
+    "Zorlanıyorum" : {
+
+    }
   },
   "version" : "1.0"
 }

@@ -237,6 +237,16 @@ struct SettingsView: View {
                 .padding(.horizontal, 16)
                 .frame(minHeight: 50)
                 Divider().overlay(Palette.line)
+                Button { Task { toast = await app.createSampleLists() } } label: {
+                    Text("Örnek listeler oluştur")
+                        .font(KelimeFont.ui(15, relativeTo: .body))
+                        .foregroundStyle(Palette.accent)
+                        .padding(.horizontal, 16)
+                        .frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                Divider().overlay(Palette.line)
                 NavigationLink(value: Route.paywallGallery) {
                     SettingsRowLabel("Paywall tasarımları", value: "6")
                 }

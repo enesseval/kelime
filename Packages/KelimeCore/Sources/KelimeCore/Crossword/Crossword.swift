@@ -97,6 +97,12 @@ public struct Crossword: Codable, Sendable, Hashable, Identifiable {
         entries.sorted { ($0.direction == .across ? 0 : 1, $0.number) < ($1.direction == .across ? 0 : 1, $1.number) }
     }
 
+    /// The order words are played in: by number, across before down at the same number, so 1
+    /// leads to 2 wherever they sit.
+    public var playOrder: [CrosswordEntry] {
+        entries.sorted { ($0.number, $0.direction == .across ? 0 : 1) < ($1.number, $1.direction == .across ? 0 : 1) }
+    }
+
     /// Entries passing through `point`.
     public func entries(at point: GridPoint) -> [CrosswordEntry] {
         entries.filter { $0.cells.contains(point) }

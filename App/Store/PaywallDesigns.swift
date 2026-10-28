@@ -5,7 +5,7 @@ import SwiftUI
 
 /// Paywall designs drawn with the app's own pages, cards and type, to compare with the night
 /// sky one (`PaywallView`). Opened from Geliştirici › Paywall tasarımları; the live paywall is
-/// still `PaywallView`.
+/// `WidgetPaywall`.
 enum PaywallDesign: String, CaseIterable, Identifiable {
     case sky, wordCard, settings, widget, compare, puzzle
 
@@ -13,10 +13,10 @@ enum PaywallDesign: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .sky: "Gece gökyüzü (şu anki)"
+        case .sky: "Gece gökyüzü (eski)"
         case .wordCard: "Kelime kartı"
         case .settings: "Ayarlar listesi"
-        case .widget: "Widget önizlemesi"
+        case .widget: "Widget önizlemesi (kullanılan)"
         case .compare: "Ücretsiz / Pro tablosu"
         case .puzzle: "Bulmaca"
         }
@@ -158,6 +158,9 @@ struct PaywallFrame<Content: View>: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
     @Binding var plan: PaywallPlan
+    /// Lays the content out on one screen without scrolling; a flexible part (the widget
+    /// preview) takes what is left. Very short screens still scroll.
+    var fitsScreen = false
     @ViewBuilder let content: Content
     @State private var working = false
     @State private var toast: String?
@@ -165,13 +168,23 @@ struct PaywallFrame<Content: View>: View {
     private var purchases: PurchaseManager { app.purchases }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) { content }
-                .padding(.horizontal, 20)
-                .padding(.top, 56)
-                .padding(.bottom, 12)
+        Group {
+            if fitsScreen {
+                GeometryReader { geo in
+                    if geo.size.height >= 560 {
+                        VStack(spacing: 14) { content }
+                            .padding(.horizontal, 20)
+                            .padding(.top, 46)
+                            .padding(.bottom, 10)
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
+                    } else {
+                        scrolling
+                    }
+                }
+            } else {
+                scrolling
+            }
         }
-        .scrollIndicators(.hidden)
         .safeAreaInset(edge: .bottom, spacing: 0) { footer }
         .overlay(alignment: .topTrailing) {
             Button { dismiss() } label: {
@@ -190,6 +203,16 @@ struct PaywallFrame<Content: View>: View {
         .toast($toast)
         .task { await purchases.loadProducts() }
         .onChange(of: purchases.isPro) { _, pro in if pro { dismiss() } }
+    }
+
+    private var scrolling: some View {
+        ScrollView {
+            VStack(spacing: 20) { content }
+                .padding(.horizontal, 20)
+                .padding(.top, 56)
+                .padding(.bottom, 12)
+        }
+        .scrollIndicators(.hidden)
     }
 
     private var footer: some View {
@@ -535,33 +558,43 @@ struct WidgetPaywall: View {
     private let words = [("resilient", "dayanıklı"), ("eager", "istekli"), ("thrive", "gelişmek"), ("subtle", "ince, belli belirsiz"), ("vivid", "canlı")]
 
     var body: some View {
-        PaywallFrame(plan: $plan) {
-            VStack(spacing: 8) {
+        PaywallFrame(plan: $plan, fitsScreen: true) {
+            VStack(spacing: 6) {
                 Kicker()
                 Text(request.trigger.headline(deck: request.deck))
-                    .font(KelimeFont.english(34, relativeTo: .largeTitle))
+                    .font(KelimeFont.english(32, relativeTo: .largeTitle))
                     .tracking(-0.8)
-                    .multilineTextAlignment(.center)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
                 Text(subtitle(request.trigger))
-                    .font(KelimeFont.ui(14, relativeTo: .subheadline))
+                    .font(KelimeFont.ui(13, relativeTo: .subheadline))
                     .foregroundStyle(Palette.ink2)
-                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
             }
+            .multilineTextAlignment(.center)
             .foregroundStyle(Palette.ink)
 
-            VStack(spacing: 14) {
-                Text("09:41").font(.system(size: 54, weight: .semibold, design: .rounded)).foregroundStyle(Palette.ink)
+            // The lock screen preview gives way first: it takes whatever height is left.
+            VStack(spacing: 10) {
+                Spacer(minLength: 0)
+                Text("09:41")
+                    .font(.system(size: 54, weight: .semibold, design: .rounded))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.55)
+                    .foregroundStyle(Palette.ink)
                 let word = words[tick % words.count]
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(word.0).font(KelimeFont.english(24, relativeTo: .title2))
+                    Text(word.0).font(KelimeFont.english(22, relativeTo: .title2))
                     Text(word.1).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
                 }
                 .id(tick)
                 .transition(.push(from: .bottom).combined(with: .opacity))
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(14)
+                .padding(12)
                 .background(Palette.surface2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 16)
+                Spacer(minLength: 0)
                 HStack(spacing: 8) {
                     rate("Normal", "günde 4'e kadar", pro: false)
                     rate("Çok sık", "günde 24'e kadar", pro: true)
@@ -569,13 +602,14 @@ struct WidgetPaywall: View {
                 .padding(.horizontal, 12)
             }
             .foregroundStyle(Palette.ink)
-            .padding(.vertical, 20)
-            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .frame(maxWidth: .infinity, minHeight: 190, maxHeight: .infinity)
             .background(
                 LinearGradient(colors: [Palette.accentSoft, Palette.surface], startPoint: .top, endPoint: .bottom),
-                in: RoundedRectangle(cornerRadius: 30, style: .continuous)
+                in: RoundedRectangle(cornerRadius: 28, style: .continuous)
             )
-            .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).strokeBorder(Palette.line))
+            .overlay(RoundedRectangle(cornerRadius: 28, style: .continuous).strokeBorder(Palette.line))
+            .clipped()
             .task {
                 while !Task.isCancelled {
                     try? await Task.sleep(for: .seconds(1.6))
@@ -596,7 +630,7 @@ struct WidgetPaywall: View {
             }
             Text(detail).font(KelimeFont.ui(11, relativeTo: .caption2)).foregroundStyle(Palette.ink2)
         }
-        .frame(maxWidth: .infinity, minHeight: 48)
+        .frame(maxWidth: .infinity, minHeight: 44)
         .background(pro ? Palette.surface : Palette.surface2.opacity(0.6), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(pro ? Palette.accent : .clear))
     }
@@ -618,7 +652,7 @@ private struct FlowChips: View {
                 }
                 .foregroundStyle(focus ? Palette.onAccent : Palette.ink)
                 .padding(.horizontal, 12)
-                .frame(minHeight: 44)
+                .frame(minHeight: 40)
                 .background(focus ? Palette.accent : Palette.surface, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(focus ? .clear : Palette.line))
             }

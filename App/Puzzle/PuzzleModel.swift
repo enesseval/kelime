@@ -95,6 +95,8 @@ final class PuzzleModel {
     private(set) var key = ""
     private(set) var game: CrosswordGame?
     private(set) var clues: [String: String] = [:]
+    /// The Turkish meaning of each entry, without the letter count (the clue bar shows it apart).
+    private(set) var meanings: [String: String] = [:]
     private(set) var cards: [String: Card] = [:]
     private(set) var seconds = 0
     private(set) var completedAt: Date?
@@ -147,6 +149,7 @@ final class PuzzleModel {
         clues = Dictionary(uniqueKeysWithValues: puzzle.entries.map { entry in
             (entry.id, DailyPuzzle.clue(meaning: self.cards[entry.cardID]?.meaning ?? "", length: entry.length))
         })
+        meanings = Dictionary(uniqueKeysWithValues: puzzle.entries.map { ($0.id, self.cards[$0.cardID]?.meaning ?? "") })
         game = saved.game
         seconds = saved.seconds
         completedAt = saved.completedAt

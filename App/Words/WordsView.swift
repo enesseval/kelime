@@ -84,6 +84,9 @@ struct WordsView: View {
         let onCount = course != nil ? (courseOn ? 1 : 0) + examsOn + listsOn : decks.filter(\.enabled).count + listsOn
         VStack(alignment: .leading, spacing: 18) {
             if let course {
+                // The learner's own lists lead: they are what they come here for most often.
+                caption("KENDİ LİSTELERİM")
+                OwnListsSection(lists: ownLists, keepOn: { $0.list.enabled && $0.total > 0 && onCount == 1 })
                 caption("KURS")
                 if let deck = decks.first(where: { $0.deck.level == course.level }) {
                     DeckCard(deck: deck.with(enabled: courseOn), title: "\(course.level.rawValue) kursu", keepOn: courseOn && onCount == 1) { on in
@@ -94,8 +97,6 @@ struct WordsView: View {
                     .font(KelimeFont.ui(12, relativeTo: .caption))
                     .foregroundStyle(Palette.ink2)
                 UnitList(course: course)
-                caption("KENDİ LİSTELERİM")
-                OwnListsSection(lists: ownLists, keepOn: { $0.list.enabled && $0.total > 0 && onCount == 1 })
                 let exams = decks.filter { $0.deck.tag != nil }
                 if !exams.isEmpty {
                     caption("SINAV LİSTELERİ")

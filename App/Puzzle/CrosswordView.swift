@@ -144,13 +144,20 @@ struct CrosswordView: View {
             }
             .accessibilityLabel("Önceki ipucu")
             Button { showClues = true } label: {
-                (Text("\(entry.number) \(entry.direction.label)").fontWeight(.semibold) + Text(" · ") + Text(model.clues[entry.id] ?? ""))
-                    .font(KelimeFont.ui(15, relativeTo: .subheadline))
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.8)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, minHeight: 48)
-                    .contentShape(Rectangle())
+                // The meaning is the clue, so it leads; the number and length are a quiet caption.
+                VStack(spacing: 2) {
+                    Text("\(entry.number) \(entry.direction.label.uppercased(with: Locale(identifier: "tr_TR"))) · \(entry.length) HARF")
+                        .font(KelimeFont.ui(11, weight: .semibold, relativeTo: .caption2))
+                        .tracking(0.6)
+                        .foregroundStyle(Palette.ink2)
+                    Text(model.meanings[entry.id] ?? "")
+                        .font(KelimeFont.ui(18, weight: .semibold, relativeTo: .headline))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.75)
+                }
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, minHeight: 56)
+                .contentShape(Rectangle())
             }
             .accessibilityHint("Tüm ipuçlarını açar")
             Button { model.step(1) } label: {
