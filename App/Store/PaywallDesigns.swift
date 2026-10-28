@@ -205,6 +205,20 @@ struct PaywallFrame<Content: View>: View {
         .onChange(of: purchases.isPro) { _, pro in if pro { dismiss() } }
     }
 
+    /// Under the button: what is billed and when (App Store guideline 3.1.2), two lines for
+    /// every plan.
+    private var legalNote: String {
+        switch plan {
+        case .lifetime:
+            return "Tek seferlik ödeme; abonelik değildir, yenilenmez. Satın alımın Geri yükle ile her cihazına gelir."
+        case .annual where purchases.trialEligible:
+            let price = purchases.price(.annual).map { "yılda \($0)" } ?? "yıllık ücret"
+            return "7 gün ücretsiz, sonra \(price). Deneme bitmeden en az 24 saat önce iptal edersen ücret alınmaz."
+        case .annual, .monthly:
+            return "Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse yenilenir. Ayarlar › Apple Kimliği › Abonelikler'den yönetilir."
+        }
+    }
+
     private var scrolling: some View {
         ScrollView {
             VStack(spacing: 20) { content }
@@ -223,7 +237,7 @@ struct PaywallFrame<Content: View>: View {
             .buttonStyle(PrimaryButtonStyle(height: 54))
             .disabled(working || purchases.package(plan) == nil)
             .opacity(purchases.package(plan) == nil ? 0.6 : 1)
-            Text(plan == .lifetime ? "Tek seferlik ödeme; abonelik değildir, yenilenmez. Satın alımın Geri yükle ile her cihazına gelir." : "Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse yenilenir. Ayarlar › Apple Kimliği › Abonelikler'den yönetilir.")
+            Text(legalNote)
                 .font(KelimeFont.ui(11, relativeTo: .caption2))
                 .foregroundStyle(Palette.ink2)
                 .multilineTextAlignment(.center)

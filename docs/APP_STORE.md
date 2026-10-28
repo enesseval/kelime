@@ -46,7 +46,7 @@ KELİME WIDGET PRO
 • Sana özel bulmaca ve bulmaca arşivi
 Pro aylık ya da yıllık abonelikle (yıllıkta 7 gün ücretsiz deneme) veya ömür boyu tek seferlik ödemeyle alınır. Abonelikler, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik yenilenir; App Store hesap ayarlarından yönetilir.
 
-Reklam yok. Hesap yok. İnternetsiz çalışır. Öğrendiğin kelimeler ve listelerin cihazında kalır.
+Reklam yok. İnternetsiz çalışır. Hesap isteğe bağlı: Apple ile giriş yaparsan listelerin yedeklenir, cihazların arasında eşitlenir ve Keşfet'te paylaşabilirsin.
 
 Koşullar: https://enesseval.github.io/kelime/kosullar.html
 Gizlilik: https://enesseval.github.io/kelime/gizlilik.html
