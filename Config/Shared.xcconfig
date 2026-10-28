@@ -2,7 +2,7 @@
 // Both targets read their version from here, so app and extension can never drift apart.
 
 APP_BUNDLE_ID = com.enesseval.kelime
-APP_DISPLAY_NAME = Kelime Widget
+APP_DISPLAY_NAME = Kilit Kelime
 
 MARKETING_VERSION = 1.0
 CURRENT_PROJECT_VERSION = 26

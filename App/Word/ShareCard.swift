@@ -47,5 +47,5 @@ enum ShareCardRenderer {
 
 /// The display name, read from the bundle so it lives only in `Config/Shared.xcconfig`.
 enum AppDisplayName {
-    static let value = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Kelime Widget"
+    static let value = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Kilit Kelime"
 }

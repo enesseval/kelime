@@ -1,6 +1,6 @@
 # App Store Connect: yayına adım adım
 
-Uygulama: Kelime Widget · Bundle ID `com.enesseval.kelime` · Takım `82S9ART43D`
+Uygulama: Kilit Kelime · Bundle ID `com.enesseval.kelime` · Takım `82S9ART43D`
 Metinlerin hepsi docs/APP_STORE.md'de; buradaki adımlar nereye ne yazılacağını anlatır.
 Adres: appstoreconnect.apple.com
 
@@ -13,9 +13,9 @@ Adres: appstoreconnect.apple.com
    iPhone'da Ayarlar › App Store › Sandbox Hesabı ile giriş yapılır.
 
 ## 1. Uygulama kaydı (TestFlight için açtıysan var; kontrol et)
-**Uygulamalarım › Kelime Widget**. Yoksa: **+ › Yeni Uygulama**:
+**Uygulamalarım › Kilit Kelime**. Yoksa: **+ › Yeni Uygulama**:
 - Platform: iOS
-- Ad: `Kelime Widget: İngilizce`
+- Ad: `Kilit Kelime: İngilizce`
 - Birincil dil: Türkçe
 - Paket kimliği: `com.enesseval.kelime`
 - SKU: herhangi bir iç kod (ör. `kelime-widget-1`)
@@ -53,14 +53,14 @@ Uygulama TelemetryDeck ile kimliksiz kullanım sayıları gönderiyor, bu yüzde
 Kimlikler koddaki ve RevenueCat'tekiyle **birebir aynı** olmalı: `pro.monthly`, `pro.yearly`, `pro.lifetime`.
 
 ### 5a. Abonelik grubu "Pro" (aylık ve yıllık aynı grupta)
-**Gelir Elde Etme › Abonelikler › Abonelik grubu oluştur**: ad `Pro`, Türkçe görünen ad `Kelime Widget Pro`.
-- **Aylık:** referans `Pro Monthly`, kimlik `pro.monthly`, süre 1 ay, fiyat (ör. 49,99 ₺), Türkçe ad `Kelime Widget Pro, aylık`
-- **Yıllık:** referans `Pro Yearly`, kimlik `pro.yearly`, süre 1 yıl, fiyat (ör. 249,99 ₺), **tanıtım teklifi: 1 hafta ücretsiz deneme**, Türkçe ad `Kelime Widget Pro, yıllık`
+**Gelir Elde Etme › Abonelikler › Abonelik grubu oluştur**: ad `Pro`, Türkçe görünen ad `Kilit Kelime Pro`.
+- **Aylık:** referans `Pro Monthly`, kimlik `pro.monthly`, süre 1 ay, fiyat (ör. 49,99 ₺), Türkçe ad `Kilit Kelime Pro, aylık`
+- **Yıllık:** referans `Pro Yearly`, kimlik `pro.yearly`, süre 1 yıl, fiyat (ör. 249,99 ₺), **tanıtım teklifi: 1 hafta ücretsiz deneme**, Türkçe ad `Kilit Kelime Pro, yıllık`
 - Açıklama (ikisi): `Sınırsız liste, paylaşma, sınav planı ve daha fazlası`
 - Grup sıralaması: yıllık üstte.
 
 ### 5b. Ömür boyu
-**Uygulama İçi Satın Almalar › + › Tüketilemeyen**: referans `Pro Lifetime`, kimlik `pro.lifetime`, fiyat (ör. 599,99 ₺), Türkçe ad `Kelime Widget Pro, ömür boyu`.
+**Uygulama İçi Satın Almalar › + › Tüketilemeyen**: referans `Pro Lifetime`, kimlik `pro.lifetime`, fiyat (ör. 599,99 ₺), Türkçe ad `Kilit Kelime Pro, ömür boyu`.
 
 ### 5c. İnceleme bilgisi (üç ürün)
 Ödeme ekranının ekran görüntüsü ve not: "Pro özelliklerini açar."
@@ -71,7 +71,7 @@ Kimlikler koddaki ve RevenueCat'tekiyle **birebir aynı** olmalı: `pro.monthly`
 - Satın alımlar ilk sürümde **uygulama sürümüyle birlikte** incelemeye gider (6. adım).
 
 ## 6. Sürüm 1.0 sayfası
-**Uygulamalarım › Kelime Widget › iOS Uygulaması › 1.0 Hazırlanıyor**
+**Uygulamalarım › Kilit Kelime › iOS Uygulaması › 1.0 Hazırlanıyor**
 1. **Ekran görüntüleri:** iPhone **6,9 inç** (1320 × 2868 dikey) zorunlu; 6,5 inç isteğe bağlı.
    Sırası ve yazıları docs/APP_STORE.md'de. Simülatörde iPhone 17 Pro Max ile `Cmd+S` alınabilir.
 2. **Tanıtım metni, açıklama, anahtar kelimeler:** docs/APP_STORE.md

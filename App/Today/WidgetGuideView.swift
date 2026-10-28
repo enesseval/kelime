@@ -10,9 +10,9 @@ struct WidgetGuideSteps: View {
         var steps: [String] {
             switch self {
             case .lock:
-                ["Kilit ekranına basılı tut", "Özelleştir › Kilit Ekranı'na dokun", "Widget ekle'ye dokun", "Listeden Kelime Widget'ı seç"]
+                ["Kilit ekranına basılı tut", "Özelleştir › Kilit Ekranı'na dokun", "Widget ekle'ye dokun", "Listeden Kilit Kelime'yi seç"]
             case .home:
-                ["Ana ekranda boş bir yere basılı tut", "Sol üstteki Düzenle › Widget ekle'ye dokun", "Kelime Widget'ı ara", "Boyut seç ve Widget ekle'ye dokun"]
+                ["Ana ekranda boş bir yere basılı tut", "Sol üstteki Düzenle › Widget ekle'ye dokun", "Kilit Kelime'yi ara", "Boyut seç ve Widget ekle'ye dokun"]
             }
         }
     }

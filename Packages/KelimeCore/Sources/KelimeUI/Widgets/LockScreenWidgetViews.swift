@@ -18,7 +18,7 @@ public struct InlineWidgetView: View {
             Text("\(card.word) · \(card.primaryMeaning)")
                 .widgetURL(WidgetLink.shown(entry, card: card, source: "lock"))
         } else {
-            Text("Kelime Widget'ı aç")
+            Text("Kilit Kelime'yi aç")
         }
     }
 }

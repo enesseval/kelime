@@ -38,7 +38,7 @@ struct WatchHomeView: View {
                 Text("Kelimelerin iPhone'dan gelecek")
                     .font(KelimeFont.ui(15, weight: .semibold))
                     .multilineTextAlignment(.center)
-                Text("iPhone'da Kelime Widget'ı bir kez aç.")
+                Text("iPhone'da Kilit Kelime'yi bir kez aç.")
                     .font(KelimeFont.ui(13))
                     .foregroundStyle(Palette.ink2)
                     .multilineTextAlignment(.center)

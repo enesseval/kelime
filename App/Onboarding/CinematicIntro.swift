@@ -201,7 +201,7 @@ private struct LearnedScene: View {
             }
             .frame(maxWidth: 330)
             VStack(spacing: 12) {
-                Text("Kelime Widget")
+                Text("Kilit Kelime")
                     .font(KelimeFont.english(46, relativeTo: .largeTitle))
                     .tracking(-0.8)
                 Text("Kilit ekranında öğren. Oyunla pekiştir.")
@@ -367,7 +367,7 @@ struct WidgetAddAnimation: View {
     static let steps = [
         "Kilit ekranına basılı tut",
         "Özelleştir › Kilit Ekranı'na dokun",
-        "Widget ekle'ye dokun, Kelime Widget'ı seç",
+        "Widget ekle'ye dokun, Kilit Kelime'yi seç",
         "Hazır: kelimeler kilit ekranında",
     ]
 
@@ -450,7 +450,7 @@ private struct TouchDot: View {
     }
 }
 
-/// The bottom sheet of the widget picker, with Kelime Widget chosen.
+/// The bottom sheet of the widget picker, with Kilit Kelime chosen.
 private struct WidgetGallerySheet: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -506,7 +506,7 @@ struct ReminderPreview: View {
                     .overlay(Text("Aa").font(KelimeFont.english(14)).foregroundStyle(Palette.onAccent))
                 VStack(alignment: .leading, spacing: 2) {
                     HStack {
-                        Text("KELİME WIDGET").font(KelimeFont.ui(10, weight: .semibold)).opacity(0.7)
+                        Text("KİLİT KELİME").font(KelimeFont.ui(10, weight: .semibold)).opacity(0.7)
                         Spacer()
                         Text("şimdi").font(KelimeFont.ui(10)).opacity(0.6)
                     }

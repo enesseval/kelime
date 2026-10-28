@@ -1,4 +1,4 @@
-# Kelime Widget · Yayın öncesi test listesi
+# Kilit Kelime · Yayın öncesi test listesi
 
 Build 26 ve sonrası için. Her maddeyi denedikçe işaretle; sorun çıkarsa maddenin altına not düş.
 Aksi yazmıyorsa iPhone'da, TestFlight sürümüyle.
@@ -17,7 +17,7 @@ Aksi yazmıyorsa iPhone'da, TestFlight sürümüyle.
 - [ ] Her kelime değişiminde hafif titreşim var
 - [ ] Altta "Günde 4'e kadar yeni kelime, hiç uğraşmadan." yazıyor
 - [ ] Sahne geçişlerinde iki altyazı üst üste binmiyor
-- [ ] 3. sahne: yıldızlı gece, kelime çipleri düşüyor ve ortalı duruyor, çoğu yeşile dönüyor, başarı titreşimi, "Kelime Widget" ve "Başla" çıkıyor
+- [ ] 3. sahne: yıldızlı gece, kelime çipleri düşüyor ve ortalı duruyor, çoğu yeşile dönüyor, başarı titreşimi, "Kilit Kelime" ve "Başla" çıkıyor
 - [ ] Ekrana dokununca sonraki sahneye geçiyor
 - [ ] "Atla" son sahneye götürüyor
 - [ ] Hareketi Azalt açıkken film sade geçişlerle oynuyor (bölüm 11'de tekrar)
@@ -37,7 +37,7 @@ Aksi yazmıyorsa iPhone'da, TestFlight sürümüyle.
 - [ ] Küçük ekranlı bir iPhone'da (SE, mini) da adımlar sığıyor
 
 ## 3. Widget (kilit ekranı)
-- [ ] Kilit ekranına Kelime widget'ı eklenebiliyor
+- [ ] Kilit ekranına Kilit Kelime widget'ı eklenebiliyor
 - [ ] Tanıtımda seçilen seviyenin kelimesi hemen görünüyor (eski seviyenin kelimesi kalmıyor)
 - [ ] Gün içinde kelime değişiyor (birkaç saat sonra kontrol et)
 - [ ] Widget'a dokununca uygulama o kelimenin detayında açılıyor

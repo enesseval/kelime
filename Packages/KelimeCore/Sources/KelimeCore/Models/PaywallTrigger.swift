@@ -15,7 +15,7 @@ public enum PaywallTrigger: String, Sendable, CaseIterable, Identifiable {
 
     public func headline(deck: DeckID? = nil) -> String {
         switch self {
-        case .base: "Kelime Widget Pro"
+        case .base: "Kilit Kelime Pro"
         case .lists: "Sınırsız kendi listen"
         case .share: "Listeni paylaş"
         case .rotation: "Daha sık yeni kelime"

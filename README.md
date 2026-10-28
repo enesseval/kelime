@@ -1,4 +1,4 @@
-# Kelime Widget
+# Kilit Kelime
 
 Native iPhone app + widget extension for learning English words from the lock screen and home screen.
 Swift 6, SwiftUI, iOS 17+, Xcode 26.3. Everything runs offline.
@@ -14,7 +14,7 @@ Swift 6, SwiftUI, iOS 17+, Xcode 26.3. Everything runs offline.
 | `Fonts/` | Newsreader, Hanken Grotesk, JetBrains Mono (OFL), bundled in both targets |
 | `Config/` | `Shared.xcconfig` (bundle id, display name, versions, team), Info.plists, entitlements |
 | `tools/` | Python content tools (any OS) |
-| `design/` | Final designs, the visual source of truth. Open `design/Kelime Widget.dc.html` in a browser. |
+| `design/` | Final designs, the visual source of truth. Open `design/Kilit Kelime.dc.html` in a browser. |
 | `docs/` | Design brief, build spec and `STATUS.md` (what's verified, what still needs a device or account) |
 
 Bundle id, display name, version and team live only in `Config/Shared.xcconfig`. The App Group is

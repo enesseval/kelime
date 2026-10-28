@@ -404,7 +404,7 @@ private struct PriceText: View {
 }
 
 private struct Kicker: View {
-    var text = "KELİME WIDGET PRO"
+    var text = "KİLİT KELİME PRO"
 
     var body: some View {
         Text(text)
@@ -439,7 +439,7 @@ struct WordCardPaywall: View {
         PaywallFrame(plan: $plan) {
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
-                    Text("KELİME WIDGET PRO")
+                    Text("KİLİT KELİME PRO")
                         .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))
                         .tracking(0.7)
                         .foregroundStyle(Palette.ink2)

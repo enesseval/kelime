@@ -34,7 +34,7 @@ enum WidgetModeOption: String, AppEnum {
 }
 
 struct WordWidgetIntent: WidgetConfigurationIntent {
-    static let title: LocalizedStringResource = "Kelime widget'ı"
+    static let title: LocalizedStringResource = "Kilit Kelime widget'ı"
     static let description = IntentDescription("Widget'ın görünüm modunu seç.")
 
     @Parameter(title: "Görünüm", default: .appSetting)

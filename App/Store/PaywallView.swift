@@ -130,7 +130,7 @@ struct PaywallView: View {
             }
             .frame(height: 64)
             .animation(.spring(response: 0.8, dampingFraction: 0.7), value: appeared)
-            Text("KELİME WIDGET PRO")
+            Text("KİLİT KELİME PRO")
                 .font(KelimeFont.ui(12, weight: .bold, relativeTo: .caption))
                 .tracking(1.4)
                 .foregroundStyle(Palette.accent)
@@ -327,7 +327,7 @@ enum Legal {
     private static func report(subject: String, body: String) -> URL {
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
         let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
-        let body = body + "\n\n— Kelime Widget \(version) (\(build))"
+        let body = body + "\n\n— Kilit Kelime \(version) (\(build))"
         var components: URLComponents
         if let supportEmail {
             components = URLComponents(string: "mailto:\(supportEmail)")!
