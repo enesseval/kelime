@@ -349,6 +349,7 @@ struct ReviewSummaryView: View {
         .padding(.horizontal, 20)
         .padding(.top, 30)
         .padding(.bottom, 24)
+        .askForReview(when: session.score >= 8)
     }
 
     private func chips(_ title: String, words: [Card], ink: Color, background: Color) -> some View {

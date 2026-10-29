@@ -185,6 +185,8 @@ struct SettingsView: View {
     /// Feedback, the legal pages and restoring purchases, as plain rows.
     private var appSection: some View {
         SettingsSection("UYGULAMA") {
+            AppIconRow()
+            Divider().overlay(Palette.line)
             linkRow("Öneri gönder", systemImage: "bubble.left") { sendingFeedback = true }
             Divider().overlay(Palette.line)
             linkRow("Gizlilik politikası", systemImage: "hand.raised") { openURL(Legal.privacyURL) }

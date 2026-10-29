@@ -86,6 +86,7 @@ final class AppModel {
             #endif
             PhoneWatchSync.shared.start(database: db)
             await applySpeechRate()
+            ReviewPrompt.noteLaunch()
             await WidgetRefresher.refresh(db)
             // The refresh may have moved the learner to the next unit.
             dataVersion += 1

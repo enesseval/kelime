@@ -1,5 +1,7 @@
-// Renders the app icon (light, dark, tinted) with the bundled Newsreader font.
+// Renders the app icon (light, dark, tinted) with the bundled Newsreader font, and with
+// `alternates` the alternate icons (Profil › Uygulama ikonu, and App Store icon tests).
 // Usage: swift tools/make_icon.swift Fonts/Newsreader.ttf App/Assets.xcassets/AppIcon.appiconset
+//        swift tools/make_icon.swift Fonts/Newsreader.ttf App/Assets.xcassets alternates
 import AppKit
 import ImageIO
 import CoreText
@@ -47,6 +49,11 @@ func hex(_ v: UInt32) -> NSColor {
     NSColor(srgbRed: CGFloat((v >> 16) & 0xFF) / 255, green: CGFloat((v >> 8) & 0xFF) / 255, blue: CGFloat(v & 0xFF) / 255, alpha: 1)
 }
 
-render(name: "AppIcon.png", background: hex(0xF4F1EB), ink: hex(0x1B1916), dot: hex(0xE49839))
-render(name: "AppIcon-Dark.png", background: hex(0x121110), ink: hex(0xF2EEE7), dot: hex(0xEEAC53))
-render(name: "AppIcon-Tinted.png", background: hex(0x000000), ink: NSColor(white: 1, alpha: 1), dot: NSColor(white: 0.75, alpha: 1))
+if CommandLine.arguments.count > 3 && CommandLine.arguments[3] == "alternates" {
+    render(name: "AppIcon-Blue.appiconset/AppIcon-Blue.png", background: hex(0x335AA6), ink: hex(0xF4F1EB), dot: hex(0xF0A94A))
+    render(name: "AppIcon-Orange.appiconset/AppIcon-Orange.png", background: hex(0xE49839), ink: hex(0x1B1916), dot: hex(0xF4F1EB))
+} else {
+    render(name: "AppIcon.png", background: hex(0xF4F1EB), ink: hex(0x1B1916), dot: hex(0xE49839))
+    render(name: "AppIcon-Dark.png", background: hex(0x121110), ink: hex(0xF2EEE7), dot: hex(0xEEAC53))
+    render(name: "AppIcon-Tinted.png", background: hex(0x000000), ink: NSColor(white: 1, alpha: 1), dot: NSColor(white: 0.75, alpha: 1))
+}
