@@ -1,0 +1,9 @@
+[
+  {"image": "docs/store-shots/raw/bugun.png", "title": "A1'den C2'ye\nİngilizce kurs", "subtitle": "Bölüm bölüm kelime, kalıp ve hikâye", "theme": "blue"},
+  {"image": "docs/store-shots/raw/tekrar.png", "title": "2 dakikada\nHızlı Tekrar", "subtitle": "Zorlandığın kelimeler daha sık gelir", "theme": "cream"},
+  {"image": "docs/store-shots/raw/bulmaca.png", "title": "Her gün yeni\nbir bulmaca", "subtitle": "Öğrendiğin kelimelerle, Türkçe ipuçlu", "theme": "orange"},
+  {"image": "docs/store-shots/raw/listeler.png", "title": "Kendi listeni kur,\nwidget'ta öğren", "subtitle": "YDS, YÖKDİL ve IELTS listeleri de hazır", "theme": "cream"},
+  {"image": "docs/store-shots/raw/kelime.png", "title": "Anlamı, örneği,\ntelaffuzu", "subtitle": "Her kelime Türkçe açıklamasıyla", "theme": "ink"},
+  {"image": "docs/store-shots/raw/paylas.png", "title": "Kelimeni\npaylaş", "subtitle": "Açık, koyu ya da mavi kart", "theme": "blue"},
+  {"image": "docs/store-shots/raw/kesfet.png", "title": "Hazır listeleri\nkeşfet", "subtitle": "Diğer öğrencilerin listelerini ekle", "theme": "cream"}
+]
