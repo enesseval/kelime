@@ -400,7 +400,8 @@
   "stories": [
     {
       "id": "a2-tech-1",
-      "title": "İzmir'de bir kafede",
+      "title": "At a Café in İzmir",
+      "title_tr": "İzmir'de bir kafede",
       "names": [
         "Selin",
         "İzmir"
@@ -438,7 +439,8 @@
     },
     {
       "id": "a2-tech-2",
-      "title": "Londra'dan arama",
+      "title": "A Call from London",
+      "title_tr": "Londra'dan arama",
       "names": [
         "Kerem",
         "David",
@@ -477,7 +479,8 @@
     },
     {
       "id": "a2-tech-3",
-      "title": "Yeni uygulama",
+      "title": "A New App",
+      "title_tr": "Yeni uygulama",
       "names": [
         "Merve",
         "Bursa"
@@ -511,7 +514,8 @@
     },
     {
       "id": "a2-tech-4",
-      "title": "Eski fotoğraflar",
+      "title": "Old Photos",
+      "title_tr": "Eski fotoğraflar",
       "names": [
         "Emre"
       ],
@@ -544,7 +548,8 @@
     },
     {
       "id": "a2-tech-5",
-      "title": "Ankara'da tren istasyonunda",
+      "title": "At the Station in Ankara",
+      "title_tr": "Ankara'da tren istasyonunda",
       "names": [
         "Zeynep",
         "Ankara"

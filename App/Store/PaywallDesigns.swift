@@ -638,15 +638,13 @@ struct WidgetPaywall: View {
 
     private func rate(_ title: String, _ detail: String, pro: Bool) -> some View {
         VStack(spacing: 2) {
-            HStack(spacing: 4) {
-                Text(title).font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
-                if pro { ProBadge() }
-            }
+            Text(title).font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
             Text(detail).font(KelimeFont.ui(11, relativeTo: .caption2)).foregroundStyle(Palette.ink2)
         }
-        .frame(maxWidth: .infinity, minHeight: 44)
+        .frame(maxWidth: .infinity, minHeight: 50)
         .background(pro ? Palette.surface : Palette.surface2.opacity(0.6), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(pro ? Palette.accent : .clear))
+        .proCornerTag(pro, radius: 12)
     }
 }
 

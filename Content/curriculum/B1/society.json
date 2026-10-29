@@ -361,7 +361,8 @@
   "stories": [
     {
       "id": "b1-society-1",
-      "title": "Ulaşım sorunu",
+      "title": "A Transport Problem",
+      "title_tr": "Ulaşım sorunu",
       "names": [
         "Burak",
         "London"
@@ -391,7 +392,8 @@
     },
     {
       "id": "b1-society-2",
-      "title": "Kurallar ve yasalar",
+      "title": "Rules and Laws",
+      "title_tr": "Kurallar ve yasalar",
       "names": [
         "Ayşe",
         "Eda"
@@ -421,7 +423,8 @@
     },
     {
       "id": "b1-society-3",
-      "title": "Toplum için gönüllülük",
+      "title": "Volunteering for the Community",
+      "title_tr": "Toplum için gönüllülük",
       "names": [
         "Ali",
         "Zeynep"
@@ -451,7 +454,8 @@
     },
     {
       "id": "b1-society-4",
-      "title": "Güvenli bir şehir",
+      "title": "A Safe City",
+      "title_tr": "Güvenli bir şehir",
       "names": [
         "Mert",
         "John"
@@ -481,7 +485,8 @@
     },
     {
       "id": "b1-society-5",
-      "title": "Seçim günü",
+      "title": "Election Day",
+      "title_tr": "Seçim günü",
       "names": [
         "Elif",
         "Ozan"

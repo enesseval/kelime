@@ -56,6 +56,7 @@ struct WordsView: View {
         .sheet(isPresented: $showFilters) {
             WordFilterSheet(filter: $filter)
                 .presentationDetents([.medium, .large])
+                .presentationBackground(Palette.background)
         }
         .task(id: model.router.listsRequested) {
             guard model.router.listsRequested else { return }
@@ -117,9 +118,9 @@ struct WordsView: View {
             .foregroundStyle(Palette.ink2)
     }
 
-    /// The A–Z strip, for long alphabetical lists.
+    /// The letter strip, for long alphabetical lists (A–Z or Z–A).
     private var showsIndex: Bool {
-        !showDecks && sort == .alphabetical && items.count > 40
+        !showDecks && (sort == .alphabetical || sort == .reverseAlphabetical) && items.count > 40
     }
 
     @ViewBuilder
@@ -185,14 +186,14 @@ struct WordsView: View {
         }
     }
 
+    /// The title, then a two-way switch between the words and the lists.
     private var header: some View {
-        HStack(alignment: .bottom) {
+        VStack(alignment: .leading, spacing: 10) {
             ScreenTitle(title: "Kelimelerim")
-            Spacer()
-            Button(showDecks ? "Kelimeler" : "Listeler") {
-                withAnimation(.snappy) { showDecks.toggle() }
-            }
-            .buttonStyle(TintedButtonStyle(fullWidth: false))
+            SegmentedPicker(options: [false, true], selection: Binding(
+                get: { showDecks },
+                set: { value in withAnimation(.snappy) { showDecks = value } }
+            )) { $0 ? "Listeler" : "Kelimeler" }
         }
     }
 

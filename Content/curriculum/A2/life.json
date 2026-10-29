@@ -381,7 +381,8 @@
   "stories": [
     {
       "id": "a2-life-1",
-      "title": "İzmir'den Londra'ya",
+      "title": "From İzmir to London",
+      "title_tr": "İzmir'den Londra'ya",
       "names": [
         "English",
         "London",
@@ -417,7 +418,8 @@
     },
     {
       "id": "a2-life-2",
-      "title": "Zor bir sınav",
+      "title": "A Hard Exam",
+      "title_tr": "Zor bir sınav",
       "names": [
         "Emre",
         "Bursa"
@@ -451,7 +453,8 @@
     },
     {
       "id": "a2-life-3",
-      "title": "Yolculuk anıları",
+      "title": "Travel Memories",
+      "title_tr": "Yolculuk anıları",
       "names": [
         "Kerem",
         "Rome",
@@ -486,7 +489,8 @@
     },
     {
       "id": "a2-life-4",
-      "title": "Eski alışkanlıklar",
+      "title": "Old Habits",
+      "title_tr": "Eski alışkanlıklar",
       "names": [
         "Zeynep"
       ],
@@ -519,7 +523,8 @@
     },
     {
       "id": "a2-life-5",
-      "title": "Mezuniyet günü",
+      "title": "Graduation Day",
+      "title_tr": "Mezuniyet günü",
       "names": [
         "Canan",
         "Ankara"

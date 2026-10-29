@@ -363,7 +363,8 @@
   "stories": [
     {
       "id": "c2-literature-1",
-      "title": "Yeni Bir Kitap",
+      "title": "A New Book",
+      "title_tr": "Yeni Bir Kitap",
       "names": [
         "Ayşe",
         "Tom"
@@ -397,7 +398,8 @@
     },
     {
       "id": "c2-literature-2",
-      "title": "Londra'da Okuma",
+      "title": "A Reading in London",
+      "title_tr": "Londra'da Okuma",
       "names": [
         "Ali",
         "London"
@@ -431,7 +433,8 @@
     },
     {
       "id": "c2-literature-3",
-      "title": "Derin Duygular",
+      "title": "Deep Feelings",
+      "title_tr": "Derin Duygular",
       "names": [
         "Zeynep",
         "Maria"
@@ -465,7 +468,8 @@
     },
     {
       "id": "c2-literature-4",
-      "title": "Eski Bir Roman",
+      "title": "An Old Novel",
+      "title_tr": "Eski Bir Roman",
       "names": [
         "Cem",
         "Paris"
@@ -499,7 +503,8 @@
     },
     {
       "id": "c2-literature-5",
-      "title": "Yazar ve Dostu",
+      "title": "The Writer and His Friend",
+      "title_tr": "Yazar ve Dostu",
       "names": [
         "David",
         "Elif"

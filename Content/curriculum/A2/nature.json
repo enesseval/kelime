@@ -401,7 +401,8 @@
   "stories": [
     {
       "id": "a2-nature-1",
-      "title": "Göl kenarında bir gün",
+      "title": "A Day by the Lake",
+      "title_tr": "Göl kenarında bir gün",
       "names": [
         "Cem",
         "Bursa"
@@ -439,7 +440,8 @@
     },
     {
       "id": "a2-nature-2",
-      "title": "Mevsim sohbeti",
+      "title": "Talking About Seasons",
+      "title_tr": "Mevsim sohbeti",
       "names": [
         "English",
         "John",
@@ -479,7 +481,8 @@
     },
     {
       "id": "a2-nature-3",
-      "title": "Dağda fırtına",
+      "title": "A Storm in the Mountains",
+      "title_tr": "Dağda fırtına",
       "names": [
         "Tarık",
         "Uludağ"
@@ -513,7 +516,8 @@
     },
     {
       "id": "a2-nature-4",
-      "title": "Ada gezisi",
+      "title": "An Island Trip",
+      "title_tr": "Ada gezisi",
       "names": [
         "Merve",
         "Büyükada"
@@ -547,7 +551,8 @@
     },
     {
       "id": "a2-nature-5",
-      "title": "Nehir kenarında yürüyüş",
+      "title": "A Walk by the River",
+      "title_tr": "Nehir kenarında yürüyüş",
       "names": [
         "Emre",
         "Aydın"

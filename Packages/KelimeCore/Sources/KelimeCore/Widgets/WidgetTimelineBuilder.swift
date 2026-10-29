@@ -60,7 +60,7 @@ public enum WidgetTimelineBuilder {
                 struggling: struggling,
                 puzzleProgress: puzzle.flatMap { summary in
                     summary.day == LocalDate(entry.slotStart, calendar: calendar)
-                        ? WidgetSnapshot.PuzzleCount(solved: summary.solved, total: summary.total) : nil
+                        ? WidgetSnapshot.PuzzleCount(solved: summary.solved, total: summary.total, cells: summary.cells) : nil
                 },
                 theme: prefs.effectiveTheme
             )
@@ -74,6 +74,38 @@ public enum WidgetTimelineBuilder {
             }
         }
         return snapshots.isEmpty ? [.empty(at: now)] : snapshots
+    }
+
+    /// How long the quiz widget shows a result before the next question.
+    public static let quizResultDuration: TimeInterval = 60
+
+    /// The medium quiz widget: the first unanswered slot from now on. A fresh answer stays on
+    /// screen for `quizResultDuration`, then the next question comes, ahead of its slot.
+    public static func quiz(
+        db: Database,
+        clock: AppClock,
+        using rng: inout some RandomNumberGenerator
+    ) throws -> [WidgetSnapshot] {
+        let all = try build(db: db, clock: clock, mode: .card, using: &rng)
+        let now = clock.now
+        guard let first = all.firstIndex(where: { $0.quizAnswer == nil && $0.card != nil }) else { return all }
+        var result: [WidgetSnapshot] = []
+        var start = now
+        if first > 0,
+           let seconds = try Settings.string(.quizAnsweredAt, in: db).flatMap(TimeInterval.init) {
+            let until = Date(timeIntervalSince1970: seconds).addingTimeInterval(quizResultDuration)
+            if until > now {
+                var answered = all[first - 1]
+                answered.date = now
+                result.append(answered)
+                start = until
+            }
+        }
+        var next = all[first]
+        next.date = max(start, min(next.date, now))
+        result.append(next)
+        result += all[(first + 1)...].filter { $0.date > next.date }
+        return result
     }
 
     /// Answers logged on `day`.
@@ -117,16 +149,23 @@ public enum WidgetActions {
         try LearningStore.record(.markedStruggling, cardID: cardID, source: .widget, clock: clock, db: db)
     }
 
-    /// Records a quiz answer once per slot. Returns whether it was correct, or nil when the
-    /// current slot shows another card or was already answered.
+    /// Records a quiz answer once per slot: the current slot, or a later one the quiz widget
+    /// brought forward. Returns whether it was correct, or nil when no unanswered slot from now
+    /// on shows that card.
     @discardableResult
     public static func answerQuiz(cardID: String, option: String, db: Database, clock: AppClock) throws -> Bool? {
-        guard let entry = try WidgetQueue.current(db: db, clock: clock),
-              entry.cardID == cardID, entry.quizAnswer == nil,
+        guard let current = try WidgetQueue.current(db: db, clock: clock),
+              let entry = try WidgetQueueEntry
+                .filter(WidgetQueueEntry.Columns.slotStart >= current.slotStart)
+                .filter(WidgetQueueEntry.Columns.cardID == cardID)
+                .order(WidgetQueueEntry.Columns.slotStart)
+                .fetchOne(db),
+              entry.quizAnswer == nil,
               let card = try Card.fetchOne(db, key: cardID)
         else { return nil }
         let correct = option == card.word
         try WidgetQueue.recordQuizAnswer(option, slotStart: entry.slotStart, db: db)
+        try Settings.set(.quizAnsweredAt, String(clock.now.timeIntervalSince1970), in: db)
         try LearningStore.record(.answered(correct: correct), cardID: cardID, source: .widget, clock: clock, db: db)
         return correct
     }

@@ -384,7 +384,8 @@
   "stories": [
     {
       "id": "b2-economy-1",
-      "title": "Pazar Alışverişi",
+      "title": "Shopping at the Market",
+      "title_tr": "Pazar Alışverişi",
       "names": [
         "Ayşe",
         "Tom",
@@ -423,7 +424,8 @@
     },
     {
       "id": "b2-economy-2",
-      "title": "Geçim Sıkıntısı",
+      "title": "Making Ends Meet",
+      "title_tr": "Geçim Sıkıntısı",
       "names": [
         "Ali",
         "Zeynep",
@@ -462,7 +464,8 @@
     },
     {
       "id": "b2-economy-3",
-      "title": "Ev Sahibi Olmak",
+      "title": "Buying a Home",
+      "title_tr": "Ev Sahibi Olmak",
       "names": [
         "Hakan",
         "Berlin"
@@ -500,7 +503,8 @@
     },
     {
       "id": "b2-economy-4",
-      "title": "Şirkette Kriz",
+      "title": "Crisis at the Company",
+      "title_tr": "Şirkette Kriz",
       "names": [
         "Tokyo"
       ],
@@ -533,7 +537,8 @@
     },
     {
       "id": "b2-economy-5",
-      "title": "Yeni Araba",
+      "title": "A New Car",
+      "title_tr": "Yeni Araba",
       "names": [
         "Lisa",
         "Paris"

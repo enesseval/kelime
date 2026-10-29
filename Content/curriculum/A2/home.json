@@ -403,7 +403,8 @@
   "stories": [
     {
       "id": "a2-home-1",
-      "title": "Yeni bir daire",
+      "title": "A New Flat",
+      "title_tr": "Yeni bir daire",
       "names": [
         "Selin",
         "İzmir"
@@ -433,7 +434,8 @@
     },
     {
       "id": "a2-home-2",
-      "title": "Evdeki arıza",
+      "title": "Something Broken at Home",
+      "title_tr": "Evdeki arıza",
       "names": [
         "Emre",
         "Kemal"
@@ -467,7 +469,8 @@
     },
     {
       "id": "a2-home-3",
-      "title": "Temizlik vakti",
+      "title": "Cleaning Time",
+      "title_tr": "Temizlik vakti",
       "names": [
         "Kerem",
         "Derya"
@@ -501,7 +504,8 @@
     },
     {
       "id": "a2-home-4",
-      "title": "Köyde yaşam",
+      "title": "Life in the Village",
+      "title_tr": "Köyde yaşam",
       "names": [
         "Fatma",
         "Bursa"
@@ -531,7 +535,8 @@
     },
     {
       "id": "a2-home-5",
-      "title": "Bozuk asansör",
+      "title": "The Broken Lift",
+      "title_tr": "Bozuk asansör",
       "names": [
         "Mert",
         "Ankara"

@@ -395,7 +395,8 @@
   "stories": [
     {
       "id": "b2-business-1",
-      "title": "Yeni Müşteri",
+      "title": "A New Client",
+      "title_tr": "Yeni Müşteri",
       "names": [
         "Ali",
         "Sarah"
@@ -429,7 +430,8 @@
     },
     {
       "id": "b2-business-2",
-      "title": "Büyüme Stratejisi",
+      "title": "A Growth Strategy",
+      "title_tr": "Büyüme Stratejisi",
       "names": [
         "Canan",
         "John",
@@ -464,7 +466,8 @@
     },
     {
       "id": "b2-business-3",
-      "title": "Su Sıkıntısı",
+      "title": "Water Shortage",
+      "title_tr": "Su Sıkıntısı",
       "names": [
         "Murat",
         "Emma"
@@ -498,7 +501,8 @@
     },
     {
       "id": "b2-business-4",
-      "title": "Uygulama Yatırımı",
+      "title": "Investing in an App",
+      "title_tr": "Uygulama Yatırımı",
       "names": [
         "Zeynep",
         "Paul"
@@ -532,7 +536,8 @@
     },
     {
       "id": "b2-business-5",
-      "title": "Fiyat Görüşmesi",
+      "title": "Negotiating the Price",
+      "title_tr": "Fiyat Görüşmesi",
       "names": [
         "David",
         "Leyla"

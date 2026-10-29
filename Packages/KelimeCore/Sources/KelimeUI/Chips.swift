@@ -76,3 +76,37 @@ public struct ProBadge: View {
             .background(Palette.surface2, in: RoundedRectangle(cornerRadius: 6, style: .continuous))
     }
 }
+
+/// "PRO" tucked into the top-right corner of a locked card, cut by the card's own corner.
+public struct ProCornerTag: ViewModifier {
+    let show: Bool
+    let radius: CGFloat
+
+    public func body(content: Content) -> some View {
+        content.overlay {
+            if show {
+                ZStack(alignment: .topTrailing) {
+                    Color.clear
+                    Text("PRO")
+                        .font(KelimeFont.ui(10, weight: .bold))
+                        .tracking(0.6)
+                        .foregroundStyle(Palette.onAccent)
+                        .padding(.leading, 9)
+                        .padding(.trailing, 8)
+                        .padding(.vertical, 4)
+                        .background(Palette.accent, in: UnevenRoundedRectangle(bottomLeadingRadius: 8, style: .continuous))
+                }
+                .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
+                .allowsHitTesting(false)
+                .accessibilityLabel("Pro")
+            }
+        }
+    }
+}
+
+extension View {
+    /// Marks a card as Pro with a tag in its top-right corner. `radius` is the card's corner.
+    public func proCornerTag(_ show: Bool = true, radius: CGFloat) -> some View {
+        modifier(ProCornerTag(show: show, radius: radius))
+    }
+}

@@ -363,7 +363,8 @@
   "stories": [
     {
       "id": "c1-language-1",
-      "title": "Zor bir ders",
+      "title": "A Difficult Lesson",
+      "title_tr": "Zor bir ders",
       "names": [
         "Ali",
         "Clark"
@@ -397,7 +398,8 @@
     },
     {
       "id": "c1-language-2",
-      "title": "Londra'da yanlış anlama",
+      "title": "A Misunderstanding in London",
+      "title_tr": "Londra'da yanlış anlama",
       "names": [
         "Zeynep",
         "London",
@@ -428,7 +430,8 @@
     },
     {
       "id": "c1-language-3",
-      "title": "Siyasi tartışma",
+      "title": "A Political Debate",
+      "title_tr": "Siyasi tartışma",
       "names": [
         "Maria"
       ],
@@ -457,7 +460,8 @@
     },
     {
       "id": "c1-language-4",
-      "title": "İş görüşmesi",
+      "title": "The Job Interview",
+      "title_tr": "İş görüşmesi",
       "names": [
         "Ayşe"
       ],
@@ -486,7 +490,8 @@
     },
     {
       "id": "c1-language-5",
-      "title": "Gizli anlamlar",
+      "title": "Hidden Meanings",
+      "title_tr": "Gizli anlamlar",
       "names": [
         "Emre",
         "Sarah"

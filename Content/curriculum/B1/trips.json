@@ -368,7 +368,8 @@
   "stories": [
     {
       "id": "b1-trips-1",
-      "title": "Macera",
+      "title": "Adventure",
+      "title_tr": "Macera",
       "names": [
         "Ali",
         "Hasan"
@@ -406,7 +407,8 @@
     },
     {
       "id": "b1-trips-2",
-      "title": "Sınırda",
+      "title": "At the Border",
+      "title_tr": "Sınırda",
       "names": [
         "Zeynep",
         "Sofia",
@@ -445,7 +447,8 @@
     },
     {
       "id": "b1-trips-3",
-      "title": "Rehber Kitap",
+      "title": "The Guidebook",
+      "title_tr": "Rehber Kitap",
       "names": [
         "Emir",
         "Spain"
@@ -479,7 +482,8 @@
     },
     {
       "id": "b1-trips-4",
-      "title": "Yerel Tavsiyeler",
+      "title": "Local Tips",
+      "title_tr": "Yerel Tavsiyeler",
       "names": [
         "Cem",
         "David"
@@ -513,7 +517,8 @@
     },
     {
       "id": "b1-trips-5",
-      "title": "Şehri Gezmek",
+      "title": "Exploring the City",
+      "title_tr": "Şehri Gezmek",
       "names": [
         "Aslı",
         "Paris"

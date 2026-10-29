@@ -357,7 +357,8 @@
  "stories": [
   {
    "id": "a1-feelings-1",
-   "title": "Kars'ta soğuk bir gün",
+   "title": "A Cold Day in Kars",
+   "title_tr": "Kars'ta soğuk bir gün",
    "names": [
     "Emre",
     "Kars"
@@ -399,7 +400,8 @@
   },
   {
    "id": "a1-feelings-2",
-   "title": "Londra'dan telefon",
+   "title": "A Call from London",
+   "title_tr": "Londra'dan telefon",
    "names": [
     "Selin",
     "Antalya",
@@ -439,7 +441,8 @@
   },
   {
    "id": "a1-feelings-3",
-   "title": "Doktorda",
+   "title": "At the Doctor's",
+   "title_tr": "Doktorda",
    "names": [
     "Zeynep",
     "Burak"
@@ -481,7 +484,8 @@
   },
   {
    "id": "a1-feelings-4",
-   "title": "Uzun bir gün",
+   "title": "A Long Day",
+   "title_tr": "Uzun bir gün",
    "names": [
     "Hakan",
     "Mert",
@@ -520,7 +524,8 @@
   },
   {
    "id": "a1-feelings-5",
-   "title": "Yağmurlu bir gün",
+   "title": "A Rainy Day",
+   "title_tr": "Yağmurlu bir gün",
    "names": [
     "Seda",
     "Nil",

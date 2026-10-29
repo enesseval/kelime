@@ -289,9 +289,16 @@ struct StoryView: View {
         ScrollView {
             if let story {
                 VStack(alignment: .leading, spacing: 16) {
-                    Text(story.title)
-                        .font(KelimeFont.english(34, relativeTo: .largeTitle))
-                        .accessibilityAddTraits(.isHeader)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(story.title)
+                            .font(KelimeFont.english(34, relativeTo: .largeTitle))
+                            .accessibilityAddTraits(.isHeader)
+                        if showTurkish, let titleTR = story.titleTR {
+                            Text(titleTR)
+                                .font(KelimeFont.ui(15, relativeTo: .subheadline))
+                                .foregroundStyle(Palette.ink2)
+                        }
+                    }
                     ForEach(Array(story.lines.enumerated()), id: \.offset) { _, line in
                         Button { Speaker.shared.speak(line.en) } label: {
                             VStack(alignment: .leading, spacing: 4) {

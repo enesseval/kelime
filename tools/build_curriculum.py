@@ -60,7 +60,7 @@ def main():
             ids.append(p["id"])
         units.append({"id": uid, "level": level, "title": unit["title"], "goal": unit["goal"],
                       "placement": unit["placement"], "position": position,
-                      "stories": [{"id": s["id"], "title": s["title"], "lines": s["lines"]} for s in unit["stories"]],
+                      "stories": [{"id": s["id"], "title": s["title"], "title_tr": s["title_tr"], "lines": s["lines"]} for s in unit["stories"]],
                       "cards": ids})
 
     path = ROOT / "Content" / "cards.json"

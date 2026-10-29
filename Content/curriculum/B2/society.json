@@ -379,7 +379,8 @@
   "stories": [
     {
       "id": "b2-society-1",
-      "title": "Siyasi tartışma",
+      "title": "A Political Debate",
+      "title_tr": "Siyasi tartışma",
       "names": [
         "Ali",
         "Hasan"
@@ -417,7 +418,8 @@
     },
     {
       "id": "b2-society-2",
-      "title": "Öğrenci protestosu",
+      "title": "The Student Protest",
+      "title_tr": "Öğrenci protestosu",
       "names": [
         "Zeynep",
         "Canan"
@@ -451,7 +453,8 @@
     },
     {
       "id": "b2-society-3",
-      "title": "Seçim zamanı",
+      "title": "Election Time",
+      "title_tr": "Seçim zamanı",
       "names": [
         "Murat",
         "Elif"
@@ -485,7 +488,8 @@
     },
     {
       "id": "b2-society-4",
-      "title": "Başkalarına yardım",
+      "title": "Helping Others",
+      "title_tr": "Başkalarına yardım",
       "names": [
         "Sarah",
         "London",
@@ -520,7 +524,8 @@
     },
     {
       "id": "b2-society-5",
-      "title": "Daha iyi bir toplum",
+      "title": "A Better Society",
+      "title_tr": "Daha iyi bir toplum",
       "names": [
         "David",
         "Emma"

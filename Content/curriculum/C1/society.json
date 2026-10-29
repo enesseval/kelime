@@ -379,7 +379,8 @@
   "stories": [
     {
       "id": "c1-society-1",
-      "title": "Tabandan Gelen Güç",
+      "title": "Power from the Grassroots",
+      "title_tr": "Tabandan Gelen Güç",
       "names": [
         "Zeynep",
         "Ali"
@@ -409,7 +410,8 @@
     },
     {
       "id": "c1-society-2",
-      "title": "Politika Tartışması",
+      "title": "A Policy Debate",
+      "title_tr": "Politika Tartışması",
       "names": [
         "Bora",
         "Elif"
@@ -439,7 +441,8 @@
     },
     {
       "id": "c1-society-3",
-      "title": "Kısır Döngü",
+      "title": "A Vicious Circle",
+      "title_tr": "Kısır Döngü",
       "names": [
         "Kaan",
         "Deniz"
@@ -469,7 +472,8 @@
     },
     {
       "id": "c1-society-4",
-      "title": "Buzdağının Görünmeyen Yüzü",
+      "title": "The Tip of the Iceberg",
+      "title_tr": "Buzdağının Görünmeyen Yüzü",
       "names": [
         "Aslı",
         "Cem"
@@ -499,7 +503,8 @@
     },
     {
       "id": "c1-society-5",
-      "title": "Yeni Çerçeve",
+      "title": "A New Framework",
+      "title_tr": "Yeni Çerçeve",
       "names": [
         "Emre",
         "Canan"

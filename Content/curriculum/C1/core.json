@@ -624,7 +624,8 @@
   "stories": [
     {
       "id": "c1-core-1",
-      "title": "Akademik Tartışma",
+      "title": "An Academic Debate",
+      "title_tr": "Akademik Tartışma",
       "names": [
         "Ali",
         "Zeynep"
@@ -654,7 +655,8 @@
     },
     {
       "id": "c1-core-2",
-      "title": "Yeni Politika",
+      "title": "A New Policy",
+      "title_tr": "Yeni Politika",
       "names": [
         "David",
         "Emre"
@@ -684,7 +686,8 @@
     },
     {
       "id": "c1-core-3",
-      "title": "Zor Karar",
+      "title": "A Hard Decision",
+      "title_tr": "Zor Karar",
       "names": [
         "Sara",
         "London"

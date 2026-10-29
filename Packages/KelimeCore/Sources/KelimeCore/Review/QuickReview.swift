@@ -34,6 +34,33 @@ public struct ReviewQuestion: Sendable, Equatable, Identifiable {
         Self.asciiUpper(answer.trimmingCharacters(in: .whitespaces)) == Self.asciiUpper(card.word)
     }
 
+    /// What went wrong in a typed answer, in Turkish, when it was close: one letter off, two
+    /// letters swapped, a few letters off. Nil when it was right, empty or not close.
+    public func mistakeHint(_ answer: String) -> String? {
+        let typed = Array(Self.asciiUpper(answer.trimmingCharacters(in: .whitespaces)))
+        let word = Array(Self.asciiUpper(card.word))
+        guard !typed.isEmpty, typed != word, typed.count == word.count else { return nil }
+        let wrong = Self.wrongPositions(answer, card.word)
+        if wrong.count == 2, wrong[1] == wrong[0] + 1, typed[wrong[0]] == word[wrong[1]], typed[wrong[1]] == word[wrong[0]] {
+            return "Çok yakındın: \(wrong[0] + 1). ve \(wrong[1] + 1). harfin yeri karışmış."
+        }
+        if wrong.count == 1, let index = wrong.first {
+            let got = String(typed[index]).lowercased(), want = String(word[index]).lowercased()
+            return "Çok yakındın: yalnızca \(index + 1). harf yanlış, \"\(got)\" değil \"\(want)\"."
+        }
+        if wrong.count * 2 <= word.count {
+            return "Yakındın: \(wrong.count) harf yanlış."
+        }
+        return nil
+    }
+
+    /// Indexes where `answer` and `word` differ, compared letter by letter (ASCII uppercased).
+    public static func wrongPositions(_ answer: String, _ word: String) -> [Int] {
+        let typed = Array(asciiUpper(answer.trimmingCharacters(in: .whitespaces)))
+        let target = Array(asciiUpper(word))
+        return target.indices.filter { $0 >= typed.count || typed[$0] != target[$0] }
+    }
+
     public static func asciiUpper(_ text: String) -> String {
         text.uppercased(with: Locale(identifier: "en_US_POSIX"))
     }

@@ -361,7 +361,8 @@
   "stories": [
     {
       "id": "c2-science-1",
-      "title": "Deneyin sonucu",
+      "title": "The Result of the Experiment",
+      "title_tr": "Deneyin sonucu",
       "names": [
         "Ali",
         "Sarah"
@@ -395,7 +396,8 @@
     },
     {
       "id": "c2-science-2",
-      "title": "Eski türler",
+      "title": "Ancient Species",
+      "title_tr": "Eski türler",
       "names": [
         "Zeynep",
         "Max"
@@ -425,7 +427,8 @@
     },
     {
       "id": "c2-science-3",
-      "title": "Kuantum verileri",
+      "title": "Quantum Data",
+      "title_tr": "Kuantum verileri",
       "names": [
         "Canan",
         "David"
@@ -455,7 +458,8 @@
     },
     {
       "id": "c2-science-4",
-      "title": "Geleceğin iklimi",
+      "title": "The Climate of the Future",
+      "title_tr": "Geleceğin iklimi",
       "names": [
         "Elif",
         "Tom"
@@ -489,7 +493,8 @@
     },
     {
       "id": "c2-science-5",
-      "title": "Hassas ayar",
+      "title": "Fine-Tuning",
+      "title_tr": "Hassas ayar",
       "names": [
         "Murat",
         "Emma"

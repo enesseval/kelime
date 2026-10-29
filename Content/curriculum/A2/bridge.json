@@ -380,7 +380,8 @@
   "stories": [
     {
       "id": "a2-bridge-1",
-      "title": "Parkta tuhaf bir gün",
+      "title": "A Strange Day in the Park",
+      "title_tr": "Parkta tuhaf bir gün",
       "names": [
         "London",
         "Selim"
@@ -418,7 +419,8 @@
     },
     {
       "id": "a2-bridge-2",
-      "title": "Kayıp pasaport",
+      "title": "The Lost Passport",
+      "title_tr": "Kayıp pasaport",
       "names": [
         "Rome",
         "Zeynep"
@@ -456,7 +458,8 @@
     },
     {
       "id": "a2-bridge-3",
-      "title": "Hava durumu planı",
+      "title": "Plans and the Weather",
+      "title_tr": "Hava durumu planı",
       "names": [
         "Murat",
         "Bursa",
@@ -491,7 +494,8 @@
     },
     {
       "id": "a2-bridge-4",
-      "title": "Kırılan fincan",
+      "title": "The Broken Cup",
+      "title_tr": "Kırılan fincan",
       "names": [
         "Selin",
         "Canan"
@@ -525,7 +529,8 @@
     },
     {
       "id": "a2-bridge-5",
-      "title": "Kuşun macerası",
+      "title": "The Bird's Adventure",
+      "title_tr": "Kuşun macerası",
       "names": [
         "Kerem",
         "İzmir"

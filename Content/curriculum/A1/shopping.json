@@ -365,7 +365,8 @@
  "stories": [
   {
    "id": "a1-shopping-1",
-   "title": "Kırmızı elbise",
+   "title": "The Red Dress",
+   "title_tr": "Kırmızı elbise",
    "names": [
     "Zeynep",
     "İstanbul"
@@ -407,7 +408,8 @@
   },
   {
    "id": "a1-shopping-2",
-   "title": "Pazarda",
+   "title": "At the Market",
+   "title_tr": "Pazarda",
    "names": [
     "Burak",
     "London",
@@ -451,7 +453,8 @@
   },
   {
    "id": "a1-shopping-3",
-   "title": "Yeni ayakkabılar",
+   "title": "New Shoes",
+   "title_tr": "Yeni ayakkabılar",
    "names": [
     "Mert",
     "İzmir"
@@ -489,7 +492,8 @@
   },
   {
    "id": "a1-shopping-4",
-   "title": "Büyük çanta",
+   "title": "A Big Bag",
+   "title_tr": "Büyük çanta",
    "names": [
     "Selin",
     "Defne",
@@ -532,7 +536,8 @@
   },
   {
    "id": "a1-shopping-5",
-   "title": "Çok pahalı",
+   "title": "Too Expensive",
+   "title_tr": "Çok pahalı",
    "names": [
     "Kerem",
     "New York"

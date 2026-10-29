@@ -386,7 +386,8 @@
   "stories": [
     {
       "id": "b1-wellbeing-1",
-      "title": "Futbol kazası",
+      "title": "A Football Accident",
+      "title_tr": "Futbol kazası",
       "names": [
         "Ali"
       ],
@@ -415,7 +416,8 @@
     },
     {
       "id": "b1-wellbeing-2",
-      "title": "Yeni bir başlangıç",
+      "title": "A Fresh Start",
+      "title_tr": "Yeni bir başlangıç",
       "names": [
         "Ayşe"
       ],
@@ -444,7 +446,8 @@
     },
     {
       "id": "b1-wellbeing-3",
-      "title": "Ofiste stres",
+      "title": "Stress at the Office",
+      "title_tr": "Ofiste stres",
       "names": [
         "Burak"
       ],
@@ -473,7 +476,8 @@
     },
     {
       "id": "b1-wellbeing-4",
-      "title": "Doktorda",
+      "title": "At the Doctor's",
+      "title_tr": "Doktorda",
       "names": [
         "Merve"
       ],
@@ -502,7 +506,8 @@
     },
     {
       "id": "b1-wellbeing-5",
-      "title": "Zinde kalmak",
+      "title": "Staying Fit",
+      "title_tr": "Zinde kalmak",
       "names": [
         "Canan"
       ],

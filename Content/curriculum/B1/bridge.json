@@ -375,7 +375,8 @@
   "stories": [
     {
       "id": "b1-bridge-1",
-      "title": "Söylenti",
+      "title": "The Rumour",
+      "title_tr": "Söylenti",
       "names": [
         "Mert",
         "Ali"
@@ -413,7 +414,8 @@
     },
     {
       "id": "b1-bridge-2",
-      "title": "Tanık",
+      "title": "The Witness",
+      "title_tr": "Tanık",
       "names": [
         "Zeynep",
         "London"
@@ -451,7 +453,8 @@
     },
     {
       "id": "b1-bridge-3",
-      "title": "Pişmanlık",
+      "title": "Regret",
+      "title_tr": "Pişmanlık",
       "names": [
         "Burak",
         "Selin"
@@ -489,7 +492,8 @@
     },
     {
       "id": "b1-bridge-4",
-      "title": "Boş Müze",
+      "title": "The Empty Museum",
+      "title_tr": "Boş Müze",
       "names": [
         "Ege",
         "Elif"
@@ -527,7 +531,8 @@
     },
     {
       "id": "b1-bridge-5",
-      "title": "Sonuç",
+      "title": "The Result",
+      "title_tr": "Sonuç",
       "names": [
         "Kaan"
       ],

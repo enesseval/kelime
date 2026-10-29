@@ -14,13 +14,22 @@ public struct UnitStory: Codable, Sendable, Hashable, Identifiable {
     }
 
     public var id: String
+    /// English, like the story.
     public var title: String
+    /// The title in Turkish, shown under the English one.
+    public var titleTR: String?
     public var lines: [Line]
 
-    public init(id: String, title: String, lines: [Line]) {
+    public init(id: String, title: String, titleTR: String? = nil, lines: [Line]) {
         self.id = id
         self.title = title
+        self.titleTR = titleTR
         self.lines = lines
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case id, title, lines
+        case titleTR = "title_tr"
     }
 }
 

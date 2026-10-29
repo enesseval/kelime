@@ -407,7 +407,8 @@
   "stories": [
     {
       "id": "a2-food-1",
-      "title": "Akşam yemeği",
+      "title": "Dinner",
+      "title_tr": "Akşam yemeği",
       "names": [
         "Mert",
         "Selin",
@@ -446,7 +447,8 @@
     },
     {
       "id": "a2-food-2",
-      "title": "Vejetaryen misafir",
+      "title": "A Vegetarian Guest",
+      "title_tr": "Vejetaryen misafir",
       "names": [
         "Kerem",
         "Sarah",
@@ -485,7 +487,8 @@
     },
     {
       "id": "a2-food-3",
-      "title": "Kolay bir tarif",
+      "title": "An Easy Recipe",
+      "title_tr": "Kolay bir tarif",
       "names": [
         "Emre",
         "Bursa"
@@ -519,7 +522,8 @@
     },
     {
       "id": "a2-food-4",
-      "title": "Pazar alışverişi",
+      "title": "Shopping at the Market",
+      "title_tr": "Pazar alışverişi",
       "names": [
         "Fatma",
         "Antalya"
@@ -553,7 +557,8 @@
     },
     {
       "id": "a2-food-5",
-      "title": "Yeni bir masa",
+      "title": "A New Table",
+      "title_tr": "Yeni bir masa",
       "names": [
         "Burak",
         "Cem",

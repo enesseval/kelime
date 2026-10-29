@@ -375,7 +375,8 @@
   "stories": [
     {
       "id": "b2-relationships-1",
-      "title": "Aile Buluşması",
+      "title": "A Family Reunion",
+      "title_tr": "Aile Buluşması",
       "names": [
         "Ali",
         "Zeynep"
@@ -405,7 +406,8 @@
     },
     {
       "id": "b2-relationships-2",
-      "title": "İhanet",
+      "title": "Betrayal",
+      "title_tr": "İhanet",
       "names": [
         "Emre",
         "Leyla"
@@ -435,7 +437,8 @@
     },
     {
       "id": "b2-relationships-3",
-      "title": "Ev Arkadaşı",
+      "title": "The Flatmate",
+      "title_tr": "Ev Arkadaşı",
       "names": [
         "Ahmet",
         "Burak"
@@ -465,7 +468,8 @@
     },
     {
       "id": "b2-relationships-4",
-      "title": "Küsüşmek",
+      "title": "Not Speaking",
+      "title_tr": "Küsüşmek",
       "names": [
         "Selin",
         "Ayşe"
@@ -495,7 +499,8 @@
     },
     {
       "id": "b2-relationships-5",
-      "title": "Veda",
+      "title": "Goodbye",
+      "title_tr": "Veda",
       "names": [
         "Deniz",
         "Murat",

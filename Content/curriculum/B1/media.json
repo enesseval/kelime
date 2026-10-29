@@ -400,7 +400,8 @@
   "stories": [
     {
       "id": "b1-media-1",
-      "title": "Yalan haber",
+      "title": "Fake News",
+      "title_tr": "Yalan haber",
       "names": [
         "Ali",
         "Hasan"
@@ -434,7 +435,8 @@
     },
     {
       "id": "b1-media-2",
-      "title": "Popüler video",
+      "title": "A Popular Video",
+      "title_tr": "Popüler video",
       "names": [
         "Zeynep",
         "Elif"
@@ -464,7 +466,8 @@
     },
     {
       "id": "b1-media-3",
-      "title": "Yeni bir belgesel",
+      "title": "A New Documentary",
+      "title_tr": "Yeni bir belgesel",
       "names": [
         "Burak",
         "Cem"
@@ -494,7 +497,8 @@
     },
     {
       "id": "b1-media-4",
-      "title": "İnternette gizlilik",
+      "title": "Privacy Online",
+      "title_tr": "İnternette gizlilik",
       "names": [
         "Ayşe",
         "Fatma"
@@ -524,7 +528,8 @@
     },
     {
       "id": "b1-media-5",
-      "title": "Medya ve haberler",
+      "title": "The Media and the News",
+      "title_tr": "Medya ve haberler",
       "names": [
         "Leyla",
         "Murat"

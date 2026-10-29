@@ -379,7 +379,8 @@
   "stories": [
     {
       "id": "c1-research-1",
-      "title": "Laboratuvar Toplantısı",
+      "title": "The Lab Meeting",
+      "title_tr": "Laboratuvar Toplantısı",
       "names": [
         "Ayşe",
         "Tom"
@@ -409,7 +410,8 @@
     },
     {
       "id": "c1-research-2",
-      "title": "Veri Analizi",
+      "title": "Data Analysis",
+      "title_tr": "Veri Analizi",
       "names": [
         "Burak"
       ],
@@ -438,7 +440,8 @@
     },
     {
       "id": "c1-research-3",
-      "title": "Akademik İnceleme",
+      "title": "An Academic Review",
+      "title_tr": "Akademik İnceleme",
       "names": [
         "Zeynep",
         "Mark"
@@ -468,7 +471,8 @@
     },
     {
       "id": "c1-research-4",
-      "title": "Çevreyi Simüle Etmek",
+      "title": "Simulating the Environment",
+      "title_tr": "Çevreyi Simüle Etmek",
       "names": [
         "David",
         "Elif"
@@ -494,7 +498,8 @@
     },
     {
       "id": "c1-research-5",
-      "title": "Medyaya Karşı Bilim",
+      "title": "Science Versus the Media",
+      "title_tr": "Medyaya Karşı Bilim",
       "names": [
         "Ahmet"
       ],

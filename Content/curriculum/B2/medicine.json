@@ -368,7 +368,8 @@
   "stories": [
     {
       "id": "b2-medicine-1",
-      "title": "Doktor Ziyareti",
+      "title": "A Visit to the Doctor",
+      "title_tr": "Doktor Ziyareti",
       "names": [
         "Zeynep",
         "Dr",
@@ -407,7 +408,8 @@
     },
     {
       "id": "b2-medicine-2",
-      "title": "Genetik Alerji",
+      "title": "A Genetic Allergy",
+      "title_tr": "Genetik Alerji",
       "names": [
         "Ali",
         "Hasan"
@@ -441,7 +443,8 @@
     },
     {
       "id": "b2-medicine-3",
-      "title": "İyileşme Süreci",
+      "title": "The Road to Recovery",
+      "title_tr": "İyileşme Süreci",
       "names": [
         "Ayşe",
         "London"
@@ -475,7 +478,8 @@
     },
     {
       "id": "b2-medicine-4",
-      "title": "Sağlıklı Yaşam",
+      "title": "Healthy Living",
+      "title_tr": "Sağlıklı Yaşam",
       "names": [
         "Burak",
         "David"
@@ -505,7 +509,8 @@
     },
     {
       "id": "b2-medicine-5",
-      "title": "Organ ve Aşı",
+      "title": "Organs and Vaccines",
+      "title_tr": "Organ ve Aşı",
       "names": [
         "Brown",
         "Lisa"

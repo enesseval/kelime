@@ -365,7 +365,8 @@
   "stories": [
     {
       "id": "c1-earth-1",
-      "title": "Zor kararlar",
+      "title": "Hard Choices",
+      "title_tr": "Zor kararlar",
       "names": [
         "Defne",
         "David"
@@ -395,7 +396,8 @@
     },
     {
       "id": "c1-earth-2",
-      "title": "Kuruyan nehir",
+      "title": "The Drying River",
+      "title_tr": "Kuruyan nehir",
       "names": [
         "Ali"
       ],
@@ -424,7 +426,8 @@
     },
     {
       "id": "c1-earth-3",
-      "title": "Şehrin atıkları",
+      "title": "The City's Waste",
+      "title_tr": "Şehrin atıkları",
       "names": [
         "Ayşe",
         "Mark"
@@ -454,7 +457,8 @@
     },
     {
       "id": "c1-earth-4",
-      "title": "Kötü alışkanlıklar",
+      "title": "Bad Habits",
+      "title_tr": "Kötü alışkanlıklar",
       "names": [
         "Canan",
         "John"
@@ -484,7 +488,8 @@
     },
     {
       "id": "c1-earth-5",
-      "title": "Ormanın umudu",
+      "title": "Hope for the Forest",
+      "title_tr": "Ormanın umudu",
       "names": [
         "Emre"
       ],

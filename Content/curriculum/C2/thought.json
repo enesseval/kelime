@@ -363,7 +363,8 @@
   "stories": [
     {
       "id": "c2-thought-1",
-      "title": "Üniversitede felsefe dersi",
+      "title": "A Philosophy Class at University",
+      "title_tr": "Üniversitede felsefe dersi",
       "names": [
         "Ali",
         "Sarah"
@@ -397,7 +398,8 @@
     },
     {
       "id": "c2-thought-2",
-      "title": "Etik bir ikilem",
+      "title": "An Ethical Dilemma",
+      "title_tr": "Etik bir ikilem",
       "names": [
         "Zeynep",
         "Mark"
@@ -427,7 +429,8 @@
     },
     {
       "id": "c2-thought-3",
-      "title": "Kader mi, seçim mi?",
+      "title": "Fate or Choice?",
+      "title_tr": "Kader mi, seçim mi?",
       "names": [
         "Emre",
         "John"
@@ -457,7 +460,8 @@
     },
     {
       "id": "c2-thought-4",
-      "title": "Akademik bir tartışma",
+      "title": "An Academic Debate",
+      "title_tr": "Akademik bir tartışma",
       "names": [
         "Aylin",
         "David"
@@ -487,7 +491,8 @@
     },
     {
       "id": "c2-thought-5",
-      "title": "Değerlerimiz",
+      "title": "Our Values",
+      "title_tr": "Değerlerimiz",
       "names": [
         "Canan",
         "Paul"

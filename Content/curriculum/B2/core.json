@@ -649,7 +649,8 @@
   "stories": [
     {
       "id": "b2-core-1",
-      "title": "İş Görüşmesi",
+      "title": "The Job Interview",
+      "title_tr": "İş Görüşmesi",
       "names": [
         "Ali",
         "Mr. Smith",
@@ -685,7 +686,8 @@
     },
     {
       "id": "b2-core-2",
-      "title": "Yeni Bir Plan",
+      "title": "A New Plan",
+      "title_tr": "Yeni Bir Plan",
       "names": [
         "Zeynep"
       ],
@@ -718,7 +720,8 @@
     },
     {
       "id": "b2-core-3",
-      "title": "Farklı Görüşler",
+      "title": "Different Opinions",
+      "title_tr": "Farklı Görüşler",
       "names": [
         "Cem",
         "Mert"

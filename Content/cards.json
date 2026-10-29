@@ -1,5 +1,5 @@
 {
- "contentVersion": 12,
+ "contentVersion": 13,
  "cards": [
   {
    "id": "a2-think",
@@ -34717,7 +34717,8 @@
    "stories": [
     {
      "id": "a2-core-1",
-     "title": "İzmir'de bir akşam",
+     "title": "An Evening in İzmir",
+     "title_tr": "İzmir'de bir akşam",
      "lines": [
       {
        "en": "Selin and Kerem are in İzmir for a holiday.",
@@ -34747,7 +34748,8 @@
     },
     {
      "id": "a2-core-2",
-     "title": "Londra treni",
+     "title": "The London Train",
+     "title_tr": "Londra treni",
      "lines": [
       {
        "en": "Emre waited for the train to London.",
@@ -34777,7 +34779,8 @@
     },
     {
      "id": "a2-core-3",
-     "title": "Hafta sonu planı",
+     "title": "Weekend Plans",
+     "title_tr": "Hafta sonu planı",
      "lines": [
       {
        "en": "Can we play football tomorrow?",
@@ -34878,7 +34881,8 @@
    "stories": [
     {
      "id": "a2-travel-1",
-     "title": "Otelde ilk gün",
+     "title": "First Day at the Hotel",
+     "title_tr": "Otelde ilk gün",
      "lines": [
       {
        "en": "Selin is on holiday in Rome.",
@@ -34912,7 +34916,8 @@
     },
     {
      "id": "a2-travel-2",
-     "title": "Havalimanında rötar",
+     "title": "A Delay at the Airport",
+     "title_tr": "Havalimanında rötar",
      "lines": [
       {
        "en": "Emre arrives at the airport for his flight to London.",
@@ -34942,7 +34947,8 @@
     },
     {
      "id": "a2-travel-3",
-     "title": "Garda bilet almak",
+     "title": "Buying a Ticket at the Station",
+     "title_tr": "Garda bilet almak",
      "lines": [
       {
        "en": "Kerem is at the train station in Izmir.",
@@ -34972,7 +34978,8 @@
     },
     {
      "id": "a2-travel-4",
-     "title": "Müze gezisi",
+     "title": "A Museum Visit",
+     "title_tr": "Müze gezisi",
      "lines": [
       {
        "en": "Mert travels abroad to Paris as a tourist.",
@@ -35002,7 +35009,8 @@
     },
     {
      "id": "a2-travel-5",
-     "title": "Eve dönüş hazırlığı",
+     "title": "Getting Ready to Go Home",
+     "title_tr": "Eve dönüş hazırlığı",
      "lines": [
       {
        "en": "Zeynep needs to pack her luggage today.",
@@ -35071,7 +35079,8 @@
    "stories": [
     {
      "id": "a2-work-1",
-     "title": "İş görüşmesi",
+     "title": "A Job Interview",
+     "title_tr": "İş görüşmesi",
      "lines": [
       {
        "en": "Selin has a job interview in London today.",
@@ -35105,7 +35114,8 @@
     },
     {
      "id": "a2-work-2",
-     "title": "Ofiste toplantı",
+     "title": "A Meeting at the Office",
+     "title_tr": "Ofiste toplantı",
      "lines": [
       {
        "en": "Kerem and John work in the same office.",
@@ -35135,7 +35145,8 @@
     },
     {
      "id": "a2-work-3",
-     "title": "Rapor ve son teslim",
+     "title": "The Report and the Deadline",
+     "title_tr": "Rapor ve son teslim",
      "lines": [
       {
        "en": "Banu works for a big company in Paris.",
@@ -35165,7 +35176,8 @@
     },
     {
      "id": "a2-work-4",
-     "title": "Yarı zamanlı iş",
+     "title": "A Part-Time Job",
+     "title_tr": "Yarı zamanlı iş",
      "lines": [
       {
        "en": "Emre lives in İzmir and needs money.",
@@ -35195,7 +35207,8 @@
     },
     {
      "id": "a2-work-5",
-     "title": "Müdürün mesajı",
+     "title": "A Message from the Manager",
+     "title_tr": "Müdürün mesajı",
      "lines": [
       {
        "en": "Zeynep and David work in an office in Ankara.",
@@ -35264,7 +35277,8 @@
    "stories": [
     {
      "id": "a2-health-1",
-     "title": "Doktorda",
+     "title": "At the Doctor's",
+     "title_tr": "Doktorda",
      "lines": [
       {
        "en": "Ahmet is ill. He goes to a hospital in İzmir.",
@@ -35298,7 +35312,8 @@
     },
     {
      "id": "a2-health-2",
-     "title": "Eczanede",
+     "title": "At the Pharmacy",
+     "title_tr": "Eczanede",
      "lines": [
       {
        "en": "Selin is in a pharmacy in London.",
@@ -35328,7 +35343,8 @@
     },
     {
      "id": "a2-health-3",
-     "title": "Dişçi randevusu",
+     "title": "A Dentist Appointment",
+     "title_tr": "Dişçi randevusu",
      "lines": [
       {
        "en": "Emre lives in Ankara. He has a bad tooth.",
@@ -35358,7 +35374,8 @@
     },
     {
      "id": "a2-health-4",
-     "title": "Küçük bir kaza",
+     "title": "A Small Accident",
+     "title_tr": "Küçük bir kaza",
      "lines": [
       {
        "en": "Kerem had a small accident in Bursa.",
@@ -35388,7 +35405,8 @@
     },
     {
      "id": "a2-health-5",
-     "title": "Sağlıklı yaşam",
+     "title": "Healthy Living",
+     "title_tr": "Sağlıklı yaşam",
      "lines": [
       {
        "en": "Banu and Cem speak in the park.",
@@ -35458,7 +35476,8 @@
    "stories": [
     {
      "id": "a2-food-1",
-     "title": "Akşam yemeği",
+     "title": "Dinner",
+     "title_tr": "Akşam yemeği",
      "lines": [
       {
        "en": "Mert and Selin walk into a restaurant in İzmir.",
@@ -35492,7 +35511,8 @@
     },
     {
      "id": "a2-food-2",
-     "title": "Vejetaryen misafir",
+     "title": "A Vegetarian Guest",
+     "title_tr": "Vejetaryen misafir",
      "lines": [
       {
        "en": "Sarah lives in London and visits her friend Kerem.",
@@ -35526,7 +35546,8 @@
     },
     {
      "id": "a2-food-3",
-     "title": "Kolay bir tarif",
+     "title": "An Easy Recipe",
+     "title_tr": "Kolay bir tarif",
      "lines": [
       {
        "en": "Emre wants to cook dinner at his home in Bursa.",
@@ -35556,7 +35577,8 @@
     },
     {
      "id": "a2-food-4",
-     "title": "Pazar alışverişi",
+     "title": "Shopping at the Market",
+     "title_tr": "Pazar alışverişi",
      "lines": [
       {
        "en": "Fatma goes to the open market in Antalya.",
@@ -35586,7 +35608,8 @@
     },
     {
      "id": "a2-food-5",
-     "title": "Yeni bir masa",
+     "title": "A New Table",
+     "title_tr": "Yeni bir masa",
      "lines": [
       {
        "en": "Burak and Cem are hungry after work in Ankara.",
@@ -35659,7 +35682,8 @@
    "stories": [
     {
      "id": "a2-home-1",
-     "title": "Yeni bir daire",
+     "title": "A New Flat",
+     "title_tr": "Yeni bir daire",
      "lines": [
       {
        "en": "Selin wants to rent an apartment in İzmir.",
@@ -35685,7 +35709,8 @@
     },
     {
      "id": "a2-home-2",
-     "title": "Evdeki arıza",
+     "title": "Something Broken at Home",
+     "title_tr": "Evdeki arıza",
      "lines": [
       {
        "en": "Emre feels very cold in his bedroom.",
@@ -35715,7 +35740,8 @@
     },
     {
      "id": "a2-home-3",
-     "title": "Temizlik vakti",
+     "title": "Cleaning Time",
+     "title_tr": "Temizlik vakti",
      "lines": [
       {
        "en": "Kerem and Derya want to clean the house.",
@@ -35745,7 +35771,8 @@
     },
     {
      "id": "a2-home-4",
-     "title": "Köyde yaşam",
+     "title": "Life in the Village",
+     "title_tr": "Köyde yaşam",
      "lines": [
       {
        "en": "Fatma lived in a noisy street in Bursa.",
@@ -35771,7 +35798,8 @@
     },
     {
      "id": "a2-home-5",
-     "title": "Bozuk asansör",
+     "title": "The Broken Lift",
+     "title_tr": "Bozuk asansör",
      "lines": [
       {
        "en": "Mert lives in a tall apartment in Ankara.",
@@ -35835,7 +35863,8 @@
    "stories": [
     {
      "id": "a2-tech-1",
-     "title": "İzmir'de bir kafede",
+     "title": "At a Café in İzmir",
+     "title_tr": "İzmir'de bir kafede",
      "lines": [
       {
        "en": "Selin is at a café in İzmir with her laptop.",
@@ -35869,7 +35898,8 @@
     },
     {
      "id": "a2-tech-2",
-     "title": "Londra'dan arama",
+     "title": "A Call from London",
+     "title_tr": "Londra'dan arama",
      "lines": [
       {
        "en": "Kerem is in London and his friend David calls him.",
@@ -35903,7 +35933,8 @@
     },
     {
      "id": "a2-tech-3",
-     "title": "Yeni uygulama",
+     "title": "A New App",
+     "title_tr": "Yeni uygulama",
      "lines": [
       {
        "en": "Merve wants to buy a book in Bursa.",
@@ -35933,7 +35964,8 @@
     },
     {
      "id": "a2-tech-4",
-     "title": "Eski fotoğraflar",
+     "title": "Old Photos",
+     "title_tr": "Eski fotoğraflar",
      "lines": [
       {
        "en": "Emre sits at his computer in his bedroom.",
@@ -35963,7 +35995,8 @@
     },
     {
      "id": "a2-tech-5",
-     "title": "Ankara'da tren istasyonunda",
+     "title": "At the Station in Ankara",
+     "title_tr": "Ankara'da tren istasyonunda",
      "lines": [
       {
        "en": "Zeynep is at the train station in Ankara.",
@@ -36030,7 +36063,8 @@
    "stories": [
     {
      "id": "a2-people-1",
-     "title": "Yeni arkadaş",
+     "title": "A New Friend",
+     "title_tr": "Yeni arkadaş",
      "lines": [
       {
        "en": "Cem has a new friend from his work.",
@@ -36060,7 +36094,8 @@
     },
     {
      "id": "a2-people-2",
-     "title": "Büyük parti",
+     "title": "The Big Party",
+     "title_tr": "Büyük parti",
      "lines": [
       {
        "en": "Today is Ali's birthday.",
@@ -36090,7 +36125,8 @@
     },
     {
      "id": "a2-people-3",
-     "title": "Düğün daveti",
+     "title": "A Wedding Invitation",
+     "title_tr": "Düğün daveti",
      "lines": [
       {
        "en": "Leo is at a café with his partner, Mert.",
@@ -36120,7 +36156,8 @@
     },
     {
      "id": "a2-people-4",
-     "title": "Kafede ünlü biri",
+     "title": "Someone Famous in the Café",
+     "title_tr": "Kafede ünlü biri",
      "lines": [
       {
        "en": "Hakan and Emma sit near the window in London.",
@@ -36150,7 +36187,8 @@
     },
     {
      "id": "a2-people-5",
-     "title": "Pazar günü",
+     "title": "Sunday",
+     "title_tr": "Pazar günü",
      "lines": [
       {
        "en": "Selin and her sister Zeynep are at home.",
@@ -36215,7 +36253,8 @@
    "stories": [
     {
      "id": "a2-life-1",
-     "title": "İzmir'den Londra'ya",
+     "title": "From İzmir to London",
+     "title_tr": "İzmir'den Londra'ya",
      "lines": [
       {
        "en": "Selin is an English teacher.",
@@ -36245,7 +36284,8 @@
     },
     {
      "id": "a2-life-2",
-     "title": "Zor bir sınav",
+     "title": "A Hard Exam",
+     "title_tr": "Zor bir sınav",
      "lines": [
       {
        "en": "Emre is a university student from Bursa.",
@@ -36275,7 +36315,8 @@
     },
     {
      "id": "a2-life-3",
-     "title": "Yolculuk anıları",
+     "title": "Travel Memories",
+     "title_tr": "Yolculuk anıları",
      "lines": [
       {
        "en": "Kerem talks with his friend in a café.",
@@ -36305,7 +36346,8 @@
     },
     {
      "id": "a2-life-4",
-     "title": "Eski alışkanlıklar",
+     "title": "Old Habits",
+     "title_tr": "Eski alışkanlıklar",
      "lines": [
       {
        "en": "Zeynep thinks about her childhood.",
@@ -36335,7 +36377,8 @@
     },
     {
      "id": "a2-life-5",
-     "title": "Mezuniyet günü",
+     "title": "Graduation Day",
+     "title_tr": "Mezuniyet günü",
      "lines": [
       {
        "en": "Canan graduated from university last week.",
@@ -36403,7 +36446,8 @@
    "stories": [
     {
      "id": "a2-plans-1",
-     "title": "Konser daveti",
+     "title": "A Concert Invitation",
+     "title_tr": "Konser daveti",
      "lines": [
       {
        "en": "Are you free on Saturday, Kerem?",
@@ -36433,7 +36477,8 @@
     },
     {
      "id": "a2-plans-2",
-     "title": "Belki başka zamana",
+     "title": "Maybe Another Time",
+     "title_tr": "Belki başka zamana",
      "lines": [
       {
        "en": "Zeynep brings an invitation to Murat.",
@@ -36463,7 +36508,8 @@
     },
     {
      "id": "a2-plans-3",
-     "title": "Plan değişikliği",
+     "title": "A Change of Plan",
+     "title_tr": "Plan değişikliği",
      "lines": [
       {
        "en": "Ahmet and Emre planned to go to a festival.",
@@ -36493,7 +36539,8 @@
     },
     {
      "id": "a2-plans-4",
-     "title": "Gelecek planları",
+     "title": "Plans for the Future",
+     "title_tr": "Gelecek planları",
      "lines": [
       {
        "en": "Ece and Sinan are talking about the future.",
@@ -36523,7 +36570,8 @@
     },
     {
      "id": "a2-plans-5",
-     "title": "Hafta sonu buluşması",
+     "title": "Meeting at the Weekend",
+     "title_tr": "Hafta sonu buluşması",
      "lines": [
       {
        "en": "What are you doing this weekend, Deniz?",
@@ -36591,7 +36639,8 @@
    "stories": [
     {
      "id": "a2-nature-1",
-     "title": "Göl kenarında bir gün",
+     "title": "A Day by the Lake",
+     "title_tr": "Göl kenarında bir gün",
      "lines": [
       {
        "en": "Cem lives in Bursa, but today he is in the countryside.",
@@ -36625,7 +36674,8 @@
     },
     {
      "id": "a2-nature-2",
-     "title": "Mevsim sohbeti",
+     "title": "Talking About Seasons",
+     "title_tr": "Mevsim sohbeti",
      "lines": [
       {
        "en": "Selin speaks with her English friend John from London.",
@@ -36659,7 +36709,8 @@
     },
     {
      "id": "a2-nature-3",
-     "title": "Dağda fırtına",
+     "title": "A Storm in the Mountains",
+     "title_tr": "Dağda fırtına",
      "lines": [
       {
        "en": "Tarık and his father travel to Uludağ.",
@@ -36689,7 +36740,8 @@
     },
     {
      "id": "a2-nature-4",
-     "title": "Ada gezisi",
+     "title": "An Island Trip",
+     "title_tr": "Ada gezisi",
      "lines": [
       {
        "en": "Merve wants to visit Büyükada on Saturday.",
@@ -36719,7 +36771,8 @@
     },
     {
      "id": "a2-nature-5",
-     "title": "Nehir kenarında yürüyüş",
+     "title": "A Walk by the River",
+     "title_tr": "Nehir kenarında yürüyüş",
      "lines": [
       {
        "en": "Emre works in Aydın and needs a rest.",
@@ -36789,7 +36842,8 @@
    "stories": [
     {
      "id": "a2-bridge-1",
-     "title": "Parkta tuhaf bir gün",
+     "title": "A Strange Day in the Park",
+     "title_tr": "Parkta tuhaf bir gün",
      "lines": [
       {
        "en": "Selim was walking in London when it started to rain.",
@@ -36823,7 +36877,8 @@
     },
     {
      "id": "a2-bridge-2",
-     "title": "Kayıp pasaport",
+     "title": "The Lost Passport",
+     "title_tr": "Kayıp pasaport",
      "lines": [
       {
        "en": "Zeynep was waiting at the airport in Rome.",
@@ -36857,7 +36912,8 @@
     },
     {
      "id": "a2-bridge-3",
-     "title": "Hava durumu planı",
+     "title": "Plans and the Weather",
+     "title_tr": "Hava durumu planı",
      "lines": [
       {
        "en": "Murat and Emre were planning a trip near Bursa.",
@@ -36887,7 +36943,8 @@
     },
     {
      "id": "a2-bridge-4",
-     "title": "Kırılan fincan",
+     "title": "The Broken Cup",
+     "title_tr": "Kırılan fincan",
      "lines": [
       {
        "en": "Selin was very angry in the kitchen.",
@@ -36917,7 +36974,8 @@
     },
     {
      "id": "a2-bridge-5",
-     "title": "Kuşun macerası",
+     "title": "The Bird's Adventure",
+     "title_tr": "Kuşun macerası",
      "lines": [
       {
        "en": "Kerem lives in a quiet village near İzmir.",
@@ -36985,7 +37043,8 @@
    "stories": [
     {
      "id": "a1-core-1",
-     "title": "Tanışma",
+     "title": "Nice to Meet You",
+     "title_tr": "Tanışma",
      "lines": [
       {
        "en": "Hello! My name is Zeynep. I'm from Turkey.",
@@ -37015,7 +37074,8 @@
     },
     {
      "id": "a1-core-2",
-     "title": "Yeni arkadaş",
+     "title": "A New Friend",
+     "title_tr": "Yeni arkadaş",
      "lines": [
       {
        "en": "This is my friend Ece. She works here.",
@@ -37114,7 +37174,8 @@
    "stories": [
     {
      "id": "a1-family-1",
-     "title": "Yeni arkadaş",
+     "title": "A New Friend",
+     "title_tr": "Yeni arkadaş",
      "lines": [
       {
        "en": "Hello! My name is Mert. What's your name?",
@@ -37148,7 +37209,8 @@
     },
     {
      "id": "a1-family-2",
-     "title": "Kerem ve ailesi",
+     "title": "Kerem and His Family",
+     "title_tr": "Kerem ve ailesi",
      "lines": [
       {
        "en": "Kerem and his wife Zeynep live in İzmir.",
@@ -37182,7 +37244,8 @@
     },
     {
      "id": "a1-family-3",
-     "title": "Tanışma",
+     "title": "Nice to Meet You",
+     "title_tr": "Tanışma",
      "lines": [
       {
        "en": "Hi Jack! How are you today?",
@@ -37216,7 +37279,8 @@
     },
     {
      "id": "a1-family-4",
-     "title": "Büyük aile",
+     "title": "A Big Family",
+     "title_tr": "Büyük aile",
      "lines": [
       {
        "en": "Bora has a big family in Ankara.",
@@ -37250,7 +37314,8 @@
     },
     {
      "id": "a1-family-5",
-     "title": "Kız kardeşim",
+     "title": "My Sister",
+     "title_tr": "Kız kardeşim",
      "lines": [
       {
        "en": "Kate sees her friend Ece with a young woman.",
@@ -37324,7 +37389,8 @@
    "stories": [
     {
      "id": "a1-home-1",
-     "title": "Yeni daire",
+     "title": "The New Flat",
+     "title_tr": "Yeni daire",
      "lines": [
       {
        "en": "Selin lives in a new apartment in Ankara.",
@@ -37358,7 +37424,8 @@
     },
     {
      "id": "a1-home-2",
-     "title": "Anahtar nerede?",
+     "title": "Where Is the Key?",
+     "title_tr": "Anahtar nerede?",
      "lines": [
       {
        "en": "Burak and Emma live in a small house in London.",
@@ -37392,7 +37459,8 @@
     },
     {
      "id": "a1-home-3",
-     "title": "Bahçeli ev",
+     "title": "A House with a Garden",
+     "title_tr": "Bahçeli ev",
      "lines": [
       {
        "en": "Kemal and Defne have an old house in İzmir.",
@@ -37422,7 +37490,8 @@
     },
     {
      "id": "a1-home-4",
-     "title": "Soğuk bir gün",
+     "title": "A Cold Day",
+     "title_tr": "Soğuk bir gün",
      "lines": [
       {
        "en": "Zeynep is at home in Bursa today.",
@@ -37456,7 +37525,8 @@
     },
     {
      "id": "a1-home-5",
-     "title": "Misafir",
+     "title": "A Guest",
+     "title_tr": "Misafir",
      "lines": [
       {
        "en": "David comes to Hakan's house.",
@@ -37527,7 +37597,8 @@
    "stories": [
     {
      "id": "a1-day-1",
-     "title": "Selin'in sabahı",
+     "title": "Selin's Morning",
+     "title_tr": "Selin'in sabahı",
      "lines": [
       {
        "en": "Selin lives in Ankara.",
@@ -37557,7 +37628,8 @@
     },
     {
      "id": "a1-day-2",
-     "title": "Saat kaç?",
+     "title": "What Time Is It?",
+     "title_tr": "Saat kaç?",
      "lines": [
       {
        "en": "Burak and Emma work in London.",
@@ -37587,7 +37659,8 @@
     },
     {
      "id": "a1-day-3",
-     "title": "Gece işi",
+     "title": "Night Work",
+     "title_tr": "Gece işi",
      "lines": [
       {
        "en": "Mert is from Izmir. He works at night.",
@@ -37617,7 +37690,8 @@
     },
     {
      "id": "a1-day-4",
-     "title": "Yoğun bir hafta",
+     "title": "A Busy Week",
+     "title_tr": "Yoğun bir hafta",
      "lines": [
       {
        "en": "Hi David! How are you today?",
@@ -37651,7 +37725,8 @@
     },
     {
      "id": "a1-day-5",
-     "title": "Güzel bir hafta sonu",
+     "title": "A Nice Weekend",
+     "title_tr": "Güzel bir hafta sonu",
      "lines": [
       {
        "en": "Kaan and Defne live in Istanbul.",
@@ -37726,7 +37801,8 @@
    "stories": [
     {
      "id": "a1-cafe-1",
-     "title": "Elif'in ilk kahvesi",
+     "title": "Elif's First Coffee",
+     "title_tr": "Elif'in ilk kahvesi",
      "lines": [
       {
        "en": "Elif is from Turkey. Today she is in a small café.",
@@ -37760,7 +37836,8 @@
     },
     {
      "id": "a1-cafe-2",
-     "title": "Hesap lütfen",
+     "title": "The Bill, Please",
+     "title_tr": "Hesap lütfen",
      "lines": [
       {
        "en": "Mehmet and his friend Tom are in a café.",
@@ -37798,7 +37875,8 @@
     },
     {
      "id": "a1-cafe-3",
-     "title": "Süt ve şeker",
+     "title": "Milk and Sugar",
+     "title_tr": "Süt ve şeker",
      "lines": [
       {
        "en": "A woman and her child sit at a big table.",
@@ -37828,7 +37906,8 @@
     },
     {
      "id": "a1-cafe-4",
-     "title": "Kafede bir gün",
+     "title": "A Day at the Café",
+     "title_tr": "Kafede bir gün",
      "lines": [
       {
        "en": "Deniz works in a café. Two people come in.",
@@ -37858,7 +37937,8 @@
     },
     {
      "id": "a1-cafe-5",
-     "title": "İki arkadaş",
+     "title": "Two Friends",
+     "title_tr": "İki arkadaş",
      "lines": [
       {
        "en": "Ayşe and her friend Leyla are at a café.",
@@ -37926,7 +38006,8 @@
    "stories": [
     {
      "id": "a1-shopping-1",
-     "title": "Kırmızı elbise",
+     "title": "The Red Dress",
+     "title_tr": "Kırmızı elbise",
      "lines": [
       {
        "en": "Zeynep is in a nice shop in İstanbul.",
@@ -37964,7 +38045,8 @@
     },
     {
      "id": "a1-shopping-2",
-     "title": "Pazarda",
+     "title": "At the Market",
+     "title_tr": "Pazarda",
      "lines": [
       {
        "en": "Burak is from Turkey. He lives in London now.",
@@ -38002,7 +38084,8 @@
     },
     {
      "id": "a1-shopping-3",
-     "title": "Yeni ayakkabılar",
+     "title": "New Shoes",
+     "title_tr": "Yeni ayakkabılar",
      "lines": [
       {
        "en": "Mert works in a shop in İzmir. He sells shoes.",
@@ -38036,7 +38119,8 @@
     },
     {
      "id": "a1-shopping-4",
-     "title": "Büyük çanta",
+     "title": "A Big Bag",
+     "title_tr": "Büyük çanta",
      "lines": [
       {
        "en": "Selin and Defne are friends in Ankara.",
@@ -38074,7 +38158,8 @@
     },
     {
      "id": "a1-shopping-5",
-     "title": "Çok pahalı",
+     "title": "Too Expensive",
+     "title_tr": "Çok pahalı",
      "lines": [
       {
        "en": "Kerem is in a big shop in New York.",
@@ -38149,7 +38234,8 @@
    "stories": [
     {
      "id": "a1-city-1",
-     "title": "Londra'da ilk gün",
+     "title": "First Day in London",
+     "title_tr": "Londra'da ilk gün",
      "lines": [
       {
        "en": "Selin is from Turkey. Today she is in London.",
@@ -38183,7 +38269,8 @@
     },
     {
      "id": "a1-city-2",
-     "title": "Havaalanına gidiş",
+     "title": "To the Airport",
+     "title_tr": "Havaalanına gidiş",
      "lines": [
       {
        "en": "Mert and his friend Emma are at the hotel.",
@@ -38217,7 +38304,8 @@
     },
     {
      "id": "a1-city-3",
-     "title": "Yeni hastane",
+     "title": "The New Hospital",
+     "title_tr": "Yeni hastane",
      "lines": [
       {
        "en": "Hakan lives in Izmir. He works at a big hospital.",
@@ -38251,7 +38339,8 @@
     },
     {
      "id": "a1-city-4",
-     "title": "Otobüs durağında",
+     "title": "At the Bus Stop",
+     "title_tr": "Otobüs durağında",
      "lines": [
       {
        "en": "David is new in Istanbul. He is at a bus stop.",
@@ -38285,7 +38374,8 @@
     },
     {
      "id": "a1-city-5",
-     "title": "Parkta yürüyüş",
+     "title": "A Walk in the Park",
+     "title_tr": "Parkta yürüyüş",
      "lines": [
       {
        "en": "Kerem and Aslı live in Ankara.",
@@ -38352,7 +38442,8 @@
    "stories": [
     {
      "id": "a1-free-time-1",
-     "title": "Plajda bir gün",
+     "title": "A Day at the Beach",
+     "title_tr": "Plajda bir gün",
      "lines": [
       {
        "en": "Selin and Mert live in Antalya. Today is a hot day.",
@@ -38386,7 +38477,8 @@
     },
     {
      "id": "a1-free-time-2",
-     "title": "Müzik ve gitar",
+     "title": "Music and Guitar",
+     "title_tr": "Müzik ve gitar",
      "lines": [
       {
        "en": "Zeynep is from Turkey. Her friend Alex is from London.",
@@ -38420,7 +38512,8 @@
     },
     {
      "id": "a1-free-time-3",
-     "title": "Yeni bir film",
+     "title": "A New Film",
+     "title_tr": "Yeni bir film",
      "lines": [
       {
        "en": "Emre and Defne have time today.",
@@ -38454,7 +38547,8 @@
     },
     {
      "id": "a1-free-time-4",
-     "title": "Seyahat fotoğrafları",
+     "title": "Travel Photos",
+     "title_tr": "Seyahat fotoğrafları",
      "lines": [
       {
        "en": "Hakan and his friend Sara like travelling.",
@@ -38484,7 +38578,8 @@
     },
     {
      "id": "a1-free-time-5",
-     "title": "Spor zamanı",
+     "title": "Sport Time",
+     "title_tr": "Spor zamanı",
      "lines": [
       {
        "en": "Burak and Kaan meet their new friend David.",
@@ -38549,7 +38644,8 @@
    "stories": [
     {
      "id": "a1-feelings-1",
-     "title": "Kars'ta soğuk bir gün",
+     "title": "A Cold Day in Kars",
+     "title_tr": "Kars'ta soğuk bir gün",
      "lines": [
       {
        "en": "Emre lives in Kars. It's snowing today.",
@@ -38587,7 +38683,8 @@
     },
     {
      "id": "a1-feelings-2",
-     "title": "Londra'dan telefon",
+     "title": "A Call from London",
+     "title_tr": "Londra'dan telefon",
      "lines": [
       {
        "en": "Selin is in Antalya. Her friend Jack is in London.",
@@ -38621,7 +38718,8 @@
     },
     {
      "id": "a1-feelings-3",
-     "title": "Doktorda",
+     "title": "At the Doctor's",
+     "title_tr": "Doktorda",
      "lines": [
       {
        "en": "Zeynep is a doctor. Burak comes in and sits down.",
@@ -38659,7 +38757,8 @@
     },
     {
      "id": "a1-feelings-4",
-     "title": "Uzun bir gün",
+     "title": "A Long Day",
+     "title_tr": "Uzun bir gün",
      "lines": [
       {
        "en": "Hakan and Mert work in Izmir.",
@@ -38693,7 +38792,8 @@
     },
     {
      "id": "a1-feelings-5",
-     "title": "Yağmurlu bir gün",
+     "title": "A Rainy Day",
+     "title_tr": "Yağmurlu bir gün",
      "lines": [
       {
        "en": "Seda and her child Nil live in Bursa.",
@@ -38762,7 +38862,8 @@
    "stories": [
     {
      "id": "a1-bridge-1",
-     "title": "Dünkü gezi",
+     "title": "Yesterday's Trip",
+     "title_tr": "Dünkü gezi",
      "lines": [
       {
        "en": "Ahmet is from Turkey. Yesterday he was in İzmir.",
@@ -38792,7 +38893,8 @@
     },
     {
      "id": "a1-bridge-2",
-     "title": "Gelecek hafta",
+     "title": "Next Week",
+     "title_tr": "Gelecek hafta",
      "lines": [
       {
        "en": "Zeynep lives in Ankara. She has a train ticket.",
@@ -38822,7 +38924,8 @@
     },
     {
      "id": "a1-bridge-3",
-     "title": "Geçen yılın tatili",
+     "title": "Last Year's Holiday",
+     "title_tr": "Geçen yılın tatili",
      "lines": [
       {
        "en": "Last year Kerem and his friend Mert had a holiday.",
@@ -38852,7 +38955,8 @@
     },
     {
      "id": "a1-bridge-4",
-     "title": "İki gün önce",
+     "title": "Two Days Ago",
+     "title_tr": "İki gün önce",
      "lines": [
       {
        "en": "Two days ago Selin was in İstanbul.",
@@ -38882,7 +38986,8 @@
     },
     {
      "id": "a1-bridge-5",
-     "title": "Yarın",
+     "title": "Tomorrow",
+     "title_tr": "Yarın",
      "lines": [
       {
        "en": "Murat is a young man. He speaks English.",
@@ -38947,7 +39052,8 @@
    "stories": [
     {
      "id": "b1-core-1",
-     "title": "İş Kararı",
+     "title": "A Work Decision",
+     "title_tr": "İş Kararı",
      "lines": [
       {
        "en": "Ali and Sarah are in a meeting in London.",
@@ -38981,7 +39087,8 @@
     },
     {
      "id": "b1-core-2",
-     "title": "Tatil Planı",
+     "title": "Holiday Plans",
+     "title_tr": "Tatil Planı",
      "lines": [
       {
        "en": "Canan and David are planning a summer holiday in Antalya.",
@@ -39015,7 +39122,8 @@
     },
     {
      "id": "b1-core-3",
-     "title": "Zor Durum",
+     "title": "A Difficult Situation",
+     "title_tr": "Zor Durum",
      "lines": [
       {
        "en": "Emre notices that Zeynep seems worried.",
@@ -39111,7 +39219,8 @@
    "stories": [
     {
      "id": "b1-feelings-1",
-     "title": "Tartışma",
+     "title": "The Argument",
+     "title_tr": "Tartışma",
      "lines": [
       {
        "en": "Zeynep and Ali had an argument yesterday.",
@@ -39137,7 +39246,8 @@
     },
     {
      "id": "b1-feelings-2",
-     "title": "Özür dilemek",
+     "title": "Saying Sorry",
+     "title_tr": "Özür dilemek",
      "lines": [
       {
        "en": "Mert was very upset about the meeting.",
@@ -39167,7 +39277,8 @@
     },
     {
      "id": "b1-feelings-3",
-     "title": "Sınav stresi",
+     "title": "Exam Stress",
+     "title_tr": "Sınav stresi",
      "lines": [
       {
        "en": "Ayşe is taking an important exam tomorrow.",
@@ -39197,7 +39308,8 @@
     },
     {
      "id": "b1-feelings-4",
-     "title": "Güven problemi",
+     "title": "A Question of Trust",
+     "title_tr": "Güven problemi",
      "lines": [
       {
        "en": "Sarah and David had a beautiful relationship.",
@@ -39223,7 +39335,8 @@
     },
     {
      "id": "b1-feelings-5",
-     "title": "Rahatlama zamanı",
+     "title": "Time to Relax",
+     "title_tr": "Rahatlama zamanı",
      "lines": [
       {
        "en": "Cem is usually very busy.",
@@ -39292,7 +39405,8 @@
    "stories": [
     {
      "id": "b1-career-1",
-     "title": "İş Görüşmesi",
+     "title": "The Job Interview",
+     "title_tr": "İş Görüşmesi",
      "lines": [
       {
        "en": "Good morning, Leyla. I see your application.",
@@ -39322,7 +39436,8 @@
     },
     {
      "id": "b1-career-2",
-     "title": "Terfi Beklentisi",
+     "title": "Hoping for a Promotion",
+     "title_tr": "Terfi Beklentisi",
      "lines": [
       {
        "en": "Emre works in a big company. He is very efficient.",
@@ -39352,7 +39467,8 @@
     },
     {
      "id": "b1-career-3",
-     "title": "Yeni Bir Başlangıç",
+     "title": "A New Beginning",
+     "title_tr": "Yeni Bir Başlangıç",
      "lines": [
       {
        "en": "My father Hasan will retire tomorrow.",
@@ -39382,7 +39498,8 @@
     },
     {
      "id": "b1-career-4",
-     "title": "İlk Eğitim Günü",
+     "title": "The First Day of Training",
+     "title_tr": "İlk Eğitim Günü",
      "lines": [
       {
        "en": "Defne is a candidate for a new job in Izmir.",
@@ -39412,7 +39529,8 @@
     },
     {
      "id": "b1-career-5",
-     "title": "Zorlu Sözleşme",
+     "title": "A Difficult Contract",
+     "title_tr": "Zorlu Sözleşme",
      "lines": [
       {
        "en": "Ozan, did you read the new contract?",
@@ -39481,7 +39599,8 @@
    "stories": [
     {
      "id": "b1-money-1",
-     "title": "Kötü Bir Bilgisayar",
+     "title": "A Bad Computer",
+     "title_tr": "Kötü Bir Bilgisayar",
      "lines": [
       {
        "en": "Zeynep wants to complain about her new computer.",
@@ -39515,7 +39634,8 @@
     },
     {
      "id": "b1-money-2",
-     "title": "Pazarda",
+     "title": "At the Market",
+     "title_tr": "Pazarda",
      "lines": [
       {
        "en": "John and Ahmet are at a market.",
@@ -39549,7 +39669,8 @@
     },
     {
      "id": "b1-money-3",
-     "title": "Banka Kredisi",
+     "title": "A Bank Loan",
+     "title_tr": "Banka Kredisi",
      "lines": [
       {
        "en": "Ali lives in London. He has a lot of debt.",
@@ -39579,7 +39700,8 @@
     },
     {
      "id": "b1-money-4",
-     "title": "Yeni Araba",
+     "title": "A New Car",
+     "title_tr": "Yeni Araba",
      "lines": [
       {
        "en": "Emre wants to buy a car. Ayşe doesn't agree.",
@@ -39609,7 +39731,8 @@
     },
     {
      "id": "b1-money-5",
-     "title": "Kötü Teslimat",
+     "title": "A Bad Delivery",
+     "title_tr": "Kötü Teslimat",
      "lines": [
       {
        "en": "Fatma is in Turkey. She orders a dress online.",
@@ -39683,7 +39806,8 @@
    "stories": [
     {
      "id": "b1-media-1",
-     "title": "Yalan haber",
+     "title": "Fake News",
+     "title_tr": "Yalan haber",
      "lines": [
       {
        "en": "Did you read this new article?",
@@ -39713,7 +39837,8 @@
     },
     {
      "id": "b1-media-2",
-     "title": "Popüler video",
+     "title": "A Popular Video",
+     "title_tr": "Popüler video",
      "lines": [
       {
        "en": "Have you seen my new post?",
@@ -39739,7 +39864,8 @@
     },
     {
      "id": "b1-media-3",
-     "title": "Yeni bir belgesel",
+     "title": "A New Documentary",
+     "title_tr": "Yeni bir belgesel",
      "lines": [
       {
        "en": "Did you hear about the new documentary?",
@@ -39765,7 +39891,8 @@
     },
     {
      "id": "b1-media-4",
-     "title": "İnternette gizlilik",
+     "title": "Privacy Online",
+     "title_tr": "İnternette gizlilik",
      "lines": [
       {
        "en": "I need to update my phone.",
@@ -39791,7 +39918,8 @@
     },
     {
      "id": "b1-media-5",
-     "title": "Medya ve haberler",
+     "title": "The Media and the News",
+     "title_tr": "Medya ve haberler",
      "lines": [
       {
        "en": "The journalist will announce some big news tonight.",
@@ -39855,7 +39983,8 @@
    "stories": [
     {
      "id": "b1-environment-1",
-     "title": "Deprem Gecesi",
+     "title": "The Night of the Earthquake",
+     "title_tr": "Deprem Gecesi",
      "lines": [
       {
        "en": "Ozan and Ayşe talk about the news.",
@@ -39885,7 +40014,8 @@
     },
     {
      "id": "b1-environment-2",
-     "title": "Plastik Sorunu",
+     "title": "The Plastic Problem",
+     "title_tr": "Plastik Sorunu",
      "lines": [
       {
        "en": "What can we do about plastic pollution?",
@@ -39911,7 +40041,8 @@
     },
     {
      "id": "b1-environment-3",
-     "title": "Değişen İklim",
+     "title": "A Changing Climate",
+     "title_tr": "Değişen İklim",
      "lines": [
       {
        "en": "The weather is very strange recently.",
@@ -39937,7 +40068,8 @@
     },
     {
      "id": "b1-environment-4",
-     "title": "Yaban Hayatı",
+     "title": "Wildlife",
+     "title_tr": "Yaban Hayatı",
      "lines": [
       {
        "en": "Look at this bird! It is ill.",
@@ -39963,7 +40095,8 @@
     },
     {
      "id": "b1-environment-5",
-     "title": "Doğal Afetler",
+     "title": "Natural Disasters",
+     "title_tr": "Doğal Afetler",
      "lines": [
       {
        "en": "Did you see the news about the flood?",
@@ -40032,7 +40165,8 @@
    "stories": [
     {
      "id": "b1-culture-1",
-     "title": "Yeni roman",
+     "title": "A New Novel",
+     "title_tr": "Yeni roman",
      "lines": [
       {
        "en": "Did you read the new novel?",
@@ -40062,7 +40196,8 @@
     },
     {
      "id": "b1-culture-2",
-     "title": "Dizi önerisi",
+     "title": "A Series to Watch",
+     "title_tr": "Dizi önerisi",
      "lines": [
       {
        "en": "Did you watch the new series?",
@@ -40092,7 +40227,8 @@
     },
     {
      "id": "b1-culture-3",
-     "title": "Galeri ziyareti",
+     "title": "A Visit to the Gallery",
+     "title_tr": "Galeri ziyareti",
      "lines": [
       {
        "en": "We went to the new gallery yesterday.",
@@ -40122,7 +40258,8 @@
     },
     {
      "id": "b1-culture-4",
-     "title": "Gelenekler",
+     "title": "Traditions",
+     "title_tr": "Gelenekler",
      "lines": [
       {
        "en": "My partner is from a small village.",
@@ -40152,7 +40289,8 @@
     },
     {
      "id": "b1-culture-5",
-     "title": "Eleştiri",
+     "title": "The Review",
+     "title_tr": "Eleştiri",
      "lines": [
       {
        "en": "I read a review of that film.",
@@ -40220,7 +40358,8 @@
    "stories": [
     {
      "id": "b1-trips-1",
-     "title": "Macera",
+     "title": "Adventure",
+     "title_tr": "Macera",
      "lines": [
       {
        "en": "Our trip was a great adventure!",
@@ -40254,7 +40393,8 @@
     },
     {
      "id": "b1-trips-2",
-     "title": "Sınırda",
+     "title": "At the Border",
+     "title_tr": "Sınırda",
      "lines": [
       {
        "en": "Zeynep travelled to Bulgaria yesterday.",
@@ -40288,7 +40428,8 @@
     },
     {
      "id": "b1-trips-3",
-     "title": "Rehber Kitap",
+     "title": "The Guidebook",
+     "title_tr": "Rehber Kitap",
      "lines": [
       {
        "en": "Emir went to Spain for sightseeing.",
@@ -40318,7 +40459,8 @@
     },
     {
      "id": "b1-trips-4",
-     "title": "Yerel Tavsiyeler",
+     "title": "Local Tips",
+     "title_tr": "Yerel Tavsiyeler",
      "lines": [
       {
        "en": "David is an old friend of Cem.",
@@ -40348,7 +40490,8 @@
     },
     {
      "id": "b1-trips-5",
-     "title": "Şehri Gezmek",
+     "title": "Exploring the City",
+     "title_tr": "Şehri Gezmek",
      "lines": [
       {
        "en": "Aslı went to Paris with her family.",
@@ -40415,7 +40558,8 @@
    "stories": [
     {
      "id": "b1-wellbeing-1",
-     "title": "Futbol kazası",
+     "title": "A Football Accident",
+     "title_tr": "Futbol kazası",
      "lines": [
       {
        "en": "Ali is playing football. He injures his leg.",
@@ -40441,7 +40585,8 @@
     },
     {
      "id": "b1-wellbeing-2",
-     "title": "Yeni bir başlangıç",
+     "title": "A Fresh Start",
+     "title_tr": "Yeni bir başlangıç",
      "lines": [
       {
        "en": "Ayşe, you look tired.",
@@ -40467,7 +40612,8 @@
     },
     {
      "id": "b1-wellbeing-3",
-     "title": "Ofiste stres",
+     "title": "Stress at the Office",
+     "title_tr": "Ofiste stres",
      "lines": [
       {
        "en": "My new boss gives me a lot of stress.",
@@ -40493,7 +40639,8 @@
     },
     {
      "id": "b1-wellbeing-4",
-     "title": "Doktorda",
+     "title": "At the Doctor's",
+     "title_tr": "Doktorda",
      "lines": [
       {
        "en": "I have a bad cough and a fever, doctor.",
@@ -40519,7 +40666,8 @@
     },
     {
      "id": "b1-wellbeing-5",
-     "title": "Zinde kalmak",
+     "title": "Staying Fit",
+     "title_tr": "Zinde kalmak",
      "lines": [
       {
        "en": "Do you want to run with me today, Canan?",
@@ -40587,7 +40735,8 @@
    "stories": [
     {
      "id": "b1-society-1",
-     "title": "Ulaşım sorunu",
+     "title": "A Transport Problem",
+     "title_tr": "Ulaşım sorunu",
      "lines": [
       {
        "en": "Burak lives in London. The population is big.",
@@ -40613,7 +40762,8 @@
     },
     {
      "id": "b1-society-2",
-     "title": "Kurallar ve yasalar",
+     "title": "Rules and Laws",
+     "title_tr": "Kurallar ve yasalar",
      "lines": [
       {
        "en": "Ayşe and Eda are at a park.",
@@ -40639,7 +40789,8 @@
     },
     {
      "id": "b1-society-3",
-     "title": "Toplum için gönüllülük",
+     "title": "Volunteering for the Community",
+     "title_tr": "Toplum için gönüllülük",
      "lines": [
       {
        "en": "Our community needs help.",
@@ -40665,7 +40816,8 @@
     },
     {
      "id": "b1-society-4",
-     "title": "Güvenli bir şehir",
+     "title": "A Safe City",
+     "title_tr": "Güvenli bir şehir",
      "lines": [
       {
        "en": "Is this city safe for tourists?",
@@ -40691,7 +40843,8 @@
     },
     {
      "id": "b1-society-5",
-     "title": "Seçim günü",
+     "title": "Election Day",
+     "title_tr": "Seçim günü",
      "lines": [
       {
        "en": "Did you vote yesterday?",
@@ -40754,7 +40907,8 @@
    "stories": [
     {
      "id": "b1-learning-1",
-     "title": "Yeni Kurs",
+     "title": "A New Course",
+     "title_tr": "Yeni Kurs",
      "lines": [
       {
        "en": "Emre attends a new English course today.",
@@ -40784,7 +40938,8 @@
     },
     {
      "id": "b1-learning-2",
-     "title": "Sınava Hazırlık",
+     "title": "Getting Ready for the Exam",
+     "title_tr": "Sınava Hazırlık",
      "lines": [
       {
        "en": "Zeynep is revising for her exam.",
@@ -40814,7 +40969,8 @@
     },
     {
      "id": "b1-learning-3",
-     "title": "Akıcı Konuşma",
+     "title": "Speaking Fluently",
+     "title_tr": "Akıcı Konuşma",
      "lines": [
       {
        "en": "Ali is fluent in German.",
@@ -40844,7 +41000,8 @@
     },
     {
      "id": "b1-learning-4",
-     "title": "Anlaşılmayan Metin",
+     "title": "A Text Nobody Understood",
+     "title_tr": "Anlaşılmayan Metin",
      "lines": [
       {
        "en": "Anna and Cem are studying together.",
@@ -40874,7 +41031,8 @@
     },
     {
      "id": "b1-learning-5",
-     "title": "Sertifika",
+     "title": "The Certificate",
+     "title_tr": "Sertifika",
      "lines": [
       {
        "en": "Leyla, are you aware of the exam tomorrow?",
@@ -40941,7 +41099,8 @@
    "stories": [
     {
      "id": "b1-bridge-1",
-     "title": "Söylenti",
+     "title": "The Rumour",
+     "title_tr": "Söylenti",
      "lines": [
       {
        "en": "Mert and Ali were at the office.",
@@ -40975,7 +41134,8 @@
     },
     {
      "id": "b1-bridge-2",
-     "title": "Tanık",
+     "title": "The Witness",
+     "title_tr": "Tanık",
      "lines": [
       {
        "en": "Zeynep witnessed a crime in London yesterday.",
@@ -41009,7 +41169,8 @@
     },
     {
      "id": "b1-bridge-3",
-     "title": "Pişmanlık",
+     "title": "Regret",
+     "title_tr": "Pişmanlık",
      "lines": [
       {
        "en": "Burak regretted his big mistake.",
@@ -41043,7 +41204,8 @@
     },
     {
      "id": "b1-bridge-4",
-     "title": "Boş Müze",
+     "title": "The Empty Museum",
+     "title_tr": "Boş Müze",
      "lines": [
       {
        "en": "The empty museum was a mystery.",
@@ -41077,7 +41239,8 @@
     },
     {
      "id": "b1-bridge-5",
-     "title": "Sonuç",
+     "title": "The Result",
+     "title_tr": "Sonuç",
      "lines": [
       {
        "en": "Kaan went very fast in his car on the coast.",
@@ -41148,7 +41311,8 @@
    "stories": [
     {
      "id": "b2-core-1",
-     "title": "İş Görüşmesi",
+     "title": "The Job Interview",
+     "title_tr": "İş Görüşmesi",
      "lines": [
       {
        "en": "Regarding the new job in London, is my English adequate?",
@@ -41178,7 +41342,8 @@
     },
     {
      "id": "b2-core-2",
-     "title": "Yeni Bir Plan",
+     "title": "A New Plan",
+     "title_tr": "Yeni Bir Plan",
      "lines": [
       {
        "en": "We need a new approach. The old plan didn't work.",
@@ -41208,7 +41373,8 @@
     },
     {
      "id": "b2-core-3",
-     "title": "Farklı Görüşler",
+     "title": "Different Opinions",
+     "title_tr": "Farklı Görüşler",
      "lines": [
       {
        "en": "My biggest concern is the price. It doesn't seem reasonable.",
@@ -41293,7 +41459,8 @@
    "stories": [
     {
      "id": "b2-business-1",
-     "title": "Yeni Müşteri",
+     "title": "A New Client",
+     "title_tr": "Yeni Müşteri",
      "lines": [
       {
        "en": "Let's get down to business. We have a new client.",
@@ -41323,7 +41490,8 @@
     },
     {
      "id": "b2-business-2",
-     "title": "Büyüme Stratejisi",
+     "title": "A Growth Strategy",
+     "title_tr": "Büyüme Stratejisi",
      "lines": [
       {
        "en": "Our biggest competitor is expanding into Asia.",
@@ -41353,7 +41521,8 @@
     },
     {
      "id": "b2-business-3",
-     "title": "Su Sıkıntısı",
+     "title": "Water Shortage",
+     "title_tr": "Su Sıkıntısı",
      "lines": [
       {
        "en": "Our profits are declining this year.",
@@ -41383,7 +41552,8 @@
     },
     {
      "id": "b2-business-4",
-     "title": "Uygulama Yatırımı",
+     "title": "Investing in an App",
+     "title_tr": "Uygulama Yatırımı",
      "lines": [
       {
        "en": "We plan to launch the new app next week.",
@@ -41413,7 +41583,8 @@
     },
     {
      "id": "b2-business-5",
-     "title": "Fiyat Görüşmesi",
+     "title": "Negotiating the Price",
+     "title_tr": "Fiyat Görüşmesi",
      "lines": [
       {
        "en": "We must negotiate the price with the new client.",
@@ -41482,7 +41653,8 @@
    "stories": [
     {
      "id": "b2-science-1",
-     "title": "Yapay zeka",
+     "title": "Artificial Intelligence",
+     "title_tr": "Yapay zeka",
      "lines": [
       {
        "en": "Zeynep, did you analyse the data?",
@@ -41508,7 +41680,8 @@
     },
     {
      "id": "b2-science-2",
-     "title": "Laboratuvar",
+     "title": "The Laboratory",
+     "title_tr": "Laboratuvar",
      "lines": [
       {
        "en": "Our genetic research consists of three areas.",
@@ -41534,7 +41707,8 @@
     },
     {
      "id": "b2-science-3",
-     "title": "Yeni icat",
+     "title": "A New Invention",
+     "title_tr": "Yeni icat",
      "lines": [
       {
        "en": "Look at this new invention!",
@@ -41560,7 +41734,8 @@
     },
     {
      "id": "b2-science-4",
-     "title": "Sanal stres",
+     "title": "Virtual Stress",
+     "title_tr": "Sanal stres",
      "lines": [
       {
        "en": "Do you rely on virtual entertainment?",
@@ -41586,7 +41761,8 @@
     },
     {
      "id": "b2-science-5",
-     "title": "Yeni bir avantaj",
+     "title": "A New Advantage",
+     "title_tr": "Yeni bir avantaj",
      "lines": [
       {
        "en": "We finally acquired the new computers for the laboratory.",
@@ -41651,7 +41827,8 @@
    "stories": [
     {
      "id": "b2-mind-1",
-     "title": "Zor Bir Karar",
+     "title": "A Hard Decision",
+     "title_tr": "Zor Bir Karar",
      "lines": [
       {
        "en": "Ahmet has a new job offer from London.",
@@ -41681,7 +41858,8 @@
     },
     {
      "id": "b2-mind-2",
-     "title": "Havalimanında",
+     "title": "At the Airport",
+     "title_tr": "Havalimanında",
      "lines": [
       {
        "en": "Sarah and Ali are at the airport. Their flight is delayed.",
@@ -41711,7 +41889,8 @@
     },
     {
      "id": "b2-mind-3",
-     "title": "Hassas Bir Konu",
+     "title": "A Sensitive Subject",
+     "title_tr": "Hassas Bir Konu",
      "lines": [
       {
        "en": "Emma is angry because Murat ignored her message.",
@@ -41741,7 +41920,8 @@
     },
     {
      "id": "b2-mind-4",
-     "title": "Kariyer Hedefi",
+     "title": "A Career Goal",
+     "title_tr": "Kariyer Hedefi",
      "lines": [
       {
        "en": "David wants to pursue a career in music.",
@@ -41771,7 +41951,8 @@
     },
     {
      "id": "b2-mind-5",
-     "title": "Yeni Bilgisayar",
+     "title": "A New Computer",
+     "title_tr": "Yeni Bilgisayar",
      "lines": [
       {
        "en": "Burak wants to buy a new computer.",
@@ -41840,7 +42021,8 @@
    "stories": [
     {
      "id": "b2-society-1",
-     "title": "Siyasi tartışma",
+     "title": "A Political Debate",
+     "title_tr": "Siyasi tartışma",
      "lines": [
       {
        "en": "Did you watch the political debate yesterday?",
@@ -41874,7 +42056,8 @@
     },
     {
      "id": "b2-society-2",
-     "title": "Öğrenci protestosu",
+     "title": "The Student Protest",
+     "title_tr": "Öğrenci protestosu",
      "lines": [
       {
        "en": "Look outside! Why are the students protesting?",
@@ -41904,7 +42087,8 @@
     },
     {
      "id": "b2-society-3",
-     "title": "Seçim zamanı",
+     "title": "Election Time",
+     "title_tr": "Seçim zamanı",
      "lines": [
       {
        "en": "The election is tomorrow. Who will you vote for?",
@@ -41934,7 +42118,8 @@
     },
     {
      "id": "b2-society-4",
-     "title": "Başkalarına yardım",
+     "title": "Helping Others",
+     "title_tr": "Başkalarına yardım",
      "lines": [
       {
        "en": "Sarah works for a charity in London.",
@@ -41964,7 +42149,8 @@
     },
     {
      "id": "b2-society-5",
-     "title": "Daha iyi bir toplum",
+     "title": "A Better Society",
+     "title_tr": "Daha iyi bir toplum",
      "lines": [
       {
        "en": "Democracy requires respect for every citizen.",
@@ -42032,7 +42218,8 @@
    "stories": [
     {
      "id": "b2-justice-1",
-     "title": "Banka Soygunu",
+     "title": "The Bank Robbery",
+     "title_tr": "Banka Soygunu",
      "lines": [
       {
        "en": "Someone committed a robbery at the local bank.",
@@ -42058,7 +42245,8 @@
     },
     {
      "id": "b2-justice-2",
-     "title": "Duruşma Günü",
+     "title": "The Day of the Hearing",
+     "title_tr": "Duruşma Günü",
      "lines": [
       {
        "en": "The trial starts today.",
@@ -42080,7 +42268,8 @@
     },
     {
      "id": "b2-justice-3",
-     "title": "İnternet Dolandırıcılığı",
+     "title": "Online Fraud",
+     "title_tr": "İnternet Dolandırıcılığı",
      "lines": [
       {
        "en": "Internet fraud is a significant issue today.",
@@ -42106,7 +42295,8 @@
     },
     {
      "id": "b2-justice-4",
-     "title": "Karar Anı",
+     "title": "The Verdict",
+     "title_tr": "Karar Anı",
      "lines": [
       {
        "en": "Everyone is waiting in the court.",
@@ -42132,7 +42322,8 @@
     },
     {
      "id": "b2-justice-5",
-     "title": "Trafik Kazası",
+     "title": "A Traffic Accident",
+     "title_tr": "Trafik Kazası",
      "lines": [
       {
        "en": "The police stopped him in traffic.",
@@ -42195,7 +42386,8 @@
    "stories": [
     {
      "id": "b2-medicine-1",
-     "title": "Doktor Ziyareti",
+     "title": "A Visit to the Doctor",
+     "title_tr": "Doktor Ziyareti",
      "lines": [
       {
        "en": "Zeynep feels ill and visits Dr. Smith.",
@@ -42229,7 +42421,8 @@
     },
     {
      "id": "b2-medicine-2",
-     "title": "Genetik Alerji",
+     "title": "A Genetic Allergy",
+     "title_tr": "Genetik Alerji",
      "lines": [
       {
        "en": "I have a bad allergy to milk.",
@@ -42259,7 +42452,8 @@
     },
     {
      "id": "b2-medicine-3",
-     "title": "İyileşme Süreci",
+     "title": "The Road to Recovery",
+     "title_tr": "İyileşme Süreci",
      "lines": [
       {
        "en": "Ayşe had cancer, but she is better now.",
@@ -42289,7 +42483,8 @@
     },
     {
      "id": "b2-medicine-4",
-     "title": "Sağlıklı Yaşam",
+     "title": "Healthy Living",
+     "title_tr": "Sağlıklı Yaşam",
      "lines": [
       {
        "en": "Obesity is a significant problem today.",
@@ -42315,7 +42510,8 @@
     },
     {
      "id": "b2-medicine-5",
-     "title": "Organ ve Aşı",
+     "title": "Organs and Vaccines",
+     "title_tr": "Organ ve Aşı",
      "lines": [
       {
        "en": "The stomach is an important organ.",
@@ -42386,7 +42582,8 @@
    "stories": [
     {
      "id": "b2-economy-1",
-     "title": "Pazar Alışverişi",
+     "title": "Shopping at the Market",
+     "title_tr": "Pazar Alışverişi",
      "lines": [
       {
        "en": "Ayşe and Tom are at a market in London.",
@@ -42420,7 +42617,8 @@
     },
     {
      "id": "b2-economy-2",
-     "title": "Geçim Sıkıntısı",
+     "title": "Making Ends Meet",
+     "title_tr": "Geçim Sıkıntısı",
      "lines": [
       {
        "en": "Ali and his wife Zeynep talk about money in Istanbul.",
@@ -42454,7 +42652,8 @@
     },
     {
      "id": "b2-economy-3",
-     "title": "Ev Sahibi Olmak",
+     "title": "Buying a Home",
+     "title_tr": "Ev Sahibi Olmak",
      "lines": [
       {
        "en": "Hakan wants to buy a small house in Berlin.",
@@ -42488,7 +42687,8 @@
     },
     {
      "id": "b2-economy-4",
-     "title": "Şirkette Kriz",
+     "title": "Crisis at the Company",
+     "title_tr": "Şirkette Kriz",
      "lines": [
       {
        "en": "Two managers meet at a company in Tokyo.",
@@ -42518,7 +42718,8 @@
     },
     {
      "id": "b2-economy-5",
-     "title": "Yeni Araba",
+     "title": "A New Car",
+     "title_tr": "Yeni Araba",
      "lines": [
       {
        "en": "Lisa buys a new car in Paris.",
@@ -42589,7 +42790,8 @@
    "stories": [
     {
      "id": "b2-planet-1",
-     "title": "Yeni Araba",
+     "title": "A New Car",
+     "title_tr": "Yeni Araba",
      "lines": [
       {
        "en": "Ali and Deniz are talking.",
@@ -42623,7 +42825,8 @@
     },
     {
      "id": "b2-planet-2",
-     "title": "Ormansızlaşma",
+     "title": "Deforestation",
+     "title_tr": "Ormansızlaşma",
      "lines": [
       {
        "en": "Sarah and Mark are watching a documentary.",
@@ -42661,7 +42864,8 @@
     },
     {
      "id": "b2-planet-3",
-     "title": "Sıcak Bir Yaz",
+     "title": "A Hot Summer",
+     "title_tr": "Sıcak Bir Yaz",
      "lines": [
       {
        "en": "Emre and Canan are sitting in the garden.",
@@ -42695,7 +42899,8 @@
     },
     {
      "id": "b2-planet-4",
-     "title": "Güneş Enerjisi",
+     "title": "Solar Power",
+     "title_tr": "Güneş Enerjisi",
      "lines": [
       {
        "en": "John works for an energy company.",
@@ -42733,7 +42938,8 @@
     },
     {
      "id": "b2-planet-5",
-     "title": "Sergi",
+     "title": "The Exhibition",
+     "title_tr": "Sergi",
      "lines": [
       {
        "en": "Leyla and Murat are at a photo exhibition.",
@@ -42808,7 +43014,8 @@
    "stories": [
     {
      "id": "b2-academic-1",
-     "title": "Burs ve Eğitim",
+     "title": "Scholarships and Education",
+     "title_tr": "Burs ve Eğitim",
      "lines": [
       {
        "en": "Ozan is a student in London. He studies English.",
@@ -42838,7 +43045,8 @@
     },
     {
      "id": "b2-academic-2",
-     "title": "Uzun Bir Seminer",
+     "title": "A Long Seminar",
+     "title_tr": "Uzun Bir Seminer",
      "lines": [
       {
        "en": "Zeynep and Ali are on campus.",
@@ -42868,7 +43076,8 @@
     },
     {
      "id": "b2-academic-3",
-     "title": "Ödev Zamanı",
+     "title": "Assignment Time",
+     "title_tr": "Ödev Zamanı",
      "lines": [
       {
        "en": "Cem is studying on campus.",
@@ -42898,7 +43107,8 @@
     },
     {
      "id": "b2-academic-4",
-     "title": "Tez Teslimi",
+     "title": "Handing In the Thesis",
+     "title_tr": "Tez Teslimi",
      "lines": [
       {
        "en": "Ayşe talks to David.",
@@ -42928,7 +43138,8 @@
     },
     {
      "id": "b2-academic-5",
-     "title": "Derse Doğru",
+     "title": "On the Way to Class",
+     "title_tr": "Derse Doğru",
      "lines": [
       {
        "en": "Leyla and Hasan walk to their faculty.",
@@ -42995,7 +43206,8 @@
    "stories": [
     {
      "id": "b2-relationships-1",
-     "title": "Aile Buluşması",
+     "title": "A Family Reunion",
+     "title_tr": "Aile Buluşması",
      "lines": [
       {
        "en": "Ali and his spouse Zeynep are at a family reunion.",
@@ -43021,7 +43233,8 @@
     },
     {
      "id": "b2-relationships-2",
-     "title": "İhanet",
+     "title": "Betrayal",
+     "title_tr": "İhanet",
      "lines": [
       {
        "en": "Emre and Leyla had a genuine bond.",
@@ -43047,7 +43260,8 @@
     },
     {
      "id": "b2-relationships-3",
-     "title": "Ev Arkadaşı",
+     "title": "The Flatmate",
+     "title_tr": "Ev Arkadaşı",
      "lines": [
       {
        "en": "Ahmet and his flatmate Burak don't see eye to eye.",
@@ -43073,7 +43287,8 @@
     },
     {
      "id": "b2-relationships-4",
-     "title": "Küsüşmek",
+     "title": "Not Speaking",
+     "title_tr": "Küsüşmek",
      "lines": [
       {
        "en": "Selin and Ayşe fell out yesterday.",
@@ -43099,7 +43314,8 @@
     },
     {
      "id": "b2-relationships-5",
-     "title": "Veda",
+     "title": "Goodbye",
+     "title_tr": "Veda",
      "lines": [
       {
        "en": "Deniz works in London. She has a big commitment to her company.",
@@ -43162,7 +43378,8 @@
    "stories": [
     {
      "id": "b2-bridge-1",
-     "title": "Büyük bir adım",
+     "title": "A Big Step",
+     "title_tr": "Büyük bir adım",
      "lines": [
       {
        "en": "Moving abroad was a milestone for Kemal.",
@@ -43188,7 +43405,8 @@
     },
     {
      "id": "b2-bridge-2",
-     "title": "Beklenmedik bir fırsat",
+     "title": "An Unexpected Opportunity",
+     "title_tr": "Beklenmedik bir fırsat",
      "lines": [
       {
        "en": "Leyla got an unexpected job offer yesterday.",
@@ -43214,7 +43432,8 @@
     },
     {
      "id": "b2-bridge-3",
-     "title": "Karar anı",
+     "title": "The Moment of Decision",
+     "title_tr": "Karar anı",
      "lines": [
       {
        "en": "Did you choose your university degree yet, Ahmet?",
@@ -43240,7 +43459,8 @@
     },
     {
      "id": "b2-bridge-4",
-     "title": "Farklı bakış açıları",
+     "title": "Different Points of View",
+     "title_tr": "Farklı bakış açıları",
      "lines": [
       {
        "en": "People tend to ignore other perspectives.",
@@ -43266,7 +43486,8 @@
     },
     {
      "id": "b2-bridge-5",
-     "title": "Çevre için mücadele",
+     "title": "Fighting for the Environment",
+     "title_tr": "Çevre için mücadele",
      "lines": [
       {
        "en": "Defne started an environment campaign in London.",
@@ -43327,7 +43548,8 @@
    "stories": [
     {
      "id": "c1-core-1",
-     "title": "Akademik Tartışma",
+     "title": "An Academic Debate",
+     "title_tr": "Akademik Tartışma",
      "lines": [
       {
        "en": "There is an obvious discrepancy in your data.",
@@ -43353,7 +43575,8 @@
     },
     {
      "id": "c1-core-2",
-     "title": "Yeni Politika",
+     "title": "A New Policy",
+     "title_tr": "Yeni Politika",
      "lines": [
       {
        "en": "With regard to the new policy, we need a consensus.",
@@ -43379,7 +43602,8 @@
     },
     {
      "id": "c1-core-3",
-     "title": "Zor Karar",
+     "title": "A Hard Decision",
+     "title_tr": "Zor Karar",
      "lines": [
       {
        "en": "The notion of quitting my job is always in my head.",
@@ -43460,7 +43684,8 @@
    "stories": [
     {
      "id": "c1-argument-1",
-     "title": "İklim tartışması",
+     "title": "The Climate Debate",
+     "title_tr": "İklim tartışması",
      "lines": [
       {
        "en": "The new climate policy is very controversial.",
@@ -43486,7 +43711,8 @@
     },
     {
      "id": "c1-argument-2",
-     "title": "Akademik anlaşmazlık",
+     "title": "An Academic Disagreement",
+     "title_tr": "Akademik anlaşmazlık",
      "lines": [
       {
        "en": "I dispute the underlying premise of your thesis.",
@@ -43512,7 +43738,8 @@
     },
     {
      "id": "c1-argument-3",
-     "title": "Toplantı odası",
+     "title": "The Meeting Room",
+     "title_tr": "Toplantı odası",
      "lines": [
       {
        "en": "The manager asserts that we need a new strategy.",
@@ -43534,7 +43761,8 @@
     },
     {
      "id": "c1-argument-4",
-     "title": "Haber eleştirisi",
+     "title": "Criticising the News",
+     "title_tr": "Haber eleştirisi",
      "lines": [
       {
        "en": "This journalist advocates for political change.",
@@ -43560,7 +43788,8 @@
     },
     {
      "id": "c1-argument-5",
-     "title": "Yatırım riski",
+     "title": "An Investment Risk",
+     "title_tr": "Yatırım riski",
      "lines": [
       {
        "en": "I contend that this investment is a big risk.",
@@ -43621,7 +43850,8 @@
    "stories": [
     {
      "id": "c1-leadership-1",
-     "title": "Zor Bir Karar",
+     "title": "A Hard Decision",
+     "title_tr": "Zor Bir Karar",
      "lines": [
       {
        "en": "Leyla and John work in an office.",
@@ -43651,7 +43881,8 @@
     },
     {
      "id": "c1-leadership-2",
-     "title": "Birleşme Toplantısı",
+     "title": "The Merger Meeting",
+     "title_tr": "Birleşme Toplantısı",
      "lines": [
       {
        "en": "Mehmet will oversee the new merger.",
@@ -43681,7 +43912,8 @@
     },
     {
      "id": "c1-leadership-3",
-     "title": "İş Yükü",
+     "title": "The Workload",
+     "title_tr": "İş Yükü",
      "lines": [
       {
        "en": "Ayşe is a meticulous and diligent worker.",
@@ -43711,7 +43943,8 @@
     },
     {
      "id": "c1-leadership-4",
-     "title": "Yeni Girişim",
+     "title": "A New Venture",
+     "title_tr": "Yeni Girişim",
      "lines": [
       {
        "en": "Ali is in London for a big meeting.",
@@ -43741,7 +43974,8 @@
     },
     {
      "id": "c1-leadership-5",
-     "title": "Borçları Yönetmek",
+     "title": "Managing Debt",
+     "title_tr": "Borçları Yönetmek",
      "lines": [
       {
        "en": "Kemal and Emma talk about their budget.",
@@ -43810,7 +44044,8 @@
    "stories": [
     {
      "id": "c1-society-1",
-     "title": "Tabandan Gelen Güç",
+     "title": "Power from the Grassroots",
+     "title_tr": "Tabandan Gelen Güç",
      "lines": [
       {
        "en": "Zeynep, this grassroots campaign is crucial for our neighbourhood.",
@@ -43836,7 +44071,8 @@
     },
     {
      "id": "c1-society-2",
-     "title": "Politika Tartışması",
+     "title": "A Policy Debate",
+     "title_tr": "Politika Tartışması",
      "lines": [
       {
        "en": "Bora, will this legislation alleviate the wealth disparity?",
@@ -43862,7 +44098,8 @@
     },
     {
      "id": "c1-society-3",
-     "title": "Kısır Döngü",
+     "title": "A Vicious Circle",
+     "title_tr": "Kısır Döngü",
      "lines": [
       {
        "en": "The situation in the city deteriorated rapidly after the flood.",
@@ -43888,7 +44125,8 @@
     },
     {
      "id": "c1-society-4",
-     "title": "Buzdağının Görünmeyen Yüzü",
+     "title": "The Tip of the Iceberg",
+     "title_tr": "Buzdağının Görünmeyen Yüzü",
      "lines": [
       {
        "en": "The unrest in the city is getting worse.",
@@ -43914,7 +44152,8 @@
     },
     {
      "id": "c1-society-5",
-     "title": "Yeni Çerçeve",
+     "title": "A New Framework",
+     "title_tr": "Yeni Çerçeve",
      "lines": [
       {
        "en": "Teacher Emre, does this paradigm foster community integration?",
@@ -43978,7 +44217,8 @@
    "stories": [
     {
      "id": "c1-mind-1",
-     "title": "İkilem",
+     "title": "The Dilemma",
+     "title_tr": "İkilem",
      "lines": [
       {
        "en": "Ali and doctor Ozan are talking.",
@@ -44008,7 +44248,8 @@
     },
     {
      "id": "c1-mind-2",
-     "title": "Kişilikler",
+     "title": "Personalities",
+     "title_tr": "Kişilikler",
      "lines": [
       {
        "en": "Zeynep and Clara are flatmates in London.",
@@ -44038,7 +44279,8 @@
     },
     {
      "id": "c1-mind-3",
-     "title": "Zor Dönem",
+     "title": "A Difficult Time",
+     "title_tr": "Zor Dönem",
      "lines": [
       {
        "en": "Mert lost his job recently.",
@@ -44068,7 +44310,8 @@
     },
     {
      "id": "c1-mind-4",
-     "title": "Eski Alışkanlıklar",
+     "title": "Old Habits",
+     "title_tr": "Eski Alışkanlıklar",
      "lines": [
       {
        "en": "Selin has a compulsive tendency to spend money.",
@@ -44094,7 +44337,8 @@
     },
     {
      "id": "c1-mind-5",
-     "title": "Nostalji ve Algı",
+     "title": "Nostalgia and Perception",
+     "title_tr": "Nostalji ve Algı",
      "lines": [
       {
        "en": "Hasan looks at old photos from Paris.",
@@ -44162,7 +44406,8 @@
    "stories": [
     {
      "id": "c1-research-1",
-     "title": "Laboratuvar Toplantısı",
+     "title": "The Lab Meeting",
+     "title_tr": "Laboratuvar Toplantısı",
      "lines": [
       {
        "en": "Ayşe and Tom evaluate the preliminary findings of their new experiment.",
@@ -44188,7 +44433,8 @@
     },
     {
      "id": "c1-research-2",
-     "title": "Veri Analizi",
+     "title": "Data Analysis",
+     "title_tr": "Veri Analizi",
      "lines": [
       {
        "en": "Burak is looking at the data on his laptop.",
@@ -44214,7 +44460,8 @@
     },
     {
      "id": "c1-research-3",
-     "title": "Akademik İnceleme",
+     "title": "An Academic Review",
+     "title_tr": "Akademik İnceleme",
      "lines": [
       {
        "en": "Zeynep reads a new article by her colleague Mark.",
@@ -44240,7 +44487,8 @@
     },
     {
      "id": "c1-research-4",
-     "title": "Çevreyi Simüle Etmek",
+     "title": "Simulating the Environment",
+     "title_tr": "Çevreyi Simüle Etmek",
      "lines": [
       {
        "en": "David and Elif try to simulate the effects of deforestation.",
@@ -44262,7 +44510,8 @@
     },
     {
      "id": "c1-research-5",
-     "title": "Medyaya Karşı Bilim",
+     "title": "Science Versus the Media",
+     "title_tr": "Medyaya Karşı Bilim",
      "lines": [
       {
        "en": "Ahmet reads a dramatic headline about coffee and cancer.",
@@ -44326,7 +44575,8 @@
    "stories": [
     {
      "id": "c1-arts-1",
-     "title": "Sergide",
+     "title": "At the Exhibition",
+     "title_tr": "Sergide",
      "lines": [
       {
        "en": "Leyla is at an exhibition in London.",
@@ -44360,7 +44610,8 @@
     },
     {
      "id": "c1-arts-2",
-     "title": "Yeni bir roman",
+     "title": "A New Novel",
+     "title_tr": "Yeni bir roman",
      "lines": [
       {
        "en": "Canan reads a new novel in Izmir.",
@@ -44394,7 +44645,8 @@
     },
     {
      "id": "c1-arts-3",
-     "title": "Belgesel filmi",
+     "title": "A Documentary Film",
+     "title_tr": "Belgesel filmi",
      "lines": [
       {
        "en": "Emre and Thomas watch a film in Berlin.",
@@ -44424,7 +44676,8 @@
     },
     {
      "id": "c1-arts-4",
-     "title": "Tiyatro eleştirisi",
+     "title": "A Theatre Review",
+     "title_tr": "Tiyatro eleştirisi",
      "lines": [
       {
        "en": "Zeynep reviews a popular play.",
@@ -44454,7 +44707,8 @@
     },
     {
      "id": "c1-arts-5",
-     "title": "Medya ve sanat",
+     "title": "The Media and the Arts",
+     "title_tr": "Medya ve sanat",
      "lines": [
       {
        "en": "Ali is an artist in New York.",
@@ -44521,7 +44775,8 @@
    "stories": [
     {
      "id": "c1-ethics-1",
-     "title": "Gizli Bilgi",
+     "title": "Confidential Information",
+     "title_tr": "Gizli Bilgi",
      "lines": [
       {
        "en": "Did you read the new data?",
@@ -44551,7 +44806,8 @@
     },
     {
      "id": "c1-ethics-2",
-     "title": "Kamera Gözetimi",
+     "title": "Camera Surveillance",
+     "title_tr": "Kamera Gözetimi",
      "lines": [
       {
        "en": "The company wants surveillance in the office.",
@@ -44577,7 +44833,8 @@
     },
     {
      "id": "c1-ethics-3",
-     "title": "Hukuki Boşluk",
+     "title": "A Legal Loophole",
+     "title_tr": "Hukuki Boşluk",
      "lines": [
       {
        "en": "Emre is a lawyer. He found a loophole.",
@@ -44607,7 +44864,8 @@
     },
     {
      "id": "c1-ethics-4",
-     "title": "Mahkemede",
+     "title": "In Court",
+     "title_tr": "Mahkemede",
      "lines": [
       {
        "en": "Zeynep is at a court in London.",
@@ -44641,7 +44899,8 @@
     },
     {
      "id": "c1-ethics-5",
-     "title": "Sorumluluk",
+     "title": "Responsibility",
+     "title_tr": "Sorumluluk",
      "lines": [
       {
        "en": "Who is accountable for this online mistake?",
@@ -44708,7 +44967,8 @@
    "stories": [
     {
      "id": "c1-global-1",
-     "title": "Kriz",
+     "title": "The Crisis",
+     "title_tr": "Kriz",
      "lines": [
       {
        "en": "Ali works in a bank in Istanbul.",
@@ -44738,7 +44998,8 @@
     },
     {
      "id": "c1-global-2",
-     "title": "Kahve Piyasası",
+     "title": "The Coffee Market",
+     "title_tr": "Kahve Piyasası",
      "lines": [
       {
        "en": "Maria buys and sells coffee in Brazil.",
@@ -44768,7 +45029,8 @@
     },
     {
      "id": "c1-global-3",
-     "title": "Küresel Kararlar",
+     "title": "Global Decisions",
+     "title_tr": "Küresel Kararlar",
      "lines": [
       {
        "en": "David has a company in London.",
@@ -44798,7 +45060,8 @@
     },
     {
      "id": "c1-global-4",
-     "title": "Vergi ve Destek",
+     "title": "Taxes and Support",
+     "title_tr": "Vergi ve Destek",
      "lines": [
       {
        "en": "Elif evaluates government policy in Ankara.",
@@ -44828,7 +45091,8 @@
     },
     {
      "id": "c1-global-5",
-     "title": "Finansal Kriz",
+     "title": "A Financial Crisis",
+     "title_tr": "Finansal Kriz",
      "lines": [
       {
        "en": "Mert evaluates monetary and fiscal policy.",
@@ -44895,7 +45159,8 @@
    "stories": [
     {
      "id": "c1-earth-1",
-     "title": "Zor kararlar",
+     "title": "Hard Choices",
+     "title_tr": "Zor kararlar",
      "lines": [
       {
        "en": "Defne and David are at a climate meeting.",
@@ -44921,7 +45186,8 @@
     },
     {
      "id": "c1-earth-2",
-     "title": "Kuruyan nehir",
+     "title": "The Drying River",
+     "title_tr": "Kuruyan nehir",
      "lines": [
       {
        "en": "The pristine river is gone. Ali looks at the arid land.",
@@ -44947,7 +45213,8 @@
     },
     {
      "id": "c1-earth-3",
-     "title": "Şehrin atıkları",
+     "title": "The City's Waste",
+     "title_tr": "Şehrin atıkları",
      "lines": [
       {
        "en": "Ayşe and Mark debate the new city landfill.",
@@ -44973,7 +45240,8 @@
     },
     {
      "id": "c1-earth-4",
-     "title": "Kötü alışkanlıklar",
+     "title": "Bad Habits",
+     "title_tr": "Kötü alışkanlıklar",
      "lines": [
       {
        "en": "Canan visits John's company.",
@@ -44999,7 +45267,8 @@
     },
     {
      "id": "c1-earth-5",
-     "title": "Ormanın umudu",
+     "title": "Hope for the Forest",
+     "title_tr": "Ormanın umudu",
      "lines": [
       {
        "en": "Emre explores the mountain.",
@@ -45066,7 +45335,8 @@
    "stories": [
     {
      "id": "c1-language-1",
-     "title": "Zor bir ders",
+     "title": "A Difficult Lesson",
+     "title_tr": "Zor bir ders",
      "lines": [
       {
        "en": "Ali is a student. He listens to a lecture by Clark.",
@@ -45096,7 +45366,8 @@
     },
     {
      "id": "c1-language-2",
-     "title": "Londra'da yanlış anlama",
+     "title": "A Misunderstanding in London",
+     "title_tr": "Londra'da yanlış anlama",
      "lines": [
       {
        "en": "Zeynep lives in London. Ben speaks a local dialect.",
@@ -45122,7 +45393,8 @@
     },
     {
      "id": "c1-language-3",
-     "title": "Siyasi tartışma",
+     "title": "A Political Debate",
+     "title_tr": "Siyasi tartışma",
      "lines": [
       {
        "en": "Maria watches a political debate on the internet.",
@@ -45148,7 +45420,8 @@
     },
     {
      "id": "c1-language-4",
-     "title": "İş görüşmesi",
+     "title": "The Job Interview",
+     "title_tr": "İş görüşmesi",
      "lines": [
       {
        "en": "Ayşe is at a job interview.",
@@ -45174,7 +45447,8 @@
     },
     {
      "id": "c1-language-5",
-     "title": "Gizli anlamlar",
+     "title": "Hidden Meanings",
+     "title_tr": "Gizli anlamlar",
      "lines": [
       {
        "en": "Emre and Sarah read a novel.",
@@ -45237,7 +45511,8 @@
    "stories": [
     {
      "id": "c1-bridge-1",
-     "title": "Şirket birleşmesi",
+     "title": "A Company Merger",
+     "title_tr": "Şirket birleşmesi",
      "lines": [
       {
        "en": "The two companies commenced their merger meeting yesterday.",
@@ -45267,7 +45542,8 @@
     },
     {
      "id": "c1-bridge-2",
-     "title": "Akademik bir keşif",
+     "title": "An Academic Discovery",
+     "title_tr": "Akademik bir keşif",
      "lines": [
       {
        "en": "The new methodology was quite unprecedented.",
@@ -45297,7 +45573,8 @@
     },
     {
      "id": "c1-bridge-3",
-     "title": "Sanat sergisi",
+     "title": "An Art Exhibition",
+     "title_tr": "Sanat sergisi",
      "lines": [
       {
        "en": "We are at an exhibition by a famous contemporary artist.",
@@ -45323,7 +45600,8 @@
     },
     {
      "id": "c1-bridge-4",
-     "title": "Hukuki anlaşmazlık",
+     "title": "A Legal Dispute",
+     "title_tr": "Hukuki anlaşmazlık",
      "lines": [
       {
        "en": "The lawyer scrutinized the new legislation.",
@@ -45353,7 +45631,8 @@
     },
     {
      "id": "c1-bridge-5",
-     "title": "Çevre kampanyası",
+     "title": "An Environmental Campaign",
+     "title_tr": "Çevre kampanyası",
      "lines": [
       {
        "en": "The drought will exacerbate the water scarcity.",
@@ -45414,7 +45693,8 @@
    "stories": [
     {
      "id": "c2-core-1",
-     "title": "Açık Karar",
+     "title": "A Clear Decision",
+     "title_tr": "Açık Karar",
      "lines": [
       {
        "en": "Ahmet and John discuss a new business strategy.",
@@ -45444,7 +45724,8 @@
     },
     {
      "id": "c2-core-2",
-     "title": "Yanlış Anlaşılma",
+     "title": "A Misunderstanding",
+     "title_tr": "Yanlış Anlaşılma",
      "lines": [
       {
        "en": "Zeynep lives in London and works as a lawyer.",
@@ -45474,7 +45755,8 @@
     },
     {
      "id": "c2-core-3",
-     "title": "Zorlu Bir Toplantı",
+     "title": "A Tough Meeting",
+     "title_tr": "Zorlu Bir Toplantı",
      "lines": [
       {
        "en": "Mary wants to ameliorate the current work environment.",
@@ -45560,7 +45842,8 @@
    "stories": [
     {
      "id": "c2-rhetoric-1",
-     "title": "Kısa ve öz",
+     "title": "Short and to the Point",
+     "title_tr": "Kısa ve öz",
      "lines": [
       {
        "en": "Leyla and Ali are in the office.",
@@ -45586,7 +45869,8 @@
     },
     {
      "id": "c2-rhetoric-2",
-     "title": "Kaçamak cevaplar",
+     "title": "Evasive Answers",
+     "title_tr": "Kaçamak cevaplar",
      "lines": [
       {
        "en": "Kaya works for the government in London.",
@@ -45612,7 +45896,8 @@
     },
     {
      "id": "c2-rhetoric-3",
-     "title": "İronik durum",
+     "title": "An Ironic Situation",
+     "title_tr": "İronik durum",
      "lines": [
       {
        "en": "Emre does not mince his words.",
@@ -45638,7 +45923,8 @@
     },
     {
      "id": "c2-rhetoric-4",
-     "title": "Etkili konuşma",
+     "title": "Speaking Persuasively",
+     "title_tr": "Etkili konuşma",
      "lines": [
       {
        "en": "Zeynep is in Paris for a seminar.",
@@ -45660,7 +45946,8 @@
     },
     {
      "id": "c2-rhetoric-5",
-     "title": "Retorik strateji",
+     "title": "A Rhetorical Strategy",
+     "title_tr": "Retorik strateji",
      "lines": [
       {
        "en": "John uses a lot of clichés.",
@@ -45727,7 +46014,8 @@
    "stories": [
     {
      "id": "c2-character-1",
-     "title": "Yeni Yönetici",
+     "title": "The New Manager",
+     "title_tr": "Yeni Yönetici",
      "lines": [
       {
        "en": "The new manager is very benevolent.",
@@ -45753,7 +46041,8 @@
     },
     {
      "id": "c2-character-2",
-     "title": "Hayır Kurumu",
+     "title": "The Charity",
+     "title_tr": "Hayır Kurumu",
      "lines": [
       {
        "en": "Ayşe does altruistic work in London.",
@@ -45779,7 +46068,8 @@
     },
     {
      "id": "c2-character-3",
-     "title": "Aile Anlaşmazlığı",
+     "title": "A Family Dispute",
+     "title_tr": "Aile Anlaşmazlığı",
      "lines": [
       {
        "en": "Why is Kemal so obstinate?",
@@ -45805,7 +46095,8 @@
     },
     {
      "id": "c2-character-4",
-     "title": "İş Görüşmesi",
+     "title": "The Job Interview",
+     "title_tr": "İş Görüşmesi",
      "lines": [
       {
        "en": "Murat is a shrewd candidate.",
@@ -45831,7 +46122,8 @@
     },
     {
      "id": "c2-character-5",
-     "title": "Ona Dikkat Et",
+     "title": "Watch Out for Him",
+     "title_tr": "Ona Dikkat Et",
      "lines": [
       {
        "en": "Hasan seems like a meek man.",
@@ -45894,7 +46186,8 @@
    "stories": [
     {
      "id": "c2-power-1",
-     "title": "Kampanya",
+     "title": "The Campaign",
+     "title_tr": "Kampanya",
      "lines": [
       {
        "en": "Ali and Deniz plan a political campaign.",
@@ -45924,7 +46217,8 @@
     },
     {
      "id": "c2-power-2",
-     "title": "Hükümetin Düşüşü",
+     "title": "The Fall of the Government",
+     "title_tr": "Hükümetin Düşüşü",
      "lines": [
       {
        "en": "Leyla lives in Ankara.",
@@ -45954,7 +46248,8 @@
     },
     {
      "id": "c2-power-3",
-     "title": "Gizli Toplantılar",
+     "title": "Secret Meetings",
+     "title_tr": "Gizli Toplantılar",
      "lines": [
       {
        "en": "Canan works in London.",
@@ -45988,7 +46283,8 @@
     },
     {
      "id": "c2-power-4",
-     "title": "Mahkeme Davası",
+     "title": "The Court Case",
+     "title_tr": "Mahkeme Davası",
      "lines": [
       {
        "en": "Emre and Aylin watch the news.",
@@ -46018,7 +46314,8 @@
     },
     {
      "id": "c2-power-5",
-     "title": "Büyük Karar",
+     "title": "A Big Decision",
+     "title_tr": "Büyük Karar",
      "lines": [
       {
        "en": "Zeynep lives in Izmir.",
@@ -46085,7 +46382,8 @@
    "stories": [
     {
      "id": "c2-justice-1",
-     "title": "Dava Başlıyor",
+     "title": "The Trial Begins",
+     "title_tr": "Dava Başlıyor",
      "lines": [
       {
        "en": "Arthur is the plaintiff.",
@@ -46111,7 +46409,8 @@
     },
     {
      "id": "c2-justice-2",
-     "title": "Ağır Suç",
+     "title": "A Serious Crime",
+     "title_tr": "Ağır Suç",
      "lines": [
       {
        "en": "Judge Clark will adjudicate the trial.",
@@ -46137,7 +46436,8 @@
     },
     {
      "id": "c2-justice-3",
-     "title": "Katı Karar",
+     "title": "A Strict Ruling",
+     "title_tr": "Katı Karar",
      "lines": [
       {
        "en": "Sara reads the indictment.",
@@ -46163,7 +46463,8 @@
     },
     {
      "id": "c2-justice-4",
-     "title": "Kanunun Lafzı",
+     "title": "The Letter of the Law",
+     "title_tr": "Kanunun Lafzı",
      "lines": [
       {
        "en": "John committed perjury.",
@@ -46189,7 +46490,8 @@
     },
     {
      "id": "c2-justice-5",
-     "title": "Sonuç",
+     "title": "The Outcome",
+     "title_tr": "Sonuç",
      "lines": [
       {
        "en": "David is in London.",
@@ -46256,7 +46558,8 @@
    "stories": [
     {
      "id": "c2-thought-1",
-     "title": "Üniversitede felsefe dersi",
+     "title": "A Philosophy Class at University",
+     "title_tr": "Üniversitede felsefe dersi",
      "lines": [
       {
        "en": "That philosophy lecture was interesting.",
@@ -46286,7 +46589,8 @@
     },
     {
      "id": "c2-thought-2",
-     "title": "Etik bir ikilem",
+     "title": "An Ethical Dilemma",
+     "title_tr": "Etik bir ikilem",
      "lines": [
       {
        "en": "Our new app is efficient, but is it ethical?",
@@ -46312,7 +46616,8 @@
     },
     {
      "id": "c2-thought-3",
-     "title": "Kader mi, seçim mi?",
+     "title": "Fate or Choice?",
+     "title_tr": "Kader mi, seçim mi?",
      "lines": [
       {
        "en": "I feel like my whole life is a series of accidents.",
@@ -46338,7 +46643,8 @@
     },
     {
      "id": "c2-thought-4",
-     "title": "Akademik bir tartışma",
+     "title": "An Academic Debate",
+     "title_tr": "Akademik bir tartışma",
      "lines": [
       {
        "en": "Your thesis relies too much on empiricism.",
@@ -46364,7 +46670,8 @@
     },
     {
      "id": "c2-thought-5",
-     "title": "Değerlerimiz",
+     "title": "Our Values",
+     "title_tr": "Değerlerimiz",
      "lines": [
       {
        "en": "Honesty is my most important virtue.",
@@ -46431,7 +46738,8 @@
    "stories": [
     {
      "id": "c2-science-1",
-     "title": "Deneyin sonucu",
+     "title": "The Result of the Experiment",
+     "title_tr": "Deneyin sonucu",
      "lines": [
       {
        "en": "Ali and Sarah work in a laboratory.",
@@ -46461,7 +46769,8 @@
     },
     {
      "id": "c2-science-2",
-     "title": "Eski türler",
+     "title": "Ancient Species",
+     "title_tr": "Eski türler",
      "lines": [
       {
        "en": "Zeynep and Max study an ancient organism.",
@@ -46487,7 +46796,8 @@
     },
     {
      "id": "c2-science-3",
-     "title": "Kuantum verileri",
+     "title": "Quantum Data",
+     "title_tr": "Kuantum verileri",
      "lines": [
       {
        "en": "Canan explains a new quantum theorem.",
@@ -46513,7 +46823,8 @@
     },
     {
      "id": "c2-science-4",
-     "title": "Geleceğin iklimi",
+     "title": "The Climate of the Future",
+     "title_tr": "Geleceğin iklimi",
      "lines": [
       {
        "en": "Elif works in a university.",
@@ -46543,7 +46854,8 @@
     },
     {
      "id": "c2-science-5",
-     "title": "Hassas ayar",
+     "title": "Fine-Tuning",
+     "title_tr": "Hassas ayar",
      "lines": [
       {
        "en": "Murat and Emma must calibrate the new device.",
@@ -46606,7 +46918,8 @@
    "stories": [
     {
      "id": "c2-finance-1",
-     "title": "Girişimci Ruhu",
+     "title": "The Entrepreneurial Spirit",
+     "title_tr": "Girişimci Ruhu",
      "lines": [
       {
        "en": "Ali is a very frugal entrepreneur.",
@@ -46636,7 +46949,8 @@
     },
     {
      "id": "c2-finance-2",
-     "title": "Zor Zamanlar",
+     "title": "Hard Times",
+     "title_tr": "Zor Zamanlar",
      "lines": [
       {
        "en": "Leyla and Murat discuss their portfolio.",
@@ -46666,7 +46980,8 @@
     },
     {
      "id": "c2-finance-3",
-     "title": "Beklenmedik Kazanç",
+     "title": "An Unexpected Gain",
+     "title_tr": "Beklenmedik Kazanç",
      "lines": [
       {
        "en": "Ayşe is a lucky shareholder.",
@@ -46696,7 +47011,8 @@
     },
     {
      "id": "c2-finance-4",
-     "title": "Kötü Haberler",
+     "title": "Bad News",
+     "title_tr": "Kötü Haberler",
      "lines": [
       {
        "en": "Kenan works in a big bank in Istanbul.",
@@ -46726,7 +47042,8 @@
     },
     {
      "id": "c2-finance-5",
-     "title": "Spekülasyon",
+     "title": "Speculation",
+     "title_tr": "Spekülasyon",
      "lines": [
       {
        "en": "Selim is an investor in London.",
@@ -46793,7 +47110,8 @@
    "stories": [
     {
      "id": "c2-literature-1",
-     "title": "Yeni Bir Kitap",
+     "title": "A New Book",
+     "title_tr": "Yeni Bir Kitap",
      "lines": [
       {
        "en": "Ayşe and Tom read a new book.",
@@ -46823,7 +47141,8 @@
     },
     {
      "id": "c2-literature-2",
-     "title": "Londra'da Okuma",
+     "title": "A Reading in London",
+     "title_tr": "Londra'da Okuma",
      "lines": [
       {
        "en": "Ali is in London. He is reading a long novel.",
@@ -46853,7 +47172,8 @@
     },
     {
      "id": "c2-literature-3",
-     "title": "Derin Duygular",
+     "title": "Deep Feelings",
+     "title_tr": "Derin Duygular",
      "lines": [
       {
        "en": "Zeynep, do you like this poem?",
@@ -46883,7 +47203,8 @@
     },
     {
      "id": "c2-literature-4",
-     "title": "Eski Bir Roman",
+     "title": "An Old Novel",
+     "title_tr": "Eski Bir Roman",
      "lines": [
       {
        "en": "Cem buys an old book in Paris.",
@@ -46913,7 +47234,8 @@
     },
     {
      "id": "c2-literature-5",
-     "title": "Yazar ve Dostu",
+     "title": "The Writer and His Friend",
+     "title_tr": "Yazar ve Dostu",
      "lines": [
       {
        "en": "David, your new book is an epic!",
@@ -46980,7 +47302,8 @@
    "stories": [
     {
      "id": "c2-earth-1",
-     "title": "Ada Hayatı",
+     "title": "Island Life",
+     "title_tr": "Ada Hayatı",
      "lines": [
       {
        "en": "Zeynep lives on an island in a small archipelago.",
@@ -47010,7 +47333,8 @@
     },
     {
      "id": "c2-earth-2",
-     "title": "Deprem ve Volkan",
+     "title": "Earthquakes and Volcanoes",
+     "title_tr": "Deprem ve Volkan",
      "lines": [
       {
        "en": "David studies tectonic movements in Italy.",
@@ -47040,7 +47364,8 @@
     },
     {
      "id": "c2-earth-3",
-     "title": "Buzullar ve Göç",
+     "title": "Glaciers and Migration",
+     "title_tr": "Buzullar ve Göç",
      "lines": [
       {
        "en": "Elena visits a barren terrain in Canada.",
@@ -47070,7 +47395,8 @@
     },
     {
      "id": "c2-earth-4",
-     "title": "Nehir Ağzında",
+     "title": "At the Estuary",
+     "title_tr": "Nehir Ağzında",
      "lines": [
       {
        "en": "Ali walks near the estuary in Turkey.",
@@ -47100,7 +47426,8 @@
     },
     {
      "id": "c2-earth-5",
-     "title": "Nesli Tükenme Riski",
+     "title": "The Risk of Extinction",
+     "title_tr": "Nesli Tükenme Riski",
      "lines": [
       {
        "en": "Maria reads a report about extinction.",
@@ -47167,7 +47494,8 @@
    "stories": [
     {
      "id": "c2-identity-1",
-     "title": "Taşınma",
+     "title": "Moving Away",
+     "title_tr": "Taşınma",
      "lines": [
       {
        "en": "Ali is an immigrant in London.",
@@ -47197,7 +47525,8 @@
     },
     {
      "id": "c2-identity-2",
-     "title": "Eski ve Yeni",
+     "title": "Old and New",
+     "title_tr": "Eski ve Yeni",
      "lines": [
       {
        "en": "Gentrification is changing Zeynep's neighbourhood.",
@@ -47227,7 +47556,8 @@
     },
     {
      "id": "c2-identity-3",
-     "title": "Yeni İş",
+     "title": "A New Job",
+     "title_tr": "Yeni İş",
      "lines": [
       {
        "en": "Emre works in Berlin.",
@@ -47257,7 +47587,8 @@
     },
     {
      "id": "c2-identity-4",
-     "title": "Değişen Zamanlar",
+     "title": "Changing Times",
+     "title_tr": "Değişen Zamanlar",
      "lines": [
       {
        "en": "Ayşe studies the zeitgeist.",
@@ -47287,7 +47618,8 @@
     },
     {
      "id": "c2-identity-5",
-     "title": "Önyargıyı Aşmak",
+     "title": "Overcoming Prejudice",
+     "title_tr": "Önyargıyı Aşmak",
      "lines": [
       {
        "en": "Defne lives in Toronto.",
@@ -47354,7 +47686,8 @@
    "stories": [
     {
      "id": "c2-mastery-1",
-     "title": "Londra Sanatı",
+     "title": "Art in London",
+     "title_tr": "Londra Sanatı",
      "lines": [
       {
        "en": "Emma is in London.",
@@ -47384,7 +47717,8 @@
     },
     {
      "id": "c2-mastery-2",
-     "title": "Anlaşılmaz Kitap",
+     "title": "An Impenetrable Book",
+     "title_tr": "Anlaşılmaz Kitap",
      "lines": [
       {
        "en": "Ahmet has an idiosyncratic method.",
@@ -47410,7 +47744,8 @@
     },
     {
      "id": "c2-mastery-3",
-     "title": "Yeni Politika",
+     "title": "A New Policy",
+     "title_tr": "Yeni Politika",
      "lines": [
       {
        "en": "Istanbul has labyrinthine streets.",
@@ -47436,7 +47771,8 @@
     },
     {
      "id": "c2-mastery-4",
-     "title": "Kariyer Zirvesi",
+     "title": "The Peak of a Career",
+     "title_tr": "Kariyer Zirvesi",
      "lines": [
       {
        "en": "David is at the zenith of his career.",
@@ -47462,7 +47798,8 @@
     },
     {
      "id": "c2-mastery-5",
-     "title": "Sergi",
+     "title": "The Exhibition",
+     "title_tr": "Sergi",
      "lines": [
       {
        "en": "Elif meticulously planned the exhibition.",

@@ -358,7 +358,8 @@
   "stories": [
     {
       "id": "c2-power-1",
-      "title": "Kampanya",
+      "title": "The Campaign",
+      "title_tr": "Kampanya",
       "names": [
         "Ali",
         "Deniz"
@@ -392,7 +393,8 @@
     },
     {
       "id": "c2-power-2",
-      "title": "Hükümetin Düşüşü",
+      "title": "The Fall of the Government",
+      "title_tr": "Hükümetin Düşüşü",
       "names": [
         "Leyla",
         "Ankara"
@@ -426,7 +428,8 @@
     },
     {
       "id": "c2-power-3",
-      "title": "Gizli Toplantılar",
+      "title": "Secret Meetings",
+      "title_tr": "Gizli Toplantılar",
       "names": [
         "Canan",
         "London"
@@ -464,7 +467,8 @@
     },
     {
       "id": "c2-power-4",
-      "title": "Mahkeme Davası",
+      "title": "The Court Case",
+      "title_tr": "Mahkeme Davası",
       "names": [
         "Emre",
         "Aylin"
@@ -498,7 +502,8 @@
     },
     {
       "id": "c2-power-5",
-      "title": "Büyük Karar",
+      "title": "A Big Decision",
+      "title_tr": "Büyük Karar",
       "names": [
         "Zeynep",
         "Izmir"

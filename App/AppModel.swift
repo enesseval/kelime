@@ -72,6 +72,11 @@ final class AppModel {
                     router.showPaywall(trigger)
                 }
             }
+            // `-tab words` (today, play, words, discover, settings) opens that tab.
+            if let name = UserDefaults.standard.string(forKey: "tab") {
+                let tabs: [String: AppTab] = ["today": .today, "play": .play, "words": .words, "discover": .discover, "settings": .settings]
+                if let tab = tabs[name] { router.tab = tab }
+            }
             if let name = UserDefaults.standard.string(forKey: "paywallDesign"), let design = PaywallDesign(rawValue: name) {
                 Task {
                     try? await Task.sleep(for: .seconds(1.5))
@@ -304,6 +309,18 @@ final class AppModel {
         }
     }
 
+    /// Words, phrases or both on the widget. The word on screen changes at once.
+    func setWidgetContent(_ content: WidgetContent) async {
+        guard let database else { return }
+        try? await database.writer.write { db in
+            var prefs = try Preferences.load(db)
+            prefs.widgetContent = content
+            try prefs.save(db)
+        }
+        dataVersion += 1
+        await WidgetRefresher.rebuild(database, includingCurrent: true)
+    }
+
     func setSetting(_ key: SettingKey, _ value: String?) async {
         await write(rebuildQueue: false) { db in try Settings.set(key, value, in: db) }
         if key == .speechRate { await applySpeechRate() }
@@ -312,6 +329,7 @@ final class AppModel {
     func applySpeechRate() async {
         let raw = await read { db in try Settings.string(.speechRate, in: db) } ?? nil
         Speaker.shared.rateMultiplier = raw.flatMap(Float.init) ?? 0.9
+        Speaker.shared.prepare()
     }
 
     func dismissWidgetBanner() async {

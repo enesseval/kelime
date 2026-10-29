@@ -365,7 +365,8 @@
   "stories": [
     {
       "id": "c1-global-1",
-      "title": "Kriz",
+      "title": "The Crisis",
+      "title_tr": "Kriz",
       "names": [
         "Ali",
         "Istanbul"
@@ -399,7 +400,8 @@
     },
     {
       "id": "c1-global-2",
-      "title": "Kahve Piyasası",
+      "title": "The Coffee Market",
+      "title_tr": "Kahve Piyasası",
       "names": [
         "Maria",
         "Brazil"
@@ -433,7 +435,8 @@
     },
     {
       "id": "c1-global-3",
-      "title": "Küresel Kararlar",
+      "title": "Global Decisions",
+      "title_tr": "Küresel Kararlar",
       "names": [
         "David",
         "London"
@@ -467,7 +470,8 @@
     },
     {
       "id": "c1-global-4",
-      "title": "Vergi ve Destek",
+      "title": "Taxes and Support",
+      "title_tr": "Vergi ve Destek",
       "names": [
         "Elif",
         "Ankara"
@@ -501,7 +505,8 @@
     },
     {
       "id": "c1-global-5",
-      "title": "Finansal Kriz",
+      "title": "A Financial Crisis",
+      "title_tr": "Finansal Kriz",
       "names": [
         "Mert",
         "New York"

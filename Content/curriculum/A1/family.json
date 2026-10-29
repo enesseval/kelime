@@ -412,7 +412,8 @@
  "stories": [
   {
    "id": "a1-family-1",
-   "title": "Yeni arkadaş",
+   "title": "A New Friend",
+   "title_tr": "Yeni arkadaş",
    "names": [
     "Mert",
     "Emma",
@@ -451,7 +452,8 @@
   },
   {
    "id": "a1-family-2",
-   "title": "Kerem ve ailesi",
+   "title": "Kerem and His Family",
+   "title_tr": "Kerem ve ailesi",
    "names": [
     "Kerem",
     "Zeynep",
@@ -492,7 +494,8 @@
   },
   {
    "id": "a1-family-3",
-   "title": "Tanışma",
+   "title": "Nice to Meet You",
+   "title_tr": "Tanışma",
    "names": [
     "Seda",
     "Burak",
@@ -531,7 +534,8 @@
   },
   {
    "id": "a1-family-4",
-   "title": "Büyük aile",
+   "title": "A Big Family",
+   "title_tr": "Büyük aile",
    "names": [
     "Bora",
     "Ankara"
@@ -569,7 +573,8 @@
   },
   {
    "id": "a1-family-5",
-   "title": "Kız kardeşim",
+   "title": "My Sister",
+   "title_tr": "Kız kardeşim",
    "names": [
     "Ece",
     "Kate",

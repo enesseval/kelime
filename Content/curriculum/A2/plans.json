@@ -416,7 +416,8 @@
   "stories": [
     {
       "id": "a2-plans-1",
-      "title": "Konser daveti",
+      "title": "A Concert Invitation",
+      "title_tr": "Konser daveti",
       "names": [
         "Selin",
         "Kerem"
@@ -450,7 +451,8 @@
     },
     {
       "id": "a2-plans-2",
-      "title": "Belki başka zamana",
+      "title": "Maybe Another Time",
+      "title_tr": "Belki başka zamana",
       "names": [
         "Zeynep",
         "Murat"
@@ -484,7 +486,8 @@
     },
     {
       "id": "a2-plans-3",
-      "title": "Plan değişikliği",
+      "title": "A Change of Plan",
+      "title_tr": "Plan değişikliği",
       "names": [
         "Ahmet",
         "Emre"
@@ -518,7 +521,8 @@
     },
     {
       "id": "a2-plans-4",
-      "title": "Gelecek planları",
+      "title": "Plans for the Future",
+      "title_tr": "Gelecek planları",
       "names": [
         "Ece",
         "Sinan",
@@ -553,7 +557,8 @@
     },
     {
       "id": "a2-plans-5",
-      "title": "Hafta sonu buluşması",
+      "title": "Meeting at the Weekend",
+      "title_tr": "Hafta sonu buluşması",
       "names": [
         "Burak",
         "Deniz"

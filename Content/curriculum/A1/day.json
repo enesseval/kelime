@@ -490,7 +490,8 @@
  "stories": [
   {
    "id": "a1-day-1",
-   "title": "Selin'in sabahı",
+   "title": "Selin's Morning",
+   "title_tr": "Selin'in sabahı",
    "names": [
     "Selin",
     "Ankara"
@@ -524,7 +525,8 @@
   },
   {
    "id": "a1-day-2",
-   "title": "Saat kaç?",
+   "title": "What Time Is It?",
+   "title_tr": "Saat kaç?",
    "names": [
     "Burak",
     "Emma",
@@ -559,7 +561,8 @@
   },
   {
    "id": "a1-day-3",
-   "title": "Gece işi",
+   "title": "Night Work",
+   "title_tr": "Gece işi",
    "names": [
     "Mert",
     "Izmir"
@@ -593,7 +596,8 @@
   },
   {
    "id": "a1-day-4",
-   "title": "Yoğun bir hafta",
+   "title": "A Busy Week",
+   "title_tr": "Yoğun bir hafta",
    "names": [
     "Zeynep",
     "David"
@@ -631,7 +635,8 @@
   },
   {
    "id": "a1-day-5",
-   "title": "Güzel bir hafta sonu",
+   "title": "A Nice Weekend",
+   "title_tr": "Güzel bir hafta sonu",
    "names": [
     "Kaan",
     "Defne",

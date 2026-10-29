@@ -361,7 +361,8 @@
   "stories": [
     {
       "id": "b2-justice-1",
-      "title": "Banka Soygunu",
+      "title": "The Bank Robbery",
+      "title_tr": "Banka Soygunu",
       "names": [],
       "lines": [
         {
@@ -388,7 +389,8 @@
     },
     {
       "id": "b2-justice-2",
-      "title": "Duruşma Günü",
+      "title": "The Day of the Hearing",
+      "title_tr": "Duruşma Günü",
       "names": [],
       "lines": [
         {
@@ -411,7 +413,8 @@
     },
     {
       "id": "b2-justice-3",
-      "title": "İnternet Dolandırıcılığı",
+      "title": "Online Fraud",
+      "title_tr": "İnternet Dolandırıcılığı",
       "names": [],
       "lines": [
         {
@@ -438,7 +441,8 @@
     },
     {
       "id": "b2-justice-4",
-      "title": "Karar Anı",
+      "title": "The Verdict",
+      "title_tr": "Karar Anı",
       "names": [],
       "lines": [
         {
@@ -465,7 +469,8 @@
     },
     {
       "id": "b2-justice-5",
-      "title": "Trafik Kazası",
+      "title": "A Traffic Accident",
+      "title_tr": "Trafik Kazası",
       "names": [],
       "lines": [
         {

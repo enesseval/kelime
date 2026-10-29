@@ -361,7 +361,8 @@
   "stories": [
     {
       "id": "b2-academic-1",
-      "title": "Burs ve Eğitim",
+      "title": "Scholarships and Education",
+      "title_tr": "Burs ve Eğitim",
       "names": [
         "Ozan",
         "London",
@@ -396,7 +397,8 @@
     },
     {
       "id": "b2-academic-2",
-      "title": "Uzun Bir Seminer",
+      "title": "A Long Seminar",
+      "title_tr": "Uzun Bir Seminer",
       "names": [
         "Zeynep",
         "Ali"
@@ -430,7 +432,8 @@
     },
     {
       "id": "b2-academic-3",
-      "title": "Ödev Zamanı",
+      "title": "Assignment Time",
+      "title_tr": "Ödev Zamanı",
       "names": [
         "Cem",
         "Elif"
@@ -464,7 +467,8 @@
     },
     {
       "id": "b2-academic-4",
-      "title": "Tez Teslimi",
+      "title": "Handing In the Thesis",
+      "title_tr": "Tez Teslimi",
       "names": [
         "Ayşe",
         "David"
@@ -498,7 +502,8 @@
     },
     {
       "id": "b2-academic-5",
-      "title": "Derse Doğru",
+      "title": "On the Way to Class",
+      "title_tr": "Derse Doğru",
       "names": [
         "Leyla",
         "Hasan"

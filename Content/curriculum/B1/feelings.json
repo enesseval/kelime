@@ -411,7 +411,8 @@
   "stories": [
     {
       "id": "b1-feelings-1",
-      "title": "Tartışma",
+      "title": "The Argument",
+      "title_tr": "Tartışma",
       "names": [
         "Zeynep",
         "Ali"
@@ -441,7 +442,8 @@
     },
     {
       "id": "b1-feelings-2",
-      "title": "Özür dilemek",
+      "title": "Saying Sorry",
+      "title_tr": "Özür dilemek",
       "names": [
         "Mert",
         "Leyla"
@@ -475,7 +477,8 @@
     },
     {
       "id": "b1-feelings-3",
-      "title": "Sınav stresi",
+      "title": "Exam Stress",
+      "title_tr": "Sınav stresi",
       "names": [
         "Ayşe"
       ],
@@ -508,7 +511,8 @@
     },
     {
       "id": "b1-feelings-4",
-      "title": "Güven problemi",
+      "title": "A Question of Trust",
+      "title_tr": "Güven problemi",
       "names": [
         "David",
         "Sarah"
@@ -538,7 +542,8 @@
     },
     {
       "id": "b1-feelings-5",
-      "title": "Rahatlama zamanı",
+      "title": "Time to Relax",
+      "title_tr": "Rahatlama zamanı",
       "names": [
         "Cem"
       ],

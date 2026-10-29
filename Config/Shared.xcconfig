@@ -4,7 +4,7 @@
 APP_BUNDLE_ID = com.enesseval.kelime
 APP_DISPLAY_NAME = Kilit Kelime
 
-MARKETING_VERSION = 1.0
+MARKETING_VERSION = 1.0.0
 CURRENT_PROJECT_VERSION = 26
 
 // Apple Developer Team ID (automatic signing).

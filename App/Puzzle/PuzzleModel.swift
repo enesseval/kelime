@@ -62,21 +62,12 @@ struct DailyPuzzleInfo: Sendable {
         let prefs = try Preferences.load(db)
         guard let (level, puzzle) = try PuzzleLibrary.daily(for: prefs.level, on: clock.today, db: db) else { return nil }
         let saved = try PuzzleStore.load(key: DailyPuzzle.key(level: level, day: clock.today), puzzle: puzzle, db: db)
-        var cells: [Int: Bool] = [:]
-        let columns = 8
-        for entry in puzzle.entries {
-            let solved = saved.game.isSolved(entry)
-            for cell in entry.cells where cell.col < columns && cell.row < 10 {
-                let index = cell.row * columns + cell.col
-                cells[index] = (cells[index] ?? false) || solved
-            }
-        }
         return DailyPuzzleInfo(
             level: level,
             solved: saved.game.solvedCount,
             total: puzzle.entries.count,
             completed: saved.completedAt != nil,
-            thumbnail: cells
+            thumbnail: DailyPuzzleSummary.thumbnail(saved.game)
         )
     }
 }
@@ -99,6 +90,12 @@ final class PuzzleModel {
     private(set) var meanings: [String: String] = [:]
     private(set) var cards: [String: Card] = [:]
     private(set) var seconds = 0
+    /// Paused from the header; the grid is hidden until play resumes.
+    var isPaused = false
+    /// On screen with the app in front; the clock runs only then.
+    var isVisible = false
+    /// Solved words at the last save that told the rest of the app (Bugün, Oyna, widgets).
+    private var announcedSolved: Int?
     private(set) var completedAt: Date?
     private(set) var failed = false
     private(set) var isDaily = true
@@ -151,6 +148,7 @@ final class PuzzleModel {
         })
         meanings = Dictionary(uniqueKeysWithValues: puzzle.entries.map { ($0.id, self.cards[$0.cardID]?.meaning ?? "") })
         game = saved.game
+        announcedSolved = saved.game.solvedCount
         seconds = saved.seconds
         completedAt = saved.completedAt
         // Generated grids (personal, and daily ones made from the units) are kept once opened.
@@ -189,7 +187,7 @@ final class PuzzleModel {
     var isComplete: Bool { completedAt != nil }
 
     func tick() {
-        guard !isComplete, game != nil else { return }
+        guard !isComplete, !isPaused, isVisible, game != nil else { return }
         seconds += 1
         if seconds % 10 == 0 { Task { await save() } }
     }
@@ -243,7 +241,8 @@ final class PuzzleModel {
             completedAt = Date()
             Task { await finish() }
         } else {
-            Task { await save() }
+            let announce = game.solvedCount != announcedSolved
+            Task { await save(announce: announce) }
         }
     }
 
@@ -255,18 +254,26 @@ final class PuzzleModel {
         }
     }
 
-    func save() async {
+    /// Stores the grid and time. `announce` also refreshes Bugün, Oyna and the widgets: on a
+    /// newly solved word and when leaving the puzzle, not on every letter or clock tick.
+    func save(announce: Bool = false) async {
         guard let app, let game, let database = app.database else { return }
         let key = key, seconds = seconds, completedAt = completedAt, isDaily = isDaily, source = source
-        let summary = DailyPuzzleSummary(day: app.clock.today, solved: game.solvedCount, total: game.puzzle.entries.count)
-        try? await database.writer.write { db in
+        let summary = DailyPuzzleSummary(day: app.clock.today, game: game)
+        let body: @Sendable (Database) throws -> Void = { db in
             try PuzzleStore.save(key: key, game: game, seconds: seconds, completedAt: completedAt, db: db)
             if isDaily, case .daily(let day) = source, day == summary.day { try summary.save(db: db) }
+        }
+        if announce {
+            announcedSolved = game.solvedCount
+            await app.write(rebuildQueue: false, body)
+        } else {
+            try? await database.writer.write(body)
         }
     }
 
     private func finish() async {
-        await save()
+        await save(announce: true)
         guard let app, let game else { return }
         let clock = app.clock
         await app.write(rebuildQueue: false) { db in

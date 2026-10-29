@@ -388,7 +388,8 @@
   "stories": [
     {
       "id": "b1-career-1",
-      "title": "İş Görüşmesi",
+      "title": "The Job Interview",
+      "title_tr": "İş Görüşmesi",
       "names": [
         "Leyla"
       ],
@@ -421,7 +422,8 @@
     },
     {
       "id": "b1-career-2",
-      "title": "Terfi Beklentisi",
+      "title": "Hoping for a Promotion",
+      "title_tr": "Terfi Beklentisi",
       "names": [
         "Emre"
       ],
@@ -454,7 +456,8 @@
     },
     {
       "id": "b1-career-3",
-      "title": "Yeni Bir Başlangıç",
+      "title": "A New Beginning",
+      "title_tr": "Yeni Bir Başlangıç",
       "names": [
         "Hasan"
       ],
@@ -487,7 +490,8 @@
     },
     {
       "id": "b1-career-4",
-      "title": "İlk Eğitim Günü",
+      "title": "The First Day of Training",
+      "title_tr": "İlk Eğitim Günü",
       "names": [
         "Defne",
         "Izmir"
@@ -521,7 +525,8 @@
     },
     {
       "id": "b1-career-5",
-      "title": "Zorlu Sözleşme",
+      "title": "A Difficult Contract",
+      "title_tr": "Zorlu Sözleşme",
       "names": [
         "Ozan",
         "Sarah"

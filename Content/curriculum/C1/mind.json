@@ -382,7 +382,8 @@
   "stories": [
     {
       "id": "c1-mind-1",
-      "title": "İkilem",
+      "title": "The Dilemma",
+      "title_tr": "İkilem",
       "names": [
         "Ali",
         "Ozan"
@@ -416,7 +417,8 @@
     },
     {
       "id": "c1-mind-2",
-      "title": "Kişilikler",
+      "title": "Personalities",
+      "title_tr": "Kişilikler",
       "names": [
         "Zeynep",
         "Clara",
@@ -451,7 +453,8 @@
     },
     {
       "id": "c1-mind-3",
-      "title": "Zor Dönem",
+      "title": "A Difficult Time",
+      "title_tr": "Zor Dönem",
       "names": [
         "Mert",
         "David"
@@ -485,7 +488,8 @@
     },
     {
       "id": "c1-mind-4",
-      "title": "Eski Alışkanlıklar",
+      "title": "Old Habits",
+      "title_tr": "Eski Alışkanlıklar",
       "names": [
         "Selin"
       ],
@@ -514,7 +518,8 @@
     },
     {
       "id": "c1-mind-5",
-      "title": "Nostalji ve Algı",
+      "title": "Nostalgia and Perception",
+      "title_tr": "Nostalji ve Algı",
       "names": [
         "Hasan",
         "Emma",

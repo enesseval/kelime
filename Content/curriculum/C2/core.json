@@ -655,7 +655,8 @@
   "stories": [
     {
       "id": "c2-core-1",
-      "title": "Açık Karar",
+      "title": "A Clear Decision",
+      "title_tr": "Açık Karar",
       "names": [
         "Ahmet",
         "John"
@@ -689,7 +690,8 @@
     },
     {
       "id": "c2-core-2",
-      "title": "Yanlış Anlaşılma",
+      "title": "A Misunderstanding",
+      "title_tr": "Yanlış Anlaşılma",
       "names": [
         "Zeynep",
         "London"
@@ -723,7 +725,8 @@
     },
     {
       "id": "c2-core-3",
-      "title": "Zorlu Bir Toplantı",
+      "title": "A Tough Meeting",
+      "title_tr": "Zorlu Bir Toplantı",
       "names": [
         "Mary",
         "Ali"

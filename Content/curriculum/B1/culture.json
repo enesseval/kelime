@@ -378,7 +378,8 @@
   "stories": [
     {
       "id": "b1-culture-1",
-      "title": "Yeni roman",
+      "title": "A New Novel",
+      "title_tr": "Yeni roman",
       "names": [
         "Ali"
       ],
@@ -411,7 +412,8 @@
     },
     {
       "id": "b1-culture-2",
-      "title": "Dizi önerisi",
+      "title": "A Series to Watch",
+      "title_tr": "Dizi önerisi",
       "names": [],
       "lines": [
         {
@@ -442,7 +444,8 @@
     },
     {
       "id": "b1-culture-3",
-      "title": "Galeri ziyareti",
+      "title": "A Visit to the Gallery",
+      "title_tr": "Galeri ziyareti",
       "names": [
         "Oya",
         "Mert"
@@ -476,7 +479,8 @@
     },
     {
       "id": "b1-culture-4",
-      "title": "Gelenekler",
+      "title": "Traditions",
+      "title_tr": "Gelenekler",
       "names": [
         "London"
       ],
@@ -509,7 +513,8 @@
     },
     {
       "id": "b1-culture-5",
-      "title": "Eleştiri",
+      "title": "The Review",
+      "title_tr": "Eleştiri",
       "names": [],
       "lines": [
         {

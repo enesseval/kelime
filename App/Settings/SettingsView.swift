@@ -29,6 +29,7 @@ struct SettingsView: View {
     @State private var showGuide = false
     @State private var toast: String?
     @State private var confirmReset = false
+    @State private var sendingFeedback = false
 
     var body: some View {
         ScrollView {
@@ -39,8 +40,8 @@ struct SettingsView: View {
                     levelSection(data)
                     widgetSection(data)
                     reminderSection(data)
-                    if PurchaseManager.isOnSale { proSection }
                     resetSection
+                    appSection
                     if DevTools.isAvailable { developerSection }
                     about
                 }
@@ -55,6 +56,7 @@ struct SettingsView: View {
             data = await app.read { db in try SettingsData.load(db: db) }
         }
         .sheet(isPresented: $showGuide) { WidgetGuideView() }
+        .sheet(isPresented: $sendingFeedback) { FeedbackForm(card: nil).environment(app) }
         .toast($toast)
     }
 
@@ -119,6 +121,16 @@ struct SettingsView: View {
             }
             .buttonStyle(.plain)
             Divider().overlay(Palette.line)
+            SettingsRow("Gösterilecekler") {
+                Menu {
+                    ForEach(WidgetContent.allCases, id: \.self) { content in
+                        Button(content.label) {
+                            Task { await app.setWidgetContent(content) }
+                        }
+                    }
+                } label: { valueLabel(data.prefs.widgetContent.label) }
+            }
+            Divider().overlay(Palette.line)
             Button { showGuide = true } label: {
                 Text("Widget nasıl eklenir?")
                     .font(KelimeFont.ui(15, relativeTo: .body))
@@ -170,29 +182,44 @@ struct SettingsView: View {
         }
     }
 
-    private var proSection: some View {
-        SettingsSection("PRO") {
-            Button { app.router.showPaywall(.base) } label: {
-                SettingsRowLabel("Mevcut plan", value: app.purchases.planLabel)
-            }
-            .buttonStyle(.plain)
-            .disabled(app.purchases.isPro)
+    /// Feedback, the legal pages and restoring purchases, as plain rows.
+    private var appSection: some View {
+        SettingsSection("UYGULAMA") {
+            linkRow("Öneri gönder", systemImage: "bubble.left") { sendingFeedback = true }
             Divider().overlay(Palette.line)
-            Button {
-                Task {
-                    let restored = await app.purchases.restore()
-                    toast = restored ? "Pro geri yüklendi" : (app.purchases.lastError ?? "Geri yüklenecek satın alma bulunamadı")
+            linkRow("Gizlilik politikası", systemImage: "hand.raised") { openURL(Legal.privacyURL) }
+            Divider().overlay(Palette.line)
+            linkRow("Kullanım koşulları", systemImage: "doc.text") { openURL(Legal.termsURL) }
+            if PurchaseManager.isOnSale {
+                Divider().overlay(Palette.line)
+                linkRow("Satın alımları geri yükle", systemImage: "arrow.clockwise") {
+                    Task {
+                        let restored = await app.purchases.restore()
+                        toast = restored ? "Pro geri yüklendi" : (app.purchases.lastError ?? "Geri yüklenecek satın alma bulunamadı")
+                    }
                 }
-            } label: {
-                Text("Satın alımları geri yükle")
-                    .font(KelimeFont.ui(15, relativeTo: .body))
-                    .foregroundStyle(Palette.accent)
-                    .padding(.horizontal, 16)
-                    .frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
-                    .contentShape(Rectangle())
             }
-            .buttonStyle(.plain)
         }
+    }
+
+    private func linkRow(_ title: String, systemImage: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 15))
+                    .foregroundStyle(Palette.ink2)
+                    .frame(width: 22)
+                Text(title).font(KelimeFont.ui(15, relativeTo: .body)).foregroundStyle(Palette.ink)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(Palette.ink2.opacity(0.6))
+            }
+            .padding(.horizontal, 16)
+            .frame(minHeight: 50)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
     }
 
     private var resetSection: some View {
@@ -300,22 +327,17 @@ struct SettingsView: View {
     }
 
     private var about: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(spacing: 4) {
+            Text("\(AppDisplayName.value) v\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")")
+                .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
             Text("Kelime listesi: New General Service List, CC BY-SA 4.0")
             Text("İçerik yapay zekâ ile üretildi ve kontrol edildi")
-            HStack(spacing: 6) {
-                Button("Öneri gönder") { openURL(Legal.feedbackURL) }
-                Text("·")
-                Button("Gizlilik") { openURL(Legal.privacyURL) }
-                Text("·")
-                Button("Koşullar") { openURL(Legal.termsURL) }
-            }
-            Text("\(AppDisplayName.value) \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")")
-                .padding(.top, 6)
         }
         .font(KelimeFont.ui(12, relativeTo: .caption))
         .foregroundStyle(Palette.ink2)
-        .padding(.horizontal, 4)
+        .multilineTextAlignment(.center)
+        .frame(maxWidth: .infinity)
+        .padding(.top, 4)
     }
 
     // MARK: - Actions

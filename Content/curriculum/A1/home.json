@@ -382,7 +382,8 @@
  "stories": [
   {
    "id": "a1-home-1",
-   "title": "Yeni daire",
+   "title": "The New Flat",
+   "title_tr": "Yeni daire",
    "names": [
     "Selin",
     "Mert",
@@ -421,7 +422,8 @@
   },
   {
    "id": "a1-home-2",
-   "title": "Anahtar nerede?",
+   "title": "Where Is the Key?",
+   "title_tr": "Anahtar nerede?",
    "names": [
     "Burak",
     "Emma",
@@ -460,7 +462,8 @@
   },
   {
    "id": "a1-home-3",
-   "title": "Bahçeli ev",
+   "title": "A House with a Garden",
+   "title_tr": "Bahçeli ev",
    "names": [
     "Kemal",
     "Defne",
@@ -495,7 +498,8 @@
   },
   {
    "id": "a1-home-4",
-   "title": "Soğuk bir gün",
+   "title": "A Cold Day",
+   "title_tr": "Soğuk bir gün",
    "names": [
     "Zeynep",
     "Bursa"
@@ -533,7 +537,8 @@
   },
   {
    "id": "a1-home-5",
-   "title": "Misafir",
+   "title": "A Guest",
+   "title_tr": "Misafir",
    "names": [
     "Hakan",
     "David"

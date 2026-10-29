@@ -11,6 +11,7 @@ struct QuickReviewView: View {
     @State private var picked: String?
     @State private var typed = ""
     @State private var lastCorrect: Bool?
+    @State private var lastAnswer = ""
     @State private var isSaving = false
 
     var body: some View {
@@ -85,7 +86,7 @@ struct QuickReviewView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             if session.awaitingContinue, let correct = lastCorrect {
-                feedback(question, correct: correct)
+                feedback(question, correct: correct, answer: lastAnswer)
             } else if case .write = question.kind {
                 // "Bilmiyorum" counts as a wrong answer and shows the word.
                 HStack(spacing: 10) {
@@ -213,11 +214,24 @@ struct QuickReviewView: View {
         String(question.card.word.prefix(1)) + typed
     }
 
-    private func feedback(_ question: ReviewQuestion, correct: Bool) -> some View {
+    private func feedback(_ question: ReviewQuestion, correct: Bool, answer: String) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(correct ? "Doğru" : "Doğru cevap: \(question.card.word)")
                 .font(KelimeFont.ui(20, weight: .bold, relativeTo: .title3))
                 .foregroundStyle(correct ? Palette.greenInk : Palette.amberInk)
+            if !correct, let hint = question.mistakeHint(answer) {
+                VStack(alignment: .leading, spacing: 4) {
+                    typedWord(answer, word: question.card.word)
+                    Text(hint)
+                        .font(KelimeFont.ui(15, weight: .medium, relativeTo: .subheadline))
+                        .foregroundStyle(Palette.amberInk)
+                }
+            } else if !correct, !answer.isEmpty, case .meaning = question.kind {
+                Text("Seçtiğin: \(answer)")
+                    .font(KelimeFont.ui(15, relativeTo: .subheadline))
+                    .foregroundStyle(Palette.amberInk)
+                    .strikethrough()
+            }
             VStack(alignment: .leading, spacing: 4) {
                 Text(question.card.exampleEN)
                     .font(KelimeFont.english(23, relativeTo: .title3, italic: true))
@@ -244,6 +258,22 @@ struct QuickReviewView: View {
         .transition(.move(edge: .bottom).combined(with: .opacity))
     }
 
+    /// The typed answer with its wrong letters marked: "wom[e]n → woman".
+    private func typedWord(_ answer: String, word: String) -> some View {
+        let wrong = Set(ReviewQuestion.wrongPositions(answer, word))
+        let letters = Array(answer.lowercased())
+        var text = Text("")
+        for (index, letter) in letters.enumerated() {
+            let piece = Text(String(letter))
+            text = text + (wrong.contains(index)
+                ? piece.foregroundColor(Palette.amberInk).underline()
+                : piece.foregroundColor(Palette.ink))
+        }
+        return (text + Text("  →  ").foregroundColor(Palette.ink2) + Text(word).foregroundColor(Palette.greenInk))
+            .font(KelimeFont.english(24, relativeTo: .title3))
+            .accessibilityLabel("Yazdığın \(answer), doğrusu \(word)")
+    }
+
     // MARK: - Actions
 
     private func submit(_ answer: String, question: ReviewQuestion) async {
@@ -255,6 +285,7 @@ struct QuickReviewView: View {
         withAnimation(.spring(duration: 0.3)) {
             session = current
             lastCorrect = correct
+            lastAnswer = answer
         }
         isSaving = false
     }

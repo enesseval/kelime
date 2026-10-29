@@ -415,7 +415,8 @@
   "stories": [
     {
       "id": "c1-argument-1",
-      "title": "İklim tartışması",
+      "title": "The Climate Debate",
+      "title_tr": "İklim tartışması",
       "names": [
         "Ali",
         "Zeynep"
@@ -445,7 +446,8 @@
     },
     {
       "id": "c1-argument-2",
-      "title": "Akademik anlaşmazlık",
+      "title": "An Academic Disagreement",
+      "title_tr": "Akademik anlaşmazlık",
       "names": [
         "Dr. Evans",
         "Emre"
@@ -475,7 +477,8 @@
     },
     {
       "id": "c1-argument-3",
-      "title": "Toplantı odası",
+      "title": "The Meeting Room",
+      "title_tr": "Toplantı odası",
       "names": [
         "Sarah"
       ],
@@ -500,7 +503,8 @@
     },
     {
       "id": "c1-argument-4",
-      "title": "Haber eleştirisi",
+      "title": "Criticising the News",
+      "title_tr": "Haber eleştirisi",
       "names": [
         "Burak",
         "Elena"
@@ -530,7 +534,8 @@
     },
     {
       "id": "c1-argument-5",
-      "title": "Yatırım riski",
+      "title": "An Investment Risk",
+      "title_tr": "Yatırım riski",
       "names": [
         "David",
         "Aylin"

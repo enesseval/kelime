@@ -416,7 +416,8 @@
   "stories": [
     {
       "id": "a2-work-1",
-      "title": "İş görüşmesi",
+      "title": "A Job Interview",
+      "title_tr": "İş görüşmesi",
       "names": [
         "Selin",
         "London"
@@ -454,7 +455,8 @@
     },
     {
       "id": "a2-work-2",
-      "title": "Ofiste toplantı",
+      "title": "A Meeting at the Office",
+      "title_tr": "Ofiste toplantı",
       "names": [
         "Kerem",
         "John"
@@ -488,7 +490,8 @@
     },
     {
       "id": "a2-work-3",
-      "title": "Rapor ve son teslim",
+      "title": "The Report and the Deadline",
+      "title_tr": "Rapor ve son teslim",
       "names": [
         "Banu",
         "Paris"
@@ -522,7 +525,8 @@
     },
     {
       "id": "a2-work-4",
-      "title": "Yarı zamanlı iş",
+      "title": "A Part-Time Job",
+      "title_tr": "Yarı zamanlı iş",
       "names": [
         "Emre",
         "İzmir"
@@ -556,7 +560,8 @@
     },
     {
       "id": "a2-work-5",
-      "title": "Müdürün mesajı",
+      "title": "A Message from the Manager",
+      "title_tr": "Müdürün mesajı",
       "names": [
         "Zeynep",
         "David",

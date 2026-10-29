@@ -908,7 +908,8 @@
   "stories": [
     {
       "id": "a2-core-1",
-      "title": "İzmir'de bir akşam",
+      "title": "An Evening in İzmir",
+      "title_tr": "İzmir'de bir akşam",
       "names": [
         "Selin",
         "Kerem",
@@ -943,7 +944,8 @@
     },
     {
       "id": "a2-core-2",
-      "title": "Londra treni",
+      "title": "The London Train",
+      "title_tr": "Londra treni",
       "names": [
         "Emre",
         "London"
@@ -977,7 +979,8 @@
     },
     {
       "id": "a2-core-3",
-      "title": "Hafta sonu planı",
+      "title": "Weekend Plans",
+      "title_tr": "Hafta sonu planı",
       "names": [
         "Burak",
         "Deniz"

@@ -374,7 +374,7 @@ public struct LargeWidgetView: View {
                 Spacer(minLength: 0)
                 makeButton(.open(WidgetLink.puzzle), AnyView(
                     HStack(spacing: 12) {
-                        MiniGrid()
+                        MiniGrid(cells: entry.puzzleProgress?.cells ?? [:])
                         (Text("Günün Bulmacası").font(KelimeFont.ui(14, weight: .semibold)).foregroundStyle(c.ink)
                             + Text(puzzleText).font(KelimeFont.ui(14, weight: .medium)).foregroundStyle(c.ink2))
                         Spacer(minLength: 0)
@@ -400,12 +400,16 @@ extension LargeWidgetView {
     }
 }
 
-/// Decorative crossword thumbnail from the design (8 × 10 cells of 5 pt).
+/// Crossword thumbnail (8 × 10 cells of 5 pt): today's grid with solved words green, or the
+/// design's sample grid before the puzzle is opened.
 public struct MiniGrid: View {
     private let cell: CGFloat = 5
     private let gap: CGFloat = 1
+    let cells: [Int: Bool]
 
-    public init() {}
+    public init(cells: [Int: Bool] = [:]) {
+        self.cells = cells
+    }
 
     public var body: some View {
         Canvas { context, _ in
@@ -418,11 +422,18 @@ public struct MiniGrid: View {
                 )
                 context.fill(Path(roundedRect: rect, cornerRadius: 1), with: .color(color))
             }
-            bar(col: 2, row: 0, width: 6, height: 1, color: Palette.green)
-            bar(col: 3, row: 1, width: 1, height: 6, color: Palette.green)
-            bar(col: 0, row: 3, width: 8, height: 1, color: Palette.ink2.opacity(0.5))
-            bar(col: 5, row: 4, width: 1, height: 6, color: Palette.ink2.opacity(0.3))
-            bar(col: 1, row: 9, width: 7, height: 1, color: Palette.ink2.opacity(0.3))
+            if cells.isEmpty {
+                bar(col: 2, row: 0, width: 6, height: 1, color: Palette.green)
+                bar(col: 3, row: 1, width: 1, height: 6, color: Palette.green)
+                bar(col: 0, row: 3, width: 8, height: 1, color: Palette.ink2.opacity(0.5))
+                bar(col: 5, row: 4, width: 1, height: 6, color: Palette.ink2.opacity(0.3))
+                bar(col: 1, row: 9, width: 7, height: 1, color: Palette.ink2.opacity(0.3))
+            } else {
+                for (index, solved) in cells {
+                    bar(col: index % 8, row: index / 8, width: 1, height: 1,
+                        color: solved ? Palette.green : Palette.ink2.opacity(0.35))
+                }
+            }
         }
         .frame(width: 8 * (cell + gap) - gap, height: 10 * (cell + gap) - gap)
         .accessibilityHidden(true)

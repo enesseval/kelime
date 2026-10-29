@@ -368,7 +368,8 @@
   "stories": [
     {
       "id": "c1-ethics-1",
-      "title": "Gizli Bilgi",
+      "title": "Confidential Information",
+      "title_tr": "Gizli Bilgi",
       "names": [
         "Leyla",
         "Murat"
@@ -402,7 +403,8 @@
     },
     {
       "id": "c1-ethics-2",
-      "title": "Kamera Gözetimi",
+      "title": "Camera Surveillance",
+      "title_tr": "Kamera Gözetimi",
       "names": [
         "Ahmet",
         "Canan"
@@ -432,7 +434,8 @@
     },
     {
       "id": "c1-ethics-3",
-      "title": "Hukuki Boşluk",
+      "title": "A Legal Loophole",
+      "title_tr": "Hukuki Boşluk",
       "names": [
         "Emre"
       ],
@@ -465,7 +468,8 @@
     },
     {
       "id": "c1-ethics-4",
-      "title": "Mahkemede",
+      "title": "In Court",
+      "title_tr": "Mahkemede",
       "names": [
         "Zeynep",
         "London"
@@ -503,7 +507,8 @@
     },
     {
       "id": "c1-ethics-5",
-      "title": "Sorumluluk",
+      "title": "Responsibility",
+      "title_tr": "Sorumluluk",
       "names": [
         "Berk",
         "Aslı"

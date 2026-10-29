@@ -25,6 +25,23 @@ struct OwnListsSection: View {
                 } content: {
                     UserListCard(summary: summary, keepOn: keepOn(summary))
                 }
+                // On the row, so the question shows next to the list it is about.
+                .confirmationDialog("Liste silinsin mi?", isPresented: Binding(
+                    get: { deleting?.id == summary.id },
+                    set: { if !$0 { deleting = nil } }
+                ), titleVisibility: .visible) {
+                    Button("\(summary.list.title) listesini sil", role: .destructive) {
+                        let id = summary.id, last = keepOn(summary)
+                        Task {
+                            try? await model.editList { db in try UserLists.delete(id, db: db) }
+                            // The widget needs a source: the course comes back.
+                            if last { await model.setCourse(enabled: true) }
+                        }
+                    }
+                    Button("Vazgeç", role: .cancel) {}
+                } message: {
+                    Text(keepOn(summary) ? "Widget'ta açık tek liste bu; silersen widget'ta kurs yeniden açılır." : "Kendi yazdığın kelimeler de silinir. Uygulamanın kelimeleri ve ilerlemen yerinde kalır.")
+                }
             }
             Button {
                 title = ""
@@ -34,13 +51,13 @@ struct OwnListsSection: View {
                     Image(systemName: "plus")
                     Text(lists.isEmpty ? "İlk listeni oluştur" : "Yeni liste")
                     Spacer()
-                    if !model.isPro && !lists.filter({ !$0.list.imported }).isEmpty { ProBadge() }
                 }
                 .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
                 .foregroundStyle(Palette.accent)
                 .padding(.horizontal, 16)
                 .frame(minHeight: 52)
                 .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(Palette.line, style: StrokeStyle(lineWidth: 1, dash: [4, 4])))
+                .proCornerTag(!model.isPro && !lists.filter({ !$0.list.imported }).isEmpty, radius: 18)
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
@@ -49,19 +66,6 @@ struct OwnListsSection: View {
                     .font(KelimeFont.ui(13, relativeTo: .footnote))
                     .foregroundStyle(Palette.ink2)
             }
-        }
-        .confirmationDialog("Liste silinsin mi?", isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }), titleVisibility: .visible, presenting: deleting) { summary in
-            Button("\(summary.list.title) listesini sil", role: .destructive) {
-                let id = summary.id, last = keepOn(summary)
-                Task {
-                    try? await model.editList { db in try UserLists.delete(id, db: db) }
-                    // The widget needs a source: the course comes back.
-                    if last { await model.setCourse(enabled: true) }
-                }
-            }
-            Button("Vazgeç", role: .cancel) {}
-        } message: { summary in
-            Text(keepOn(summary) ? "Widget'ta açık tek liste bu; silersen widget'ta kurs yeniden açılır." : "Kendi yazdığın kelimeler de silinir. Uygulamanın kelimeleri ve ilerlemen yerinde kalır.")
         }
         .alert("Yeni liste", isPresented: $naming) {
             TextField("Örn. İş toplantısı", text: $title)
@@ -191,7 +195,7 @@ struct UserListView: View {
             ShareSheet(url: url).presentationDetents([.medium, .large])
         }
         .sheet(item: $visibilityList) { list in
-            VisibilitySheet(list: list).environment(model).presentationDetents([.medium, .large])
+            VisibilitySheet(list: list).environment(model).presentationDetents([.medium, .large]).presentationBackground(Palette.background)
         }
         .toast($toast)
         .alert("Listenin adı", isPresented: $renaming) {

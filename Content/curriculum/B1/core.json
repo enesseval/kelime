@@ -730,7 +730,8 @@
   "stories": [
     {
       "id": "b1-core-1",
-      "title": "İş Kararı",
+      "title": "A Work Decision",
+      "title_tr": "İş Kararı",
       "names": [
         "Ali",
         "Sarah",
@@ -769,7 +770,8 @@
     },
     {
       "id": "b1-core-2",
-      "title": "Tatil Planı",
+      "title": "Holiday Plans",
+      "title_tr": "Tatil Planı",
       "names": [
         "Canan",
         "David",
@@ -808,7 +810,8 @@
     },
     {
       "id": "b1-core-3",
-      "title": "Zor Durum",
+      "title": "A Difficult Situation",
+      "title_tr": "Zor Durum",
       "names": [
         "Emre",
         "Zeynep"

@@ -361,7 +361,8 @@
   "stories": [
     {
       "id": "c1-arts-1",
-      "title": "Sergide",
+      "title": "At the Exhibition",
+      "title_tr": "Sergide",
       "names": [
         "Leyla",
         "London"
@@ -399,7 +400,8 @@
     },
     {
       "id": "c1-arts-2",
-      "title": "Yeni bir roman",
+      "title": "A New Novel",
+      "title_tr": "Yeni bir roman",
       "names": [
         "Canan",
         "Izmir"
@@ -437,7 +439,8 @@
     },
     {
       "id": "c1-arts-3",
-      "title": "Belgesel filmi",
+      "title": "A Documentary Film",
+      "title_tr": "Belgesel filmi",
       "names": [
         "Emre",
         "Thomas",
@@ -472,7 +475,8 @@
     },
     {
       "id": "c1-arts-4",
-      "title": "Tiyatro eleştirisi",
+      "title": "A Theatre Review",
+      "title_tr": "Tiyatro eleştirisi",
       "names": [
         "Zeynep",
         "Istanbul"
@@ -506,7 +510,8 @@
     },
     {
       "id": "c1-arts-5",
-      "title": "Medya ve sanat",
+      "title": "The Media and the Arts",
+      "title_tr": "Medya ve sanat",
       "names": [
         "Ali",
         "New York"

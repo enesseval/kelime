@@ -11,6 +11,10 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case rotationInterval = "rotation_interval"
     case defaultWidgetMode = "default_widget_mode"
     case theme
+    /// Words, phrases or both on the widget (`WidgetContent`).
+    case widgetContent = "widget_content"
+    /// When the quiz widget was last answered, seconds since 1970; the result stays a minute.
+    case quizAnsweredAt = "quiz_answered_at"
     case reminderTime = "reminder_time"
     case isPro = "is_pro"
     case onboardingDone = "onboarding_done"

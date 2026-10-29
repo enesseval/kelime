@@ -388,7 +388,8 @@
  "stories": [
   {
    "id": "a1-city-1",
-   "title": "Londra'da ilk gün",
+   "title": "First Day in London",
+   "title_tr": "Londra'da ilk gün",
    "names": [
     "Selin",
     "London",
@@ -427,7 +428,8 @@
   },
   {
    "id": "a1-city-2",
-   "title": "Havaalanına gidiş",
+   "title": "To the Airport",
+   "title_tr": "Havaalanına gidiş",
    "names": [
     "Mert",
     "Emma"
@@ -465,7 +467,8 @@
   },
   {
    "id": "a1-city-3",
-   "title": "Yeni hastane",
+   "title": "The New Hospital",
+   "title_tr": "Yeni hastane",
    "names": [
     "Hakan",
     "Izmir",
@@ -504,7 +507,8 @@
   },
   {
    "id": "a1-city-4",
-   "title": "Otobüs durağında",
+   "title": "At the Bus Stop",
+   "title_tr": "Otobüs durağında",
    "names": [
     "Zeynep",
     "David",
@@ -544,7 +548,8 @@
   },
   {
    "id": "a1-city-5",
-   "title": "Parkta yürüyüş",
+   "title": "A Walk in the Park",
+   "title_tr": "Parkta yürüyüş",
    "names": [
     "Kerem",
     "Aslı",

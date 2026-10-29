@@ -60,9 +60,7 @@ struct RotationPickerView: View {
                         .foregroundStyle(Palette.ink2)
                 }
                 Spacer()
-                if locked {
-                    ProBadge()
-                } else if isSelected {
+                if isSelected {
                     Image(systemName: "checkmark.circle.fill").font(.system(size: 22)).foregroundStyle(Palette.accent)
                 }
             }
@@ -70,6 +68,7 @@ struct RotationPickerView: View {
             .padding(14)
             .background(Palette.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(isSelected ? Palette.accent : Palette.line, lineWidth: isSelected ? 2 : 1))
+            .proCornerTag(locked, radius: 18)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

@@ -359,7 +359,8 @@
   "stories": [
     {
       "id": "c2-justice-1",
-      "title": "Dava Başlıyor",
+      "title": "The Trial Begins",
+      "title_tr": "Dava Başlıyor",
       "names": [
         "Arthur",
         "Maria"
@@ -389,7 +390,8 @@
     },
     {
       "id": "c2-justice-2",
-      "title": "Ağır Suç",
+      "title": "A Serious Crime",
+      "title_tr": "Ağır Suç",
       "names": [
         "Clark",
         "Tom"
@@ -419,7 +421,8 @@
     },
     {
       "id": "c2-justice-3",
-      "title": "Katı Karar",
+      "title": "A Strict Ruling",
+      "title_tr": "Katı Karar",
       "names": [
         "Sara"
       ],
@@ -448,7 +451,8 @@
     },
     {
       "id": "c2-justice-4",
-      "title": "Kanunun Lafzı",
+      "title": "The Letter of the Law",
+      "title_tr": "Kanunun Lafzı",
       "names": [
         "John",
         "Anna"
@@ -478,7 +482,8 @@
     },
     {
       "id": "c2-justice-5",
-      "title": "Sonuç",
+      "title": "The Outcome",
+      "title_tr": "Sonuç",
       "names": [
         "David",
         "London"

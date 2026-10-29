@@ -359,7 +359,8 @@
  "stories": [
   {
    "id": "a1-free-time-1",
-   "title": "Plajda bir gün",
+   "title": "A Day at the Beach",
+   "title_tr": "Plajda bir gün",
    "names": [
     "Selin",
     "Mert",
@@ -398,7 +399,8 @@
   },
   {
    "id": "a1-free-time-2",
-   "title": "Müzik ve gitar",
+   "title": "Music and Guitar",
+   "title_tr": "Müzik ve gitar",
    "names": [
     "Zeynep",
     "Alex",
@@ -438,7 +440,8 @@
   },
   {
    "id": "a1-free-time-3",
-   "title": "Yeni bir film",
+   "title": "A New Film",
+   "title_tr": "Yeni bir film",
    "names": [
     "Emre",
     "Defne"
@@ -476,7 +479,8 @@
   },
   {
    "id": "a1-free-time-4",
-   "title": "Seyahat fotoğrafları",
+   "title": "Travel Photos",
+   "title_tr": "Seyahat fotoğrafları",
    "names": [
     "Hakan",
     "Sara",
@@ -512,7 +516,8 @@
   },
   {
    "id": "a1-free-time-5",
-   "title": "Spor zamanı",
+   "title": "Sport Time",
+   "title_tr": "Spor zamanı",
    "names": [
     "Burak",
     "Kaan",

@@ -355,7 +355,8 @@
   "stories": [
     {
       "id": "c2-finance-1",
-      "title": "Girişimci Ruhu",
+      "title": "The Entrepreneurial Spirit",
+      "title_tr": "Girişimci Ruhu",
       "names": [
         "Ali"
       ],
@@ -388,7 +389,8 @@
     },
     {
       "id": "c2-finance-2",
-      "title": "Zor Zamanlar",
+      "title": "Hard Times",
+      "title_tr": "Zor Zamanlar",
       "names": [
         "Leyla",
         "Murat"
@@ -422,7 +424,8 @@
     },
     {
       "id": "c2-finance-3",
-      "title": "Beklenmedik Kazanç",
+      "title": "An Unexpected Gain",
+      "title_tr": "Beklenmedik Kazanç",
       "names": [
         "Ayşe"
       ],
@@ -455,7 +458,8 @@
     },
     {
       "id": "c2-finance-4",
-      "title": "Kötü Haberler",
+      "title": "Bad News",
+      "title_tr": "Kötü Haberler",
       "names": [
         "Kenan",
         "Istanbul"
@@ -489,7 +493,8 @@
     },
     {
       "id": "c2-finance-5",
-      "title": "Spekülasyon",
+      "title": "Speculation",
+      "title_tr": "Spekülasyon",
       "names": [
         "London",
         "Selim"

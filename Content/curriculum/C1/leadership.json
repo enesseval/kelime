@@ -390,7 +390,8 @@
   "stories": [
     {
       "id": "c1-leadership-1",
-      "title": "Zor Bir Karar",
+      "title": "A Hard Decision",
+      "title_tr": "Zor Bir Karar",
       "names": [
         "Leyla",
         "John"
@@ -424,7 +425,8 @@
     },
     {
       "id": "c1-leadership-2",
-      "title": "Birleşme Toplantısı",
+      "title": "The Merger Meeting",
+      "title_tr": "Birleşme Toplantısı",
       "names": [
         "Mehmet",
         "Sarah"
@@ -458,7 +460,8 @@
     },
     {
       "id": "c1-leadership-3",
-      "title": "İş Yükü",
+      "title": "The Workload",
+      "title_tr": "İş Yükü",
       "names": [
         "Ayşe"
       ],
@@ -491,7 +494,8 @@
     },
     {
       "id": "c1-leadership-4",
-      "title": "Yeni Girişim",
+      "title": "A New Venture",
+      "title_tr": "Yeni Girişim",
       "names": [
         "London",
         "Ali"
@@ -525,7 +529,8 @@
     },
     {
       "id": "c1-leadership-5",
-      "title": "Borçları Yönetmek",
+      "title": "Managing Debt",
+      "title_tr": "Borçları Yönetmek",
       "names": [
         "Kemal",
         "Emma"

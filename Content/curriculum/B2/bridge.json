@@ -347,7 +347,8 @@
   "stories": [
     {
       "id": "b2-bridge-1",
-      "title": "Büyük bir adım",
+      "title": "A Big Step",
+      "title_tr": "Büyük bir adım",
       "names": [
         "Kemal",
         "Zeynep"
@@ -377,7 +378,8 @@
     },
     {
       "id": "b2-bridge-2",
-      "title": "Beklenmedik bir fırsat",
+      "title": "An Unexpected Opportunity",
+      "title_tr": "Beklenmedik bir fırsat",
       "names": [
         "Leyla"
       ],
@@ -406,7 +408,8 @@
     },
     {
       "id": "b2-bridge-3",
-      "title": "Karar anı",
+      "title": "The Moment of Decision",
+      "title_tr": "Karar anı",
       "names": [
         "Tariq",
         "Ahmet"
@@ -436,7 +439,8 @@
     },
     {
       "id": "b2-bridge-4",
-      "title": "Farklı bakış açıları",
+      "title": "Different Points of View",
+      "title_tr": "Farklı bakış açıları",
       "names": [
         "Sarah",
         "Murat"
@@ -466,7 +470,8 @@
     },
     {
       "id": "b2-bridge-5",
-      "title": "Çevre için mücadele",
+      "title": "Fighting for the Environment",
+      "title_tr": "Çevre için mücadele",
       "names": [
         "Defne",
         "London"

@@ -97,7 +97,7 @@ struct MarkStrugglingIntent: AppIntent {
     }
 }
 
-/// An option tapped in the medium quiz widget. The answer stays visible until the next slot.
+/// An option tapped in the medium quiz widget. The result stays a minute, then the next question comes.
 struct AnswerQuizIntent: AppIntent {
     static let title: LocalizedStringResource = "Cevapla"
     static let isDiscoverable = false

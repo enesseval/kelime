@@ -363,7 +363,8 @@
   "stories": [
     {
       "id": "b1-learning-1",
-      "title": "Yeni Kurs",
+      "title": "A New Course",
+      "title_tr": "Yeni Kurs",
       "names": [
         "Emre",
         "English"
@@ -397,7 +398,8 @@
     },
     {
       "id": "b1-learning-2",
-      "title": "Sınava Hazırlık",
+      "title": "Getting Ready for the Exam",
+      "title_tr": "Sınava Hazırlık",
       "names": [
         "Zeynep"
       ],
@@ -430,7 +432,8 @@
     },
     {
       "id": "b1-learning-3",
-      "title": "Akıcı Konuşma",
+      "title": "Speaking Fluently",
+      "title_tr": "Akıcı Konuşma",
       "names": [
         "Ali",
         "German"
@@ -464,7 +467,8 @@
     },
     {
       "id": "b1-learning-4",
-      "title": "Anlaşılmayan Metin",
+      "title": "A Text Nobody Understood",
+      "title_tr": "Anlaşılmayan Metin",
       "names": [
         "Anna",
         "Cem"
@@ -498,7 +502,8 @@
     },
     {
       "id": "b1-learning-5",
-      "title": "Sertifika",
+      "title": "The Certificate",
+      "title_tr": "Sertifika",
       "names": [
         "Leyla"
       ],

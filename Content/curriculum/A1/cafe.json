@@ -368,7 +368,8 @@
  "stories": [
   {
    "id": "a1-cafe-1",
-   "title": "Elif'in ilk kahvesi",
+   "title": "Elif's First Coffee",
+   "title_tr": "Elif'in ilk kahvesi",
    "names": [
     "Elif",
     "Turkey"
@@ -406,7 +407,8 @@
   },
   {
    "id": "a1-cafe-2",
-   "title": "Hesap lütfen",
+   "title": "The Bill, Please",
+   "title_tr": "Hesap lütfen",
    "names": [
     "Mehmet",
     "Tom"
@@ -448,7 +450,8 @@
   },
   {
    "id": "a1-cafe-3",
-   "title": "Süt ve şeker",
+   "title": "Milk and Sugar",
+   "title_tr": "Süt ve şeker",
    "names": [],
    "lines": [
     {
@@ -479,7 +482,8 @@
   },
   {
    "id": "a1-cafe-4",
-   "title": "Kafede bir gün",
+   "title": "A Day at the Café",
+   "title_tr": "Kafede bir gün",
    "names": [
     "Deniz"
    ],
@@ -512,7 +516,8 @@
   },
   {
    "id": "a1-cafe-5",
-   "title": "İki arkadaş",
+   "title": "Two Friends",
+   "title_tr": "İki arkadaş",
    "names": [
     "Ayşe",
     "Leyla"

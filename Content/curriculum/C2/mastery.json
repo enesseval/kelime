@@ -337,7 +337,8 @@
   "stories": [
     {
       "id": "c2-mastery-1",
-      "title": "Londra Sanatı",
+      "title": "Art in London",
+      "title_tr": "Londra Sanatı",
       "names": [
         "Emma",
         "London",
@@ -372,7 +373,8 @@
     },
     {
       "id": "c2-mastery-2",
-      "title": "Anlaşılmaz Kitap",
+      "title": "An Impenetrable Book",
+      "title_tr": "Anlaşılmaz Kitap",
       "names": [
         "Ahmet"
       ],
@@ -401,7 +403,8 @@
     },
     {
       "id": "c2-mastery-3",
-      "title": "Yeni Politika",
+      "title": "A New Policy",
+      "title_tr": "Yeni Politika",
       "names": [
         "Istanbul",
         "Zeynep"
@@ -431,7 +434,8 @@
     },
     {
       "id": "c2-mastery-4",
-      "title": "Kariyer Zirvesi",
+      "title": "The Peak of a Career",
+      "title_tr": "Kariyer Zirvesi",
       "names": [
         "David"
       ],
@@ -460,7 +464,8 @@
     },
     {
       "id": "c2-mastery-5",
-      "title": "Sergi",
+      "title": "The Exhibition",
+      "title_tr": "Sergi",
       "names": [
         "Elif"
       ],

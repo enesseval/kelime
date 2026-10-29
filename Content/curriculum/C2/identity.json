@@ -361,7 +361,8 @@
   "stories": [
     {
       "id": "c2-identity-1",
-      "title": "Taşınma",
+      "title": "Moving Away",
+      "title_tr": "Taşınma",
       "names": [
         "Ali",
         "London"
@@ -395,7 +396,8 @@
     },
     {
       "id": "c2-identity-2",
-      "title": "Eski ve Yeni",
+      "title": "Old and New",
+      "title_tr": "Eski ve Yeni",
       "names": [
         "Zeynep",
         "Istanbul"
@@ -429,7 +431,8 @@
     },
     {
       "id": "c2-identity-3",
-      "title": "Yeni İş",
+      "title": "A New Job",
+      "title_tr": "Yeni İş",
       "names": [
         "Emre",
         "Berlin"
@@ -463,7 +466,8 @@
     },
     {
       "id": "c2-identity-4",
-      "title": "Değişen Zamanlar",
+      "title": "Changing Times",
+      "title_tr": "Değişen Zamanlar",
       "names": [
         "Ayşe",
         "Paris"
@@ -497,7 +501,8 @@
     },
     {
       "id": "c2-identity-5",
-      "title": "Önyargıyı Aşmak",
+      "title": "Overcoming Prejudice",
+      "title_tr": "Önyargıyı Aşmak",
       "names": [
         "Defne",
         "Toronto"

@@ -179,12 +179,13 @@ struct PlayView: View {
                             Text("Zorlandığın ve öğrendiğin kelimelerden").font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
                         }
                         Spacer()
-                        if !model.isPro { ProBadge() } else { Image(systemName: "chevron.right").foregroundStyle(Palette.ink2) }
+                        Image(systemName: "chevron.right").foregroundStyle(Palette.ink2)
                     }
                     .foregroundStyle(Palette.ink)
                     .padding(.vertical, 18)
                     .padding(.horizontal, 20)
                     .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Palette.line, style: StrokeStyle(lineWidth: 1, dash: model.isPro ? [] : [4, 4])))
+                    .proCornerTag(!model.isPro, radius: 22)
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)

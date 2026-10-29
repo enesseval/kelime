@@ -395,7 +395,8 @@
   "stories": [
     {
       "id": "b2-mind-1",
-      "title": "Zor Bir Karar",
+      "title": "A Hard Decision",
+      "title_tr": "Zor Bir Karar",
       "names": [
         "Ahmet",
         "Zeynep",
@@ -430,7 +431,8 @@
     },
     {
       "id": "b2-mind-2",
-      "title": "Havalimanında",
+      "title": "At the Airport",
+      "title_tr": "Havalimanında",
       "names": [
         "Sarah",
         "Ali"
@@ -464,7 +466,8 @@
     },
     {
       "id": "b2-mind-3",
-      "title": "Hassas Bir Konu",
+      "title": "A Sensitive Subject",
+      "title_tr": "Hassas Bir Konu",
       "names": [
         "Murat",
         "Emma"
@@ -498,7 +501,8 @@
     },
     {
       "id": "b2-mind-4",
-      "title": "Kariyer Hedefi",
+      "title": "A Career Goal",
+      "title_tr": "Kariyer Hedefi",
       "names": [
         "David",
         "Hasan"
@@ -532,7 +536,8 @@
     },
     {
       "id": "b2-mind-5",
-      "title": "Yeni Bilgisayar",
+      "title": "A New Computer",
+      "title_tr": "Yeni Bilgisayar",
       "names": [
         "Lisa",
         "Burak"

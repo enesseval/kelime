@@ -213,8 +213,6 @@ struct ExamPlanCard: View {
                 Spacer()
                 if model.isPro {
                     Text("\(plan.daysLeft) gün").font(KelimeFont.ui(12, weight: .semibold)).foregroundStyle(Palette.accent)
-                } else {
-                    ProBadge()
                 }
             }
             if plan.remaining == 0 {
@@ -240,6 +238,7 @@ struct ExamPlanCard: View {
         }
         .foregroundStyle(Palette.ink)
         .surfaceCard()
+        .proCornerTag(!model.isPro, radius: 22)
         .contentShape(Rectangle())
         .onTapGesture { if !model.isPro { model.router.showPaywall(.examPlan) } }
     }

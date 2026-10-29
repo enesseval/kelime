@@ -421,7 +421,8 @@
   "stories": [
     {
       "id": "a2-health-1",
-      "title": "Doktorda",
+      "title": "At the Doctor's",
+      "title_tr": "Doktorda",
       "names": [
         "Ahmet",
         "İzmir"
@@ -459,7 +460,8 @@
     },
     {
       "id": "a2-health-2",
-      "title": "Eczanede",
+      "title": "At the Pharmacy",
+      "title_tr": "Eczanede",
       "names": [
         "Selin",
         "London"
@@ -493,7 +495,8 @@
     },
     {
       "id": "a2-health-3",
-      "title": "Dişçi randevusu",
+      "title": "A Dentist Appointment",
+      "title_tr": "Dişçi randevusu",
       "names": [
         "Emre",
         "Ankara"
@@ -527,7 +530,8 @@
     },
     {
       "id": "a2-health-4",
-      "title": "Küçük bir kaza",
+      "title": "A Small Accident",
+      "title_tr": "Küçük bir kaza",
       "names": [
         "Kerem",
         "Bursa"
@@ -561,7 +565,8 @@
     },
     {
       "id": "a2-health-5",
-      "title": "Sağlıklı yaşam",
+      "title": "Healthy Living",
+      "title_tr": "Sağlıklı yaşam",
       "names": [
         "Banu",
         "Cem"

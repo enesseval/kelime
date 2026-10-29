@@ -353,7 +353,8 @@
   "stories": [
     {
       "id": "b2-planet-1",
-      "title": "Yeni Araba",
+      "title": "A New Car",
+      "title_tr": "Yeni Araba",
       "names": [
         "Ali",
         "Deniz"
@@ -391,7 +392,8 @@
     },
     {
       "id": "b2-planet-2",
-      "title": "Ormansızlaşma",
+      "title": "Deforestation",
+      "title_tr": "Ormansızlaşma",
       "names": [
         "Sarah",
         "Mark"
@@ -433,7 +435,8 @@
     },
     {
       "id": "b2-planet-3",
-      "title": "Sıcak Bir Yaz",
+      "title": "A Hot Summer",
+      "title_tr": "Sıcak Bir Yaz",
       "names": [
         "Emre",
         "Canan"
@@ -471,7 +474,8 @@
     },
     {
       "id": "b2-planet-4",
-      "title": "Güneş Enerjisi",
+      "title": "Solar Power",
+      "title_tr": "Güneş Enerjisi",
       "names": [
         "John",
         "Lisa"
@@ -513,7 +517,8 @@
     },
     {
       "id": "b2-planet-5",
-      "title": "Sergi",
+      "title": "The Exhibition",
+      "title_tr": "Sergi",
       "names": [
         "Leyla",
         "Murat"

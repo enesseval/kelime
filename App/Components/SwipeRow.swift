@@ -56,9 +56,15 @@ struct SwipeRow<Content: View>: View {
                         }
                         .buttonStyle(.plain)
                         .accessibilityLabel(action.title)
+                        // Grows from small as the row opens instead of sliding in at full size.
+                        .scrollTransition(.interactive, axis: .horizontal) { button, phase in
+                            button
+                                .scaleEffect(phase.isIdentity ? 1 : 0.3)
+                                .opacity(phase.isIdentity ? 1 : 0)
+                        }
                     }
                 }
-                .padding(.leading, 4)
+                .padding(.leading, 14)
                 .padding(.trailing, 20)
                 .frame(maxHeight: .infinity)
                 .id(Part.actions)
@@ -66,6 +72,8 @@ struct SwipeRow<Content: View>: View {
             .scrollTargetLayout()
         }
         .scrollIndicators(.hidden)
+        // The row slides past the page margin instead of being cut flat at it.
+        .scrollClipDisabled()
         .scrollTargetBehavior(.viewAligned)
         .scrollPosition(id: $position, anchor: .trailing)
         .onChange(of: position) { _, part in

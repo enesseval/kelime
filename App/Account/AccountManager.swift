@@ -260,6 +260,34 @@ final class AccountManager {
         }
     }
 
+    /// Sends a card error report or a suggestion. Works without an account.
+    func sendFeedback(kind: String, card: Card?, reason: String, note: String) async -> Bool {
+        struct Feedback: Encodable {
+            var kind: String
+            var card_id: String?
+            var word: String?
+            var reason: String
+            var note: String
+            var app_version: String
+        }
+        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
+        let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
+        let row = Feedback(
+            kind: kind,
+            card_id: card.map { String($0.id.prefix(80)) },
+            word: card.map { String($0.word.prefix(120)) },
+            reason: String(reason.prefix(60)),
+            note: String(note.trimmingCharacters(in: .whitespacesAndNewlines).prefix(1000)),
+            app_version: "\(version) (\(build))"
+        )
+        do {
+            try await client.from("feedback").insert(row).execute()
+            return true
+        } catch {
+            return false
+        }
+    }
+
     func block(_ owner: UUID) async -> Bool {
         guard let userID, owner != userID else { return false }
         struct Block: Encodable { var blocker: UUID; var blocked: UUID }

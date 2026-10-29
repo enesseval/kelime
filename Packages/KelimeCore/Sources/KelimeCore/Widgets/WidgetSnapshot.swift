@@ -33,7 +33,13 @@ public struct WidgetSnapshot: Sendable, Equatable {
     public struct PuzzleCount: Sendable, Equatable {
         public var solved: Int
         public var total: Int
-        public init(solved: Int, total: Int) { self.solved = solved; self.total = total }
+        /// Thumbnail cells (row * 8 + col) and whether their word is solved.
+        public var cells: [Int: Bool]
+        public init(solved: Int, total: Int, cells: [Int: Bool] = [:]) {
+            self.solved = solved
+            self.total = total
+            self.cells = cells
+        }
     }
 
     public init(

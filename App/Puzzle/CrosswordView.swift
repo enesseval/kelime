@@ -37,18 +37,24 @@ struct CrosswordView: View {
         .task(id: model.isComplete) {
             while !Task.isCancelled && !model.isComplete {
                 try? await Task.sleep(for: .seconds(1))
-                if scenePhase == .active { model.tick() }
+                model.tick()
             }
         }
+        .onAppear { model.isVisible = true }
         .onChange(of: scenePhase) { _, phase in
-            if phase != .active { Task { await model.save() } }
+            model.isVisible = phase == .active
+            if phase != .active { Task { await model.save(announce: true) } }
         }
-        .onDisappear { Task { await model.save() } }
+        .onDisappear {
+            model.isVisible = false
+            Task { await model.save(announce: true) }
+        }
     }
 
     /// Closes through the router as well as `dismiss`, so the cover always goes away.
     private func close() {
-        Task { await model.save() }
+        model.isVisible = false
+        Task { await model.save(announce: true) }
         app.router.puzzle = nil
         dismiss()
     }
@@ -56,12 +62,16 @@ struct CrosswordView: View {
     private func playScreen(_ game: CrosswordGame) -> some View {
         VStack(spacing: 0) {
             header
-            toolbar
-            CrosswordGrid(game: game) { model.select($0) }
-                .padding(.horizontal, 16)
-            Spacer(minLength: 8)
-            clueBar(game)
-            LetterKeyboard { model.type($0) } onDelete: { model.deleteBackward() }
+            if model.isPaused {
+                pausedView
+            } else {
+                toolbar
+                CrosswordGrid(game: game) { model.select($0) }
+                    .padding(.horizontal, 16)
+                Spacer(minLength: 8)
+                clueBar(game)
+                LetterKeyboard(keyHeight: 52) { model.type($0) } onDelete: { model.deleteBackward() }
+            }
         }
         .sheet(isPresented: $showClues) {
             ClueListSheet(game: game, clues: model.clues) { entry in
@@ -69,6 +79,7 @@ struct CrosswordView: View {
                 showClues = false
             }
             .presentationDetents([.medium, .large])
+            .presentationBackground(Palette.background)
         }
     }
 
@@ -93,12 +104,22 @@ struct CrosswordView: View {
             Spacer()
             Text(model.title).font(KelimeFont.ui(15, weight: .semibold, relativeTo: .headline))
             Spacer()
-            Text(model.timeText)
+            Button { model.isPaused.toggle() } label: {
+                HStack(spacing: 5) {
+                    Image(systemName: model.isPaused ? "play.fill" : "pause.fill")
+                        .font(.system(size: 11, weight: .semibold))
+                    Text(model.timeText).monospacedDigit()
+                }
                 .font(KelimeFont.ui(13, relativeTo: .footnote))
                 .foregroundStyle(Palette.ink2)
-                .monospacedDigit()
-                .frame(width: 88, alignment: .trailing)
-                .accessibilityLabel("Süre \(model.timeText)")
+                .padding(.horizontal, 10)
+                .frame(height: 30)
+                .background(Palette.surface2, in: Capsule())
+                .frame(width: 88, height: 44, alignment: .trailing)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(model.isPaused ? "Devam et, süre \(model.timeText)" : "Duraklat, süre \(model.timeText)")
         }
         .confirmationDialog("Bulmaca baştan başlasın mı?", isPresented: $confirmRestart, titleVisibility: .visible) {
             Button("Baştan başla", role: .destructive) { Task { await model.restart() } }
@@ -108,6 +129,33 @@ struct CrosswordView: View {
         }
         .padding(.leading, 8)
         .padding(.trailing, 12)
+    }
+
+    private var pausedView: some View {
+        VStack(spacing: 14) {
+            Spacer()
+            Image(systemName: "pause.circle")
+                .font(.system(size: 44, weight: .light))
+                .foregroundStyle(Palette.ink2)
+            Text("Duraklatıldı")
+                .font(KelimeFont.ui(20, weight: .semibold, relativeTo: .title3))
+                .foregroundStyle(Palette.ink)
+            Text("Süre \(model.timeText) · \(model.game?.solvedCount ?? 0)/\(model.game?.puzzle.entries.count ?? 0) kelime")
+                .font(KelimeFont.ui(14, relativeTo: .subheadline))
+                .foregroundStyle(Palette.ink2)
+            Button { model.isPaused = false } label: {
+                Text("Devam et")
+                    .font(KelimeFont.ui(16, weight: .semibold, relativeTo: .headline))
+                    .foregroundStyle(Palette.onAccent)
+                    .frame(width: 200, height: 50)
+                    .background(Palette.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .padding(.top, 6)
+            Spacer()
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
     }
 
     private var toolbar: some View {

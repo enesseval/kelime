@@ -305,39 +305,8 @@ struct PaywallView: View {
     }
 }
 
-/// Legal links. Placeholders until the real pages exist.
+/// The terms and privacy pages on the site.
 enum Legal {
-    /// Where feedback and error reports go (a prefilled email; GitHub issues when nil).
-    static let supportEmail: String? = "enesseval@outlook.com"
-
-    /// "Öneri gönder" in Ayarlar.
-    static var feedbackURL: URL { report(subject: "Öneri", body: "") }
-
-    /// "Hata bildir" on a word: the word and its card id are filled in.
-    static func errorReportURL(for card: Card) -> URL {
-        report(subject: "Hata: \(card.word)", body: """
-            Kelime: \(card.word) (\(card.id))
-            Anlam: \(card.meaning)
-            Örnek: \(card.exampleEN)
-
-            Hata ne?
-            """)
-    }
-
-    private static func report(subject: String, body: String) -> URL {
-        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
-        let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
-        let body = body + "\n\n— Kilit Kelime \(version) (\(build))"
-        var components: URLComponents
-        if let supportEmail {
-            components = URLComponents(string: "mailto:\(supportEmail)")!
-            components.queryItems = [URLQueryItem(name: "subject", value: subject), URLQueryItem(name: "body", value: body)]
-        } else {
-            components = URLComponents(string: "https://github.com/enesseval/kelime/issues/new")!
-            components.queryItems = [URLQueryItem(name: "title", value: subject), URLQueryItem(name: "body", value: body)]
-        }
-        return components.url!
-    }
     static let termsURL = URL(string: "https://enesseval.github.io/kelime/kosullar.html")!
     static let privacyURL = URL(string: "https://enesseval.github.io/kelime/gizlilik.html")!
 }

@@ -38,6 +38,21 @@ enum WidgetData {
         }
     }
 
+    /// The quiz widget's entries: a fresh answer for a minute, then the next question.
+    static func quiz() -> [WidgetSnapshot] {
+        do {
+            let db = try AppDatabase.openShared()
+            var rng = SystemRandomNumberGenerator()
+            return try db.writer.write { db in
+                let entries = try WidgetTimelineBuilder.quiz(db: db, clock: .system, using: &rng)
+                try WidgetLog.recordTimeline(source: "quiz", entries: entries.count, probe: false, reloadAt: nil, db: db, clock: .system)
+                return entries
+            }
+        } catch {
+            return [.empty(at: .now)]
+        }
+    }
+
     static func ring() -> [WidgetSnapshot] {
         do {
             let db = try AppDatabase.openShared()
@@ -76,11 +91,11 @@ struct QuizProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (WidgetSnapshot) -> Void) {
-        completion(context.isPreview ? SampleContent.snapshot() : WidgetData.current(WidgetData.snapshots(mode: .card)))
+        completion(context.isPreview ? SampleContent.snapshot() : WidgetData.quiz().first ?? .empty(at: .now))
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetSnapshot>) -> Void) {
-        completion(WidgetData.timeline(mode: .card, source: "quiz"))
+        completion(Timeline(entries: WidgetData.quiz(), policy: .atEnd))
     }
 }
 

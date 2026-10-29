@@ -335,7 +335,8 @@
   "stories": [
     {
       "id": "c1-bridge-1",
-      "title": "Şirket birleşmesi",
+      "title": "A Company Merger",
+      "title_tr": "Şirket birleşmesi",
       "names": [],
       "lines": [
         {
@@ -366,7 +367,8 @@
     },
     {
       "id": "c1-bridge-2",
-      "title": "Akademik bir keşif",
+      "title": "An Academic Discovery",
+      "title_tr": "Akademik bir keşif",
       "names": [],
       "lines": [
         {
@@ -397,7 +399,8 @@
     },
     {
       "id": "c1-bridge-3",
-      "title": "Sanat sergisi",
+      "title": "An Art Exhibition",
+      "title_tr": "Sanat sergisi",
       "names": [
         "London"
       ],
@@ -426,7 +429,8 @@
     },
     {
       "id": "c1-bridge-4",
-      "title": "Hukuki anlaşmazlık",
+      "title": "A Legal Dispute",
+      "title_tr": "Hukuki anlaşmazlık",
       "names": [],
       "lines": [
         {
@@ -457,7 +461,8 @@
     },
     {
       "id": "c1-bridge-5",
-      "title": "Çevre kampanyası",
+      "title": "An Environmental Campaign",
+      "title_tr": "Çevre kampanyası",
       "names": [],
       "lines": [
         {

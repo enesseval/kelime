@@ -52,22 +52,50 @@ public struct DailyPuzzleSummary: Sendable, Equatable {
     public var day: LocalDate
     public var solved: Int
     public var total: Int
+    /// Letter cells of an 8 × 10 thumbnail (row * 8 + col) and whether their word is solved.
+    public var cells: [Int: Bool]
 
-    public init(day: LocalDate, solved: Int, total: Int) {
+    public init(day: LocalDate, solved: Int, total: Int, cells: [Int: Bool] = [:]) {
         self.day = day
         self.solved = solved
         self.total = total
+        self.cells = cells
+    }
+
+    public init(day: LocalDate, game: CrosswordGame) {
+        self.init(day: day, solved: game.solvedCount, total: game.puzzle.entries.count, cells: Self.thumbnail(game))
+    }
+
+    /// The top-left 8 × 10 of the grid: letter cells, green once their word is solved.
+    public static func thumbnail(_ game: CrosswordGame) -> [Int: Bool] {
+        var cells: [Int: Bool] = [:]
+        for entry in game.puzzle.entries {
+            let solved = game.isSolved(entry)
+            for cell in entry.cells where cell.col < 8 && cell.row < 10 {
+                let index = cell.row * 8 + cell.col
+                cells[index] = (cells[index] ?? false) || solved
+            }
+        }
+        return cells
     }
 
     public static func load(db: Database) throws -> DailyPuzzleSummary? {
         guard let raw = try Settings.string(.dailyPuzzleSummary, in: db) else { return nil }
-        let parts = raw.split(separator: "|")
-        guard parts.count == 3, let day = LocalDate(string: String(parts[0])),
+        let parts = raw.split(separator: "|", omittingEmptySubsequences: false)
+        guard parts.count >= 3, let day = LocalDate(string: String(parts[0])),
               let solved = Int(parts[1]), let total = Int(parts[2]) else { return nil }
-        return DailyPuzzleSummary(day: day, solved: solved, total: total)
+        var cells: [Int: Bool] = [:]
+        if parts.count > 3 {
+            for item in parts[3].split(separator: ",") {
+                let pair = item.split(separator: ":")
+                if pair.count == 2, let index = Int(pair[0]) { cells[index] = pair[1] == "1" }
+            }
+        }
+        return DailyPuzzleSummary(day: day, solved: solved, total: total, cells: cells)
     }
 
     public func save(db: Database) throws {
-        try Settings.set(.dailyPuzzleSummary, "\(day.string)|\(solved)|\(total)", in: db)
+        let grid = cells.keys.sorted().map { "\($0):\(cells[$0] == true ? 1 : 0)" }.joined(separator: ",")
+        try Settings.set(.dailyPuzzleSummary, "\(day.string)|\(solved)|\(total)|\(grid)", in: db)
     }
 }

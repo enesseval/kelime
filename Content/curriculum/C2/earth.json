@@ -363,7 +363,8 @@
   "stories": [
     {
       "id": "c2-earth-1",
-      "title": "Ada Hayatı",
+      "title": "Island Life",
+      "title_tr": "Ada Hayatı",
       "names": [
         "Zeynep"
       ],
@@ -396,7 +397,8 @@
     },
     {
       "id": "c2-earth-2",
-      "title": "Deprem ve Volkan",
+      "title": "Earthquakes and Volcanoes",
+      "title_tr": "Deprem ve Volkan",
       "names": [
         "David",
         "Italy"
@@ -430,7 +432,8 @@
     },
     {
       "id": "c2-earth-3",
-      "title": "Buzullar ve Göç",
+      "title": "Glaciers and Migration",
+      "title_tr": "Buzullar ve Göç",
       "names": [
         "Elena",
         "Canada"
@@ -464,7 +467,8 @@
     },
     {
       "id": "c2-earth-4",
-      "title": "Nehir Ağzında",
+      "title": "At the Estuary",
+      "title_tr": "Nehir Ağzında",
       "names": [
         "Ali",
         "Turkey"
@@ -498,7 +502,8 @@
     },
     {
       "id": "c2-earth-5",
-      "title": "Nesli Tükenme Riski",
+      "title": "The Risk of Extinction",
+      "title_tr": "Nesli Tükenme Riski",
       "names": [
         "Maria"
       ],

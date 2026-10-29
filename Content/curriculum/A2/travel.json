@@ -493,7 +493,8 @@
   "stories": [
     {
       "id": "a2-travel-1",
-      "title": "Otelde ilk gün",
+      "title": "First Day at the Hotel",
+      "title_tr": "Otelde ilk gün",
       "names": [
         "Selin",
         "Rome"
@@ -531,7 +532,8 @@
     },
     {
       "id": "a2-travel-2",
-      "title": "Havalimanında rötar",
+      "title": "A Delay at the Airport",
+      "title_tr": "Havalimanında rötar",
       "names": [
         "Emre",
         "London"
@@ -565,7 +567,8 @@
     },
     {
       "id": "a2-travel-3",
-      "title": "Garda bilet almak",
+      "title": "Buying a Ticket at the Station",
+      "title_tr": "Garda bilet almak",
       "names": [
         "Kerem",
         "Izmir"
@@ -599,7 +602,8 @@
     },
     {
       "id": "a2-travel-4",
-      "title": "Müze gezisi",
+      "title": "A Museum Visit",
+      "title_tr": "Müze gezisi",
       "names": [
         "Mert",
         "Paris"
@@ -633,7 +637,8 @@
     },
     {
       "id": "a2-travel-5",
-      "title": "Eve dönüş hazırlığı",
+      "title": "Getting Ready to Go Home",
+      "title_tr": "Eve dönüş hazırlığı",
       "names": [
         "Zeynep"
       ],

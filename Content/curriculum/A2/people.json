@@ -412,7 +412,8 @@
   "stories": [
     {
       "id": "a2-people-1",
-      "title": "Yeni arkadaş",
+      "title": "A New Friend",
+      "title_tr": "Yeni arkadaş",
       "names": [
         "Ali",
         "Cem"
@@ -446,7 +447,8 @@
     },
     {
       "id": "a2-people-2",
-      "title": "Büyük parti",
+      "title": "The Big Party",
+      "title_tr": "Büyük parti",
       "names": [
         "Ali",
         "Sara"
@@ -480,7 +482,8 @@
     },
     {
       "id": "a2-people-3",
-      "title": "Düğün daveti",
+      "title": "A Wedding Invitation",
+      "title_tr": "Düğün daveti",
       "names": [
         "Ece",
         "Leo",
@@ -515,7 +518,8 @@
     },
     {
       "id": "a2-people-4",
-      "title": "Kafede ünlü biri",
+      "title": "Someone Famous in the Café",
+      "title_tr": "Kafede ünlü biri",
       "names": [
         "Emma",
         "Hakan",
@@ -550,7 +554,8 @@
     },
     {
       "id": "a2-people-5",
-      "title": "Pazar günü",
+      "title": "Sunday",
+      "title_tr": "Pazar günü",
       "names": [
         "Selin",
         "Zeynep"

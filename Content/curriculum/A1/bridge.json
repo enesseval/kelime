@@ -336,7 +336,8 @@
  "stories": [
   {
    "id": "a1-bridge-1",
-   "title": "Dünkü gezi",
+   "title": "Yesterday's Trip",
+   "title_tr": "Dünkü gezi",
    "names": [
     "Ahmet",
     "İzmir",
@@ -371,7 +372,8 @@
   },
   {
    "id": "a1-bridge-2",
-   "title": "Gelecek hafta",
+   "title": "Next Week",
+   "title_tr": "Gelecek hafta",
    "names": [
     "Zeynep",
     "Ankara"
@@ -405,7 +407,8 @@
   },
   {
    "id": "a1-bridge-3",
-   "title": "Geçen yılın tatili",
+   "title": "Last Year's Holiday",
+   "title_tr": "Geçen yılın tatili",
    "names": [
     "Kerem",
     "Mert"
@@ -439,7 +442,8 @@
   },
   {
    "id": "a1-bridge-4",
-   "title": "İki gün önce",
+   "title": "Two Days Ago",
+   "title_tr": "İki gün önce",
    "names": [
     "Selin",
     "İstanbul"
@@ -473,7 +477,8 @@
   },
   {
    "id": "a1-bridge-5",
-   "title": "Yarın",
+   "title": "Tomorrow",
+   "title_tr": "Yarın",
    "names": [
     "Murat",
     "English"

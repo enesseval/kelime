@@ -4,12 +4,12 @@ import SwiftUI
 
 struct WordDetailView: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.openURL) private var openURL
     let cardID: String
 
     @State private var item: WordItem?
     @State private var missing = false
-    @State private var shareImage: Image?
+    @State private var sharing = false
+    @State private var reporting = false
     @State private var toast: String?
 
     var body: some View {
@@ -35,10 +35,8 @@ struct WordDetailView: View {
                             .foregroundStyle(item.favorite ? Palette.amber : Palette.ink2)
                     }
                     .accessibilityLabel(item.favorite ? "Favorilerden çıkar" : "Favorilere ekle")
-                    if let shareImage {
-                        ShareLink(item: shareImage, preview: SharePreview(item.card.word, image: shareImage)) {
-                            Text("Paylaş").font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
-                        }
+                    Button { sharing = true } label: {
+                        Text("Paylaş").font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
                     }
                 }
             }
@@ -48,7 +46,12 @@ struct WordDetailView: View {
             let id = cardID
             item = await model.read { db in try WordQueries.item(id: id, db: db) } ?? nil
             missing = item == nil
-            if let item { shareImage = ShareCardRenderer.image(for: item.card) }
+        }
+        .sheet(isPresented: $sharing) {
+            if let item { ShareCardSheet(card: item.card) }
+        }
+        .sheet(isPresented: $reporting) {
+            if let item { FeedbackForm(card: item.card).environment(model) }
         }
         .toast($toast)
     }
@@ -138,7 +141,7 @@ struct WordDetailView: View {
                     }
                 }
                 if !item.card.id.hasPrefix(UserLists.customPrefix) {
-                    Button { openURL(Legal.errorReportURL(for: item.card)) } label: {
+                    Button { reporting = true } label: {
                         Label("Bu kartta hata mı var? Bildir", systemImage: "exclamationmark.bubble")
                             .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
                             .foregroundStyle(Palette.ink2)
