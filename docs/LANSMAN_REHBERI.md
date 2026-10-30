@@ -85,11 +85,11 @@ Puan sayısı ve ortalaması arama sıralamasını doğrudan etkiler.
 
 ---
 
-## 5. Sosyal medya (yayından sonra, haftada 3 paylaşım)
+## 5. Sosyal medya: Instagram (ayrıntısı docs/INSTAGRAM_REHBERI.md)
 
-En iyi kanal: **TikTok ve Instagram Reels**, kısa dikey video.
+Yalnızca **Instagram** (Reels, carousel, hikâye). Ayrıntılı rehber: `docs/INSTAGRAM_REHBERI.md`.
 
-- Hesap adı önerisi: **@kilitkelime** (TikTok, Instagram, X'te boş mu bak, varsa hepsinde al).
+- Hesap adı önerisi: **@kilitkelime**.
 - İçerik fikirleri (metinlerini her hafta ben hazırlarım):
   - "Telefonuna günde 80 kez bakıyorsun. Her seferinde bir kelime öğren." + kilit ekranı kaydı
   - "YDS'de en çok çıkan 10 kelime" serisi (uygulamadaki paylaşım kartlarıyla)
