@@ -1,9 +1,74 @@
 [
-  {"image": "docs/store-shots/raw/bugun.png", "title": "A1'den C2'ye\nİngilizce kurs", "subtitle": "Bölüm bölüm kelime, kalıp ve hikâye", "theme": "blue"},
-  {"image": "docs/store-shots/raw/tekrar.png", "title": "2 dakikada\nHızlı Tekrar", "subtitle": "Zorlandığın kelimeler daha sık gelir", "theme": "cream"},
-  {"image": "docs/store-shots/raw/bulmaca.png", "title": "Her gün yeni\nbir bulmaca", "subtitle": "Öğrendiğin kelimelerle, Türkçe ipuçlu", "theme": "orange"},
-  {"image": "docs/store-shots/raw/listeler.png", "title": "Kendi listeni kur,\nwidget'ta öğren", "subtitle": "YDS, YÖKDİL ve IELTS listeleri de hazır", "theme": "cream"},
-  {"image": "docs/store-shots/raw/kelime.png", "title": "Anlamı, örneği,\ntelaffuzu", "subtitle": "Her kelime Türkçe açıklamasıyla", "theme": "ink"},
-  {"image": "docs/store-shots/raw/paylas.png", "title": "Kelimeni\npaylaş", "subtitle": "Açık, koyu ya da mavi kart", "theme": "blue"},
-  {"image": "docs/store-shots/raw/kesfet.png", "title": "Hazır listeleri\nkeşfet", "subtitle": "Diğer öğrencilerin listelerini ekle", "theme": "cream"}
+  {
+    "image": "docs/store-shots/raw/kilit-kart.png",
+    "title": "Telefonuna her baktığında\nbir İngilizce kelime",
+    "subtitle": "Kilit ekranında, uygulamayı açmadan",
+    "theme": "cream",
+    "zoom": [
+      40,
+      1370,
+      420,
+      150
+    ]
+  },
+  {
+    "image": "docs/store-shots/raw/kilit-cumle.png",
+    "title": "Örnek cümlesiyle,\nTürkçesiyle",
+    "subtitle": "Kart, sözlük ya da cümle görünümü",
+    "theme": "ink",
+    "zoom": [
+      40,
+      1380,
+      420,
+      140
+    ]
+  },
+  {
+    "image": "docs/store-shots/raw/ana-ekran.png",
+    "title": "Ana ekranda\nzorlandıkların",
+    "subtitle": "Günün bulmacası da bir dokunuş uzakta",
+    "theme": "orange"
+  },
+  {
+    "image": "docs/store-shots/raw/bugun.png",
+    "title": "A1'den C2'ye\nİngilizce kurs",
+    "subtitle": "Bölüm bölüm kelime, kalıp ve hikâye",
+    "theme": "blue"
+  },
+  {
+    "image": "docs/store-shots/raw/tekrar.png",
+    "title": "2 dakikada\nHızlı Tekrar",
+    "subtitle": "Zorlandığın kelimeler daha sık gelir",
+    "theme": "cream"
+  },
+  {
+    "image": "docs/store-shots/raw/bulmaca.png",
+    "title": "Her gün yeni\nbir bulmaca",
+    "subtitle": "Öğrendiğin kelimelerle, Türkçe ipuçlu",
+    "theme": "orange"
+  },
+  {
+    "image": "docs/store-shots/raw/listeler.png",
+    "title": "Kendi listeni kur,\nwidget'ta öğren",
+    "subtitle": "YDS, YÖKDİL ve IELTS listeleri de hazır",
+    "theme": "cream"
+  },
+  {
+    "image": "docs/store-shots/raw/kelime.png",
+    "title": "Anlamı, örneği,\ntelaffuzu",
+    "subtitle": "Her kelime Türkçe açıklamasıyla",
+    "theme": "ink"
+  },
+  {
+    "image": "docs/store-shots/raw/paylas.png",
+    "title": "Kelimeni\npaylaş",
+    "subtitle": "Açık, koyu ya da mavi kart",
+    "theme": "blue"
+  },
+  {
+    "image": "docs/store-shots/raw/kesfet.png",
+    "title": "Hazır listeleri\nkeşfet",
+    "subtitle": "Diğer öğrencilerin listelerini ekle",
+    "theme": "cream"
+  }
 ]

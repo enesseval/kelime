@@ -1,7 +1,9 @@
 // Composes App Store screenshots: a coloured page, a two-line caption, and the app screen
 // below it with rounded corners. Fonts are the app's own (Hanken Grotesk, Newsreader).
 // Usage: swift tools/make_store_shots.swift docs/store-shots/spec.json <out dir>
-// spec.json: [{"image": "...png", "title": "...", "subtitle": "...", "theme": "blue|cream|ink|orange"}]
+// spec.json: [{"image": "...png", "title": "...", "subtitle": "...", "theme": "blue|cream|ink|orange",
+//              "zoom": [x, y, w, h]}]   zoom (optional, source pixels from the top left): a part of
+//              the screen shown again, magnified, over the lower half (the lock-screen widget).
 import AppKit
 import CoreText
 import ImageIO
@@ -15,6 +17,7 @@ struct Shot: Decodable {
     var title: String
     var subtitle: String
     var theme: String
+    var zoom: [Double]?
 }
 
 func hex(_ v: UInt32) -> NSColor {
@@ -92,6 +95,38 @@ for (index, shot) in shots.enumerated() {
     let frame = NSBezierPath(roundedRect: rect.insetBy(dx: 1, dy: 1), xRadius: radius, yRadius: radius)
     frame.lineWidth = 3
     frame.stroke()
+
+    // Magnified callout of a small part of the screen, e.g. the lock-screen widget.
+    if let z = shot.zoom, z.count == 4,
+       let source = CGImageSourceCreateWithURL(URL(fileURLWithPath: shot.image) as CFURL, nil),
+       let cgImage = CGImageSourceCreateImageAtIndex(source, 0, nil) {
+        // Pixels, whatever the file's dpi says.
+        let crop = CGRect(x: z[0], y: z[1], width: z[2], height: z[3])
+        if let part = cgImage.cropping(to: crop) {
+            let width = CGFloat(W) * 0.9
+            let height = width * CGFloat(z[3] / z[2])
+            let callout = NSRect(x: (CGFloat(W) - width) / 2, y: CGFloat(H) * 0.16, width: width, height: height)
+            let r: CGFloat = 46
+            NSGraphicsContext.saveGraphicsState()
+            let s2 = NSShadow()
+            s2.shadowColor = NSColor.black.withAlphaComponent(0.35)
+            s2.shadowBlurRadius = 50
+            s2.shadowOffset = NSSize(width: 0, height: -16)
+            s2.set()
+            NSColor.black.setFill()
+            NSBezierPath(roundedRect: callout, xRadius: r, yRadius: r).fill()
+            NSGraphicsContext.restoreGraphicsState()
+            NSGraphicsContext.saveGraphicsState()
+            NSBezierPath(roundedRect: callout, xRadius: r, yRadius: r).addClip()
+            NSGraphicsContext.current?.imageInterpolation = .high
+            NSImage(cgImage: part, size: NSSize(width: part.width, height: part.height)).draw(in: callout)
+            NSGraphicsContext.restoreGraphicsState()
+            NSColor.white.withAlphaComponent(0.85).setStroke()
+            let ring = NSBezierPath(roundedRect: callout.insetBy(dx: 3, dy: 3), xRadius: r - 3, yRadius: r - 3)
+            ring.lineWidth = 6
+            ring.stroke()
+        }
+    }
 
     NSGraphicsContext.restoreGraphicsState()
     let name = String(format: "%02d.png", index + 1)
