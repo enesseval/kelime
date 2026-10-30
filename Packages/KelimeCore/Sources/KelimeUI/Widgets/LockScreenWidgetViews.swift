@@ -60,11 +60,11 @@ public struct RectangularWidgetView: View {
         .accessibilityElement(children: .combine)
     }
 
-    /// "INEFFABLE (adj)" over the meaning, no plate behind it.
+    /// "INEFFABLE (sıfat)" over the meaning, no plate behind it.
     private func dictionaryMode(_ card: Card) -> some View {
         VStack(alignment: .leading, spacing: 1) {
             (Text(ReviewQuestion.asciiUpper(card.word)).font(KelimeFont.ui(17, weight: .bold))
-                + Text(card.isPhrase ? "" : " (\(card.pos.rawValue))").font(KelimeFont.ui(15, weight: .semibold)))
+                + Text(card.isPhrase ? "" : " (\(card.pos.label))").font(KelimeFont.ui(15, weight: .semibold)))
                 .lineLimit(1)
                 .minimumScaleFactor(0.6)
                 .widgetAccentable()
@@ -101,10 +101,11 @@ public struct RectangularWidgetView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.6)
                 .widgetAccentable()
-            Text("\(card.pos.abbreviation) · \(card.meaning)")
+            Text("\(card.pos.label) · \(card.meaning)")
                 .font(KelimeFont.ui(11.5))
                 .opacity(0.7)
                 .lineLimit(1)
+                .minimumScaleFactor(0.8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .overlay(alignment: .topTrailing) {
@@ -112,19 +113,32 @@ public struct RectangularWidgetView: View {
         }
     }
 
+    /// The English sentence over its Turkish. Long pairs step down in size until both fit
+    /// whole; the Turkish is never cut off mid-word if a smaller size can hold it.
     private func sentenceMode(_ card: Card) -> some View {
-        VStack(alignment: .leading, spacing: 3) {
-            Text(card.exampleEN)
-                .font(KelimeFont.english(15, italic: true))
-                .lineLimit(2)
+        ViewThatFits(in: .vertical) {
+            sentence(card, english: 15, turkish: 11)
+            sentence(card, english: 13, turkish: 10.5)
+            sentence(card, english: 12, turkish: 10)
                 .minimumScaleFactor(0.8)
-                .widgetAccentable()
-            Text(card.exampleTR)
-                .font(KelimeFont.ui(11))
-                .opacity(0.65)
-                .lineLimit(1)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+    }
+
+    private func sentence(_ card: Card, english: CGFloat, turkish: CGFloat) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(card.exampleEN)
+                .font(KelimeFont.english(english, italic: true))
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+                .widgetAccentable()
+            Text(card.exampleTR)
+                .font(KelimeFont.ui(turkish))
+                .opacity(0.65)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func questionMode(_ card: Card) -> some View {

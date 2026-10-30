@@ -95,7 +95,7 @@ struct WordDetailView: View {
                                 .background(Palette.surface2, in: Capsule())
                         }
                         .accessibilityLabel("Telaffuzu dinle")
-                        Text(item.card.pos.abbreviation)
+                        Text(item.card.pos.label)
                             .font(KelimeFont.english(18, relativeTo: .body, italic: true))
                             .foregroundStyle(Palette.ink2)
                     }
@@ -121,7 +121,7 @@ struct WordDetailView: View {
                     section("DİĞER ANLAMLAR") {
                         ForEach(senses, id: \.self) { sense in
                             VStack(alignment: .leading, spacing: 3) {
-                                (Text(sense.pos.abbreviation + "  ").font(KelimeFont.english(16, relativeTo: .body, italic: true)).foregroundStyle(Palette.ink2)
+                                (Text(sense.pos.label + "  ").font(KelimeFont.english(16, relativeTo: .body, italic: true)).foregroundStyle(Palette.ink2)
                                     + Text(sense.meaning).font(KelimeFont.ui(18, weight: .medium, relativeTo: .body)))
                                 Text(sense.exampleEN).font(KelimeFont.english(18, relativeTo: .body, italic: true))
                                 Text(sense.exampleTR).font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)

@@ -11,8 +11,18 @@ public enum PartOfSpeech: String, Codable, Sendable, CaseIterable {
     /// A phrase card ("How much is it?"), not a single word.
     case phrase
 
-    /// Short label shown on cards, e.g. "adj."; phrases show "kalıp".
-    public var abbreviation: String { self == .phrase ? "kalıp" : rawValue + "." }
+    /// The Turkish name shown on cards and widgets: "sıfat", "fiil", "kalıp"…
+    public var label: String {
+        switch self {
+        case .adjective: "sıfat"
+        case .noun: "isim"
+        case .verb: "fiil"
+        case .adverb: "zarf"
+        case .preposition: "edat"
+        case .conjunction: "bağlaç"
+        case .phrase: "kalıp"
+        }
+    }
 }
 
 /// A further meaning of a card's word in another part of speech or sense, shown on the word

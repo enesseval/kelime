@@ -44,7 +44,7 @@ struct ShareCardView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
                 .padding(.top, 18)
-            (Text(card.pos.abbreviation).font(KelimeFont.english(22, italic: true)).foregroundStyle(Palette.ink2)
+            (Text(card.pos.label).font(KelimeFont.english(22, italic: true)).foregroundStyle(Palette.ink2)
                 + Text("  ") + Text(card.meaning).font(KelimeFont.ui(24)))
                 .padding(.top, 10)
             Rectangle().fill(Palette.line).frame(height: 1).padding(.vertical, 28)

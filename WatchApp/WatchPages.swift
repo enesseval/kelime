@@ -14,7 +14,7 @@ struct WatchWordPage: View {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 6) {
                     StateDot(state, size: 8)
-                    Text("\(card.level.rawValue) · \(card.pos.abbreviation)")
+                    Text("\(card.level.rawValue) · \(card.pos.label)")
                         .font(KelimeFont.ui(12, weight: .semibold))
                         .foregroundStyle(Palette.ink2)
                 }

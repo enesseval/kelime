@@ -182,7 +182,7 @@ struct HeroCard: View {
                 .tracking(-1.4)
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
-            (Text(item.card.pos.abbreviation).font(KelimeFont.english(17, relativeTo: .body, italic: true)).foregroundStyle(Palette.ink2)
+            (Text(item.card.pos.label).font(KelimeFont.english(17, relativeTo: .body, italic: true)).foregroundStyle(Palette.ink2)
                 + Text("  ") + Text(item.card.meaning).font(KelimeFont.ui(17, relativeTo: .body)))
             Rectangle().fill(Palette.line).frame(height: 1)
             VStack(alignment: .leading, spacing: 3) {

@@ -158,7 +158,7 @@ public struct CardHeader: View {
                     StateDot(state, size: 10).widgetAccentable()
                 }
             }
-            (Text(card.pos.abbreviation).font(KelimeFont.english(14, italic: true)).foregroundStyle(c.ink2)
+            (Text(card.pos.label).font(KelimeFont.english(14, italic: true)).foregroundStyle(c.ink2)
                 + Text("  ") + Text(card.meaning).font(KelimeFont.ui(14)).foregroundStyle(c.ink))
                 .lineLimit(1)
         }

@@ -453,7 +453,7 @@ struct WordCardPaywall: View {
                 }
                 Text("pro").font(KelimeFont.english(64, relativeTo: .largeTitle)).tracking(-1.5)
                 HStack(alignment: .firstTextBaseline, spacing: 10) {
-                    Text("adj.").font(KelimeFont.english(20, relativeTo: .title3)).italic().foregroundStyle(Palette.ink2)
+                    Text("sıfat").font(KelimeFont.english(20, relativeTo: .title3)).italic().foregroundStyle(Palette.ink2)
                     Text(request.trigger == .base ? "bir adım önde; daha çok kelime, daha çok liste" : request.trigger.headline(deck: request.deck).lowercased(with: Locale(identifier: "tr_TR")))
                         .font(KelimeFont.ui(19, relativeTo: .title3))
                 }
