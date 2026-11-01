@@ -73,17 +73,15 @@ public enum QuickReview {
     /// Longest word asked as a write question; longer words would not fit the letter boxes.
     public static let maxWriteLength = 9
 
-    /// Picks up to 10 cards: struggling first, then new words the widget has already shown,
-    /// then other new words; learned words only if the deck runs short.
-    /// `deck` limits the round to one deck (the exam plan's review); nil uses the widget's sources.
-    /// With `today`, learned words due for review (see `SpacedReview`) come right after the
-    /// struggling ones.
-    public static func makeQuestions(
+    /// Card ids in study order: struggling (least recently answered first), learned words due
+    /// for review, new words the widget has shown, other new words, then other learned words.
+    /// Quick Review and the games draw from this.
+    public static func orderedCardIDs(
         db: Database,
         deck: DeckID? = nil,
         today: LocalDate? = nil,
         using rng: inout some RandomNumberGenerator
-    ) throws -> [ReviewQuestion] {
+    ) throws -> [String] {
         let prefs = try Preferences.load(db)
         let source: SQL?
         if let deck {
@@ -116,11 +114,26 @@ public enum QuickReview {
             }
         }
         // Least recently answered first within the ordered groups; shuffle within the new groups.
-        let ordered = struggling.sorted { $0.1 < $1.1 }.map(\.0)
+        let ordered: [String] = struggling.sorted { $0.1 < $1.1 }.map(\.0)
             + due.sorted { $0.1 < $1.1 }.map(\.0)
             + shownNew.shuffled(using: &rng)
             + otherNew.shuffled(using: &rng)
             + learned.sorted { $0.1 < $1.1 }.map(\.0)
+        return ordered
+    }
+
+    /// Picks up to 10 cards: struggling first, then new words the widget has already shown,
+    /// then other new words; learned words only if the deck runs short.
+    /// `deck` limits the round to one deck (the exam plan's review); nil uses the widget's sources.
+    /// With `today`, learned words due for review (see `SpacedReview`) come right after the
+    /// struggling ones.
+    public static func makeQuestions(
+        db: Database,
+        deck: DeckID? = nil,
+        today: LocalDate? = nil,
+        using rng: inout some RandomNumberGenerator
+    ) throws -> [ReviewQuestion] {
+        let ordered = try orderedCardIDs(db: db, deck: deck, today: today, using: &rng)
         let ids = Array(ordered.prefix(questionCount))
         let cards = Dictionary(uniqueKeysWithValues: try Card.fetchAll(db, keys: ids).map { ($0.id, $0) })
 

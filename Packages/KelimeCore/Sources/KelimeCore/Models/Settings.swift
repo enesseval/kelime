@@ -34,6 +34,12 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case currentUnit = "current_unit"
     /// When the app last asked GitHub Pages for new content, seconds since 1970.
     case contentCheckedAt = "content_checked_at"
+    /// The longest study streak reached, in days.
+    case longestStreak = "longest_streak"
+    /// The Monday of the last weekly summary the learner opened.
+    case weeklySummarySeen = "weekly_summary_seen"
+    /// Best Eşleştir score.
+    case matchBest = "match_best"
     /// Last one-time progress reset this install went through (`ProgressReset.epoch`).
     case progressEpoch = "progress_epoch"
 }

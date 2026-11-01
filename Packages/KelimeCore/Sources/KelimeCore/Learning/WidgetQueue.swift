@@ -101,6 +101,11 @@ public enum WidgetQueue {
             state.timesShown += 1
             state.lastShownAt = max(state.lastShownAt ?? entry.slotStart, entry.slotStart)
             try state.save(db)
+            // What the widget showed each day, for the weekly summary.
+            try db.execute(
+                sql: "INSERT OR IGNORE INTO shown_log (day, card_id) VALUES (?, ?)",
+                arguments: [LocalDate(entry.slotStart, calendar: Calendar.current), entry.cardID]
+            )
             entry.counted = true
             try entry.update(db)
         }

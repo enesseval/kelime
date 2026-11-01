@@ -147,6 +147,34 @@ enum Migrations {
             }
         }
 
+        migrator.registerMigration("v7") { db in
+            // 1.1: days the learner studied in the app (the streak), what the widget showed each
+            // day (the weekly summary), and finished game rounds.
+            try db.create(table: "streak_day") { t in
+                t.primaryKey("day", .text)
+                t.column("sources", .text).notNull().defaults(to: "")
+            }
+            try db.create(table: "shown_log") { t in
+                t.column("day", .text).notNull()
+                t.column("card_id", .text).notNull()
+                t.primaryKey(["day", "card_id"])
+            }
+            try db.create(table: "game_result") { t in
+                t.autoIncrementedPrimaryKey("id")
+                t.column("game", .text).notNull().indexed()
+                t.column("played_at", .datetime).notNull()
+                t.column("played_on", .text).notNull()
+                t.column("score", .integer).notNull()
+                t.column("total", .integer).notNull()
+                t.column("seconds", .integer).notNull()
+            }
+            // Existing learners keep the days they already studied.
+            try db.execute(sql: """
+                INSERT OR IGNORE INTO streak_day (day, sources)
+                SELECT DISTINCT answered_on, source FROM review_log WHERE source IN ('quickReview', 'puzzle')
+                """)
+        }
+
         return migrator
     }
 }
