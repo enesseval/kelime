@@ -21,6 +21,9 @@ public struct WeeklySummary: Sendable, Equatable {
 
     /// Nothing happened that week: no summary to show.
     public var isEmpty: Bool { learned == 0 && answers == 0 && widgetWords == 0 }
+
+    /// Self, or nil when the week is empty.
+    public var nonEmpty: WeeklySummary? { isEmpty ? nil : self }
 }
 
 extension WeeklySummary {

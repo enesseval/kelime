@@ -48,6 +48,16 @@ public struct WordSearch: Sendable, Equatable {
         placements.first { $0.cells == cells || $0.cells == cells.reversed() }
     }
 
+    /// The word `cells` spell, read in either direction: its own placement, or another line
+    /// that happens to spell a hidden word (filler letters can repeat one by chance). `skip`
+    /// leaves out words already found.
+    public func placement(spelledBy cells: [Point], skip: Set<String> = []) -> Placement? {
+        if let exact = placement(matching: cells), !skip.contains(exact.id) { return exact }
+        let forward = cells.map { letter(at: $0) }
+        let backward = Array(forward.reversed())
+        return placements.first { !skip.contains($0.id) && ($0.letters == forward || $0.letters == backward) }
+    }
+
     /// Cells on the straight line from `start` to `end` when it is a row, column or 45° line;
     /// otherwise nil. The selection a finger drag makes.
     public static func line(from start: Point, to end: Point) -> [Point]? {

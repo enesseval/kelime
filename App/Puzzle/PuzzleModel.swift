@@ -265,8 +265,10 @@ final class PuzzleModel {
             if isDaily, case .daily(let day) = source, day == summary.day { try summary.save(db: db) }
         }
         if announce {
+            let solvedMore = game.solvedCount > (announcedSolved ?? 0)
             announcedSolved = game.solvedCount
             await app.write(rebuildQueue: false, body)
+            if solvedMore { await app.recordStudy(.puzzle) }
         } else {
             try? await database.writer.write(body)
         }

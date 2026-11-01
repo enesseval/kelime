@@ -20,6 +20,13 @@ enum Route: Hashable {
     case story(String, String)
     case sharedList(String)
     case paywallGallery
+    case streak
+}
+
+/// The games that open full screen from Oyna.
+enum GameKind: String, Identifiable {
+    case wordSearch, match
+    var id: String { rawValue }
 }
 
 struct PuzzleRequest: Identifiable {
@@ -51,6 +58,10 @@ final class AppRouter {
     var reviewDeck: DeckID?
     /// Presents a crossword full screen.
     var puzzle: PuzzleRequest?
+    /// Presents a game full screen.
+    var game: GameKind?
+    /// Presents last week's summary.
+    var weeklySummaryPresented = false
     /// Set by `openLists`; Kelimelerim shows Listeler and clears it.
     var listsRequested = false
 
@@ -140,6 +151,14 @@ final class AppRouter {
             tab = .play
             playPath = []
             openPuzzle()
+        case "review":
+            // Control Center and widget buttons: straight into a Quick Review round.
+            tab = .today
+            startQuickReview()
+        case "game":
+            tab = .play
+            playPath = []
+            game = GameKind(rawValue: url.lastPathComponent)
         default:
             break
         }

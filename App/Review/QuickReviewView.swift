@@ -21,6 +21,7 @@ struct QuickReviewView: View {
                     ReviewSummaryView(session: session) { dismiss() } onMore: {
                         Task { await startAnotherRound() }
                     }
+                    .task(id: session.id) { await model.recordStudy(.quickReview) }
                 } else if let question = session.current {
                     questionScreen(question, session: session)
                 }

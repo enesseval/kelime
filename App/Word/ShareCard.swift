@@ -76,6 +76,21 @@ enum ShareCardRenderer {
 /// Picks the look of the share image, then hands it to the share sheet.
 struct ShareCardSheet: View {
     let card: Card
+
+    var body: some View {
+        ShareImageSheet(title: "Kartı paylaş", name: card.word) { style in
+            ShareCardView(card: card, style: style)
+        }
+    }
+}
+
+/// A 9:16 share image in the three styles (Açık, Koyu, Mavi), with a preview pager and the
+/// share button. Word cards, puzzle and game results, the weekly summary and streaks use it.
+struct ShareImageSheet<Content: View>: View {
+    let title: String
+    /// Shown in the share preview.
+    let name: String
+    @ViewBuilder let card: (ShareCardStyle) -> Content
     @Environment(\.dismiss) private var dismiss
     @State private var style: ShareCardStyle = .light
     @State private var images: [ShareCardStyle: Image] = [:]
@@ -85,7 +100,7 @@ struct ShareCardSheet: View {
             VStack(spacing: 18) {
                 TabView(selection: $style) {
                     ForEach(ShareCardStyle.allCases) { style in
-                        ShareCardView(card: card, style: style)
+                        card(style)
                             .scaleEffect(0.78)
                             .frame(width: 360 * 0.78, height: 640 * 0.78)
                             .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
@@ -103,30 +118,57 @@ struct ShareCardSheet: View {
                 .pickerStyle(.segmented)
                 .padding(.horizontal, 40)
                 if let image = images[style] {
-                    ShareLink(item: image, preview: SharePreview(card.word, image: image)) {
+                    ShareLink(item: image, preview: SharePreview(name, image: image)) {
                         Label("Paylaş", systemImage: "square.and.arrow.up")
                             .font(KelimeFont.ui(16, weight: .semibold, relativeTo: .headline))
                             .foregroundStyle(Palette.onAccent)
                             .frame(maxWidth: .infinity, minHeight: 52)
                             .background(Palette.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
+                    .simultaneousGesture(TapGesture().onEnded { Analytics.signal("share.card", ["kind": title]) })
                     .padding(.horizontal, 20)
                 }
                 Spacer(minLength: 0)
             }
             .padding(.top, 8)
             .screenBackground()
-            .navigationTitle("Kartı paylaş")
+            .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) { Button("Kapat") { dismiss() } }
             }
             .task {
                 for style in ShareCardStyle.allCases {
-                    images[style] = ShareCardRenderer.image(for: card, style: style)
+                    let renderer = ImageRenderer(content: card(style))
+                    renderer.scale = 3
+                    images[style] = renderer.uiImage.map { Image(uiImage: $0) }
                 }
             }
         }
+    }
+}
+
+/// The frame every share image shares: 360 × 640 points (1080 × 1920 at 3×), the style's
+/// background and colour scheme, and the wordmark line at the bottom.
+struct ShareFrame<Content: View>: View {
+    var style: ShareCardStyle
+    @ViewBuilder let content: Content
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            content
+            Spacer(minLength: 0)
+            HStack(spacing: 6) {
+                Text(AppDisplayName.value).font(KelimeFont.ui(14, weight: .semibold))
+                Text("· Kilit ekranında İngilizce").font(KelimeFont.ui(13))
+            }
+            .foregroundStyle(Palette.ink2)
+        }
+        .foregroundStyle(Palette.ink)
+        .padding(36)
+        .frame(width: 360, height: 640, alignment: .topLeading)
+        .background(style.background)
+        .environment(\.colorScheme, style.scheme)
     }
 }
 

@@ -41,8 +41,9 @@ public enum StatsQueries {
             SELECT COUNT(*) FROM card_state WHERE state = ? AND last_answered_on BETWEEN ? AND ?
             """, arguments: [LearningState.learned, start, end]) ?? 0
         let struggling = try CardState.filter(CardState.Columns.state == LearningState.struggling).fetchCount(db)
+        // The same days the streak counts: a finished round, a solved crossword word or a game.
         let reviewedDays = try Set(LocalDate.fetchAll(db, sql: """
-            SELECT DISTINCT answered_on FROM review_log WHERE answered_on BETWEEN ? AND ?
+            SELECT day FROM streak_day WHERE day BETWEEN ? AND ?
             """, arguments: [start, end]))
         let days = (0..<7).map { i -> WeekStats.Day in
             let d = start.adding(days: i)
@@ -51,19 +52,9 @@ public enum StatsQueries {
         return WeekStats(learnedThisWeek: learned, strugglingNow: struggling, days: days, streak: try streak(db: db, clock: clock))
     }
 
-    /// Days in a row with at least one answer, ending today, or yesterday when today has none yet.
+    /// The study streak (see `Streak`).
     public static func streak(db: Database, clock: AppClock) throws -> Int {
-        let today = clock.today
-        let days = try Set(LocalDate.fetchAll(db, sql: """
-            SELECT DISTINCT answered_on FROM review_log WHERE answered_on >= ?
-            """, arguments: [today.adding(days: -400)]))
-        var day = days.contains(today) ? today : today.adding(days: -1)
-        var count = 0
-        while days.contains(day) {
-            count += 1
-            day = day.adding(days: -1)
-        }
-        return count
+        try Streak.status(db: db, clock: clock).current
     }
 
     /// Days from today until `examDate`; nil when there is no date or it has passed.

@@ -34,6 +34,9 @@ struct QueriesTests {
             // Last Sunday is outside this week.
             try LearningStore.record(.answered(correct: true), cardID: "b1-honest", source: .quickReview, clock: clock(daysAgo: 3), db: db)
             try LearningStore.record(.answered(correct: false), cardID: "b2-reluctant", source: .quickReview, clock: clock, db: db)
+            // Days count when the learner studied in the app (a finished round), not per answer.
+            try Streak.record(.quickReview, on: clock.today, db: db)
+            try Streak.record(.quickReview, on: clock(daysAgo: 3).today, db: db)
         }
         let stats = try db.reader.read { db in try StatsQueries.week(db: db, clock: clock) }
         #expect(stats.learnedThisWeek == 2)
@@ -53,14 +56,17 @@ struct QueriesTests {
         let db = try makeDatabase()
         #expect(try db.reader.read { db in try StatsQueries.streak(db: db, clock: clock) } == 0)
         try db.writer.write { db in
-            for daysAgo in [1, 2, 3, 5] {
-                try LearningStore.record(.answered(correct: true), cardID: "b1-curious", source: .widget, clock: clock(daysAgo: daysAgo), db: db)
+            // Two empty days (4 and 5 days ago) end the earlier run; a freeze covers only one.
+            for daysAgo in [1, 2, 3, 6] {
+                try Streak.record(.quickReview, on: clock(daysAgo: daysAgo).today, db: db)
             }
+            // Widget answers don't count.
+            try LearningStore.record(.answered(correct: true), cardID: "b1-curious", source: .widget, clock: clock, db: db)
         }
         // Today is still open: yesterday's run of three counts.
         #expect(try db.reader.read { db in try StatsQueries.streak(db: db, clock: clock) } == 3)
         try db.writer.write { db in
-            try LearningStore.record(.answered(correct: true), cardID: "b1-honest", source: .quickReview, clock: clock, db: db)
+            try Streak.record(.puzzle, on: clock.today, db: db)
         }
         #expect(try db.reader.read { db in try StatsQueries.week(db: db, clock: clock).streak } == 4)
     }

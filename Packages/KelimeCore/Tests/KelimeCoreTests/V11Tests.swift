@@ -115,6 +115,8 @@ struct V11Tests {
             #expect(read == String(p.letters))
             #expect(p.cells.allSatisfy { $0.row < 8 && $0.col < 8 })
             #expect(game.placement(matching: p.cells.reversed())?.id == p.id)
+            #expect(game.placement(spelledBy: p.cells)?.id == p.id)
+            #expect(game.placement(spelledBy: p.cells, skip: [p.id])?.id != p.id)
         }
         #expect(game.grid.allSatisfy { $0.count == 8 && $0.allSatisfy { $0.isASCII && $0.isUppercase } })
     }

@@ -68,6 +68,15 @@ struct MainTabView: View {
         .fullScreenCover(item: $router.puzzle) { request in
             CrosswordView(source: request.source).environment(model)
         }
+        .fullScreenCover(item: $router.game) { game in
+            switch game {
+            case .wordSearch: WordSearchView().environment(model)
+            case .match: MatchView().environment(model)
+            }
+        }
+        .sheet(isPresented: $router.weeklySummaryPresented) {
+            WeeklySummaryView().environment(model)
+        }
     }
 
     /// Before iOS 26: the flat bar from the design (page background, hairline, accent for the
@@ -118,6 +127,7 @@ extension View {
             case .story(let unit, let story): StoryView(unitID: unit, storyID: story)
             case .sharedList(let id): SharedListView(listID: id)
             case .paywallGallery: PaywallGalleryView()
+            case .streak: StreakView()
             }
         }
     }
@@ -151,6 +161,11 @@ struct PlayView: View {
                     .surfaceCard(padding: 20)
                 }
                 .buttonStyle(.plain)
+
+                HStack(spacing: 12) {
+                    gameCard("Kelime Avı", "Anlamından bul", symbol: "square.grid.3x3.middle.filled") { model.router.game = .wordSearch }
+                    gameCard("Eşleştir", "60 saniye", symbol: "rectangle.2.swap") { model.router.game = .match }
+                }
 
                 VStack(spacing: 0) {
                 Button { model.router.openPuzzle() } label: {
@@ -201,6 +216,23 @@ struct PlayView: View {
             let clock = model.clock
             puzzle = await model.read { db in try DailyPuzzleInfo.load(db: db, clock: clock) } ?? nil
         }
+    }
+
+    private func gameCard(_ title: String, _ subtitle: String, symbol: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: 10) {
+                Image(systemName: symbol)
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundStyle(Palette.accent)
+                    .frame(width: 40, height: 40)
+                    .background(Palette.accentSoft, in: RoundedRectangle(cornerRadius: 11, style: .continuous))
+                Text(title).font(KelimeFont.english(24, relativeTo: .title2))
+                Text(subtitle).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
+            }
+            .foregroundStyle(Palette.ink)
+            .surfaceCard(padding: 16)
+        }
+        .buttonStyle(.plain)
     }
 
     private func proRow(_ title: String, action: @escaping () -> Void) -> some View {

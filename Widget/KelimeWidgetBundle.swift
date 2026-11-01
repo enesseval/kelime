@@ -7,5 +7,9 @@ struct KelimeWidgetBundle: WidgetBundle {
         WordWidget()
         QuizWidget()
         ReviewRingWidget()
+        if #available(iOS 18.0, *) {
+            QuickReviewControl()
+            CurrentWordControl()
+        }
     }
 }

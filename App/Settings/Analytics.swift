@@ -17,4 +17,9 @@ enum Analytics {
     static func send(_ event: UsageCounter) {
         TelemetryDeck.signal("Usage.\(String(describing: event))")
     }
+
+    /// A named signal with parameters, e.g. `signal("game.match.finished", ["score": "12"])`.
+    static func signal(_ name: String, _ parameters: [String: String] = [:]) {
+        TelemetryDeck.signal(name, parameters: parameters)
+    }
 }

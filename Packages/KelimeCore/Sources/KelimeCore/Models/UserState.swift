@@ -97,6 +97,7 @@ public enum ReviewSource: String, Codable, Sendable, DatabaseValueConvertible {
     case puzzle
     case widget
     case wordDetail
+    case game
 }
 
 /// One answered question. Feeds "this week" stats and the free daily limit.

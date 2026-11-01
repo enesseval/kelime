@@ -34,6 +34,8 @@ struct WordWidget: Widget {
 
 struct WordWidgetView: View {
     @Environment(\.widgetFamily) private var family
+    /// False in StandBy, where the widget sits on black without its card.
+    @Environment(\.showsWidgetContainerBackground) private var showsBackground
     let entry: WidgetSnapshot
 
     var body: some View {
@@ -42,7 +44,12 @@ struct WordWidgetView: View {
         case .accessoryRectangular: RectangularWidgetView(entry: entry)
         case .systemMedium: MediumCardWidgetView(entry: entry, makeButton: intentButton)
         case .systemLarge: LargeWidgetView(entry: entry, makeButton: intentButton)
-        default: SmallWidgetView(entry: entry)
+        default:
+            if showsBackground {
+                SmallWidgetView(entry: entry)
+            } else {
+                StandByWordView(entry: entry)
+            }
         }
     }
 }

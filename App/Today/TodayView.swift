@@ -17,6 +17,9 @@ struct TodayData: Sendable {
     var puzzle: DailyPuzzleInfo?
     var course: CourseState?
     var examPlan: ExamPlanStatus?
+    var streak: StreakStatus
+    /// Last week's summary, when it's a new week and the learner hasn't opened it yet.
+    var weeklySummary: WeeklySummary?
 
     static func load(db: Database, clock: AppClock) throws -> TodayData {
         let prefs = try Preferences.load(db)
@@ -42,7 +45,10 @@ struct TodayData: Sendable {
             level: prefs.level,
             puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
             course: try Curriculum.state(db: db),
-            examPlan: try ExamPlan.status(db: db, clock: clock)
+            examPlan: try ExamPlan.status(db: db, clock: clock),
+            streak: try Streak.status(db: db, clock: clock),
+            weeklySummary: try WeeklySummary.isNew(db: db, clock: clock)
+                ? try WeeklySummary.lastWeek(db: db, clock: clock).nonEmpty : nil
         )
     }
 }
@@ -60,6 +66,9 @@ struct TodayView: View {
                 if let data {
                     if !widgetInstalled && !data.bannerDismissed {
                         widgetBanner
+                    }
+                    if let summary = data.weeklySummary {
+                        WeeklySummaryCard(summary: summary) { model.router.weeklySummaryPresented = true }
                     }
                     if let hero = data.hero {
                         Button { model.router.openWord(hero.id) } label: { HeroCard(item: hero) }
@@ -113,6 +122,11 @@ struct TodayView: View {
         HStack(alignment: .bottom) {
             ScreenTitle(title: "Bugün", kicker: TurkishDate.header(model.clock.now))
             Spacer()
+            if let streak = data?.streak, streak.current > 0 || streak.longest > 0 {
+                NavigationLink(value: Route.streak) { StreakBadge(status: streak) }
+                    .buttonStyle(.plain)
+                    .padding(.bottom, 4)
+            }
             if let countdown = data?.examCountdown {
                 Text(countdown)
                     .font(KelimeFont.ui(12, weight: .semibold, relativeTo: .caption))

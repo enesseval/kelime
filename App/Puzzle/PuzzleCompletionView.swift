@@ -6,6 +6,7 @@ struct PuzzleCompletionView: View {
     let model: PuzzleModel
     let onDone: () -> Void
     let onRestart: () -> Void
+    @State private var sharing = false
 
     var body: some View {
         if let game = model.game {
@@ -37,12 +38,8 @@ struct PuzzleCompletionView: View {
                 }
                 ShareGrid(game: game, cell: 14)
                 Spacer()
-                if let image = PuzzleShareRenderer.image(game: game, title: model.title, time: model.timeText) {
-                    ShareLink(item: image, preview: SharePreview(model.title, image: image)) {
-                        Text("Sonucu paylaş")
-                    }
+                Button("Sonucu paylaş") { sharing = true }
                     .buttonStyle(PrimaryButtonStyle(height: 52))
-                }
                 HStack {
                     Button("Yeniden çöz", action: onRestart)
                     Spacer()
@@ -63,6 +60,11 @@ struct PuzzleCompletionView: View {
             .padding(.top, 30)
             .padding(.bottom, 24)
             .askForReview(when: true)
+            .sheet(isPresented: $sharing) {
+                ShareImageSheet(title: "Bulmaca sonucu", name: model.title) { style in
+                    PuzzleShareCard(game: game, title: model.title, time: model.timeText, style: style)
+                }
+            }
         }
     }
 
@@ -100,23 +102,36 @@ struct ShareGrid: View {
     }
 }
 
-enum PuzzleShareRenderer {
-    @MainActor
-    static func image(game: CrosswordGame, title: String, time: String) -> Image? {
-        let view = VStack(alignment: .leading, spacing: 18) {
-            Text(title).font(KelimeFont.ui(22, weight: .semibold))
-            ShareGrid(game: game, cell: 22)
-            Text("\(game.puzzle.entries.count) kelime · \(time) · \(game.hintsUsed) ipucu")
-                .font(KelimeFont.ui(16))
+/// The finished crossword as a 9:16 share image: spoiler-free grid, time and hints.
+struct PuzzleShareCard: View {
+    let game: CrosswordGame
+    let title: String
+    let time: String
+    let style: ShareCardStyle
+
+    var body: some View {
+        let puzzle = game.puzzle
+        let cell = min(26, 288 / CGFloat(max(puzzle.width, 1)) - 3)
+        ShareFrame(style: style) {
+            Spacer().frame(height: 30)
+            Text(title.uppercased(with: Locale(identifier: "tr_TR")))
+                .font(KelimeFont.ui(14, weight: .bold))
+                .tracking(1.4)
                 .foregroundStyle(Palette.ink2)
-            Text(AppDisplayName.value).font(KelimeFont.ui(13, weight: .semibold)).foregroundStyle(Palette.ink2)
+            Text(TurkishDate.header(.now))
+                .font(KelimeFont.ui(15))
+                .foregroundStyle(Palette.ink2)
+                .padding(.top, 2)
+            Text("\(puzzle.entries.count) kelime")
+                .font(KelimeFont.english(64))
+                .tracking(-1.5)
+                .padding(.top, 20)
+            Text("\(time) · \(game.hintsUsed) ipucu")
+                .font(KelimeFont.ui(20, weight: .semibold))
+            ShareGrid(game: game, cell: cell)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 34)
         }
-        .foregroundStyle(Palette.ink)
-        .padding(32)
-        .background(Palette.paper)
-        .environment(\.colorScheme, .light)
-        let renderer = ImageRenderer(content: view)
-        renderer.scale = 3
-        return renderer.uiImage.map { Image(uiImage: $0) }
     }
 }
+

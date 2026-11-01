@@ -127,6 +127,13 @@ final class AppModel {
     }
 
     /// Records a Quick Review answer and returns the card's state before and after it.
+    /// Marks today as studied (Quick Review finished, a crossword word solved, a game finished).
+    func recordStudy(_ source: StreakSource) async {
+        let clock = clock
+        await write(rebuildQueue: false) { db in try Streak.record(source, on: clock.today, db: db) }
+        Analytics.signal("streak.day", ["source": source.rawValue])
+    }
+
     func answerReview(cardID: String, correct: Bool, sessionID: String) async -> (before: LearningState, after: LearningState)? {
         guard let database else { return nil }
         let clock = clock
