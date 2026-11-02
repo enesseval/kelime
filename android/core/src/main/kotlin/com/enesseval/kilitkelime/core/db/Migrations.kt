@@ -118,10 +118,12 @@ object Migrations {
             "ALTER TABLE user_list ADD COLUMN source_id TEXT",
             "CREATE TABLE user_list_deleted (id TEXT PRIMARY KEY NOT NULL)",
         ),
-        // v7 (Android 1.1): days studied for the streak, and game results.
+        // v7 (1.1 plan): days that count for the streak, game results, and every slot the lock
+        // screen showed (the weekly summary counts them).
         listOf(
-            "CREATE TABLE streak_day (day TEXT PRIMARY KEY NOT NULL)",
-            "INSERT OR IGNORE INTO streak_day (day) SELECT DISTINCT answered_on FROM review_log",
+            "CREATE TABLE streak_day (day TEXT PRIMARY KEY NOT NULL, source TEXT NOT NULL)",
+            """INSERT OR IGNORE INTO streak_day (day, source)
+               SELECT answered_on, MIN(source) FROM review_log WHERE source IN ('quickReview', 'puzzle') GROUP BY answered_on""",
             """CREATE TABLE game_result (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 game TEXT NOT NULL,
@@ -131,6 +133,7 @@ object Migrations {
                 seconds INTEGER NOT NULL DEFAULT 0,
                 finished_at INTEGER NOT NULL)""",
             "CREATE INDEX game_result_on_day ON game_result(day)",
+            "CREATE TABLE widget_shown (slot_start INTEGER PRIMARY KEY NOT NULL, card_id TEXT NOT NULL)",
         ),
     )
 

@@ -139,6 +139,11 @@ object PuzzleStore {
         PuzzleProgress(key, game.encodedSnapshot(), game.hintsUsed, completedAt, seconds).save(db)
     }
 
+    /** A solved word in today's daily puzzle counts the day for the streak. Returns true when newly counted. */
+    fun markStudiedIfSolved(game: CrosswordGame, daily: Boolean, day: LocalDate, clock: AppClock, db: SqlDb): Boolean =
+        daily && day == clock.today && game.solvedCount > 0 &&
+            LearningStore.markStudied(day, com.enesseval.kilitkelime.core.games.StreakSource.PUZZLE, db)
+
     fun recordHint(entry: CrosswordEntry, clock: AppClock, db: SqlDb) {
         LearningStore.record(LearningEvent.HintUsed, entry.cardID, ReviewSource.PUZZLE, clock, db)
     }
@@ -148,7 +153,6 @@ object PuzzleStore {
         for (entry in game.unaidedEntries) {
             LearningStore.record(LearningEvent.Answered(true), entry.cardID, ReviewSource.PUZZLE, clock, db)
         }
-        LearningStore.markStudied(clock.today, db)
     }
 
     /** Completed daily puzzles, newest first (the archive). */

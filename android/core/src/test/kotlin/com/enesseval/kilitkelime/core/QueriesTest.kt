@@ -2,6 +2,8 @@ package com.enesseval.kilitkelime.core
 
 import com.enesseval.kilitkelime.core.content.Curriculum
 import com.enesseval.kilitkelime.core.dates.AppClock
+import com.enesseval.kilitkelime.core.db.strings
+import com.enesseval.kilitkelime.core.games.StreakSource
 import com.enesseval.kilitkelime.core.learning.LearningEvent
 import com.enesseval.kilitkelime.core.learning.LearningStore
 import com.enesseval.kilitkelime.core.model.CEFRLevel
@@ -61,27 +63,41 @@ class QueriesTest {
         assertNull(StatsQueries.daysUntilExam(null, clock))
     }
 
-    @Test fun streakCountsDaysInARow() {
+    @Test fun onlyFinishedRoundsCountForTheStreak() {
         val db = db()
         assertEquals(0, StatsQueries.streak(db, clock))
-        for (daysAgo in listOf(1, 2, 3, 5)) LearningStore.record(right, "b1-curious", ReviewSource.WIDGET, clock(daysAgo), db)
+        // Widget answers and word detail buttons do not count.
+        LearningStore.record(right, "b1-curious", ReviewSource.WIDGET, clock(1), db)
+        assertEquals(0, StatsQueries.streak(db, clock))
+        for (daysAgo in listOf(1, 2, 3, 6)) LearningStore.markStudied(clock(daysAgo).today, StreakSource.QUICK_REVIEW, db)
+        // Today is still open: yesterday's run of three counts.
         assertEquals(3, StatsQueries.streak(db, clock))
-        LearningStore.record(right, "b1-honest", ReviewSource.QUICK_REVIEW, clock, db)
+        assertTrue(LearningStore.markStudied(clock.today, StreakSource.MATCH, db))
+        assertFalse(LearningStore.markStudied(clock.today, StreakSource.PUZZLE, db))
         assertEquals(4, StatsQueries.week(db, clock).streak)
+        assertEquals(listOf("match"), db.strings("SELECT source FROM streak_day WHERE day = ?", listOf(clock.today)))
     }
 
-    @Test fun finishedGamesCountForTheStreakAndTheWeeklySummary() {
+    @Test fun weeklySummaryFollowsThePlan() {
         val db = db()
-        LearningStore.markStudied(clock(1).today, db)
-        assertEquals(1, StatsQueries.streak(db, clock))
-        LearningStore.record(right, "b1-curious", ReviewSource.QUICK_REVIEW, clock(8), db)
-        LearningStore.record(wrong, "b1-honest", ReviewSource.QUICK_REVIEW, clock(9), db)
+        val monday = LocalDate.of(2026, 10, 5) // last week, seen from Wednesday 14 October
+        fun at(day: LocalDate) = AppClock.fixed(day.atTime(12, 0).atZone(istanbul).toInstant(), istanbul)
+        // reluctant: missed twice, then learned in the week → word of the week.
+        LearningStore.record(wrong, "b2-reluctant", ReviewSource.QUICK_REVIEW, at(monday), db)
+        LearningStore.record(wrong, "b2-reluctant", ReviewSource.QUICK_REVIEW, at(monday.plusDays(1)), db)
+        LearningStore.record(right, "b2-reluctant", ReviewSource.QUICK_REVIEW, at(monday.plusDays(2)), db)
+        LearningStore.record(right, "b2-reluctant", ReviewSource.QUICK_REVIEW, at(monday.plusDays(3)), db)
+        LearningStore.record(wrong, "b1-honest", ReviewSource.WIDGET, at(monday.plusDays(3)), db)
+        db.execute("INSERT INTO widget_shown (slot_start, card_id) VALUES (?, 'a'), (?, 'b'), (?, 'c')",
+            listOf(at(monday).now, at(monday.plusDays(6)).now, at(monday.plusDays(7)).now))
         val summary = StatsQueries.lastWeek(db, clock)
-        assertEquals(LocalDate.of(2026, 10, 5), summary.weekStart)
-        assertEquals(2, summary.answers)
-        assertEquals(1, summary.correct)
+        assertEquals(monday, summary.weekStart)
         assertEquals(1, summary.learned)
-        assertEquals(2, summary.daysStudied)
+        assertEquals(1, summary.struggling)
+        assertEquals(2, summary.shown)
+        assertEquals(50, summary.quickReviewAccuracy)
+        assertEquals("b2-reluctant", summary.wordOfWeek?.id)
+        assertNull(StatsQueries.weekly(db, clock, monday.minusDays(7)).quickReviewAccuracy)
     }
 
     @Test fun wordListSegmentsAndSearch() {

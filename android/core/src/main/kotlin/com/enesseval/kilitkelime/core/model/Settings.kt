@@ -29,6 +29,10 @@ enum class SettingKey(val key: String) {
     CURRENT_UNIT("current_unit"),
     CONTENT_CHECKED_AT("content_checked_at"),
     PROGRESS_EPOCH("progress_epoch"),
+    /** 1.1: the longest streak so far. */
+    LONGEST_STREAK("longest_streak"),
+    /** 1.1: best Eşleştir score. */
+    MATCH_BEST("match_best"),
 }
 
 /** Typed access to the `settings` table. Values are stored as text. */

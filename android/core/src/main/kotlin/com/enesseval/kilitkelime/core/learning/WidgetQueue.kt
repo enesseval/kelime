@@ -88,6 +88,7 @@ object WidgetQueue {
             val last = state.lastShownAt ?: entry.slotStart
             state.copy(timesShown = state.timesShown + 1, lastShownAt = maxOf(last, entry.slotStart)).save(db)
             db.execute("UPDATE widget_queue SET counted = 1 WHERE slot_start = ?", listOf(entry.slotStart))
+            db.execute("INSERT OR REPLACE INTO widget_shown (slot_start, card_id) VALUES (?, ?)", listOf(entry.slotStart, entry.cardID))
         }
     }
 

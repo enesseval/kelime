@@ -7,6 +7,7 @@ import com.enesseval.kilitkelime.core.dates.LocalDates
 import com.enesseval.kilitkelime.core.dates.startInstant
 import com.enesseval.kilitkelime.core.db.Migrations
 import com.enesseval.kilitkelime.core.db.int
+import com.enesseval.kilitkelime.core.db.strings
 import com.enesseval.kilitkelime.core.learning.CardQueries
 import com.enesseval.kilitkelime.core.learning.LearningEvent
 import com.enesseval.kilitkelime.core.learning.LearningStore
@@ -152,9 +153,12 @@ class ProgressResetTest {
         db.execute("PRAGMA user_version = 6")
         db.execute("DROP TABLE streak_day")
         db.execute("DROP TABLE game_result")
-        db.execute("INSERT INTO review_log (card_id, answered_at, answered_on, correct, source) VALUES ('x', 0, '2026-10-01', 1, 'widget')")
+        db.execute("DROP TABLE widget_shown")
+        db.execute("INSERT INTO review_log (card_id, answered_at, answered_on, correct, source) VALUES ('x', 0, '2026-10-01', 1, 'quickReview')")
+        db.execute("INSERT INTO review_log (card_id, answered_at, answered_on, correct, source) VALUES ('x', 0, '2026-10-02', 1, 'widget')")
         Migrations.migrate(db)
-        assertEquals(1, db.int("SELECT COUNT(*) FROM streak_day WHERE day = '2026-10-01'"))
+        // Quick Review and puzzle days count; widget answers do not.
+        assertEquals(listOf("2026-10-01"), db.strings("SELECT day FROM streak_day"))
     }
 }
 

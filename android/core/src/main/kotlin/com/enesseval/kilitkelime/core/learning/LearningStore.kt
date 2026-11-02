@@ -15,7 +15,8 @@ object LearningStore {
 
     /**
      * Records [event] for [cardID] and returns the new state. Answers also get a `review_log` row
-     * (weekly stats) and mark the day studied (`streak_day`); hints and the buttons do not.
+     * (weekly stats); hints and the buttons do not. Answers do not count for the streak by
+     * themselves (a widget answer must not): finishing a round does, see [markStudied].
      */
     fun record(
         event: LearningEvent,
@@ -34,14 +35,19 @@ object LearningStore {
                 "INSERT INTO review_log (card_id, answered_at, answered_on, correct, source, session_id) VALUES (?, ?, ?, ?, ?, ?)",
                 listOf(cardID, now, today, event.correct, source, sessionID),
             )
-            markStudied(today, db)
         }
         return next
     }
 
-    /** Counts [day] for the streak. */
-    fun markStudied(day: LocalDate, db: SqlDb) {
-        db.execute("INSERT OR IGNORE INTO streak_day (day) VALUES (?)", listOf(day))
+    /**
+     * Counts [day] for the streak (finished Quick Review, a solved word in the daily puzzle, a
+     * finished game). Returns true when the day was not counted yet (`streak.day`).
+     */
+    fun markStudied(day: LocalDate, source: com.enesseval.kilitkelime.core.games.StreakSource, db: SqlDb): Boolean {
+        val exists = db.query("SELECT 1 FROM streak_day WHERE day = ?", listOf(day)) { true }.isNotEmpty()
+        if (exists) return false
+        db.execute("INSERT INTO streak_day (day, source) VALUES (?, ?)", listOf(day, source.raw))
+        return true
     }
 
     fun setFavorite(favorite: Boolean, cardID: String, db: SqlDb) {
@@ -58,7 +64,7 @@ object ProgressReset {
     private val keptSettings = listOf(SettingKey.CONTENT_VERSION, SettingKey.CONTENT_CHECKED_AT, SettingKey.IS_PRO)
 
     fun reset(db: SqlDb) = db.transaction {
-        for (table in listOf("card_state", "review_log", "puzzle_progress", "widget_queue", "streak_day", "game_result")) {
+        for (table in listOf("card_state", "review_log", "puzzle_progress", "widget_queue", "streak_day", "game_result", "widget_shown")) {
             db.execute("DELETE FROM $table")
         }
         val kept = keptSettings.map { it.key }

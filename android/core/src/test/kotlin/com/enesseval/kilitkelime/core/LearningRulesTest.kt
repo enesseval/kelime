@@ -111,7 +111,8 @@ class LearningRulesTest {
         val state = LearningStore.record(right, "x", ReviewSource.QUICK_REVIEW, early, db)
         assertEquals(LearningState.LEARNED, state.state)
         assertEquals(listOf("2026-10-13", "2026-10-14"), db.strings("SELECT answered_on FROM review_log ORDER BY id"))
-        assertEquals(listOf("2026-10-13", "2026-10-14"), db.strings("SELECT day FROM streak_day ORDER BY day"))
+        // Answers alone never count for the streak (docs/V1_1_PLAN.md §1).
+        assertEquals(emptyList<String>(), db.strings("SELECT day FROM streak_day ORDER BY day"))
     }
 
     @Test fun storeLogsAnswersOnly() {
