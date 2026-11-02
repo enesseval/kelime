@@ -132,6 +132,22 @@ class AppModel(private val context: Context) {
         if (changed) writeAndRequeue("pro") {}
     }
 
+    /**
+     * Runs [block] (which may count today for the streak and returns whether it did) and sends
+     * `streak.day` / `streak.freezeUsed` (docs/V1_1_PLAN.md §5).
+     */
+    suspend fun studied(reason: String, block: (SqlDb) -> Boolean) {
+        val pro = isPro.value
+        val (newDay, newFreeze) = write(reason) { db ->
+            val before = com.enesseval.kilitkelime.core.games.Streak.status(db, clock, pro).frozen
+            val counted = block(db)
+            val after = com.enesseval.kilitkelime.core.games.Streak.status(db, clock, pro).frozen
+            counted to (after - before).isNotEmpty()
+        }
+        if (newDay) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_DAY)
+        if (newFreeze) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_FREEZE_USED)
+    }
+
     /** Checks GitHub Pages for newer content (at most every 6 hours). */
     fun checkForContent() {
         scope.launch(Dispatchers.IO) {

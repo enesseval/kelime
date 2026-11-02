@@ -153,7 +153,11 @@ fun CrosswordScreen(dayText: String?, personal: Boolean) {
         }
         if (announce) {
             announced = g.solvedCount
-            app.model.write("puzzle") { body(it) }
+            // A solved word in today's daily puzzle counts today for the streak.
+            app.model.studied("puzzle") { db ->
+                body(db)
+                PuzzleStore.markStudiedIfSolved(g, l.isDaily, l.day, app.model.clock, db)
+            }
         } else {
             app.model.read { db -> db.transaction { body(db) } }
         }
@@ -327,7 +331,6 @@ private fun ClueBar(game: CrosswordGame, cards: Map<String, Card>, onStep: (Int)
 private fun Completion(game: CrosswordGame, loaded: Loaded, seconds: Int, onAgain: () -> Unit, onClose: () -> Unit) {
     val c = Palette.current
     val router = LocalRouter.current
-    val context = LocalContext.current
     val helped = game.puzzle.orderedEntries.filter { it.id in game.helped }.mapNotNull { loaded.cards[it.cardID] }
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp).navigationBarsPadding(), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Kicker("BULMACA TAMAM")
@@ -344,11 +347,19 @@ private fun Completion(game: CrosswordGame, loaded: Loaded, seconds: Int, onAgai
         }
         if (loaded.isDaily) Text("Yarın yeni bulmaca seni bekliyor.", style = KelimeType.ui(14.sp), color = c.ink2)
         Gap(6.dp)
-        PrimaryButton("Sonucu paylaş") {
-            com.enesseval.kilitkelime.ui.lists.shareText(
-                context, "Kilit Kelime",
-                "Kilit Kelime · Günün Bulmacası\n${game.puzzle.entries.size} kelime · ${time(seconds)} · ${game.hintsUsed} ipucu",
-            )
+        var sharing by remember { mutableStateOf(false) }
+        PrimaryButton("Sonucu paylaş") { sharing = true }
+        if (sharing) {
+            val cells = HashMap<Pair<Int, Int>, Boolean?>()
+            for (entry in game.puzzle.entries) for (cell in entry.cells) {
+                val key = cell.row to cell.col
+                val unaided = game.isSolved(entry) && entry.id !in game.helped
+                cells[key] = (cells[key] ?: false) || unaided
+            }
+            val date = loaded.day.format(java.time.format.DateTimeFormatter.ofPattern("d MMMM", TR))
+            com.enesseval.kilitkelime.ui.share.ShareCardSheet(
+                com.enesseval.kilitkelime.ui.word.ShareCard.Content.Puzzle(game.puzzle.width, game.puzzle.height, cells, time(seconds), date),
+            ) { sharing = false }
         }
         TintedButton("Yeniden çöz", onClick = onAgain)
         TintedButton("Kapat", onClick = onClose)

@@ -18,7 +18,7 @@ import com.enesseval.kilitkelime.MainActivity
 import com.enesseval.kilitkelime.R
 import com.enesseval.kilitkelime.core.model.SettingKey
 import com.enesseval.kilitkelime.core.model.Settings
-import com.enesseval.kilitkelime.core.queries.StatsQueries
+import com.enesseval.kilitkelime.core.games.Streak
 import java.time.Duration
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -73,10 +73,14 @@ object Reminder {
 class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
     override suspend fun doWork(): Result {
         val app = applicationContext as KilitKelimeApp
-        val (minutes, studied) = app.model.read { db ->
-            Settings.int(db, SettingKey.REMINDER_TIME) to (StatsQueries.week(db, app.model.clock).days.firstOrNull { it.date == app.model.clock.today }?.reviewed == true)
+        val (minutes, streak) = app.model.read { db ->
+            Settings.int(db, SettingKey.REMINDER_TIME) to Streak.status(db, app.model.clock, app.model.isPro.value)
         }
-        if (!studied && NotificationManagerCompat.from(applicationContext).areNotificationsEnabled()) {
+        if (!streak.studiedToday && NotificationManagerCompat.from(applicationContext).areNotificationsEnabled()) {
+            // A streak at risk changes the text (docs/V1_1_PLAN.md §1).
+            val title = if (streak.atRisk) "Serin bu akşam bitiyor" else "Tekrar zamanı"
+            val text = if (streak.atRisk) "${streak.current} günlük serin bu akşam bitiyor. 2 dakikalık bir tur yeter."
+            else "Günde bir hatırlatma: 2 dakikalık bir Hızlı Tekrar seni bekliyor."
             val open = PendingIntent.getActivity(
                 applicationContext, 30,
                 Intent(Intent.ACTION_VIEW, Uri.parse("kelime://review"), applicationContext, MainActivity::class.java),
@@ -84,8 +88,9 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
             )
             val notification = NotificationCompat.Builder(applicationContext, Channels.REMINDER)
                 .setSmallIcon(R.drawable.ic_tile)
-                .setContentTitle("Tekrar zamanı")
-                .setContentText("Günde bir hatırlatma: 2 dakikalık bir Hızlı Tekrar seni bekliyor.")
+                .setContentTitle(title)
+                .setContentText(text)
+                .setStyle(NotificationCompat.BigTextStyle().bigText(text))
                 .setContentIntent(open)
                 .setAutoCancel(true)
                 .build()

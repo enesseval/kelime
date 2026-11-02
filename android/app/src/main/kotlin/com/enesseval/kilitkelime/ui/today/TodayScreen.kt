@@ -29,6 +29,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
@@ -112,14 +113,15 @@ data class TodayData(
     val course: CourseState?,
     val examPlan: ExamPlanStatus?,
     val lastWeek: WeeklySummary,
+    val streak: com.enesseval.kilitkelime.core.games.StreakStatus,
     val bannerDismissed: Boolean,
 )
 
-private fun loadToday(db: com.enesseval.kilitkelime.core.db.SqlDb, clock: com.enesseval.kilitkelime.core.dates.AppClock): TodayData {
+private fun loadToday(db: com.enesseval.kilitkelime.core.db.SqlDb, clock: com.enesseval.kilitkelime.core.dates.AppClock, pro: Boolean): TodayData {
     val prefs = Preferences.load(db)
     val current = WidgetQueue.current(db, clock)
     val heroID = current?.cardID ?: CardQueries.candidates(prefs.entitledDecks, db).firstOrNull()?.cardID
-    val stats = StatsQueries.week(db, clock)
+    val stats = StatsQueries.week(db, clock, pro)
     val exam = ExamCountdown.daysLeft(db, clock)
     val courses = Curriculum.levels(db)
     val lists = UserLists.summaries(db).filter { it.list.enabled && it.total > 0 }.map { it.list.title }
@@ -137,7 +139,8 @@ private fun loadToday(db: com.enesseval.kilitkelime.core.db.SqlDb, clock: com.en
         puzzle = dailyPuzzleInfo(db, clock),
         course = Curriculum.state(db),
         examPlan = ExamPlan.status(db, clock),
-        lastWeek = StatsQueries.lastWeek(db, clock),
+        lastWeek = StatsQueries.lastWeek(db, clock, pro),
+        streak = com.enesseval.kilitkelime.core.games.Streak.status(db, clock, pro),
         bannerDismissed = com.enesseval.kilitkelime.core.model.Settings.bool(db, com.enesseval.kilitkelime.core.model.SettingKey.WIDGET_BANNER_DISMISSED),
     )
 }
@@ -147,9 +150,21 @@ fun TodayScreen() {
     val app = LocalApp.current
     val router = LocalRouter.current
     val c = Palette.current
-    val data by loadData { db -> loadToday(db, app.model.clock) }
+    val pro by app.model.isPro.collectAsState()
+    val data by loadData(pro) { db -> loadToday(db, app.model.clock, pro) }
     val lock by app.model.prefs.flow.collectAsState(initial = null)
     val scope = rememberCoroutineScope()
+    val monday = StatsQueries.weekStart(app.model.clock.today) == app.model.clock.today
+
+    // Every Monday the weekly summary opens once, on the first visit (docs/V1_1_PLAN.md §1).
+    LaunchedEffect(data?.lastWeek?.weekStart, lock?.lastWeeklySummary) {
+        val week = data?.lastWeek ?: return@LaunchedEffect
+        val seen = lock?.lastWeeklySummary ?: return@LaunchedEffect
+        if (monday && seen != week.weekStart.toString() && week.hasContent) {
+            app.model.prefs.update { it.copy(lastWeeklySummary = week.weekStart.toString()) }
+            router.openWeekly()
+        }
+    }
 
     Column(
         Modifier.fillMaxSize().background(c.background).statusBarsPadding().verticalScroll(rememberScrollState())
@@ -158,6 +173,16 @@ fun TodayScreen() {
     ) {
         Row(verticalAlignment = Alignment.Bottom) {
             Box(Modifier.weight(1f)) { ScreenTitle("Bugün", TurkishDate.header(app.model.clock.today)) }
+            data?.streak?.takeIf { it.current > 0 }?.let { streak ->
+                Text(
+                    "🔒 ${streak.current} gün", style = KelimeType.ui(12.sp, FontWeight.SemiBold),
+                    color = if (streak.atRisk) c.amberInk else c.greenInk,
+                    modifier = Modifier.padding(bottom = 4.dp, end = 6.dp).clip(CircleShape)
+                        .background(if (streak.atRisk) c.amberBackground else c.greenBackground)
+                        .clickable { router.openStreak() }.padding(vertical = 7.dp, horizontal = 11.dp)
+                        .semantics { contentDescription = "${streak.current} günlük seri" + if (streak.atRisk) ", bugün henüz çalışmadın" else "" },
+                )
+            }
             data?.examCountdown?.let {
                 Text(
                     it, style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = c.ink2,
@@ -176,11 +201,7 @@ fun TodayScreen() {
                 }
             }
         }
-        if (StatsQueries.weekStart(app.model.clock.today) == app.model.clock.today && d.lastWeek.answers > 0 && l?.lastWeeklySummary != d.lastWeek.weekStart.toString()) {
-            WeeklySummaryCard(d.lastWeek) {
-                scope.launch { app.model.prefs.update { it.copy(lastWeeklySummary = d.lastWeek.weekStart.toString()) } }
-            }
-        }
+        if (monday && d.lastWeek.hasContent) WeeklySummaryCard(d.lastWeek) { router.openWeekly() }
         d.hero?.let { hero -> HeroCard(hero, d.previous.takeIf { d.mode == WidgetMode.SELF_TEST }) { router.openWord(hero.id) } }
         Row(
             Modifier.fillMaxWidth().heightIn(min = 32.dp).clickable { router.openLists() }.padding(horizontal = 4.dp)
@@ -464,17 +485,14 @@ private fun Stat(value: String, label: String, color: Color, modifier: Modifier)
     }
 }
 
-/** 1.1: last week in numbers, on Mondays until dismissed. Nothing negative about missed days. */
+/** Monday's card: last week in one line; opens the summary. */
 @Composable
-private fun WeeklySummaryCard(summary: WeeklySummary, onDismiss: () -> Unit) {
+private fun WeeklySummaryCard(summary: WeeklySummary, onOpen: () -> Unit) {
     val c = Palette.current
-    SurfaceCard {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.weight(1f)) { Kicker("GEÇEN HAFTA") }
-            IconButton(onClick = onDismiss, modifier = Modifier.size(32.dp)) { Icon(Icons.Default.Close, "Kapat", tint = c.ink2) }
-        }
-        Text("${summary.answers} cevap, ${summary.learned} kelime öğrenildi", style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-        Gap(4.dp)
-        Text("${summary.daysStudied} gün çalıştın · %${if (summary.answers == 0) 0 else summary.correct * 100 / summary.answers} doğru", style = KelimeType.ui(14.sp), color = c.ink2)
+    SurfaceCard(onClick = onOpen) {
+        Kicker("GEÇEN HAFTA")
+        Gap(6.dp)
+        Text("${summary.learned} kelime öğrenildi · ${summary.shown} kelime kilit ekranında", style = KelimeType.ui(16.sp, FontWeight.SemiBold), color = c.ink)
+        Text("Özeti gör", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.accent, modifier = Modifier.padding(top = 6.dp))
     }
 }

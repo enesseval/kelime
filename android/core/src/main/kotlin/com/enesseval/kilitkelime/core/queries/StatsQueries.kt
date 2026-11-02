@@ -37,7 +37,10 @@ data class WeeklySummary(
     val streak: Int,
     /** The word missed most often that ended up learned that week. */
     val wordOfWeek: Card?,
-)
+) {
+    /** Something happened that week worth a summary. */
+    val hasContent: Boolean get() = learned > 0 || struggling > 0 || shown > 0 || quickReviewAccuracy != null
+}
 
 object StatsQueries {
     val weekdayInitials = listOf("P", "S", "Ç", "P", "C", "C", "P")

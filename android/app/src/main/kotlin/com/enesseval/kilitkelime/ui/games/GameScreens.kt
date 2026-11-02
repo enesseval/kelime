@@ -1,5 +1,6 @@
 package com.enesseval.kilitkelime.ui.games
 
+import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -27,20 +29,24 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.enesseval.kilitkelime.analytics.Analytics
 import com.enesseval.kilitkelime.core.games.Game
 import com.enesseval.kilitkelime.core.games.GameResults
 import com.enesseval.kilitkelime.core.games.GameWords
-import com.enesseval.kilitkelime.core.games.MatchRound
+import com.enesseval.kilitkelime.core.games.MatchGame
 import com.enesseval.kilitkelime.core.games.WordHunt
 import com.enesseval.kilitkelime.core.learning.LearningEvent
 import com.enesseval.kilitkelime.core.learning.LearningStore
-import com.enesseval.kilitkelime.core.learning.SystemRandom
+import com.enesseval.kilitkelime.core.learning.SeededGenerator
 import com.enesseval.kilitkelime.core.model.ReviewSource
 import com.enesseval.kilitkelime.ui.LocalApp
 import com.enesseval.kilitkelime.ui.LocalRouter
@@ -50,55 +56,88 @@ import com.enesseval.kilitkelime.ui.components.Kicker
 import com.enesseval.kilitkelime.ui.components.PrimaryButton
 import com.enesseval.kilitkelime.ui.components.PushedScreen
 import com.enesseval.kilitkelime.ui.components.TintedButton
+import com.enesseval.kilitkelime.ui.share.ShareCardSheet
 import com.enesseval.kilitkelime.ui.theme.KelimeType
 import com.enesseval.kilitkelime.ui.theme.Palette
+import com.enesseval.kilitkelime.ui.word.ShareCard
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.abs
+import kotlin.random.Random
 
-/** Kelime Avı: find the hidden words; clues are their Turkish meanings. Drag across letters. */
+private fun time(seconds: Int) = "%d:%02d".format(seconds / 60, seconds % 60)
+
+/**
+ * Kelime Avı (docs/V1_1_PLAN.md §2a): find the hidden English words from their Turkish meanings by
+ * dragging across the letters. "İlk harfi göster" lights the first letter and counts as a hint.
+ */
 @Composable
 fun WordHuntScreen() {
     val app = LocalApp.current
     val router = LocalRouter.current
     val c = Palette.current
+    val haptics = LocalHapticFeedback.current
     val scope = rememberCoroutineScope()
+    val size = if (LocalConfiguration.current.screenWidthDp < 360) WordHunt.SMALL_SIZE else WordHunt.SIZE
     var hunt by remember { mutableStateOf<WordHunt?>(null) }
+    var loaded by remember { mutableStateOf(false) }
     var round by remember { mutableIntStateOf(0) }
     var found by remember { mutableStateOf(setOf<String>()) }
-    var shown by remember { mutableStateOf(setOf<String>()) }
+    var hinted by remember { mutableStateOf(setOf<String>()) }
     var start by remember { mutableStateOf<Pair<Int, Int>?>(null) }
     var end by remember { mutableStateOf<Pair<Int, Int>?>(null) }
     var seconds by remember { mutableIntStateOf(0) }
     var recorded by remember { mutableStateOf(false) }
+    var sharing by remember { mutableStateOf(false) }
 
     LaunchedEffect(round) {
-        val rng = SystemRandom()
-        hunt = app.model.read { db -> WordHunt.make(GameWords.pick(db, rng, 24) { it.isSingleWord && it.word.length in 3..WordHunt.SIZE }, rng) }
-        found = emptySet(); shown = emptySet(); seconds = 0; recorded = false
-        Analytics.send(Analytics.Event.wordHunt)
+        // A seeded generator keeps the round reproducible (and testable).
+        val rng = SeededGenerator(Random.nextLong().toULong())
+        hunt = app.model.read { db -> WordHunt.make(GameWords.pick(db, rng, 24, app.model.clock.today) { WordHunt.usable(it, size) }, rng, size) }
+        found = emptySet(); hinted = emptySet(); seconds = 0; recorded = false; loaded = true
     }
     val h = hunt
-    val done = h != null && (found + shown).size == h.words.size
+    val done = h != null && found.size == h.words.size
     LaunchedEffect(h, done) { while (h != null && !done) { delay(1000); seconds++ } }
     LaunchedEffect(done) {
         if (done && h != null && !recorded) {
             recorded = true
-            app.model.write("word-hunt") { db ->
-                for (w in h.words) if (w.card.id in found) LearningStore.record(LearningEvent.Answered(true), w.card.id, ReviewSource.WORD_HUNT, app.model.clock, db)
-                GameResults.record(Game.WORD_HUNT, found.size, h.words.size, seconds, app.model.clock, db)
-            }
+            app.model.studied("word-hunt") { db -> h.record(found, hinted, seconds, app.model.clock, db) }
+            Analytics.signal(Game.WORD_HUNT.signal, mapOf("seconds" to "$seconds", "hints" to "${hinted.size}"))
         }
     }
 
     PushedScreen("Kelime Avı", close = true) {
+        if (!loaded) return@PushedScreen
         if (h == null) {
             EmptyText("Bu oyun için yeterli kelime yok. Widget'ta bir liste ya da kurs aç.")
             return@PushedScreen
         }
-        Text("Harflerin üstünde parmağını kaydır; kelimeler yatay, dikey ya da çapraz.", style = KelimeType.ui(14.sp), color = c.ink2)
+        if (done) {
+            Kicker("KELİME AVI BİTTİ")
+            Gap(8.dp)
+            Text(time(seconds), style = KelimeType.english(64.sp), color = c.ink)
+            Text("${h.words.size} kelime · ${hinted.size} ipucu", style = KelimeType.ui(15.sp), color = c.ink2)
+            Gap(14.dp)
+            for (w in h.words) {
+                Row(Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
+                    Text(w.card.word, style = KelimeType.english(19.sp), color = if (w.card.id in hinted) c.amberInk else c.greenInk, modifier = Modifier.weight(1f))
+                    Text(w.card.meaning, style = KelimeType.ui(14.sp), color = c.ink2)
+                }
+            }
+            Gap(16.dp)
+            PrimaryButton("Sonucu paylaş") { sharing = true }
+            Gap(8.dp)
+            TintedButton("Bir tur daha") { round++ }
+            Gap(8.dp)
+            TintedButton("Bitti") { router.back() }
+            if (sharing) ShareCardSheet(ShareCard.Content.Game("Kelime Avı", "${found.size}/${h.words.size}", "${time(seconds)} · ${hinted.size} ipucu")) { sharing = false }
+            return@PushedScreen
+        }
+        Text("Türkçesine bakıp İngilizcesini bul: harflerin üstünde parmağını kaydır.", style = KelimeType.ui(14.sp), color = c.ink2)
         Gap(12.dp)
         val selection = remember(start, end) { line(start, end) }
+        val glowing = h.words.filter { it.card.id in hinted && it.card.id !in found }.map { it.firstCell }.toSet()
         BoxWithConstraints(Modifier.fillMaxWidth().aspectRatio(1f)) {
             val cellPx = constraints.maxWidth / h.size.toFloat()
             fun cellAt(x: Float, y: Float) = (y / cellPx).toInt().coerceIn(0, h.size - 1) to (x / cellPx).toInt().coerceIn(0, h.size - 1)
@@ -110,13 +149,16 @@ fun WordHuntScreen() {
                         onDragEnd = {
                             val s = start; val e = end
                             val word = if (s != null && e != null) h.match(s, e) else null
-                            if (word != null && word.card.id !in found && word.card.id !in shown) found = found + word.card.id
+                            if (word != null && word.card.id !in found) {
+                                found = found + word.card.id
+                                haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                            }
                             start = null; end = null
                         },
                     )
                 },
             ) {
-                val foundCells = h.words.filter { it.card.id in found || it.card.id in shown }.flatMap { it.cells }.toSet()
+                val foundCells = h.words.filter { it.card.id in found }.flatMap { it.cells }.toSet()
                 for (r in 0 until h.size) {
                     Row(Modifier.weight(1f)) {
                         for (col in 0 until h.size) {
@@ -124,9 +166,11 @@ fun WordHuntScreen() {
                             val bg = when {
                                 p in selection -> c.accentSoft
                                 p in foundCells -> c.greenBackground
+                                p in glowing -> c.amberBackground
                                 else -> c.surface
                             }
-                            Box(Modifier.weight(1f).fillMaxSize().padding(1.5.dp).clip(RoundedCornerShape(6.dp)).background(bg), contentAlignment = Alignment.Center) {
+                            Box(Modifier.weight(1f).fillMaxSize().padding(1.5.dp).clip(RoundedCornerShape(6.dp)).background(bg)
+                                .border(if (p in glowing) 2.dp else 0.dp, if (p in glowing) c.amber else c.surface, RoundedCornerShape(6.dp)), contentAlignment = Alignment.Center) {
                                 Text(h.letter(r, col).toString(), style = KelimeType.ui(20.sp, FontWeight.SemiBold), color = if (p in foundCells) c.greenInk else c.ink)
                             }
                         }
@@ -135,136 +179,155 @@ fun WordHuntScreen() {
             }
         }
         Gap(16.dp)
-        Kicker("İPUÇLARI · ${found.size}/${h.words.size}")
+        Kicker("ANLAMLAR · ${found.size}/${h.words.size}")
         Gap(6.dp)
         for (w in h.words) {
             val isFound = w.card.id in found
-            val isShown = w.card.id in shown
-            Row(Modifier.fillMaxWidth().heightIn(min = 40.dp), verticalAlignment = Alignment.CenterVertically) {
-                Text(
-                    "${w.card.meaning} (${w.answer.length})", style = KelimeType.ui(15.sp).copy(textDecoration = if (isFound) TextDecoration.LineThrough else null),
-                    color = if (isFound) c.ink2 else c.ink, modifier = Modifier.weight(1f),
-                )
+            Row(Modifier.fillMaxWidth().heightIn(min = 42.dp), verticalAlignment = Alignment.CenterVertically) {
+                Text("${w.card.meaning} (${w.answer.length})", style = KelimeType.ui(15.sp), color = if (isFound) c.ink2 else c.ink, modifier = Modifier.weight(1f))
                 when {
-                    isFound -> Text(w.card.word, style = KelimeType.english(17.sp), color = c.greenInk)
-                    isShown -> Text(w.card.word, style = KelimeType.english(17.sp), color = c.amberInk)
-                    else -> Text("Göster", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.accent, modifier = Modifier.clickable {
-                        shown = shown + w.card.id
+                    isFound -> Text(w.card.word, style = KelimeType.english(17.sp), color = if (w.card.id in hinted) c.amberInk else c.greenInk)
+                    w.card.id in hinted -> Text("${w.answer.first()}…", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.amberInk)
+                    else -> Text("İlk harfi göster", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.accent, modifier = Modifier.clickable {
+                        hinted = hinted + w.card.id
                         scope.launch { app.model.write("word-hunt-hint") { db -> LearningStore.record(LearningEvent.HintUsed, w.card.id, ReviewSource.WORD_HUNT, app.model.clock, db) } }
                     }.padding(8.dp))
                 }
             }
         }
-        if (done) {
-            Gap(16.dp)
-            Text("${found.size}/${h.words.size} kelime · %d:%02d".format(seconds / 60, seconds % 60), style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-            Gap(10.dp)
-            PrimaryButton("Bir tur daha") { round++ }
-            Gap(8.dp)
-            TintedButton("Bitti") { router.back() }
-        }
     }
 }
 
-/** Cells on the straight line (across, down or diagonal) from [a] to [b]; empty otherwise. */
+/** Cells on the straight line (across, down or diagonal) from [a] to [b]; just [a] otherwise. */
 private fun line(a: Pair<Int, Int>?, b: Pair<Int, Int>?): Set<Pair<Int, Int>> {
     if (a == null || b == null) return emptySet()
     val dr = b.first - a.first
     val dc = b.second - a.second
     if (dr != 0 && dc != 0 && abs(dr) != abs(dc)) return setOf(a)
     val steps = maxOf(abs(dr), abs(dc))
-    val sr = Integer.signum(dr)
-    val sc = Integer.signum(dc)
-    return (0..steps).map { (a.first + sr * it) to (a.second + sc * it) }.toSet()
+    return (0..steps).map { (a.first + Integer.signum(dr) * it) to (a.second + Integer.signum(dc) * it) }.toSet()
 }
 
-/** Eşleştir: tap an English word, then its Turkish meaning. */
+/**
+ * Eşleştir (docs/V1_1_PLAN.md §2b): 60 seconds, five words left and five meanings right; a correct
+ * pair leaves and a new one comes; a wrong pair shakes.
+ */
 @Composable
 fun MatchScreen() {
     val app = LocalApp.current
     val router = LocalRouter.current
     val c = Palette.current
-    var round by remember { mutableStateOf<MatchRound?>(null) }
-    var number by remember { mutableIntStateOf(0) }
+    val haptics = LocalHapticFeedback.current
+    var game by remember { mutableStateOf<MatchGame?>(null) }
+    var loaded by remember { mutableStateOf(false) }
+    var round by remember { mutableIntStateOf(0) }
     var version by remember { mutableIntStateOf(0) }
-    var picked by remember { mutableStateOf<String?>(null) }
-    var miss by remember { mutableStateOf<Pair<String, String>?>(null) }
-    var seconds by remember { mutableIntStateOf(0) }
-    var recorded by remember { mutableStateOf(false) }
+    var picked by remember { mutableStateOf<Int?>(null) }
+    var miss by remember { mutableStateOf<Pair<Int, Int>?>(null) }
+    var left by remember { mutableIntStateOf(MatchGame.SECONDS) }
+    var finished by remember { mutableStateOf(false) }
+    var best by remember { mutableIntStateOf(0) }
+    var newBest by remember { mutableStateOf(false) }
+    var sharing by remember { mutableStateOf(false) }
+    val shake = remember { Animatable(0f) }
 
-    LaunchedEffect(number) {
-        val rng = SystemRandom()
-        val cards = app.model.read { db -> GameWords.pick(db, rng, MatchRound.SIZE) }
-        round = if (cards.size >= 3) MatchRound(cards, rng) else null
-        picked = null; miss = null; seconds = 0; recorded = false
-        Analytics.send(Analytics.Event.match)
+    LaunchedEffect(round) {
+        val rng = SeededGenerator(Random.nextLong().toULong())
+        val pool = app.model.read { db -> GameWords.pick(db, rng, MatchGame.POOL, app.model.clock.today) }
+        best = app.model.read { db -> GameResults.best(Game.MATCH, db) }
+        game = if (pool.size >= 3) MatchGame(pool, rng) else null
+        picked = null; miss = null; left = MatchGame.SECONDS; finished = false; newBest = false; loaded = true
     }
-    val r = round
+    val g = game
     @Suppress("UNUSED_VARIABLE") val v = version
-    val finished = r?.isFinished == true
-    LaunchedEffect(r, finished) { while (r != null && !finished) { delay(1000); seconds++ } }
-    LaunchedEffect(miss) { if (miss != null) { delay(700); miss = null } }
-    LaunchedEffect(finished) {
-        if (finished && r != null && !recorded) {
-            recorded = true
-            app.model.write("match") { db -> r.record(app.model.clock, db, seconds) }
+    LaunchedEffect(g, finished) {
+        while (g != null && !finished && left > 0 && !g.isEmpty) { delay(1000); left-- }
+        if (g != null && !finished) {
+            finished = true
+            newBest = g.score > best
+            app.model.studied("match") { db -> g.record(MatchGame.SECONDS - left, app.model.clock, db) }
+            Analytics.signal(Game.MATCH.signal, mapOf("score" to "${g.score}"))
+        }
+    }
+    LaunchedEffect(miss) {
+        if (miss != null) {
+            for (x in listOf(12f, -12f, 8f, -8f, 0f)) shake.animateTo(x)
+            delay(150)
+            miss = null
         }
     }
 
     PushedScreen("Eşleştir", close = true) {
-        if (r == null) {
+        if (!loaded) return@PushedScreen
+        if (g == null) {
             EmptyText("Bu oyun için yeterli kelime yok. Widget'ta bir liste ya da kurs aç.")
             return@PushedScreen
         }
-        Text("Bir kelimeye, sonra Türkçesine dokun.", style = KelimeType.ui(14.sp), color = c.ink2)
+        if (finished) {
+            Kicker("SÜRE BİTTİ")
+            Gap(8.dp)
+            Text("${g.score}", style = KelimeType.english(96.sp), color = c.ink)
+            Text(if (newBest) "Yeni en iyi skor!" else "doğru eşleşme · en iyi ${maxOf(best, g.score)}", style = KelimeType.ui(16.sp, FontWeight.Medium), color = if (newBest) c.greenInk else c.ink2)
+            if (g.missedIDs.isNotEmpty()) {
+                Gap(8.dp)
+                Text("Karıştırdığın ${g.missedIDs.size} kelime widget'ında daha sık gelecek.", style = KelimeType.ui(14.sp), color = c.amberInk)
+            }
+            Gap(18.dp)
+            PrimaryButton("Sonucu paylaş") { sharing = true }
+            Gap(8.dp)
+            TintedButton("Bir tur daha") { round++ }
+            Gap(8.dp)
+            TintedButton("Bitti") { router.back() }
+            if (sharing) ShareCardSheet(ShareCard.Content.Game("Eşleştir", "${g.score}", "60 saniyede ${g.score} doğru eşleşme")) { sharing = false }
+            return@PushedScreen
+        }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("Bir kelimeye, sonra Türkçesine dokun.", style = KelimeType.ui(14.sp), color = c.ink2, modifier = Modifier.weight(1f))
+            Text("0:%02d".format(left), style = KelimeType.ui(22.sp, FontWeight.SemiBold), color = if (left <= 10) c.amberInk else c.ink)
+        }
+        Text("${g.score} doğru", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.greenInk)
         Gap(14.dp)
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                for (card in r.left) {
-                    val done = card.id in r.matchedIDs
-                    MatchTile(card.word, english = true, selected = picked == card.id, done = done, wrong = miss?.first == card.id) {
-                        if (!done) picked = card.id
+                g.left.forEachIndexed { i, card ->
+                    val shaking = miss?.first == i
+                    MatchTile(card?.word, english = true, selected = picked == i, wrong = shaking,
+                        modifier = if (shaking) Modifier.offset { IntOffset(shake.value.toInt(), 0) } else Modifier) {
+                        if (card != null) picked = i
                     }
                 }
             }
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                for (card in r.right) {
-                    val done = card.id in r.matchedIDs
-                    MatchTile(card.primaryMeaning, english = false, selected = false, done = done, wrong = miss?.second == card.id) {
-                        val word = picked ?: return@MatchTile
-                        if (done) return@MatchTile
-                        if (!r.pair(word, card.id)) miss = word to card.id
+                g.right.forEachIndexed { j, card ->
+                    val shaking = miss?.second == j
+                    MatchTile(card?.meaning, english = false, selected = false, wrong = shaking,
+                        modifier = if (shaking) Modifier.offset { IntOffset(shake.value.toInt(), 0) } else Modifier) {
+                        val i = picked ?: return@MatchTile
+                        if (card == null) return@MatchTile
+                        if (g.pair(i, j)) haptics.performHapticFeedback(HapticFeedbackType.TextHandleMove) else miss = i to j
                         picked = null
                         version++
                     }
                 }
             }
         }
-        if (finished) {
-            Gap(18.dp)
-            Text("${r.score}/${r.cards.size} ilk denemede · %d:%02d".format(seconds / 60, seconds % 60), style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-            Gap(10.dp)
-            PrimaryButton("Bir tur daha") { number++ }
-            Gap(8.dp)
-            TintedButton("Bitti") { router.back() }
-        }
     }
 }
 
 @Composable
-private fun MatchTile(text: String, english: Boolean, selected: Boolean, done: Boolean, wrong: Boolean, onClick: () -> Unit) {
+private fun MatchTile(text: String?, english: Boolean, selected: Boolean, wrong: Boolean, modifier: Modifier, onClick: () -> Unit) {
     val c = Palette.current
     val (bg, border, ink) = when {
-        done -> Triple(c.greenBackground, c.green, c.greenInk)
+        text == null -> Triple(c.background, c.line, c.ink2)
         wrong -> Triple(c.amberBackground, c.amber, c.amberInk)
         selected -> Triple(c.accentSoft, c.accent, c.ink)
         else -> Triple(c.surface, c.line, c.ink)
     }
     Box(
-        Modifier.fillMaxWidth().heightIn(min = 56.dp).clip(RoundedCornerShape(14.dp)).background(bg).border(1.dp, border, RoundedCornerShape(14.dp))
-            .clickable(enabled = !done, onClick = onClick).padding(horizontal = 12.dp, vertical = 8.dp),
+        modifier.fillMaxWidth().heightIn(min = 60.dp).clip(RoundedCornerShape(14.dp)).background(bg).border(1.dp, border, RoundedCornerShape(14.dp))
+            .clickable(enabled = text != null, onClick = onClick).padding(horizontal = 10.dp, vertical = 8.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Text(text, style = if (english) KelimeType.english(19.sp) else KelimeType.ui(15.sp, FontWeight.Medium), color = ink, maxLines = 2)
+        Text(text ?: "", style = if (english) KelimeType.english(18.sp) else KelimeType.ui(14.sp, FontWeight.Medium), color = ink, maxLines = 2, textAlign = TextAlign.Center)
     }
 }

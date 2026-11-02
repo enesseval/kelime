@@ -15,9 +15,18 @@ object Analytics {
         onboardingDone, widgetInstalled, quickReview, puzzle, wordDetail, units, filter, sort,
         examCountdown, listCreated, listShared, listImported, paywallShown, purchase, placementTest, signedIn,
         // Android
-        wallpaperOn, notificationOn, tileAdded,
-        // 1.1
-        wordHunt, match, weeklySummary, shareCard, streakShown,
+        notificationOn, tileAdded,
+    }
+
+    /** 1.1 signals (docs/V1_1_PLAN.md §5), same names on iOS and Android. */
+    object Signal {
+        const val STREAK_DAY = "streak.day"
+        const val STREAK_FREEZE_USED = "streak.freezeUsed"
+        const val WEEKLY_OPENED = "weekly.opened"
+        const val WEEKLY_SHARED = "weekly.shared"
+        const val SHARE_CARD = "share.card"
+        const val TILE_QUICK_REVIEW = "tile.quickReview"
+        const val WALLPAPER_ENABLED = "wallpaper.enabled"
     }
 
     fun start(app: Application) {
@@ -28,5 +37,9 @@ object Analytics {
 
     fun send(event: Event) {
         runCatching { TelemetryDeck.signal("Usage.${event.name}") }
+    }
+
+    fun signal(name: String, parameters: Map<String, String> = emptyMap()) {
+        runCatching { TelemetryDeck.signal(name, parameters) }
     }
 }

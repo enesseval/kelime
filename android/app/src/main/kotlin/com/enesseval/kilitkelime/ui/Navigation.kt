@@ -82,7 +82,7 @@ enum class Tab(val route: String, val label: String) {
 }
 
 /** Screens shown full screen, without the tab bar. */
-private val fullScreen = listOf("review", "puzzle", "paywall", "wordhunt", "match", "feedback")
+private val fullScreen = listOf("review", "puzzle", "paywall", "wordhunt", "match", "feedback", "weekly")
 
 /** Navigation for the whole app (port of AppRouter). */
 class AppRouter(val nav: NavHostController) {
@@ -133,6 +133,11 @@ class AppRouter(val nav: NavHostController) {
     fun openLockSetup() = nav.navigate("locksetup")
     fun openWidgetLog() = nav.navigate("widgetlog")
     fun openWordHunt() = nav.navigate("wordhunt")
+    fun openStreak() = nav.navigate("streak")
+    fun openWeekly() {
+        Analytics.signal(Analytics.Signal.WEEKLY_OPENED)
+        nav.navigate("weekly")
+    }
     fun openMatch() = nav.navigate("match")
 
     fun showPaywall(trigger: PaywallTrigger) {
@@ -204,6 +209,8 @@ fun MainScaffold() {
                             arguments = listOf(navArgument("card") { type = NavType.StringType; defaultValue = "" }),
                         ) { FeedbackScreen(it.arguments?.getString("card")?.takeIf { id -> id.isNotEmpty() }) }
                         composable("wordhunt") { WordHuntScreen() }
+                        composable("streak") { com.enesseval.kilitkelime.ui.today.StreakScreen() }
+                        composable("weekly") { com.enesseval.kilitkelime.ui.today.WeeklyScreen() }
                         composable("match") { MatchScreen() }
                     }
                 }

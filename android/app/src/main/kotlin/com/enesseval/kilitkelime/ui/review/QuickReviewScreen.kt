@@ -101,10 +101,17 @@ fun QuickReviewScreen(deck: DeckID?) {
     }
 
     fun advance() {
-        session?.advance()
+        val s = session ?: return
+        s.advance()
         chosen = null
         typed = ""
         tick++
+        // A finished round counts today for the streak (docs/V1_1_PLAN.md §1).
+        if (s.isFinished && s.questions.isNotEmpty()) scope.launch {
+            app.model.studied("review-finished") { db ->
+                LearningStore.markStudied(app.model.clock.today, com.enesseval.kilitkelime.core.games.StreakSource.QUICK_REVIEW, db)
+            }
+        }
     }
 
     Column(Modifier.fillMaxSize().background(c.background).statusBarsPadding()) {

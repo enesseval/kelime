@@ -49,7 +49,7 @@ KİLİT EKRANINDA ÖĞREN
 • Kilit ekranı duvar kâğıdına kelime: seçtiğin arka plana ya da kendi fotoğrafına yazılır, gün içinde kendiliğinden değişir; ana ekran duvar kâğıdın aynı kalır
 • Kart, sözlük, örnek cümle ya da "kendini sına" görünümü; kelimenin yerini saatine göre ayarlarsın
 • Ana ekran widget'ları: Kart, "Hangisi?" mini sorusu ve bulmacalı Büyük widget
-• İstersen kilit ekranında sessiz bir bildirim ve Hızlı Ayarlar kutucuğu
+• İstersen kilit ekranında sessiz bir bildirim; Hızlı Ayarlar'dan tek dokunuşla Hızlı Tekrar
 • Zorlandığın kelimeler daha sık, öğrendiklerin aralıklarla geri gelir; böylece unutmazsın
 
 A1'DEN C2'YE KURS
@@ -64,8 +64,10 @@ SINAVA HAZIRLAN
 OYNAYARAK PEKİŞTİR
 • Hızlı Tekrar: 2 dakikalık turlar, sınırsız
 • Günün Bulmacası: bulunduğun bölümün kelimeleriyle Türkçe ipuçlu bulmaca
-• Kelime Avı ve Eşleştir: kısa, sakin oyunlar
-• Seri ve haftalık özet; kaçırdığın gün için ceza yok
+• Kelime Avı: Türkçesinden yola çıkıp harflerin arasında İngilizcesini bul
+• Eşleştir: 60 saniyede kelimeleri anlamlarıyla eşle
+• Seri ve haftalık özet; haftada bir kaçırdığın günü seri koruyucu kurtarır
+• Sonuçlarını ve haftalık özetini şık kartlarla paylaş
 
 KENDİ LİSTEN VE KEŞFET
 • Kendi kelime listeni oluştur; uygulamadaki kelimelerden seç ya da kendin yaz
@@ -78,6 +80,7 @@ KİLİT KELİME PRO
 • Sınav planı: sınav gününe kadar her gün kaç kelime çalışacağını gösterir
 • Kilit ekranında daha sık yeni kelime
 • Sana özel bulmaca ve bulmaca arşivi
+• Haftada 2 seri koruyucu
 Pro aylık ya da yıllık abonelikle (yıllıkta 7 gün ücretsiz deneme) veya ömür boyu tek seferlik ödemeyle alınır. Abonelikler iptal edilene kadar otomatik yenilenir; Google Play › Ödemeler ve abonelikler › Abonelikler'den istediğin zaman iptal edebilirsin.
 
 Reklam yok. İnternetsiz çalışır. Hesap isteğe bağlı: Google ile giriş yaparsan listelerin yedeklenir, cihazların arasında (iPhone dahil) eşitlenir ve Keşfet'te paylaşabilirsin. Pro'n da hesabına bağlanır.
@@ -108,6 +111,7 @@ Kategori: Eğitim. Etiketler: Dil öğrenme, Kelime, Sınav hazırlığı.
   3. Bugün · "A1'den C2'ye kurs, bölüm bölüm"
   4. Kelimelerim › Listeler · "YDS · YÖKDİL · IELTS listeleri"
   5. Oyna (Hızlı Tekrar, bulmaca, Kelime Avı, Eşleştir) · "Oynayarak pekiştir"
+  5b. Seri sayfası ya da haftalık özet · "Serini koru, haftanı gör"
   6. Ana ekran widget'ları · "Ana ekranda da: Kart, Hangisi?, Büyük"
   7. Keşfet · "Hazır listeleri tek dokunuşla ekle"
 - Belirli bir yenileme aralığı vaat etme ("tam 3 saatte bir" gibi); "günde 4'e kadar" de.
@@ -228,13 +232,15 @@ gösterir.
 ### 4. Bildirim ve kutucuk
 - [ ] "Kilit ekranında bildirim olarak göster": sessiz, kalıcı, kelime değişince güncelleniyor
 - [ ] Bildirimdeki Biliyorum/Zorlanıyorum çalışıyor
-- [ ] Hızlı Ayarlar kutucuğu eklenebiliyor, kelimeyi gösteriyor, dokununca kelime açılıyor
-- [ ] Günlük hatırlatma seçilen saatte geliyor; o gün tekrar yapıldıysa gelmiyor
+- [ ] Hızlı Ayarlar kutucuğu "Hızlı Tekrar" eklenebiliyor, altında o anki kelime; dokununca Hızlı Tekrar açılıyor
+- [ ] Günlük hatırlatma seçilen saatte geliyor; o gün seri günü sayıldıysa gelmiyor
+- [ ] Seri risk altındayken hatırlatma "N günlük serin bu akşam bitiyor…" diyor
 
 ### 5. Bugün, kelime, Kelimelerim
 - [ ] Bugün: şu anki kelime, bölüm kartı, Hızlı Tekrar, bulmaca, haftalık seri
-- [ ] Pazartesi: geçen haftanın özeti görünüyor, kapatılınca bir daha çıkmıyor
-- [ ] Kelime detayı: "Dinle" İngilizce telaffuz ediyor; Paylaş üç görünümle (Açık/Koyu/Mavi) resim paylaşıyor
+- [ ] Pazartesi ilk açılışta haftalık özet açılıyor (bir kez); Bugün'deki karttan yeniden açılıyor
+- [ ] Özette: öğrenilen, zorlanılan, kilit ekranında gösterilen, Hızlı Tekrar doğruluğu, seri, haftanın kelimesi; Paylaş 9:16 kart veriyor
+- [ ] Kelime detayı: "Dinle" İngilizce telaffuz ediyor; Paylaş üç görünümle (Açık/Koyu/Mavi) 9:16 resim paylaşıyor
 - [ ] Biliyorum / Zorlanıyorum, favori, "Bu kartta hata mı var? Bildir" gönderiyor
 - [ ] Kelimelerim › Kelimeler: segmentler, arama (Türkçe "ı/İ" ile), filtre, sıralama, A–Z şeridi, kaydırma
 - [ ] Listeler: kurs, sınav listeleri ve kendi listeler aç/kapat; son açık kaynak kapatılamıyor
@@ -243,9 +249,13 @@ gösterir.
 ### 6. Oyunlar
 - [ ] Hızlı Tekrar: seçmeli ve yazmalı sorular; klavye özel A–Z (Türkçe "İ" yok), yakın cevap ipucu
 - [ ] Günün Bulmacası: yazma, silme, kesişimde yön değişimi, Harf aç / Kontrol et / Göster, süre, bitiş ekranı
-- [ ] Kelime Avı: parmakla kaydırarak bulma, "Göster", bitince sonuç
-- [ ] Eşleştir: doğru eşleşme yeşil, yanlış amber (asla kırmızı), bitince sonuç
-- [ ] Seri: herhangi bir oyun bitince bugün seriye sayılıyor
+- [ ] Kelime Avı: 8×8 (360 dp altı telefonda 7×7), Türkçe anlamlar listede, sürükleyerek bulma, doğru seçimde titreşim
+- [ ] "İlk harfi göster" ilk harfi parlatıyor; o kelime zorlanılana geçiyor; sonuç ekranında süre ve ipucu sayısı
+- [ ] Eşleştir: 60 sn, 5 + 5 kart, doğru çift yerine yenisi geliyor, yanlışta kartlar sallanıyor (amber, asla kırmızı), en iyi skor
+- [ ] Sonuç kartları (bulmaca ızgarası yeşil/amber, oyun skorları, seri 7/30/100) paylaşılıyor; kartta mağaza linki yok
+- [ ] Seri: Hızlı Tekrar bitince, bulmacada 1 kelime çözünce ya da oyun bitince bugün sayılıyor; widget'tan Biliyorum demek saymıyor
+- [ ] Bugün'de "🔒 N gün" rozeti; bugün çalışılmadıysa amber; dokununca seri sayfası (5 hafta, koruyucu günü kesik çizgili)
+- [ ] Tek gün atlayınca seri bozulmuyor (koruyucu); aynı hafta ikinci atlamada bozuluyor (Pro'da ikinci de kurtarılıyor)
 
 ### 7. Hesap, Keşfet, Pro
 - [ ] Google ile giriş; profil adı ve avatar

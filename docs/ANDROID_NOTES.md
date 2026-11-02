@@ -29,12 +29,12 @@ generated assets/res folders before every build.
 
 | Step | State |
 |---|---|
-| 1. Gradle project, tabs shell, tokens, fonts, schema, content import, AppClock, rules/scheduler/spaced review + tests | done; `:core` compiled and **159 JUnit tests pass** here |
+| 1. Gradle project, tabs shell, tokens, fonts, schema, content import, AppClock, rules/scheduler/spaced review + tests | done; `:core` compiled and **169 JUnit tests pass** here |
 | 2. Bugün, word detail (TTS, share card), Kelimelerim, lists, course units and stories | written |
 | 3. Quick Review + custom keyboard; crossword (daily + personal) | written; the game logic is in `:core` and tested |
 | 4. Widget queue, lock-screen wallpaper, Glance widgets, notification, QS tile | written; **device measurements still to do** (owner) |
 | 5. Onboarding, placement test, settings, reminders | written |
-| 6. 1.1: streak + weekly summary, Kelime Avı, Eşleştir, share cards | core logic tested, screens written, **interpreted** (see below) |
+| 6. 1.1: streak + weekly summary, Kelime Avı, Eşleştir, share cards | per `docs/V1_1_PLAN.md`; core logic tested (169 tests), screens written |
 | 7. Accounts, sync, Keşfet, feedback; Pro and paywall | written; needs the Google OAuth client and Play products (owner) |
 | 8. Polish, release AAB with R8, signing from `local.properties` | config in place; not built here |
 | 9. `docs/ANDROID_PLAY.md` | done |
@@ -72,21 +72,33 @@ for compile fixes and a first run before device testing.
    Plugin, AndroidX, Compose, Glance) was **written but never compiled**. Expect a round of
    compile fixes on the first build in Android Studio. Library versions in
    `gradle/libs.versions.toml` are the latest ones known to exist; bump them in Android Studio.
-2. **`docs/V1_1_PLAN.md` does not exist** in the repository (neither on this branch nor `main`).
-   The 1.1 features were built from the prompt's one-line descriptions:
-   - *Seri (streak)*: `streak_day` table, one row per local day with at least one answer, any game
-     counts. Bugün shows "n gün üst üste" from 2 days on; a missed day shows nothing negative (as
-     iOS `StatsQueries.streak`). Weekly summary: a card on Bugün every Monday (and in Profil) with
-     last week's answers, learned words and days studied.
-   - *Kelime Avı*: a word search. 8×8 letter grid hides 6 words of the learner's sources across,
-     down or diagonally (never backwards); the clues are the Turkish meanings. Found words count as
-     correct answers; "Göster" counts as a hint (word → zorlanılan).
-   - *Eşleştir*: 6 English words and 6 Turkish meanings in two columns; tap one of each to pair.
-     A wrong pair marks the English word zorlanılan; a round ends when all are paired.
-   - Results go to `game_result` (game, day, score, total, seconds).
-   - Share cards: the three iOS styles (Kart, Sözlük, Örnek cümle) rendered to a bitmap.
-   Replace these with the real plan when it exists; the code is isolated in `core/games` and
-   `app/ui/games`.
+2. **1.1 features follow `docs/V1_1_PLAN.md`** (added after the first pass, which had to guess).
+   Android ships as 1.0 with the same feature set as iOS 1.1.0:
+   - *Seri*: a day counts only for a finished Quick Review, a solved word in the daily puzzle or a
+     finished Kelime Avı / Eşleştir (`streak_day(day, source)`); widget and word-detail answers do
+     not. One automatic freeze per Monday–Sunday week saves a single missed day (two with Pro);
+     freezes are spent in calendar order; the longest streak is kept in `settings`. Bugün shows
+     "🔒 N gün" (amber while today is open), the streak page shows five weeks (dashed circle =
+     saved by a freeze), and the reminder says "N günlük serin bu akşam bitiyor…" when at risk.
+     Rules in `core/games/Streak.kt`, tested in `StreakTest`.
+   - *Haftalık özet*: opens once on the first Monday visit and from Bugün's Monday card: learned,
+     struggling, words the lock screen showed (new `widget_shown` table, filled when a slot is
+     counted), Quick Review accuracy, streak, word of the week; Paylaş makes the 9:16 card.
+   - *Kelime Avı*: 8×8 (7×7 under 360 dp), 6 words of 3–8 letters across, down or diagonally,
+     never backwards; Turkish meanings as clues; "İlk harfi göster" lights the first letter and
+     counts as a hint (word → zorlanılan); unhinted words count as correct.
+   - *Eşleştir*: 60 seconds, 5 + 5 cards, a correct pair is replaced, a wrong pair shakes and makes
+     the word zorlanılan; best score kept.
+   - *Share cards*: every card is 1080×1920 in Açık / Koyu / Mavi with "Kilit ekranında İngilizce"
+     and no store link: word, puzzle result (unsolved-letter grid, green = unaided, amber = hint),
+     game results, weekly summary, streak milestones (7, 30, 100).
+   - *Quick Settings tile* is "Hızlı Tekrar" (opens a round; subtitle = the current word).
+   - *TelemetryDeck*: `streak.day`, `streak.freezeUsed`, `weekly.opened`, `weekly.shared`,
+     `game.wordsearch.finished`, `game.match.finished`, `share.card` (with `type`),
+     `tile.quickReview`, `wallpaper.enabled`, alongside the iOS 1.0 `Usage.*` signals.
+   - Plan points with an Android-specific reading: the week dots on Bugün still mean "any answer that
+     day" (iOS 1.0 behaviour); the streak badge and streak page use the plan's rules. The paywall does
+     not list the second freeze; the streak page and the Play text do.
 3. **Database: platform SQLite instead of Room.** The schema is owned by `:core`
    (`Migrations.kt`, a 1:1 port of `Migrations.swift` v1–v6 plus v7 for the 1.1 tables) and every
    query is the same SQL as iOS, run through a small `SqlDb` interface. Tests run that exact SQL on
@@ -142,7 +154,8 @@ Checklist: `docs/ANDROID_PLAY.md` › "Cihaz test listesi".
 Identical to iOS (`PaywallTrigger`): Pro adds unlimited own lists, sharing a list, adding lists
 from Keşfet, the exam plan, faster rotation (1 h / 30 min), the personal puzzle and the archive.
 Everything else is free, including all course content, Quick Review (unlimited), the daily
-puzzle, every widget, the lock-screen wallpaper and the 1.1 games.
+puzzle, every widget, the lock-screen wallpaper and the 1.1 games. Per the 1.1 plan Pro also gets a
+second weekly streak freeze (an addition, nothing is taken from free users).
 
 ## Owner to-do
 

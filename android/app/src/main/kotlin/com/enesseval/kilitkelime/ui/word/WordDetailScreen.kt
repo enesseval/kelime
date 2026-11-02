@@ -1,6 +1,5 @@
 package com.enesseval.kilitkelime.ui.word
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -9,10 +8,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -24,7 +21,6 @@ import androidx.compose.material.icons.outlined.StarOutline
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -36,14 +32,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.enesseval.kilitkelime.analytics.Analytics
 import com.enesseval.kilitkelime.core.learning.LearningEvent
 import com.enesseval.kilitkelime.core.learning.LearningStore
 import com.enesseval.kilitkelime.core.model.ReviewSource
@@ -57,9 +51,7 @@ import com.enesseval.kilitkelime.ui.components.EmptyText
 import com.enesseval.kilitkelime.ui.components.Gap
 import com.enesseval.kilitkelime.ui.components.Kicker
 import com.enesseval.kilitkelime.ui.components.LevelChip
-import com.enesseval.kilitkelime.ui.components.PrimaryButton
 import com.enesseval.kilitkelime.ui.components.PushedScreen
-import com.enesseval.kilitkelime.ui.components.SegmentedPicker
 import com.enesseval.kilitkelime.ui.components.StateChip
 import com.enesseval.kilitkelime.ui.components.TR
 import com.enesseval.kilitkelime.ui.components.TintedButton
@@ -126,15 +118,7 @@ fun WordDetailScreen(cardID: String) {
     }
 
     if (sharing) {
-        item?.let { current ->
-            ModalBottomSheet(onDismissRequest = { sharing = false }, containerColor = c.background) {
-                ShareSheet(current) { look ->
-                    Analytics.send(Analytics.Event.shareCard)
-                    ShareCard.share(context, current.card, look)
-                    sharing = false
-                }
-            }
-        }
+        item?.let { current -> com.enesseval.kilitkelime.ui.share.ShareCardSheet(ShareCard.Content.Word(current.card)) { sharing = false } }
     }
 }
 
@@ -210,22 +194,5 @@ private fun Section(title: String, content: @Composable () -> Unit) {
     Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
         Kicker(title)
         content()
-    }
-}
-
-@Composable
-private fun ShareSheet(item: WordItem, onShare: (ShareCard.Look) -> Unit) {
-    val c = Palette.current
-    val context = LocalContext.current
-    var look by remember { mutableStateOf(ShareCard.Look.LIGHT) }
-    val preview = remember(look) { ShareCard.render(context, item.card, look).asImageBitmap() }
-    Column(Modifier.padding(horizontal = 20.dp).navigationBarsPadding().padding(bottom = 16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
-        Text("Kartı paylaş", style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-        Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-            Image(preview, contentDescription = null, modifier = Modifier.width(220.dp).clip(RoundedCornerShape(16.dp)).border(1.dp, c.line, RoundedCornerShape(16.dp)))
-        }
-        Text("Görünüm", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.ink2)
-        SegmentedPicker(ShareCard.Look.entries, look, { it.title }) { look = it }
-        PrimaryButton("Paylaş") { onShare(look) }
     }
 }

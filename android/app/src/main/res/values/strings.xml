@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Kilit Kelime</string>
+    <string name="tile_quick_review">Hızlı Tekrar</string>
     <string name="widget_card">Kart</string>
     <string name="widget_card_description">Şu anki kelime ve Türkçe anlamı</string>
     <string name="widget_quiz">Hangisi?</string>

@@ -174,7 +174,7 @@ fun LockSetupContent(showTitle: Boolean, onboarding: Boolean = false) {
             ) { on ->
                 scope.launch {
                     app.model.prefs.update { it.copy(wallpaperEnabled = on, lastWallpaperKey = "") }
-                    if (on) Analytics.send(Analytics.Event.wallpaperOn)
+                    if (on) Analytics.signal(Analytics.Signal.WALLPAPER_ENABLED)
                     app.lockScreen.refresh("wallpaper-$on")
                 }
             }
@@ -230,10 +230,10 @@ fun LockSetupContent(showTitle: Boolean, onboarding: Boolean = false) {
             SettingsRow("Kart, Hangisi? ve Büyük", "Ana ekranda boş bir yere uzun bas › Widget'lar › Kilit Kelime. Android 16'da şarj ekranı hub'ına da eklenir.")
             if (Build.VERSION.SDK_INT >= 33) {
                 Divider()
-                SettingsRow("Hızlı Ayarlar kutucuğu", "Bildirim panelinden kelimeye bir dokunuşla bak.", onClick = {
+                SettingsRow("Hızlı Ayarlar kutucuğu", "Bildirim panelinden tek dokunuşla Hızlı Tekrar.", onClick = {
                     val sbm = context.getSystemService(StatusBarManager::class.java)
                     sbm.requestAddTileService(
-                        ComponentName(context, WordTileService::class.java), context.getString(R.string.app_name),
+                        ComponentName(context, WordTileService::class.java), context.getString(R.string.tile_quick_review),
                         Icon.createWithResource(context, R.drawable.ic_tile), context.mainExecutor,
                     ) { Analytics.send(Analytics.Event.tileAdded) }
                 })

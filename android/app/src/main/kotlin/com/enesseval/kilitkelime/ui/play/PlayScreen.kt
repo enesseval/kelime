@@ -98,8 +98,8 @@ fun PlayScreen() {
             }
         }
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            GameCard("Kelime Avı", "Harflerin arasında gizli kelimeler", Modifier.weight(1f)) { router.openWordHunt() }
-            GameCard("Eşleştir", "Kelimeyi anlamıyla eşle", Modifier.weight(1f)) { router.openMatch() }
+            GameCard("Kelime Avı", "Türkçesinden İngilizcesini bul", Modifier.weight(1f)) { router.openWordHunt() }
+            GameCard("Eşleştir", "60 saniyede kelimeyi anlamıyla eşle", Modifier.weight(1f)) { router.openMatch() }
         }
         ProCorner(!pro) {
             Row(
