@@ -77,6 +77,18 @@ struct MainTabView: View {
         .sheet(isPresented: $router.weeklySummaryPresented) {
             WeeklySummaryView().environment(model)
         }
+        .sheet(isPresented: $router.reminderAskPresented) {
+            ReminderAskSheet().environment(model)
+        }
+        .onChange(of: router.reviewPresented || router.puzzle != nil || router.game != nil) { _, roundOpen in
+            guard !roundOpen, router.reminderAskPending else { return }
+            router.reminderAskPending = false
+            Task {
+                // Let the round's cover finish closing first.
+                try? await Task.sleep(for: .milliseconds(600))
+                router.reminderAskPresented = true
+            }
+        }
     }
 
     /// Before iOS 26: the flat bar from the design (page background, hairline, accent for the

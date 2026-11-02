@@ -51,7 +51,38 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+<<<<<<< Updated upstream
 ### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [x]
+=======
+### 2026-11-02 · Bildirim izni ilk iyi andan sonra soruluyor · iOS [x] Android [ ]
+- **Onboarding üç adım** oldu: karşılama, seviye, widget. Hatırlatma adımı kaldırıldı. Widget
+  adımındaki "Sonra" ve "Ekledim" onboarding'i bitirir.
+- **İyi an:** bir Hızlı Tekrar turunu bitirmek, bulmacada bir kelime çözmek ya da bir oyunu
+  bitirmek. Yani seri gününün sayıldığı her yer (`recordStudy`).
+- **Soru şu şartlarda sorulur:**
+  - Sistem izni hiç sorulmamış (iOS `notDetermined`; Android 13+ `POST_NOTIFICATIONS`
+    verilmemiş ve kalıcı reddedilmemiş).
+  - Kartımız en çok 2 kez gösterilmiş ve son gösterimin üstünden en az 3 gün geçmiş.
+  - Bu durumda "sorulacak" diye işaretlenir.
+- **Soru tam ekran tur kapanınca gelir.** Tur ekranı (tekrar, bulmaca, oyun) kapandıktan
+  0,6 sn sonra alttan bir kart açılır:
+  - Zil simgesi.
+  - Başlık "Güzel bir tur oldu".
+  - Metin "Yarın da aynı saatte 2 dakikalık bir tur hatırlatalım mı? Günde bir bildirim,
+    başka bir şey yok."
+  - Saat seçici (varsayılan 20:30).
+  - **Hatırlat** düğmesi: sistem izni ancak bu düğmeyle istenir. İzin gelirse hatırlatma o
+    saate kurulur ve ayar kaydedilir.
+  - **Şimdi değil** düğmesi.
+- **Sinyal:** `reminder.ask` ile `result` = `granted` / `denied` / `later`.
+- **Oyunların bitişi de iyi an sayılıyor.** Kelime Avı ve Eşleştir bitince de `recordStudy`
+  çağrılıyor. Önceden çağrılmıyordu, bu yüzden oyunlar `streak.day` göndermiyordu.
+- iOS dosyaları: `App/Notifications/ReminderAsk.swift`, `App/Onboarding/OnboardingView.swift`,
+  `App/MainTabView.swift`, `App/AppModel.swift`.
+
+
+### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [ ]
+>>>>>>> Stashed changes
 - Izgara **10×10**; dar ekranda (iOS 380 pt, Android 360 dp altı) **9×9**. Kelime uzunluğu
   3 ile (boyut − 1) harf arası, yani 9 ya da 8 harfe kadar. Kelime sayısı 6.
 - Görünüm sadeleşti:

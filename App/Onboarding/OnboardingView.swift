@@ -2,19 +2,19 @@ import KelimeCore
 import KelimeUI
 import SwiftUI
 
-/// Four onboarding steps: welcome, level, the widget and a daily reminder.
+/// Three onboarding steps: welcome, level and the widget. The reminder is asked later, after the
+/// first good moment (see ReminderAsk), where a yes is far more likely.
 struct OnboardingView: View {
     @Environment(AppModel.self) private var app
 
     enum Step: Int, CaseIterable {
-        case welcome, level, widget, reminder
+        case welcome, level, widget
     }
 
     @State private var step: Step = .welcome
     @State private var choices = OnboardingChoices(level: .a1)
     /// Levels with units; the others are shown as coming soon.
     @State private var levels: [CEFRLevel] = [.a1]
-    @State private var reminderTime = Calendar.current.date(from: DateComponents(hour: 20, minute: 30)) ?? .now
     @State private var finishing = false
     /// Level cards come in one after another.
     @State private var levelsShown = false
@@ -34,7 +34,6 @@ struct OnboardingView: View {
                     case .welcome: welcome
                     case .level: level
                     case .widget: widgetGuide
-                    case .reminder: reminder
                     }
                 }
                 .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)).combined(with: .opacity))
@@ -81,15 +80,11 @@ struct OnboardingView: View {
         .padding(.horizontal, 8)
     }
 
-    /// The sky of each step: dusk while choosing, night for the widget, and the reminder's own
-    /// hour on the reminder step.
+    /// The sky of each step: dusk while choosing, night for the widget.
     private var skyHour: Double {
         switch step {
         case .welcome, .level: return 18.6
         case .widget: return 21
-        case .reminder:
-            let c = Calendar.current.dateComponents([.hour, .minute], from: reminderTime)
-            return Double(c.hour ?? 20) + Double(c.minute ?? 0) / 60
         }
     }
 
@@ -243,8 +238,8 @@ struct OnboardingView: View {
                     .frame(minHeight: 44)
             }
         } footer: {
-            Button("Sonra") { go(1) }.buttonStyle(GlassButtonStyle())
-            Button("Ekledim") { go(1) }.buttonStyle(PrimaryButtonStyle(height: 54))
+            Button("Sonra") { finish() }.buttonStyle(GlassButtonStyle()).disabled(finishing)
+            Button("Ekledim") { finish() }.buttonStyle(PrimaryButtonStyle(height: 54)).disabled(finishing)
         }
         .sheet(isPresented: $showHomeSteps) {
             VStack(alignment: .leading, spacing: 14) {
@@ -260,48 +255,10 @@ struct OnboardingView: View {
         }
     }
 
-    // MARK: - 4 Reminder
-
-    private var reminder: some View {
-        fittedPage(title: "Günde bir hatırlatma", subtitle: "İstersen her gün aynı saatte kısa bir tekrar hatırlatalım.") { height in
-            VStack(spacing: 14) {
-                ReminderPreview(time: reminderTime, height: max(240, height - 70))
-                HStack {
-                    Text("Saat").font(KelimeFont.ui(16, weight: .semibold, relativeTo: .body)).foregroundStyle(.white)
-                    Spacer()
-                    DatePicker("Saat", selection: $reminderTime, displayedComponents: .hourAndMinute)
-                        .datePickerStyle(.compact)
-                        .labelsHidden()
-                        .environment(\.locale, Locale(identifier: "tr_TR"))
-                }
-                .padding(.horizontal, 16)
-                .frame(minHeight: 56)
-                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-            }
-        } footer: {
-            Button("Gerek yok") {
-                Task {
-                    finishing = true
-                    choices.reminderMinutes = nil
-                    await app.completeOnboarding(choices)
-                }
-            }
-            .buttonStyle(GlassButtonStyle())
-            .disabled(finishing)
-            Button {
-                Task {
-                    finishing = true
-                    let granted = await Reminder.requestAuthorization()
-                    let c = Calendar.current.dateComponents([.hour, .minute], from: reminderTime)
-                    choices.reminderMinutes = granted ? (c.hour ?? 20) * 60 + (c.minute ?? 30) : nil
-                    await app.completeOnboarding(choices)
-                }
-            } label: {
-                if finishing { ProgressView().tint(Palette.onAccent) } else { Text("İzin ver") }
-            }
-            .buttonStyle(PrimaryButtonStyle(height: 54))
-            .disabled(finishing)
-        }
+    private func finish() {
+        guard !finishing else { return }
+        finishing = true
+        Task { await app.completeOnboarding(choices) }
     }
 }
 

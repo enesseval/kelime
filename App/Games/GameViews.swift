@@ -222,6 +222,7 @@ struct WordSearchView: View {
         withAnimation { finished = true }
         let clock = model.clock, seconds = seconds, total = game.placements.count, score = total - hinted.count
         Task {
+            await model.recordStudy(.wordSearch)
             await model.write(rebuildQueue: false) { db in
                 try GamePool.recordResult(game: .wordSearch, score: score, total: total, seconds: seconds, clock: clock, db: db)
             }
@@ -481,6 +482,7 @@ struct MatchView: View {
         withAnimation { finished = true }
         let clock = model.clock, score = game.score
         Task {
+            await model.recordStudy(.match)
             await model.write(rebuildQueue: false) { db in
                 try GamePool.recordResult(game: .match, score: score, total: score + game.missed.count, seconds: Int(MatchGame.duration), clock: clock, db: db)
             }

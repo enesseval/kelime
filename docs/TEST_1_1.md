@@ -39,3 +39,10 @@
 
 ## Paylaşım kartları
 - [ ] Kelime, bulmaca, oyun, haftalık özet, seri: hepsi 9:16, Açık/Koyu/Mavi
+
+## Bildirim izni (onboarding'den sonra)
+- [ ] Temiz kurulum: onboarding 3 adım (karşılama, seviye, widget); bildirim izni sorulmuyor
+- [ ] İlk Hızlı Tekrar turunu bitir ve kapat → yarım saniye sonra "Güzel bir tur oldu" kartı
+- [ ] "Hatırlat" → sistem izni çıkıyor; izin verince Profil'de hatırlatma seçilen saatte açık
+- [ ] "Şimdi değil" → 3 gün içinde yeniden sorulmuyor; en çok 2 kez soruluyor
+- [ ] Kelime Avı ya da Eşleştir bitip kapanınca da aynı kart (izin hiç sorulmadıysa)

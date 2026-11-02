@@ -135,6 +135,7 @@ final class AppModel {
         let after = await read { db in try Streak.status(db: db, clock: clock) }
         if before?.studiedToday == false { Analytics.signal("streak.day", ["source": source.rawValue]) }
         if let after, after.frozenDays.count > before?.frozenDays.count ?? 0 { Analytics.signal("streak.freezeUsed") }
+        if !router.reminderAskPending, await ReminderAsk.shouldAsk() { router.reminderAskPending = true }
     }
 
     /// Records a Quick Review answer and returns the card's state before and after it.

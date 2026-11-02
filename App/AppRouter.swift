@@ -62,6 +62,9 @@ final class AppRouter {
     var game: GameKind?
     /// Presents last week's summary.
     var weeklySummaryPresented = false
+    /// A good moment happened inside a full-screen round; ask for the reminder once it closes.
+    var reminderAskPending = false
+    var reminderAskPresented = false
     /// Set by `openLists`; Kelimelerim shows Listeler and clears it.
     var listsRequested = false
 
