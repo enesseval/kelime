@@ -10,9 +10,12 @@ import com.enesseval.kilitkelime.core.model.Settings
 import com.enesseval.kilitkelime.core.queries.StatsQueries
 import java.time.LocalDate
 
-/** What counted a day for the streak (`streak_day.source`). */
+/**
+ * What counted a day for the streak (`streak_day.source`, and the `source` parameter of the
+ * `streak.day` signal). The same values as iOS: quickReview, puzzle, wordSearch, match.
+ */
 enum class StreakSource(val raw: String) {
-    QUICK_REVIEW("quickReview"), PUZZLE("puzzle"), WORD_HUNT("wordHunt"), MATCH("match"),
+    QUICK_REVIEW("quickReview"), PUZZLE("puzzle"), WORD_SEARCH("wordSearch"), MATCH("match"),
 }
 
 /** The streak as Bugün and the streak page show it. */

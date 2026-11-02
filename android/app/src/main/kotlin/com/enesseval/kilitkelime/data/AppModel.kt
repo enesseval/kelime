@@ -134,9 +134,9 @@ class AppModel(private val context: Context) {
 
     /**
      * Runs [block] (which may count today for the streak and returns whether it did) and sends
-     * `streak.day` / `streak.freezeUsed` (docs/V1_1_PLAN.md §5).
+     * `streak.day` once a day, with `source`, and `streak.freezeUsed` (docs/SYNC.md).
      */
-    suspend fun studied(reason: String, block: (SqlDb) -> Boolean) {
+    suspend fun studied(reason: String, source: com.enesseval.kilitkelime.core.games.StreakSource, block: (SqlDb) -> Boolean) {
         val pro = isPro.value
         val (newDay, newFreeze) = write(reason) { db ->
             val before = com.enesseval.kilitkelime.core.games.Streak.status(db, clock, pro).frozen
@@ -144,7 +144,7 @@ class AppModel(private val context: Context) {
             val after = com.enesseval.kilitkelime.core.games.Streak.status(db, clock, pro).frozen
             counted to (after - before).isNotEmpty()
         }
-        if (newDay) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_DAY)
+        if (newDay) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_DAY, mapOf("source" to source.raw))
         if (newFreeze) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_FREEZE_USED)
     }
 

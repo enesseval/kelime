@@ -80,6 +80,8 @@ class GamesTest {
         assertEquals(LearningState.NEW, LearningStore.state(b, db).state) // the hint itself is recorded when used
         assertEquals(1, StatsQueries.streak(db, clock))
         assertEquals(2, GameResults.best(Game.WORD_HUNT, db))
+        // Same source value as iOS (docs/SYNC.md).
+        assertEquals(1, db.int("SELECT COUNT(*) FROM streak_day WHERE source = 'wordSearch'"))
         assertNull(WordHunt.make(listOf(TestSupport.card("cat")), SeededGenerator(1u)))
     }
 

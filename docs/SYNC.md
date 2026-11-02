@@ -62,7 +62,7 @@ gününü (`streak_day`) gösterir; seri rozetiyle çelişmesin. Koruyucuyla kur
 görünür (kesik çizgi yalnızca seri sayfasında). iOS: `StatsQueries` hafta noktaları
 `streak_day`'den okur.
 
-### 2026-11-02 · Ölçüm sinyalleri iki tarafta aynı · iOS [x] Android [ ]
+### 2026-11-02 · Ölçüm sinyalleri iki tarafta aynı · iOS [x] Android [x]
 - `streak.day` günde **bir kez**, o gün ilk sayıldığında gider; parametre `source` = `quickReview`,
   `puzzle`, `wordSearch`, `match`. Android `streak_day.source` değerinde `wordHunt` yerine
   `wordSearch` kullanır (yayımlanmadığı için veri taşıması gerekmez).
@@ -71,6 +71,9 @@ görünür (kesik çizgi yalnızca seri sayfasında). iOS: `StatsQueries` hafta 
 - iOS'a eklenenler: `streak.freezeUsed`, `weekly.shared`, `control.quickReview` (Kontrol Merkezi
   düğmesi `kelime://review?from=control` açar). Android'deki `tile.quickReview` ve
   `wallpaper.enabled` bunların karşılığı.
+- Not (Android): `AppModel.studied(reason, source)` `streak.day`'i `source` ile gönderir;
+  `weekly.shared` haftalık özetteki Paylaş'a basılınca gider; `share.card` (`type`) paylaşım
+  yapılınca. `GamesTest` `streak_day.source = 'wordSearch'` kontrol eder.
 
 ### 2026-11-02 · Seri: koruyucu takvim sırasıyla harcanır · iOS [x] Android [x]
 Android'in kuralı esas alındı (Streak.kt / StreakTest). Not: iOS'ta iki fark vardı, düzeltildi.

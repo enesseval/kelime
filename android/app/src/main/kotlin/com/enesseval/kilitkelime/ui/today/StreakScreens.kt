@@ -161,13 +161,15 @@ fun WeeklyScreen() {
             }
         }
         Gap(20.dp)
-        PrimaryButton("Paylaş") { sharing = true }
+        PrimaryButton("Paylaş") {
+            Analytics.signal(Analytics.Signal.WEEKLY_SHARED)
+            sharing = true
+        }
     }
     val s = summary
     if (sharing && s != null) {
         ShareCardSheet(
             ShareCard.Content.Weekly(s.learned, s.streak, s.wordOfWeek, "${s.shown} kelime kilit ekranımda" + (s.quickReviewAccuracy?.let { " · %$it doğru" } ?: "")),
-            signal = Analytics.Signal.WEEKLY_SHARED,
         ) { sharing = false }
     }
 }

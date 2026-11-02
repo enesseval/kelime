@@ -154,7 +154,7 @@ fun CrosswordScreen(dayText: String?, personal: Boolean) {
         if (announce) {
             announced = g.solvedCount
             // A solved word in today's daily puzzle counts today for the streak.
-            app.model.studied("puzzle") { db ->
+            app.model.studied("puzzle", com.enesseval.kilitkelime.core.games.StreakSource.PUZZLE) { db ->
                 body(db)
                 PuzzleStore.markStudiedIfSolved(g, l.isDaily, l.day, app.model.clock, db)
             }

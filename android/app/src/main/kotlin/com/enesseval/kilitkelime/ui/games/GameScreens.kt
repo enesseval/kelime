@@ -110,7 +110,7 @@ fun WordHuntScreen() {
     LaunchedEffect(done) {
         if (done && h != null && !recorded) {
             recorded = true
-            app.model.studied("word-hunt") { db -> h.record(found, hinted, seconds, app.model.clock, db) }
+            app.model.studied("word-hunt", Game.WORD_HUNT.source) { db -> h.record(found, hinted, seconds, app.model.clock, db) }
             Analytics.signal(Game.WORD_HUNT.signal, mapOf("seconds" to "$seconds", "hints" to "${hinted.size}"))
         }
     }
@@ -255,7 +255,7 @@ fun MatchScreen() {
         if (g != null && !finished) {
             finished = true
             newBest = g.score > best
-            app.model.studied("match") { db -> g.record(MatchGame.SECONDS - left, app.model.clock, db) }
+            app.model.studied("match", Game.MATCH.source) { db -> g.record(MatchGame.SECONDS - left, app.model.clock, db) }
             Analytics.signal(Game.MATCH.signal, mapOf("score" to "${g.score}"))
         }
     }

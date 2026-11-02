@@ -17,7 +17,7 @@ import com.enesseval.kilitkelime.core.review.ReviewQuestion
 
 /** The 1.1 games (docs/V1_1_PLAN.md §2). */
 enum class Game(val raw: String, val title: String, val signal: String, val source: StreakSource) {
-    WORD_HUNT("wordHunt", "Kelime Avı", "game.wordsearch.finished", StreakSource.WORD_HUNT),
+    WORD_HUNT("wordHunt", "Kelime Avı", "game.wordsearch.finished", StreakSource.WORD_SEARCH),
     MATCH("match", "Eşleştir", "game.match.finished", StreakSource.MATCH),
 }
 

@@ -95,7 +95,7 @@ for compile fixes and a first run before device testing.
      and no store link: word, puzzle result (unsolved-letter grid, green = unaided, amber = hint),
      game results, weekly summary, streak milestones (7, 30, 100).
    - *Quick Settings tile* is "Hızlı Tekrar" (opens a round; subtitle = the current word).
-   - *TelemetryDeck*: `streak.day`, `streak.freezeUsed`, `weekly.opened`, `weekly.shared`,
+   - *TelemetryDeck*: `streak.day` (once a day, with `source` = quickReview, puzzle, wordSearch, match), `streak.freezeUsed`, `weekly.opened`, `weekly.shared`,
      `game.wordsearch.finished`, `game.match.finished`, `share.card` (with `type`),
      `tile.quickReview`, `wallpaper.enabled`, alongside the iOS 1.0 `Usage.*` signals.
    - Plan points with an Android-specific reading: the week dots on Bugün still mean "any answer that
