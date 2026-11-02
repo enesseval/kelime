@@ -128,28 +128,59 @@ struct V11Tests {
         #expect(WordSearch.line(from: a, to: .init(row: 3, col: 4)) == nil)
     }
 
-    @Test func matchGameScoresAndRefills() {
-        func card(_ i: Int) -> Card {
-            Card(id: "c\(i)", word: "word\(i)", pos: .noun, level: .a1, tr: ["anlam\(i)"], exampleEN: "", exampleTR: "")
-        }
-        var rng = SeededGenerator(seed: 1)
-        var game = MatchGame(cards: (0..<7).map(card), using: &rng)
-        let en0 = game.english.compactMap { $0 }.first { $0.card.id == "c0" }!
-        let tr0 = game.turkish.compactMap { $0 }.first { $0.card.id == "c0" }!
-        let tr1 = game.turkish.compactMap { $0 }.first { $0.card.id == "c1" }!
-        let en1 = game.english.compactMap { $0 }.first { $0.card.id == "c1" }!
+    func matchCard(_ i: Int) -> Card {
+        Card(id: "c\(i)", word: "word\(i)", pos: .noun, level: .a1, tr: ["anlam\(i)"], exampleEN: "", exampleTR: "")
+    }
 
+    @Test func matchGameScoresAndMisses() {
+        var game = MatchGame(cards: (0..<7).map(matchCard), seed: 1)
+        let en1 = game.english.compactMap { $0 }.first { $0.card.id == "c1" }!
+        let tr0 = game.turkish.compactMap { $0 }.first { $0.card.id == "c0" }!
+        let en0 = game.english.compactMap { $0 }.first { $0.card.id == "c0" }!
         #expect(game.tap(en1) == nil)
-        #expect(game.tap(tr0) == .miss(english: card(1), turkish: card(0)))
+        #expect(game.tap(tr0) == .miss(english: matchCard(1), turkish: matchCard(0)))
         #expect(game.tap(en0) == nil)
-        #expect(game.tap(tr0) == .match(card(0)))
-        #expect(game.tap(tr1) == nil)
-        #expect(game.tap(en1) == .match(card(1)))
-        #expect(game.score == 2)
+        #expect(game.tap(tr0) == .match(matchCard(0)))
+        #expect(game.score == 1)
         #expect(game.firstTry.map(\.id) == ["c0"])
         #expect(game.missed.map(\.id) == ["c1"])
-        // Two new cards came in; two remain in the queue's place.
-        #expect(game.english.compactMap { $0 }.count == 5)
-        #expect(!game.isOutOfCards)
+    }
+
+    @Test func noPairStartsOnTheSameRow() {
+        for seed in 0..<200 {
+            let game = MatchGame(cards: (0..<10).map(matchCard), seed: UInt64(seed))
+            for i in game.english.indices {
+                #expect(game.english[i]?.card.id != game.turkish[i]?.card.id, "seed \(seed)")
+            }
+        }
+    }
+
+    /// The bug from testing: a matched slot was refilled at once, so the newest cards were
+    /// easy to spot. Now matched slots stay empty until three pairs are gone, then the next
+    /// three cards land in random empty slots, never with a card's halves on one row.
+    @Test func matchedSlotsRefillInBatches() {
+        for seed in 0..<50 {
+            var game = MatchGame(cards: (0..<30).map(matchCard), seed: UInt64(seed))
+            var rounds = 0
+            while !game.isOutOfCards && rounds < 200 {
+                rounds += 1
+                guard let en = game.english.compactMap({ $0 }).first(where: { tile in
+                          game.turkish.contains { $0?.card.id == tile.card.id }
+                      }),
+                      let tr = game.turkish.compactMap({ $0 }).first(where: { $0.card.id == en.card.id })
+                else { break }
+                let before = Set(game.english.compactMap { $0?.card.id })
+                game.tap(en)
+                #expect(game.tap(tr) == .match(en.card))
+                let empty = game.english.filter { $0 == nil }.count
+                #expect(empty < MatchGame.refillAt || game.score > 25, "seed \(seed) round \(rounds)")
+                for i in game.english.indices {
+                    guard let card = game.english[i]?.card, !before.contains(card.id) else { continue }
+                    #expect(game.turkish[i]?.card.id != card.id, "seed \(seed) round \(rounds)")
+                }
+            }
+            #expect(game.score == 30, "seed \(seed)")
+            #expect(game.isOutOfCards)
+        }
     }
 }

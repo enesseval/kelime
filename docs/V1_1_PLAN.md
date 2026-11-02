@@ -59,8 +59,10 @@ kelimeler, sonra öğrenilenlerden tekrar zamanı gelenler. Ücretsiz, günde s�
 - Üretim deterministik bir tohumla yapılır ki test edilebilsin.
 
 ### 2b. Eşleştir
-- 60 saniyelik tur. Ekranda solda 5 İngilizce, sağda 5 Türkçe kart. Doğru çift kaybolur,
-  yerine yenisi gelir. Yanlış eşleşmede iki kart kısa sallanır.
+- 60 saniyelik tur. Ekranda solda 5 İngilizce, sağda 5 Türkçe kart; hiçbir kelimenin iki yarısı
+  aynı satırda başlamaz. Doğru çift yavaşça kaybolur, yeri boş kalır. Her tarafta 3 yer
+  boşalınca sıradaki 3 kelime boş yerlere rastgele dağıtılır (yine aynı satırda eş yok).
+  Yanlış eşleşmede iki kart kısa sallanır. Ayrıntı: docs/android/CHANGES.md.
 - Puan: doğru eşleşme sayısı; en iyi skor saklanır.
 - Yanlış eşleştirilen kelime `answered(correct: false)` → zorlanılan; doğru ilk denemede
   eşleşen `answered(correct: true)`.

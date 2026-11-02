@@ -27,7 +27,7 @@
 
 ## Eşleştir
 - [ ] Oyna › Eşleştir › Başla → 60 sn geri sayım, 5+5 kart
-- [ ] Doğru çift kaybolur, yenisi gelir; yeni çift aynı satıra denk gelmez
+- [ ] Doğru çift yavaşça kaybolur, yeri boş kalır; 3 çift gidince 3 yeni kelime boş yerlere rastgele gelir, hiçbir kelimenin iki yarısı aynı satırda olmaz
 - [ ] Yanlış çift sallanır; o kelime zorlanılan olur (bir kez)
 - [ ] Süre bitince sonuç: skor, en iyi skor, zorlandıkların; rekor ise "Yeni rekor!"
 - [ ] Paylaşım kartı

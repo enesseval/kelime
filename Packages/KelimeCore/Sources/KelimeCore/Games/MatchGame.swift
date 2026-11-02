@@ -1,11 +1,13 @@
 import Foundation
 
 /// Eşleştir: a timed round of matching English words to their Turkish meanings. Five pairs are
-/// on the board; a matched pair leaves and the next card takes its place. Pure state, so the
-/// view only renders it.
+/// on the board; a matched pair leaves its slots empty, and once three pairs are gone the next
+/// three cards fill the empty slots in a random order. Pure state, so the view only renders it.
 public struct MatchGame: Sendable {
     public static let duration: TimeInterval = 60
     public static let boardSize = 5
+    /// Empty slots per side that bring the next cards in.
+    public static let refillAt = 3
 
     public struct Tile: Identifiable, Sendable, Equatable {
         public enum Side: Sendable { case english, turkish }
@@ -30,15 +32,26 @@ public struct MatchGame: Sendable {
     public private(set) var missed: [Card] = []
     private var queue: [Card]
     private var missedIDs = Set<String>()
+    private var rng: SeededGenerator
 
-    public init(cards: [Card], using rng: inout some RandomNumberGenerator) {
+    public init(cards: [Card], seed: UInt64 = UInt64.random(in: 0...UInt64.max)) {
+        rng = SeededGenerator(seed: seed)
         let board = Array(cards.prefix(Self.boardSize))
         queue = Array(cards.dropFirst(Self.boardSize))
         english = board.map { Tile(card: $0, side: .english) }.shuffled(using: &rng)
         turkish = board.map { Tile(card: $0, side: .turkish) }.shuffled(using: &rng)
+        // No pair starts on the same row.
+        if turkish.count > 1 {
+            for i in turkish.indices where turkish[i]?.card.id == english[i]?.card.id {
+                turkish.swapAt(i, (i + 1) % turkish.count)
+            }
+            for i in turkish.indices where turkish[i]?.card.id == english[i]?.card.id {
+                turkish.swapAt(i, (i + turkish.count - 1) % turkish.count)
+            }
+        }
     }
 
-    public var isOutOfCards: Bool { english.allSatisfy { $0 == nil } && queue.isEmpty }
+    public var isOutOfCards: Bool { english.allSatisfy { $0 == nil } && turkish.allSatisfy { $0 == nil } }
 
     /// Taps a tile. The first tap selects; a tap on the other side pairs them. Returns the
     /// outcome of a pair, nil for a selection.
@@ -59,28 +72,36 @@ public struct MatchGame: Sendable {
         if en.card.id == tr.card.id || Card.normalizedMeanings(en.card.tr) == Card.normalizedMeanings(tr.card.tr) {
             score += 1
             if !missedIDs.contains(en.card.id) { firstTry.append(en.card) }
-            replace(en.card.id)
-            if en.card.id != tr.card.id { replace(tr.card.id) }
+            refill(englishOf: en.card, turkishOf: tr.card)
             return .match(en.card)
         }
         if missedIDs.insert(en.card.id).inserted { missed.append(en.card) }
         return .miss(english: en.card, turkish: tr.card)
     }
 
-    private mutating func replace(_ cardID: String) {
-        let next = queue.isEmpty ? nil : queue.removeFirst()
-        if let i = english.firstIndex(where: { $0?.card.id == cardID }) {
-            english[i] = next.map { Tile(card: $0, side: .english) }
+    /// Empties the matched slots; once enough are empty, deals the next cards into them.
+    private mutating func refill(englishOf matchedEnglish: Card, turkishOf matchedTurkish: Card) {
+        // A synonym pair (two cards, one meaning) leaves each card's other half behind; those
+        // two halves share the meaning too, so they still match each other.
+        if let ei = english.firstIndex(where: { $0?.card.id == matchedEnglish.id }) { english[ei] = nil }
+        if let ti = turkish.firstIndex(where: { $0?.card.id == matchedTurkish.id }) { turkish[ti] = nil }
+        let emptyEnglish = english.indices.filter { english[$0] == nil }
+        let emptyTurkish = turkish.indices.filter { turkish[$0] == nil }
+        let boardEmpty = emptyEnglish.count == english.count
+        guard emptyEnglish.count >= Self.refillAt || boardEmpty, !queue.isEmpty else { return }
+
+        let cards = Array(queue.prefix(min(emptyEnglish.count, emptyTurkish.count)))
+        queue.removeFirst(cards.count)
+        // Random slots, but a new card's halves never land on the same row.
+        var englishSlots = emptyEnglish.shuffled(using: &rng)
+        var turkishSlots = emptyTurkish.shuffled(using: &rng)
+        for _ in 0..<20 where zip(englishSlots.prefix(cards.count), turkishSlots).contains(where: ==) {
+            englishSlots.shuffle(using: &rng)
+            turkishSlots.shuffle(using: &rng)
         }
-        if let i = turkish.firstIndex(where: { $0?.card.id == cardID }) {
-            // The new Turkish card goes to a different row than its English card when possible,
-            // so a fresh pair never lines up straight across.
-            turkish[i] = next.map { Tile(card: $0, side: .turkish) }
-        }
-        if let next, let ei = english.firstIndex(where: { $0?.card.id == next.id }),
-           let ti = turkish.firstIndex(where: { $0?.card.id == next.id }), ei == ti,
-           let swap = turkish.indices.first(where: { $0 != ti && turkish[$0] != nil }) {
-            turkish.swapAt(ti, swap)
+        for (i, card) in cards.enumerated() {
+            english[englishSlots[i]] = Tile(card: card, side: .english)
+            turkish[turkishSlots[i]] = Tile(card: card, side: .turkish)
         }
     }
 }

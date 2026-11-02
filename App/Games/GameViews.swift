@@ -297,7 +297,7 @@ struct MatchView: View {
         VStack(spacing: 16) {
             Spacer()
             Text("60 saniye").font(KelimeFont.english(48, relativeTo: .largeTitle))
-            Text("İngilizce kelimeyi Türkçe anlamıyla eşleştir. Doğru eşleşen çift gider, yenisi gelir.")
+            Text("İngilizce kelimeyi Türkçe anlamıyla eşleştir. Doğru çift gider; üç çift gidince yenileri gelir.")
                 .font(KelimeFont.ui(15, relativeTo: .subheadline))
                 .foregroundStyle(Palette.ink2)
                 .multilineTextAlignment(.center)
@@ -331,32 +331,41 @@ struct MatchView: View {
     private func column(_ tiles: [MatchGame.Tile?], game: MatchGame) -> some View {
         VStack(spacing: 10) {
             ForEach(Array(tiles.enumerated()), id: \.offset) { _, tile in
-                if let tile {
-                    let selected = game.selected?.id == tile.id
-                    Button { tap(tile) } label: {
-                        Text(tile.text)
-                            .font(tile.side == .english ? KelimeFont.english(19, relativeTo: .body) : KelimeFont.ui(15, relativeTo: .subheadline))
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.75)
-                            .foregroundStyle(Palette.ink)
-                            .padding(.horizontal, 8)
-                            .frame(maxWidth: .infinity, minHeight: 64)
-                            .background(selected ? Palette.accentSoft : shake == tile.id ? Palette.amberBackground : Palette.surface,
-                                        in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                .strokeBorder(selected ? Palette.accent : Palette.line, lineWidth: selected ? 2 : 1))
-                            .offset(x: shake == tile.id ? 6 : 0)
+                ZStack {
+                    // The slot keeps its height while a matched card fades out and the next fades in.
+                    Color.clear
+                    if let tile {
+                        tileButton(tile, selected: game.selected?.id == tile.id)
+                            .id(tile.id)
+                            .transition(.asymmetric(
+                                insertion: .opacity.animation(.easeIn(duration: 0.45).delay(0.25)),
+                                removal: .opacity.animation(.easeOut(duration: 0.3))
+                            ))
                     }
-                    .buttonStyle(.plain)
-                    .transition(.scale(scale: 0.6).combined(with: .opacity))
-                } else {
-                    Color.clear.frame(minHeight: 64)
                 }
+                .frame(height: 68)
             }
         }
         .frame(maxWidth: .infinity)
-        .animation(.snappy(duration: 0.25), value: tiles.map { $0?.id })
+    }
+
+    private func tileButton(_ tile: MatchGame.Tile, selected: Bool) -> some View {
+        Button { tap(tile) } label: {
+            Text(tile.text)
+                .font(tile.side == .english ? KelimeFont.english(19, relativeTo: .body) : KelimeFont.ui(15, relativeTo: .subheadline))
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.75)
+                .foregroundStyle(Palette.ink)
+                .padding(.horizontal, 8)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(selected ? Palette.accentSoft : shake == tile.id ? Palette.amberBackground : Palette.surface,
+                            in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .strokeBorder(selected ? Palette.accent : Palette.line, lineWidth: selected ? 2 : 1))
+                .offset(x: shake == tile.id ? 6 : 0)
+        }
+        .buttonStyle(.plain)
     }
 
     private func result(_ game: MatchGame) -> some View {
@@ -381,7 +390,7 @@ struct MatchView: View {
         guard var current = game else { return }
         let missedBefore = current.missed.count
         let outcome = current.tap(tile)
-        withAnimation(.snappy(duration: 0.25)) { game = current }
+        withAnimation(.easeInOut(duration: 0.3)) { game = current }
         switch outcome {
         case .match(let card):
             if !current.missed.contains(where: { $0.id == card.id }) {
@@ -421,7 +430,7 @@ struct MatchView: View {
             var rng = SystemRandomNumberGenerator()
             let cards = try GamePool.cards(count: 40, singleWords: false, db: db, today: clock.today, using: &rng)
             guard cards.count >= MatchGame.boardSize else { return nil }
-            return (MatchGame(cards: cards, using: &rng), try Settings.int(.matchBest, in: db) ?? 0)
+            return (MatchGame(cards: cards), try Settings.int(.matchBest, in: db) ?? 0)
         } ?? nil
         game = loaded?.0
         best = loaded?.1 ?? 0
