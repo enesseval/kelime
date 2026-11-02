@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="database" path="kelime.sqlite" />
+    <include domain="sharedpref" path="." />
+    <exclude domain="file" path="wallpaper" />
+</full-backup-content>
