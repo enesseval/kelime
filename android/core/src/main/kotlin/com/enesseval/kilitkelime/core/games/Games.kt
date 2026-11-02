@@ -140,52 +140,94 @@ data class WordHunt(val size: Int, val letters: List<Char>, val words: List<Plac
 }
 
 /**
- * Eşleştir: a 60-second round. Five English words on the left, five Turkish meanings on the
- * right; a correct pair leaves and a new pair takes the two free places. Score = correct pairs.
+ * Eşleştir (docs/SYNC.md, 2026-11-02): a 60-second round. Five English words on the left, five
+ * Turkish meanings on the right, the two columns shuffled apart so no card starts with both halves
+ * on one row. A matched pair leaves its places empty; once three places per side are empty (or the
+ * board is), the next three cards are dealt into them at random, again never with a card's halves
+ * on one row. Port of `MatchGame.swift`.
  */
-class MatchGame(pool: List<Card>, private val rng: RandomSource, val boardSize: Int = BOARD) {
-    private val queue = ArrayDeque(pool)
-    /** Left column: English words; right column: meanings. Null = empty place (pool ran out). */
-    val left: MutableList<Card?> = MutableList(boardSize) { null }
-    val right: MutableList<Card?> = MutableList(boardSize) { null }
-    private val matched = mutableSetOf<String>()
-    private val missed = mutableSetOf<String>()
+class MatchGame(cards: List<Card>, private val rng: RandomSource, val boardSize: Int = BOARD) {
+    private val queue = ArrayDeque(cards.drop(boardSize))
+    /** Left column: English words; right column: meanings. Null = an empty place. */
+    val left: MutableList<Card?>
+    val right: MutableList<Card?>
+    private val matched = mutableListOf<String>()
+    private val missed = mutableListOf<String>()
+    private val firstTryIDs = mutableListOf<String>()
 
     init {
-        val first = (0 until boardSize).mapNotNull { queue.removeFirstOrNull() }
-        first.forEachIndexed { i, card -> left[i] = card }
-        first.shuffledWith(rng).forEachIndexed { i, card -> right[i] = card }
+        val board = cards.take(boardSize)
+        left = board.shuffledWith(rng).toMutableList<Card?>()
+        right = board.shuffledWith(rng).toMutableList<Card?>()
+        if (right.size > 1) {
+            for (i in right.indices) if (right[i]?.id == left[i]?.id) swap(right, i, (i + 1) % right.size)
+            for (i in right.indices) if (right[i]?.id == left[i]?.id) swap(right, i, (i + right.size - 1) % right.size)
+        }
+    }
+
+    private fun swap(list: MutableList<Card?>, a: Int, b: Int) {
+        val t = list[a]; list[a] = list[b]; list[b] = t
     }
 
     val score: Int get() = matched.size
-    val matchedIDs: Set<String> get() = matched
-    val missedIDs: Set<String> get() = missed
-    val isEmpty: Boolean get() = left.all { it == null }
+    val matchedIDs: Set<String> get() = matched.toSet()
+    val missedIDs: Set<String> get() = missed.toSet()
+    /** Cards matched right on the first try, in order. */
+    val firstTry: List<String> get() = firstTryIDs
+    val isEmpty: Boolean get() = left.all { it == null } && right.all { it == null }
 
-    /** Pairs the word at [leftIndex] with the meaning at [rightIndex]; true when right. */
+    /**
+     * Pairs the word at [leftIndex] with the meaning at [rightIndex]; true when right. Two cards
+     * sharing a meaning count as a match too; their other halves then match each other.
+     */
     fun pair(leftIndex: Int, rightIndex: Int): Boolean {
-        val word = left.getOrNull(leftIndex) ?: return false
-        val meaning = right.getOrNull(rightIndex) ?: return false
-        if (word.id != meaning.id) {
-            missed += word.id
-            return false
+        val en = left.getOrNull(leftIndex) ?: return false
+        val tr = right.getOrNull(rightIndex) ?: return false
+        if (en.id == tr.id || Card.normalizedMeanings(en.tr) == Card.normalizedMeanings(tr.tr)) {
+            matched += en.id
+            if (en.id !in missed) firstTryIDs += en.id
+            left[leftIndex] = null
+            right[rightIndex] = null
+            refill()
+            return true
         }
-        matched += word.id
-        val next = queue.removeFirstOrNull()
-        left[leftIndex] = next
-        right[rightIndex] = next
-        return true
+        if (en.id !in missed) missed += en.id
+        return false
     }
 
-    /** Wrong pairs make the word struggling; pairs right on the first try count as correct. */
+    /** Deals the next cards once [REFILL_AT] places per side (or the whole board) are empty. */
+    private fun refill() {
+        val emptyLeft = left.indices.filter { left[it] == null }
+        val emptyRight = right.indices.filter { right[it] == null }
+        val boardEmpty = emptyLeft.size == left.size
+        if (!(emptyLeft.size >= REFILL_AT || boardEmpty) || queue.isEmpty()) return
+        val count = minOf(emptyLeft.size, emptyRight.size, queue.size)
+        val dealt = (0 until count).map { queue.removeFirst() }
+        var leftSlots = emptyLeft.shuffledWith(rng)
+        var rightSlots = emptyRight.shuffledWith(rng)
+        var tries = 0
+        while (tries < 20 && (0 until count).any { leftSlots[it] == rightSlots[it] }) {
+            leftSlots = leftSlots.shuffledWith(rng)
+            rightSlots = rightSlots.shuffledWith(rng)
+            tries++
+        }
+        dealt.forEachIndexed { i, card ->
+            left[leftSlots[i]] = card
+            right[rightSlots[i]] = card
+        }
+    }
+
+    /** Missed words become struggling (once); first-try matches count as correct. */
     fun record(seconds: Int, clock: AppClock, db: SqlDb): Boolean = db.transaction {
         for (id in missed) LearningStore.record(LearningEvent.Answered(false), id, ReviewSource.MATCH, clock, db)
-        for (id in matched - missed) LearningStore.record(LearningEvent.Answered(true), id, ReviewSource.MATCH, clock, db)
-        GameResults.record(Game.MATCH, score, matched.size + (missed - matched).size, seconds, clock, db)
+        for (id in firstTryIDs) LearningStore.record(LearningEvent.Answered(true), id, ReviewSource.MATCH, clock, db)
+        GameResults.record(Game.MATCH, score, (matched + missed).toSet().size, seconds, clock, db)
     }
 
     companion object {
         const val BOARD = 5
+        /** Empty places per side that bring the next cards in. */
+        const val REFILL_AT = 3
         const val SECONDS = 60
         /** Enough words for a fast player in 60 seconds. */
         const val POOL = 40

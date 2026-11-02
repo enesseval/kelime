@@ -1,6 +1,13 @@
 package com.enesseval.kilitkelime.ui.games
 
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.EaseIn
+import androidx.compose.animation.core.EaseOut
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -13,6 +20,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -229,6 +237,7 @@ fun MatchScreen() {
     var best by remember { mutableIntStateOf(0) }
     var newBest by remember { mutableStateOf(false) }
     var sharing by remember { mutableStateOf(false) }
+    var started by remember { mutableStateOf(false) }
     val shake = remember { Animatable(0f) }
 
     LaunchedEffect(round) {
@@ -240,7 +249,8 @@ fun MatchScreen() {
     }
     val g = game
     @Suppress("UNUSED_VARIABLE") val v = version
-    LaunchedEffect(g, finished) {
+    LaunchedEffect(g, finished, started) {
+        if (!started) return@LaunchedEffect
         while (g != null && !finished && left > 0 && !g.isEmpty) { delay(1000); left-- }
         if (g != null && !finished) {
             finished = true
@@ -263,6 +273,19 @@ fun MatchScreen() {
             EmptyText("Bu oyun için yeterli kelime yok. Widget'ta bir liste ya da kurs aç.")
             return@PushedScreen
         }
+        if (!started) {
+            Kicker("EŞLEŞTİR · 60 SANİYE")
+            Gap(10.dp)
+            Text(
+                "İngilizce kelimeyi Türkçe anlamıyla eşleştir. Doğru çift gider; üç çift gidince yenileri gelir.",
+                style = KelimeType.ui(17.sp), color = c.ink,
+            )
+            Gap(10.dp)
+            if (best > 0) Text("En iyi skorun: $best", style = KelimeType.ui(14.sp), color = c.ink2)
+            Gap(20.dp)
+            PrimaryButton("Başla") { started = true }
+            return@PushedScreen
+        }
         if (finished) {
             Kicker("SÜRE BİTTİ")
             Gap(8.dp)
@@ -275,7 +298,7 @@ fun MatchScreen() {
             Gap(18.dp)
             PrimaryButton("Sonucu paylaş") { sharing = true }
             Gap(8.dp)
-            TintedButton("Bir tur daha") { round++ }
+            TintedButton("Bir tur daha") { round++; started = true }
             Gap(8.dp)
             TintedButton("Bitti") { router.back() }
             if (sharing) ShareCardSheet(ShareCard.Content.Game("Eşleştir", "${g.score}", "60 saniyede ${g.score} doğru eşleşme")) { sharing = false }
@@ -291,25 +314,48 @@ fun MatchScreen() {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 g.left.forEachIndexed { i, card ->
                     val shaking = miss?.first == i
-                    MatchTile(card?.word, english = true, selected = picked == i, wrong = shaking,
+                    MatchSlot(card, "-en", card?.word, english = true, selected = picked == i, wrong = shaking,
                         modifier = if (shaking) Modifier.offset { IntOffset(shake.value.toInt(), 0) } else Modifier) {
-                        if (card != null) picked = i
+                        picked = i
                     }
                 }
             }
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 g.right.forEachIndexed { j, card ->
                     val shaking = miss?.second == j
-                    MatchTile(card?.meaning, english = false, selected = false, wrong = shaking,
+                    MatchSlot(card, "-tr", card?.primaryMeaning, english = false, selected = false, wrong = shaking,
                         modifier = if (shaking) Modifier.offset { IntOffset(shake.value.toInt(), 0) } else Modifier) {
-                        val i = picked ?: return@MatchTile
-                        if (card == null) return@MatchTile
+                        val i = picked ?: return@MatchSlot
                         if (g.pair(i, j)) haptics.performHapticFeedback(HapticFeedbackType.TextHandleMove) else miss = i to j
                         picked = null
                         version++
                     }
                 }
             }
+        }
+    }
+}
+
+/**
+ * One place on the board, a fixed 68 dp high. A matched card fades out in 0.3 s (ease-out) and
+ * the place stays empty; a dealt card waits 0.25 s and fades in over 0.45 s (ease-in). The key is
+ * the tile id (card id + "-en" / "-tr").
+ */
+@Composable
+private fun MatchSlot(card: com.enesseval.kilitkelime.core.model.Card?, side: String, text: String?, english: Boolean, selected: Boolean, wrong: Boolean, modifier: Modifier, onClick: () -> Unit) {
+    AnimatedContent(
+        targetState = card,
+        contentKey = { it?.id?.plus(side) },
+        transitionSpec = {
+            fadeIn(tween(450, delayMillis = 250, easing = EaseIn)) togetherWith fadeOut(tween(300, easing = EaseOut))
+        },
+        label = "match-slot",
+        modifier = Modifier.fillMaxWidth().height(68.dp),
+    ) { shown ->
+        if (shown == null) {
+            Box(Modifier.fillMaxWidth().height(68.dp))
+        } else {
+            MatchTile(text, english, selected, wrong, modifier, onClick)
         }
     }
 }
@@ -324,7 +370,7 @@ private fun MatchTile(text: String?, english: Boolean, selected: Boolean, wrong:
         else -> Triple(c.surface, c.line, c.ink)
     }
     Box(
-        modifier.fillMaxWidth().heightIn(min = 60.dp).clip(RoundedCornerShape(14.dp)).background(bg).border(1.dp, border, RoundedCornerShape(14.dp))
+        modifier.fillMaxWidth().height(68.dp).clip(RoundedCornerShape(14.dp)).background(bg).border(1.dp, border, RoundedCornerShape(14.dp))
             .clickable(enabled = text != null, onClick = onClick).padding(horizontal = 10.dp, vertical = 8.dp),
         contentAlignment = Alignment.Center,
     ) {

@@ -251,7 +251,7 @@ gösterir.
 - [ ] Günün Bulmacası: yazma, silme, kesişimde yön değişimi, Harf aç / Kontrol et / Göster, süre, bitiş ekranı
 - [ ] Kelime Avı: 8×8 (360 dp altı telefonda 7×7), Türkçe anlamlar listede, sürükleyerek bulma, doğru seçimde titreşim
 - [ ] "İlk harfi göster" ilk harfi parlatıyor; o kelime zorlanılana geçiyor; sonuç ekranında süre ve ipucu sayısı
-- [ ] Eşleştir: 60 sn, 5 + 5 kart, doğru çift yerine yenisi geliyor, yanlışta kartlar sallanıyor (amber, asla kırmızı), en iyi skor
+- [ ] Eşleştir: başlangıç metni görünüyor; 60 sn, 5 + 5 kart, hiçbir kelimenin iki yarısı aynı satırda değil; doğru çift yavaşça kayboluyor ve yeri boş kalıyor; 3 çift gidince 3 yeni kelime rastgele yerlere geliyor; yanlışta kartlar sallanıyor (amber, asla kırmızı); en iyi skor
 - [ ] Sonuç kartları (bulmaca ızgarası yeşil/amber, oyun skorları, seri 7/30/100) paylaşılıyor; kartta mağaza linki yok
 - [ ] Seri: Hızlı Tekrar bitince, bulmacada 1 kelime çözünce ya da oyun bitince bugün sayılıyor; widget'tan Biliyorum demek saymıyor
 - [ ] Bugün'de "🔒 N gün" rozeti; bugün çalışılmadıysa amber; dokununca seri sayfası (5 hafta, koruyucu günü kesik çizgili)

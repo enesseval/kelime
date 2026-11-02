@@ -84,7 +84,7 @@ Android'in kuralı esas alındı (Streak.kt / StreakTest). Not: iOS'ta iki fark 
 - Testler: `yesterdayMissedIsFrozenWhileTodayIsOpen`, `freezesRenewEveryMonday`,
   `oneMissedDayIsFrozenOncePerWeek` (iOS `V11Tests`), Android `StreakTest`.
 
-### 2026-11-02 · Eşleştir: boşalan yerler üçer üçer dolar · iOS [x] Android [ ]
+### 2026-11-02 · Eşleştir: boşalan yerler üçer üçer dolar · iOS [x] Android [x]
 **Hata (iOS build 29):** Eşleşen çiftin yerine hemen yeni kart geliyordu ve iki yeni kart çoğu
 zaman birbirinin eşiydi. Aynı iki satıra (ör. Türkçe 2, İngilizce 4) basarak sürekli doğru
 yapılabiliyordu. Android'deki "doğru çift kaybolur, yerine yenisi gelir" davranışı da bu yüzden
@@ -123,3 +123,6 @@ kelimeyi bir kez zorlanılana yazar, ilk denemede eşleşen doğru sayılır, en
 
 **iOS dosyaları:** `Packages/KelimeCore/Sources/KelimeCore/Games/MatchGame.swift`,
 `App/Games/GameViews.swift` (MatchView).
+
+**Android dosyaları:** `android/core/.../games/Games.kt` (`MatchGame`, `REFILL_AT = 3`),
+`android/app/.../ui/games/GameScreens.kt` (`MatchSlot`). Testler `GamesTest`: üçü de taşındı.

@@ -9,7 +9,9 @@ import com.enesseval.kilitkelime.core.games.MatchGame
 import com.enesseval.kilitkelime.core.games.WordHunt
 import com.enesseval.kilitkelime.core.learning.LearningStore
 import com.enesseval.kilitkelime.core.learning.SeededGenerator
+import com.enesseval.kilitkelime.core.model.CEFRLevel
 import com.enesseval.kilitkelime.core.model.Card
+import com.enesseval.kilitkelime.core.model.PartOfSpeech
 import com.enesseval.kilitkelime.core.model.CardState
 import com.enesseval.kilitkelime.core.model.LearningState
 import com.enesseval.kilitkelime.core.queries.StatsQueries
@@ -81,31 +83,73 @@ class GamesTest {
         assertNull(WordHunt.make(listOf(TestSupport.card("cat")), SeededGenerator(1u)))
     }
 
-    @Test fun matchRefillsTheBoardAndScoresPairs() {
+    private fun matchCard(i: Int) = Card("c$i", "word$i", PartOfSpeech.NOUN, CEFRLevel.A1, listOf("anlam$i"), "", "")
+
+    @Test fun matchGameScoresAndMisses() {
+        val game = MatchGame((0 until 7).map(::matchCard), SeededGenerator(1u))
+        val en1 = game.left.indexOfFirst { it?.id == "c1" }
+        val tr0 = game.right.indexOfFirst { it?.id == "c0" }
+        val en0 = game.left.indexOfFirst { it?.id == "c0" }
+        assertFalse(game.pair(en1, tr0))
+        assertTrue(game.pair(en0, tr0))
+        assertEquals(1, game.score)
+        assertEquals(listOf("c0"), game.firstTry)
+        assertEquals(setOf("c1"), game.missedIDs)
+        // The matched places stay empty until three are gone.
+        assertNull(game.left[en0])
+        assertNull(game.right[tr0])
+    }
+
+    @Test fun noPairStartsOnTheSameRow() {
+        for (seed in 0uL until 200uL) {
+            val game = MatchGame((0 until 10).map(::matchCard), SeededGenerator(seed))
+            for (i in game.left.indices) assertTrue("seed $seed", game.left[i]?.id != game.right[i]?.id)
+        }
+    }
+
+    /** iOS build 29 bug: a matched place refilled at once, so the newest cards were easy to spot. */
+    @Test fun matchedSlotsRefillInBatches() {
+        for (seed in 0uL until 50uL) {
+            val game = MatchGame((0 until 30).map(::matchCard), SeededGenerator(seed))
+            var rounds = 0
+            while (!game.isEmpty && rounds < 200) {
+                rounds++
+                val i = game.left.indexOfFirst { en -> en != null && game.right.any { it?.id == en.id } }
+                if (i < 0) break
+                val card = game.left[i]!!
+                val j = game.right.indexOfFirst { it?.id == card.id }
+                val before = game.left.mapNotNull { it?.id }.toSet()
+                assertTrue(game.pair(i, j))
+                val empty = game.left.count { it == null }
+                assertTrue("seed $seed round $rounds", empty < MatchGame.REFILL_AT || game.score > 25)
+                for (k in game.left.indices) {
+                    val c = game.left[k] ?: continue
+                    if (c.id in before) continue
+                    assertTrue("seed $seed round $rounds", game.right[k]?.id != c.id)
+                }
+            }
+            assertEquals("seed $seed", 30, game.score)
+            assertTrue(game.isEmpty)
+        }
+    }
+
+    @Test fun matchRecordsLearningAndTheBestScore() {
         val db = TestSupport.bundled()
         val pool = GameWords.pick(db, SeededGenerator(2u), 8)
         val game = MatchGame(pool, SeededGenerator(3u))
-        assertEquals(pool.take(5), game.left)
-        assertEquals(pool.take(5).toSet(), game.right.filterNotNull().toSet())
-        // A wrong pair: the word becomes missed.
         val word = game.left[0]!!
-        val wrongIndex = game.right.indexOfFirst { it != null && it.id != word.id }
-        assertFalse(game.pair(0, wrongIndex))
-        // Correct pairs: a new pair fills both freed places.
+        assertFalse(game.pair(0, game.right.indexOfFirst { it != null && it.id != word.id }))
         assertTrue(game.pair(0, game.right.indexOf(word)))
-        assertEquals(pool[5], game.left[0])
-        assertTrue(pool[5] in game.right)
-        repeat(7) {
-            val i = game.left.indexOfFirst { it != null }
+        while (!game.isEmpty) {
+            val i = game.left.indexOfFirst { en -> en != null && game.right.any { it?.id == en.id } }
+            if (i < 0) break
             game.pair(i, game.right.indexOf(game.left[i]))
         }
-        assertTrue(game.isEmpty)
         assertEquals(8, game.score)
         assertTrue(game.record(55, clock, db))
         assertEquals(LearningState.STRUGGLING, LearningStore.state(word.id, db).state)
-        assertEquals(LearningState.LEARNED, LearningStore.state(pool[1].id, db).state)
+        assertEquals(LearningState.LEARNED, LearningStore.state(game.firstTry.first(), db).state)
         assertEquals(8, GameResults.best(Game.MATCH, db))
         assertEquals(1, db.int("SELECT COUNT(*) FROM streak_day WHERE source = 'match'"))
-        assertEquals(LocalDate.of(2026, 10, 14), clock.today)
     }
 }
