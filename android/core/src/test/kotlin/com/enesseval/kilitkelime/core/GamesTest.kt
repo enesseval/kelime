@@ -41,7 +41,7 @@ class GamesTest {
         assertEquals(meanings.sumOf { it.size }, meanings.flatten().toSet().size)
     }
 
-    @Test fun wordHuntHidesForwardWordsOfThreeToEightLetters() {
+    @Test fun wordHuntHidesForwardWordsUpToSizeMinusOne() {
         val db = TestSupport.bundled()
         for (size in listOf(WordHunt.SIZE, WordHunt.SMALL_SIZE)) for (seed in 0uL until 40uL) {
             val rng = SeededGenerator(seed)
@@ -51,7 +51,10 @@ class GamesTest {
             assertEquals(size * size, hunt.letters.size)
             assertTrue(hunt.words.size in 3..WordHunt.WORDS)
             for (w in hunt.words) {
-                assertTrue(w.answer.length in 3..minOf(8, size))
+                assertTrue(w.answer.length in 3..size - 1)
+                assertEquals(w, hunt.spelled(w.cells))
+                assertEquals(w, hunt.spelled(w.cells.reversed()))
+                assertNull(hunt.spelled(w.cells, skip = setOf(w.card.id)))
                 assertTrue("forwards only", w.dRow >= 0 && w.dCol >= 0)
                 assertEquals(w.answer, w.cells.joinToString("") { (r, c) -> hunt.letter(r, c).toString() })
                 assertEquals(w, hunt.match(w.cells.last(), w.cells.first()))
@@ -59,6 +62,11 @@ class GamesTest {
             }
             assertTrue(hunt.letters.all { it in 'A'..'Z' })
         }
+        assertEquals(10, WordHunt.SIZE)
+        assertEquals(9, WordHunt.SMALL_SIZE)
+        assertTrue(WordHunt.usable(TestSupport.card("abcdefghi"), 10))
+        assertFalse(WordHunt.usable(TestSupport.card("abcdefghi"), 9))
+        assertFalse(WordHunt.usable(TestSupport.card("abcdefghij"), 10))
     }
 
     @Test fun wordHuntIsDeterministicForASeed() {
@@ -92,6 +100,9 @@ class GamesTest {
         val en1 = game.left.indexOfFirst { it?.id == "c1" }
         val tr0 = game.right.indexOfFirst { it?.id == "c0" }
         val en0 = game.left.indexOfFirst { it?.id == "c0" }
+        assertFalse(game.isMatch(en1, tr0))
+        assertTrue(game.isMatch(en0, tr0))
+        assertEquals(0, game.score) // isMatch does not play the pair
         assertFalse(game.pair(en1, tr0))
         assertTrue(game.pair(en0, tr0))
         assertEquals(1, game.score)

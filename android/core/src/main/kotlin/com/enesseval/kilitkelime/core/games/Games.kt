@@ -74,8 +74,8 @@ object GameResults {
 }
 
 /**
- * Kelime Avı: a word search. An 8 × 8 grid (7 × 7 on small screens) hides up to 6 words of 3–8
- * plain letters across, down or diagonally, always read forwards. The clues are the Turkish
+ * Kelime Avı: a word search. A 10 × 10 grid (9 × 9 on small screens) hides up to 6 words of 3 to
+ * (size − 1) plain letters across, down or diagonally, always read forwards (docs/SYNC.md). The clues are the Turkish
  * meanings. Deterministic for a seeded [RandomSource].
  */
 data class WordHunt(val size: Int, val letters: List<Char>, val words: List<Placed>) {
@@ -92,6 +92,19 @@ data class WordHunt(val size: Int, val letters: List<Char>, val words: List<Plac
         (w.cells.first() == start && w.cells.last() == end) || (w.cells.first() == end && w.cells.last() == start)
     }
 
+    /**
+     * The word a dragged line spells (as iOS `placement(spelledBy:)`): its own placement, or another
+     * line that happens to spell a hidden word in either direction (filler letters can repeat one).
+     * Words in [skip] (already found) are left out.
+     */
+    fun spelled(cells: List<Pair<Int, Int>>, skip: Set<String> = emptySet()): Placed? {
+        if (cells.size < 2) return null
+        match(cells.first(), cells.last())?.takeIf { it.card.id !in skip && it.cells.size == cells.size }?.let { return it }
+        val forward = cells.joinToString("") { (r, c) -> letter(r, c).toString() }
+        val backward = forward.reversed()
+        return words.firstOrNull { it.card.id !in skip && (it.answer == forward || it.answer == backward) }
+    }
+
     /** What a finished round teaches: hinted words were already recorded as hints. */
     fun record(found: Set<String>, hinted: Set<String>, seconds: Int, clock: AppClock, db: SqlDb): Boolean = db.transaction {
         for (w in words) if (w.card.id in found && w.card.id !in hinted) {
@@ -101,14 +114,16 @@ data class WordHunt(val size: Int, val letters: List<Char>, val words: List<Plac
     }
 
     companion object {
-        const val SIZE = 8
-        const val SMALL_SIZE = 7
+        const val SIZE = 10
+        const val SMALL_SIZE = 9
         const val WORDS = 6
         const val MIN_LENGTH = 3
-        const val MAX_LENGTH = 8
         private val directions = listOf(0 to 1, 1 to 0, 1 to 1)
 
-        fun usable(card: Card, size: Int = SIZE) = card.isSingleWord && card.word.length in MIN_LENGTH..minOf(MAX_LENGTH, size)
+        /** Words of 3 to (size − 1) letters: up to 9 on 10 × 10, 8 on 9 × 9. */
+        fun maxLength(size: Int) = size - 1
+
+        fun usable(card: Card, size: Int = SIZE) = card.isSingleWord && card.word.length in MIN_LENGTH..maxLength(size)
 
         fun make(cards: List<Card>, rng: RandomSource, size: Int = SIZE, wordCount: Int = WORDS): WordHunt? {
             val grid = arrayOfNulls<Char>(size * size)
@@ -176,14 +191,21 @@ class MatchGame(cards: List<Card>, private val rng: RandomSource, val boardSize:
     val firstTry: List<String> get() = firstTryIDs
     val isEmpty: Boolean get() = left.all { it == null } && right.all { it == null }
 
+    /** Whether the word at [leftIndex] and the meaning at [rightIndex] match, without playing them. */
+    fun isMatch(leftIndex: Int, rightIndex: Int): Boolean {
+        val en = left.getOrNull(leftIndex) ?: return false
+        val tr = right.getOrNull(rightIndex) ?: return false
+        return en.id == tr.id || Card.normalizedMeanings(en.tr) == Card.normalizedMeanings(tr.tr)
+    }
+
     /**
      * Pairs the word at [leftIndex] with the meaning at [rightIndex]; true when right. Two cards
      * sharing a meaning count as a match too; their other halves then match each other.
      */
     fun pair(leftIndex: Int, rightIndex: Int): Boolean {
         val en = left.getOrNull(leftIndex) ?: return false
-        val tr = right.getOrNull(rightIndex) ?: return false
-        if (en.id == tr.id || Card.normalizedMeanings(en.tr) == Card.normalizedMeanings(tr.tr)) {
+        if (right.getOrNull(rightIndex) == null) return false
+        if (isMatch(leftIndex, rightIndex)) {
             matched += en.id
             if (en.id !in missed) firstTryIDs += en.id
             left[leftIndex] = null

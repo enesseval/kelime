@@ -41,7 +41,7 @@ dalında sürer.
 
 ## Bilinçli farklar
 
-- Kelime Avı küçük ızgara eşiği: iOS 380 pt altı, Android 360 dp altı 7×7 (iki platformun
+- Kelime Avı küçük ızgara eşiği: iOS 380 pt altı, Android 360 dp altı 9×9 (iki platformun
   yaygın dar ekranlarına göre).
 - Gösterim kaydı tablosu: iOS `shown_log`, Android `widget_shown`. Veri cihazda kalır, ad farkı
   sorun değil.
@@ -51,7 +51,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [ ]
+### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [x]
 - Izgara **10×10**; dar ekranda (iOS 380 pt, Android 360 dp altı) **9×9**. Kelime uzunluğu
   3 ile (boyut − 1) harf arası, yani 9 ya da 8 harfe kadar. Kelime sayısı 6.
 - Görünüm sadeleşti:
@@ -63,8 +63,11 @@ dalında sürer.
   - İpucu, ilk harfin altında amber bir daire.
   - Şeritler 0,25 sn'de belirir.
 - Android'de Canvas'ta `drawLine(cap = StrokeCap.Round)` ile aynısı yapılır.
+- Android: `WordHunt.SIZE = 10`, `SMALL_SIZE = 9`, `maxLength(size) = size − 1`; sürüklenen çizgi
+  iOS'taki gibi kelimeyi her iki yönde de heceliyorsa sayılır (`WordHunt.spelled`). Görünüm
+  `GameScreens.kt` › `Board` (Canvas `drawLine`, `StrokeCap.Round`). Test: `GamesTest`.
 
-### 2026-11-02 · Eşleştir: doğru ve yanlış belirgin · iOS [x] Android [ ]
+### 2026-11-02 · Eşleştir: doğru ve yanlış belirgin · iOS [x] Android [x]
 - **Doğru çift:**
   - İki kart da yeşil olur (zemin yeşil, 2'lik yeşil çerçeve, yazı koyu yeşil).
   - Yazının önüne ✓ gelir ve kart %5 büyür (yaylanarak).
@@ -77,7 +80,8 @@ dalında sürer.
   - İkisi birlikte iki kez sağa sola sallanır: 7 pt, 0,4 sn.
   - 0,65 sn sonra normale döner. Hata titreşimi verilir.
 - Süre dolarken bekleyen eşleşme varsa önce o sayılır.
-
+- Android: `MatchGame.isMatch` doğru çifti oynamadan sınar; ekran 0,42 sn sonra (ya da sonraki
+  dokunuşta, ya da süre bitince) `pair` ile işler. Titreşim: doğruda `Confirm`, yanlışta `Reject`.
 
 ### 2026-11-02 · Oyunlar Bugün'den çıktı, Oyna'da 4 eşit kart · iOS [x] Android [x]
 - **Bugün:** Hızlı Tekrar ve Günün Bulmacası kartları kaldırıldı; Bugün'de hiçbir oyun yok.

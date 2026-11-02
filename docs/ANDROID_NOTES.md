@@ -84,13 +84,15 @@ for compile fixes and a first run before device testing.
    - *Haftalık özet*: opens once on the first Monday visit and from Bugün's Monday card: learned,
      struggling, words the lock screen showed (new `widget_shown` table, filled when a slot is
      counted), Quick Review accuracy, streak, word of the week; Paylaş makes the 9:16 card.
-   - *Kelime Avı*: 8×8 (7×7 under 360 dp), 6 words of 3–8 letters across, down or diagonally,
-     never backwards; Turkish meanings as clues; "İlk harfi göster" lights the first letter and
-     counts as a hint (word → zorlanılan); unhinted words count as correct.
-   - *Eşleştir*: 60 seconds, 5 + 5 cards, no card starts with both halves on one row; a matched pair
-     fades out (0.3 s) and leaves its places empty; once three places per side are empty the next
-     three cards fade in (0.25 s delay, 0.45 s) at random places, never with both halves on one row.
-     A wrong pair shakes and makes the word zorlanılan; best score kept (see docs/SYNC.md).
+   - *Kelime Avı*: 10×10 (9×9 under 360 dp), 6 words of 3 to (size − 1) letters across, down or
+     diagonally, never backwards; letters on one card, found words marked by a round-capped green
+     band, the drag by a blue band, a hint by an amber circle; Turkish meanings as clues;
+     "İlk harfi göster" counts as a hint (word → zorlanılan); unhinted words count as correct.
+   - *Eşleştir*: 60 seconds, 5 + 5 cards, no card starts with both halves on one row. A right pair
+     turns green with ✓ and grows 5 % for 0.42 s, then fades out (0.3 s) and leaves its places
+     empty; once three places per side are empty the next three cards fade in (0.25 s delay,
+     0.45 s) at random places. A wrong pair turns amber with ✕, shakes twice (7 dp, 0.4 s) and is
+     back to normal after 0.65 s; the English word becomes zorlanılan. Best score kept.
    - *Share cards*: every card is 1080×1920 in Açık / Koyu / Mavi with "Kilit ekranında İngilizce"
      and no store link: word, puzzle result (unsolved-letter grid, green = unaided, amber = hint),
      game results, weekly summary, streak milestones (7, 30, 100).

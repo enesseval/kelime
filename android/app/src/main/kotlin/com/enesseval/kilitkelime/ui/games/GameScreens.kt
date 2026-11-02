@@ -1,6 +1,14 @@
 package com.enesseval.kilitkelime.ui.games
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.ui.draw.scale
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.animation.core.AnimationVector1D
+import androidx.compose.foundation.Canvas
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.EaseIn
 import androidx.compose.animation.core.EaseOut
@@ -86,14 +94,13 @@ fun WordHuntScreen() {
     val c = Palette.current
     val haptics = LocalHapticFeedback.current
     val scope = rememberCoroutineScope()
+    // 10 × 10, 9 × 9 under 360 dp (docs/SYNC.md).
     val size = if (LocalConfiguration.current.screenWidthDp < 360) WordHunt.SMALL_SIZE else WordHunt.SIZE
     var hunt by remember { mutableStateOf<WordHunt?>(null) }
     var loaded by remember { mutableStateOf(false) }
     var round by remember { mutableIntStateOf(0) }
     var found by remember { mutableStateOf(setOf<String>()) }
     var hinted by remember { mutableStateOf(setOf<String>()) }
-    var start by remember { mutableStateOf<Pair<Int, Int>?>(null) }
-    var end by remember { mutableStateOf<Pair<Int, Int>?>(null) }
     var seconds by remember { mutableIntStateOf(0) }
     var recorded by remember { mutableStateOf(false) }
     var sharing by remember { mutableStateOf(false) }
@@ -144,48 +151,13 @@ fun WordHuntScreen() {
         }
         Text("Türkçesine bakıp İngilizcesini bul: harflerin üstünde parmağını kaydır.", style = KelimeType.ui(14.sp), color = c.ink2)
         Gap(12.dp)
-        val selection = remember(start, end) { line(start, end) }
-        val glowing = h.words.filter { it.card.id in hinted && it.card.id !in found }.map { it.firstCell }.toSet()
-        BoxWithConstraints(Modifier.fillMaxWidth().aspectRatio(1f)) {
-            val cellPx = constraints.maxWidth / h.size.toFloat()
-            fun cellAt(x: Float, y: Float) = (y / cellPx).toInt().coerceIn(0, h.size - 1) to (x / cellPx).toInt().coerceIn(0, h.size - 1)
-            Column(
-                Modifier.fillMaxSize().pointerInput(h) {
-                    detectDragGestures(
-                        onDragStart = { o -> start = cellAt(o.x, o.y); end = start },
-                        onDrag = { change, _ -> end = cellAt(change.position.x, change.position.y) },
-                        onDragEnd = {
-                            val s = start; val e = end
-                            val word = if (s != null && e != null) h.match(s, e) else null
-                            if (word != null && word.card.id !in found) {
-                                found = found + word.card.id
-                                haptics.performHapticFeedback(HapticFeedbackType.LongPress)
-                            }
-                            start = null; end = null
-                        },
-                    )
-                },
-            ) {
-                val foundCells = h.words.filter { it.card.id in found }.flatMap { it.cells }.toSet()
-                for (r in 0 until h.size) {
-                    Row(Modifier.weight(1f)) {
-                        for (col in 0 until h.size) {
-                            val p = r to col
-                            val bg = when {
-                                p in selection -> c.accentSoft
-                                p in foundCells -> c.greenBackground
-                                p in glowing -> c.amberBackground
-                                else -> c.surface
-                            }
-                            Box(Modifier.weight(1f).fillMaxSize().padding(1.5.dp).clip(RoundedCornerShape(6.dp)).background(bg)
-                                .border(if (p in glowing) 2.dp else 0.dp, if (p in glowing) c.amber else c.surface, RoundedCornerShape(6.dp)), contentAlignment = Alignment.Center) {
-                                Text(h.letter(r, col).toString(), style = KelimeType.ui(20.sp, FontWeight.SemiBold), color = if (p in foundCells) c.greenInk else c.ink)
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        Board(
+            h, found, hinted,
+            onFound = { word ->
+                found = found + word.card.id
+                haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+            },
+        )
         Gap(16.dp)
         Kicker("ANLAMLAR · ${found.size}/${h.words.size}")
         Gap(6.dp)
@@ -206,14 +178,93 @@ fun WordHuntScreen() {
     }
 }
 
-/** Cells on the straight line (across, down or diagonal) from [a] to [b]; just [a] otherwise. */
-private fun line(a: Pair<Int, Int>?, b: Pair<Int, Int>?): Set<Pair<Int, Int>> {
-    if (a == null || b == null) return emptySet()
+/**
+ * The Kelime Avı board (docs/SYNC.md): the letters on one white card (corner 20, hairline, 8 dp
+ * inset). Found words get a round-capped green band under their letters (32 % opacity, 80 % of a
+ * cell thick) and dark green bold letters; the drag draws the same band in blue (35 %), a miss
+ * flashes it amber; a hint is an amber circle under the first letter. Bands fade in over 0.25 s.
+ */
+@Composable
+private fun Board(hunt: WordHunt, found: Set<String>, hinted: Set<String>, onFound: (WordHunt.Placed) -> Unit) {
+    val c = Palette.current
+    var start by remember { mutableStateOf<Pair<Int, Int>?>(null) }
+    var end by remember { mutableStateOf<Pair<Int, Int>?>(null) }
+    var miss by remember { mutableStateOf<List<Pair<Int, Int>>?>(null) }
+    val appear = remember(hunt) { mutableStateMapOf<String, Animatable<Float, AnimationVector1D>>() }
+    LaunchedEffect(found) {
+        for (id in found) if (id !in appear) {
+            val anim = Animatable(0f)
+            appear[id] = anim
+            launch { anim.animateTo(1f, tween(250)) }
+        }
+    }
+    LaunchedEffect(miss) {
+        if (miss != null) { delay(350); miss = null }
+    }
+    val selection = line(start, end)
+    val foundCells = hunt.words.filter { it.card.id in found }.flatMap { it.cells }.toSet()
+    val hintCells = hunt.words.filter { it.card.id in hinted && it.card.id !in found }.map { it.firstCell }.toSet()
+    Box(
+        Modifier.fillMaxWidth().aspectRatio(1f).clip(RoundedCornerShape(20.dp)).background(c.surface)
+            .border(1.dp, c.line, RoundedCornerShape(20.dp)).padding(8.dp),
+    ) {
+        BoxWithConstraints(Modifier.fillMaxSize()) {
+            val cellPx = constraints.maxWidth / hunt.size.toFloat()
+            fun cellAt(x: Float, y: Float) = (y / cellPx).toInt().coerceIn(0, hunt.size - 1) to (x / cellPx).toInt().coerceIn(0, hunt.size - 1)
+            fun center(p: Pair<Int, Int>) = Offset((p.second + 0.5f) * cellPx, (p.first + 0.5f) * cellPx)
+            Canvas(Modifier.fillMaxSize()) {
+                val width = cellPx * 0.8f
+                fun band(cells: List<Pair<Int, Int>>, color: androidx.compose.ui.graphics.Color) {
+                    if (cells.isEmpty()) return
+                    drawLine(color, center(cells.first()), center(cells.last()), strokeWidth = width, cap = StrokeCap.Round)
+                }
+                for (w in hunt.words) if (w.card.id in found) band(w.cells, c.green.copy(alpha = 0.32f * (appear[w.card.id]?.value ?: 1f)))
+                for (p in hintCells) drawCircle(c.amber.copy(alpha = 0.45f), radius = width / 2, center = center(p))
+                miss?.let { band(it, c.amber.copy(alpha = 0.35f)) }
+                if (selection.size > 0) band(selection, c.accent.copy(alpha = 0.35f))
+            }
+            Column(
+                Modifier.fillMaxSize().pointerInput(hunt, found) {
+                    detectDragGestures(
+                        onDragStart = { o -> start = cellAt(o.x, o.y); end = start },
+                        onDrag = { change, _ -> end = cellAt(change.position.x, change.position.y) },
+                        onDragEnd = {
+                            val cells = line(start, end)
+                            val word = hunt.spelled(cells, skip = found)
+                            if (word != null) onFound(word) else if (cells.size > 1) miss = cells
+                            start = null; end = null
+                        },
+                        onDragCancel = { start = null; end = null },
+                    )
+                },
+            ) {
+                for (r in 0 until hunt.size) {
+                    Row(Modifier.weight(1f)) {
+                        for (col in 0 until hunt.size) {
+                            val inFound = (r to col) in foundCells
+                            Box(Modifier.weight(1f).fillMaxSize(), contentAlignment = Alignment.Center) {
+                                Text(
+                                    hunt.letter(r, col).toString(),
+                                    style = KelimeType.ui(if (hunt.size >= 10) 17.sp else 19.sp, if (inFound) FontWeight.Bold else FontWeight.Medium),
+                                    color = if (inFound) c.greenInk else c.ink,
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** Cells on the straight line (row, column or 45°) from [a] to [b] in order; just [a] otherwise. */
+private fun line(a: Pair<Int, Int>?, b: Pair<Int, Int>?): List<Pair<Int, Int>> {
+    if (a == null || b == null) return emptyList()
     val dr = b.first - a.first
     val dc = b.second - a.second
-    if (dr != 0 && dc != 0 && abs(dr) != abs(dc)) return setOf(a)
+    if (dr != 0 && dc != 0 && abs(dr) != abs(dc)) return listOf(a)
     val steps = maxOf(abs(dr), abs(dc))
-    return (0..steps).map { (a.first + Integer.signum(dr) * it) to (a.second + Integer.signum(dc) * it) }.toSet()
+    return (0..steps).map { (a.first + Integer.signum(dr) * it) to (a.second + Integer.signum(dc) * it) }
 }
 
 /**
@@ -232,6 +283,9 @@ fun MatchScreen() {
     var version by remember { mutableIntStateOf(0) }
     var picked by remember { mutableStateOf<Int?>(null) }
     var miss by remember { mutableStateOf<Pair<Int, Int>?>(null) }
+    /** A right pair shown green for 0.42 s before it leaves the board. */
+    var correct by remember { mutableStateOf<Pair<Int, Int>?>(null) }
+    val scope = rememberCoroutineScope()
     var left by remember { mutableIntStateOf(MatchGame.SECONDS) }
     var finished by remember { mutableStateOf(false) }
     var best by remember { mutableIntStateOf(0) }
@@ -245,13 +299,22 @@ fun MatchScreen() {
         val pool = app.model.read { db -> GameWords.pick(db, rng, MatchGame.POOL, app.model.clock.today) }
         best = app.model.read { db -> GameResults.best(Game.MATCH, db) }
         game = if (pool.size >= 3) MatchGame(pool, rng) else null
-        picked = null; miss = null; left = MatchGame.SECONDS; finished = false; newBest = false; loaded = true
+        picked = null; miss = null; correct = null; left = MatchGame.SECONDS; finished = false; newBest = false; loaded = true
     }
     val g = game
+
+    /** Plays the green pair now: after its 0.42 s, on the next tap, or when time runs out. */
+    fun commitCorrect() {
+        val pair = correct ?: return
+        correct = null
+        g?.pair(pair.first, pair.second)
+        version++
+    }
     @Suppress("UNUSED_VARIABLE") val v = version
     LaunchedEffect(g, finished, started) {
         if (!started) return@LaunchedEffect
         while (g != null && !finished && left > 0 && !g.isEmpty) { delay(1000); left-- }
+        commitCorrect() // a pair still showing green counts
         if (g != null && !finished) {
             finished = true
             newBest = g.score > best
@@ -259,10 +322,11 @@ fun MatchScreen() {
             Analytics.signal(Game.MATCH.signal, mapOf("score" to "${g.score}"))
         }
     }
+    // A wrong pair: both cards shake twice, 7 dp, in 0.4 s, and stay amber for 0.65 s.
     LaunchedEffect(miss) {
         if (miss != null) {
-            for (x in listOf(12f, -12f, 8f, -8f, 0f)) shake.animateTo(x)
-            delay(150)
+            launch { for (x in listOf(7f, -7f, 7f, -7f, 0f)) shake.animateTo(x, tween(80)) }
+            delay(650)
             miss = null
         }
     }
@@ -314,20 +378,40 @@ fun MatchScreen() {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 g.left.forEachIndexed { i, card ->
                     val shaking = miss?.first == i
-                    MatchSlot(card, "-en", card?.word, english = true, selected = picked == i, wrong = shaking,
-                        modifier = if (shaking) Modifier.offset { IntOffset(shake.value.toInt(), 0) } else Modifier) {
-                        picked = i
+                    val green = correct?.first == i
+                    MatchSlot(card, "-en", card?.word, english = true, selected = picked == i, wrong = shaking, right = green,
+                        modifier = if (shaking) Modifier.offset { IntOffset(shake.value.dp.roundToPx(), 0) } else Modifier) {
+                        if (green) return@MatchSlot // green cards do nothing
+                        commitCorrect()
+                        if (g.left.getOrNull(i) != null) picked = i
                     }
                 }
             }
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 g.right.forEachIndexed { j, card ->
                     val shaking = miss?.second == j
-                    MatchSlot(card, "-tr", card?.primaryMeaning, english = false, selected = false, wrong = shaking,
-                        modifier = if (shaking) Modifier.offset { IntOffset(shake.value.toInt(), 0) } else Modifier) {
+                    val green = correct?.second == j
+                    MatchSlot(card, "-tr", card?.primaryMeaning, english = false, selected = false, wrong = shaking, right = green,
+                        modifier = if (shaking) Modifier.offset { IntOffset(shake.value.dp.roundToPx(), 0) } else Modifier) {
+                        if (green) return@MatchSlot
+                        commitCorrect()
                         val i = picked ?: return@MatchSlot
-                        if (g.pair(i, j)) haptics.performHapticFeedback(HapticFeedbackType.TextHandleMove) else miss = i to j
                         picked = null
+                        if (g.right.getOrNull(j) == null || g.left.getOrNull(i) == null) return@MatchSlot
+                        if (g.isMatch(i, j)) {
+                            // Right: both cards green with ✓ for 0.42 s, then they leave.
+                            val pair = i to j
+                            correct = pair
+                            haptics.performHapticFeedback(HapticFeedbackType.Confirm)
+                            scope.launch {
+                                delay(420)
+                                if (correct == pair) commitCorrect()
+                            }
+                        } else {
+                            g.pair(i, j) // counts the miss; the board stays
+                            miss = i to j
+                            haptics.performHapticFeedback(HapticFeedbackType.Reject)
+                        }
                         version++
                     }
                 }
@@ -342,7 +426,7 @@ fun MatchScreen() {
  * the tile id (card id + "-en" / "-tr").
  */
 @Composable
-private fun MatchSlot(card: com.enesseval.kilitkelime.core.model.Card?, side: String, text: String?, english: Boolean, selected: Boolean, wrong: Boolean, modifier: Modifier, onClick: () -> Unit) {
+private fun MatchSlot(card: com.enesseval.kilitkelime.core.model.Card?, side: String, text: String?, english: Boolean, selected: Boolean, wrong: Boolean, right: Boolean, modifier: Modifier, onClick: () -> Unit) {
     AnimatedContent(
         targetState = card,
         contentKey = { it?.id?.plus(side) },
@@ -355,25 +439,42 @@ private fun MatchSlot(card: com.enesseval.kilitkelime.core.model.Card?, side: St
         if (shown == null) {
             Box(Modifier.fillMaxWidth().height(68.dp))
         } else {
-            MatchTile(text, english, selected, wrong, modifier, onClick)
+            MatchTile(text, english, selected, wrong, right, modifier, onClick)
         }
     }
 }
 
+private class Look(val bg: androidx.compose.ui.graphics.Color, val border: androidx.compose.ui.graphics.Color, val width: androidx.compose.ui.unit.Dp, val ink: androidx.compose.ui.graphics.Color)
+
+/**
+ * A card. Right: green ground, 2 dp green border, dark green text with ✓, 5 % larger (spring).
+ * Wrong: amber ground, 2 dp amber border, dark amber text with ✕. Never red.
+ */
 @Composable
-private fun MatchTile(text: String?, english: Boolean, selected: Boolean, wrong: Boolean, modifier: Modifier, onClick: () -> Unit) {
+private fun MatchTile(text: String?, english: Boolean, selected: Boolean, wrong: Boolean, right: Boolean, modifier: Modifier, onClick: () -> Unit) {
     val c = Palette.current
-    val (bg, border, ink) = when {
-        text == null -> Triple(c.background, c.line, c.ink2)
-        wrong -> Triple(c.amberBackground, c.amber, c.amberInk)
-        selected -> Triple(c.accentSoft, c.accent, c.ink)
-        else -> Triple(c.surface, c.line, c.ink)
+    val scale by animateFloatAsState(if (right) 1.05f else 1f, spring(dampingRatio = 0.55f), label = "match-scale")
+    val look = when {
+        text == null -> Look(c.background, c.line, 1.dp, c.ink2)
+        right -> Look(c.greenBackground, c.green, 2.dp, c.greenInk)
+        wrong -> Look(c.amberBackground, c.amber, 2.dp, c.amberInk)
+        selected -> Look(c.accentSoft, c.accent, 1.dp, c.ink)
+        else -> Look(c.surface, c.line, 1.dp, c.ink)
+    }
+    val mark = when {
+        right -> "✓ "
+        wrong -> "✕ "
+        else -> ""
     }
     Box(
-        modifier.fillMaxWidth().height(68.dp).clip(RoundedCornerShape(14.dp)).background(bg).border(1.dp, border, RoundedCornerShape(14.dp))
+        modifier.fillMaxWidth().height(68.dp).scale(scale).clip(RoundedCornerShape(14.dp)).background(look.bg)
+            .border(look.width, look.border, RoundedCornerShape(14.dp))
             .clickable(enabled = text != null, onClick = onClick).padding(horizontal = 10.dp, vertical = 8.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Text(text ?: "", style = if (english) KelimeType.english(18.sp) else KelimeType.ui(14.sp, FontWeight.Medium), color = ink, maxLines = 2, textAlign = TextAlign.Center)
+        Text(
+            mark + (text ?: ""), style = if (english) KelimeType.english(18.sp) else KelimeType.ui(14.sp, FontWeight.Medium),
+            color = look.ink, maxLines = 2, textAlign = TextAlign.Center,
+        )
     }
 }
