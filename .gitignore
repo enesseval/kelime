@@ -23,3 +23,5 @@ __pycache__/
 graphify-out/
 site/content/
 docs/store-shots/video/raw.mp4
+node_modules/
+marketing/instagram/frames/

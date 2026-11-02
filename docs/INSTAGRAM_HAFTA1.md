@@ -31,7 +31,7 @@ emin olmadığımız yerde "araştırmalar gösteriyor ki" yerine çalışmanın
 | 2–4 | Aynı hareket, hızlı kesmelerle 4 kez (farklı saatler: 08:12, 12:40, 18:05, 23:30) | "Ve her seferinde…" | Her kesmede saat değişir, sağ üstte sayaç 1→4 |
 | 4–6 | Siyah ekran, tek kelime | **"…hiçbir şey öğrenmiyorsun."** | Yazı büyüyerek gelir, 0,3 sn bekler |
 | 6–11 | Aynı 4 açılış ama bu kez kilit ekranında widget var: *reluctant · isteksiz*, *resilient · dayanıklı*, *entail · gerektirmek*, *hypothesis · hipotez* | "Ya her bakışta bir kelime görseydin?" | Widget kartı her açılışta yakınlaşma (zoom-in) ile vurgulanır |
-| 11–15 | Kelime kartı büyür, ekranın ortasında; altına küçük yazı | **"Bir kelimeyi öğrenmek için onu 6 ile 20 kez görmek gerekiyor."** + küçük: *Uchihara, Webb & Yanagisawa, 2019 (meta-analiz)* | Sayı "6–20" sayaç gibi döner |
+| 11–15 | Kelime kartı; altında 1×→20× sayacı | **"Bir kez görmek yetmiyor."** · "Bir kelimeyi ne kadar çok görürsen o kadar kalıcı öğreniyorsun." + küçük: *Uchihara, Webb & Yanagisawa, 2019 (meta-analiz)* | Sayaç 1×'ten 20×'e döner |
 | 15–16,5 | Takvim animasyonu, günler hızla akar | "Kilit ekranında bu birkaç günde olur." | Takvim yaprakları |
 | 16,5–18 | Kapanış karesi | "Kilit Kelime · App Store'da" | Logo fade-in |
 
@@ -39,7 +39,7 @@ emin olmadığımız yerde "araştırmalar gösteriyor ki" yerine çalışmanın
 ```
 Telefonuna her baktığında bir İngilizce kelime. 🔒
 
-Bir kelimeyi kalıcı öğrenmek için onu birçok kez görmek gerekiyor. Araştırmalar bu sayıyı 6 ile 20+ arasında veriyor (Uchihara, Webb & Yanagisawa, 2019).
+Bir kelimeyi kalıcı öğrenmek için onu bir kez görmek yetmiyor. Araştırmalar, bir kelimeyle ne kadar çok karşılaşırsan o kadar iyi öğrendiğini gösteriyor (Uchihara, Webb & Yanagisawa, 2019).
 
 Kilit Kelime kelimeyi kilit ekranına koyuyor; sen bakıyorsun, o tekrarlanıyor. Uygulamayı açmana gerek yok.
 
@@ -251,19 +251,31 @@ Apple kuralı).
 
 ---
 
-## Senden gereken çekimler (bir kerede)
+## Üretim: her şey hazır dosya
 
-1. **Kilit ekranı açılışları (1. gün Reels):** Widget'sız kilit ekranında ekranı 4 kez uyandır
-   (ekran kaydı, her biri 1 sn). Sonra widget ekleyip aynı hareketi 4 farklı kelimeyle tekrarla.
-   Saat farkı için farklı zamanlarda çekebilirsin ya da ben saat değişimini kurguda yaparım.
-2. **Widget ekleme (4. gün Reels):** Kilit ekranında basılı tut → Özelleştir → widget ekle →
-   Bitti → kilitle/aç → görünüm değiştir. Yavaş ve net, tek kayıt.
-3. **Hızlı Tekrar'da bir yanlış cevap** (3. gün Reels): Elimizdeki kayıtta var, yeterli.
-4. **Kendini sına görünümünde kilit ekranı görüntüsü** (2. gün slayt 7).
+Gerçek çekim yok. Reels'ler ekran görüntüleri ve animasyonla `marketing/instagram/` içinde
+üretiliyor:
+- Hazır dosyalar: `marketing/instagram/out/` (gün gün videolar, slaytlar, hikâyeler,
+  `aciklama.txt`).
+- Paylaşım listesi: `marketing/instagram/out/PAYLASIM.md`.
 
-Kurguyu ben yapamıyorum (video düzenleme senin cihazında, Edits/CapCut ile). Her Reels için
-yukarıdaki tablo saniye saniye kurgu planıdır. Carousel slaytlarını ve hikâye görsellerini
-(PNG, 1080×1350 / 1080×1920) ben üretebilirim; onay verirsen hepsini hazırlarım.
+Senden yalnızca kilit ekranı görüntüleri gerekiyor; uygulama içi ekranlar simülatörden alınıyor.
+`marketing/instagram/shots/` içine konulanlar:
+- `kilit-bos.png`: widget'sız kilit ekranı
+- `kilit-2.png`, `kilit-3.png`, `kilit-4.png`: Kart görünümünde 3 farklı kelime
+- `kilit-sina.png`: "Kendini sına" görünümü
+- `adim-1.png` … `adim-4.png`: widget ekleme adımları
+
+Yeniden üretmek için:
+`cd marketing/instagram && python3 make_words.py && node render.mjs` (yalnızca bir gün:
+`node render.mjs g4`).
+
+Kurgu tablolarındaki küçük farklar:
+- 1. gün: "6–20 kez" rakamı yerine "bir kez görmek yetmiyor" deniyor. Meta-analiz tek bir sayı
+  vermiyor; çalışmalarda 2 ile 20'den fazla arasında değişiyor.
+- 5. gün başlığı: "YDS listemizden 6 kelime". *reluctant* YDS listemizde olmadığı için yerine
+  *plausible* geldi.
+- 4. gün adımları: Özelleştir › Kilit Ekranı › Kilit Kelime › Bitti.
 
 ---
 

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><link rel="stylesheet" href="lib.css"></head>
+<body><div id="root"></div>
+<script src="lib.js"></script><script src="words.js"></script><script src="assets.js"></script>
+<script>
+  const id = new URLSearchParams(location.search).get("id");
+  const a = ASSETS.find(x => x.id === id);
+  const root = document.getElementById("root");
+  root.style.width = a.w + "px"; root.style.height = a.h + "px";
+  window.update = a.build(root) || null;
+  window.assetReady = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))));
+</script></body></html>
