@@ -4,6 +4,9 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -141,11 +144,12 @@ fun WeeklyScreen() {
         Text("kelime öğrendin", style = KelimeType.ui(17.sp, FontWeight.Medium), color = c.ink)
         Gap(16.dp)
         Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            // Equal heights per row: a long label never leaves its neighbour short (docs/SYNC.md).
+            Row(Modifier.height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 Stat("${s.struggling}", "zorlanılan", c.amberInk, Modifier.weight(1f))
-                Stat("${s.shown}", "kilit ekranında", c.ink, Modifier.weight(1f))
+                Stat("${s.shown}", "kelime kilit ekranında göründü", c.ink, Modifier.weight(1f))
             }
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Row(Modifier.height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 Stat(s.quickReviewAccuracy?.let { "%$it" } ?: "—", "Hızlı Tekrar doğruluğu", c.ink, Modifier.weight(1f))
                 Stat("🔒 ${s.streak}", "gün seri", c.greenInk, Modifier.weight(1f))
             }
@@ -177,7 +181,7 @@ fun WeeklyScreen() {
 @Composable
 private fun Stat(value: String, label: String, color: androidx.compose.ui.graphics.Color, modifier: Modifier) {
     val c = Palette.current
-    SurfaceCard(modifier, padding = 14.dp) {
+    SurfaceCard(modifier.fillMaxHeight(), padding = 14.dp) {
         Text(value, style = KelimeType.ui(22.sp, FontWeight.SemiBold), color = color)
         Text(label, style = KelimeType.ui(12.sp), color = c.ink2)
     }

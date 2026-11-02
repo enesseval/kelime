@@ -25,7 +25,13 @@ import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.postgrest.from
 import io.github.jan.supabase.postgrest.postgrest
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import com.enesseval.kilitkelime.core.model.Json
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -37,6 +43,8 @@ import java.security.MessageDigest
 import java.time.Instant
 import java.time.OffsetDateTime
 import java.util.UUID
+
+private val Context.accountStore by preferencesDataStore("account")
 
 /**
  * The optional account (port of `AccountManager.swift`): Google sign-in through Supabase, the
@@ -76,27 +84,59 @@ class AccountManager(private val context: Context, private val model: AppModel, 
         val isSignedIn: Boolean get() = userID != null
     }
 
-    private val _state = MutableStateFlow(State())
+    private val profileKey = stringPreferencesKey("profile")
+
+    /**
+     * The last profile, kept on the device so the Profil tab shows the avatar at launch instead of
+     * a plain person icon until the server answers (docs/SYNC.md). Removed only on sign-out.
+     */
+    private fun cachedProfile(): Profile? = runCatching {
+        runBlocking { context.accountStore.data.first()[profileKey] }?.let { Json.decodeFromString(Profile.serializer(), it) }
+    }.getOrNull()
+
+    private suspend fun cache(profile: Profile?) {
+        runCatching {
+            context.accountStore.edit { p ->
+                if (profile == null) p.remove(profileKey) else p[profileKey] = Json.encodeToString(Profile.serializer(), profile)
+            }
+        }
+    }
+
+    private val _state = MutableStateFlow(cachedProfile().let { State(userID = it?.id, profile = it) })
     val state: StateFlow<State> = _state.asStateFlow()
 
     fun start() {
         model.scope.launch {
             client.auth.sessionStatus.collect { status ->
-                val id = (status as? SessionStatus.Authenticated)?.session?.user?.id
-                sessionChanged(id)
+                when (status) {
+                    is SessionStatus.Authenticated -> sessionChanged(status.session.user?.id)
+                    // Offline or a session being refreshed keeps the stored profile; only signing out clears it.
+                    is SessionStatus.NotAuthenticated -> if (status.isSignOut) sessionChanged(null)
+                    else -> {}
+                }
             }
         }
     }
 
     private suspend fun sessionChanged(id: String?) {
-        if (id == _state.value.userID) return
-        _state.value = _state.value.copy(userID = id, profile = if (id == null) null else _state.value.profile)
-        if (id != null) {
-            purchases.logIn(id.lowercase())
-            loadProfile()
-            sync()
+        if (id == null) {
+            if (_state.value.userID != null) {
+                _state.value = State()
+                cache(null)
+            }
+            activeID = null
+            return
         }
+        // Token refreshes emit Authenticated again: load and sync once per signed-in account.
+        if (id == activeID) return
+        activeID = id
+        _state.value = _state.value.copy(userID = id)
+        purchases.logIn(id.lowercase())
+        loadProfile()
+        sync()
     }
+
+    private var activeID: String? = null
 
     // MARK: Google sign-in (Credential Manager → ID token → Supabase)
 
@@ -136,6 +176,8 @@ class AccountManager(private val context: Context, private val model: AppModel, 
         runCatching { client.auth.signOut() }
         purchases.logOut()
         _state.value = State()
+        activeID = null
+        cache(null)
         model.write("sign-out") { db -> ListSync.detach(db) }
     }
 
@@ -157,8 +199,9 @@ class AccountManager(private val context: Context, private val model: AppModel, 
         val id = _state.value.userID ?: return
         val profile = runCatching {
             client.from("profiles").select { filter { eq("id", id) } }.decodeSingle<Profile>()
-        }.getOrNull()
+        }.getOrNull() ?: return // keep the stored profile when offline
         _state.value = _state.value.copy(profile = profile)
+        cache(profile)
     }
 
     @Serializable
@@ -180,6 +223,7 @@ class AccountManager(private val context: Context, private val model: AppModel, 
                 filter { eq("id", id) }
             }.decodeSingle<Profile>()
             _state.value = _state.value.copy(profile = profile)
+            cache(profile)
             null
         } catch (e: Exception) {
             if (e.toString().contains("23505")) "Bu kullanıcı adı alınmış" else "Kaydedilemedi. İnternet bağlantını kontrol et."

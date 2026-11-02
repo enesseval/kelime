@@ -51,7 +51,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-02 · Oyunlar Bugün'den çıktı, Oyna'da 4 eşit kart · iOS [x] Android [ ]
+### 2026-11-02 · Oyunlar Bugün'den çıktı, Oyna'da 4 eşit kart · iOS [x] Android [x]
 - **Bugün:** Hızlı Tekrar ve Günün Bulmacası kartları kaldırıldı; Bugün'de hiçbir oyun yok.
   Kalanlar: seri rozeti, haftalık özet kartı, widget'taki kelime, kaynak satırı, bölüm kartı,
   sınav planı, hafta istatistikleri.
@@ -66,17 +66,21 @@ dalında sürer.
 - Altında tek kartta iki satır (Pro): "Bulmaca arşivi · Geçmiş günlerin bulmacaları" ve "Sana Özel
   Bulmaca · Zorlandığın ve öğrendiğin kelimelerden". Pro değilse sağda PRO rozeti, değilse ok.
 - iOS: `App/MainTabView.swift` (PlayView, PlayData), `App/Today/TodayView.swift`.
+- Android: `ui/play/PlayScreen.kt` (`PlayData`, `GameCard`), `ui/today/TodayScreen.kt`.
 
-### 2026-11-02 · Profil sekmesi simgesi açılışta değişmiyor · iOS [x] Android [ ]
+### 2026-11-02 · Profil sekmesi simgesi açılışta değişmiyor · iOS [x] Android [x]
 Profil sunucudan gelene kadar sekmede düz kişi simgesi görünüp sonra avatara dönüyordu. Profil
 artık cihazda da saklanıyor ve açılışta hemen o gösteriliyor. Çevrimdışıyken ya da oturum
 yenilenirken saklanan profil silinmiyor; yalnızca çıkış yapınca siliniyor. Android'de sekme ya
 da üst çubukta avatar varsa aynısı (DataStore'da profil).
+Android: `AccountManager` profili DataStore'da (`account` / `profile`) saklar; açılışta onu
+gösterir; çevrimdışı ve oturum yenilemede tutar, yalnızca çıkışta (`isSignOut`) siler.
 
-### 2026-11-02 · Haftalık özet kutuları eşit boyda · iOS [x] Android [ ]
+### 2026-11-02 · Haftalık özet kutuları eşit boyda · iOS [x] Android [x]
 Özetteki 2×2 istatistik kutuları aynı satırda aynı yükseklikte; uzun etiket ("kelime kilit
 ekranında göründü") komşusunu kısa bırakmıyor.
-
+Android: `WeeklyScreen` satırları `IntrinsicSize.Min`, kutular `fillMaxHeight`; etiket iOS ile
+aynı: "kelime kilit ekranında göründü".
 
 ### 2026-11-02 · Sürüm numaraları eşit · iOS [x] Android [x]
 Android ilk sürümü 1.0 değil **1.1.0** olarak çıkar: `versionName = "1.1.0"`, `versionCode = 1`

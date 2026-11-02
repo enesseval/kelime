@@ -219,8 +219,6 @@ fun TodayScreen() {
         }
         d.course?.let { CurrentUnitCard(it) }
         d.examPlan?.let { ExamPlanCard(it) }
-        QuickReviewCard(d.strugglingCount)
-        PuzzleCard(d.level, d.puzzle)
         WeekStatsRow(d.stats)
     }
 }
@@ -363,56 +361,6 @@ private fun ExamPlanCard(plan: ExamPlanStatus) {
                         }
                     }
                 }
-            }
-        }
-    }
-}
-
-@Composable
-private fun QuickReviewCard(strugglingCount: Int) {
-    val c = Palette.current
-    val router = LocalRouter.current
-    SurfaceCard {
-        Row(verticalAlignment = Alignment.Bottom) {
-            Text("Hızlı Tekrar", style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink, modifier = Modifier.weight(1f))
-            Text("10 kelime", style = KelimeType.ui(12.sp), color = c.ink2)
-        }
-        Gap(14.dp)
-        Text(
-            buildAnnotatedString {
-                if (strugglingCount > 0) {
-                    withStyle(SpanStyle(color = c.amberInk, fontWeight = FontWeight.SemiBold)) { append("$strugglingCount zorlandığın kelime") }
-                    withStyle(SpanStyle(color = c.ink2)) { append(" seni bekliyor") }
-                } else {
-                    withStyle(SpanStyle(color = c.ink2)) { append("Yeni kelimelerle kısa bir tur") }
-                }
-            },
-            style = KelimeType.ui(15.sp),
-        )
-        Gap(14.dp)
-        PrimaryButton("Başla · 2 dk") { router.startQuickReview() }
-    }
-}
-
-@Composable
-private fun PuzzleCard(level: CEFRLevel, info: DailyPuzzleInfo?) {
-    val c = Palette.current
-    val router = LocalRouter.current
-    SurfaceCard(padding = 16.dp) {
-        Row(horizontalArrangement = Arrangement.spacedBy(16.dp), verticalAlignment = Alignment.CenterVertically) {
-            PuzzleThumbnail(7f, 1.5f, info?.thumbnail ?: SAMPLE_GRID)
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text("Günün Bulmacası", style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-                Text("${info?.solved ?: 0}/${info?.total ?: 5} kelime · ${(info?.level ?: level).raw}", style = KelimeType.ui(13.sp), color = c.ink2)
-                ThinProgressBar(info?.let { it.solved.toDouble() / maxOf(it.total, 1) } ?: 0.0)
-                TintedButton(
-                    when {
-                        info?.completed == true -> "Sonucu gör"
-                        (info?.solved ?: 0) > 0 -> "Devam et"
-                        else -> "Başla"
-                    },
-                    fullWidth = false,
-                ) { router.openPuzzle() }
             }
         }
     }

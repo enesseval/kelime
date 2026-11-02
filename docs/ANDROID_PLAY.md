@@ -238,7 +238,9 @@ gösterir.
 - [ ] Seri risk altındayken hatırlatma "N günlük serin bu akşam bitiyor…" diyor
 
 ### 5. Bugün, kelime, Kelimelerim
-- [ ] Bugün: şu anki kelime, bölüm kartı, Hızlı Tekrar, bulmaca, haftalık seri
+- [ ] Bugün: seri rozeti, şu anki kelime, kaynak satırı, bölüm kartı, sınav planı, hafta istatistikleri; oyun kartı yok
+- [ ] Oyna: 2×2 eşit kart (Hızlı Tekrar, Günün Bulmacası, Kelime Avı, Eşleştir), altında Bulmaca arşivi ve Sana Özel Bulmaca (Pro)
+- [ ] Girişliyken uygulamayı kapatıp aç: Profil sekmesinde avatar hemen görünüyor (düz kişi simgesi yanıp sönmüyor)
 - [ ] Pazartesi ilk açılışta haftalık özet açılıyor (bir kez); Bugün'deki karttan yeniden açılıyor
 - [ ] Özette: öğrenilen, zorlanılan, kilit ekranında gösterilen, Hızlı Tekrar doğruluğu, seri, haftanın kelimesi; Paylaş 9:16 kart veriyor
 - [ ] Kelime detayı: "Dinle" İngilizce telaffuz ediyor; Paylaş üç görünümle (Açık/Koyu/Mavi) 9:16 resim paylaşıyor
