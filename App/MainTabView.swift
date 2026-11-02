@@ -133,77 +133,61 @@ extension View {
     }
 }
 
-/// Oyna hub: Quick Review and today's crossword.
+/// What the Oyna cards show next to each game.
+struct PlayData: Sendable {
+    var puzzle: DailyPuzzleInfo?
+    var strugglingCount: Int
+    var matchBest: Int
+
+    static func load(db: Database, clock: AppClock) throws -> PlayData {
+        PlayData(
+            puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
+            strugglingCount: try StatsQueries.week(db: db, clock: clock).strugglingNow,
+            matchBest: try Settings.int(.matchBest, in: db) ?? 0
+        )
+    }
+}
+
+/// Oyna: the four games as equal cards, then the Pro crossword extras.
 struct PlayView: View {
     @Environment(AppModel.self) private var model
-    @State private var puzzle: DailyPuzzleInfo?
+    @State private var data: PlayData?
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 ScreenTitle(title: "Oyna")
-                Button { Task { await model.startQuickReview() } } label: {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Hızlı Tekrar").font(KelimeFont.english(30, relativeTo: .title))
-                        Text("10 kelime · yaklaşık 2 dakika").font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
-                        HStack {
-                            Spacer()
-                            Text("Başla")
-                                .font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
-                                .foregroundStyle(Palette.onAccent)
-                                .padding(.horizontal, 18)
-                                .frame(minHeight: 44)
-                                .background(Palette.accent, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        }
-                        .padding(.top, 12)
-                    }
-                    .foregroundStyle(Palette.ink)
-                    .surfaceCard(padding: 20)
-                }
-                .buttonStyle(.plain)
-
-                HStack(spacing: 12) {
-                    gameCard("Kelime Avı", "Anlamından bul", symbol: "square.grid.3x3.middle.filled") { model.router.game = .wordSearch }
-                    gameCard("Eşleştir", "60 saniye", symbol: "rectangle.2.swap") { model.router.game = .match }
+                LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+                    gameCard("Hızlı Tekrar", reviewSubtitle, highlight: (data?.strugglingCount ?? 0) > 0) {
+                        icon("bolt.fill")
+                    } action: { Task { await model.startQuickReview() } }
+                    gameCard("Günün Bulmacası", puzzleSubtitle) {
+                        PuzzleThumbnail(cell: 3.5, gap: 0.6, cells: data?.puzzle?.thumbnail ?? PuzzleThumbnail.sample,
+                                        pending: Palette.accent.opacity(0.55))
+                            .fixedSize()
+                            .frame(width: 44, height: 44)
+                            .background(Palette.accentSoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    } action: { model.router.openPuzzle() }
+                    gameCard("Kelime Avı", "Anlamından bul") {
+                        icon("square.grid.3x3.middle.filled")
+                    } action: { model.router.game = .wordSearch }
+                    gameCard("Eşleştir", (data?.matchBest ?? 0) > 0 ? "60 saniye · en iyi \(data!.matchBest)" : "60 saniye") {
+                        icon("rectangle.2.swap")
+                    } action: { model.router.game = .match }
                 }
 
                 VStack(spacing: 0) {
-                Button { model.router.openPuzzle() } label: {
-                    HStack(spacing: 18) {
-                        PuzzleThumbnail(cell: 8, gap: 2, cells: puzzle?.thumbnail ?? PuzzleThumbnail.sample)
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("Günün Bulmacası").font(KelimeFont.english(30, relativeTo: .title))
-                            Text(puzzleSubtitle).font(KelimeFont.ui(14, relativeTo: .subheadline)).foregroundStyle(Palette.ink2)
-                        }
-                        Spacer(minLength: 0)
+                    proRow("Bulmaca arşivi", "Geçmiş günlerin bulmacaları") {
+                        model.isPro ? model.router.openArchive() : model.router.showPaywall(.archive)
                     }
-                    .padding(20)
-                    .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                Rectangle().fill(Palette.line).frame(height: 1)
-                proRow("Arşiv") { model.isPro ? model.router.openArchive() : model.router.showPaywall(.archive) }
+                    Rectangle().fill(Palette.line).frame(height: 1).padding(.leading, 20)
+                    proRow("Sana Özel Bulmaca", "Zorlandığın ve öğrendiğin kelimelerden") {
+                        model.isPro ? model.router.openPersonalPuzzle() : model.router.showPaywall(.personalPuzzle)
+                    }
                 }
                 .foregroundStyle(Palette.ink)
                 .surfaceCard(padding: 0)
-
-                Button { model.isPro ? model.router.openPersonalPuzzle() : model.router.showPaywall(.personalPuzzle) } label: {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text("Sana Özel Bulmaca").font(KelimeFont.ui(16, weight: .semibold, relativeTo: .headline))
-                            Text("Zorlandığın ve öğrendiğin kelimelerden").font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
-                        }
-                        Spacer()
-                        Image(systemName: "chevron.right").foregroundStyle(Palette.ink2)
-                    }
-                    .foregroundStyle(Palette.ink)
-                    .padding(.vertical, 18)
-                    .padding(.horizontal, 20)
-                    .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Palette.line, style: StrokeStyle(lineWidth: 1, dash: model.isPro ? [] : [4, 4])))
-                    .proCornerTag(!model.isPro, radius: 22)
-                    .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
+                .padding(.top, 6)
             }
             .padding(.horizontal, 20)
             .padding(.top, 6)
@@ -214,31 +198,55 @@ struct PlayView: View {
         .hiddenNavigationBar()
         .task(id: model.dataVersion) {
             let clock = model.clock
-            puzzle = await model.read { db in try DailyPuzzleInfo.load(db: db, clock: clock) } ?? nil
+            data = await model.read { db in try PlayData.load(db: db, clock: clock) }
         }
     }
 
-    private func gameCard(_ title: String, _ subtitle: String, symbol: String, action: @escaping () -> Void) -> some View {
+    private func icon(_ symbol: String) -> some View {
+        Image(systemName: symbol)
+            .font(.system(size: 20, weight: .semibold))
+            .foregroundStyle(Palette.accent)
+            .frame(width: 44, height: 44)
+            .background(Palette.accentSoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+
+    /// One game: the same size for all four, so none looks like an extra.
+    private func gameCard(_ title: String, _ subtitle: String, highlight: Bool = false,
+                          @ViewBuilder art: () -> some View, action: @escaping () -> Void) -> some View {
         Button(action: action) {
-            VStack(alignment: .leading, spacing: 10) {
-                Image(systemName: symbol)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundStyle(Palette.accent)
-                    .frame(width: 40, height: 40)
-                    .background(Palette.accentSoft, in: RoundedRectangle(cornerRadius: 11, style: .continuous))
-                Text(title).font(KelimeFont.english(24, relativeTo: .title2))
-                Text(subtitle).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
+            VStack(alignment: .leading, spacing: 0) {
+                art().frame(height: 44, alignment: .leading)
+                Spacer(minLength: 16)
+                Text(title)
+                    .font(KelimeFont.english(23, relativeTo: .title2))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                Text(subtitle)
+                    .font(KelimeFont.ui(13, weight: highlight ? .semibold : .regular, relativeTo: .footnote))
+                    .foregroundStyle(highlight ? Palette.amberInk : Palette.ink2)
+                    .lineLimit(2, reservesSpace: true)
+                    .padding(.top, 4)
             }
+            .frame(maxWidth: .infinity, minHeight: 150, alignment: .topLeading)
             .foregroundStyle(Palette.ink)
             .surfaceCard(padding: 16)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
     }
 
-    private func proRow(_ title: String, action: @escaping () -> Void) -> some View {
+    private var reviewSubtitle: String {
+        let count = data?.strugglingCount ?? 0
+        return count > 0 ? "\(count) zorlandığın kelime seni bekliyor" : "10 kelime · 2 dakika"
+    }
+
+    private func proRow(_ title: String, _ subtitle: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack {
-                Text(title).font(KelimeFont.ui(15, relativeTo: .body))
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(title).font(KelimeFont.ui(16, weight: .semibold, relativeTo: .headline))
+                    Text(subtitle).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
+                }
                 Spacer()
                 if model.isPro {
                     Image(systemName: "chevron.right").foregroundStyle(Palette.ink2)
@@ -247,14 +255,14 @@ struct PlayView: View {
                 }
             }
             .padding(.horizontal, 20)
-            .frame(minHeight: 52)
+            .padding(.vertical, 16)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
     }
 
     private var puzzleSubtitle: String {
-        guard let puzzle else { return "Şu anki bölümünden · ipuçları Türkçe" }
-        return puzzle.completed ? "Tamamlandı · yarın yenisi" : "\(puzzle.solved)/\(puzzle.total) kelime · ipuçları Türkçe"
+        guard let puzzle = data?.puzzle else { return "İpuçları Türkçe" }
+        return puzzle.completed ? "Tamamlandı · yarın yenisi" : "\(puzzle.solved)/\(puzzle.total) kelime çözüldü"
     }
 }

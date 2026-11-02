@@ -27,7 +27,11 @@ final class AccountManager {
     )
 
     private(set) var userID: UUID?
-    private(set) var profile: Profile?
+    /// Kept on the device too, so the Profil tab shows the avatar from the first frame instead of
+    /// switching to it once the server answers.
+    private(set) var profile: Profile? = AccountManager.cachedProfile() {
+        didSet { Self.cache(profile) }
+    }
     private(set) var syncing = false
     private(set) var lastSync: Date?
     private(set) var lastError: String?
@@ -46,20 +50,21 @@ final class AccountManager {
             guard let self else { return }
             for await (event, session) in client.auth.authStateChanges {
                 let id = (session?.isExpired == false || event == .signedIn || event == .tokenRefreshed) ? session?.user.id : nil
-                await self.sessionChanged(id)
+                await self.sessionChanged(id, signedOut: event == .signedOut)
             }
         }
     }
 
-    private func sessionChanged(_ id: UUID?) async {
+    private func sessionChanged(_ id: UUID?, signedOut: Bool = false) async {
+        // An expired session at launch is refreshed a moment later; only a real sign-out drops
+        // the cached profile.
+        if signedOut { profile = nil }
         guard id != userID else { return }
         userID = id
         if let id {
             _ = try? await Purchases.shared.logIn(id.uuidString.lowercased())
             await loadProfile()
             await sync()
-        } else {
-            profile = nil
         }
     }
 
@@ -136,7 +141,24 @@ final class AccountManager {
 
     func loadProfile() async {
         guard let userID else { return }
-        profile = try? await client.from("profiles").select().eq("id", value: userID).single().execute().value
+        // Offline keeps the cached profile.
+        if let loaded: Profile = try? await client.from("profiles").select().eq("id", value: userID).single().execute().value {
+            profile = loaded
+        }
+    }
+
+    private static let profileKey = "account.profile"
+
+    private static func cachedProfile() -> Profile? {
+        UserDefaults.standard.data(forKey: profileKey).flatMap { try? JSONDecoder().decode(Profile.self, from: $0) }
+    }
+
+    private static func cache(_ profile: Profile?) {
+        if let profile, let data = try? JSONEncoder().encode(profile) {
+            UserDefaults.standard.set(data, forKey: profileKey)
+        } else {
+            UserDefaults.standard.removeObject(forKey: profileKey)
+        }
     }
 
     /// Returns an error message, or nil when saved.

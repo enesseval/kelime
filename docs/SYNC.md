@@ -51,6 +51,33 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-02 · Oyunlar Bugün'den çıktı, Oyna'da 4 eşit kart · iOS [x] Android [ ]
+- **Bugün:** Hızlı Tekrar ve Günün Bulmacası kartları kaldırıldı; Bugün'de hiçbir oyun yok.
+  Kalanlar: seri rozeti, haftalık özet kartı, widget'taki kelime, kaynak satırı, bölüm kartı,
+  sınav planı, hafta istatistikleri.
+- **Oyna:** üstte 2×2 ızgarada dört oyun aynı boyda kart olarak durur. Her kartta 44'lük mavi
+  kutuda simge, başlık (serif, 23) ve en çok iki satır alt yazı var; kartın en az yüksekliği 150.
+  - Hızlı Tekrar (şimşek): zorlanılan kelime varsa "N zorlandığın kelime seni bekliyor" (amber,
+    kalın), yoksa "10 kelime · 2 dakika".
+  - Günün Bulmacası (küçük bulmaca ızgarası, çözülmemiş hücreler mavi): "x/y kelime çözüldü" ya
+    da "Tamamlandı · yarın yenisi".
+  - Kelime Avı: "Anlamından bul".
+  - Eşleştir: "60 saniye", en iyi skor varsa "60 saniye · en iyi N".
+- Altında tek kartta iki satır (Pro): "Bulmaca arşivi · Geçmiş günlerin bulmacaları" ve "Sana Özel
+  Bulmaca · Zorlandığın ve öğrendiğin kelimelerden". Pro değilse sağda PRO rozeti, değilse ok.
+- iOS: `App/MainTabView.swift` (PlayView, PlayData), `App/Today/TodayView.swift`.
+
+### 2026-11-02 · Profil sekmesi simgesi açılışta değişmiyor · iOS [x] Android [ ]
+Profil sunucudan gelene kadar sekmede düz kişi simgesi görünüp sonra avatara dönüyordu. Profil
+artık cihazda da saklanıyor ve açılışta hemen o gösteriliyor. Çevrimdışıyken ya da oturum
+yenilenirken saklanan profil silinmiyor; yalnızca çıkış yapınca siliniyor. Android'de sekme ya
+da üst çubukta avatar varsa aynısı (DataStore'da profil).
+
+### 2026-11-02 · Haftalık özet kutuları eşit boyda · iOS [x] Android [ ]
+Özetteki 2×2 istatistik kutuları aynı satırda aynı yükseklikte; uzun etiket ("kelime kilit
+ekranında göründü") komşusunu kısa bırakmıyor.
+
+
 ### 2026-11-02 · Sürüm numaraları eşit · iOS [x] Android [x]
 Android ilk sürümü 1.0 değil **1.1.0** olarak çıkar: `versionName = "1.1.0"`, `versionCode = 1`
 kalır. `docs/ANDROID_NOTES.md`, `docs/ANDROID_PLAY.md` ve planda "Android 1.0" geçen yerler

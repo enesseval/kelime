@@ -6,15 +6,12 @@ import WidgetKit
 /// Everything Bugün shows, read in one go.
 struct TodayData: Sendable {
     var hero: WordItem?
-    var strugglingCount: Int
     var stats: WeekStats
     /// "YDS'ye 42 gün", when the user set an exam date in Ayarlar.
     var examCountdown: String?
     /// What the widget draws from, e.g. "B1 kursu · YDS".
     var widgetSources: String
     var bannerDismissed: Bool
-    var level: CEFRLevel
-    var puzzle: DailyPuzzleInfo?
     var course: CourseState?
     var examPlan: ExamPlanStatus?
     var streak: StreakStatus
@@ -37,13 +34,10 @@ struct TodayData: Sendable {
         } + lists
         return TodayData(
             hero: try heroID.flatMap { try WordQueries.item(id: $0, db: db) },
-            strugglingCount: stats.strugglingNow,
             stats: stats,
             examCountdown: exam.map { "\($0.exam.rawValue)\($0.exam == .yds ? "'ye" : "'e") \($0.days) gün" },
             widgetSources: sources.joined(separator: " · "),
             bannerDismissed: try Settings.bool(.widgetBannerDismissed, in: db),
-            level: prefs.level,
-            puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
             course: try Curriculum.state(db: db),
             examPlan: try ExamPlan.status(db: db, clock: clock),
             streak: try Streak.status(db: db, clock: clock),
@@ -95,8 +89,6 @@ struct TodayView: View {
                     if let plan = data.examPlan {
                         ExamPlanCard(plan: plan)
                     }
-                    QuickReviewCard(strugglingCount: data.strugglingCount)
-                    PuzzleCard(level: data.level, info: data.puzzle)
                     WeekStatsRow(stats: data.stats)
                 }
             }
@@ -258,33 +250,6 @@ struct ExamPlanCard: View {
     }
 }
 
-struct QuickReviewCard: View {
-    @Environment(AppModel.self) private var model
-    let strugglingCount: Int
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("Hızlı Tekrar").font(KelimeFont.ui(17, weight: .semibold, relativeTo: .headline))
-                Spacer()
-                Text("10 kelime").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
-            }
-            Group {
-                if strugglingCount > 0 {
-                    Text("\(strugglingCount) zorlandığın kelime").foregroundStyle(Palette.amberInk).fontWeight(.semibold)
-                        + Text(" seni bekliyor").foregroundStyle(Palette.ink2)
-                } else {
-                    Text("Yeni kelimelerle kısa bir tur").foregroundStyle(Palette.ink2)
-                }
-            }
-            .font(KelimeFont.ui(15, relativeTo: .subheadline))
-            Button("Başla · 2 dk") { Task { await model.startQuickReview() } }
-                .buttonStyle(PrimaryButtonStyle())
-        }
-        .surfaceCard()
-    }
-}
-
 struct OutlineButtonStyle: ButtonStyle {
     func makeBody(configuration: ButtonStyleConfiguration) -> some View {
         configuration.label
@@ -298,35 +263,14 @@ struct OutlineButtonStyle: ButtonStyle {
     }
 }
 
-struct PuzzleCard: View {
-    @Environment(AppModel.self) private var model
-    let level: CEFRLevel
-    let info: DailyPuzzleInfo?
-
-    var body: some View {
-        HStack(spacing: 16) {
-            PuzzleThumbnail(cell: 7, gap: 1.5, cells: info?.thumbnail ?? PuzzleThumbnail.sample)
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Günün Bulmacası").font(KelimeFont.ui(17, weight: .semibold, relativeTo: .headline))
-                Text("\(info?.solved ?? 0)/\(info?.total ?? 5) kelime · \((info?.level ?? level).rawValue)")
-                    .font(KelimeFont.ui(13, relativeTo: .footnote))
-                    .foregroundStyle(Palette.ink2)
-                ThinProgressBar(fraction: info.map { Double($0.solved) / Double(max($0.total, 1)) } ?? 0)
-                Button(info?.completed == true ? "Sonucu gör" : (info?.solved ?? 0) > 0 ? "Devam et" : "Başla") { model.router.openPuzzle() }
-                    .buttonStyle(TintedButtonStyle(fullWidth: false))
-                    .padding(.top, 4)
-            }
-        }
-        .surfaceCard(padding: 16)
-    }
-}
-
 /// 8 × 10 crossword thumbnail; letter cells are tinted, solved words green.
 struct PuzzleThumbnail: View {
     var cell: CGFloat
     var gap: CGFloat
     /// Letter cells and whether they are solved. Defaults to the design's sample grid.
     var cells: [Int: Bool] = PuzzleThumbnail.sample
+    /// Letter cells not solved yet.
+    var pending: Color = Palette.surface2
 
     static let sample: [Int: Bool] = {
         var cells: [Int: Bool] = [:]
@@ -356,7 +300,7 @@ struct PuzzleThumbnail: View {
     private func color(_ solved: Bool?) -> Color {
         switch solved {
         case nil: .clear
-        case false?: Palette.surface2
+        case false?: pending
         case true?: Palette.green
         }
     }
