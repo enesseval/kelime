@@ -29,15 +29,40 @@ generated assets/res folders before every build.
 
 | Step | State |
 |---|---|
-| 1. Gradle project, tabs shell, tokens, fonts, schema, content import, AppClock, rules/scheduler/spaced review + tests | done (core tested here; app not compiled here, see "Build environment") |
-| 2. Bugün, word detail (TTS, share card), Kelimelerim, lists, course units and stories | done, see gaps |
-| 3. Quick Review + custom keyboard; crossword (daily + personal) | done |
-| 4. Widget queue, lock-screen wallpaper, Glance widgets, notification, QS tile | done in code; **device measurements still to do** (owner) |
-| 5. Onboarding, placement test, settings, reminders | done, see gaps |
-| 6. 1.1: streak + weekly summary, Kelime Avı, Eşleştir, share cards | core logic + screens, **interpreted** (see below) |
-| 7. Accounts, sync, Keşfet, feedback; Pro and paywall | done in code; needs Google OAuth client + Play products (owner) |
+| 1. Gradle project, tabs shell, tokens, fonts, schema, content import, AppClock, rules/scheduler/spaced review + tests | done; `:core` compiled and **159 JUnit tests pass** here |
+| 2. Bugün, word detail (TTS, share card), Kelimelerim, lists, course units and stories | written |
+| 3. Quick Review + custom keyboard; crossword (daily + personal) | written; the game logic is in `:core` and tested |
+| 4. Widget queue, lock-screen wallpaper, Glance widgets, notification, QS tile | written; **device measurements still to do** (owner) |
+| 5. Onboarding, placement test, settings, reminders | written |
+| 6. 1.1: streak + weekly summary, Kelime Avı, Eşleştir, share cards | core logic tested, screens written, **interpreted** (see below) |
+| 7. Accounts, sync, Keşfet, feedback; Pro and paywall | written; needs the Google OAuth client and Play products (owner) |
 | 8. Polish, release AAB with R8, signing from `local.properties` | config in place; not built here |
 | 9. `docs/ANDROID_PLAY.md` | done |
+
+"Written" means: the Kotlin is complete and passes the Kotlin parser, but `:app` has never been
+compiled against the Android SDK (see "Build environment" below). Plan one session in Android Studio
+for compile fixes and a first run before device testing.
+
+## Known gaps and simplifications
+
+- **Not compiled / not run.** No screen has been seen on a device or emulator. Library APIs were
+  written from documentation of the versions in `libs.versions.toml` (Glance 1.1, RevenueCat 9,
+  supabase-kt 3.2, TelemetryDeck 6, Credential Manager 1.5); small signature differences are likely.
+- **Cinematic intro** is one animated scene (words typing onto a lock screen), not the three-scene
+  film of `CinematicIntro.swift`.
+- **Wallpaper photos**: EXIF orientation is not applied; a portrait photo taken sideways may appear
+  rotated. Fix with `ExifInterface` when testing.
+- **Widget themes** (Kâğıt, Mürekkep, Cam, Kor, Yalın) are drawn by the Glance widgets, but there is no
+  theme picker in Profil (none was found in the iOS settings either).
+- **Accessibility and 200 % font scale**: text uses `sp` and key controls have TalkBack labels, but
+  no audit was possible. Same for 360 dp layouts and cold-start time (the first launch imports
+  2,271 cards in one transaction; later launches skip it).
+- **Developer screens**: the widget log is ported (with wallpaper lag); usage counters and the
+  paywall design gallery are not.
+- **File import** of `.kelimelist` registers for `application/json` and `application/octet-stream`,
+  so the app may be offered for unrelated files of those types.
+- **Notification after a widget answer** and other rare paths reload all widgets at once rather than
+  only the affected one; fine for three widgets.
 
 ## Differences from the prompt
 
