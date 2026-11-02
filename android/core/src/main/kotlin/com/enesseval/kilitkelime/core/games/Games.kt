@@ -1,0 +1,193 @@
+package com.enesseval.kilitkelime.core.games
+
+import com.enesseval.kilitkelime.core.dates.AppClock
+import com.enesseval.kilitkelime.core.db.SqlDb
+import com.enesseval.kilitkelime.core.db.int
+import com.enesseval.kilitkelime.core.learning.CardQueries
+import com.enesseval.kilitkelime.core.learning.LearningEvent
+import com.enesseval.kilitkelime.core.learning.LearningStore
+import com.enesseval.kilitkelime.core.learning.RandomSource
+import com.enesseval.kilitkelime.core.learning.intUntil
+import com.enesseval.kilitkelime.core.learning.shuffledWith
+import com.enesseval.kilitkelime.core.model.Card
+import com.enesseval.kilitkelime.core.model.LearningState
+import com.enesseval.kilitkelime.core.model.Preferences
+import com.enesseval.kilitkelime.core.model.ReviewSource
+import com.enesseval.kilitkelime.core.review.ReviewQuestion
+
+/** The 1.1 games (docs/V1_1_PLAN.md §2). */
+enum class Game(val raw: String, val title: String, val signal: String, val source: StreakSource) {
+    WORD_HUNT("wordHunt", "Kelime Avı", "game.wordsearch.finished", StreakSource.WORD_HUNT),
+    MATCH("match", "Eşleştir", "game.match.finished", StreakSource.MATCH),
+}
+
+/**
+ * Words for a game round, from the learner's own sources (the lock screen's): struggling words
+ * first, then new words the lock screen has shown, then learned words due for review; other words
+ * of the sources fill up when those run short. No two picked words share a Turkish meaning.
+ */
+object GameWords {
+    fun pick(db: SqlDb, rng: RandomSource, count: Int, today: java.time.LocalDate? = null, filter: (Card) -> Boolean = { true }): List<Card> {
+        val prefs = Preferences.load(db)
+        val candidates = CardQueries.candidates(prefs.entitledDecks, db, today)
+        fun ids(p: (com.enesseval.kilitkelime.core.learning.SchedulerCandidate) -> Boolean) = candidates.filter(p).map { it.cardID }.shuffledWith(rng)
+        val struggling = ids { it.state == LearningState.STRUGGLING }
+        val shownNew = ids { it.state == LearningState.NEW && it.lastShownAt != null }
+        val due = ids { it.state == LearningState.LEARNED && it.due }
+        val rest = ids { !(it.state == LearningState.STRUGGLING || (it.state == LearningState.NEW && it.lastShownAt != null) || (it.state == LearningState.LEARNED && it.due)) }
+        val ordered = (struggling + shownNew + due + rest).distinct()
+        val result = mutableListOf<Card>()
+        val meanings = mutableSetOf<String>()
+        val words = mutableSetOf<String>()
+        for (chunk in ordered.chunked(60)) {
+            val cards = CardQueries.cards(chunk, db).associateBy { it.id }
+            for (id in chunk) {
+                val card = cards[id] ?: continue
+                if (!filter(card)) continue
+                val norm = Card.normalizedMeanings(card.tr)
+                if (norm.any { it in meanings } || card.word.lowercase() in words) continue
+                result += card
+                meanings += norm
+                words += card.word.lowercase()
+                if (result.size == count) return result
+            }
+        }
+        return result
+    }
+}
+
+/** Finished rounds (`game_result`); finishing a game counts the day for the streak. */
+object GameResults {
+    /** Records the round; returns true when it newly counted today for the streak. */
+    fun record(game: Game, score: Int, total: Int, seconds: Int, clock: AppClock, db: SqlDb): Boolean {
+        db.execute(
+            "INSERT INTO game_result (game, day, score, total, seconds, finished_at) VALUES (?, ?, ?, ?, ?, ?)",
+            listOf(game.raw, clock.today, score, total, seconds, clock.now),
+        )
+        return LearningStore.markStudied(clock.today, game.source, db)
+    }
+
+    fun playedToday(game: Game, clock: AppClock, db: SqlDb): Int =
+        db.int("SELECT COUNT(*) FROM game_result WHERE game = ? AND day = ?", listOf(game.raw, clock.today))
+
+    fun best(game: Game, db: SqlDb): Int = db.int("SELECT COALESCE(MAX(score), 0) FROM game_result WHERE game = ?", listOf(game.raw))
+}
+
+/**
+ * Kelime Avı: a word search. An 8 × 8 grid (7 × 7 on small screens) hides up to 6 words of 3–8
+ * plain letters across, down or diagonally, always read forwards. The clues are the Turkish
+ * meanings. Deterministic for a seeded [RandomSource].
+ */
+data class WordHunt(val size: Int, val letters: List<Char>, val words: List<Placed>) {
+    data class Placed(val card: Card, val answer: String, val row: Int, val col: Int, val dRow: Int, val dCol: Int) {
+        val cells: List<Pair<Int, Int>> get() = answer.indices.map { (row + dRow * it) to (col + dCol * it) }
+        /** "İlk harfi göster" highlights this cell. */
+        val firstCell: Pair<Int, Int> get() = row to col
+    }
+
+    fun letter(row: Int, col: Int): Char = letters[row * size + col]
+
+    /** The word whose cells are exactly the line from [start] to [end], either way round. */
+    fun match(start: Pair<Int, Int>, end: Pair<Int, Int>): Placed? = words.firstOrNull { w ->
+        (w.cells.first() == start && w.cells.last() == end) || (w.cells.first() == end && w.cells.last() == start)
+    }
+
+    /** What a finished round teaches: hinted words were already recorded as hints. */
+    fun record(found: Set<String>, hinted: Set<String>, seconds: Int, clock: AppClock, db: SqlDb): Boolean = db.transaction {
+        for (w in words) if (w.card.id in found && w.card.id !in hinted) {
+            LearningStore.record(LearningEvent.Answered(true), w.card.id, ReviewSource.WORD_HUNT, clock, db)
+        }
+        GameResults.record(Game.WORD_HUNT, found.size, words.size, seconds, clock, db)
+    }
+
+    companion object {
+        const val SIZE = 8
+        const val SMALL_SIZE = 7
+        const val WORDS = 6
+        const val MIN_LENGTH = 3
+        const val MAX_LENGTH = 8
+        private val directions = listOf(0 to 1, 1 to 0, 1 to 1)
+
+        fun usable(card: Card, size: Int = SIZE) = card.isSingleWord && card.word.length in MIN_LENGTH..minOf(MAX_LENGTH, size)
+
+        fun make(cards: List<Card>, rng: RandomSource, size: Int = SIZE, wordCount: Int = WORDS): WordHunt? {
+            val grid = arrayOfNulls<Char>(size * size)
+            val placed = mutableListOf<Placed>()
+            for (card in cards.filter { usable(it, size) }.sortedByDescending { it.word.length }) {
+                if (placed.size == wordCount) break
+                val answer = ReviewQuestion.asciiUpper(card.word)
+                val spots = mutableListOf<Placed>()
+                for ((dr, dc) in directions) for (r in 0 until size) for (c in 0 until size) {
+                    val endR = r + dr * (answer.length - 1)
+                    val endC = c + dc * (answer.length - 1)
+                    if (endR >= size || endC >= size) continue
+                    val fits = answer.indices.all { i ->
+                        val existing = grid[(r + dr * i) * size + (c + dc * i)]
+                        existing == null || existing == answer[i]
+                    }
+                    if (fits) spots += Placed(card, answer, r, c, dr, dc)
+                }
+                if (spots.isEmpty()) continue
+                val spot = spots[rng.intUntil(0, spots.size)]
+                spot.cells.forEachIndexed { i, (r, c) -> grid[r * size + c] = answer[i] }
+                placed += spot
+            }
+            if (placed.size < 3) return null
+            val alphabet = "ABCDEFGHIJKLMNOPRSTUVYZ"
+            return WordHunt(size, grid.map { it ?: alphabet[rng.intUntil(0, alphabet.length)] }, placed)
+        }
+    }
+}
+
+/**
+ * Eşleştir: a 60-second round. Five English words on the left, five Turkish meanings on the
+ * right; a correct pair leaves and a new pair takes the two free places. Score = correct pairs.
+ */
+class MatchGame(pool: List<Card>, private val rng: RandomSource, val boardSize: Int = BOARD) {
+    private val queue = ArrayDeque(pool)
+    /** Left column: English words; right column: meanings. Null = empty place (pool ran out). */
+    val left: MutableList<Card?> = MutableList(boardSize) { null }
+    val right: MutableList<Card?> = MutableList(boardSize) { null }
+    private val matched = mutableSetOf<String>()
+    private val missed = mutableSetOf<String>()
+
+    init {
+        val first = (0 until boardSize).mapNotNull { queue.removeFirstOrNull() }
+        first.forEachIndexed { i, card -> left[i] = card }
+        first.shuffledWith(rng).forEachIndexed { i, card -> right[i] = card }
+    }
+
+    val score: Int get() = matched.size
+    val matchedIDs: Set<String> get() = matched
+    val missedIDs: Set<String> get() = missed
+    val isEmpty: Boolean get() = left.all { it == null }
+
+    /** Pairs the word at [leftIndex] with the meaning at [rightIndex]; true when right. */
+    fun pair(leftIndex: Int, rightIndex: Int): Boolean {
+        val word = left.getOrNull(leftIndex) ?: return false
+        val meaning = right.getOrNull(rightIndex) ?: return false
+        if (word.id != meaning.id) {
+            missed += word.id
+            return false
+        }
+        matched += word.id
+        val next = queue.removeFirstOrNull()
+        left[leftIndex] = next
+        right[rightIndex] = next
+        return true
+    }
+
+    /** Wrong pairs make the word struggling; pairs right on the first try count as correct. */
+    fun record(seconds: Int, clock: AppClock, db: SqlDb): Boolean = db.transaction {
+        for (id in missed) LearningStore.record(LearningEvent.Answered(false), id, ReviewSource.MATCH, clock, db)
+        for (id in matched - missed) LearningStore.record(LearningEvent.Answered(true), id, ReviewSource.MATCH, clock, db)
+        GameResults.record(Game.MATCH, score, matched.size + (missed - matched).size, seconds, clock, db)
+    }
+
+    companion object {
+        const val BOARD = 5
+        const val SECONDS = 60
+        /** Enough words for a fast player in 60 seconds. */
+        const val POOL = 40
+    }
+}

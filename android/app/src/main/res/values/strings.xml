@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kilit Kelime</string>
+    <string name="tile_quick_review">Hızlı Tekrar</string>
+    <string name="widget_card">Kart</string>
+    <string name="widget_card_description">Şu anki kelime ve Türkçe anlamı</string>
+    <string name="widget_quiz">Hangisi?</string>
+    <string name="widget_quiz_description">İki seçenekli mini soru</string>
+    <string name="widget_large">Büyük</string>
+    <string name="widget_large_description">Kelime, zorlandıkların ve günün bulmacası</string>
+    <string name="channel_word">Kilit ekranında kelime</string>
+    <string name="channel_word_description">Kelimeyi kilit ekranında sessiz bir bildirim olarak gösterir</string>
+    <string name="channel_reminder">Hatırlatma</string>
+    <string name="channel_reminder_description">Seçtiğin saatte kısa bir tekrar hatırlatması</string>
+</resources>
