@@ -31,7 +31,7 @@ struct QuickReviewControl: ControlWidget {
 
     var body: some ControlWidgetConfiguration {
         StaticControlConfiguration(kind: Self.kind) {
-            ControlWidgetButton(action: OpenKelimeLinkIntent(link: "kelime://review")) {
+            ControlWidgetButton(action: OpenKelimeLinkIntent(link: "kelime://review?from=control")) {
                 Label("Hızlı Tekrar", systemImage: "bolt.circle")
             }
         }

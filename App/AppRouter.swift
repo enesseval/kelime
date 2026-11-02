@@ -153,6 +153,7 @@ final class AppRouter {
             openPuzzle()
         case "review":
             // Control Center and widget buttons: straight into a Quick Review round.
+            if url.query?.contains("from=control") == true { Analytics.signal("control.quickReview") }
             tab = .today
             startQuickReview()
         case "game":

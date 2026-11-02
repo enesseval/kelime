@@ -217,7 +217,10 @@ struct WeeklySummaryView: View {
                             }
                             .surfaceCard(padding: 16)
                         }
-                        Button { sharing = true } label: {
+                        Button {
+                            sharing = true
+                            Analytics.signal("weekly.shared")
+                        } label: {
                             Label("Haftanı paylaş", systemImage: "square.and.arrow.up")
                         }
                         .buttonStyle(PrimaryButtonStyle(height: 52))

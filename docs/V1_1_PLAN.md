@@ -1,6 +1,6 @@
 # Kilit Kelime 1.1.0: ortak özellik planı (iOS ve Android)
 
-iOS 1.1.0 ve Android 1.0 (ilk sürüm) aynı özellik setiyle çıkar. Bu belge ikisinin de kaynağıdır;
+iOS 1.1.0 ve Android 1.1.0 (ilk sürüm) aynı özellik setiyle çıkar. Bu belge ikisinin de kaynağıdır;
 davranış farkı olan yerler platform başlıklarında yazılıdır.
 
 ## 1. Seri (streak) ve haftalık özet
@@ -62,7 +62,7 @@ kelimeler, sonra öğrenilenlerden tekrar zamanı gelenler. Ücretsiz, günde s�
 - 60 saniyelik tur. Ekranda solda 5 İngilizce, sağda 5 Türkçe kart; hiçbir kelimenin iki yarısı
   aynı satırda başlamaz. Doğru çift yavaşça kaybolur, yeri boş kalır. Her tarafta 3 yer
   boşalınca sıradaki 3 kelime boş yerlere rastgele dağıtılır (yine aynı satırda eş yok).
-  Yanlış eşleşmede iki kart kısa sallanır. Ayrıntı: docs/android/CHANGES.md.
+  Yanlış eşleşmede iki kart kısa sallanır. Ayrıntı: docs/SYNC.md.
 - Puan: doğru eşleşme sayısı; en iyi skor saklanır.
 - Yanlış eşleştirilen kelime `answered(correct: false)` → zorlanılan; doğru ilk denemede
   eşleşen `answered(correct: true)`.

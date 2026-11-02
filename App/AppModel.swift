@@ -126,14 +126,18 @@ final class AppModel {
         }
     }
 
-    /// Records a Quick Review answer and returns the card's state before and after it.
     /// Marks today as studied (Quick Review finished, a crossword word solved, a game finished).
+    /// Sends `streak.day` once a day and `streak.freezeUsed` when today saved a missed day.
     func recordStudy(_ source: StreakSource) async {
         let clock = clock
+        let before = await read { db in try Streak.status(db: db, clock: clock) }
         await write(rebuildQueue: false) { db in try Streak.record(source, on: clock.today, db: db) }
-        Analytics.signal("streak.day", ["source": source.rawValue])
+        let after = await read { db in try Streak.status(db: db, clock: clock) }
+        if before?.studiedToday == false { Analytics.signal("streak.day", ["source": source.rawValue]) }
+        if let after, after.frozenDays.count > before?.frozenDays.count ?? 0 { Analytics.signal("streak.freezeUsed") }
     }
 
+    /// Records a Quick Review answer and returns the card's state before and after it.
     func answerReview(cardID: String, correct: Bool, sessionID: String) async -> (before: LearningState, after: LearningState)? {
         guard let database else { return nil }
         let clock = clock

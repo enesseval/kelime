@@ -61,30 +61,31 @@ public enum Streak {
         return status
     }
 
-    /// The streak rules on a set of studied days. Pure, for tests.
+    /// The streak rules on a set of studied days. Pure, for tests. Walks forward in calendar
+    /// order so freezes are spent on the first gaps of a week, as the learner lived them; the
+    /// Android port (Streak.kt) gives the same answers.
     public static func compute(days: Set<LocalDate>, today: LocalDate, freezesPerWeek: Int) -> StreakStatus {
         let studiedToday = days.contains(today)
         var count = 0
         var frozen: [LocalDate] = []
         var usedByWeek: [LocalDate: Int] = [:]
-        // Today without study yet doesn't break anything; the streak is counted up to yesterday.
-        var day = studiedToday ? today : today.adding(days: -1)
-        while true {
+        var day = days.filter { $0 <= today }.min() ?? today
+        while day <= today {
+            let week = StatsQueries.weekStart(for: day)
+            let next = day.adding(days: 1)
             if days.contains(day) {
                 count += 1
-                day = day.adding(days: -1)
-                continue
-            }
-            // A single missed day, with study before it and a freeze left in its week.
-            let week = StatsQueries.weekStart(for: day)
-            let earlier = day.adding(days: -1)
-            if count > 0, days.contains(earlier), usedByWeek[week, default: 0] < freezesPerWeek {
+            } else if day == today {
+                // Still open: nothing breaks yet.
+            } else if count > 0, days.contains(next) || next == today, usedByWeek[week, default: 0] < freezesPerWeek {
+                // A single missed day, followed by study or by today still open.
                 usedByWeek[week, default: 0] += 1
                 frozen.append(day)
-                day = earlier
-                continue
+            } else {
+                count = 0
+                frozen.removeAll()
             }
-            break
+            day = next
         }
         let calendarStart = today.adding(days: -(calendarDays - 1))
         return StreakStatus(

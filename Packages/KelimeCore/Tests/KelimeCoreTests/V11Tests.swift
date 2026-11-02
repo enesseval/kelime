@@ -42,10 +42,25 @@ struct V11Tests {
         #expect(s.current == 3)
         #expect(s.frozenDays == [d("2026-11-03")])
 
-        // A second gap in the same week breaks it with one freeze, holds with two.
+        // A second gap in the same week breaks it with one freeze, holds with two. The freeze
+        // goes to the first gap (Tuesday), so Thursday ends the streak.
         let two: Set = [d("2026-11-02"), d("2026-11-04"), d("2026-11-06")]
-        #expect(Streak.compute(days: two, today: d("2026-11-06"), freezesPerWeek: 1).current == 2)
+        #expect(Streak.compute(days: two, today: d("2026-11-06"), freezesPerWeek: 1).current == 1)
         #expect(Streak.compute(days: two, today: d("2026-11-06"), freezesPerWeek: 2).current == 3)
+    }
+
+    /// Same as Android's StreakTest: the morning after a missed day the streak is at risk, not 0.
+    @Test func yesterdayMissedIsFrozenWhileTodayIsOpen() {
+        let days: Set = [d("2026-11-02"), d("2026-11-03")]
+        let s = Streak.compute(days: days, today: d("2026-11-05"), freezesPerWeek: 1)
+        #expect(s.current == 2 && s.atRisk)
+        #expect(s.frozenDays == [d("2026-11-04")])
+    }
+
+    @Test func freezesRenewEveryMonday() {
+        // Gap on Sun 1 Nov (week of 26 Oct) and on Tue 3 Nov (week of 2 Nov): one freeze each.
+        let days: Set = [d("2026-10-31"), d("2026-11-02"), d("2026-11-04"), d("2026-11-05")]
+        #expect(Streak.compute(days: days, today: d("2026-11-05"), freezesPerWeek: 1).current == 4)
     }
 
     @Test func twoMissedDaysInARowEndTheStreak() {
