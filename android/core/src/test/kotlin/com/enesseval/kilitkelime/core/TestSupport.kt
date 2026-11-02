@@ -88,6 +88,16 @@ object TestSupport {
     fun cardsJSON(version: Int, cards: List<Pair<Card, List<DeckTag>>>): String =
         ContentImporter.encode(CardsFile(version, cards.map { ContentCard.of(it.first, it.second) }))
 
+    val bundledText: String by lazy { bundledCards.readText() }
+
+    /** A database with the bundled content and [prefs]. */
+    fun bundled(prefs: com.enesseval.kilitkelime.core.model.Preferences = com.enesseval.kilitkelime.core.model.Preferences()): JdbcSqlDb {
+        val db = database()
+        ContentImporter.importIfNeeded(bundledText, db)
+        prefs.save(db)
+        return db
+    }
+
     /** A database holding [cards] (general deck unless given). */
     fun seeded(vararg cards: Card, decks: List<DeckTag> = listOf(DeckTag.GENERAL)): JdbcSqlDb {
         val db = database()

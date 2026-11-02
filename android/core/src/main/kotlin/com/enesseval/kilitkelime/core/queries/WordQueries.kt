@@ -106,7 +106,7 @@ object WordQueries {
                 val units = saved + db.strings("SELECT id FROM unit WHERE placement = ? AND level = ?", listOf(UnitPlacement.FIRST, level))
                 val unitList = if (units.isEmpty()) Sql("(NULL)") else Sql.list(units)
                 conditions += Sql("(EXISTS (SELECT 1 FROM unit_card uc WHERE uc.card_id = c.id AND uc.unit_id IN ") + unitList +
-                    " OR EXISTS (SELECT 1 FROM user_list_card ulc WHERE ulc.card_id = c.id)" +
+                    ") OR EXISTS (SELECT 1 FROM user_list_card ulc WHERE ulc.card_id = c.id)" +
                     " OR s.state IN ('struggling', 'learned') OR s.favorite = 1)"
             }
         }

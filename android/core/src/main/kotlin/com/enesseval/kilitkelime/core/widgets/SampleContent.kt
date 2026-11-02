@@ -10,6 +10,8 @@ import java.time.Instant
 /** Sample cards for previews, onboarding and widget placeholders. */
 object SampleContent {
     val reluctant = Card("b2-reluctant", "reluctant", PartOfSpeech.ADJECTIVE, CEFRLevel.B2, listOf("isteksiz", "gönülsüz"), "She was reluctant to leave.", "Ayrılmaya gönülsüzdü.")
+    val reliable = Card("b1-reliable", "reliable", PartOfSpeech.ADJECTIVE, CEFRLevel.B1, listOf("güvenilir"), "He is a reliable friend.", "O, güvenilir bir arkadaş.")
+    val hesitate = Card("b2-hesitate", "hesitate", PartOfSpeech.VERB, CEFRLevel.B2, listOf("tereddüt etmek"), "Don't hesitate to ask.", "Sormaktan çekinme.")
     val happy = Card("a1-happy", "happy", PartOfSpeech.ADJECTIVE, CEFRLevel.A1, listOf("mutlu"), "I am happy today.", "Bugün mutluyum.")
     val coffee = Card("a1-coffee", "coffee", PartOfSpeech.NOUN, CEFRLevel.A1, listOf("kahve"), "I'd like a coffee, please.", "Bir kahve alayım, lütfen.")
     val friend = Card("a1-friend", "friend", PartOfSpeech.NOUN, CEFRLevel.A1, listOf("arkadaş"), "This is my friend.", "Bu benim arkadaşım.")
