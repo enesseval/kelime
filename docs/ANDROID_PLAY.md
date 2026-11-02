@@ -32,7 +32,8 @@ uyarlandı; Android'de olmayan şeyler (Apple ile giriş, kilit ekranı widget'�
    anahtarı SHA-256**'yı `android/assetlinks.template.json`'a yaz ve
    `https://enesseval.github.io/.well-known/assetlinks.json` olarak yayınla (liste linkleri uygulamada açılsın).
 
-`app/build.gradle.kts` içinde `versionCode` her yüklemede artmalı.
+`app/build.gradle.kts` içinde `versionCode` her yüklemede artmalı. `versionName` iOS ile birlikte
+değişir (ilk Android sürümü 1.1.0; bkz. `docs/SYNC.md`).
 
 ## 2. Mağaza girişi (Türkçe)
 
@@ -96,7 +97,7 @@ Gizlilik: https://enesseval.github.io/kelime/gizlilik.html
 ### Kategori ve etiketler
 Kategori: Eğitim. Etiketler: Dil öğrenme, Kelime, Sınav hazırlığı.
 
-### Neler yeni (ilk sürüm)
+### Neler yeni (1.1.0, ilk Android sürümü)
 İlk Android sürümü. Kilit ekranında İngilizce kelime öğrenmeye hoş geldin.
 
 ## 3. Grafikler

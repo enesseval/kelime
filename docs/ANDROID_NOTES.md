@@ -73,7 +73,7 @@ for compile fixes and a first run before device testing.
    compile fixes on the first build in Android Studio. Library versions in
    `gradle/libs.versions.toml` are the latest ones known to exist; bump them in Android Studio.
 2. **1.1 features follow `docs/V1_1_PLAN.md`** (added after the first pass, which had to guess).
-   Android ships as 1.0 with the same feature set as iOS 1.1.0:
+   Android's first release is 1.1.0 (versionCode 1), the same version and feature set as iOS 1.1.0:
    - *Seri*: a day counts only for a finished Quick Review, a solved word in the daily puzzle or a
      finished Kelime Avı / Eşleştir (`streak_day(day, source)`); widget and word-detail answers do
      not. One automatic freeze per Monday–Sunday week saves a single missed day (two with Pro);

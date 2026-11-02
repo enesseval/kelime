@@ -51,7 +51,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-02 · Sürüm numaraları eşit · iOS [x] Android [ ]
+### 2026-11-02 · Sürüm numaraları eşit · iOS [x] Android [x]
 Android ilk sürümü 1.0 değil **1.1.0** olarak çıkar: `versionName = "1.1.0"`, `versionCode = 1`
 kalır. `docs/ANDROID_NOTES.md`, `docs/ANDROID_PLAY.md` ve planda "Android 1.0" geçen yerler
 1.1.0 olur.
