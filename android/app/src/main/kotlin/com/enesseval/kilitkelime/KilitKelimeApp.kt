@@ -5,7 +5,10 @@ import com.enesseval.kilitkelime.account.AccountManager
 import com.enesseval.kilitkelime.analytics.Analytics
 import com.enesseval.kilitkelime.data.AppModel
 import com.enesseval.kilitkelime.lock.LockScreenUpdater
+import com.enesseval.kilitkelime.core.model.SettingKey
+import com.enesseval.kilitkelime.core.model.Settings
 import com.enesseval.kilitkelime.notifications.Channels
+import com.enesseval.kilitkelime.notifications.Reminder
 import com.enesseval.kilitkelime.store.PurchaseManager
 import kotlinx.coroutines.launch
 
@@ -38,6 +41,7 @@ class KilitKelimeApp : Application() {
             model.open()
             lockScreen.refresh("launch")
             lockScreen.scheduleRotation()
+            Reminder.schedule(this@KilitKelimeApp, model.read { db -> Settings.int(db, SettingKey.REMINDER_TIME) })
             purchases.start()
             account.start()
             model.checkForContent()

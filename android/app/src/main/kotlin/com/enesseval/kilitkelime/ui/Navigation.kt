@@ -145,6 +145,9 @@ class AppRouter(val nav: NavHostController) {
 
 val LocalRouter = staticCompositionLocalOf<AppRouter> { error("no router") }
 
+/** The router where one may be absent (screens shared with onboarding). */
+val LocalRouterOrNull = staticCompositionLocalOf<AppRouter?> { null }
+
 @Composable
 fun MainScaffold() {
     val app = LocalApp.current
@@ -164,7 +167,7 @@ fun MainScaffold() {
         handle(intent, router, app)
     }
 
-    CompositionLocalProvider(LocalRouter provides router) {
+    CompositionLocalProvider(LocalRouter provides router, LocalRouterOrNull provides router) {
         Box(Modifier.fillMaxSize().background(c.background)) {
             Column(Modifier.fillMaxSize()) {
                 Box(Modifier.weight(1f)) {
@@ -258,12 +261,23 @@ private fun TabBar(route: String, router: AppRouter) {
     }
 }
 
-/** The profile avatar: an emoji chosen in Profil, or the first letter of the name. */
+/** Avatars chosen in Profil. iOS stores SF Symbol names; Android shows the same animal or thing as an emoji. */
+val AVATARS: List<Pair<String, String>> = listOf(
+    "letter" to "", "cat" to "🐱", "dog" to "🐶", "fox" to "🦊", "bird" to "🐦", "fish" to "🐟", "tortoise" to "🐢",
+    "ladybug" to "🐞", "leaf" to "🍃", "flame" to "🔥", "bolt" to "⚡", "star" to "⭐", "moon" to "🌙", "sun" to "☀️",
+    "globe" to "🌍", "book" to "📖",
+)
+
+/** The profile avatar: the chosen symbol, or the first letter of the name. */
 @Composable
 fun Avatar(avatar: String, name: String, size: Int) {
     val c = Palette.current
+    val emoji = AVATARS.firstOrNull { it.first == avatar }?.second.orEmpty()
     Box(Modifier.size(size.dp).clip(CircleShape).background(c.accentSoft), contentAlignment = Alignment.Center) {
-        Text(avatar.ifEmpty { name.trimStart('@').take(1).uppercase(com.enesseval.kilitkelime.ui.components.TR) }, style = KelimeType.ui((size * 0.5).sp, FontWeight.SemiBold), color = c.accent)
+        Text(
+            emoji.ifEmpty { name.trimStart('@').take(1).uppercase(com.enesseval.kilitkelime.ui.components.TR) },
+            style = KelimeType.ui((size * 0.5).sp, FontWeight.SemiBold), color = c.accent,
+        )
     }
 }
 
