@@ -51,9 +51,6 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-<<<<<<< Updated upstream
-### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [x]
-=======
 ### 2026-11-02 · Bildirim izni ilk iyi andan sonra soruluyor · iOS [x] Android [ ]
 - **Onboarding üç adım** oldu: karşılama, seviye, widget. Hatırlatma adımı kaldırıldı. Widget
   adımındaki "Sonra" ve "Ekledim" onboarding'i bitirir.
@@ -80,9 +77,7 @@ dalında sürer.
 - iOS dosyaları: `App/Notifications/ReminderAsk.swift`, `App/Onboarding/OnboardingView.swift`,
   `App/MainTabView.swift`, `App/AppModel.swift`.
 
-
-### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [ ]
->>>>>>> Stashed changes
+### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [x]
 - Izgara **10×10**; dar ekranda (iOS 380 pt, Android 360 dp altı) **9×9**. Kelime uzunluğu
   3 ile (boyut − 1) harf arası, yani 9 ya da 8 harfe kadar. Kelime sayısı 6.
 - Görünüm sadeleşti:
