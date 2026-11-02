@@ -51,7 +51,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-02 · Bildirim izni ilk iyi andan sonra soruluyor · iOS [x] Android [ ]
+### 2026-11-02 · Bildirim izni ilk iyi andan sonra soruluyor · iOS [x] Android [x]
 - **Onboarding üç adım** oldu: karşılama, seviye, widget. Hatırlatma adımı kaldırıldı. Widget
   adımındaki "Sonra" ve "Ekledim" onboarding'i bitirir.
 - **İyi an:** bir Hızlı Tekrar turunu bitirmek, bulmacada bir kelime çözmek ya da bir oyunu
@@ -76,6 +76,11 @@ dalında sürer.
   çağrılıyor. Önceden çağrılmıyordu, bu yüzden oyunlar `streak.day` göndermiyordu.
 - iOS dosyaları: `App/Notifications/ReminderAsk.swift`, `App/Onboarding/OnboardingView.swift`,
   `App/MainTabView.swift`, `App/AppModel.swift`.
+- Android dosyaları: `notifications/ReminderAsk.kt` (kural + kart), `ui/onboarding/Onboarding.kt`,
+  `ui/Navigation.kt` (tur kapanınca 0,6 sn), `data/AppModel.kt` (`studied`), `data/LockPrefs.kt`.
+  Android "hiç sorulmadı" bilgisini vermediği için uygulama izni istediğini kendisi saklar; daha önce
+  istenmiş ve gerekçe gösterilmiyorsa kalıcı reddedilmiş sayılır. Android 12 ve altında sistem izni
+  yok: hatırlatma kurulmamışsa kart çıkar, Hatırlat doğrudan kurar.
 
 ### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [x]
 - Izgara **10×10**; dar ekranda (iOS 380 pt, Android 360 dp altı) **9×9**. Kelime uzunluğu

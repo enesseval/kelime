@@ -100,6 +100,15 @@ for compile fixes and a first run before device testing.
    - *TelemetryDeck*: `streak.day` (once a day, with `source` = quickReview, puzzle, wordSearch, match), `streak.freezeUsed`, `weekly.opened`, `weekly.shared`,
      `game.wordsearch.finished`, `game.match.finished`, `share.card` (with `type`),
      `tile.quickReview`, `wallpaper.enabled`, alongside the iOS 1.0 `Usage.*` signals.
+   - *Reminder ask* (`notifications/ReminderAsk.kt`): onboarding has three steps and no reminder
+     step. After a good moment (`AppModel.studied`: a finished Quick Review, a solved puzzle word,
+     a finished game) the app marks the ask as pending when POST_NOTIFICATIONS was never granted or
+     permanently denied, the card was shown fewer than 2 times and not in the last 3 days. When the
+     round's screen closes, a bottom sheet opens 0.6 s later ("Güzel bir tur oldu", time 20:30,
+     Hatırlat / Şimdi değil); only Hatırlat opens the system prompt. Signal `reminder.ask` with
+     `result` = granted / denied / later. Android cannot report "never asked", so the app remembers
+     when it opened the prompt (`notificationsRequested`); asked + no rationale = permanently denied.
+     Below Android 13 there is no prompt: the card shows while no reminder is set and Hatırlat sets it.
    - The week dots on Bugün show streak days (`streak_day`), like the badge; a day saved by a
      freeze shows empty there (the dashed circle is only on the streak page). The paywall does not
      list the second freeze; the streak page and the Play text do.

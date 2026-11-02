@@ -194,7 +194,10 @@ fun ProfileScreen() {
 
         SettingsSection("HATIRLATMA VE TELAFFUZ") {
             SettingsToggle("Günlük hatırlatma", d.reminder != null, detail = d.reminder?.let(Reminder::label)) { on ->
-                if (on && Build.VERSION.SDK_INT >= 33) notifications.launch(Manifest.permission.POST_NOTIFICATIONS)
+                if (on && Build.VERSION.SDK_INT >= 33) {
+                    notifications.launch(Manifest.permission.POST_NOTIFICATIONS)
+                    scope.launch { app.model.prefs.update { it.copy(notificationsRequested = true) } }
+                }
                 val minutes = if (on) 20 * 60 else null
                 scope.launch {
                     app.model.write("reminder") { db -> Settings.setInt(db, SettingKey.REMINDER_TIME, minutes) }

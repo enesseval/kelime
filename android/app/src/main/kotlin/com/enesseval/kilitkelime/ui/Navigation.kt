@@ -84,6 +84,9 @@ enum class Tab(val route: String, val label: String) {
 /** Screens shown full screen, without the tab bar. */
 private val fullScreen = listOf("review", "puzzle", "paywall", "wordhunt", "match", "feedback", "weekly")
 
+/** Full-screen rounds that can count a streak day; the reminder card waits until they close. */
+private val rounds = listOf("review", "puzzle", "wordhunt", "match")
+
 /** Navigation for the whole app (port of AppRouter). */
 class AppRouter(val nav: NavHostController) {
     var toast by mutableStateOf<String?>(null)
@@ -163,6 +166,17 @@ fun MainScaffold() {
     val entry by nav.currentBackStackEntryAsState()
     val route = entry?.destination?.route ?: ""
     val showBar = fullScreen.none { route.startsWith(it) }
+    val roundOpen = rounds.any { route.startsWith(it) }
+    var reminderAsk by remember { mutableStateOf(false) }
+
+    // After a good moment, the reminder card opens 0.6 s after the round's screen closes.
+    LaunchedEffect(roundOpen) {
+        if (roundOpen || !app.model.reminderAskPending.value) return@LaunchedEffect
+        app.model.reminderAskPending.value = false
+        if (com.enesseval.kilitkelime.notifications.ReminderAsk.permanentlyDenied(activity, app.model)) return@LaunchedEffect
+        kotlinx.coroutines.delay(600)
+        reminderAsk = true
+    }
 
     // Deep links: widgets, notification, tile, shared list links.
     val link by activity.links.collectAsState()
@@ -217,6 +231,7 @@ fun MainScaffold() {
                 if (showBar) TabBar(route, router)
             }
             Toast(router.toast) { router.toast = null }
+            if (reminderAsk) com.enesseval.kilitkelime.notifications.ReminderAskSheet { reminderAsk = false }
         }
     }
 }

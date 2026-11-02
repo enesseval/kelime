@@ -5,6 +5,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.floatPreferencesKey
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -41,6 +42,11 @@ data class LockSettings(
     val lastWallpaperKey: String = "",
     val lastWeeklySummary: String = "",
     val lastReviewPrompt: Long = 0,
+    /** Times the "Güzel bir tur oldu" reminder card was shown, and when last (epoch ms). */
+    val reminderAskCount: Int = 0,
+    val reminderAskLast: Long = 0,
+    /** True once the app has opened the POST_NOTIFICATIONS system prompt (Android 13+). */
+    val notificationsRequested: Boolean = false,
 )
 
 class LockPrefs(private val context: Context) {
@@ -53,6 +59,9 @@ class LockPrefs(private val context: Context) {
         val lastKey = stringPreferencesKey("wallpaper_last_key")
         val weekly = stringPreferencesKey("weekly_summary_seen")
         val reviewPrompt = longPreferencesKey("review_prompt_at")
+        val askCount = intPreferencesKey("reminder_ask_count")
+        val askLast = longPreferencesKey("reminder_ask_last")
+        val requested = booleanPreferencesKey("notifications_requested")
     }
 
     val flow: Flow<LockSettings> = context.store.data.map(::read)
@@ -68,6 +77,9 @@ class LockPrefs(private val context: Context) {
         lastWallpaperKey = p[K.lastKey] ?: "",
         lastWeeklySummary = p[K.weekly] ?: "",
         lastReviewPrompt = p[K.reviewPrompt] ?: 0,
+        reminderAskCount = p[K.askCount] ?: 0,
+        reminderAskLast = p[K.askLast] ?: 0,
+        notificationsRequested = p[K.requested] ?: false,
     )
 
     suspend fun update(change: (LockSettings) -> LockSettings) {
@@ -81,6 +93,9 @@ class LockPrefs(private val context: Context) {
             p[K.lastKey] = next.lastWallpaperKey
             p[K.weekly] = next.lastWeeklySummary
             p[K.reviewPrompt] = next.lastReviewPrompt
+            p[K.askCount] = next.reminderAskCount
+            p[K.askLast] = next.reminderAskLast
+            p[K.requested] = next.notificationsRequested
         }
     }
 }

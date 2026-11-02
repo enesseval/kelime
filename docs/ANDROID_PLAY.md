@@ -200,7 +200,11 @@ Hangi cihaz, Android sürümü, tarih: ____________________
 - [ ] Giriş animasyonu: kelimeler harf harf yazılıyor, "Başla" çalışıyor
 - [ ] Seviye seçimi; "Seviyemi bilmiyorum · 2 dk test" testi bitiriyor ve seviye öneriyor
 - [ ] Kilit ekranı adımı: önizleme seçtiğin arka planla ve konumla değişiyor
-- [ ] Hatırlatma: "İzin ver" sistem iznini soruyor; "Gerek yok" izinsiz bitiriyor
+- [ ] Onboarding üç adım; kilit ekranı adımındaki "Başla" bitiriyor, bildirim izni sorulmuyor
+- [ ] İlk iyi andan sonra (Hızlı Tekrar bitişi, bulmacada bir kelime, oyun bitişi) tur ekranı kapanınca
+  0,6 sn sonra "Güzel bir tur oldu" kartı açılıyor; saat 20:30; sistem izni yalnızca "Hatırlat" ile
+  soruluyor; izin verilince hatırlatma o saate kuruluyor ve Profil'de görünüyor
+- [ ] Kart en çok 2 kez, aralarında en az 3 gün; izin verildiyse ya da kalıcı reddedildiyse bir daha çıkmıyor
 
 ### 2. Kilit ekranı duvar kâğıdı (asıl özellik)
 - [ ] "Kelimeyi duvar kâğıdına yaz" açınca kilit ekranında kelime görünüyor

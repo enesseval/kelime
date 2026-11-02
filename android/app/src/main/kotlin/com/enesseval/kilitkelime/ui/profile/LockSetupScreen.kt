@@ -244,6 +244,7 @@ fun LockSetupContent(showTitle: Boolean, onboarding: Boolean = false) {
             SettingsToggle("Kilit ekranında bildirim olarak göster", settings.notificationEnabled, detail = "Sessiz; her yeni kelimede güncellenir. Biliyorum / Zorlanıyorum düğmeleriyle.") { on ->
                 if (on && Build.VERSION.SDK_INT >= 33 && !WordNotification.canPost(context)) {
                     notifications.launch(Manifest.permission.POST_NOTIFICATIONS)
+                    scope.launch { app.model.prefs.update { it.copy(notificationsRequested = true) } }
                 } else scope.launch {
                     app.model.prefs.update { it.copy(notificationEnabled = on) }
                     if (on) Analytics.send(Analytics.Event.notificationOn)

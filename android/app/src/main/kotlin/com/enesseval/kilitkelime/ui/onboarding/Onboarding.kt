@@ -1,11 +1,6 @@
 package com.enesseval.kilitkelime.ui.onboarding
 
-import android.Manifest
-import android.app.TimePickerDialog
-import android.os.Build
 import androidx.activity.compose.BackHandler
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -44,7 +39,6 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -58,7 +52,6 @@ import com.enesseval.kilitkelime.core.model.LevelSamples
 import com.enesseval.kilitkelime.core.model.OnboardingChoices
 import com.enesseval.kilitkelime.core.review.PlacementQuestion
 import com.enesseval.kilitkelime.core.review.PlacementTest
-import com.enesseval.kilitkelime.notifications.Reminder
 import com.enesseval.kilitkelime.ui.LocalApp
 import com.enesseval.kilitkelime.ui.components.Gap
 import com.enesseval.kilitkelime.ui.components.Kicker
@@ -72,9 +65,12 @@ import com.enesseval.kilitkelime.ui.theme.Palette
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private enum class Step { INTRO, LEVEL, PLACEMENT, LOCK, REMINDER }
+private enum class Step { INTRO, LEVEL, PLACEMENT, LOCK }
 
-/** First launch: intro, level (or the placement test), the lock-screen choices, the reminder. */
+/**
+ * First launch: intro, level (or the placement test), the lock-screen choices. The daily reminder
+ * is asked after the first good moment instead (`ReminderAsk`).
+ */
 @Composable
 fun OnboardingFlow() {
     val app = LocalApp.current
@@ -89,22 +85,20 @@ fun OnboardingFlow() {
             Step.LEVEL -> Step.INTRO
             Step.PLACEMENT -> Step.LEVEL
             Step.LOCK -> Step.LEVEL
-            Step.REMINDER -> Step.LOCK
             Step.INTRO -> Step.INTRO
         }
     }
 
-    fun finish(reminder: Int?) {
+    fun finish() {
         if (finishing) return
         finishing = true
         scope.launch {
             app.model.write("onboarding") { db ->
-                OnboardingChoices(level, reminder).save(db)
+                OnboardingChoices(level, null).save(db)
                 Curriculum.switchLevel(level, db)
                 WidgetQueue.clearCurrentAndFuture(db, app.model.clock)
                 WidgetQueue.refill(db, app.model.clock, SystemRandom())
             }
-            Reminder.schedule(app, reminder)
             app.model.prefs.update { it.copy(onboardingLockAsked = true) }
             Analytics.send(Analytics.Event.onboardingDone)
         }
@@ -116,10 +110,9 @@ fun OnboardingFlow() {
                 Step.INTRO -> Intro { step = Step.LEVEL }
                 Step.LEVEL -> LevelStep(level, onPick = { level = it }, onTest = { step = Step.PLACEMENT }) { step = Step.LOCK }
                 Step.PLACEMENT -> PlacementStep(onDone = { level = it; step = Step.LOCK }, onCancel = { step = Step.LEVEL })
-                Step.LOCK -> StepFrame(3, "Kilit ekranı", "En önemli adım bu: kelimeler kilit ekranında görünsün. 30 saniye sürer.", "Devam", onNext = { step = Step.REMINDER }) {
+                Step.LOCK -> StepFrame(3, "Kilit ekranı", "En önemli adım bu: kelimeler kilit ekranında görünsün. 30 saniye sürer.", if (finishing) "…" else "Başla", onNext = ::finish, nextEnabled = !finishing) {
                     LockSetupContent(showTitle = false, onboarding = true)
                 }
-                Step.REMINDER -> ReminderStep(finishing, ::finish)
             }
         }
     }
@@ -169,7 +162,7 @@ private fun StepFrame(number: Int, title: String, subtitle: String, next: String
     val c = Palette.current
     Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding()) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 16.dp)) {
-            Text("Adım $number / 4", style = KelimeType.ui(13.sp, FontWeight.Medium), color = c.ink2)
+            Text("Adım $number / 3", style = KelimeType.ui(13.sp, FontWeight.Medium), color = c.ink2)
             Gap(6.dp)
             Text(title, style = KelimeType.ui(30.sp, FontWeight.Bold), color = c.ink)
             Gap(6.dp)
@@ -268,36 +261,5 @@ private fun PlacementStep(onDone: (CEFRLevel) -> Unit, onCancel: () -> Unit) {
         TintedButton("Bilmiyorum") { answer(false) }
         Box(Modifier.weight(1f))
         Text("Vazgeç", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.ink2, modifier = Modifier.align(Alignment.CenterHorizontally).clickable(onClick = onCancel).padding(10.dp))
-    }
-}
-
-@Composable
-private fun ReminderStep(finishing: Boolean, onFinish: (Int?) -> Unit) {
-    val c = Palette.current
-    val context = LocalContext.current
-    var minutes by remember { mutableIntStateOf(20 * 60 + 30) }
-    val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted -> onFinish(if (granted) minutes else null) }
-    StepFrame(
-        4, "Günde bir hatırlatma", "İstersen her gün aynı saatte kısa bir tekrar hatırlatalım.", if (finishing) "…" else "İzin ver",
-        onNext = {
-            if (Build.VERSION.SDK_INT >= 33) permission.launch(Manifest.permission.POST_NOTIFICATIONS) else onFinish(minutes)
-        },
-        nextEnabled = !finishing,
-        secondary = { TintedButton("Gerek yok") { onFinish(null) } },
-    ) {
-        Row(
-            Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(c.surface).border(1.dp, c.line, RoundedCornerShape(16.dp))
-                .clickable { TimePickerDialog(context, { _, h, m -> minutes = h * 60 + m }, minutes / 60, minutes % 60, true).show() }
-                .padding(18.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Text("Saat", style = KelimeType.ui(16.sp), color = c.ink, modifier = Modifier.weight(1f))
-            Text(Reminder.label(minutes), style = KelimeType.ui(22.sp, FontWeight.SemiBold), color = c.accent)
-        }
-        Gap(16.dp)
-        Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(c.surface2).padding(14.dp)) {
-            Text("Tekrar zamanı", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.ink)
-            Text("2 dakikalık tur seni bekliyor.", style = KelimeType.ui(13.sp), color = c.ink2)
-        }
     }
 }

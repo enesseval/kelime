@@ -27,6 +27,7 @@ object Analytics {
         const val SHARE_CARD = "share.card"
         const val TILE_QUICK_REVIEW = "tile.quickReview"
         const val WALLPAPER_ENABLED = "wallpaper.enabled"
+        const val REMINDER_ASK = "reminder.ask"
     }
 
     fun start(app: Application) {

@@ -146,7 +146,12 @@ class AppModel(private val context: Context) {
         }
         if (newDay) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_DAY, mapOf("source" to source.raw))
         if (newFreeze) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_FREEZE_USED)
+        // A good moment: ask for the daily reminder once the round's screen closes.
+        if (!reminderAskPending.value && com.enesseval.kilitkelime.notifications.ReminderAsk.shouldAsk(context, this)) reminderAskPending.value = true
     }
+
+    /** Set after a good moment when the reminder card may be shown; MainScaffold shows it after the round closes. */
+    val reminderAskPending = MutableStateFlow(false)
 
     /** Checks GitHub Pages for newer content (at most every 6 hours). */
     fun checkForContent() {
