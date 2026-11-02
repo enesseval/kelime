@@ -47,11 +47,7 @@ object StatsQueries {
 
     fun weekStart(day: LocalDate): LocalDate = day.minusDays((day.dayOfWeek.value - DayOfWeek.MONDAY.value).toLong())
 
-    private fun studiedDays(db: SqlDb, from: LocalDate, to: LocalDate): Set<LocalDate> =
-        db.strings("SELECT DISTINCT answered_on FROM review_log WHERE answered_on BETWEEN ? AND ?", listOf(from, to))
-            .mapNotNull(LocalDates::parse).toSet()
-
-    /** This week's dots (days with any answer, as on iOS 1.0) and the 1.1 streak. */
+    /** This week's dots are streak days (`streak_day`), so they agree with the streak badge (docs/SYNC.md). */
     fun week(db: SqlDb, clock: AppClock, isPro: Boolean = false): WeekStats {
         val today = clock.today
         val start = weekStart(today)
@@ -61,7 +57,7 @@ object StatsQueries {
             listOf(start, end),
         )
         val struggling = db.int("SELECT COUNT(*) FROM card_state WHERE state = 'struggling'")
-        val reviewed = studiedDays(db, start, end)
+        val reviewed = Streak.studiedDays(db, start, end)
         val days = (0 until 7).map { i ->
             val d = start.addingDays(i)
             WeekStats.Day(d, d in reviewed, weekdayInitials[i])

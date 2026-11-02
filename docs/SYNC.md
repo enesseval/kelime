@@ -56,11 +56,12 @@ Android ilk sürümü 1.0 değil **1.1.0** olarak çıkar: `versionName = "1.1.0
 kalır. `docs/ANDROID_NOTES.md`, `docs/ANDROID_PLAY.md` ve planda "Android 1.0" geçen yerler
 1.1.0 olur.
 
-### 2026-11-02 · Bugün'deki hafta noktaları seri günlerini gösterir · iOS [x] Android [ ]
+### 2026-11-02 · Bugün'deki hafta noktaları seri günlerini gösterir · iOS [x] Android [x]
 Bugün ekranındaki 7 noktalı hafta satırı "o gün herhangi bir cevap verildi mi"yi değil, seri
 gününü (`streak_day`) gösterir; seri rozetiyle çelişmesin. Koruyucuyla kurtarılan gün boş
 görünür (kesik çizgi yalnızca seri sayfasında). iOS: `StatsQueries` hafta noktaları
-`streak_day`'den okur.
+`streak_day`'den okur. Android: `StatsQueries.week` noktaları `Streak.studiedDays`'ten okur
+(`QueriesTest.weekStatsCountThisWeekOnly`).
 
 ### 2026-11-02 · Ölçüm sinyalleri iki tarafta aynı · iOS [x] Android [x]
 - `streak.day` günde **bir kez**, o gün ilk sayıldığında gider; parametre `source` = `quickReview`,

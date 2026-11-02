@@ -49,6 +49,10 @@ class QueriesTest {
         LearningStore.record(LearningEvent.MarkedKnown, "b1-reliable", ReviewSource.WORD_DETAIL, clock(2), db)
         LearningStore.record(right, "b1-honest", ReviewSource.QUICK_REVIEW, clock(3), db)
         LearningStore.record(wrong, "b2-reluctant", ReviewSource.QUICK_REVIEW, clock, db)
+        // The dots are streak days: answers alone do not light them, a finished round does.
+        assertEquals(List(7) { false }, StatsQueries.week(db, clock).days.map { it.reviewed })
+        LearningStore.markStudied(clock.today, StreakSource.QUICK_REVIEW, db)
+        LearningStore.markStudied(clock(3).today, StreakSource.MATCH, db) // last Sunday: another week
         val stats = StatsQueries.week(db, clock)
         assertEquals(2, stats.learnedThisWeek)
         assertEquals(1, stats.strugglingNow)

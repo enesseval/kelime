@@ -98,9 +98,9 @@ for compile fixes and a first run before device testing.
    - *TelemetryDeck*: `streak.day` (once a day, with `source` = quickReview, puzzle, wordSearch, match), `streak.freezeUsed`, `weekly.opened`, `weekly.shared`,
      `game.wordsearch.finished`, `game.match.finished`, `share.card` (with `type`),
      `tile.quickReview`, `wallpaper.enabled`, alongside the iOS 1.0 `Usage.*` signals.
-   - Plan points with an Android-specific reading: the week dots on Bugün still mean "any answer that
-     day" (iOS 1.0 behaviour); the streak badge and streak page use the plan's rules. The paywall does
-     not list the second freeze; the streak page and the Play text do.
+   - The week dots on Bugün show streak days (`streak_day`), like the badge; a day saved by a
+     freeze shows empty there (the dashed circle is only on the streak page). The paywall does not
+     list the second freeze; the streak page and the Play text do.
 3. **Database: platform SQLite instead of Room.** The schema is owned by `:core`
    (`Migrations.kt`, a 1:1 port of `Migrations.swift` v1–v6 plus v7 for the 1.1 tables) and every
    query is the same SQL as iOS, run through a small `SqlDb` interface. Tests run that exact SQL on
