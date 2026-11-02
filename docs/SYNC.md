@@ -32,7 +32,7 @@ oturumu buraya yönlendirir.
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.1.0 | 1.1.0 |
-| Build | 30 (TestFlight) | versionCode 1 |
+| Build | 31 (TestFlight) | versionCode 1 |
 | Dal | `v1.1` | `v1.1` |
 | Mağazada | 1.0.0 (28) incelemede, `main` | henüz yok |
 
