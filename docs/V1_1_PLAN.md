@@ -46,16 +46,17 @@ açıp bir şey yapmayı ödüllendirir; widget zaten pasif öğrenmeyi verir.
 kelimeler, sonra öğrenilenlerden tekrar zamanı gelenler. Ücretsiz, günde sınırsız.
 
 ### 2a. Kelime Avı
-- 8×8 (küçük ekranlarda 7×7) harf ızgarası, 6 kelime saklı: yatay, dikey ve çapraz. Ters yazım
+- 10×10 (küçük ekranlarda 9×9) harf ızgarası, 6 kelime saklı: yatay, dikey ve çapraz. Ters yazım
   yok (öğrenme amaçlı).
 - Liste olarak İngilizce kelimeler değil, **Türkçe anlamları** gösterilir; kullanıcı İngilizcesini
   bulur. Bulunan kelimenin anlamının yanına İngilizcesi yazılır.
-- Parmakla sürükleyerek seçim. Doğru seçim yeşile döner, kısa titreşim.
+- Parmakla sürükleyerek seçim. Bulunan kelimenin altına yeşil şerit çizilir, kısa titreşim.
 - İpucu: "İlk harfi göster" (ızgarada ilk harf parlar). İpucu kullanılan kelime
   `hintUsed` sayılır → zorlanılan olur (bulmacadaki kuralla aynı).
 - Bitince sonuç ekranı: süre, ipucu sayısı, kelimeler. Doğru (ipucusuz) bulunan her kelime
   `answered(correct: true)`.
-- Tek harf seti: A–Z ASCII. Kalıplar ve boşluk/tire içeren kelimeler dahil edilmez; 3–8 harf.
+- Tek harf seti: A–Z ASCII. Kalıplar ve boşluk/tire içeren kelimeler dahil edilmez; 3–9 harf
+  (9×9'da 3–8).
 - Üretim deterministik bir tohumla yapılır ki test edilebilsin.
 
 ### 2b. Eşleştir

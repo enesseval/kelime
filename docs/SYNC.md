@@ -51,6 +51,34 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-02 · Kelime Avı: 10×10 tabla, kelimeler şeritle işaretlenir · iOS [x] Android [ ]
+- Izgara **10×10**; dar ekranda (iOS 380 pt, Android 360 dp altı) **9×9**. Kelime uzunluğu
+  3 ile (boyut − 1) harf arası, yani 9 ya da 8 harfe kadar. Kelime sayısı 6.
+- Görünüm sadeleşti:
+  - Harfler artık tek tek kutularda değil, tek beyaz kart üzerinde duruyor (köşe 20, ince
+    çerçeve, 8'lik iç boşluk).
+  - Bulunan kelime harflerin altında yuvarlak uçlu bir şeritle gösteriliyor: yeşil, %32
+    opaklık, kalınlık hücrenin %80'i. Harfleri koyu yeşil ve kalın.
+  - Sürüklerken seçim aynı şekilde mavi şerit (%35); yanlışta kısa süre amber.
+  - İpucu, ilk harfin altında amber bir daire.
+  - Şeritler 0,25 sn'de belirir.
+- Android'de Canvas'ta `drawLine(cap = StrokeCap.Round)` ile aynısı yapılır.
+
+### 2026-11-02 · Eşleştir: doğru ve yanlış belirgin · iOS [x] Android [ ]
+- **Doğru çift:**
+  - İki kart da yeşil olur (zemin yeşil, 2'lik yeşil çerçeve, yazı koyu yeşil).
+  - Yazının önüne ✓ gelir ve kart %5 büyür (yaylanarak).
+  - **0,42 sn** öyle kalır, sonra kaybolur ve tahta güncellenir.
+  - Bu sırada başka bir karta dokunulursa beklemeden güncellenir. Yeşil kartlara dokunmak hiçbir
+    şey yapmaz.
+- **Yanlış çift:**
+  - İki kart da amber olur (zemin amber, 2'lik amber çerçeve, yazı koyu amber) ve önüne ✕
+    gelir.
+  - İkisi birlikte iki kez sağa sola sallanır: 7 pt, 0,4 sn.
+  - 0,65 sn sonra normale döner. Hata titreşimi verilir.
+- Süre dolarken bekleyen eşleşme varsa önce o sayılır.
+
+
 ### 2026-11-02 · Oyunlar Bugün'den çıktı, Oyna'da 4 eşit kart · iOS [x] Android [x]
 - **Bugün:** Hızlı Tekrar ve Günün Bulmacası kartları kaldırıldı; Bugün'de hiçbir oyun yok.
   Kalanlar: seri rozeti, haftalık özet kartı, widget'taki kelime, kaynak satırı, bölüm kartı,

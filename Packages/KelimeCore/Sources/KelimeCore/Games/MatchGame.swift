@@ -79,6 +79,9 @@ public struct MatchGame: Sendable {
         return .miss(english: en.card, turkish: tr.card)
     }
 
+    /// Drops the selection without a pair (the view clears it while a match is still showing).
+    public mutating func clearSelection() { selected = nil }
+
     /// Empties the matched slots; once enough are empty, deals the next cards into them.
     private mutating func refill(englishOf matchedEnglish: Card, turkishOf matchedTurkish: Card) {
         // A synonym pair (two cards, one meaning) leaves each card's other half behind; those

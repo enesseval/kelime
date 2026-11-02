@@ -18,7 +18,7 @@
 - [ ] "Haftanı paylaş" → kart doğru rakamlarla
 
 ## Kelime Avı
-- [ ] Oyna › Kelime Avı: 8×8 ızgara (küçük ekranda 7×7), 6 Türkçe anlam
+- [ ] Oyna › Kelime Avı: 10×10 ızgara (küçük ekranda 9×9), bulunan kelime yeşil şeritle, 6 Türkçe anlam
 - [ ] Parmakla yatay, dikey, çapraz sürükle → doğru kelime yeşil, anlamın altında İngilizcesi
 - [ ] Yanlış seçim kısa amber, titreşim
 - [ ] "İlk harfi göster" → bir kelimenin ilk harfi amber; o kelime zorlanılan olur

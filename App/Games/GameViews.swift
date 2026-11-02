@@ -5,7 +5,7 @@ import SwiftUI
 // MARK: - Kelime Avı
 
 /// Kelime Avı: find the English words in the grid from their Turkish meanings. Drag across the
-/// letters; a right line turns green and the meaning shows its word.
+/// letters; a found word gets a green bar under it and the meaning shows its word.
 struct WordSearchView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dismiss) private var dismiss
@@ -71,7 +71,7 @@ struct WordSearchView: View {
                 .font(KelimeFont.ui(13, weight: .semibold, relativeTo: .footnote))
                 .foregroundStyle(Palette.ink2)
             grid(game)
-                .padding(.horizontal, 16)
+                .padding(.horizontal, 12)
             clues(game)
                 .padding(.horizontal, 20)
             Spacer(minLength: 0)
@@ -90,45 +90,67 @@ struct WordSearchView: View {
     private func grid(_ game: WordSearch) -> some View {
         GeometryReader { proxy in
             let side = min(proxy.size.width, proxy.size.height)
-            let cell = side / CGFloat(game.size)
+            let inset: CGFloat = 8
+            let cell = (side - inset * 2) / CGFloat(game.size)
             let foundCells = Set(game.placements.filter { found.contains($0.id) }.flatMap(\.cells))
             let hintCells = Set(game.placements.filter { hinted.contains($0.id) && !found.contains($0.id) }.map(\.start))
-            let selected = Set(selection)
+            let center = { (p: WordSearch.Point) in CGPoint(x: inset + (CGFloat(p.col) + 0.5) * cell, y: inset + (CGFloat(p.row) + 0.5) * cell) }
             ZStack(alignment: .topLeading) {
+                // Found words and the current drag are bars under the letters, like a pen on paper.
+                ForEach(game.placements.filter { found.contains($0.id) }) { p in
+                    bar(from: center(p.cells[0]), to: center(p.cells[p.cells.count - 1]), width: cell * 0.8)
+                        .stroke(Palette.green.opacity(0.32), style: StrokeStyle(lineWidth: cell * 0.8, lineCap: .round))
+                        .transition(.opacity)
+                }
+                ForEach(Array(hintCells), id: \.self) { p in
+                    Circle().fill(Palette.amberBackground)
+                        .frame(width: cell * 0.8, height: cell * 0.8)
+                        .position(center(p))
+                }
+                if let first = selection.first, let last = selection.last {
+                    bar(from: center(first), to: center(last), width: cell * 0.8)
+                        .stroke((wrongFlash ? Palette.amber : Palette.accent).opacity(0.35),
+                                style: StrokeStyle(lineWidth: cell * 0.8, lineCap: .round))
+                }
                 ForEach(0..<game.size, id: \.self) { row in
                     ForEach(0..<game.size, id: \.self) { col in
                         let p = WordSearch.Point(row: row, col: col)
                         Text(String(game.letter(at: p)))
-                            .font(KelimeFont.ui(cell * 0.46, weight: .semibold))
+                            .font(KelimeFont.ui(cell * 0.5, weight: foundCells.contains(p) ? .bold : .medium))
                             .foregroundStyle(foundCells.contains(p) ? Palette.greenInk : Palette.ink)
-                            .frame(width: cell - 4, height: cell - 4)
-                            .background {
-                                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                    .fill(selected.contains(p) ? (wrongFlash ? Palette.amberBackground : Palette.accentSoft)
-                                          : foundCells.contains(p) ? Palette.greenBackground
-                                          : hintCells.contains(p) ? Palette.amberBackground : Palette.surface)
-                            }
-                            .position(x: CGFloat(col) * cell + cell / 2, y: CGFloat(row) * cell + cell / 2)
+                            .frame(width: cell, height: cell)
+                            .position(center(p))
                     }
                 }
             }
             .frame(width: side, height: side)
+            .background(Palette.surface, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Palette.line))
             .contentShape(Rectangle())
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { value in
-                        guard let start = point(value.startLocation, cell: cell, size: game.size),
-                              let end = point(value.location, cell: cell, size: game.size) else { return }
+                        guard let start = point(value.startLocation, cell: cell, inset: inset, size: game.size),
+                              let end = point(value.location, cell: cell, inset: inset, size: game.size) else { return }
                         dragStart = start
                         selection = WordSearch.line(from: start, to: end) ?? [start]
                     }
                     .onEnded { _ in check(game) }
             )
             .frame(maxWidth: .infinity)
+            .animation(.easeOut(duration: 0.25), value: found)
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Harf ızgarası")
         }
         .aspectRatio(1, contentMode: .fit)
+    }
+
+    /// A straight segment between two letter centres; stroked wide with round caps it is a pill.
+    private func bar(from a: CGPoint, to b: CGPoint, width: CGFloat) -> Path {
+        Path { path in
+            path.move(to: a)
+            path.addLine(to: b)
+        }
     }
 
     private func clues(_ game: WordSearch) -> some View {
@@ -168,8 +190,8 @@ struct WordSearchView: View {
 
     // MARK: Actions
 
-    private func point(_ location: CGPoint, cell: CGFloat, size: Int) -> WordSearch.Point? {
-        let col = Int(location.x / cell), row = Int(location.y / cell)
+    private func point(_ location: CGPoint, cell: CGFloat, inset: CGFloat, size: Int) -> WordSearch.Point? {
+        let col = Int((location.x - inset) / cell), row = Int((location.y - inset) / cell)
         guard (0..<size).contains(row), (0..<size).contains(col) else { return nil }
         return WordSearch.Point(row: row, col: col)
     }
@@ -209,10 +231,11 @@ struct WordSearchView: View {
 
     private func load() async {
         let clock = model.clock
-        let size = UIScreen.main.bounds.width < 380 ? 7 : 8
+        // 10 × 10 (9 × 9 on small phones): room for long words and letters left over around them.
+        let size = UIScreen.main.bounds.width < 380 ? 9 : 10
         let made: WordSearch? = await model.read { db in
             var rng = SystemRandomNumberGenerator()
-            let cards = try GamePool.cards(count: 24, singleWords: true, lengths: 3...size, db: db, today: clock.today, using: &rng)
+            let cards = try GamePool.cards(count: 24, singleWords: true, lengths: 3...(size - 1), db: db, today: clock.today, using: &rng)
             return WordSearch.make(cards: cards, size: size, wordCount: 6, using: &rng)
         } ?? nil
         game = made
@@ -239,7 +262,12 @@ struct MatchView: View {
     @State private var remaining = Int(MatchGame.duration)
     @State private var started = false
     @State private var finished = false
-    @State private var shake: String?
+    /// Tiles showing a result right now: green for a match (before they fade), amber for a miss.
+    @State private var right: Set<String> = []
+    @State private var wrong: Set<String> = []
+    @State private var shakes = 0
+    /// The board after a match, applied once the green flash has shown.
+    @State private var pending: MatchGame?
     @State private var best = 0
     @State private var failed = false
 
@@ -271,7 +299,7 @@ struct MatchView: View {
             if !finished { finish() }
         }
         .sensoryFeedback(.success, trigger: game?.score ?? 0)
-        .sensoryFeedback(.error, trigger: shake)
+        .sensoryFeedback(.error, trigger: shakes)
     }
 
     private var header: some View {
@@ -350,20 +378,31 @@ struct MatchView: View {
     }
 
     private func tileButton(_ tile: MatchGame.Tile, selected: Bool) -> some View {
-        Button { tap(tile) } label: {
-            Text(tile.text)
-                .font(tile.side == .english ? KelimeFont.english(19, relativeTo: .body) : KelimeFont.ui(15, relativeTo: .subheadline))
-                .multilineTextAlignment(.center)
-                .lineLimit(2)
-                .minimumScaleFactor(0.75)
-                .foregroundStyle(Palette.ink)
-                .padding(.horizontal, 8)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(selected ? Palette.accentSoft : shake == tile.id ? Palette.amberBackground : Palette.surface,
-                            in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .strokeBorder(selected ? Palette.accent : Palette.line, lineWidth: selected ? 2 : 1))
-                .offset(x: shake == tile.id ? 6 : 0)
+        let isRight = right.contains(tile.id), isWrong = wrong.contains(tile.id)
+        let fill = isRight ? Palette.greenBackground : isWrong ? Palette.amberBackground : selected ? Palette.accentSoft : Palette.surface
+        let border = isRight ? Palette.green : isWrong ? Palette.amber : selected ? Palette.accent : Palette.line
+        return Button { tap(tile) } label: {
+            HStack(spacing: 6) {
+                if isRight || isWrong {
+                    Image(systemName: isRight ? "checkmark" : "xmark")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(isRight ? Palette.greenInk : Palette.amberInk)
+                        .transition(.scale.combined(with: .opacity))
+                }
+                Text(tile.text)
+                    .font(tile.side == .english ? KelimeFont.english(19, relativeTo: .body) : KelimeFont.ui(15, relativeTo: .subheadline))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.75)
+                    .foregroundStyle(isRight ? Palette.greenInk : isWrong ? Palette.amberInk : Palette.ink)
+            }
+            .padding(.horizontal, 8)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(fill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .strokeBorder(border, lineWidth: selected || isRight || isWrong ? 2 : 1))
+            .scaleEffect(isRight ? 1.05 : 1)
+            .modifier(Shake(amount: isWrong ? 7 : 0, shakes: CGFloat(shakes)))
         }
         .buttonStyle(.plain)
     }
@@ -387,32 +426,57 @@ struct MatchView: View {
     // MARK: Actions
 
     private func tap(_ tile: MatchGame.Tile) {
+        guard !right.contains(tile.id) else { return }
+        commitPending()
         guard var current = game else { return }
         let missedBefore = current.missed.count
+        let first = current.selected
         let outcome = current.tap(tile)
-        withAnimation(.easeInOut(duration: 0.3)) { game = current }
         switch outcome {
         case .match(let card):
+            // Show the pair green for a moment, then let it fade and the board move on.
+            let ids: Set<String> = [first?.id, tile.id].compactMap { $0 }.reduce(into: []) { $0.insert($1) }
+            withAnimation(.spring(response: 0.25, dampingFraction: 0.6)) { right = ids }
+            game?.clearSelection()
+            pending = current
             if !current.missed.contains(where: { $0.id == card.id }) {
                 Task { await model.record(.answered(correct: true), cardID: card.id, source: .game) }
             }
-            if current.isOutOfCards { finish() }
+            Task {
+                try? await Task.sleep(for: .milliseconds(420))
+                commitPending()
+            }
         case .miss(let english, _):
+            withAnimation(.easeInOut(duration: 0.2)) { game = current }
             // A word counts as missed once per round.
             if current.missed.count > missedBefore {
                 Task { await model.record(.answered(correct: false), cardID: english.id, source: .game) }
             }
-            withAnimation(.default.repeatCount(2, autoreverses: true)) { shake = english.id + "-en" }
+            let ids: Set<String> = [first?.id, tile.id].compactMap { $0 }.reduce(into: []) { $0.insert($1) }
+            wrong = ids
+            withAnimation(.linear(duration: 0.4)) { shakes += 1 }
             Task {
-                try? await Task.sleep(for: .milliseconds(400))
-                shake = nil
+                try? await Task.sleep(for: .milliseconds(650))
+                if wrong == ids { withAnimation(.easeOut(duration: 0.2)) { wrong = [] } }
             }
         case nil:
-            break
+            withAnimation(.easeInOut(duration: 0.2)) { game = current }
         }
     }
 
+    /// Applies a match's board once its green flash is done (or at once when the next tap comes).
+    private func commitPending() {
+        guard let next = pending else { return }
+        pending = nil
+        withAnimation(.easeInOut(duration: 0.3)) {
+            game = next
+            right = []
+        }
+        if next.isOutOfCards { finish() }
+    }
+
     private func finish() {
+        commitPending()
         guard let game, !finished else { return }
         withAnimation { finished = true }
         let clock = model.clock, score = game.score
@@ -542,5 +606,19 @@ struct GameShareCard: View {
                 }
             }
         }
+    }
+}
+
+/// A side-to-side shake; `shakes` counts up once per wrong pair.
+private struct Shake: GeometryEffect {
+    var amount: CGFloat
+    var shakes: CGFloat
+    var animatableData: CGFloat {
+        get { shakes }
+        set { shakes = newValue }
+    }
+
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        ProjectionTransform(CGAffineTransform(translationX: amount * sin(shakes * .pi * 4), y: 0))
     }
 }
