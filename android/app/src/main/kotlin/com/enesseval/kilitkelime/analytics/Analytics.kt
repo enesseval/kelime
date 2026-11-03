@@ -28,6 +28,7 @@ object Analytics {
         const val TILE_QUICK_REVIEW = "tile.quickReview"
         const val WALLPAPER_ENABLED = "wallpaper.enabled"
         const val REMINDER_ASK = "reminder.ask"
+        const val PAYWALL_MOMENT = "paywall.moment"
     }
 
     fun start(app: Application) {

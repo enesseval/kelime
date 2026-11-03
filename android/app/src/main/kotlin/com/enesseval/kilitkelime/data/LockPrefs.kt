@@ -47,6 +47,10 @@ data class LockSettings(
     val reminderAskLast: Long = 0,
     /** True once the app has opened the POST_NOTIFICATIONS system prompt (Android 13+). */
     val notificationsRequested: Boolean = false,
+    /** Times the unprompted Pro offer (`PaywallTrigger.MOMENT`) opened, when last, and when any paywall last opened (epoch ms). */
+    val paywallMomentCount: Int = 0,
+    val paywallMomentLast: Long = 0,
+    val paywallLast: Long = 0,
 )
 
 class LockPrefs(private val context: Context) {
@@ -62,6 +66,9 @@ class LockPrefs(private val context: Context) {
         val askCount = intPreferencesKey("reminder_ask_count")
         val askLast = longPreferencesKey("reminder_ask_last")
         val requested = booleanPreferencesKey("notifications_requested")
+        val momentCount = intPreferencesKey("paywall_moment_count")
+        val momentLast = longPreferencesKey("paywall_moment_last")
+        val paywallLast = longPreferencesKey("paywall_last")
     }
 
     val flow: Flow<LockSettings> = context.store.data.map(::read)
@@ -80,6 +87,9 @@ class LockPrefs(private val context: Context) {
         reminderAskCount = p[K.askCount] ?: 0,
         reminderAskLast = p[K.askLast] ?: 0,
         notificationsRequested = p[K.requested] ?: false,
+        paywallMomentCount = p[K.momentCount] ?: 0,
+        paywallMomentLast = p[K.momentLast] ?: 0,
+        paywallLast = p[K.paywallLast] ?: 0,
     )
 
     suspend fun update(change: (LockSettings) -> LockSettings) {
@@ -96,6 +106,9 @@ class LockPrefs(private val context: Context) {
             p[K.askCount] = next.reminderAskCount
             p[K.askLast] = next.reminderAskLast
             p[K.requested] = next.notificationsRequested
+            p[K.momentCount] = next.paywallMomentCount
+            p[K.momentLast] = next.paywallMomentLast
+            p[K.paywallLast] = next.paywallLast
         }
     }
 }

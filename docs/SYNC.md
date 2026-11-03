@@ -51,7 +51,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-03 · Pro teklifi uygulama sevildikten sonra · iOS [x] Android [ ]
+### 2026-11-03 · Pro teklifi uygulama sevildikten sonra · iOS [x] Android [x]
 - **Kendiliğinden açılan tek Pro ekranı bu.** Onboarding sonunda paywall yok. Kilitli bir
   özelliğe dokununca açılan paywall'lar aynen kalır.
 - **Şartların hepsi gerekir:**
@@ -71,6 +71,10 @@ dalında sürer.
 - **Sinyal:** `paywall.moment`.
 - iOS dosyaları: `App/Store/PaywallMoment.swift`, `App/MainTabView.swift`, `App/AppModel.swift`,
   `App/AppRouter.swift`, `PaywallTrigger.swift` (core).
+- Android dosyaları: `core/model/Pro.kt` (`PaywallTrigger.MOMENT`, `PaywallMoment` kuralları,
+  `PaywallMomentTest`), `data/PaywallMomentStore.kt` (sayaçlar `LockPrefs`'te), `data/AppModel.kt`
+  (`studied`), `ui/Navigation.kt` (tur kapanınca 0,6 sn; her `showPaywall` saati kaydeder),
+  `ui/paywall/PaywallScreen.kt`.
 
 
 ### 2026-11-02 · Bildirim izni ilk iyi andan sonra soruluyor · iOS [x] Android [x]

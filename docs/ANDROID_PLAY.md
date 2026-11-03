@@ -273,6 +273,11 @@ gösterir.
 - [ ] Şikayet et, kullanıcıyı engelle
 - [ ] `https://enesseval.github.io/kelime/liste.html?id=…` linki uygulamada açılıyor (assetlinks yayınlandıktan sonra)
 - [ ] Paywall: üç plan fiyatlarla, yasal not, Geri yükle, Koşullar, Gizlilik
+- [ ] Temiz kurulum ve ilk günler: hiçbir yerde kendiliğinden paywall çıkmıyor
+- [ ] 3 farklı gün çalıştıktan sonra bir tur bitip kapanınca 0,6 sn sonra "Güzel gidiyorsun" Pro ekranı
+- [ ] Aynı turda bildirim kartı bekliyorsa önce o çıkıyor, Pro bir sonraki tura kalıyor
+- [ ] Kapatınca 14 gün yeniden çıkmıyor; en çok 2 kez
+- [ ] Kilitli özelliğe dokunup paywall gördükten sonraki 48 saat içinde teklif çıkmıyor
 - [ ] Yıllık deneme ile satın al → Pro açılıyor, sıklık seçenekleri açılıyor
 - [ ] iOS'ta Pro olan hesapla girince Android'de Pro açılıyor
 - [ ] Hesabı sil: hesap gidiyor, listeler cihazda kalıyor

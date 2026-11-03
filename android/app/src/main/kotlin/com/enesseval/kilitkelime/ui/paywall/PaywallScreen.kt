@@ -91,7 +91,7 @@ private fun focus(trigger: PaywallTrigger) = when (trigger) {
     PaywallTrigger.ROTATION -> "rotation"
     PaywallTrigger.PERSONAL_PUZZLE, PaywallTrigger.ARCHIVE -> "puzzle"
     PaywallTrigger.DISCOVER -> "discover"
-    PaywallTrigger.BASE -> null
+    PaywallTrigger.BASE, PaywallTrigger.MOMENT -> null
 }
 
 private fun subtitle(trigger: PaywallTrigger) = when (trigger) {
@@ -102,6 +102,7 @@ private fun subtitle(trigger: PaywallTrigger) = when (trigger) {
     PaywallTrigger.ARCHIVE -> "Kaçırdığın günlerin bulmacalarını çöz."
     PaywallTrigger.EXAM_PLAN -> "Sınav gününe kadar her gün kaç kelime çalışman gerektiğini görelim."
     PaywallTrigger.DISCOVER -> "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında dönsün."
+    PaywallTrigger.MOMENT -> "Birkaç gündür buradasın. Ücretsiz olan her şey öyle kalır; Pro daha fazlasını açar."
     PaywallTrigger.BASE -> "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."
 }
 

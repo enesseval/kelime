@@ -5,7 +5,9 @@ import com.enesseval.kilitkelime.core.db.SqlDb
 /** Why the paywall opened. The headline adapts; the paywall never opens on first launch. */
 enum class PaywallTrigger(val raw: String) {
     BASE("base"), LISTS("lists"), SHARE("share"), ROTATION("rotation"),
-    PERSONAL_PUZZLE("personalPuzzle"), ARCHIVE("archive"), EXAM_PLAN("examPlan"), DISCOVER("discover");
+    PERSONAL_PUZZLE("personalPuzzle"), ARCHIVE("archive"), EXAM_PLAN("examPlan"), DISCOVER("discover"),
+    /** Not a locked feature: offered once the learner has studied on a few days and liked it. */
+    MOMENT("moment");
 
     val headline: String
         get() = when (this) {
@@ -17,6 +19,7 @@ enum class PaywallTrigger(val raw: String) {
             ARCHIVE -> "Bulmaca arşivi"
             EXAM_PLAN -> "Sınav planı"
             DISCOVER -> "Keşfet'ten hazır listeler"
+            MOMENT -> "Güzel gidiyorsun"
         }
 }
 
@@ -39,4 +42,31 @@ object ProEntitlement {
         Settings.setBool(db, SettingKey.IS_PRO, isPro)
         return true
     }
+}
+
+/**
+ * Pro is offered on its own only after the learner has come back: studied on a few different
+ * days, at the end of a good round, never right after onboarding (port of `PaywallMoment.swift`).
+ * Locked features still open the paywall when tapped; this is the one unprompted offer.
+ */
+object PaywallMoment {
+    /** Different days with a finished round, solved crossword word or finished game. */
+    const val STUDY_DAYS = 3
+    /** At most this many offers, this far apart. */
+    const val MAX_OFFERS = 2
+    const val MS_BETWEEN = 14L * 24 * 3600 * 1000
+    /** No offer within this long after any paywall (a locked feature the learner tapped). */
+    const val QUIET_AFTER_PAYWALL_MS = 48L * 3600 * 1000
+
+    /** Times are epoch ms; 0 = never. */
+    fun shouldOffer(studyDays: Int, offers: Int, lastOffer: Long, lastPaywall: Long, now: Long): Boolean {
+        if (studyDays < STUDY_DAYS || offers >= MAX_OFFERS) return false
+        if (lastOffer > 0 && now - lastOffer < MS_BETWEEN) return false
+        if (lastPaywall > 0 && now - lastPaywall < QUIET_AFTER_PAYWALL_MS) return false
+        return true
+    }
+
+    /** Different days in `streak_day`. */
+    fun studyDays(db: SqlDb): Int =
+        db.query("SELECT COUNT(DISTINCT day) FROM streak_day") { it.longAt(0) ?: 0 }.firstOrNull()?.toInt() ?: 0
 }

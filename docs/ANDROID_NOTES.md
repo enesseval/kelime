@@ -29,7 +29,7 @@ generated assets/res folders before every build.
 
 | Step | State |
 |---|---|
-| 1. Gradle project, tabs shell, tokens, fonts, schema, content import, AppClock, rules/scheduler/spaced review + tests | done; `:core` compiled and **169 JUnit tests pass** here |
+| 1. Gradle project, tabs shell, tokens, fonts, schema, content import, AppClock, rules/scheduler/spaced review + tests | done; `:core` compiled and **176 JUnit tests pass** here |
 | 2. Bugün, word detail (TTS, share card), Kelimelerim, lists, course units and stories | written |
 | 3. Quick Review + custom keyboard; crossword (daily + personal) | written; the game logic is in `:core` and tested |
 | 4. Widget queue, lock-screen wallpaper, Glance widgets, notification, QS tile | written; **device measurements still to do** (owner) |
@@ -109,6 +109,12 @@ for compile fixes and a first run before device testing.
      `result` = granted / denied / later. Android cannot report "never asked", so the app remembers
      when it opened the prompt (`notificationsRequested`); asked + no rationale = permanently denied.
      Below Android 13 there is no prompt: the card shows while no reminder is set and Hatırlat sets it.
+   - *Pro offer* (`PaywallTrigger.MOMENT`, "Güzel gidiyorsun"): the only paywall that opens on
+     its own. After a counted study day, if not Pro, `streak_day` holds at least 3 different days,
+     the offer was shown fewer than 2 times and not in the last 14 days, and no paywall opened in
+     the last 48 hours, it opens 0.6 s after the round's screen closes. If the reminder card is
+     waiting in the same round it goes first and Pro waits for a later good moment. Signal
+     `paywall.moment`. Rules in `core/model/Pro.kt` (`PaywallMoment`), tested in `PaywallMomentTest`.
    - The week dots on Bugün show streak days (`streak_day`), like the badge; a day saved by a
      freeze shows empty there (the dashed circle is only on the streak page). The paywall does not
      list the second freeze; the streak page and the Play text do.

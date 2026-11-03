@@ -88,7 +88,7 @@ private val fullScreen = listOf("review", "puzzle", "paywall", "wordhunt", "matc
 private val rounds = listOf("review", "puzzle", "wordhunt", "match")
 
 /** Navigation for the whole app (port of AppRouter). */
-class AppRouter(val nav: NavHostController) {
+class AppRouter(val nav: NavHostController, private val onPaywall: (PaywallTrigger) -> Unit = {}) {
     var toast by mutableStateOf<String?>(null)
     /** Kelimelerim opens on Listeler once (Bugün's "Widget'ında … Değiştir"). */
     var listsRequested by mutableStateOf(false)
@@ -145,6 +145,7 @@ class AppRouter(val nav: NavHostController) {
 
     fun showPaywall(trigger: PaywallTrigger) {
         Analytics.send(Analytics.Event.paywallShown)
+        onPaywall(trigger)
         nav.navigate("paywall/${trigger.raw}")
     }
 
@@ -161,7 +162,7 @@ fun MainScaffold() {
     val app = LocalApp.current
     val activity = LocalActivity.current
     val nav = rememberNavController()
-    val router = remember(nav) { AppRouter(nav) }
+    val router = remember(nav) { AppRouter(nav) { trigger -> app.model.scope.launch { com.enesseval.kilitkelime.data.PaywallMomentStore.noteShown(app.model, trigger) } } }
     val c = Palette.current
     val entry by nav.currentBackStackEntryAsState()
     val route = entry?.destination?.route ?: ""
@@ -169,13 +170,25 @@ fun MainScaffold() {
     val roundOpen = rounds.any { route.startsWith(it) }
     var reminderAsk by remember { mutableStateOf(false) }
 
-    // After a good moment, the reminder card opens 0.6 s after the round's screen closes.
+    // After a good moment, the reminder card (or else the Pro offer) opens 0.6 s after the round's
+    // screen closes. One ask per round: the reminder first; Pro waits for a later good moment.
     LaunchedEffect(roundOpen) {
-        if (roundOpen || !app.model.reminderAskPending.value) return@LaunchedEffect
+        if (roundOpen) return@LaunchedEffect
+        val reminder = app.model.reminderAskPending.value
+        val offer = app.model.paywallMomentPending.value
+        if (!reminder && !offer) return@LaunchedEffect
         app.model.reminderAskPending.value = false
-        if (com.enesseval.kilitkelime.notifications.ReminderAsk.permanentlyDenied(activity, app.model)) return@LaunchedEffect
-        kotlinx.coroutines.delay(600)
-        reminderAsk = true
+        app.model.paywallMomentPending.value = false
+        if (reminder) {
+            if (com.enesseval.kilitkelime.notifications.ReminderAsk.permanentlyDenied(activity, app.model)) return@LaunchedEffect
+            kotlinx.coroutines.delay(600)
+            reminderAsk = true
+        } else {
+            kotlinx.coroutines.delay(600)
+            if (app.model.isPro.value) return@LaunchedEffect
+            router.showPaywall(PaywallTrigger.MOMENT)
+            Analytics.signal(Analytics.Signal.PAYWALL_MOMENT)
+        }
     }
 
     // Deep links: widgets, notification, tile, shared list links.
