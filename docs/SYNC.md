@@ -51,6 +51,28 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-03 · Pro teklifi uygulama sevildikten sonra · iOS [x] Android [ ]
+- **Kendiliğinden açılan tek Pro ekranı bu.** Onboarding sonunda paywall yok. Kilitli bir
+  özelliğe dokununca açılan paywall'lar aynen kalır.
+- **Şartların hepsi gerekir:**
+  - Pro değil.
+  - `streak_day` tablosunda en az **3 farklı gün** var.
+  - Bu teklif en çok **2 kez** gösterilmiş ve son teklifin üstünden **14 gün** geçmiş.
+  - Herhangi bir paywall'un açılmasının üstünden **48 saat** geçmiş.
+- **Ne zaman açılır:** seri günü sayıldığında (`recordStudy`) şartlar tutuyorsa "teklif
+  edilecek" diye işaretlenir. Tam ekran tur kapanınca 0,6 sn sonra paywall açılır.
+- **Bildirim kartıyla çakışmaz:** aynı turda bildirim kartı da bekliyorsa önce o gösterilir;
+  Pro teklifi bir sonraki iyi ana kalır. Bir turdan sonra en çok bir soru çıkar.
+- **Yeni tetikleyici `moment`:**
+  - Başlık: "Güzel gidiyorsun".
+  - Alt yazı: "Birkaç gündür buradasın. Ücretsiz olan her şey öyle kalır; Pro daha fazlasını
+    açar."
+  - Öne çıkan özellik yok; liste sırası `base` ile aynı.
+- **Sinyal:** `paywall.moment`.
+- iOS dosyaları: `App/Store/PaywallMoment.swift`, `App/MainTabView.swift`, `App/AppModel.swift`,
+  `App/AppRouter.swift`, `PaywallTrigger.swift` (core).
+
+
 ### 2026-11-02 · Bildirim izni ilk iyi andan sonra soruluyor · iOS [x] Android [x]
 - **Onboarding üç adım** oldu: karşılama, seviye, widget. Hatırlatma adımı kaldırıldı. Widget
   adımındaki "Sonra" ve "Ekledim" onboarding'i bitirir.

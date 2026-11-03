@@ -288,7 +288,7 @@ private func orderedFeatures(for trigger: PaywallTrigger) -> [PaywallView.Featur
     case .rotation: "rotation"
     case .personalPuzzle, .archive: "puzzle"
     case .discover: "discover"
-    case .base: nil
+    case .base, .moment: nil
     }
     guard let focus else { return PaywallView.features }
     return PaywallView.features.filter { $0.id == focus } + PaywallView.features.filter { $0.id != focus }
@@ -424,6 +424,7 @@ private func subtitle(_ trigger: PaywallTrigger) -> String {
     case .examPlan: "Sınav gününe kadar her gün kaç kelime çalışman gerektiğini görelim."
     case .discover: "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında dönsün."
     case .base: "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."
+    case .moment: "Birkaç gündür buradasın. Ücretsiz olan her şey öyle kalır; Pro daha fazlasını açar."
     }
 }
 

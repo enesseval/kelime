@@ -65,6 +65,8 @@ final class AppRouter {
     /// A good moment happened inside a full-screen round; ask for the reminder once it closes.
     var reminderAskPending = false
     var reminderAskPresented = false
+    /// The learner has studied on enough days; offer Pro once the round closes.
+    var paywallMomentPending = false
     /// Set by `openLists`; Kelimelerim shows Listeler and clears it.
     var listsRequested = false
 
@@ -119,6 +121,7 @@ final class AppRouter {
 
     func showPaywall(_ trigger: PaywallTrigger, deck: DeckID? = nil) {
         UsageCounter.count(.paywallShown)
+        PaywallMoment.noteShown(trigger)
         paywall = PaywallRequest(trigger: trigger, deck: deck)
     }
 

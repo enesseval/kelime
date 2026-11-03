@@ -45,7 +45,7 @@ struct PaywallView: View {
         case .rotation: "rotation"
         case .personalPuzzle, .archive: "puzzle"
         case .discover: "discover"
-        case .base: nil
+        case .base, .moment: nil
         }
     }
 
@@ -214,6 +214,7 @@ struct PaywallView: View {
         case .examPlan: "Sınav gününe kadar her gün kaç kelime çalışman gerektiğini görelim."
         case .discover: "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında ve Hızlı Tekrar'da dönsün."
         case .base: "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."
+        case .moment: "Birkaç gündür buradasın. Ücretsiz olan her şey öyle kalır; Pro daha fazlasını açar."
         }
     }
 

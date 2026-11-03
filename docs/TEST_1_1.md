@@ -46,3 +46,10 @@
 - [ ] "Hatırlat" → sistem izni çıkıyor; izin verince Profil'de hatırlatma seçilen saatte açık
 - [ ] "Şimdi değil" → 3 gün içinde yeniden sorulmuyor; en çok 2 kez soruluyor
 - [ ] Kelime Avı ya da Eşleştir bitip kapanınca da aynı kart (izin hiç sorulmadıysa)
+
+## Pro teklifi (uygulama sevildikten sonra)
+- [ ] Temiz kurulum ve ilk günler: hiçbir yerde kendiliğinden paywall çıkmıyor
+- [ ] 3 farklı gün çalıştıktan sonra bir tur bitip kapanınca "Güzel gidiyorsun" Pro ekranı
+- [ ] Aynı turda bildirim kartı bekliyorsa önce o çıkıyor, Pro bir sonraki tura kalıyor
+- [ ] Kapatınca 14 gün yeniden çıkmıyor; en çok 2 kez
+- [ ] Kilitli özelliğe dokunup paywall gördükten sonraki 48 saat içinde teklif çıkmıyor

@@ -81,12 +81,20 @@ struct MainTabView: View {
             ReminderAskSheet().environment(model)
         }
         .onChange(of: router.reviewPresented || router.puzzle != nil || router.game != nil) { _, roundOpen in
-            guard !roundOpen, router.reminderAskPending else { return }
+            guard !roundOpen, router.reminderAskPending || router.paywallMomentPending else { return }
+            // One ask per round: the reminder first; Pro waits for a later good moment.
+            let reminder = router.reminderAskPending
             router.reminderAskPending = false
+            router.paywallMomentPending = false
             Task {
                 // Let the round's cover finish closing first.
                 try? await Task.sleep(for: .milliseconds(600))
-                router.reminderAskPresented = true
+                if reminder {
+                    router.reminderAskPresented = true
+                } else {
+                    router.showPaywall(.moment)
+                    Analytics.signal("paywall.moment")
+                }
             }
         }
     }

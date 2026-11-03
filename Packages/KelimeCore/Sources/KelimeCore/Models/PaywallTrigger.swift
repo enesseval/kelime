@@ -10,6 +10,8 @@ public enum PaywallTrigger: String, Sendable, CaseIterable, Identifiable {
     case archive
     case examPlan
     case discover
+    /// Not a locked feature: offered once the learner has studied on a few days and liked it.
+    case moment
 
     public var id: String { rawValue }
 
@@ -23,6 +25,7 @@ public enum PaywallTrigger: String, Sendable, CaseIterable, Identifiable {
         case .archive: "Bulmaca arşivi"
         case .examPlan: "Sınav planı"
         case .discover: "Keşfet'ten hazır listeler"
+        case .moment: "Güzel gidiyorsun"
         }
     }
 }
