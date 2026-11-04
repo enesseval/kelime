@@ -285,6 +285,8 @@ fun MatchScreen() {
     var miss by remember { mutableStateOf<Pair<Int, Int>?>(null) }
     /** A right pair shown green for 0.42 s before it leaves the board. */
     var correct by remember { mutableStateOf<Pair<Int, Int>?>(null) }
+    /** Bumped for every right pair, so a pair's 0.42 s timer only ever plays its own pair. */
+    var correctToken by remember { mutableIntStateOf(0) }
     val scope = rememberCoroutineScope()
     var left by remember { mutableIntStateOf(MatchGame.SECONDS) }
     var finished by remember { mutableStateOf(false) }
@@ -400,12 +402,12 @@ fun MatchScreen() {
                         if (g.right.getOrNull(j) == null || g.left.getOrNull(i) == null) return@MatchSlot
                         if (g.isMatch(i, j)) {
                             // Right: both cards green with ✓ for 0.42 s, then they leave.
-                            val pair = i to j
-                            correct = pair
+                            correct = i to j
+                            val token = ++correctToken
                             haptics.performHapticFeedback(HapticFeedbackType.Confirm)
                             scope.launch {
                                 delay(420)
-                                if (correct == pair) commitCorrect()
+                                if (correctToken == token) commitCorrect()
                             }
                         } else {
                             g.pair(i, j) // counts the miss; the board stays

@@ -29,7 +29,7 @@ generated assets/res folders before every build.
 
 | Step | State |
 |---|---|
-| 1. Gradle project, tabs shell, tokens, fonts, schema, content import, AppClock, rules/scheduler/spaced review + tests | done; `:core` compiled and **176 JUnit tests pass** here |
+| 1. Gradle project, tabs shell, tokens, fonts, schema, content import, AppClock, rules/scheduler/spaced review + tests | done; `:core` compiled and **177 JUnit tests pass** here |
 | 2. Bugün, word detail (TTS, share card), Kelimelerim, lists, course units and stories | written |
 | 3. Quick Review + custom keyboard; crossword (daily + personal) | written; the game logic is in `:core` and tested |
 | 4. Widget queue, lock-screen wallpaper, Glance widgets, notification, QS tile | written; **device measurements still to do** (owner) |

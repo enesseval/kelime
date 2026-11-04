@@ -148,7 +148,8 @@ data class WordHunt(val size: Int, val letters: List<Char>, val words: List<Plac
                 placed += spot
             }
             if (placed.size < 3) return null
-            val alphabet = "ABCDEFGHIJKLMNOPRSTUVYZ"
+            // All 26 letters: a missing one (Q, W, X) would give away any word that contains it.
+            val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             return WordHunt(size, grid.map { it ?: alphabet[rng.intUntil(0, alphabet.length)] }, placed)
         }
     }

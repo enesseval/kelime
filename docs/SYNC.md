@@ -51,7 +51,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-04 · İnceleme düzeltmeleri · iOS [x] Android [ ]
+### 2026-11-04 · İnceleme düzeltmeleri · iOS [x] Android [x]
 Kod incelemesinde bulunan hatalar. Android'de aynı kod yolu varsa aynı düzeltme yapılmalı.
 - **Kelime Avı seçimi:** "yanlış" durumu ile hata titreşimi ayrı değişkenlerde tutuluyor.
   - Yanlış seçim 0,35 sn amber kalır, sonra temizlenir. Bu süre içinde yeni bir sürükleme
@@ -75,6 +75,14 @@ Kod incelemesinde bulunan hatalar. Android'de aynı kod yolu varsa aynı düzelt
 - **`recordStudy`:** seri durumu yalnızca günün ilk çalışmasında yeniden okunur. Bulmacada her
   kelimede gereksiz hesap yapılmıyor.
 - **v7 taşıma (iOS'a özel):** bir güne ait bütün kaynaklar `group_concat` ile saklanır.
+- Android: dolgu harfleri 26 harf (`core/games/Games.kt`); `longestStreakUsesTheFreePlanFreezes`
+  `StreakTest`'e taşındı (Android en uzun seriyi zaten kullanıcının planıyla hesaplıyordu); Eşleştir
+  her doğru eşleşmeye bir sayaç numarası verir, 0,42 sn sonra yalnızca kendi numarası hâlâ
+  geçerliyse uygular (aynı yerlere gelen yeni bir eşleşmeyi erken uygulamaz); `AppModel.studied`
+  yalnızca tur ekranı açıkken (`roundOpen`) işaretler ve günün ilk çalışması değilse seri
+  durumunu okumaz; `MainScaffold` 0,6 sn sonra başka bir tam ekran sayfa açıksa göstermez,
+  işaret bir sonraki tura kalır. Kelime Avı'nda yanlış seçim zaten ayrı değişkendeydi
+  (`miss`, 0,35 sn amber; doğru seçim hemen temizleniyor); değişiklik gerekmedi.
 
 ### 2026-11-03 · Pro teklifi uygulama sevildikten sonra · iOS [x] Android [x]
 - **Kendiliğinden açılan tek Pro ekranı bu.** Onboarding sonunda paywall yok. Kilitli bir

@@ -87,6 +87,19 @@ class StreakTest {
         assertEquals(6, Streak.status(db, clock, false).longest)
     }
 
+    /** The longest streak follows the learner's own plan: one freeze a week when free. */
+    @Test fun longestStreakUsesTheFreePlanFreezes() {
+        val db = TestSupport.database()
+        val zone = ZoneId.of("Europe/Istanbul")
+        // Mon, (Tue), Wed, (Thu), Fri: one freeze covers Tuesday, Thursday ends it.
+        for (day in listOf("2026-11-02", "2026-11-04", "2026-11-06")) {
+            val date = LocalDate.parse(day)
+            LearningStore.markStudied(date, StreakSource.QUICK_REVIEW, db)
+            Streak.status(db, AppClock.fixed(date.atTime(12, 0).atZone(zone).toInstant(), zone), false)
+        }
+        assertEquals(2, Settings.int(db, SettingKey.LONGEST_STREAK))
+    }
+
     @Test fun milestonesAndCalendar() {
         val seven = Streak.compute((0..6).map { today.minusDays(it.toLong()) }.toSet(), today, 1)
         assertEquals(7, Streak.milestone(seven))

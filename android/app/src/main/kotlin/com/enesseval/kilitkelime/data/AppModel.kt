@@ -139,6 +139,9 @@ class AppModel(private val context: Context) {
     suspend fun studied(reason: String, source: com.enesseval.kilitkelime.core.games.StreakSource, block: (SqlDb) -> Boolean) {
         val pro = isPro.value
         val (newDay, newFreeze) = write(reason) { db ->
+            // The streak only changes with the day's first study; later ones skip the reads.
+            val studiedToday = db.query("SELECT 1 FROM streak_day WHERE day = ?", listOf(clock.today)) { true }.isNotEmpty()
+            if (studiedToday) return@write block(db) to false
             val before = com.enesseval.kilitkelime.core.games.Streak.status(db, clock, pro).frozen
             val counted = block(db)
             val after = com.enesseval.kilitkelime.core.games.Streak.status(db, clock, pro).frozen
@@ -146,7 +149,9 @@ class AppModel(private val context: Context) {
         }
         if (newDay) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_DAY, mapOf("source" to source.raw))
         if (newFreeze) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.STREAK_FREEZE_USED)
-        // A good moment: ask for the daily reminder once the round's screen closes.
+        // A good moment: ask for the daily reminder (or offer Pro) once the round's screen closes.
+        // Only while a round is open, so a late write can't surface in an unrelated later round.
+        if (!roundOpen.value) return
         if (!reminderAskPending.value && com.enesseval.kilitkelime.notifications.ReminderAsk.shouldAsk(context, this)) {
             reminderAskPending.value = true
         } else if (!reminderAskPending.value && !isPro.value && !paywallMomentPending.value && PaywallMomentStore.shouldOffer(this)) {
@@ -156,6 +161,9 @@ class AppModel(private val context: Context) {
 
     /** Set after a good moment once the learner has studied on enough days; Pro is offered when the round closes. */
     val paywallMomentPending = MutableStateFlow(false)
+
+    /** True while a full-screen round (review, puzzle, game) is on screen; set by MainScaffold. */
+    val roundOpen = MutableStateFlow(false)
 
     /** Set after a good moment when the reminder card may be shown; MainScaffold shows it after the round closes. */
     val reminderAskPending = MutableStateFlow(false)

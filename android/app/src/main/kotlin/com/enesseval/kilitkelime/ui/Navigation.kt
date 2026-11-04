@@ -25,6 +25,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -170,21 +172,28 @@ fun MainScaffold() {
     val roundOpen = rounds.any { route.startsWith(it) }
     var reminderAsk by remember { mutableStateOf(false) }
 
+    val currentRoute by rememberUpdatedState(route)
+    // Good moments only count while a round's screen is open (AppModel.studied checks this).
+    SideEffect { app.model.roundOpen.value = roundOpen }
+
     // After a good moment, the reminder card (or else the Pro offer) opens 0.6 s after the round's
     // screen closes. One ask per round: the reminder first; Pro waits for a later good moment.
+    // While another page is up (weekly summary, paywall) nothing shows and the ask waits for the
+    // next round.
     LaunchedEffect(roundOpen) {
         if (roundOpen) return@LaunchedEffect
+        fun blocked() = fullScreen.any { currentRoute.startsWith(it) }
         val reminder = app.model.reminderAskPending.value
         val offer = app.model.paywallMomentPending.value
         if (!reminder && !offer) return@LaunchedEffect
+        kotlinx.coroutines.delay(600)
+        if (blocked() || reminderAsk) return@LaunchedEffect
         app.model.reminderAskPending.value = false
         app.model.paywallMomentPending.value = false
         if (reminder) {
             if (com.enesseval.kilitkelime.notifications.ReminderAsk.permanentlyDenied(activity, app.model)) return@LaunchedEffect
-            kotlinx.coroutines.delay(600)
             reminderAsk = true
         } else {
-            kotlinx.coroutines.delay(600)
             if (app.model.isPro.value) return@LaunchedEffect
             router.showPaywall(PaywallTrigger.MOMENT)
             Analytics.signal(Analytics.Signal.PAYWALL_MOMENT)
