@@ -132,9 +132,14 @@ final class AppModel {
         let clock = clock
         let before = await read { db in try Streak.status(db: db, clock: clock) }
         await write(rebuildQueue: false) { db in try Streak.record(source, on: clock.today, db: db) }
-        let after = await read { db in try Streak.status(db: db, clock: clock) }
-        if before?.studiedToday == false { Analytics.signal("streak.day", ["source": source.rawValue]) }
-        if let after, after.frozenDays.count > before?.frozenDays.count ?? 0 { Analytics.signal("streak.freezeUsed") }
+        // Only the day's first study can add the day or spend a freeze.
+        if before?.studiedToday == false {
+            Analytics.signal("streak.day", ["source": source.rawValue])
+            let after = await read { db in try Streak.status(db: db, clock: clock) }
+            if let after, after.frozenDays.count > before?.frozenDays.count ?? 0 { Analytics.signal("streak.freezeUsed") }
+        }
+        // The asks wait for the round to close; if it already closed, the next round asks.
+        guard router.roundOpen else { return }
         if !router.reminderAskPending, await ReminderAsk.shouldAsk() {
             router.reminderAskPending = true
         } else if !router.reminderAskPending, !isPro, !router.paywallMomentPending,

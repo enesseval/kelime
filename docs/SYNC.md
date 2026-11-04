@@ -32,7 +32,7 @@ oturumu buraya yönlendirir.
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.1.0 | 1.1.0 |
-| Build | 31 (TestFlight) | versionCode 1 |
+| Build | 32 (TestFlight) | versionCode 1 |
 | Dal | `v1.1` | `v1.1` |
 | Mağazada | 1.0.0 (28) incelemede, `main` | henüz yok |
 
@@ -50,6 +50,31 @@ dalında sürer.
   kilit ekranı duvar kâğıdı.
 
 ## Değişiklik günlüğü
+
+### 2026-11-04 · İnceleme düzeltmeleri · iOS [x] Android [ ]
+Kod incelemesinde bulunan hatalar. Android'de aynı kod yolu varsa aynı düzeltme yapılmalı.
+- **Kelime Avı seçimi:** "yanlış" durumu ile hata titreşimi ayrı değişkenlerde tutuluyor.
+  - Yanlış seçim 0,35 sn amber kalır, sonra temizlenir. Bu süre içinde yeni bir sürükleme
+    başladıysa yalnızca yanlış olan temizlenir.
+  - Doğru seçim hemen temizlenir.
+  - Önceden tek bir değişken açılıp kapanıyordu. Bu yüzden bir yanlıştan sonra seçim hep amber
+    kalıyor ve bulunan kelimenin üstünde seçim izi duruyordu.
+- **Kelime Avı dolgu harfleri:** dolgu harfleri A–Z'nin 26 harfinin tamamından seçilir.
+  Q, W, X eksikti; bu harfleri içeren kelime tek başına göze batıyordu.
+- **En uzun seri:** kullanıcının kendi planıyla hesaplanır (ücretsizde haftada 1 koruyucu).
+  Önceden herkes için 2 koruyucuyla hesaplanıyordu. Bir güne ikinci kaynak eklenmesi seriyi
+  uzatamaz, o yüzden o durumda en uzun seri yeniden hesaplanmaz.
+  - Test: `longestStreakUsesTheFreePlanFreezes` (Pzt, Çrş, Cum çalışıldı → en uzun 2).
+- **Eşleştir:** her eşleşmenin 0,42 sn'lik bekleme sayacı yalnızca kendi eşleşmesini uygular.
+  Önceden ikinci bir eşleşme hızlı gelince ilkinin sayacı onu erken uyguluyordu.
+- **Bildirim kartı ve Pro teklifi:**
+  - Yalnızca tur ekranı açıkken "sorulacak" diye işaretlenir. Tur kapandıktan sonra
+    işaretlenip alakasız bir sonraki turda çıkmaz.
+  - Başka bir sayfa açıksa (haftalık özet, paywall) gösterilmez ve bir sonraki tura kalır.
+    Önceden reddediliyor ama gösterilmiş sayılıyordu.
+- **`recordStudy`:** seri durumu yalnızca günün ilk çalışmasında yeniden okunur. Bulmacada her
+  kelimede gereksiz hesap yapılmıyor.
+- **v7 taşıma (iOS'a özel):** bir güne ait bütün kaynaklar `group_concat` ile saklanır.
 
 ### 2026-11-03 · Pro teklifi uygulama sevildikten sonra · iOS [x] Android [x]
 - **Kendiliğinden açılan tek Pro ekranı bu.** Onboarding sonunda paywall yok. Kilitli bir

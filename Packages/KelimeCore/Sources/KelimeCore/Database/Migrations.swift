@@ -171,7 +171,8 @@ enum Migrations {
             // Existing learners keep the days they already studied.
             try db.execute(sql: """
                 INSERT OR IGNORE INTO streak_day (day, sources)
-                SELECT DISTINCT answered_on, source FROM review_log WHERE source IN ('quickReview', 'puzzle')
+                SELECT answered_on, group_concat(DISTINCT source) FROM review_log
+                WHERE source IN ('quickReview', 'puzzle') GROUP BY answered_on
                 """)
         }
 

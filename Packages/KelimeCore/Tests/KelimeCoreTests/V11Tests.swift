@@ -63,6 +63,16 @@ struct V11Tests {
         #expect(Streak.compute(days: days, today: d("2026-11-05"), freezesPerWeek: 1).current == 4)
     }
 
+    /// The longest streak follows the learner's own plan: one freeze a week when free.
+    @Test func longestStreakUsesTheFreePlanFreezes() throws {
+        let db = try makeDatabase()
+        try db.writer.write { db in
+            // Mon, (Tue), Wed, (Thu), Fri: one freeze covers Tuesday, Thursday ends it.
+            for day in ["2026-11-02", "2026-11-04", "2026-11-06"] { try Streak.record(.quickReview, on: d(day), db: db) }
+            #expect(try Settings.int(.longestStreak, in: db) == 2)
+        }
+    }
+
     @Test func twoMissedDaysInARowEndTheStreak() {
         let days: Set = [d("2026-11-01"), d("2026-11-04")]
         #expect(Streak.compute(days: days, today: d("2026-11-04"), freezesPerWeek: 2).current == 1)

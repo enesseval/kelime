@@ -67,6 +67,12 @@ final class AppRouter {
     var reminderAskPresented = false
     /// The learner has studied on enough days; offer Pro once the round closes.
     var paywallMomentPending = false
+
+    /// A full-screen round (Quick Review, crossword or game) is on screen.
+    var roundOpen: Bool { reviewPresented || puzzle != nil || game != nil }
+
+    /// Another sheet is up; a new one would be refused.
+    var sheetShown: Bool { paywall != nil || weeklySummaryPresented || reminderAskPresented }
     /// Set by `openLists`; Kelimelerim shows Listeler and clears it.
     var listsRequested = false
 

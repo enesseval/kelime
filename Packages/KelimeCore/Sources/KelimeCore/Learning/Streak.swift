@@ -44,7 +44,9 @@ public enum Streak {
             sql: "INSERT INTO streak_day (day, sources) VALUES (?, ?) ON CONFLICT(day) DO UPDATE SET sources = excluded.sources",
             arguments: [day, sources.sorted().joined(separator: ",")]
         )
-        let status = try self.status(db: db, today: day, isPro: true)
+        // A source added to a day already studied can't lengthen the streak.
+        guard existing == nil else { return }
+        let status = try self.status(db: db, today: day, isPro: try Settings.bool(.isPro, in: db))
         if status.current > (try Settings.int(.longestStreak, in: db) ?? 0) {
             try Settings.set(.longestStreak, status.current, in: db)
         }

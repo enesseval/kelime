@@ -106,7 +106,8 @@ public struct WordSearch: Sendable, Equatable {
             placements.append(placement)
         }
         guard placements.count >= 3 else { return nil }
-        let alphabet = Array("ABCDEFGHIJKLMNOPRSTUVYZ")
+        // All 26 letters: a missing one (Q, W, X) would give away any word that contains it.
+        let alphabet = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
         let filled = grid.map { row in row.map { $0 ?? alphabet.randomElement(using: &rng)! } }
         return WordSearch(size: size, grid: filled, placements: placements)
     }

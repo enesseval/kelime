@@ -17,7 +17,10 @@ struct WordSearchView: View {
     @State private var seconds = 0
     @State private var finished = false
     @State private var failed = false
+    /// The current selection was wrong; shown amber until it clears.
     @State private var wrongFlash = false
+    /// Counts wrong selections, for the error haptic.
+    @State private var misses = 0
     @State private var sharing = false
 
     var body: some View {
@@ -44,7 +47,7 @@ struct WordSearchView: View {
             }
         }
         .sensoryFeedback(.success, trigger: found.count)
-        .sensoryFeedback(.error, trigger: wrongFlash)
+        .sensoryFeedback(.error, trigger: misses)
     }
 
     private var header: some View {
@@ -197,18 +200,25 @@ struct WordSearchView: View {
     }
 
     private func check(_ game: WordSearch) {
-        defer { if !wrongFlash { selection = [] } }
-        guard selection.count >= 3 else { return }
+        guard selection.count >= 3 else {
+            selection = []
+            return
+        }
         if let placement = game.placement(spelledBy: selection, skip: found) {
+            selection = []
             found.insert(placement.id)
             let event: LearningEvent = hinted.contains(placement.id) ? .hintUsed : .answered(correct: true)
             Task { await model.record(event, cardID: placement.card.id, source: .game) }
             if found.count == game.placements.count { finish(game) }
         } else {
-            wrongFlash.toggle()
+            let wrong = selection
+            wrongFlash = true
+            misses += 1
             Task {
                 try? await Task.sleep(for: .milliseconds(350))
-                selection = []
+                // A new drag may have started meanwhile; only clear the wrong one.
+                if selection == wrong { selection = [] }
+                wrongFlash = false
             }
         }
     }
@@ -269,6 +279,8 @@ struct MatchView: View {
     @State private var shakes = 0
     /// The board after a match, applied once the green flash has shown.
     @State private var pending: MatchGame?
+    /// Which match `pending` belongs to, so an older timer doesn't apply a newer match early.
+    @State private var pendingID = 0
     @State private var best = 0
     @State private var failed = false
 
@@ -440,12 +452,14 @@ struct MatchView: View {
             withAnimation(.spring(response: 0.25, dampingFraction: 0.6)) { right = ids }
             game?.clearSelection()
             pending = current
+            pendingID += 1
+            let id = pendingID
             if !current.missed.contains(where: { $0.id == card.id }) {
                 Task { await model.record(.answered(correct: true), cardID: card.id, source: .game) }
             }
             Task {
                 try? await Task.sleep(for: .milliseconds(420))
-                commitPending()
+                if pendingID == id { commitPending() }
             }
         case .miss(let english, _):
             withAnimation(.easeInOut(duration: 0.2)) { game = current }
