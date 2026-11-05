@@ -53,6 +53,19 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-05 · Android paywall ve bulmaca sonu iOS ile aynı · iOS [x] Android [x]
+iOS'ta zaten böyleydi.
+- **Paywall:** gece gökyüzü zemin (yıldızlar, ay), ✦ parıltı, "KİLİT KELİME PRO", başlık ve neden
+  metni; altı özellik iki sütun kutucuk (açılma nedeni önde ve mavi); planlar alt alta satır
+  (Aylık "Her ay yenilenir, istediğin zaman iptal et", Yıllık "7 gün ücretsiz, sonra yıllık · ayda …"
+  ya da "Yıllık yenilenir", rozet "%N tasarruf" / "En avantajlı", Ömür boyu "Tek seferlik ödeme,
+  abonelik yok"); "Fiyatlar yüklenemedi · Tekrar dene"; altta düğme, iki satır yasal metin (mağazaya
+  göre), Geri yükle · Koşullar · Gizlilik; sağ üstte buzlu ✕. Bekleyen ödeme: "Satın alma onay bekliyor".
+- **Bulmaca sonu:** "BULMACA TAMAM", "6 kelime,\n4 dakika." (serif 52), süre / ipucu, "Widget'ına
+  eklenen kelimeler" amber baloncuklar, spoilersız ızgara, "Sonucu paylaş", "Yeniden çöz" · "Kapat",
+  günlükte "Yarın yeni bulmaca seni bekliyor."
+- Android dosyaları: `ui/paywall/PaywallScreen.kt`, `ui/puzzle/CrosswordScreen.kt`.
+
 ### 2026-11-05 · Android Kelimelerim satırları, Listeler ve liste sayfası iOS ile aynı · iOS [x] Android [x]
 iOS'ta zaten böyleydi.
 - **Kelime satırı:** serif 22 kelime, altında anlam; sağda durum ve seviye çipi; 66 pt, 20 pt içeriden

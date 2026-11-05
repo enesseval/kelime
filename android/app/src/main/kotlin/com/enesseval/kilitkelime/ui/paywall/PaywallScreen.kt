@@ -1,5 +1,30 @@
 package com.enesseval.kilitkelime.ui.paywall
 
+import androidx.compose.foundation.Canvas
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.material.icons.automirrored.outlined.ListAlt
+import androidx.compose.material.icons.outlined.IosShare
+import androidx.compose.material.icons.outlined.Explore
+import androidx.compose.material.icons.outlined.EventNote
+import androidx.compose.material.icons.filled.Bolt
+import androidx.compose.material.icons.outlined.Extension
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.outlined.Circle
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
+import androidx.compose.ui.draw.scale
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.selected
+import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.graphics.Color
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.animation.AnimatedContent
@@ -73,15 +98,16 @@ import java.util.Locale
 
 private enum class Plan(val title: String) { MONTHLY("Aylık"), ANNUAL("Yıllık"), LIFETIME("Ömür boyu") }
 
-private data class Feature(val id: String, val title: String)
+private data class Feature(val id: String, val icon: ImageVector, val title: String, val detail: String)
 
+/** What Pro adds (iOS PaywallView.features). Everything else stays free. */
 private val features = listOf(
-    Feature("lists", "Sınırsız kendi listen"),
-    Feature("share", "Listeni paylaş"),
-    Feature("discover", "Keşfet'ten hazır listeler"),
-    Feature("exam", "Sınav planı"),
-    Feature("rotation", "Daha sık yeni kelime"),
-    Feature("puzzle", "Sana özel bulmaca"),
+    Feature("lists", Icons.AutoMirrored.Outlined.ListAlt, "Sınırsız kendi listen", "İstediğin kadar liste, hepsi widget'ta"),
+    Feature("share", Icons.Outlined.IosShare, "Listeni paylaş", "Linkle gönder ya da Keşfet'te herkese aç"),
+    Feature("discover", Icons.Outlined.Explore, "Keşfet'ten hazır listeler", "Başkalarının listelerini tek dokunuşla ekle"),
+    Feature("exam", Icons.Outlined.EventNote, "Sınav planı", "Sınav gününe göre günlük kelime hedefi"),
+    Feature("rotation", Icons.Filled.Bolt, "Daha sık yeni kelime", "Widget'ta günde 24'e kadar kelime"),
+    Feature("puzzle", Icons.Outlined.Extension, "Sana özel bulmaca", "Zorlandıklarınla; bulmaca arşivi de açılır"),
 )
 
 private fun focus(trigger: PaywallTrigger) = when (trigger) {
@@ -96,12 +122,12 @@ private fun focus(trigger: PaywallTrigger) = when (trigger) {
 
 private fun subtitle(trigger: PaywallTrigger) = when (trigger) {
     PaywallTrigger.LISTS -> "Ücretsizde bir listen var. Pro ile istediğin kadar liste oluştur."
-    PaywallTrigger.SHARE -> "Listeni linkle gönder ya da Keşfet'te herkese aç."
+    PaywallTrigger.SHARE -> "Listeni gönder; açan herkes kendi widget'ına ekler."
     PaywallTrigger.ROTATION -> "Kilit ekranında gün boyu daha çok kelime."
     PaywallTrigger.PERSONAL_PUZZLE -> "Zorlandığın ve öğrendiğin kelimelerden karışık bir bulmaca."
     PaywallTrigger.ARCHIVE -> "Kaçırdığın günlerin bulmacalarını çöz."
     PaywallTrigger.EXAM_PLAN -> "Sınav gününe kadar her gün kaç kelime çalışman gerektiğini görelim."
-    PaywallTrigger.DISCOVER -> "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında dönsün."
+    PaywallTrigger.DISCOVER -> "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında ve Hızlı Tekrar'da dönsün."
     PaywallTrigger.MOMENT -> "Birkaç gündür buradasın. Ücretsiz olan her şey öyle kalır; Pro daha fazlasını açar."
     PaywallTrigger.BASE -> "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."
 }
@@ -125,12 +151,32 @@ private fun Package.perMonth(): String? {
     return format.format(micros / 12.0 / 1_000_000.0)
 }
 
+/** iOS OnboardingSky at night (the paywall's background): deep blue gradient, a fixed star field, the moon. */
+@Composable
+fun NightSky(modifier: Modifier = Modifier) {
+    Canvas(modifier.fillMaxSize()) {
+        drawRect(Brush.verticalGradient(listOf(Color(0xFF080D24), Color(0xFF141738), Color(0xFF241F45))))
+        var state = 7uL
+        fun next(): ULong { state = state * 6364136223846793005uL + 1442695040888963407uL; return state shr 33 }
+        repeat(70) {
+            val x = (next() % 1000uL).toFloat() / 1000f * size.width
+            val y = (next() % 1000uL).toFloat() / 1000f * size.height * 0.6f
+            val r = ((next() % 3uL).toFloat() + 1f) * 0.6f * density / 2f
+            val alpha = 0.35f + (next() % 60uL).toFloat() / 100f
+            drawCircle(Color.White.copy(alpha = alpha.coerceAtMost(1f)), r, Offset(x, y))
+        }
+        val moon = Offset(size.width * 0.8f, size.height * 0.12f)
+        drawCircle(Color(0xFFF2F0DB), 17.dp.toPx(), moon)
+        drawCircle(Color(0xFF080D24), 15.dp.toPx(), moon + Offset(10.dp.toPx(), -6.dp.toPx()))
+        drawRect(Brush.verticalGradient(listOf(Color.Transparent, Color.Black.copy(alpha = 0.55f)), startY = size.height / 2, endY = size.height))
+    }
+}
+
 /**
- * The paywall (port of the live iOS `WidgetPaywall`): headline for the trigger, a lock-screen
- * preview cycling words, the features with the trigger's first, the three plans, and under the
- * button what is billed and when (Google Play subscription disclosure).
+ * The Pro paywall (port of `PaywallView.swift`): a night sky, the reason it opened first, what Pro
+ * adds as tiles, the three plans as rows with the annual one chosen, and under the button what is
+ * billed and when (Google Play subscription disclosure). Never shown on first launch.
  */
-@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun PaywallScreen(trigger: PaywallTrigger) {
     val app = LocalApp.current
@@ -143,149 +189,171 @@ fun PaywallScreen(trigger: PaywallTrigger) {
     val pro by app.model.isPro.collectAsState()
     var plan by remember { mutableStateOf(Plan.ANNUAL) }
     var working by remember { mutableStateOf(false) }
-    var tick by remember { mutableIntStateOf(0) }
-    val words = listOf("resilient" to "dayanıklı", "eager" to "istekli", "thrive" to "gelişmek", "subtle" to "ince, belli belirsiz", "vivid" to "canlı")
+    var appeared by remember { mutableStateOf(false) }
 
-    LaunchedEffect(Unit) { app.purchases.loadProducts() }
+    LaunchedEffect(Unit) { appeared = true; app.purchases.loadProducts() }
     LaunchedEffect(pro) { if (pro) router.back() }
-    LaunchedEffect(Unit) { while (true) { delay(1600); tick++ } }
 
     val selected = state.pkg(plan)
     val trial = state.annual?.hasTrial() == true
-    fun note(p: Plan): String = when (p) {
-        Plan.MONTHLY -> "Her ay yenilenir"
-        Plan.ANNUAL -> listOfNotNull(if (trial) "7 gün ücretsiz" else null, state.annual?.perMonth()?.let { "ayda $it" }).joinToString(" · ")
-        Plan.LIFETIME -> "Tek seferlik ödeme"
-    }
+    val annualNote = listOfNotNull(if (trial) "7 gün ücretsiz, sonra yıllık" else "Yıllık yenilenir", state.annual?.perMonth()?.let { "ayda $it" }).joinToString(" · ")
     val cta = when (plan) {
         Plan.ANNUAL -> if (trial) "7 gün ücretsiz dene" else state.annual?.let { "Abone ol · ${it.price()}/yıl" } ?: "Abone ol"
         Plan.MONTHLY -> state.monthly?.let { "Abone ol · ${it.price()}/ay" } ?: "Abone ol"
         Plan.LIFETIME -> state.lifetime?.let { "Satın al · ${it.price()}" } ?: "Satın al"
     }
+    // Store-specific wording (Google Play), two lines for every plan so the button doesn't move.
     val legal = when {
         plan == Plan.LIFETIME -> "Tek seferlik ödeme; abonelik değildir, yenilenmez. Satın alımın Geri yükle ile her cihazına gelir."
         plan == Plan.ANNUAL && trial -> "7 gün ücretsiz, sonra yılda ${state.annual?.price() ?: "yıllık ücret"}. Deneme bitmeden iptal edersen ücret alınmaz. Google Play › Abonelikler'den yönetilir."
         else -> "Abonelik, iptal edene kadar her dönem otomatik yenilenir. Google Play › Ödemeler ve abonelikler › Abonelikler'den istediğin zaman iptal edebilirsin."
     }
+    val white = Color.White
+    val f = focus(trigger)
+    val ordered = features.filter { it.id == f } + features.filter { it.id != f }
 
-    Column(Modifier.fillMaxSize().background(c.background).statusBarsPadding()) {
-        Box(Modifier.fillMaxWidth()) {
-            IconButton(onClick = { router.back() }, modifier = Modifier.align(Alignment.TopEnd).padding(end = 8.dp)) {
-                Box(Modifier.size(34.dp).clip(CircleShape).background(c.surface2), contentAlignment = Alignment.Center) { Icon(Icons.Default.Close, "Kapat", tint = c.ink2) }
-            }
-        }
-        Column(
-            Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 20.dp),
-            verticalArrangement = Arrangement.spacedBy(14.dp), horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Text("KİLİT KELİME PRO", style = KelimeType.ui(12.sp, FontWeight.Bold).copy(letterSpacing = 1.2.sp), color = c.accent)
-            Text(trigger.headline, style = KelimeType.english(32.sp).copy(letterSpacing = (-0.8).sp), color = c.ink, textAlign = TextAlign.Center)
-            Text(subtitle(trigger), style = KelimeType.ui(13.sp), color = c.ink2, textAlign = TextAlign.Center)
-            // Lock-screen preview.
+    Box(Modifier.fillMaxSize().background(Color(0xFF080D24))) {
+        NightSky()
+        Column(Modifier.fillMaxSize()) {
             Column(
-                Modifier.fillMaxWidth().clip(RoundedCornerShape(28.dp)).background(Brush.verticalGradient(listOf(c.accentSoft, c.surface)))
-                    .border(1.dp, c.line, RoundedCornerShape(28.dp)).padding(vertical = 14.dp),
-                horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(10.dp),
+                Modifier.weight(1f).verticalScroll(rememberScrollState()).statusBarsPadding().padding(horizontal = 20.dp).padding(top = 40.dp, bottom = 12.dp),
+                verticalArrangement = Arrangement.spacedBy(22.dp),
             ) {
-                Text("09:41", style = KelimeType.ui(50.sp, FontWeight.SemiBold), color = c.ink)
-                AnimatedContent(tick, transitionSpec = { (slideInVertically { it } + fadeIn()) togetherWith fadeOut() }, label = "word") { t ->
-                    val (en, tr) = words[t % words.size]
-                    Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp).clip(RoundedCornerShape(16.dp)).background(c.surface2).padding(12.dp)) {
-                        Text(en, style = KelimeType.english(22.sp), color = c.ink)
-                        Text(tr, style = KelimeType.ui(13.sp), color = c.ink2)
+                // Hero: a glow and a sparkle, the kicker, the headline and the reason.
+                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    val glow by animateFloatAsState(if (appeared) 1f else 0.6f, spring(dampingRatio = 0.7f, stiffness = 60f), label = "glow")
+                    Box(Modifier.height(64.dp).fillMaxWidth(), contentAlignment = Alignment.Center) {
+                        Canvas(Modifier.size(110.dp).scale(glow)) {
+                            drawCircle(Brush.radialGradient(listOf(c.accent.copy(alpha = 0.65f), Color.Transparent), radius = 70.dp.toPx()))
+                        }
+                        Text("✦", style = KelimeType.ui(30.sp, FontWeight.SemiBold), color = white)
+                    }
+                    Text("KİLİT KELİME PRO", style = KelimeType.ui(12.sp, FontWeight.Bold).copy(letterSpacing = 1.4.sp), color = c.accent)
+                    Text(trigger.headline, style = KelimeType.english(34.sp).copy(letterSpacing = (-0.8).sp), color = white, textAlign = TextAlign.Center)
+                    Text(subtitle(trigger), style = KelimeType.ui(15.sp), color = white.copy(alpha = 0.75f), textAlign = TextAlign.Center)
+                }
+                // Features: two columns of tiles; the reason the paywall opened comes first, in blue.
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    ordered.chunked(2).forEachIndexed { row, pair ->
+                        Row(Modifier.height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            pair.forEachIndexed { column, feature ->
+                                val index = row * 2 + column
+                                val shown by animateFloatAsState(if (appeared) 1f else 0f, tween(400, delayMillis = 60 * index), label = "tile")
+                                FeatureTile(feature, highlighted = feature.id == f, Modifier.weight(1f).fillMaxHeight().alpha(shown).offset(y = (12 * (1 - shown)).dp))
+                            }
+                        }
                     }
                 }
-                Row(Modifier.padding(horizontal = 12.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Rate("Normal", "günde 4'e kadar", false, Modifier.weight(1f))
-                    Rate("Çok sık", "günde 24'e kadar", true, Modifier.weight(1f))
+                // Plans: rows, the annual one chosen and badged.
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    PlanRow("Aylık", state.monthly?.price(), "Her ay yenilenir, istediğin zaman iptal et", null, plan == Plan.MONTHLY, state.loading) { plan = Plan.MONTHLY }
+                    PlanRow("Yıllık", state.annual?.price(), annualNote, state.annualSaving?.let { "%$it tasarruf" } ?: "En avantajlı", plan == Plan.ANNUAL, state.loading) { plan = Plan.ANNUAL }
+                    PlanRow("Ömür boyu", state.lifetime?.price(), "Tek seferlik ödeme, abonelik yok", null, plan == Plan.LIFETIME, state.loading) { plan = Plan.LIFETIME }
                 }
-            }
-            val f = focus(trigger)
-            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                for (feature in features.filter { it.id == f } + features.filter { it.id != f }) {
-                    val on = feature.id == f
+                if (state.packages.isEmpty() && !state.loading) {
                     Text(
-                        feature.title, style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = if (on) c.onAccent else c.ink,
-                        modifier = Modifier.clip(RoundedCornerShape(12.dp)).background(if (on) c.accent else c.surface).border(1.dp, if (on) c.accent else c.line, RoundedCornerShape(12.dp))
-                            .padding(horizontal = 12.dp, vertical = 10.dp),
+                        "Fiyatlar yüklenemedi · Tekrar dene", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.accent, textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth().heightIn(min = 32.dp).clickable { scope.launch { app.purchases.loadProducts() } }.wrapContentHeight(),
                     )
                 }
             }
-            Row(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                for (p in Plan.entries) {
-                    val on = p == plan
-                    Box(Modifier.weight(1f)) {
-                        Column(
-                            Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(if (on) c.accentSoft else c.surface)
-                                .border(if (on) 2.dp else 1.dp, if (on) c.accent else c.line, RoundedCornerShape(16.dp)).clickable { plan = p }
-                                .padding(vertical = 14.dp, horizontal = 6.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp),
-                        ) {
-                            Text(p.title, style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.ink2)
-                            Text(state.pkg(p)?.price() ?: "—", style = KelimeType.ui(18.sp, FontWeight.SemiBold), color = c.ink)
-                            Text(note(p), style = KelimeType.ui(11.sp), color = c.ink2, textAlign = TextAlign.Center, minLines = 2, maxLines = 2)
-                        }
-                        if (p == Plan.ANNUAL) state.annualSaving?.let {
-                            Text(
-                                "%$it tasarruf", style = KelimeType.ui(10.sp, FontWeight.Bold), color = c.greenInk,
-                                modifier = Modifier.align(Alignment.TopCenter).offset(y = (-9).dp).clip(CircleShape).background(c.greenBackground).padding(vertical = 3.dp, horizontal = 7.dp),
-                            )
-                        }
+            // Footer: the button, the billing line, and Geri yükle · Koşullar · Gizlilik.
+            Column(
+                Modifier.fillMaxWidth().background(Brush.verticalGradient(listOf(Color.Transparent, Color.Black.copy(alpha = 0.85f), Color.Black)))
+                    .navigationBarsPadding().padding(horizontal = 20.dp).padding(top = 24.dp, bottom = 8.dp),
+                horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Box(
+                    Modifier.fillMaxWidth().heightIn(min = 56.dp).clip(RoundedCornerShape(14.dp)).background(c.accent).alpha(if (selected == null) 0.6f else 1f)
+                        .clickable(enabled = selected != null && !working) {
+                            val p = selected ?: return@clickable
+                            working = true
+                            scope.launch {
+                                when (app.purchases.purchase(activity, p)) {
+                                    PurchaseManager.Result.PENDING -> router.toast = "Satın alma onay bekliyor"
+                                    PurchaseManager.Result.CANCELLED -> state.error?.let { router.toast = it }
+                                    else -> {}
+                                }
+                                working = false
+                            }
+                        },
+                    contentAlignment = Alignment.Center,
+                ) {
+                    if (working) CircularProgressIndicator(color = c.onAccent, strokeWidth = 2.dp, modifier = Modifier.size(22.dp))
+                    else Text(cta, style = KelimeType.ui(16.sp, FontWeight.SemiBold), color = c.onAccent)
+                }
+                Text(legal, style = KelimeType.ui(11.sp), color = white.copy(alpha = 0.6f), textAlign = TextAlign.Center, minLines = 2, maxLines = 3)
+                Row(Modifier.heightIn(min = 30.dp), horizontalArrangement = Arrangement.spacedBy(18.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Link("Geri yükle") {
+                        scope.launch { router.toast = if (app.purchases.restore()) "Pro geri yüklendi" else (app.purchases.state.value.error ?: "Geri yüklenecek satın alma bulunamadı") }
                     }
+                    Link("Koşullar") { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(TERMS_URL))) }
+                    Link("Gizlilik") { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_URL))) }
                 }
             }
-            if (!app.purchases.configured) Text("Satın alma bu sürümde henüz ayarlanmadı.", style = KelimeType.ui(12.sp), color = c.amberInk)
-            state.error?.let { Text(it, style = KelimeType.ui(12.sp), color = c.amberInk) }
-            Gap(8.dp)
         }
-        Divider()
-        Column(Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 20.dp, vertical = 10.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        // Close: a small frosted circle, top right.
+        Box(Modifier.statusBarsPadding().padding(horizontal = 12.dp, vertical = 8.dp).align(Alignment.TopEnd)) {
             Box(
-                Modifier.fillMaxWidth().heightIn(min = 54.dp).clip(RoundedCornerShape(14.dp)).background(if (selected != null) c.accent else c.accent.copy(alpha = 0.5f))
-                    .clickable(enabled = selected != null && !working) {
-                        val p = selected ?: return@clickable
-                        working = true
-                        scope.launch {
-                            when (app.purchases.purchase(activity, p)) {
-                                PurchaseManager.Result.PENDING -> router.toast = "Ödeme bekleniyor; onaylanınca Pro açılır."
-                                else -> {}
-                            }
-                            working = false
-                        }
-                    },
+                Modifier.size(44.dp).clickable { router.back() }.semantics { contentDescription = "Kapat" },
                 contentAlignment = Alignment.Center,
             ) {
-                if (working) CircularProgressIndicator(color = c.onAccent, strokeWidth = 2.dp, modifier = Modifier.size(22.dp))
-                else Text(cta, style = KelimeType.ui(16.sp, FontWeight.SemiBold), color = c.onAccent)
-            }
-            Text(legal, style = KelimeType.ui(11.sp), color = c.ink2, textAlign = TextAlign.Center, minLines = 2)
-            Row(horizontalArrangement = Arrangement.spacedBy(18.dp)) {
-                Link("Geri yükle") { scope.launch { router.toast = if (app.purchases.restore()) "Pro geri yüklendi" else "Geri yüklenecek satın alma bulunamadı" } }
-                Link("Koşullar") { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(TERMS_URL))) }
-                Link("Gizlilik") { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_URL))) }
+                Box(Modifier.size(36.dp).clip(CircleShape).background(Color.White.copy(alpha = 0.14f)), contentAlignment = Alignment.Center) {
+                    Icon(Icons.Default.Close, null, tint = white.copy(alpha = 0.9f), modifier = Modifier.size(18.dp))
+                }
             }
         }
     }
 }
 
 @Composable
-private fun Rate(title: String, detail: String, pro: Boolean, modifier: Modifier) {
+private fun FeatureTile(feature: Feature, highlighted: Boolean, modifier: Modifier) {
     val c = Palette.current
-    Box(modifier) {
-        ProCorner(pro) {
-            Column(
-                Modifier.fillMaxWidth().heightIn(min = 50.dp).clip(RoundedCornerShape(12.dp)).background(if (pro) c.surface else c.surface2.copy(alpha = 0.6f))
-                    .border(1.dp, if (pro) c.accent else c.surface2.copy(alpha = 0f), RoundedCornerShape(12.dp)).padding(8.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                Text(title, style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.ink)
-                Text(detail, style = KelimeType.ui(11.sp), color = c.ink2)
+    Row(
+        modifier.heightIn(min = 54.dp).clip(RoundedCornerShape(14.dp)).background(Color.White.copy(alpha = 0.08f))
+            .border(1.dp, if (highlighted) c.accent.copy(alpha = 0.8f) else Color.White.copy(alpha = 0.08f), RoundedCornerShape(14.dp))
+            .padding(10.dp).semantics(mergeDescendants = true) { stateDescription = feature.detail },
+        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        Box(
+            Modifier.size(30.dp).clip(RoundedCornerShape(9.dp)).background(if (highlighted) c.accent else c.accent.copy(alpha = 0.18f)),
+            contentAlignment = Alignment.Center,
+        ) { Icon(feature.icon, null, tint = if (highlighted) c.onAccent else c.accent, modifier = Modifier.size(16.dp)) }
+        Text(feature.title, style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = Color.White, maxLines = 2)
+    }
+}
+
+@Composable
+private fun PlanRow(title: String, price: String?, note: String, badge: String?, selected: Boolean, loading: Boolean, onClick: () -> Unit) {
+    val c = Palette.current
+    Row(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(if (selected) c.accent.copy(alpha = 0.18f) else Color.White.copy(alpha = 0.08f))
+            .border(if (selected) 2.dp else 1.dp, if (selected) c.accent else Color.White.copy(alpha = 0.1f), RoundedCornerShape(18.dp))
+            .clickable(onClick = onClick).padding(16.dp).semantics { this.selected = selected },
+        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp),
+    ) {
+        Icon(
+            if (selected) Icons.Filled.CheckCircle else Icons.Outlined.Circle, null,
+            tint = if (selected) c.accent else Color.White.copy(alpha = 0.4f), modifier = Modifier.size(24.dp),
+        )
+        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(title, style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = Color.White)
+                badge?.let {
+                    Text(it, style = KelimeType.ui(11.sp, FontWeight.Bold), color = c.onAccent, modifier = Modifier.clip(CircleShape).background(c.green).padding(vertical = 3.dp, horizontal = 7.dp))
+                }
             }
+            Text(note, style = KelimeType.ui(12.sp), color = Color.White.copy(alpha = 0.7f))
+        }
+        when {
+            price != null -> Text(price, style = KelimeType.ui(18.sp, FontWeight.Bold), color = Color.White)
+            loading -> CircularProgressIndicator(color = Color.White, strokeWidth = 2.dp, modifier = Modifier.size(18.dp))
+            else -> Text("—", style = KelimeType.ui(18.sp, FontWeight.Bold), color = Color.White.copy(alpha = 0.5f))
         }
     }
 }
 
 @Composable
 private fun Link(title: String, onClick: () -> Unit) {
-    Text(title, style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = Palette.current.ink2, modifier = Modifier.clickable(onClick = onClick).padding(vertical = 6.dp))
+    Text(title, style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = Color.White.copy(alpha = 0.7f), modifier = Modifier.clickable(onClick = onClick).padding(vertical = 6.dp))
 }

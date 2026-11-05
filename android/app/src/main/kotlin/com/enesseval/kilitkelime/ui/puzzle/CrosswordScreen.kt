@@ -1,5 +1,11 @@
 package com.enesseval.kilitkelime.ui.puzzle
 
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -327,45 +333,70 @@ private fun ClueBar(game: CrosswordGame, cards: Map<String, Card>, onStep: (Int)
     }
 }
 
+/** iOS PuzzleCompletionView: title, "6 kelime, 4 dakika.", time and hints, helped words, the spoiler-free grid. */
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
 private fun Completion(game: CrosswordGame, loaded: Loaded, seconds: Int, onAgain: () -> Unit, onClose: () -> Unit) {
     val c = Palette.current
-    val router = LocalRouter.current
     val helped = game.puzzle.orderedEntries.filter { it.id in game.helped }.mapNotNull { loaded.cards[it.cardID] }
-    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp).navigationBarsPadding(), verticalArrangement = Arrangement.spacedBy(14.dp)) {
-        Kicker("BULMACA TAMAM")
-        Text("${game.puzzle.entries.size} kelime,\n${maxOf(1, Math.round(seconds / 60.0).toInt())} dakika.", style = KelimeType.english(40.sp), color = c.ink)
-        Text("${game.puzzle.entries.size} kelime · ${time(seconds)} · ${game.hintsUsed} ipucu", style = KelimeType.ui(14.sp), color = c.ink2)
-        if (helped.isNotEmpty()) {
-            Kicker("WIDGET'INA EKLENEN KELİMELER")
-            for (card in helped) {
-                Row(Modifier.fillMaxWidth().clickable { router.openWord(card.id) }.padding(vertical = 4.dp)) {
-                    Text(card.word, style = KelimeType.english(19.sp), color = c.ink, modifier = Modifier.weight(1f))
-                    Text(card.meaning, style = KelimeType.ui(14.sp), color = c.ink2)
+    val helpedCells = game.puzzle.entries.filter { it.id in game.helped }.flatMap { it.cells }.map { it.row to it.col }.toSet()
+    var sharing by remember { mutableStateOf(false) }
+    Column(
+        Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(top = 30.dp, bottom = 24.dp).navigationBarsPadding(),
+        verticalArrangement = Arrangement.spacedBy(22.dp),
+    ) {
+        Text("BULMACA TAMAM", style = KelimeType.ui(13.sp, FontWeight.SemiBold).copy(letterSpacing = 1.sp), color = c.ink2)
+        Text("${game.puzzle.entries.size} kelime,\n${maxOf(1, Math.round(seconds / 60.0).toInt())} dakika.", style = KelimeType.english(52.sp).copy(letterSpacing = (-1).sp), color = c.ink)
+        Row(horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+            for ((value, label) in listOf(time(seconds) to "süre", "${game.hintsUsed}" to "ipucu")) {
+                Column {
+                    Text(value, style = KelimeType.ui(20.sp, FontWeight.Bold), color = c.ink)
+                    Text(label, style = KelimeType.ui(14.sp), color = c.ink2)
                 }
             }
         }
-        if (loaded.isDaily) Text("Yarın yeni bulmaca seni bekliyor.", style = KelimeType.ui(14.sp), color = c.ink2)
-        Gap(6.dp)
-        var sharing by remember { mutableStateOf(false) }
-        PrimaryButton("Sonucu paylaş") { sharing = true }
-        if (sharing) {
-            // iOS ShareGrid: every open cell green, cells of words solved with help amber.
-            val helpedCells = game.puzzle.entries.filter { it.id in game.helped }.flatMap { it.cells }.map { it.row to it.col }.toSet()
-            val cells = HashMap<Pair<Int, Int>, Boolean?>()
-            for (entry in game.puzzle.entries) for (cell in entry.cells) {
-                val key = cell.row to cell.col
-                cells[key] = key !in helpedCells
+        if (helped.isNotEmpty()) {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text("Widget'ına eklenen kelimeler", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.ink)
+                androidx.compose.foundation.layout.FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    for (card in helped) {
+                        Text(card.word, style = KelimeType.english(18.sp), color = c.ink, modifier = Modifier.clip(CircleShape).background(c.amberBackground).padding(vertical = 6.dp, horizontal = 12.dp))
+                    }
+                }
             }
-            com.enesseval.kilitkelime.ui.share.ShareCardSheet(
-                com.enesseval.kilitkelime.ui.word.ShareCard.Content.Puzzle(
-                    if (loaded.isDaily) "Günün Bulmacası" else "Sana Özel Bulmaca",
-                    game.puzzle.width, game.puzzle.height, cells, game.puzzle.entries.size, time(seconds), game.hintsUsed,
-                ),
-            ) { sharing = false }
         }
-        TintedButton("Yeniden çöz", onClick = onAgain)
-        TintedButton("Kapat", onClick = onClose)
+        // ShareGrid: 14 dp cells, 3 dp gaps; green alone, amber with help.
+        Canvas(Modifier.size(width = (game.puzzle.width * 17 - 3).dp, height = (game.puzzle.height * 17 - 3).dp)) {
+            val cell = 14.dp.toPx()
+            val step = 17.dp.toPx()
+            for (entry in game.puzzle.entries) for (p in entry.cells) {
+                drawRoundRect(
+                    if ((p.row to p.col) in helpedCells) c.amber else c.green,
+                    topLeft = Offset(p.col * step, p.row * step), size = Size(cell, cell), cornerRadius = CornerRadius(cell * 0.2f),
+                )
+            }
+        }
+        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            PrimaryButton("Sonucu paylaş", height = 52.dp) { sharing = true }
+            Row(Modifier.fillMaxWidth().heightIn(min = 44.dp), verticalAlignment = Alignment.CenterVertically) {
+                Text("Yeniden çöz", style = KelimeType.ui(15.sp), color = c.ink2, modifier = Modifier.clickable(onClick = onAgain).padding(vertical = 10.dp))
+                Box(Modifier.weight(1f))
+                Text("Kapat", style = KelimeType.ui(15.sp, FontWeight.SemiBold), color = c.ink2, modifier = Modifier.clickable(onClick = onClose).padding(vertical = 10.dp))
+            }
+            if (loaded.isDaily) Text("Yarın yeni bulmaca seni bekliyor.", style = KelimeType.ui(13.sp), color = c.ink2, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+        }
+    }
+    if (sharing) {
+        val cells = HashMap<Pair<Int, Int>, Boolean?>()
+        for (entry in game.puzzle.entries) for (cell in entry.cells) {
+            val key = cell.row to cell.col
+            cells[key] = key !in helpedCells
+        }
+        com.enesseval.kilitkelime.ui.share.ShareCardSheet(
+            com.enesseval.kilitkelime.ui.word.ShareCard.Content.Puzzle(
+                if (loaded.isDaily) "Günün Bulmacası" else "Sana Özel Bulmaca",
+                game.puzzle.width, game.puzzle.height, cells, game.puzzle.entries.size, time(seconds), game.hintsUsed,
+            ),
+        ) { sharing = false }
     }
 }
-
