@@ -45,7 +45,10 @@ for compile fixes and a first run before device testing.
 
 ## Known gaps and simplifications
 
-- **Not compiled / not run.** No screen has been seen on a device or emulator. Library APIs were
+- **First compile (2026-11-05, owner's Windows machine):** `:app:installDebug` reached Kotlin
+  compilation with five errors (Glance `actionStartActivity` import, `rawQueryWithFactory`
+  edit table, `AppRouter.back()` return type); fixed. Next: run on a device.
+- **Not run yet.** No screen has been seen on a device or emulator. Library APIs were
   written from documentation of the versions in `libs.versions.toml` (Glance 1.1, RevenueCat 9,
   supabase-kt 3.2, TelemetryDeck 6, Credential Manager 1.5); small signature differences are likely.
 - **Cinematic intro** is one animated scene (words typing onto a lock screen), not the three-scene

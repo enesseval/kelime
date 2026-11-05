@@ -151,7 +151,9 @@ class AppRouter(val nav: NavHostController, private val onPaywall: (PaywallTrigg
         nav.navigate("paywall/${trigger.raw}")
     }
 
-    fun back() = nav.popBackStack()
+    fun back() {
+        nav.popBackStack()
+    }
 }
 
 val LocalRouter = staticCompositionLocalOf<AppRouter> { error("no router") }
