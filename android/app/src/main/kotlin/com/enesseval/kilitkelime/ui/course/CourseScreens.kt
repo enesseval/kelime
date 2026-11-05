@@ -1,6 +1,8 @@
 package com.enesseval.kilitkelime.ui.course
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -46,26 +48,35 @@ import kotlinx.coroutines.launch
 /** Bölümler: the course at the learner's level, in the order they meet the units. */
 @Composable
 fun UnitListScreen() {
-    val router = LocalRouter.current
-    val c = Palette.current
     val course by loadData { db -> Curriculum.state(db) }
     PushedScreen("Bölümler") {
         val state = course ?: return@PushedScreen
-        Text("Bölümler sırayla açılır; biri bitmeye yakınken sıradaki başlar. İstersen başka bir bölüme geçebilirsin.", style = KelimeType.ui(14.sp), color = c.ink2)
-        Gap(14.dp)
-        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            for (item in state.units) {
-                SurfaceCard(onClick = { router.openUnit(item.id) }) {
+        UnitList(state)
+    }
+}
+
+/** iOS UnitList: the level's units in order; the current one framed in blue. */
+@Composable
+fun UnitList(state: com.enesseval.kilitkelime.core.content.CourseState) {
+    val router = LocalRouter.current
+    val c = Palette.current
+    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Text("Bölümler sırayla açılır; biri bitmeye yakınken sıradaki başlar. İstersen başka bir bölüme geçebilirsin.", style = KelimeType.ui(13.sp), color = c.ink2)
+        for (item in state.units) {
+            val isCurrent = item.id == state.currentID
+            Box(Modifier.then(if (isCurrent) Modifier.border(1.5.dp, c.accent, androidx.compose.foundation.shape.RoundedCornerShape(18.dp)) else Modifier)) {
+                SurfaceCard(radius = 18.dp, padding = 16.dp, onClick = { router.openUnit(item.id) }) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(item.unit.title, style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink, modifier = Modifier.weight(1f))
                         when {
                             item.isFinished -> Text("Bitti ✓", style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = c.greenInk)
-                            item.id == state.currentID -> Text("Şu an · ${item.learned}/${item.total}", style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = c.accent)
+                            isCurrent -> Text("Şu an · ${item.learned}/${item.total}", style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = c.accent)
                             item.started -> Text("${item.learned}/${item.total}", style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = c.ink2)
                             else -> Text("${item.total} kart", style = KelimeType.ui(12.sp), color = c.ink2)
                         }
                     }
-                    Text(item.unit.goal, style = KelimeType.ui(13.sp), color = c.ink2, maxLines = 2)
+                    Gap(6.dp)
+                    Text(item.unit.goal, style = KelimeType.ui(13.sp), color = c.ink2, maxLines = 2, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
                     if (item.started) {
                         Gap(8.dp)
                         ThinProgressBar(item.fraction)

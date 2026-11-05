@@ -105,6 +105,11 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.foundation.combinedClickable
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.height
+import com.enesseval.kilitkelime.ui.components.ProCorner
 import kotlinx.coroutines.launch
 
 private enum class Mode(val label: String) { WORDS("Kelimeler"), LISTS("Listeler") }
@@ -347,13 +352,16 @@ private fun IndexStrip(items: List<WordItem>, modifier: Modifier, onJump: (Int) 
 // Listeler: the course, exam lists and own lists, each on or off for the lock screen.
 
 private data class ListsData(
-    val courseLevel: CEFRLevel?,
+    val course: com.enesseval.kilitkelime.core.content.CourseState?,
     val courseOn: Boolean,
-    val courseProgress: Pair<Int, Int>?,
-    val exams: List<DeckProgress>,
+    val decks: List<DeckProgress>,
     val lists: List<UserListSummary>,
 )
 
+/**
+ * Listeler (iOS WordsView.lists): KENDİ LİSTELERİM first, then KURS (the course card, a note and
+ * the units) and SINAV LİSTELERİ in two columns. The last source that is on can't be switched off.
+ */
 @Composable
 private fun ListsView() {
     val app = LocalApp.current
@@ -362,90 +370,90 @@ private fun ListsView() {
     val scope = rememberCoroutineScope()
     val pro by app.model.isPro.collectAsState()
     var creating by remember { mutableStateOf(false) }
+    var deleting by remember { mutableStateOf<UserListSummary?>(null) }
     val data by loadData { db ->
-        val course = Curriculum.state(db)
-        ListsData(
-            courseLevel = course?.level,
-            courseOn = DeckQueries.courseEnabled(db),
-            courseProgress = course?.let { s -> s.units.sumOf { it.learned } to s.units.sumOf { it.total } },
-            exams = DeckQueries.progress(db).filter { it.deck.tag != null },
-            lists = UserLists.summaries(db),
-        )
+        ListsData(Curriculum.state(db), DeckQueries.courseEnabled(db), DeckQueries.progress(db), UserLists.summaries(db))
     }
     val d = data ?: return
-    val onCount = (if (d.courseOn) 1 else 0) + d.exams.count { it.enabled } + d.lists.count { it.list.enabled && it.total > 0 }
+    val examsOn = d.decks.count { it.deck.tag != null && it.enabled }
+    val listsOn = d.lists.count { it.list.enabled && it.total > 0 }
+    val onCount = if (d.course != null) (if (d.courseOn) 1 else 0) + examsOn + listsOn else d.decks.count { it.enabled } + listsOn
+    fun setDeck(deck: DeckProgress, on: Boolean) {
+        scope.launch { app.model.writeAndRequeue("deck-${deck.deck.raw}") { db -> DeckQueries.setEnabled(on, deck.deck, db) } }
+    }
 
     Column(
         Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(bottom = 24.dp),
-        verticalArrangement = Arrangement.spacedBy(14.dp),
+        verticalArrangement = Arrangement.spacedBy(18.dp),
     ) {
-        d.courseLevel?.let { level ->
-            SurfaceCard(onClick = { router.openUnits() }) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Column(Modifier.weight(1f)) {
-                        Text("${level.raw} kursu", style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-                        d.courseProgress?.let { (learned, total) -> Text("$learned / $total kelime öğrenildi", style = KelimeType.ui(13.sp), color = c.ink2) }
-                    }
-                    WidgetSwitch(d.courseOn, enabled = !(d.courseOn && onCount == 1)) { on ->
-                        scope.launch { app.model.writeAndRequeue("course-$on") { db -> DeckQueries.setCourse(on, db) } }
+        val course = d.course
+        if (course != null) {
+            Caption("KENDİ LİSTELERİM")
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                for (summary in d.lists) {
+                    UserListCard(
+                        summary, keepOn = summary.list.enabled && summary.total > 0 && onCount == 1,
+                        onOpen = { router.openList(summary.id) }, onDelete = { deleting = summary },
+                    ) { on -> scope.launch { app.model.writeAndRequeue("list-$on") { db -> UserLists.setEnabled(on, summary.id, db) } } }
+                }
+                val ownCount = d.lists.count { !it.list.imported }
+                ProCorner(!pro && ownCount > 0) {
+                    Row(
+                        Modifier.fillMaxWidth().heightIn(min = 52.dp).clip(RoundedCornerShape(18.dp))
+                            .drawBehind {
+                                drawRoundRect(
+                                    c.line, cornerRadius = androidx.compose.ui.geometry.CornerRadius(18.dp.toPx()),
+                                    style = androidx.compose.ui.graphics.drawscope.Stroke(1.dp.toPx(), pathEffect = androidx.compose.ui.graphics.PathEffect.dashPathEffect(floatArrayOf(4.dp.toPx(), 4.dp.toPx()))),
+                                )
+                            }
+                            .clickable {
+                                scope.launch {
+                                    val can = app.model.read { db -> UserLists.canCreate(pro, db) }
+                                    if (can) creating = true else router.showPaywall(PaywallTrigger.LISTS)
+                                }
+                            }.padding(horizontal = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        Icon(Icons.Default.Add, null, tint = c.accent, modifier = Modifier.size(18.dp))
+                        Text(if (d.lists.isEmpty()) "İlk listeni oluştur" else "Yeni liste", style = KelimeType.ui(15.sp, FontWeight.SemiBold), color = c.accent)
                     }
                 }
-                if (!d.courseOn) {
-                    Gap(6.dp)
-                    Text("Kurs widget'ta kapalı; widget açtığın listelerden kelime gösteriyor.", style = KelimeType.ui(13.sp), color = c.ink2)
+                if (d.lists.isEmpty()) Text("Kendi kelimelerini topla; widget'ta kursla birlikte dönsün.", style = KelimeType.ui(13.sp), color = c.ink2)
+            }
+            Caption("KURS")
+            d.decks.firstOrNull { it.deck.level == course.level }?.let { deck ->
+                DeckCard(deck.copy(enabled = d.courseOn), "${course.level.raw} kursu", keepOn = d.courseOn && onCount == 1) { on ->
+                    scope.launch { app.model.writeAndRequeue("course-$on") { db -> DeckQueries.setCourse(on, db) } }
                 }
             }
-        }
-        Kicker("SINAV LİSTELERİ")
-        for (deck in d.exams) {
-            SurfaceCard {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Column(Modifier.weight(1f)) {
-                        Text(deck.deck.raw, style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-                        Text("${deck.learned} / ${deck.total} kelime öğrenildi", style = KelimeType.ui(13.sp), color = c.ink2)
-                    }
-                    WidgetSwitch(deck.enabled, enabled = !(deck.enabled && onCount == 1)) { on ->
-                        scope.launch { app.model.writeAndRequeue("deck-${deck.deck.raw}") { db -> DeckQueries.setEnabled(on, deck.deck, db) } }
-                    }
-                }
-                Gap(10.dp)
-                ThinProgressBar(deck.fraction)
-            }
-        }
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.weight(1f)) { Kicker("KENDİ LİSTELERİM") }
-            Icon(
-                Icons.Default.Add, contentDescription = "Yeni liste", tint = c.accent,
-                modifier = Modifier.clip(CircleShape).clickable {
-                    scope.launch {
-                        val can = app.model.read { db -> UserLists.canCreate(pro, db) }
-                        if (can) creating = true else router.showPaywall(PaywallTrigger.LISTS)
-                    }
-                }.padding(6.dp),
+            Text(
+                if (d.courseOn) "Kapatırsan widget'ta sadece açtığın sınav listeleri ve kendi listelerin döner." else "Kurs widget'ta kapalı; widget açtığın listelerden kelime gösteriyor.",
+                style = KelimeType.ui(12.sp), color = c.ink2,
             )
-        }
-        if (d.lists.isEmpty()) {
-            SurfaceCard {
-                Text("Kendi kelimelerini topla; widget'ta kursla birlikte dönsün.", style = KelimeType.ui(15.sp), color = c.ink2)
-                Gap(12.dp)
-                TintedButton("İlk listeni oluştur") { creating = true }
+            com.enesseval.kilitkelime.ui.course.UnitList(course)
+            val exams = d.decks.filter { it.deck.tag != null }
+            if (exams.isNotEmpty()) {
+                Caption("SINAV LİSTELERİ")
+                DecksGrid(exams, keepOn = { it.enabled && onCount == 1 }, onToggle = ::setDeck)
             }
+        } else {
+            DecksGrid(d.decks, keepOn = { it.enabled && onCount == 1 }, onToggle = ::setDeck)
         }
-        for (summary in d.lists) {
-            SurfaceCard(onClick = { router.openList(summary.id) }) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Column(Modifier.weight(1f)) {
-                        Text(summary.list.title, style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-                        Text("${summary.learned} / ${summary.total} kelime öğrenildi", style = KelimeType.ui(13.sp), color = c.ink2)
-                    }
-                    WidgetSwitch(summary.list.enabled, enabled = !(summary.list.enabled && onCount == 1 && summary.total > 0)) { on ->
-                        scope.launch { app.model.writeAndRequeue("list-$on") { db -> UserLists.setEnabled(on, summary.id, db) } }
-                    }
-                    Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = c.ink2)
-                }
-                if (summary.total > 0) {
-                    Gap(10.dp)
-                    ThinProgressBar(summary.fraction)
+    }
+
+    deleting?.let { summary ->
+        val last = summary.list.enabled && summary.total > 0 && onCount == 1
+        com.enesseval.kilitkelime.ui.profile.ConfirmDialog(
+            "Liste silinsin mi?",
+            if (last) "Widget'ta açık tek liste bu; silersen widget'ta kurs yeniden açılır." else "Kendi yazdığın kelimeler de silinir. Uygulamanın kelimeleri ve ilerlemen yerinde kalır.",
+            "${summary.list.title} listesini sil", onDismiss = { deleting = null },
+        ) {
+            deleting = null
+            scope.launch {
+                app.model.writeAndRequeue("list-delete") { db ->
+                    UserLists.delete(summary.id, db)
+                    // The widget needs a source: the course comes back.
+                    if (last) DeckQueries.setCourse(true, db)
                 }
             }
         }
@@ -467,6 +475,78 @@ private fun ListsView() {
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun Caption(text: String) {
+    Text(text, style = KelimeType.ui(12.sp, FontWeight.SemiBold).copy(letterSpacing = 0.7.sp), color = Palette.current.ink2)
+}
+
+/** iOS UserListCard: title and chevron, count, progress, "Widget'ta" switch. Long press deletes. */
+@OptIn(androidx.compose.foundation.ExperimentalFoundationApi::class)
+@Composable
+private fun UserListCard(summary: UserListSummary, keepOn: Boolean, onOpen: () -> Unit, onDelete: () -> Unit, onToggle: (Boolean) -> Unit) {
+    val c = Palette.current
+    Column(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(c.surface).border(1.dp, c.line, RoundedCornerShape(18.dp))
+            .combinedClickable(onClick = onOpen, onLongClick = onDelete, onLongClickLabel = "Listeyi sil").padding(14.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(summary.list.title, style = KelimeType.english(22.sp), color = c.ink, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))
+            Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = c.ink2)
+        }
+        Text(if (summary.total == 0) "Henüz kelime yok" else "${summary.learned} / ${summary.total} kelime öğrenildi", style = KelimeType.ui(12.sp), color = c.ink2)
+        ThinProgressBar(summary.fraction)
+        WidgetToggleRow(summary.list.enabled, enabled = summary.total > 0 && !keepOn, onToggle)
+    }
+}
+
+/** iOS DeckCard: serif title, count (or "Bu listeyi bitirdin 🎉"), progress, "Widget'ta" switch. */
+@Composable
+private fun DeckCard(deck: DeckProgress, title: String? = null, keepOn: Boolean, modifier: Modifier = Modifier, onToggle: (Boolean) -> Unit) {
+    val c = Palette.current
+    Column(
+        modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(c.surface).border(1.dp, c.line, RoundedCornerShape(18.dp)).padding(14.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        Text(title ?: deck.deck.raw, style = KelimeType.english(24.sp), color = c.ink)
+        Text(
+            when {
+                deck.isFinished -> "Bu listeyi bitirdin 🎉"
+                deck.total == 0 -> "Yakında"
+                else -> "${deck.learned} / ${deck.total} kelime öğrenildi"
+            },
+            style = KelimeType.ui(12.sp), color = c.ink2, maxLines = 2,
+        )
+        ThinProgressBar(deck.fraction)
+        WidgetToggleRow(deck.enabled, enabled = deck.total > 0 && !keepOn, onToggle)
+    }
+}
+
+@Composable
+private fun DecksGrid(decks: List<DeckProgress>, keepOn: (DeckProgress) -> Boolean, onToggle: (DeckProgress, Boolean) -> Unit) {
+    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        for (pair in decks.chunked(2)) {
+            Row(Modifier.height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                for (deck in pair) DeckCard(deck, keepOn = keepOn(deck), modifier = Modifier.weight(1f).fillMaxHeight()) { on -> onToggle(deck, on) }
+                if (pair.size == 1) Box(Modifier.weight(1f))
+            }
+        }
+    }
+}
+
+/** "Widget'ta" with a switch on the right (iOS Toggle). */
+@Composable
+private fun WidgetToggleRow(checked: Boolean, enabled: Boolean, onChange: (Boolean) -> Unit) {
+    val c = Palette.current
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Text("Widget'ta", style = KelimeType.ui(12.sp), color = c.ink2, modifier = Modifier.weight(1f))
+        Switch(
+            checked, onChange, enabled = enabled,
+            colors = SwitchDefaults.colors(checkedTrackColor = c.green, checkedThumbColor = Color.White, uncheckedTrackColor = c.surface2, uncheckedBorderColor = c.line),
+        )
     }
 }
 
