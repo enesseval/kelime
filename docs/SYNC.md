@@ -53,6 +53,21 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-05 · Android Hızlı Tekrar, Oyna ve Arşiv iOS ile aynı · iOS [x] Android [x]
+iOS'ta zaten böyleydi.
+- **Hızlı Tekrar:** üst çubuk ✕ · ilerleme · "3/10"; soru: üst yazı + 30 pt anlam (tür yazmaz).
+  Seçenekler 60 pt, serif 24, cevaptan sonra doğru yeşil ✓, seçilen yanlış amber, diğerleri
+  soluk; altta "Bilmiyorum". Yazma: cümle, harf kutuları (ilk harf verili, imleç kutusu mavi,
+  cevaptan sonra yeşil/amber; yanlışta doğru harfler), klavyenin üstünde "Bilmiyorum" (çerçeveli) ve
+  "Kontrol et". Cevap paneli alttan: "Doğru" / "Doğru cevap: …", "wom[e]n → woman" gösterimi ya
+  da "Seçtiğin: …" (üstü çizili), örnek cümle, "Bu kelimeyi widget'ında daha sık göreceksin",
+  koyu "Devam". Özet: "TUR BİTTİ", büyük skor "/ 10", Öğrenildi / Zorlanılan baloncukları,
+  "Bitti" ve "Bir tur daha". Soru yoksa ekran kapanır.
+- **Oyna:** Günün Bulmacası alt yazısı bulmaca yokken "İpuçları Türkçe"; Pro satırları başlık
+  üstte, açıklama altta.
+- **Arşiv:** son 30 günün günlük bulmacası: tarih, "B1 · 3/6 kelime", bittiyse ✓.
+- Android dosyaları: `ui/review/QuickReviewScreen.kt`, `ui/play/PlayScreen.kt`.
+
 ### 2026-11-05 · Android Kelime Avı ve Eşleştir ekranları iOS ile aynı · iOS [x] Android [x]
 iOS'ta zaten böyleydi; Android'de çerçeve, ipucu ve sonuç ekranı farklıydı.
 - **Çerçeve:** üstte ✕, ortada oyun adı, sağda süre (Kelime Avı "0:42") ya da kalan saniye

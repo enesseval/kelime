@@ -102,7 +102,7 @@ fun PlayScreen() {
             ) { router.startQuickReview() }
             GameCard(
                 "Günün Bulmacası",
-                d?.puzzle?.let { if (it.completed) "Tamamlandı · yarın yenisi" else "${it.solved}/${it.total} kelime çözüldü" } ?: "0/5 kelime çözüldü",
+                d?.puzzle?.let { if (it.completed) "Tamamlandı · yarın yenisi" else "${it.solved}/${it.total} kelime çözüldü" } ?: "İpuçları Türkçe",
                 modifier = Modifier.weight(1f),
                 icon = { PuzzleIcon(d?.puzzle?.thumbnail ?: SAMPLE_GRID) },
             ) { router.openPuzzle() }
@@ -141,7 +141,7 @@ private fun GameCard(title: String, subtitle: String, modifier: Modifier, strong
     ) {
         icon()
         Box(Modifier.weight(1f))
-        Text(title, style = KelimeType.english(23.sp), color = c.ink, maxLines = 2)
+        Text(title, style = KelimeType.english(23.sp), color = c.ink, maxLines = 1, softWrap = false, overflow = TextOverflow.Ellipsis)
         Text(
             subtitle, maxLines = 2, overflow = TextOverflow.Ellipsis,
             style = KelimeType.ui(13.sp, if (strong) FontWeight.SemiBold else FontWeight.Normal),
@@ -169,35 +169,63 @@ private fun PuzzleIcon(cells: Map<Int, Boolean>) {
                 val row = index / 8
                 val col = index % 8
                 if (row >= 10) continue
-                drawRoundRect(if (solved) c.green else c.accent, Offset(col * s + 0.4f, row * s + 0.4f), Size(s - 0.8f, s - 0.8f), CornerRadius(s * 0.2f))
+                drawRoundRect(if (solved) c.green else c.accent.copy(alpha = 0.55f), Offset(col * s + 0.4f, row * s + 0.4f), Size(s - 0.8f, s - 0.8f), CornerRadius(s * 0.2f))
             }
         }
     }
 }
 
+/** iOS proRow: title over a grey line, then a chevron (Pro) or the Pro badge. */
 @Composable
 private fun ProRow(title: String, detail: String, pro: Boolean, onClick: () -> Unit) {
     val c = Palette.current
-    SettingsRow(title, detail, onClick = onClick) {
+    Row(Modifier.fillMaxWidth().clickable(onClick = onClick).padding(horizontal = 20.dp, vertical = 16.dp), verticalAlignment = Alignment.CenterVertically) {
+        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+            Text(title, style = KelimeType.ui(16.sp, FontWeight.SemiBold), color = c.ink)
+            Text(detail, style = KelimeType.ui(13.sp), color = c.ink2)
+        }
         if (pro) Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = c.ink2) else ProBadge()
     }
 }
 
-/** Pro: earlier daily puzzles that were finished, to play again. */
+private data class ArchiveRow(val day: java.time.LocalDate, val level: com.enesseval.kilitkelime.core.model.CEFRLevel, val solved: Int, val total: Int, val completed: Boolean)
+
+/** Pro (iOS PuzzleArchiveView): the last 30 days' daily puzzles with their progress. */
 @Composable
 fun PuzzleArchiveScreen() {
+    val app = LocalApp.current
     val router = LocalRouter.current
-    val days by loadData { db -> PuzzleStore.completedDays(Preferences.load(db).level, db) }
-    PushedScreen("Arşiv") {
-        val list = days ?: return@PushedScreen
-        if (list.isEmpty()) {
-            EmptyText("Bitirdiğin bulmacalar burada görünür.")
-            return@PushedScreen
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val c = Palette.current
+    val rows by loadData { db ->
+        val prefs = Preferences.load(db)
+        (1..30).mapNotNull { offset ->
+            val day = app.model.clock.today.minusDays(offset.toLong())
+            val (level, generated) = com.enesseval.kilitkelime.ui.puzzle.PuzzleLibrary.daily(context, prefs.level, day, db) ?: return@mapNotNull null
+            val key = com.enesseval.kilitkelime.core.crossword.DailyPuzzle.key(level, day)
+            // A grid opened before is kept under "<key>-grid"; use it so the counts match what was played.
+            val puzzle = com.enesseval.kilitkelime.core.model.PuzzleProgress.fetch(db, "$key-grid")?.let {
+                runCatching { kotlinx.serialization.json.Json.decodeFromString(com.enesseval.kilitkelime.core.crossword.Crossword.serializer(), it.cells) }.getOrNull()
+            } ?: generated
+            val saved = PuzzleStore.load(key, puzzle, db)
+            ArchiveRow(day, level, saved.game.solvedCount, puzzle.entries.size, saved.completedAt != null)
         }
-        SettingsSection("BİTİRDİKLERİN") {
-            list.forEachIndexed { i, day ->
+    }
+    PushedScreen("Arşiv") {
+        val list = rows ?: return@PushedScreen
+        Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(c.surface)) {
+            list.forEachIndexed { i, row ->
                 if (i > 0) Divider()
-                SettingsRow(TurkishDate.header(day), onClick = { router.openPuzzle(day.toString()) })
+                Row(
+                    Modifier.fillMaxWidth().heightIn(min = 50.dp).clickable { router.openPuzzle(row.day.toString()) }.padding(horizontal = 16.dp, vertical = 8.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                        Text(TurkishDate.header(row.day), style = KelimeType.ui(16.sp, FontWeight.SemiBold), color = c.ink)
+                        Text("${row.level.raw} · ${row.solved}/${row.total} kelime", style = KelimeType.ui(13.sp), color = c.ink2)
+                    }
+                    if (row.completed) Text("✓", style = KelimeType.ui(16.sp, FontWeight.Bold), color = c.greenInk)
+                }
             }
         }
     }
