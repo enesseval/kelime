@@ -49,7 +49,10 @@ android {
         versionCode = 1
         versionName = "1.1.0"
         buildConfigField("String", "REVENUECAT_KEY", "\"${local("revenuecat.androidKey")}\"")
-        buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${local("google.webClientId")}\"")
+        // The Google web OAuth client (Supabase's Google provider). A client id is public, so it is
+        // kept here; local.properties `google.webClientId` can still override it.
+        val googleWebClientId = local("google.webClientId").ifEmpty { "232922246061-kirln0ssb8i4eqe3ull4rdj7roc91369.apps.googleusercontent.com" }
+        buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"$googleWebClientId\"")
     }
 
     signingConfigs {

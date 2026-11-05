@@ -190,7 +190,7 @@ second weekly streak freeze (an addition, nothing is taken from free users).
 ## Owner to-do
 
 - Supabase: enable the Google provider and add the Android OAuth client id (Credential Manager).
-  Put the **web** client id in `android/local.properties` as `google.webClientId=…`.
+  The **web** client id is set in `app/build.gradle.kts` (override with `google.webClientId` in `local.properties`).
 - RevenueCat: create the Android app, add the Play public key, put the key in
   `local.properties` as `revenuecat.androidKey=goog_…`. Create `pro.monthly`, `pro.yearly`
   (7-day trial) and `pro.lifetime` in Play Console when ready.
