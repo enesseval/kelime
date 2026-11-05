@@ -47,7 +47,11 @@ for compile fixes and a first run before device testing.
 
 - **First compile (2026-11-05, owner's Windows machine):** `:app:installDebug` reached Kotlin
   compilation with five errors (Glance `actionStartActivity` import, `rawQueryWithFactory`
-  edit table, `AppRouter.back()` return type); fixed. Next: run on a device.
+  edit table, `AppRouter.back()` return type); fixed. Gradle's "Kotlin plugin loaded multiple
+  times" warning is expected and harmless: putting the Kotlin plugins in a root
+  `build.gradle.kts` without the Android Gradle Plugin breaks the build (`BaseExtension` not
+  found), and adding the AGP there would make `-PcoreOnly=true` need Google's Maven. Next: run on
+  a device.
 - **Not run yet.** No screen has been seen on a device or emulator. Library APIs were
   written from documentation of the versions in `libs.versions.toml` (Glance 1.1, RevenueCat 9,
   supabase-kt 3.2, TelemetryDeck 6, Credential Manager 1.5); small signature differences are likely.
