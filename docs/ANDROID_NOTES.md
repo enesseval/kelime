@@ -52,6 +52,10 @@ for compile fixes and a first run before device testing.
   `build.gradle.kts` without the Android Gradle Plugin breaks the build (`BaseExtension` not
   found), and adding the AGP there would make `-PcoreOnly=true` need Google's Maven. Next: run on
   a device.
+- **First run crash (fixed):** TelemetryDeck 6.2 calls `kotlinx.datetime.Clock`, which
+  kotlinx-datetime 0.7 (pulled in by Supabase 3.2) removed. `app/build.gradle.kts` pins every
+  kotlinx-datetime request to `0.7.1-0.6.x-compat`, which has both. Drop it once TelemetryDeck
+  moves to 0.7.
 - **Not run yet.** No screen has been seen on a device or emulator. Library APIs were
   written from documentation of the versions in `libs.versions.toml` (Glance 1.1, RevenueCat 9,
   supabase-kt 3.2, TelemetryDeck 6, Credential Manager 1.5); small signature differences are likely.

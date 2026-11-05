@@ -100,6 +100,18 @@ kotlin {
 
 tasks.named("preBuild") { dependsOn(copyContent, copyFonts) }
 
+// Supabase 3.2 needs kotlinx-datetime 0.7 (Clock/Instant moved to kotlin.time); TelemetryDeck 6.2
+// is built against 0.6 and calls kotlinx.datetime.Clock, which 0.7 removed, so the app crashed
+// on the first signal. The "-0.6.x-compat" build is 0.7.1 plus the old classes; serve it to both.
+configurations.configureEach {
+    resolutionStrategy.eachDependency {
+        if (requested.group == "org.jetbrains.kotlinx" && requested.name.startsWith("kotlinx-datetime")) {
+            useVersion("0.7.1-0.6.x-compat")
+            because("TelemetryDeck uses kotlinx.datetime.Clock, removed in 0.7")
+        }
+    }
+}
+
 dependencies {
     implementation(project(":core"))
     implementation(libs.kotlinx.coroutines.android)
