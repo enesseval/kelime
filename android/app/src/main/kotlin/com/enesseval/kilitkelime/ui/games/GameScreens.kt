@@ -54,6 +54,23 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material3.Icon
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
 import com.enesseval.kilitkelime.analytics.Analytics
 import com.enesseval.kilitkelime.core.games.Game
 import com.enesseval.kilitkelime.core.games.GameResults
@@ -122,56 +139,60 @@ fun WordHuntScreen() {
         }
     }
 
-    PushedScreen("Kelime Avı", close = true) {
-        if (!loaded) return@PushedScreen
+    // iOS WordSearchView: close, title and the clock in the bar; "N / M kelime", the grid, the
+    // clues in two columns and "İlk harfi göster" at the bottom.
+    GameFrame("Kelime Avı", trailing = { Text(time(seconds), style = KelimeType.ui(13.sp), color = c.ink2) }) {
+        if (!loaded) return@GameFrame
         if (h == null) {
-            EmptyText("Bu oyun için yeterli kelime yok. Widget'ta bir liste ya da kurs aç.")
-            return@PushedScreen
+            NotEnoughWords()
+            return@GameFrame
         }
         if (done) {
-            Kicker("KELİME AVI BİTTİ")
-            Gap(8.dp)
-            Text(time(seconds), style = KelimeType.english(64.sp), color = c.ink)
-            Text("${h.words.size} kelime · ${hinted.size} ipucu", style = KelimeType.ui(15.sp), color = c.ink2)
-            Gap(14.dp)
-            for (w in h.words) {
-                Row(Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-                    Text(w.card.word, style = KelimeType.english(19.sp), color = if (w.card.id in hinted) c.amberInk else c.greenInk, modifier = Modifier.weight(1f))
-                    Text(w.card.meaning, style = KelimeType.ui(14.sp), color = c.ink2)
+            GameResult(
+                title = "Kelime Avı tamam",
+                headline = "${h.words.size} kelime",
+                stats = listOf("süre" to time(seconds), "ipucu" to "${hinted.size}"),
+                words = h.words.map { it.card },
+                onAgain = { round++ },
+                onClose = { router.back() },
+                share = ShareCard.Content.Game("KELİME AVI", "${h.words.size} kelime", "${time(seconds)} · ${hinted.size} ipucu", h.words.map { it.card }),
+            )
+            return@GameFrame
+        }
+        Column(Modifier.fillMaxSize().padding(top = 8.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(18.dp)) {
+            Text("${found.size} / ${h.words.size} kelime", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.ink2)
+            Box(Modifier.padding(horizontal = 12.dp)) {
+                Board(h, found, hinted, onFound = { word ->
+                    found = found + word.card.id
+                    haptics.performHapticFeedback(HapticFeedbackType.Confirm)
+                }, onMiss = { haptics.performHapticFeedback(HapticFeedbackType.Reject) })
+            }
+            // Clues: two columns, meaning over "N harf" (or the word once found).
+            Column(Modifier.padding(horizontal = 20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                for (pair in h.words.chunked(2)) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        for (w in pair) {
+                            val isFound = w.card.id in found
+                            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(1.dp)) {
+                                Text(
+                                    w.card.primaryMeaning, maxLines = 1, overflow = TextOverflow.Ellipsis,
+                                    style = KelimeType.ui(14.sp, FontWeight.Medium).copy(textDecoration = if (isFound) TextDecoration.LineThrough else null),
+                                    color = if (isFound) c.ink2 else c.ink,
+                                )
+                                if (isFound) Text(w.card.word, style = KelimeType.english(15.sp), color = c.greenInk)
+                                else Text("${w.answer.length} harf", style = KelimeType.ui(12.sp), color = c.ink2)
+                            }
+                        }
+                        if (pair.size == 1) Box(Modifier.weight(1f))
+                    }
                 }
             }
-            Gap(16.dp)
-            PrimaryButton("Sonucu paylaş") { sharing = true }
-            Gap(8.dp)
-            TintedButton("Bir tur daha") { round++ }
-            Gap(8.dp)
-            TintedButton("Bitti") { router.back() }
-            if (sharing) ShareCardSheet(ShareCard.Content.Game("KELİME AVI", "${h.words.size} kelime", "${time(seconds)} · ${hinted.size} ipucu", h.words.map { it.card })) { sharing = false }
-            return@PushedScreen
-        }
-        Text("Türkçesine bakıp İngilizcesini bul: harflerin üstünde parmağını kaydır.", style = KelimeType.ui(14.sp), color = c.ink2)
-        Gap(12.dp)
-        Board(
-            h, found, hinted,
-            onFound = { word ->
-                found = found + word.card.id
-                haptics.performHapticFeedback(HapticFeedbackType.LongPress)
-            },
-        )
-        Gap(16.dp)
-        Kicker("ANLAMLAR · ${found.size}/${h.words.size}")
-        Gap(6.dp)
-        for (w in h.words) {
-            val isFound = w.card.id in found
-            Row(Modifier.fillMaxWidth().heightIn(min = 42.dp), verticalAlignment = Alignment.CenterVertically) {
-                Text("${w.card.meaning} (${w.answer.length})", style = KelimeType.ui(15.sp), color = if (isFound) c.ink2 else c.ink, modifier = Modifier.weight(1f))
-                when {
-                    isFound -> Text(w.card.word, style = KelimeType.english(17.sp), color = if (w.card.id in hinted) c.amberInk else c.greenInk)
-                    w.card.id in hinted -> Text("${w.answer.first()}…", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.amberInk)
-                    else -> Text("İlk harfi göster", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.accent, modifier = Modifier.clickable {
-                        hinted = hinted + w.card.id
-                        scope.launch { app.model.write("word-hunt-hint") { db -> LearningStore.record(LearningEvent.HintUsed, w.card.id, ReviewSource.WORD_HUNT, app.model.clock, db) } }
-                    }.padding(8.dp))
+            Box(Modifier.weight(1f))
+            Box(Modifier.padding(horizontal = 20.dp).padding(bottom = 12.dp)) {
+                TintedButton("İlk harfi göster", height = 46.dp) {
+                    val next = h.words.firstOrNull { it.card.id !in found && it.card.id !in hinted } ?: return@TintedButton
+                    hinted = hinted + next.card.id
+                    scope.launch { app.model.write("word-hunt-hint") { db -> LearningStore.record(LearningEvent.HintUsed, next.card.id, ReviewSource.WORD_HUNT, app.model.clock, db) } }
                 }
             }
         }
@@ -185,7 +206,7 @@ fun WordHuntScreen() {
  * flashes it amber; a hint is an amber circle under the first letter. Bands fade in over 0.25 s.
  */
 @Composable
-private fun Board(hunt: WordHunt, found: Set<String>, hinted: Set<String>, onFound: (WordHunt.Placed) -> Unit) {
+private fun Board(hunt: WordHunt, found: Set<String>, hinted: Set<String>, onFound: (WordHunt.Placed) -> Unit, onMiss: () -> Unit) {
     val c = Palette.current
     var start by remember { mutableStateOf<Pair<Int, Int>?>(null) }
     var end by remember { mutableStateOf<Pair<Int, Int>?>(null) }
@@ -219,7 +240,7 @@ private fun Board(hunt: WordHunt, found: Set<String>, hinted: Set<String>, onFou
                     drawLine(color, center(cells.first()), center(cells.last()), strokeWidth = width, cap = StrokeCap.Round)
                 }
                 for (w in hunt.words) if (w.card.id in found) band(w.cells, c.green.copy(alpha = 0.32f * (appear[w.card.id]?.value ?: 1f)))
-                for (p in hintCells) drawCircle(c.amber.copy(alpha = 0.45f), radius = width / 2, center = center(p))
+                for (p in hintCells) drawCircle(c.amberBackground, radius = width / 2, center = center(p))
                 miss?.let { band(it, c.amber.copy(alpha = 0.35f)) }
                 if (selection.size > 0) band(selection, c.accent.copy(alpha = 0.35f))
             }
@@ -230,8 +251,9 @@ private fun Board(hunt: WordHunt, found: Set<String>, hinted: Set<String>, onFou
                         onDrag = { change, _ -> end = cellAt(change.position.x, change.position.y) },
                         onDragEnd = {
                             val cells = line(start, end)
-                            val word = hunt.spelled(cells, skip = found)
-                            if (word != null) onFound(word) else if (cells.size > 1) miss = cells
+                            // iOS: fewer than three letters is no answer at all.
+                            val word = if (cells.size >= 3) hunt.spelled(cells, skip = found) else null
+                            if (word != null) onFound(word) else if (cells.size >= 3) { miss = cells; onMiss() }
                             start = null; end = null
                         },
                         onDragCancel = { start = null; end = null },
@@ -282,6 +304,7 @@ fun MatchScreen() {
     var round by remember { mutableIntStateOf(0) }
     var version by remember { mutableIntStateOf(0) }
     var picked by remember { mutableStateOf<Int?>(null) }
+    var pickedRight by remember { mutableStateOf<Int?>(null) }
     var miss by remember { mutableStateOf<Pair<Int, Int>?>(null) }
     /** A right pair shown green for 0.42 s before it leaves the board. */
     var correct by remember { mutableStateOf<Pair<Int, Int>?>(null) }
@@ -301,7 +324,7 @@ fun MatchScreen() {
         val pool = app.model.read { db -> GameWords.pick(db, rng, MatchGame.POOL, app.model.clock.today) }
         best = app.model.read { db -> GameResults.best(Game.MATCH, db) }
         game = if (pool.size >= 3) MatchGame(pool, rng) else null
-        picked = null; miss = null; correct = null; left = MatchGame.SECONDS; finished = false; newBest = false; loaded = true
+        picked = null; pickedRight = null; miss = null; correct = null; left = MatchGame.SECONDS; finished = false; newBest = false; loaded = true
     }
     val g = game
 
@@ -333,88 +356,90 @@ fun MatchScreen() {
         }
     }
 
-    PushedScreen("Eşleştir", close = true) {
-        if (!loaded) return@PushedScreen
+    // iOS MatchView: close, title and the seconds left in the bar (amber from 10).
+    GameFrame("Eşleştir", trailing = {
+        Text("$left", style = KelimeType.ui(15.sp, FontWeight.Bold), color = if (left <= 10 && started) c.amberInk else c.ink2)
+    }) {
+        if (!loaded) return@GameFrame
         if (g == null) {
-            EmptyText("Bu oyun için yeterli kelime yok. Widget'ta bir liste ya da kurs aç.")
-            return@PushedScreen
+            NotEnoughWords()
+            return@GameFrame
         }
         if (!started) {
-            Kicker("EŞLEŞTİR · 60 SANİYE")
-            Gap(10.dp)
-            Text(
-                "İngilizce kelimeyi Türkçe anlamıyla eşleştir. Doğru çift gider; üç çift gidince yenileri gelir.",
-                style = KelimeType.ui(17.sp), color = c.ink,
-            )
-            Gap(10.dp)
-            if (best > 0) Text("En iyi skorun: $best", style = KelimeType.ui(14.sp), color = c.ink2)
-            Gap(20.dp)
-            PrimaryButton("Başla") { started = true }
-            return@PushedScreen
+            Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                Box(Modifier.weight(1f))
+                Text("60 saniye", style = KelimeType.english(48.sp), color = c.ink)
+                Text(
+                    "İngilizce kelimeyi Türkçe anlamıyla eşleştir. Doğru çift gider; üç çift gidince yenileri gelir.",
+                    style = KelimeType.ui(15.sp), color = c.ink2, textAlign = TextAlign.Center, modifier = Modifier.padding(horizontal = 32.dp),
+                )
+                if (best > 0) Text("En iyi skorun: $best", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.greenInk)
+                Box(Modifier.weight(1f))
+                Box(Modifier.padding(horizontal = 20.dp).padding(bottom = 16.dp)) { PrimaryButton("Başla", height = 52.dp) { started = true } }
+            }
+            return@GameFrame
         }
         if (finished) {
-            Kicker("SÜRE BİTTİ")
-            Gap(8.dp)
-            Text("${g.score}", style = KelimeType.english(96.sp), color = c.ink)
-            Text(if (newBest) "Yeni en iyi skor!" else "doğru eşleşme · en iyi ${maxOf(best, g.score)}", style = KelimeType.ui(16.sp, FontWeight.Medium), color = if (newBest) c.greenInk else c.ink2)
-            if (g.missedIDs.isNotEmpty()) {
-                Gap(8.dp)
-                Text("Karıştırdığın ${g.missedIDs.size} kelime widget'ında daha sık gelecek.", style = KelimeType.ui(14.sp), color = c.amberInk)
+            GameResult(
+                title = if (g.score >= best && g.score > 0) "Yeni rekor!" else "Süre doldu",
+                headline = "${g.score} eşleşme",
+                stats = listOf("en iyi" to "${maxOf(best, g.score)}", "zorlandığın" to "${g.missedCards.size}"),
+                words = g.missedCards,
+                wordsTitle = "Widget'ında daha sık görünecek",
+                onAgain = { round++; started = true },
+                onClose = { router.back() },
+                share = ShareCard.Content.Game("EŞLEŞTİR", "${g.score} eşleşme", "60 saniyede", g.firstTryCards),
+            )
+            return@GameFrame
+        }
+        /** iOS: either side can be tapped first; the second tap on the other side checks the pair. */
+        fun check(i: Int, j: Int) {
+            if (g.right.getOrNull(j) == null || g.left.getOrNull(i) == null) return
+            if (g.isMatch(i, j)) {
+                // Right: both cards green with ✓ for 0.42 s, then they leave.
+                correct = i to j
+                val token = ++correctToken
+                haptics.performHapticFeedback(HapticFeedbackType.Confirm)
+                scope.launch {
+                    delay(420)
+                    if (correctToken == token) commitCorrect()
+                }
+            } else {
+                g.pair(i, j) // counts the miss; the board stays
+                miss = i to j
+                haptics.performHapticFeedback(HapticFeedbackType.Reject)
             }
-            Gap(18.dp)
-            PrimaryButton("Sonucu paylaş") { sharing = true }
-            Gap(8.dp)
-            TintedButton("Bir tur daha") { round++; started = true }
-            Gap(8.dp)
-            TintedButton("Bitti") { router.back() }
-            if (sharing) ShareCardSheet(ShareCard.Content.Game("EŞLEŞTİR", "${g.score} eşleşme", "60 saniyede", g.firstTryCards)) { sharing = false }
-            return@PushedScreen
+            version++
         }
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Bir kelimeye, sonra Türkçesine dokun.", style = KelimeType.ui(14.sp), color = c.ink2, modifier = Modifier.weight(1f))
-            Text("0:%02d".format(left), style = KelimeType.ui(22.sp, FontWeight.SemiBold), color = if (left <= 10) c.amberInk else c.ink)
-        }
-        Text("${g.score} doğru", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.greenInk)
-        Gap(14.dp)
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                g.left.forEachIndexed { i, card ->
-                    val shaking = miss?.first == i
-                    val green = correct?.first == i
-                    MatchSlot(card, "-en", card?.word, english = true, selected = picked == i, wrong = shaking, right = green,
-                        modifier = if (shaking) Modifier.offset { IntOffset(shake.value.dp.roundToPx(), 0) } else Modifier) {
-                        if (green) return@MatchSlot // green cards do nothing
-                        commitCorrect()
-                        if (g.left.getOrNull(i) != null) picked = i
+        Column(Modifier.fillMaxSize().padding(top = 8.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            Text("${g.score} eşleşme", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.ink2)
+            Row(Modifier.padding(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    g.left.forEachIndexed { i, card ->
+                        val shaking = miss?.first == i
+                        val green = correct?.first == i
+                        MatchSlot(card, "-en", card?.word, english = true, selected = picked == i, wrong = shaking, right = green,
+                            modifier = if (shaking) Modifier.offset { IntOffset(shake.value.dp.roundToPx(), 0) } else Modifier) {
+                            if (green) return@MatchSlot // green cards do nothing
+                            commitCorrect()
+                            if (g.left.getOrNull(i) == null) return@MatchSlot
+                            val j = pickedRight
+                            if (j != null) { pickedRight = null; check(i, j) } else picked = if (picked == i) null else i
+                        }
                     }
                 }
-            }
-            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                g.right.forEachIndexed { j, card ->
-                    val shaking = miss?.second == j
-                    val green = correct?.second == j
-                    MatchSlot(card, "-tr", card?.primaryMeaning, english = false, selected = false, wrong = shaking, right = green,
-                        modifier = if (shaking) Modifier.offset { IntOffset(shake.value.dp.roundToPx(), 0) } else Modifier) {
-                        if (green) return@MatchSlot
-                        commitCorrect()
-                        val i = picked ?: return@MatchSlot
-                        picked = null
-                        if (g.right.getOrNull(j) == null || g.left.getOrNull(i) == null) return@MatchSlot
-                        if (g.isMatch(i, j)) {
-                            // Right: both cards green with ✓ for 0.42 s, then they leave.
-                            correct = i to j
-                            val token = ++correctToken
-                            haptics.performHapticFeedback(HapticFeedbackType.Confirm)
-                            scope.launch {
-                                delay(420)
-                                if (correctToken == token) commitCorrect()
-                            }
-                        } else {
-                            g.pair(i, j) // counts the miss; the board stays
-                            miss = i to j
-                            haptics.performHapticFeedback(HapticFeedbackType.Reject)
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    g.right.forEachIndexed { j, card ->
+                        val shaking = miss?.second == j
+                        val green = correct?.second == j
+                        MatchSlot(card, "-tr", card?.primaryMeaning, english = false, selected = pickedRight == j, wrong = shaking, right = green,
+                            modifier = if (shaking) Modifier.offset { IntOffset(shake.value.dp.roundToPx(), 0) } else Modifier) {
+                            if (green) return@MatchSlot
+                            commitCorrect()
+                            if (g.right.getOrNull(j) == null) return@MatchSlot
+                            val i = picked
+                            if (i != null) { picked = null; check(i, j) } else pickedRight = if (pickedRight == j) null else j
                         }
-                        version++
                     }
                 }
             }
@@ -479,4 +504,79 @@ private fun MatchTile(text: String?, english: Boolean, selected: Boolean, wrong:
             color = look.ink, maxLines = 2, textAlign = TextAlign.Center,
         )
     }
+}
+
+/** The games' bar (iOS): ✕ on the left, the title, a 44 dp trailing value (clock, seconds left). */
+@Composable
+private fun GameFrame(title: String, trailing: @Composable () -> Unit, content: @Composable ColumnScope.() -> Unit) {
+    val c = Palette.current
+    val router = LocalRouter.current
+    Column(Modifier.fillMaxSize().background(c.background).statusBarsPadding().navigationBarsPadding()) {
+        Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp).heightIn(min = 52.dp), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(44.dp).clip(CircleShape).clickable { router.back() }.semantics { contentDescription = "Kapat" }, contentAlignment = Alignment.Center) {
+                Icon(Icons.Default.Close, null, tint = c.ink2)
+            }
+            Text(title, style = KelimeType.ui(15.sp, FontWeight.SemiBold), color = c.ink, textAlign = TextAlign.Center, modifier = Modifier.weight(1f))
+            Box(Modifier.width(44.dp), contentAlignment = Alignment.Center) { trailing() }
+        }
+        Column(Modifier.fillMaxSize(), content = content)
+    }
+}
+
+@Composable
+private fun NotEnoughWords() {
+    val c = Palette.current
+    Column(Modifier.fillMaxSize().padding(32.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+        Text("Yeterli kelime yok", style = KelimeType.ui(20.sp, FontWeight.SemiBold), color = c.ink)
+        Gap(6.dp)
+        Text("Widget'ında açık bir liste ya da kurs olmalı.", style = KelimeType.ui(15.sp), color = c.ink2, textAlign = TextAlign.Center)
+    }
+}
+
+/** iOS GameResultView: title, headline, two stats, the round's words, share, again and close. */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun GameResult(
+    title: String, headline: String, stats: List<Pair<String, String>>, words: List<com.enesseval.kilitkelime.core.model.Card>,
+    wordsTitle: String = "Bu turun kelimeleri", onAgain: () -> Unit, onClose: () -> Unit, share: ShareCard.Content,
+) {
+    val c = Palette.current
+    var sharing by remember { mutableStateOf(false) }
+    Column(
+        Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(top = 24.dp, bottom = 24.dp),
+        verticalArrangement = Arrangement.spacedBy(22.dp),
+    ) {
+        Text(title.uppercase(com.enesseval.kilitkelime.ui.components.TR), style = KelimeType.ui(13.sp, FontWeight.SemiBold).copy(letterSpacing = 1.sp), color = c.ink2)
+        Text(headline, style = KelimeType.english(52.sp).copy(letterSpacing = (-1).sp), color = c.ink)
+        Row(horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+            for ((label, value) in stats) {
+                Column {
+                    Text(value, style = KelimeType.ui(20.sp, FontWeight.Bold), color = c.ink)
+                    Text(label, style = KelimeType.ui(14.sp), color = c.ink2)
+                }
+            }
+        }
+        if (words.isNotEmpty()) {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text(wordsTitle, style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.ink)
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    for (card in words) {
+                        Text(
+                            card.word, style = KelimeType.english(18.sp), color = c.ink,
+                            modifier = Modifier.clip(CircleShape).background(c.surface2).padding(vertical = 6.dp, horizontal = 12.dp),
+                        )
+                    }
+                }
+            }
+        }
+        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            PrimaryButton("Sonucu paylaş", height = 52.dp) { sharing = true }
+            Row(Modifier.fillMaxWidth().heightIn(min = 44.dp), verticalAlignment = Alignment.CenterVertically) {
+                Text("Bir tur daha", style = KelimeType.ui(15.sp), color = c.ink2, modifier = Modifier.clickable(onClick = onAgain).padding(vertical = 10.dp))
+                Box(Modifier.weight(1f))
+                Text("Kapat", style = KelimeType.ui(15.sp, FontWeight.SemiBold), color = c.ink2, modifier = Modifier.clickable(onClick = onClose).padding(vertical = 10.dp))
+            }
+        }
+    }
+    if (sharing) ShareCardSheet(share) { sharing = false }
 }

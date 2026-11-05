@@ -53,6 +53,21 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-05 · Android Kelime Avı ve Eşleştir ekranları iOS ile aynı · iOS [x] Android [x]
+iOS'ta zaten böyleydi; Android'de çerçeve, ipucu ve sonuç ekranı farklıydı.
+- **Çerçeve:** üstte ✕, ortada oyun adı, sağda süre (Kelime Avı "0:42") ya da kalan saniye
+  (Eşleştir, son 10'da amber).
+- **Kelime Avı:** "N / M kelime", ızgara, iki sütun ipucu (anlam; altında "N harf" ya da
+  bulununca kelime yeşil, anlam üstü çizili), altta "İlk harfi göster" (sıradaki bulunmamış
+  kelimeye). Üç harften kısa seçim cevap sayılmaz; ipucu dairesi açık amber zemin.
+- **Eşleştir:** giriş ekranı "60 saniye", açıklama, "En iyi skorun: N" (yeşil), Başla; oyunda
+  "N eşleşme"; iki taraftan da önce dokunulabilir.
+- **Sonuç (ortak):** "KELİME AVI TAMAM" / "YENİ REKOR!" / "SÜRE DOLDU", büyük başlık ("6 kelime",
+  "12 eşleşme"), iki değer (süre, ipucu / en iyi, zorlandığın), kelime baloncukları ("Bu turun
+  kelimeleri" / "Widget'ında daha sık görünecek"), "Sonucu paylaş", "Bir tur daha" · "Kapat".
+- Yetersiz kelime: "Yeterli kelime yok" / "Widget'ında açık bir liste ya da kurs olmalı."
+- Android dosyası: `ui/games/GameScreens.kt`.
+
 ### 2026-11-05 · Android seri sayfası, haftalık özet, Bugün ve paylaşım kartları iOS ile aynı · iOS [x] Android [x]
 iOS'ta zaten böyleydi; Android'de metin ve düzen farklıydı.
 - **Bugün:** seri rozeti kilit simgesi + "N gün" (amber: bugün açık), seri ya da en uzun seri
