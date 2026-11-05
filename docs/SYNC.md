@@ -53,6 +53,25 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-05 · Android seri sayfası, haftalık özet, Bugün ve paylaşım kartları iOS ile aynı · iOS [x] Android [x]
+iOS'ta zaten böyleydi; Android'de metin ve düzen farklıydı.
+- **Bugün:** seri rozeti kilit simgesi + "N gün" (amber: bugün açık), seri ya da en uzun seri
+  varsa görünür. Pazartesi kartı "Geçen haftan hazır · N kelime öğrendin · N kelime kilit
+  ekranında". Şu anki bölüm kartı: başlık yanında ok, hedef 2 satır, "N/N kart öğrenildi";
+  yarısı öğrenilince "Hikâye oku: …"; sonraki seviye düğmesi ana düğme. Kahraman kelime tek satır.
+- **Seri sayfası:** büyük sayı, "günlük seri" (0 ise "Bugün bir tur yap, serin başlasın."), alt
+  satır (risk / en uzun / "Bu senin en uzun serin."), 5 haftalık takvim kartı (30 dp nokta,
+  bugün mavi halka, koruyucu kesik çizgi), üç kural satırı, "Serini paylaş".
+- **Haftalık özet ("Geçen hafta"):** tarih aralığı, büyük sayı + "kelime öğrendin", 2×2 kutu
+  (kilit ekranında göründü, seri, Hızlı Tekrar doğruluğu, kelimede zorlandın), haftanın kelimesi
+  ("Önce zorlandın, sonunda öğrendin."), "Haftanı paylaş".
+- **Paylaşım kartları:** iOS `ShareFrame` ölçüleri (360×640 pt, 3×; 36 pt kenar), sola yaslı;
+  alt satır "Kilit Kelime · Kilit ekranında İngilizce". Seri (takvimli), Geçen haftam, Bulmaca
+  (N kelime, süre · ipucu, ızgara: yardımlı kelimeler amber), Oyun (başlık, tarih, sonuç, ilk 6
+  kelime), Kelime kartı. Mavi zemin `#21386B`, Koyu `#12110F`, Açık `#FBF9F5`.
+- Android dosyaları: `ui/today/TodayScreen.kt`, `ui/today/StreakScreens.kt`, `ui/word/ShareCard.kt`,
+  `ui/share/ShareSheet.kt`; `core/games/Games.kt` (`firstTryCards`, `missedCards`).
+
 ### 2026-11-05 · Kelimelerim üst kısmı iOS düzeninde · iOS [x] Android [x]
 iOS'ta zaten böyleydi; Android'de sıra ve görünüm farklıydı.
 - Sıra: "Bu hafta N öğrenildi · şu an N zorlanılan" satırı (yeşil / amber kalın), arama kutusu,

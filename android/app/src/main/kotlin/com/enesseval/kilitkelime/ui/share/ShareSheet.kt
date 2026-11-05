@@ -43,7 +43,7 @@ fun ShareCardSheet(content: ShareCard.Content, signal: String = Analytics.Signal
     val preview = remember(look, content) { ShareCard.render(context, content, look).asImageBitmap() }
     ModalBottomSheet(onDismissRequest = onDismiss, containerColor = c.background) {
         Column(Modifier.padding(horizontal = 20.dp).navigationBarsPadding().padding(bottom = 16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
-            Text("Paylaş", style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
+            Text(content.title, style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                 Image(preview, contentDescription = null, modifier = Modifier.width(190.dp).clip(RoundedCornerShape(16.dp)).border(1.dp, c.line, RoundedCornerShape(16.dp)))
             }

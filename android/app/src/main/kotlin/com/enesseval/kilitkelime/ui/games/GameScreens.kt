@@ -146,7 +146,7 @@ fun WordHuntScreen() {
             TintedButton("Bir tur daha") { round++ }
             Gap(8.dp)
             TintedButton("Bitti") { router.back() }
-            if (sharing) ShareCardSheet(ShareCard.Content.Game("Kelime Avı", "${found.size}/${h.words.size}", "${time(seconds)} · ${hinted.size} ipucu")) { sharing = false }
+            if (sharing) ShareCardSheet(ShareCard.Content.Game("KELİME AVI", "${h.words.size} kelime", "${time(seconds)} · ${hinted.size} ipucu", h.words.map { it.card })) { sharing = false }
             return@PushedScreen
         }
         Text("Türkçesine bakıp İngilizcesini bul: harflerin üstünde parmağını kaydır.", style = KelimeType.ui(14.sp), color = c.ink2)
@@ -367,7 +367,7 @@ fun MatchScreen() {
             TintedButton("Bir tur daha") { round++; started = true }
             Gap(8.dp)
             TintedButton("Bitti") { router.back() }
-            if (sharing) ShareCardSheet(ShareCard.Content.Game("Eşleştir", "${g.score}", "60 saniyede ${g.score} doğru eşleşme")) { sharing = false }
+            if (sharing) ShareCardSheet(ShareCard.Content.Game("EŞLEŞTİR", "${g.score} eşleşme", "60 saniyede", g.firstTryCards)) { sharing = false }
             return@PushedScreen
         }
         Row(verticalAlignment = Alignment.CenterVertically) {

@@ -190,6 +190,11 @@ class MatchGame(cards: List<Card>, private val rng: RandomSource, val boardSize:
     val missedIDs: Set<String> get() = missed.toSet()
     /** Cards matched right on the first try, in order. */
     val firstTry: List<String> get() = firstTryIDs
+    private val byID = cards.associateBy { it.id }
+    /** The words paired right on the first try, for the result and the share card (iOS `firstTry`). */
+    val firstTryCards: List<Card> get() = firstTryIDs.mapNotNull { byID[it] }
+    /** The words mixed up at least once (iOS `missed`). */
+    val missedCards: List<Card> get() = missed.distinct().mapNotNull { byID[it] }
     val isEmpty: Boolean get() = left.all { it == null } && right.all { it == null }
 
     /** Whether the word at [leftIndex] and the meaning at [rightIndex] match, without playing them. */

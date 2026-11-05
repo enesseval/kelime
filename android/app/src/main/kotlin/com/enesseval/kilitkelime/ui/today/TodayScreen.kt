@@ -87,6 +87,7 @@ import com.enesseval.kilitkelime.ui.components.TurkishDate
 import com.enesseval.kilitkelime.ui.loadData
 import com.enesseval.kilitkelime.ui.theme.KelimeType
 import com.enesseval.kilitkelime.ui.theme.Palette
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import kotlinx.coroutines.launch
 
 /** Today's crossword progress, for cards and thumbnails. */
@@ -173,15 +174,8 @@ fun TodayScreen() {
     ) {
         Row(verticalAlignment = Alignment.Bottom) {
             Box(Modifier.weight(1f)) { ScreenTitle("Bugün", TurkishDate.header(app.model.clock.today)) }
-            data?.streak?.takeIf { it.current > 0 }?.let { streak ->
-                Text(
-                    "🔒 ${streak.current} gün", style = KelimeType.ui(12.sp, FontWeight.SemiBold),
-                    color = if (streak.atRisk) c.amberInk else c.greenInk,
-                    modifier = Modifier.padding(bottom = 4.dp, end = 6.dp).clip(CircleShape)
-                        .background(if (streak.atRisk) c.amberBackground else c.greenBackground)
-                        .clickable { router.openStreak() }.padding(vertical = 7.dp, horizontal = 11.dp)
-                        .semantics { contentDescription = "${streak.current} günlük seri" + if (streak.atRisk) ", bugün henüz çalışmadın" else "" },
-                )
+            data?.streak?.takeIf { it.current > 0 || it.longest > 0 }?.let { streak ->
+                Box(Modifier.padding(bottom = 4.dp, end = 6.dp)) { StreakBadge(streak, onClick = router::openStreak) }
             }
             data?.examCountdown?.let {
                 Text(
@@ -205,7 +199,7 @@ fun TodayScreen() {
         d.hero?.let { hero -> HeroCard(hero, d.previous.takeIf { d.mode == WidgetMode.SELF_TEST }) { router.openWord(hero.id) } }
         Row(
             Modifier.fillMaxWidth().heightIn(min = 32.dp).clickable { router.openLists() }.padding(horizontal = 4.dp)
-                .semantics { contentDescription = "Kilit ekranında ${d.widgetSources}. Listeleri değiştir" },
+                .semantics { contentDescription = "Widget'ında ${d.widgetSources}. Listeleri değiştir" },
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
@@ -254,7 +248,13 @@ fun HeroCard(item: WordItem, previous: Card?, onClick: () -> Unit) {
             StateDot(item.state)
         }
         Gap(12.dp)
-        Text(card.word, style = KelimeType.english(if (card.isPhrase) 34.sp else 52.sp).copy(letterSpacing = (-1).sp), color = c.ink, maxLines = 2)
+        // iOS: 58 pt, one line, scaled down to half for long words and phrases.
+        val wordSize = when {
+            card.word.length > 16 -> 30.sp
+            card.word.length > 11 -> 40.sp
+            else -> 58.sp
+        }
+        Text(card.word, style = KelimeType.english(wordSize).copy(letterSpacing = (-1.4).sp), color = c.ink, maxLines = 1, overflow = TextOverflow.Ellipsis)
         Text(
             buildAnnotatedString {
                 withStyle(SpanStyle(fontFamily = com.enesseval.kilitkelime.ui.theme.KelimeFonts.english, fontStyle = androidx.compose.ui.text.font.FontStyle.Italic, color = c.ink2)) { append(card.pos.label) }
@@ -277,6 +277,7 @@ fun HeroCard(item: WordItem, previous: Card?, onClick: () -> Unit) {
     }
 }
 
+/** "ŞU ANKİ BÖLÜM" (iOS CurrentUnitCard): the unit, its progress, a story once half is learned. */
 @Composable
 private fun CurrentUnitCard(course: CourseState) {
     val c = Palette.current
@@ -284,39 +285,46 @@ private fun CurrentUnitCard(course: CourseState) {
     val app = LocalApp.current
     val scope = rememberCoroutineScope()
     val current = course.current
-    SurfaceCard(onClick = current?.let { { router.openUnit(it.id) } }) {
-        if (current != null && !course.isComplete) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Box(Modifier.weight(1f)) { Kicker("ŞU ANKİ BÖLÜM") }
-                Text("${course.level.raw} · ${course.units.indexOfFirst { it.id == current.id } + 1}/${course.units.size}", style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = c.ink2)
+    fun moveOn(next: CEFRLevel) {
+        scope.launch { app.model.writeAndRequeue("move-on") { db -> Curriculum.moveOn(next, db) } }
+    }
+    if (current != null) {
+        SurfaceCard(padding = 20.dp) {
+            Column(Modifier.fillMaxWidth().clickable { router.openUnit(current.id) }, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("ŞU ANKİ BÖLÜM", style = KelimeType.ui(12.sp, FontWeight.SemiBold).copy(letterSpacing = 0.7.sp), color = c.ink2, modifier = Modifier.weight(1f))
+                    Text("${course.level.raw} · ${course.units.indexOfFirst { it.id == current.id } + 1}/${course.units.size}", style = KelimeType.ui(12.sp, FontWeight.SemiBold), color = c.ink2)
+                }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(current.unit.title, style = KelimeType.english(28.sp), color = c.ink, modifier = Modifier.weight(1f))
+                    Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = c.ink2)
+                }
+                Text(current.unit.goal, style = KelimeType.ui(14.sp), color = c.ink2, maxLines = 2, overflow = TextOverflow.Ellipsis)
+                Box(Modifier.padding(top = 2.dp)) { ThinProgressBar(current.fraction) }
+                Text("${current.learned}/${current.total} kart öğrenildi", style = KelimeType.ui(12.sp), color = c.ink2)
             }
-            Gap(6.dp)
-            Text(current.unit.title, style = KelimeType.english(28.sp), color = c.ink)
-            Text(current.unit.goal, style = KelimeType.ui(14.sp), color = c.ink2, maxLines = 3, overflow = TextOverflow.Ellipsis)
-            Gap(10.dp)
-            ThinProgressBar(current.fraction)
-            Gap(6.dp)
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text("${current.learned}/${current.total} kart öğrenildi", style = KelimeType.ui(12.sp), color = c.ink2, modifier = Modifier.weight(1f))
-                Text("Bölümler", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.accent, modifier = Modifier.clickable { router.openUnits() }.padding(6.dp))
+            // Near the end of the unit the words are known well enough to read a story.
+            if (current.fraction >= 0.5 && current.unit.stories.isNotEmpty()) {
+                val story = current.unit.stories[current.learned % current.unit.stories.size]
+                Gap(10.dp)
+                TintedButton("Hikâye oku: ${story.title}") { router.openStory(current.id, story.id) }
             }
             course.nextLevel?.let { next ->
                 Gap(10.dp)
-                TintedButton("${next.raw} seviyesine geç", fullWidth = false) {
-                    scope.launch { app.model.writeAndRequeue("move-on") { db -> Curriculum.moveOn(next, db) } }
-                }
+                PrimaryButton("${next.raw} seviyesine geç", height = 48.dp) { moveOn(next) }
             }
-        } else {
+        }
+    } else if (course.isComplete) {
+        SurfaceCard(padding = 20.dp) {
             Text("${course.level.raw} bitti 🎉", style = KelimeType.english(28.sp), color = c.ink)
+            Gap(6.dp)
             Text(
                 course.nextLevel?.let { "${it.raw} bölümleri hazır." } ?: "Sonraki seviyenin bölümleri hazırlanıyor. Zorlandığın kartlar widget'ında kalır.",
                 style = KelimeType.ui(14.sp), color = c.ink2,
             )
             course.nextLevel?.let { next ->
-                Gap(10.dp)
-                TintedButton("${next.raw} seviyesine geç", fullWidth = false) {
-                    scope.launch { app.model.writeAndRequeue("move-on") { db -> Curriculum.moveOn(next, db) } }
-                }
+                Gap(12.dp)
+                PrimaryButton("${next.raw} seviyesine geç", height = 48.dp) { moveOn(next) }
             }
         }
     }
@@ -430,17 +438,5 @@ private fun Stat(value: String, label: String, color: Color, modifier: Modifier)
     Column(modifier.fillMaxHeight().background(c.surface).padding(14.dp)) {
         Text(value, style = KelimeType.ui(24.sp, FontWeight.SemiBold), color = color)
         Text(label, style = KelimeType.ui(12.sp), color = c.ink2)
-    }
-}
-
-/** Monday's card: last week in one line; opens the summary. */
-@Composable
-private fun WeeklySummaryCard(summary: WeeklySummary, onOpen: () -> Unit) {
-    val c = Palette.current
-    SurfaceCard(onClick = onOpen) {
-        Kicker("GEÇEN HAFTA")
-        Gap(6.dp)
-        Text("${summary.learned} kelime öğrenildi · ${summary.shown} kelime kilit ekranında", style = KelimeType.ui(16.sp, FontWeight.SemiBold), color = c.ink)
-        Text("Özeti gör", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.accent, modifier = Modifier.padding(top = 6.dp))
     }
 }

@@ -350,15 +350,18 @@ private fun Completion(game: CrosswordGame, loaded: Loaded, seconds: Int, onAgai
         var sharing by remember { mutableStateOf(false) }
         PrimaryButton("Sonucu paylaş") { sharing = true }
         if (sharing) {
+            // iOS ShareGrid: every open cell green, cells of words solved with help amber.
+            val helpedCells = game.puzzle.entries.filter { it.id in game.helped }.flatMap { it.cells }.map { it.row to it.col }.toSet()
             val cells = HashMap<Pair<Int, Int>, Boolean?>()
             for (entry in game.puzzle.entries) for (cell in entry.cells) {
                 val key = cell.row to cell.col
-                val unaided = game.isSolved(entry) && entry.id !in game.helped
-                cells[key] = (cells[key] ?: false) || unaided
+                cells[key] = key !in helpedCells
             }
-            val date = loaded.day.format(java.time.format.DateTimeFormatter.ofPattern("d MMMM", TR))
             com.enesseval.kilitkelime.ui.share.ShareCardSheet(
-                com.enesseval.kilitkelime.ui.word.ShareCard.Content.Puzzle(game.puzzle.width, game.puzzle.height, cells, time(seconds), date),
+                com.enesseval.kilitkelime.ui.word.ShareCard.Content.Puzzle(
+                    if (loaded.isDaily) "Günün Bulmacası" else "Sana Özel Bulmaca",
+                    game.puzzle.width, game.puzzle.height, cells, game.puzzle.entries.size, time(seconds), game.hintsUsed,
+                ),
             ) { sharing = false }
         }
         TintedButton("Yeniden çöz", onClick = onAgain)
