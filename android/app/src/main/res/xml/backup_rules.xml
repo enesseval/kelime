@@ -2,5 +2,5 @@
 <full-backup-content>
     <include domain="database" path="kelime.sqlite" />
     <include domain="sharedpref" path="." />
-    <exclude domain="file" path="wallpaper" />
+    <include domain="file" path="datastore" />
 </full-backup-content>
