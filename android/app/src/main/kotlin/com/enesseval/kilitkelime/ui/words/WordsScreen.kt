@@ -99,6 +99,12 @@ import com.enesseval.kilitkelime.ui.components.TintedButton
 import com.enesseval.kilitkelime.ui.loadData
 import com.enesseval.kilitkelime.ui.theme.KelimeType
 import com.enesseval.kilitkelime.ui.theme.Palette
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import kotlinx.coroutines.launch
 
 private enum class Mode(val label: String) { WORDS("Kelimeler"), LISTS("Listeler") }
@@ -143,23 +149,29 @@ private fun WordsList() {
     var filter by remember { mutableStateOf(WordFilter()) }
     var showFilter by remember { mutableStateOf(false) }
     var showSort by remember { mutableStateOf(false) }
-    val items by loadData(segment, search, sort, filter) { db -> WordQueries.list(segment, db, search, filter, sort) }
+    val items by loadData(segment, search, sort, filter) { db -> WordQueries.list(segment, db, search, if (segment == WordSegment.ALL) filter else WordFilter(), sort) }
     val listState = rememberLazyListState()
 
-    Column(Modifier.padding(horizontal = 20.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            for (s in WordSegment.entries) {
-                val selected = s == segment
-                Text(
-                    s.label, style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = if (selected) c.onAccent else c.ink,
-                    modifier = Modifier.clip(CircleShape).background(if (selected) c.ink else c.surface2).clickable { segment = s }.padding(horizontal = 12.dp, vertical = 8.dp),
-                )
-            }
+    val stats by loadData { db -> com.enesseval.kilitkelime.core.queries.StatsQueries.week(db, app.model.clock) }
+
+    // iOS listControls: the week line, search with sort (and filter on Tümü), then the segments
+    // across the full width.
+    Column(Modifier.padding(horizontal = 20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        stats?.let { st ->
+            Text(
+                buildAnnotatedString {
+                    append("Bu hafta ")
+                    withStyle(SpanStyle(fontWeight = FontWeight.Bold, color = c.greenInk)) { append("${st.learnedThisWeek} öğrenildi") }
+                    append(" · şu an ")
+                    withStyle(SpanStyle(fontWeight = FontWeight.Bold, color = c.amberInk)) { append("${st.strugglingNow} zorlanılan") }
+                },
+                style = KelimeType.ui(13.sp), color = c.ink2,
+            )
         }
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             SearchField(search, "Kelime ya da anlam ara", Modifier.weight(1f)) { search = it }
             Box {
-                IconButton(onClick = { showSort = true }) { Icon(Icons.Default.SwapVert, contentDescription = "Sırala: ${sort.label}", tint = c.ink) }
+                ControlIcon(Icons.Default.SwapVert, "Sırala: ${sort.label}") { showSort = true }
                 DropdownMenu(expanded = showSort, onDismissRequest = { showSort = false }) {
                     for (s in WordSort.entries) {
                         DropdownMenuItem(text = { Text((if (s == sort) "✓ " else "") + s.label) }, onClick = {
@@ -168,11 +180,15 @@ private fun WordsList() {
                     }
                 }
             }
-            IconButton(onClick = { showFilter = true }) {
-                Icon(Icons.Default.FilterList, contentDescription = if (filter.isEmpty) "Filtrele" else "Filtrele, ${filter.count} filtre açık", tint = if (filter.isEmpty) c.ink else c.accent)
+            if (segment == WordSegment.ALL) {
+                ControlIcon(
+                    Icons.Default.FilterList, if (filter.isEmpty) "Filtrele" else "Filtrele, ${filter.count} filtre açık", active = !filter.isEmpty,
+                ) { showFilter = true }
             }
         }
+        SegmentedPicker(WordSegment.entries, segment, { it.label }, Modifier.fillMaxWidth()) { segment = it }
     }
+    Gap(8.dp)
     val list = items ?: return
     Box(Modifier.fillMaxSize()) {
         if (list.isEmpty()) {
@@ -232,6 +248,17 @@ private fun FilterChip(title: String, selected: Boolean, onClick: () -> Unit) {
         title, style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = if (selected) c.onAccent else c.ink,
         modifier = Modifier.clip(CircleShape).background(if (selected) c.accent else c.surface2).clickable(onClick = onClick).padding(horizontal = 14.dp, vertical = 9.dp),
     )
+}
+
+/** A 44 dp square control next to the search field (iOS controlIcon). */
+@Composable
+private fun ControlIcon(icon: androidx.compose.ui.graphics.vector.ImageVector, description: String, active: Boolean = false, onClick: () -> Unit) {
+    val c = Palette.current
+    Box(
+        Modifier.size(44.dp).clip(RoundedCornerShape(12.dp)).background(if (active) c.accent else c.surface2).clickable(onClick = onClick)
+            .semantics { contentDescription = description },
+        contentAlignment = Alignment.Center,
+    ) { Icon(icon, null, tint = if (active) c.onAccent else c.ink, modifier = Modifier.size(20.dp)) }
 }
 
 @Composable

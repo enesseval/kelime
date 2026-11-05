@@ -38,11 +38,18 @@ object WordNotification {
             Intent(context, NotificationActionReceiver::class.java).putExtra("kind", kind).putExtra("card", card.id),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
         )
-        val notification = NotificationCompat.Builder(context, Channels.WORD)
+        // The buttons answer with the word's new state, so a tap is visible at once: the word stays
+        // until the next slot, its line says ✓ Öğrenildi or Zorlanılanlarda, and that button goes.
+        val status = when (snapshot.state) {
+            com.enesseval.kilitkelime.core.model.LearningState.LEARNED -> "✓ Öğrenildi · "
+            com.enesseval.kilitkelime.core.model.LearningState.STRUGGLING -> "Zorlanılanlarda · "
+            else -> ""
+        }
+        val builder = NotificationCompat.Builder(context, Channels.WORD)
             .setSmallIcon(R.drawable.ic_tile)
             .setContentTitle(card.word)
-            .setContentText("${card.pos.label} · ${card.meaning}")
-            .setStyle(NotificationCompat.BigTextStyle().bigText("${card.pos.label} · ${card.meaning}\n${card.exampleEN}"))
+            .setContentText("$status${card.pos.label} · ${card.meaning}")
+            .setStyle(NotificationCompat.BigTextStyle().bigText("$status${card.pos.label} · ${card.meaning}\n${card.exampleEN}"))
             .setOngoing(true)
             .setSilent(true)
             .setOnlyAlertOnce(true)
@@ -51,10 +58,9 @@ object WordNotification {
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .setCategory(NotificationCompat.CATEGORY_RECOMMENDATION)
             .setContentIntent(open)
-            .addAction(0, "Biliyorum", action("known", 11))
-            .addAction(0, "Zorlanıyorum", action("struggling", 12))
-            .build()
-        runCatching { NotificationManagerCompat.from(context).notify(ID, notification) }
+        if (snapshot.state != com.enesseval.kilitkelime.core.model.LearningState.LEARNED) builder.addAction(0, "Biliyorum", action("known", 11))
+        if (snapshot.state != com.enesseval.kilitkelime.core.model.LearningState.STRUGGLING) builder.addAction(0, "Zorlanıyorum", action("struggling", 12))
+        runCatching { NotificationManagerCompat.from(context).notify(ID, builder.build()) }
     }
 
     fun cancel(context: Context) = NotificationManagerCompat.from(context).cancel(ID)
@@ -80,6 +86,12 @@ class NotificationActionReceiver : BroadcastReceiver() {
         app.model.scope.launch {
             try {
                 app.model.write("notification-$kind") { db ->
+                    runCatching {
+                        com.enesseval.kilitkelime.core.widgets.WidgetLog.recordTap(
+                            "notification", cardID, null, db, app.model.clock,
+                            com.enesseval.kilitkelime.core.widgets.WidgetLogEntry.Kind.BUTTON, if (kind == "known") "Biliyorum" else "Zorlanıyorum",
+                        )
+                    }
                     if (kind == "known") WidgetActions.markKnown(cardID, db, app.model.clock)
                     else WidgetActions.markStruggling(cardID, db, app.model.clock)
                 }

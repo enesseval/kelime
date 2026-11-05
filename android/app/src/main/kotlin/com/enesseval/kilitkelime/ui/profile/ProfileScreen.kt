@@ -89,7 +89,6 @@ import androidx.compose.material.icons.outlined.Description
 import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.heightIn
-import com.enesseval.kilitkelime.data.DevTools
 import com.enesseval.kilitkelime.notifications.ReminderAsk
 import com.enesseval.kilitkelime.ui.word.Speaker
 import kotlinx.coroutines.launch
@@ -130,7 +129,6 @@ fun ProfileScreen() {
     val speaker = remember { Speaker(context) }
     DisposableEffect(Unit) { onDispose { speaker.shutdown() } }
     var pendingReminder by remember { mutableStateOf<Int?>(null) }
-    var forcePro by remember { mutableStateOf(DevTools.forcePro) }
 
     fun open(url: String) = context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 
@@ -155,7 +153,7 @@ fun ProfileScreen() {
         val d = data ?: return@Column
 
         // Same sections and order as iOS SettingsView: Hesap, Pro, Seviye ve sınav, Widget,
-        // Hatırlatma ve telaffuz, Baştan başla, Uygulama, Geliştirici (debug only), about.
+        // Hatırlatma ve telaffuz, Baştan başla, Uygulama, about. No developer section on Android (the owner removed it).
         SettingsSection("HESAP") {
             val profile = account.profile
             if (account.isSignedIn && profile != null) {
@@ -211,7 +209,7 @@ fun ProfileScreen() {
             SettingsSection("ÜYELİK") {
                 SettingsRow("Kilit Kelime Pro") {
                     Icon(Icons.Filled.Verified, null, tint = c.greenInk, modifier = Modifier.size(18.dp))
-                    Text(" " + (if (DevTools.forcePro) "Pro (geliştirici)" else "Pro"), style = KelimeType.ui(15.sp, FontWeight.SemiBold), color = c.greenInk)
+                    Text(" Pro", style = KelimeType.ui(15.sp, FontWeight.SemiBold), color = c.greenInk)
                 }
                 Divider()
                 LinkRow("Aboneliği yönet", Icons.Outlined.CreditCard) { open("https://play.google.com/store/account/subscriptions") }
@@ -321,46 +319,6 @@ fun ProfileScreen() {
             LinkRow("Satın alımları geri yükle", Icons.Outlined.Refresh) {
                 scope.launch {
                     router.toast = if (app.purchases.restore()) "Pro geri yüklendi" else (app.purchases.state.value.error ?: "Geri yüklenecek satın alma bulunamadı")
-                }
-            }
-        }
-
-        if (DevTools.isAvailable) {
-            val diagnostics by app.purchases.diagnostics.collectAsState()
-            SettingsSection("GELİŞTİRİCİ") {
-                SettingsToggle("Pro'yu aç (satın almadan)", forcePro) { on ->
-                    DevTools.forcePro = on
-                    forcePro = on
-                    scope.launch {
-                        app.purchases.refreshEntitlement()
-                        router.toast = if (on) "Tüm Pro özellikleri açık" else "Ücretsiz sürüm gibi davranıyor"
-                    }
-                }
-                Divider()
-                RowText("Örnek listeler oluştur", c.accent) { scope.launch { router.toast = createSampleLists(app) } }
-                Divider()
-                Column(
-                    Modifier.fillMaxWidth().clickable { scope.launch { app.purchases.refreshEntitlement() } }.padding(horizontal = 16.dp, vertical = 10.dp),
-                    verticalArrangement = Arrangement.spacedBy(3.dp),
-                ) {
-                    Text("RevenueCat durumu · yenile", style = KelimeType.ui(15.sp), color = c.ink)
-                    Text(diagnostics, style = KelimeType.ui(12.sp), color = c.ink2)
-                }
-                Divider()
-                SettingsRow("Widget günlüğü ve ölçüm modu", onClick = router::openWidgetLog)
-                Divider()
-                RowText("Bugünün bulmacalarını sıfırla", c.accent) {
-                    scope.launch {
-                        app.model.write("dev-puzzles") { db ->
-                            db.execute("DELETE FROM puzzle_progress WHERE puzzle_key LIKE ?", listOf("%-${app.model.clock.today}%"))
-                            Settings.set(db, SettingKey.DAILY_PUZZLE_SUMMARY, null)
-                        }
-                        router.toast = "Bulmacalar sıfırlandı"
-                    }
-                }
-                Divider()
-                RowText("Tanıtımı yeniden göster", c.accent) {
-                    scope.launch { app.model.write("dev-onboarding") { db -> Settings.setBool(db, SettingKey.ONBOARDING_DONE, false) } }
                 }
             }
         }
@@ -517,29 +475,6 @@ private fun LinkRow(title: String, icon: androidx.compose.ui.graphics.vector.Ima
 
 private fun notificationsAllowed(context: android.content.Context) =
     androidx.core.content.ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == android.content.pm.PackageManager.PERMISSION_GRANTED
-
-/** Profil › Geliştirici › Örnek listeler oluştur (port of AppModel.createSampleLists). */
-private suspend fun createSampleLists(app: com.enesseval.kilitkelime.KilitKelimeApp): String {
-    val samples = listOf(
-        "Örnek · Seyahat" to listOf("a1-airport", "a2-passport", "a1-ticket", "a2-luggage", "a1-hotel", "a2-journey", "a2-flight", "a2-delay"),
-        "Örnek · İş" to listOf("a2-meeting", "a2-deadline", "a2-colleague", "b1-budget", "b1-contract", "b1-decision"),
-        "Örnek · Duygular" to listOf("b2-anxious", "b2-grateful", "b1-jealous", "b1-proud", "b1-lonely", "b1-nervous", "b1-curious"),
-    )
-    return runCatching {
-        app.model.write("sample-lists") { db ->
-            for ((title, ids) in samples) {
-                val list = com.enesseval.kilitkelime.core.learning.UserLists.create(title, isPro = true, db = db)
-                for (id in ids) runCatching { com.enesseval.kilitkelime.core.learning.UserLists.add(id, list.id, db) }
-                if (title.endsWith("Seyahat")) {
-                    com.enesseval.kilitkelime.core.learning.UserLists.addCustom(
-                        "boarding pass", "biniş kartı", com.enesseval.kilitkelime.core.model.PartOfSpeech.PHRASE, CEFRLevel.A2, list.id, db,
-                    )
-                }
-            }
-        }
-        "3 örnek liste eklendi"
-    }.getOrDefault("Örnek listeler eklenemedi")
-}
 
 /** Turkish label; no exact interval is promised (WorkManager and Doze decide the real moment). */
 fun rotationTitle(interval: com.enesseval.kilitkelime.core.model.RotationInterval) = when (interval) {

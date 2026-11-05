@@ -68,8 +68,8 @@ for compile fixes and a first run before device testing.
 - **Accessibility and 200 % font scale**: text uses `sp` and key controls have TalkBack labels, but
   no audit was possible. Same for 360 dp layouts and cold-start time (the first launch imports
   2,271 cards in one transaction; later launches skip it).
-- **Developer screens**: the Profil › Geliştirici section matches iOS (debug builds only, Pro on by
-  default there); the paywall design gallery and usage counters are not ported yet.
+- **Developer screens**: none in the Android UI (removed at the owner's request). The widget log
+  screen still exists in code (`ui/dev/WidgetLogScreen.kt`) but has no entry point.
 - **File import** of `.kelimelist` registers for `application/json` and `application/octet-stream`,
   so the app may be offered for unrelated files of those types.
 - **Notification after a widget answer** and other rare paths reload all widgets at once rather than

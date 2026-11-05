@@ -14,13 +14,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Explore
 import androidx.compose.material.icons.outlined.GridView
-import androidx.compose.material.icons.outlined.MenuBook
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.WbSunny
 import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -47,6 +43,17 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.indication
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.material3.ripple
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.selected
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.material.icons.automirrored.outlined.MenuBook
 import com.enesseval.kilitkelime.analytics.Analytics
 import com.enesseval.kilitkelime.core.learning.UserLists
 import com.enesseval.kilitkelime.core.model.DeckID
@@ -274,13 +281,24 @@ private fun TabBar(route: String, router: AppRouter) {
     }
     Column {
         Box(Modifier.fillMaxWidth().height(1.dp).background(c.line))
-        NavigationBar(containerColor = c.background, tonalElevation = 0.dp, modifier = Modifier.navigationBarsPadding().height(64.dp)) {
+        // Custom items instead of NavigationBarItem: its pill indicator and wide elliptical ripple
+        // don't fit the design; the press effect here is a circle behind the icon.
+        Row(Modifier.fillMaxWidth().background(c.background).navigationBarsPadding().height(64.dp), verticalAlignment = Alignment.CenterVertically) {
             for (tab in Tab.entries) {
                 val selected = tab == current
-                NavigationBarItem(
-                    selected = selected,
-                    onClick = { router.selectTab(tab) },
-                    icon = {
+                val tint = if (selected) c.accent else c.ink2
+                val interaction = remember { MutableInteractionSource() }
+                Column(
+                    Modifier.weight(1f).fillMaxHeight()
+                        .clickable(interactionSource = interaction, indication = null, role = Role.Tab) { router.selectTab(tab) }
+                        .semantics { this.selected = selected },
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                ) {
+                    Box(
+                        Modifier.size(40.dp).clip(CircleShape).indication(interaction, ripple(bounded = true, color = c.accent)),
+                        contentAlignment = Alignment.Center,
+                    ) {
                         if (tab == Tab.PROFILE && account.profile != null) {
                             Avatar(account.profile?.avatar ?: "", account.profile?.name ?: "", 24)
                         } else {
@@ -288,20 +306,17 @@ private fun TabBar(route: String, router: AppRouter) {
                                 when (tab) {
                                     Tab.TODAY -> Icons.Outlined.WbSunny
                                     Tab.PLAY -> Icons.Outlined.GridView
-                                    Tab.WORDS -> Icons.Outlined.MenuBook
+                                    Tab.WORDS -> Icons.AutoMirrored.Outlined.MenuBook
                                     Tab.DISCOVER -> Icons.Outlined.Explore
                                     Tab.PROFILE -> Icons.Outlined.Person
                                 },
                                 contentDescription = null,
+                                tint = tint,
                             )
                         }
-                    },
-                    label = { Text(tab.label, style = KelimeType.ui(11.sp, FontWeight.Medium), maxLines = 1) },
-                    colors = NavigationBarItemDefaults.colors(
-                        selectedIconColor = c.accent, selectedTextColor = c.accent, indicatorColor = c.background,
-                        unselectedIconColor = c.ink2, unselectedTextColor = c.ink2,
-                    ),
-                )
+                    }
+                    Text(tab.label, style = KelimeType.ui(11.sp, FontWeight.Medium), color = tint, maxLines = 1)
+                }
             }
         }
     }

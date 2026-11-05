@@ -48,8 +48,18 @@ dalında sürer.
 - Paywall'da "Pro ile haftada 2 seri koruyucu" iki tarafta da yazmıyor; seri sayfasında yazıyor.
 - Hızlı erişim platforma göre: iOS Kontrol Merkezi + StandBy, Android Hızlı Ayarlar kutucuğu +
   kilit ekranı duvar kâğıdı.
+- Android'de Profil › Geliştirici bölümü yok (kullanıcı kaldırttı, 2026-11-05); iOS'ta Debug ve
+  TestFlight'ta duruyor.
 
 ## Değişiklik günlüğü
+
+### 2026-11-05 · Kelimelerim üst kısmı iOS düzeninde · iOS [x] Android [x]
+iOS'ta zaten böyleydi; Android'de sıra ve görünüm farklıydı.
+- Sıra: "Bu hafta N öğrenildi · şu an N zorlanılan" satırı (yeşil / amber kalın), arama kutusu,
+  yanında 44 pt kare Sırala (ve yalnızca Tümü'nde Filtrele, filtre açıkken mavi) düğmesi, altında
+  bütün genişliği kaplayan Zorlanılan / Öğrenildi / Favoriler / Tümü seçici.
+- Filtreler yalnızca Tümü'nde uygulanır.
+- Android dosyası: `ui/words/WordsScreen.kt`.
 
 ### 2026-11-05 · Android Profil iOS ile aynı; uygulama ikonu · iOS [x] Android [x]
 iOS'ta zaten böyleydi; Android geride kalmıştı. Bundan sonra Profil iki tarafta aynı ilerler.
@@ -61,13 +71,10 @@ iOS'ta zaten böyleydi; Android geride kalmıştı. Bundan sonra Profil iki tara
   Kullanım koşulları, Satın alımları geri yükle), GELİŞTİRİCİ (yalnızca debug), alt bilgi.
 - **Uygulama ikonu:** Krem, Mavi, Turuncu (iOS `AppIcon`, `AppIcon-Blue`, `AppIcon-Orange` ile
   aynı renkler). Android'de üç launcher `activity-alias`'ı; biri açık.
-- **Geliştirici:** Pro'yu aç (satın almadan; geliştirici derlemesinde varsayılan açık, iOS
-  `DevTools.forcePro` gibi), Örnek listeler oluştur, RevenueCat durumu · yenile, Widget günlüğü,
-  Bugünün bulmacalarını sıfırla, Tanıtımı yeniden göster. Paywall tasarım galerisi ve kullanım
-  sayaçları Android'de henüz yok.
+- **Geliştirici:** Android'de kaldırıldı (bkz. Bilinçli farklar).
 - Android'e özgü: WIDGET bölümünde "Kilit ekranı kelimesi" (duvar kâğıdı / bildirim) satırı.
-- Android dosyaları: `ui/profile/ProfileScreen.kt`, `ui/profile/AppIcon.kt`, `data/DevTools.kt`,
-  `store/PurchaseManager.kt`, `AndroidManifest.xml`, `tools/make_android_icon.py`.
+- Android dosyaları: `ui/profile/ProfileScreen.kt`, `ui/profile/AppIcon.kt`,
+  `AndroidManifest.xml`, `tools/make_android_icon.py`.
 
 ### 2026-11-05 · Profil'de sabit Pro girişi · iOS [x] Android [x]
 App Review 1.0'ı 2.1(b) ile durdurdu: inceleyen kişi uygulama içi satın almaları bulamadı,
