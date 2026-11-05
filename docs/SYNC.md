@@ -51,6 +51,22 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-05 · Profil'de sabit Pro girişi · iOS [x] Android [ ]
+App Review 1.0'ı 2.1(b) ile durdurdu: inceleyen kişi uygulama içi satın almaları bulamadı,
+çünkü Pro ekranı yalnızca kilitli bir özelliğe dokununca açılıyordu. Artık her zaman bulunan
+bir giriş var. Google Play incelemesi için de aynısı gerekli.
+- **Pro değilse:** Profil'de hesap kartının hemen altında açık mavi bir kart.
+  - Solda mavi kutuda ✦ simgesi.
+  - Başlık: "Kilit Kelime Pro".
+  - Alt yazı: "Sınırsız liste, sınav planı, sana özel bulmaca ve daha fazlası".
+  - Sağda ok. Dokununca paywall `base` tetikleyicisiyle açılır.
+- **Pro ise:** "ÜYELİK" bölümü.
+  - "Kilit Kelime Pro" satırı, sağında yeşil onay ve plan adı.
+  - "Aboneliği yönet" satırı: iOS'ta `https://apps.apple.com/account/subscriptions`, Android'de
+    Play abonelik sayfası (`https://play.google.com/store/account/subscriptions`).
+- iOS dosyası: `App/Settings/SettingsView.swift` (`proSection`).
+
+
 ### 2026-11-04 · İnceleme düzeltmeleri · iOS [x] Android [x]
 Kod incelemesinde bulunan hatalar. Android'de aynı kod yolu varsa aynı düzeltme yapılmalı.
 - **Kelime Avı seçimi:** "yanlış" durumu ile hata titreşimi ayrı değişkenlerde tutuluyor.

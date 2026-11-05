@@ -36,6 +36,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 20) {
                 ScreenTitle(title: "Profil")
                 AccountSection()
+                if PurchaseManager.isOnSale { proSection }
                 if let data {
                     levelSection(data)
                     widgetSection(data)
@@ -183,6 +184,51 @@ struct SettingsView: View {
     }
 
     /// Feedback, the legal pages and restoring purchases, as plain rows.
+    /// A fixed way to Pro, so nobody has to find a locked feature first (App Review couldn't).
+    /// Pro users see their plan and a link to manage the subscription instead.
+    @ViewBuilder private var proSection: some View {
+        if app.isPro {
+            SettingsSection("ÜYELİK") {
+                SettingsRow("Kilit Kelime Pro") {
+                    Label(app.purchases.planLabel, systemImage: "checkmark.seal.fill")
+                        .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
+                        .foregroundStyle(Palette.greenInk)
+                }
+                Divider().overlay(Palette.line)
+                linkRow("Aboneliği yönet", systemImage: "creditcard") {
+                    openURL(URL(string: "https://apps.apple.com/account/subscriptions")!)
+                }
+            }
+        } else {
+            Button { app.router.showPaywall(.base) } label: {
+                HStack(spacing: 14) {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(Palette.onAccent)
+                        .frame(width: 44, height: 44)
+                        .background(Palette.accent, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("Kilit Kelime Pro").font(KelimeFont.ui(17, weight: .semibold, relativeTo: .headline))
+                        Text("Sınırsız liste, sınav planı, sana özel bulmaca ve daha fazlası")
+                            .font(KelimeFont.ui(13, relativeTo: .footnote))
+                            .foregroundStyle(Palette.ink2)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    Spacer(minLength: 0)
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(Palette.ink2.opacity(0.6))
+                }
+                .foregroundStyle(Palette.ink)
+                .padding(16)
+                .background(Palette.accentSoft, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityHint("Pro planlarını gösterir")
+        }
+    }
+
     private var appSection: some View {
         SettingsSection("UYGULAMA") {
             AppIconRow()
