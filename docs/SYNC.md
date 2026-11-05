@@ -51,7 +51,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-05 · Profil'de sabit Pro girişi · iOS [x] Android [ ]
+### 2026-11-05 · Profil'de sabit Pro girişi · iOS [x] Android [x]
 App Review 1.0'ı 2.1(b) ile durdurdu: inceleyen kişi uygulama içi satın almaları bulamadı,
 çünkü Pro ekranı yalnızca kilitli bir özelliğe dokununca açılıyordu. Artık her zaman bulunan
 bir giriş var. Google Play incelemesi için de aynısı gerekli.
@@ -65,6 +65,7 @@ bir giriş var. Google Play incelemesi için de aynısı gerekli.
   - "Aboneliği yönet" satırı: iOS'ta `https://apps.apple.com/account/subscriptions`, Android'de
     Play abonelik sayfası (`https://play.google.com/store/account/subscriptions`).
 - iOS dosyası: `App/Settings/SettingsView.swift` (`proSection`).
+- Android dosyası: `ui/profile/ProfileScreen.kt`. Plan adı iOS'taki gibi "Pro".
 
 
 ### 2026-11-04 · İnceleme düzeltmeleri · iOS [x] Android [x]

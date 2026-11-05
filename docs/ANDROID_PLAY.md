@@ -135,8 +135,9 @@ otomatik gizlenir (`supabase/migrations`).
 
 - Hedef yaş: 13+ (çocuklara yönelik değil; "Aileler için tasarlandı" programına girme).
 - Reklam içeriyor mu: Hayır.
-- Uygulama erişimi: Bütün özellikler hesapsız açık. İnceleme için: Pro satın alma test kartıyla
-  denenebilir; hesap Profil › Google ile giriş yap.
+- Uygulama erişimi: Bütün özellikler hesapsız açık. İnceleme için: Pro satın alma her zaman
+  Profil › "Kilit Kelime Pro" kartından açılır ve test kartıyla denenebilir; Pro iken aynı yerde
+  "ÜYELİK" › "Aboneliği yönet" Play abonelik sayfasını açar. Hesap: Profil › Google ile giriş yap.
 - Hesap silme: uygulamada Profil › Hesabı sil. Web'den silme bağlantısı istenirse
   `https://enesseval.github.io/kelime/gizlilik.html#hesap-silme` (gizlilik sayfasında anlatılıyor).
 
@@ -273,6 +274,7 @@ gösterir.
 - [ ] Şikayet et, kullanıcıyı engelle
 - [ ] `https://enesseval.github.io/kelime/liste.html?id=…` linki uygulamada açılıyor (assetlinks yayınlandıktan sonra)
 - [ ] Paywall: üç plan fiyatlarla, yasal not, Geri yükle, Koşullar, Gizlilik
+- [ ] Profil: Pro değilken hesap kartının altında "Kilit Kelime Pro" kartı paywall'u açıyor; Pro iken "ÜYELİK" bölümü ve "Aboneliği yönet" Play abonelik sayfasını açıyor
 - [ ] Temiz kurulum ve ilk günler: hiçbir yerde kendiliğinden paywall çıkmıyor
 - [ ] 3 farklı gün çalıştıktan sonra bir tur bitip kapanınca 0,6 sn sonra "Güzel gidiyorsun" Pro ekranı
 - [ ] Aynı turda bildirim kartı bekliyorsa önce o çıkıyor, Pro bir sonraki tura kalıyor

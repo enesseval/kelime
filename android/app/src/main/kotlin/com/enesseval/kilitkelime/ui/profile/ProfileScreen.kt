@@ -9,6 +9,15 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Verified
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material3.Icon
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -156,13 +165,31 @@ fun ProfileScreen() {
             }
         }
 
-        // Pro.
+        // Pro: an entry that is always there (store review must find the purchases), or the membership.
         if (pro) {
-            SettingsSection("PRO") { SettingsRow("Tüm Pro özellikleri açık") }
+            SettingsSection("ÜYELİK") {
+                SettingsRow("Kilit Kelime Pro") {
+                    Icon(Icons.Filled.Verified, null, tint = c.greenInk, modifier = Modifier.size(18.dp))
+                    Text(" Pro", style = KelimeType.ui(15.sp, FontWeight.SemiBold), color = c.greenInk)
+                }
+                Divider()
+                SettingsRow("Aboneliği yönet", onClick = { open("https://play.google.com/store/account/subscriptions") })
+            }
         } else {
-            SurfaceCard(onClick = { router.showPaywall(PaywallTrigger.BASE) }) {
-                Text("Kilit Kelime Pro", style = KelimeType.english(26.sp), color = c.ink)
-                Text("Sınırsız liste, paylaşım, sınav planı, daha sık kelime, sana özel bulmaca ve arşiv.", style = KelimeType.ui(14.sp), color = c.ink2)
+            Row(
+                Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(c.accentSoft)
+                    .clickable { router.showPaywall(PaywallTrigger.BASE) }.padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(14.dp),
+            ) {
+                Box(Modifier.size(44.dp).clip(RoundedCornerShape(12.dp)).background(c.accent), contentAlignment = Alignment.Center) {
+                    Text("✦", style = KelimeType.ui(20.sp, FontWeight.SemiBold), color = c.onAccent)
+                }
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                    Text("Kilit Kelime Pro", style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
+                    Text("Sınırsız liste, sınav planı, sana özel bulmaca ve daha fazlası", style = KelimeType.ui(13.sp), color = c.ink2)
+                }
+                Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = c.ink2.copy(alpha = 0.6f))
             }
         }
 
