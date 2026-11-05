@@ -51,6 +51,24 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-05 · Android Profil iOS ile aynı; uygulama ikonu · iOS [x] Android [x]
+iOS'ta zaten böyleydi; Android geride kalmıştı. Bundan sonra Profil iki tarafta aynı ilerler.
+- **Sıra:** HESAP (profil, Listelerim eşitleme, Çıkış yap, Hesabı sil), Pro kartı / ÜYELİK,
+  SEVİYE VE SINAV (Seviye; Sınav geri sayımı anahtarı; açıkken Sınav ve Sınav tarihi), WIDGET
+  (Değişim sıklığı, Kilit ekranı görünümü, Gösterilecekler, Widget nasıl eklenir?), HATIRLATMA VE
+  TELAFFUZ (Günlük hatırlatma 20:30 varsayılan, Saat, Ses ve hız 0,8/0,9/1,0× ve "reluctant"
+  dinletir), BAŞTAN BAŞLA, UYGULAMA (Uygulama ikonu, Öneri gönder, Gizlilik politikası,
+  Kullanım koşulları, Satın alımları geri yükle), GELİŞTİRİCİ (yalnızca debug), alt bilgi.
+- **Uygulama ikonu:** Krem, Mavi, Turuncu (iOS `AppIcon`, `AppIcon-Blue`, `AppIcon-Orange` ile
+  aynı renkler). Android'de üç launcher `activity-alias`'ı; biri açık.
+- **Geliştirici:** Pro'yu aç (satın almadan; geliştirici derlemesinde varsayılan açık, iOS
+  `DevTools.forcePro` gibi), Örnek listeler oluştur, RevenueCat durumu · yenile, Widget günlüğü,
+  Bugünün bulmacalarını sıfırla, Tanıtımı yeniden göster. Paywall tasarım galerisi ve kullanım
+  sayaçları Android'de henüz yok.
+- Android'e özgü: WIDGET bölümünde "Kilit ekranı kelimesi" (duvar kâğıdı / bildirim) satırı.
+- Android dosyaları: `ui/profile/ProfileScreen.kt`, `ui/profile/AppIcon.kt`, `data/DevTools.kt`,
+  `store/PurchaseManager.kt`, `AndroidManifest.xml`, `tools/make_android_icon.py`.
+
 ### 2026-11-05 · Profil'de sabit Pro girişi · iOS [x] Android [x]
 App Review 1.0'ı 2.1(b) ile durdurdu: inceleyen kişi uygulama içi satın almaları bulamadı,
 çünkü Pro ekranı yalnızca kilitli bir özelliğe dokununca açılıyordu. Artık her zaman bulunan

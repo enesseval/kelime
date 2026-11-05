@@ -32,10 +32,6 @@
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.KilitKelime.Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <!-- Widget and notification links: kelime://word/<id>, kelime://puzzle, kelime://list/<uuid>. -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -58,6 +54,45 @@
                 <data android:scheme="content" android:mimeType="application/octet-stream" />
             </intent-filter>
         </activity>
+
+        <!-- Launcher entries, one per app icon (Profil › Uygulama ikonu, like the iOS alternate
+             icons). Exactly one is enabled; ui/profile/AppIcon.kt switches them. -->
+        <activity-alias
+            android:name=".IconCream"
+            android:targetActivity=".MainActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".IconBlue"
+            android:targetActivity=".MainActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_blue"
+            android:roundIcon="@mipmap/ic_launcher_blue">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".IconOrange"
+            android:targetActivity=".MainActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_orange"
+            android:roundIcon="@mipmap/ic_launcher_orange">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
 
         <!-- Home-screen (and Android 16 lock-screen hub) widgets. -->
         <receiver android:name=".widget.CardWidgetReceiver" android:exported="true" android:label="@string/widget_card">

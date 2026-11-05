@@ -68,8 +68,8 @@ for compile fixes and a first run before device testing.
 - **Accessibility and 200 % font scale**: text uses `sp` and key controls have TalkBack labels, but
   no audit was possible. Same for 360 dp layouts and cold-start time (the first launch imports
   2,271 cards in one transaction; later launches skip it).
-- **Developer screens**: the widget log is ported (with wallpaper lag); usage counters and the
-  paywall design gallery are not.
+- **Developer screens**: the Profil › Geliştirici section matches iOS (debug builds only, Pro on by
+  default there); the paywall design gallery and usage counters are not ported yet.
 - **File import** of `.kelimelist` registers for `application/json` and `application/octet-stream`,
   so the app may be offered for unrelated files of those types.
 - **Notification after a widget answer** and other rare paths reload all widgets at once rather than
@@ -143,7 +143,7 @@ for compile fixes and a first run before device testing.
 6. **Random numbers match iOS.** `SeededGenerator` (SplitMix64) and Swift's `shuffled`,
    `randomElement`, `Int.random(in:)` and `Double.random(in:)` algorithms are reproduced, so seeded
    results (crossword generation, picks in tests) are the same numbers as on iOS.
-7. **Apple Watch, Live Activities, alternate icons, App Intents, StoreKit config, the developer
+7. **Apple Watch, Live Activities, App Intents, StoreKit config, the developer
    paywall gallery** have no Android counterpart and are skipped.
 8. **Bundled daily puzzle files** (`Content/puzzles`) are not in the repository: every level has
    course units now, so the daily puzzle always comes from `CoursePuzzle`. The asset task copies the

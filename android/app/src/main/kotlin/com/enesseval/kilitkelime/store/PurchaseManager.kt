@@ -3,6 +3,7 @@ package com.enesseval.kilitkelime.store
 import android.app.Activity
 import android.content.Context
 import com.enesseval.kilitkelime.BuildConfig
+import com.enesseval.kilitkelime.data.DevTools
 import com.enesseval.kilitkelime.analytics.Analytics
 import com.enesseval.kilitkelime.core.model.ProEntitlement
 import com.enesseval.kilitkelime.data.AppModel
@@ -62,8 +63,15 @@ class PurchaseManager(private val context: Context, private val model: AppModel)
 
     val configured: Boolean get() = BuildConfig.REVENUECAT_KEY.isNotEmpty()
 
+    /** Profil › Geliştirici: what RevenueCat last said (entitlements and products). */
+    private val _diagnostics = MutableStateFlow("Henüz okunmadı")
+    val diagnostics: StateFlow<String> = _diagnostics.asStateFlow()
+
     fun start() {
-        if (!configured) return
+        if (!configured) {
+            model.scope.launch { refreshEntitlement() }
+            return
+        }
         if (!Purchases.isConfigured) {
             Purchases.logLevel = LogLevel.WARN
             Purchases.configure(PurchasesConfiguration.Builder(context, BuildConfig.REVENUECAT_KEY).build())
@@ -129,10 +137,23 @@ class PurchaseManager(private val context: Context, private val model: AppModel)
         runCatching { apply(Purchases.sharedInstance.awaitLogOut()) }
     }
 
-    /** The entitlement, or any of our products owned directly. */
+    /** Reads the entitlement again (Profil › Geliştirici, the dev Pro switch). */
+    suspend fun refreshEntitlement() {
+        if (!configured) {
+            _diagnostics.value = "RevenueCat anahtarı yok (local.properties)"
+            model.setPro(DevTools.forcePro)
+            return
+        }
+        runCatching { apply(Purchases.sharedInstance.awaitCustomerInfo()) }
+            .onFailure { _diagnostics.value = "Okunamadı: ${it.message}" }
+    }
+
+    /** The entitlement, or any of our products owned directly; or the dev switch. */
     private suspend fun apply(info: CustomerInfo) {
-        val pro = info.entitlements[ProEntitlement.ENTITLEMENT]?.isActive == true ||
-            ProEntitlement.isPro(info.activeSubscriptions + info.allPurchasedProductIds.filter { it.startsWith(ProEntitlement.LIFETIME_ID) })
-        model.setPro(pro)
+        val products = info.activeSubscriptions + info.allPurchasedProductIds.filter { it.startsWith(ProEntitlement.LIFETIME_ID) }
+        val active = info.entitlements[ProEntitlement.ENTITLEMENT]?.isActive == true || ProEntitlement.isPro(products)
+        val entitlements = info.entitlements.active.keys.sorted().joinToString(", ")
+        _diagnostics.value = "Yetki: ${entitlements.ifEmpty { "yok" }} · Ürünler: ${products.sorted().joinToString(", ").ifEmpty { "yok" }}"
+        model.setPro(active || DevTools.forcePro)
     }
 }
