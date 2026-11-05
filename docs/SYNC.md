@@ -53,6 +53,20 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-05 · Android Kelimelerim satırları, Listeler ve liste sayfası iOS ile aynı · iOS [x] Android [x]
+iOS'ta zaten böyleydi.
+- **Kelime satırı:** serif 22 kelime, altında anlam; sağda durum ve seviye çipi; 66 pt, 20 pt içeriden
+  ince çizgi. Boş liste: küçük halka, ortalı metin, "Hızlı Tekrar" (Favoriler hariç).
+- **Listeler:** KENDİ LİSTELERİM (kartlar: serif başlık + ok, "N / M kelime öğrenildi" ya da
+  "Henüz kelime yok", ilerleme, "Widget'ta" anahtarı; kesik çizgili "İlk listeni oluştur" / "Yeni
+  liste", Pro etiketi), KURS (kurs kartı, not satırı, bölümler listesi; şu anki bölüm mavi
+  çerçeveli), SINAV LİSTELERİ iki sütun ("Bu listeyi bitirdin 🎉", "Yakında"). Silme onayı iOS
+  metinleriyle; Android'de listeye uzun basınca açılır (iOS'ta sola kaydırma).
+- **Liste sayfası:** serif 34 başlık, "N kelime · widget'ta" ya da boş liste metni, "Kelime ekle"
+  ana düğmesi, kelime satırları (sola kaydır: "Listeden çıkar"), alt not. Menü sırası: Paylaşım,
+  Dosya olarak gönder, Adını değiştir, Listeyi sil.
+- Android dosyaları: `ui/words/WordsScreen.kt`, `ui/lists/UserListScreen.kt`, `ui/course/CourseScreens.kt`.
+
 ### 2026-11-05 · Android Hızlı Tekrar, Oyna ve Arşiv iOS ile aynı · iOS [x] Android [x]
 iOS'ta zaten böyleydi.
 - **Hızlı Tekrar:** üst çubuk ✕ · ilerleme · "3/10"; soru: üst yazı + 30 pt anlam (tür yazmaz).

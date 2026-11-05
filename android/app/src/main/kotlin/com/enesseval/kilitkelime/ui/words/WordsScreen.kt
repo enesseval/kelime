@@ -110,6 +110,9 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.height
 import com.enesseval.kilitkelime.ui.components.ProCorner
+import com.enesseval.kilitkelime.ui.components.StateChip
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.foundation.border
 import kotlinx.coroutines.launch
 
 private enum class Mode(val label: String) { WORDS("Kelimeler"), LISTS("Listeler") }
@@ -197,9 +200,22 @@ private fun WordsList() {
     val list = items ?: return
     Box(Modifier.fillMaxSize()) {
         if (list.isEmpty()) {
-            Box(Modifier.padding(horizontal = 20.dp)) { EmptyText(segment.emptyText) }
+            // iOS emptyState: a small ring, the text centred, and Hızlı Tekrar (not for Favoriler).
+            Column(
+                Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 36.dp),
+                horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(14.dp),
+            ) {
+                Box(Modifier.size(14.dp).border(1.5.dp, c.ink2, CircleShape))
+                Text(
+                    if (search.isEmpty() && (segment != WordSegment.ALL || filter.isEmpty)) segment.emptyText else WordSegment.ALL.emptyText,
+                    style = KelimeType.ui(15.sp), color = c.ink2, textAlign = TextAlign.Center,
+                )
+                if (search.isEmpty() && segment != WordSegment.FAVORITES) {
+                    PrimaryButton("Hızlı Tekrar", Modifier.width(180.dp), height = 44.dp) { router.startQuickReview() }
+                }
+            }
         } else {
-            LazyColumn(state = listState, contentPadding = PaddingValues(start = 20.dp, end = 36.dp, bottom = 24.dp)) {
+            LazyColumn(state = listState, contentPadding = PaddingValues(bottom = 24.dp)) {
                 items(list, key = { it.id }) { item ->
                     SwipeRow(
                         item,
@@ -306,18 +322,28 @@ private fun SwipeRow(item: WordItem, onClick: () -> Unit, onKnown: () -> Unit, o
             }
         },
     ) {
+        WordRow(item, onClick)
+    }
+}
+
+/** iOS WordRow: the word (serif 22) over its meaning, the state and level chips on the right, a hairline under it. */
+@Composable
+fun WordRow(item: WordItem, onClick: () -> Unit) {
+    val c = Palette.current
+    Column(Modifier.fillMaxWidth().background(c.background).clickable(onClick = onClick)) {
         Row(
-            Modifier.fillMaxWidth().background(c.background).clickable(onClick = onClick).padding(vertical = 12.dp),
+            Modifier.fillMaxWidth().heightIn(min = 66.dp).padding(horizontal = 20.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            StateDot(item.state)
-            Column(Modifier.weight(1f)) {
-                Text(item.card.word, style = KelimeType.english(20.sp), color = c.ink, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                Text(item.card.word, style = KelimeType.english(22.sp), color = c.ink, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 Text(item.card.meaning, style = KelimeType.ui(14.sp), color = c.ink2, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
+            StateChip(item.state)
             LevelChip(item.card.level)
         }
+        Box(Modifier.padding(start = 20.dp).fillMaxWidth().height(1.dp).background(c.line))
     }
 }
 

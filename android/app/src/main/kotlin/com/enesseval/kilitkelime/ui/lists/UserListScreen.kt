@@ -72,6 +72,8 @@ import com.enesseval.kilitkelime.ui.words.NewListDialog
 import com.enesseval.kilitkelime.ui.words.SearchField
 import com.enesseval.kilitkelime.ui.words.SearchFieldPlain
 import com.enesseval.kilitkelime.ui.words.WidgetSwitch
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import kotlinx.coroutines.launch
 import java.io.File
 
@@ -129,26 +131,26 @@ fun UserListScreen(listID: String) {
 
     val current = list
     PushedScreen(
-        current?.title ?: "",
+        "",
+        horizontal = 0.dp,
         actions = {
             if (current != null) {
-                IconButton(onClick = { adding = true }) { Icon(Icons.Default.Add, "Kelime ekle", tint = c.accent) }
                 Box {
                     IconButton(onClick = { menu = true }) { Icon(Icons.Default.MoreVert, "Liste seçenekleri", tint = c.ink) }
                     DropdownMenu(menu, { menu = false }) {
-                        DropdownMenuItem(text = { Text("Adını değiştir") }, onClick = { menu = false; renaming = true })
                         if (!current.imported) {
                             DropdownMenuItem(text = { Text("Paylaşım: ${current.visibility.label}") }, onClick = {
                                 menu = false
                                 if (!account.isSignedIn) router.toast = "Paylaşmak için Profil'den Google ile giriş yap" else visibility = true
                             })
                         }
-                        DropdownMenuItem(text = { Text("Dosya olarak gönder") }, onClick = {
+                        DropdownMenuItem(text = { Text("Dosya olarak gönder") }, enabled = !words.isNullOrEmpty(), onClick = {
                             menu = false
                             if (!pro) router.showPaywall(PaywallTrigger.SHARE) else scope.launch {
                                 app.model.read { db -> UserLists.export(listID, db) }?.let { shareListFile(context, it); Analytics.send(Analytics.Event.listShared) }
                             }
                         })
+                        DropdownMenuItem(text = { Text("Adını değiştir") }, onClick = { menu = false; renaming = true })
                         DropdownMenuItem(text = { Text("Listeyi sil", color = c.amberInk) }, onClick = { menu = false; deleting = true })
                     }
                 }
@@ -157,48 +159,35 @@ fun UserListScreen(listID: String) {
     ) {
         if (current == null) return@PushedScreen
         val items = words ?: emptyList()
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Column(Modifier.weight(1f)) {
-                Text(current.title, style = KelimeType.ui(28.sp, FontWeight.Bold), color = c.ink)
-                Text("${items.size} kelime", style = KelimeType.ui(14.sp), color = c.ink2)
-            }
-            WidgetSwitch(current.enabled) { on -> edit("list-enabled") { db -> UserLists.setEnabled(on, listID, db) } }
+        // iOS UserListView: the title, a line, "Kelime ekle", then the words.
+        Column(Modifier.padding(horizontal = 20.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            Text(current.title, style = KelimeType.english(34.sp).copy(letterSpacing = (-0.6).sp), color = c.ink)
+            Text(
+                if (items.isEmpty()) "Kelime ekle; listeyi açınca widget'ta ve Hızlı Tekrar'da görünür." else "${items.size} kelime" + if (current.enabled) " · widget'ta" else "",
+                style = KelimeType.ui(14.sp), color = c.ink2,
+            )
+            PrimaryButton("+  Kelime ekle", height = 50.dp) { adding = true }
         }
-        Gap(16.dp)
-        if (items.isEmpty()) {
-            EmptyText("Kelime ekle; listeyi açınca widget'ta ve Hızlı Tekrar'da görünür.")
-            TintedButton("Kelime ekle") { adding = true }
-        } else {
-            Text("Bir kelimeyi listeden çıkarmak için sola kaydır.", style = KelimeType.ui(12.sp), color = c.ink2)
-            Gap(6.dp)
-            for (item in items) {
-                androidx.compose.runtime.key(item.id) {
-                    val state = rememberSwipeToDismissBoxState(confirmValueChange = {
-                        if (it == SwipeToDismissBoxValue.EndToStart) edit("list-remove") { db -> UserLists.remove(item.id, listID, db) }
-                        it == SwipeToDismissBoxValue.EndToStart
-                    })
-                    SwipeToDismissBox(
-                        state, enableDismissFromStartToEnd = false,
-                        backgroundContent = {
-                            Box(Modifier.fillMaxSize().background(c.amberBackground).padding(horizontal = 16.dp), contentAlignment = Alignment.CenterEnd) {
-                                Text("Listeden çıkar", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.amberInk)
-                            }
-                        },
-                    ) {
-                        Row(
-                            Modifier.fillMaxWidth().background(c.background).clickable { router.openWord(item.id) }.padding(vertical = 12.dp),
-                            verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp),
-                        ) {
-                            StateDot(item.state)
-                            Column(Modifier.weight(1f)) {
-                                Text(item.card.word, style = KelimeType.english(20.sp), color = c.ink)
-                                Text(item.card.meaning, style = KelimeType.ui(14.sp), color = c.ink2)
-                            }
-                            if (item.card.id.startsWith(UserLists.CUSTOM_PREFIX)) Text("Kendi kelimen", style = KelimeType.ui(11.sp), color = c.ink2)
+        Gap(14.dp)
+        for (item in items) {
+            androidx.compose.runtime.key(item.id) {
+                val state = rememberSwipeToDismissBoxState(confirmValueChange = {
+                    if (it == SwipeToDismissBoxValue.EndToStart) edit("list-remove") { db -> UserLists.remove(item.id, listID, db) }
+                    it == SwipeToDismissBoxValue.EndToStart
+                })
+                SwipeToDismissBox(
+                    state, enableDismissFromStartToEnd = false,
+                    backgroundContent = {
+                        Box(Modifier.fillMaxSize().background(c.amberInk).padding(horizontal = 16.dp), contentAlignment = Alignment.CenterEnd) {
+                            Text("Listeden çıkar", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = Color.White)
                         }
-                    }
-                }
+                    },
+                ) { com.enesseval.kilitkelime.ui.words.WordRow(item) { router.openWord(item.id) } }
             }
+        }
+        if (items.isNotEmpty()) {
+            Gap(8.dp)
+            Text("Bir kelimeyi listeden çıkarmak için sola kaydır.", style = KelimeType.ui(12.sp), color = c.ink2, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
         }
     }
 
