@@ -138,7 +138,7 @@ fun LockSetupContent(showTitle: Boolean, onboarding: Boolean = false) {
     val settings = lock ?: return
     val body: @Composable () -> Unit = {
         Text(
-            "Android'de iOS gibi kilit ekranı widget'ı yok. Kelimeyi kilit ekranına üç yolla getiriyoruz; istediğini aç.",
+            "Kelimeyi kilit ekranına üç yolla getirebilirsin; istediğini aç.",
             style = KelimeType.ui(14.sp), color = c.ink2,
         )
         Gap(16.dp)
@@ -227,7 +227,7 @@ fun LockSetupContent(showTitle: Boolean, onboarding: Boolean = false) {
         }
         Gap(18.dp)
         SettingsSection("2 · WIDGET'LAR") {
-            SettingsRow("Kart, Hangisi? ve Büyük", "Ana ekranda boş bir yere uzun bas › Widget'lar › Kilit Kelime. Android 16'da şarj ekranı hub'ına da eklenir.")
+            SettingsRow("Kart, Hangisi? ve Büyük", "Ana ekranda boş bir yere uzun bas › Widget'lar › Kilit Kelime.")
             if (Build.VERSION.SDK_INT >= 33) {
                 Divider()
                 SettingsRow("Hızlı Ayarlar kutucuğu", "Bildirim panelinden tek dokunuşla Hızlı Tekrar.", onClick = {
