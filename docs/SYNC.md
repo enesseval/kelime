@@ -53,7 +53,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-11 · Kendini sına: soru ve cevap dönüşümlü · iOS [x] Android [ ]
+### 2026-11-11 · Kendini sına: soru ve cevap dönüşümlü · iOS [x] Android [x]
 **Sorun:** Kendini sına görünümünde soru yalnızca dilimin ilk 30 dakikasında görünüyor, sonra
 dilim bitene kadar cevap kalıyordu. 3 saatlik dilimde bu, sürenin 6'da 5'inde cevabın
 görünmesi demek; kullanıcı neredeyse hiç soru görmüyordu.
@@ -72,6 +72,11 @@ görünmesi demek; kullanıcı neredeyse hiç soru görmüyordu.
 **Test:** `selfTestCyclesQuestionAndAnswerInsideASlot`: ilk dilimde 12 kayıt, dakikalar
 0, 20, 30, 50, …, 170; dilim başından 95 dakika sonra görünen kayıt soru; bir günden uzak
 dilimde yalnızca soru + cevap; 30 dakikalık dilimde soru 0, cevap 20.
+
+**Not (Android):** kilit ekranı duvar kâğıdı artık evreye göre çizilir: soru evresinde anlam +
+`k _ _ _` kalıbı + küçük "Önceki: …" satırı, cevap evresinde kalıbın yerinde kelimenin kendisi.
+Yenileme zamanı bir sonraki dilim ya da dilim içindeki bir sonraki soru/cevap değişimidir
+(`WidgetTimelineBuilder.nextSelfTestChange`).
 
 
 ### 2026-11-05 · Android paywall ve bulmaca sonu iOS ile aynı · iOS [x] Android [x]

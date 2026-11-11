@@ -189,18 +189,34 @@ class WidgetTimelineTest {
         assertTrue(build(db, WidgetMode.CARD).all { it.mode == WidgetMode.CARD })
     }
 
-    @Test fun selfTestRevealsTheAnswerHalfwayCappedAt30Minutes() {
+    /**
+     * Kendini sına cycles inside a slot: question 20 minutes, answer 10, and again. The old
+     * single question (first 30 minutes of three hours) left the answer on screen most of the day.
+     */
+    @Test fun selfTestCyclesQuestionAndAnswerInsideASlot() {
         val threeHours = build(TestSupport.bundled(), WidgetMode.SELF_TEST)
-        assertEquals(50, threeHours.size)
-        for (i in threeHours.indices step 2) {
-            val q = threeHours[i]
-            val a = threeHours[i + 1]
-            assertTrue(q.phase == WidgetSnapshot.Phase.QUESTION && a.phase == WidgetSnapshot.Phase.ANSWER)
-            assertEquals(q.card, a.card)
-            assertEquals(Duration.ofMinutes(30), Duration.between(q.date, a.date))
-        }
+        val firstSlot = threeHours.filter { it.slotStart == threeHours[0].slotStart }
+        assertEquals(12, firstSlot.size)
+        assertEquals(listOf(0L, 20, 30, 50, 60, 80, 90, 110, 120, 140, 150, 170), firstSlot.map { Duration.between(it.slotStart, it.date).toMinutes() })
+        assertTrue(firstSlot.withIndex().all { (i, s) -> s.phase == if (i % 2 == 0) WidgetSnapshot.Phase.QUESTION else WidgetSnapshot.Phase.ANSWER })
+        assertEquals(1, firstSlot.map { it.card }.toSet().size)
+        // 95 minutes into the slot the learner sees the question, not the answer.
+        val at = threeHours[0].slotStart.plus(Duration.ofMinutes(95))
+        assertEquals(WidgetSnapshot.Phase.QUESTION, threeHours.last { it.date <= at }.phase)
+        assertEquals(threeHours.map { it.date }.sorted(), threeHours.map { it.date })
+        // Slots more than a day away keep one question and one answer.
+        val lastSlot = threeHours.filter { it.slotStart == threeHours.last().slotStart }
+        assertEquals(listOf(WidgetSnapshot.Phase.QUESTION, WidgetSnapshot.Phase.ANSWER), lastSlot.map { it.phase })
+
         val halfHourly = build(TestSupport.bundled(Preferences(rotationInterval = RotationInterval.THIRTY_MINUTES, isPro = true)), WidgetMode.SELF_TEST)
-        assertEquals(Duration.ofMinutes(15), Duration.between(halfHourly[0].date, halfHourly[1].date))
+        assertTrue(halfHourly[0].phase == WidgetSnapshot.Phase.QUESTION && halfHourly[1].phase == WidgetSnapshot.Phase.ANSWER)
+        assertEquals(Duration.ofMinutes(20), Duration.between(halfHourly[0].date, halfHourly[1].date))
+        assertTrue(halfHourly[2].slotStart != halfHourly[0].slotStart)
+
+        // The wallpaper refreshes at the next phase change: 10:20 is in the 09:00 slot's answer (10:20–10:30).
+        val slotStart = threeHours[0].slotStart
+        assertEquals(slotStart.plus(Duration.ofMinutes(90)), WidgetTimelineBuilder.nextSelfTestChange(slotStart, RotationInterval.THREE_HOURS, start))
+        assertNull(WidgetTimelineBuilder.nextSelfTestChange(slotStart, RotationInterval.THREE_HOURS, slotStart.plus(Duration.ofMinutes(175))))
     }
 
     @Test fun snapshotsCarryStateQuizAndStruggling() {
@@ -258,11 +274,11 @@ class WidgetTimelineTest {
 
     @Test fun currentPicksTheSnapshotOnScreen() {
         val db = TestSupport.bundled()
-        // 09:05 in Istanbul: the 09:00 slot shows its question until 09:30.
+        // 09:05 in Istanbul: the 09:00 slot shows its question until 09:20, then the answer until 09:30.
         val slotStart = AppClock.fixed(Instant.parse("2026-10-13T06:05:00Z"), istanbul)
         val atStart = WidgetTimelineBuilder.current(db, slotStart, SeededGenerator(5u), WidgetMode.SELF_TEST)
         assertEquals(WidgetSnapshot.Phase.QUESTION, atStart.phase)
-        val later = WidgetTimelineBuilder.current(db, AppClock.fixed(Instant.parse("2026-10-13T06:40:00Z"), istanbul), SeededGenerator(5u), WidgetMode.SELF_TEST)
+        val later = WidgetTimelineBuilder.current(db, AppClock.fixed(Instant.parse("2026-10-13T06:25:00Z"), istanbul), SeededGenerator(5u), WidgetMode.SELF_TEST)
         assertEquals(WidgetSnapshot.Phase.ANSWER, later.phase)
         assertEquals(atStart.card, later.card)
     }

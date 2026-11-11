@@ -54,8 +54,9 @@ class LockScreenUpdater(private val context: Context, private val model: AppMode
         val snapshot = WidgetTimelineBuilder.current(db, clock, SystemRandom())
         var next = WidgetScheduler.nextSlot(clock.now, prefs.effectiveRotation, clock.zone)
         if (prefs.defaultWidgetMode == WidgetMode.SELF_TEST) {
-            val reveal = snapshot.slotStart.plus(WidgetTimelineBuilder.revealDelay(prefs.effectiveRotation))
-            if (reveal > clock.now && reveal < next) next = reveal
+            // The wallpaper flips between question and answer at the same moments as the widgets.
+            val change = WidgetTimelineBuilder.nextSelfTestChange(snapshot.slotStart, prefs.effectiveRotation, clock.now)
+            if (change != null && change < next) next = change
         }
         Current(snapshot, next, prefs.defaultWidgetMode)
     }
@@ -80,10 +81,10 @@ class LockScreenUpdater(private val context: Context, private val model: AppMode
     private suspend fun applyWallpaper(now: Current, settings: LockSettings, reason: String) = withContext(Dispatchers.Default) {
         val card = now.snapshot.card ?: return@withContext
         if (!wallpaperSupported()) return@withContext
-        val key = listOf(now.snapshot.slotStart.toEpochMilli(), card.id, now.mode.raw, settings.background.raw, settings.position, photoStamp()).joinToString("|")
+        val key = listOf(now.snapshot.slotStart.toEpochMilli(), card.id, now.mode.raw, now.snapshot.phase.name, settings.background.raw, settings.position, photoStamp()).joinToString("|")
         if (key == settings.lastWallpaperKey) return@withContext
         val bitmap = renderer.render(
-            WallpaperRenderer.Spec(card, now.snapshot.previousCard, now.mode, settings.background, settings.position),
+            WallpaperRenderer.Spec(card, now.snapshot.previousCard, now.mode, settings.background, settings.position, now.snapshot.phase),
         )
         try {
             // FLAG_LOCK only: the home-screen wallpaper stays untouched.

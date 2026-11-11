@@ -22,6 +22,7 @@ import androidx.core.content.res.ResourcesCompat
 import com.enesseval.kilitkelime.R
 import com.enesseval.kilitkelime.core.model.Card
 import com.enesseval.kilitkelime.core.model.WidgetMode
+import com.enesseval.kilitkelime.core.widgets.WidgetSnapshot
 import com.enesseval.kilitkelime.data.WallpaperBackground
 import java.io.File
 import kotlin.math.max
@@ -29,8 +30,8 @@ import kotlin.math.min
 
 /**
  * Draws the lock-screen wallpaper: the chosen background (gradient or the user's own photo,
- * centre-cropped) with the current word as a text card. Rendered once per slot at the device's
- * real resolution; no animation.
+ * centre-cropped) with the current word as a text card. Rendered once per slot (and at each
+ * Kendini sına question/answer change) at the device's real resolution; no animation.
  */
 class WallpaperRenderer(private val context: Context) {
 
@@ -41,6 +42,8 @@ class WallpaperRenderer(private val context: Context) {
         val background: WallpaperBackground,
         /** Vertical centre of the text card, 0 = top … 1 = bottom. */
         val position: Float,
+        /** Self-test: the question (pattern) or the answer (the word filled in). */
+        val phase: WidgetSnapshot.Phase = WidgetSnapshot.Phase.QUESTION,
     )
 
     private val serif: Typeface by lazy { ResourcesCompat.getFont(context, R.font.newsreader) ?: Typeface.SERIF }
@@ -157,9 +160,10 @@ class WallpaperRenderer(private val context: Context) {
             )
             WidgetMode.SELF_TEST -> buildList {
                 val (first, blanks) = card.selfTestPattern
+                val answer = spec.phase == WidgetSnapshot.Phase.ANSWER
                 add(Block(layout(card.meaning, paint(sans, screenW * 0.06f, ink, 600), width, 2), 0))
-                add(Block(layout("$first$blanks", paint(mono, screenW * 0.07f, ink, 500), width, 1), gap))
-                spec.previous?.let { prev ->
+                add(Block(layout(if (answer) card.word else "$first$blanks", paint(mono, screenW * 0.07f, ink, 500), width, 1), gap))
+                if (!answer) spec.previous?.let { prev ->
                     add(Block(layout("Önceki: ${prev.word} · ${prev.meaning}", paint(sans, small, ink2, 400), width, 1), gap * 2))
                 }
             }

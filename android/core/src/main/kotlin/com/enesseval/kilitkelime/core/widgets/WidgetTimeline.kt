@@ -42,10 +42,7 @@ data class WidgetSnapshot(
     val struggling: List<Card> = emptyList(),
     val puzzleProgress: PuzzleCount? = null,
     val theme: WidgetThemeID = WidgetThemeID.PAPER,
-    /**
-     * Android self-test: the word of the previous slot, whose answer the lock-screen wallpaper
-     * shows under the new question (a wallpaper cannot change halfway through a slot cheaply).
-     */
+    /** Android self-test: the word of the previous slot, shown small under the wallpaper's question. */
     val previousCard: Card? = null,
 ) {
     /** Self-test shows the question first, then the answer. */
@@ -66,11 +63,35 @@ data class WidgetSnapshot(
 /** Turns `widget_queue` into snapshots (port of `WidgetTimelineBuilder.swift`). */
 object WidgetTimelineBuilder {
     const val DAILY_TARGET = 10
-    val maxRevealDelay: Duration = Duration.ofMinutes(30)
+    /**
+     * Kendini sına repeats inside a slot: the question for 20 minutes, then the answer for 10,
+     * then the question again. A glance mostly lands on the question, and the answer is never
+     * more than 20 minutes away. (Showing the question once, for the first 30 minutes of a
+     * three-hour slot, meant the learner almost always saw only the answer.)
+     */
+    val selfTestQuestion: Duration = Duration.ofMinutes(20)
+    val selfTestAnswer: Duration = Duration.ofMinutes(10)
+    /** Slots starting within this long get the full cycle; later ones a single question and answer. */
+    val selfTestCycleHorizon: Duration = Duration.ofHours(24)
     /** How long the quiz widget shows a result before the next question. */
     val quizResultDuration: Duration = Duration.ofSeconds(60)
 
-    fun revealDelay(interval: RotationInterval): Duration = minOf(Duration.ofSeconds(interval.seconds / 2), maxRevealDelay)
+    /** Offsets from a slot's start at which each self-test phase begins, for a slot [length] long. */
+    fun selfTestPhases(length: Duration, cycling: Boolean = true): List<Pair<Duration, WidgetSnapshot.Phase>> {
+        val cycle = selfTestQuestion.plus(selfTestAnswer)
+        val cycles = if (cycling) maxOf(1L, length.toMillis() / cycle.toMillis()) else 1L
+        val reveal = minOf(selfTestQuestion, length.multipliedBy(2).dividedBy(3))
+        return (0 until cycles).flatMap { k ->
+            val start = cycle.multipliedBy(k)
+            listOf(start to WidgetSnapshot.Phase.QUESTION, start.plus(reveal) to WidgetSnapshot.Phase.ANSWER)
+        }
+    }
+
+    /** The next self-test phase change after [now] inside the slot starting at [slotStart], if any. */
+    fun nextSelfTestChange(slotStart: Instant, interval: RotationInterval, now: Instant): Instant? =
+        selfTestPhases(Duration.ofSeconds(interval.seconds), Duration.between(now, slotStart) < selfTestCycleHorizon)
+            .map { slotStart.plus(it.first) }
+            .firstOrNull { it > now }
 
     /** Snapshots from the current slot onward. Refills the queue first, so this writes. */
     fun build(db: SqlDb, clock: AppClock, rng: RandomSource, mode: WidgetMode? = null): List<WidgetSnapshot> {
@@ -93,7 +114,7 @@ object WidgetTimelineBuilder {
         }
         val previous = WidgetQueue.previous(queue.first().slotStart, db)?.let { CardQueries.card(it.cardID, db) }
 
-        val delay = revealDelay(prefs.effectiveRotation)
+        val slotLength = Duration.ofSeconds(prefs.effectiveRotation.seconds)
         val snapshots = mutableListOf<WidgetSnapshot>()
         var lastCard = previous
         for (entry in queue) {
@@ -117,10 +138,14 @@ object WidgetTimelineBuilder {
                 theme = prefs.effectiveTheme,
                 previousCard = lastCard,
             )
-            snapshots += base
             if (resolvedMode == WidgetMode.SELF_TEST) {
-                val at = entry.slotStart.plus(delay)
-                snapshots += base.copy(date = at, phase = WidgetSnapshot.Phase.ANSWER, reviewedToday = reviews(at))
+                val cycling = Duration.between(now, entry.slotStart) < selfTestCycleHorizon
+                for ((offset, phase) in selfTestPhases(slotLength, cycling)) {
+                    val at = entry.slotStart.plus(offset)
+                    snapshots += base.copy(date = at, phase = phase, reviewedToday = reviews(at))
+                }
+            } else {
+                snapshots += base
             }
             lastCard = card
         }
