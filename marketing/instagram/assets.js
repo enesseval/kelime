@@ -229,13 +229,12 @@ const D2 = [
     });
     text(root, "counter", "6/7"); },
   root => { theme(root, "dark");
-    const p = shot(root, "kilit-sina.png", 90, 140, 420);
-    p.style.height = px(420 * 1792 / 828);
-    headline(root, { title: "Kilit ekranında kendini sına.", body: "Önce anlam ve ilk harf, cevap biraz sonra.", left: 580, width: 420, top: 300, size: 74 });
-    text(root, "abs body", "Kaydet, yarın tekrar bak 🔖", { left: "580px", width: "420px", top: "960px", fontSize: "42px", color: "var(--orange)" });
+    shot(root, "tekrar-soru.png", 90, 140, 420);
+    headline(root, { kicker: "Hızlı Tekrar", title: "2 dakikada kendini sına.", body: "Önce sen hatırla, sonra kontrol et. Bilemediğin kelime kilit ekranına daha sık gelir.", left: 580, width: 420, top: 220, size: 70 });
+    text(root, "abs body", "Kaydet, yarın tekrar bak 🔖", { left: "580px", width: "420px", top: "1040px", fontSize: "42px", color: "var(--orange)" });
     text(root, "counter", "7/7"); },
 ];
-D2.forEach((b, i) => still(`g2-c${i + 1}`, `gun2-sali/carousel-${i + 1}.png`, C, b, i === 6 ? ["kilit-sina.png"] : undefined));
+D2.forEach((b, i) => still(`g2-c${i + 1}`, `gun2-sali/carousel-${i + 1}.png`, C, b, i === 6 ? ["tekrar-soru.png"] : undefined));
 
 still("g2-h1", "gun2-sali/hikaye-1-1230-test.png", S, root => {
   theme(root, "cream");
@@ -431,7 +430,7 @@ video("g4-h1", "gun4-persembe/hikaye-1-1230-ilk5sn.mp4", 5, root => {
 still("g4-h2", "gun4-persembe/hikaye-2-1800-anket.png", S, root => {
   theme(root, "cream");
   headline(root, { kicker: "Senin kilit ekranın", title: "Hangi görünüm?", top: 300, size: 110 });
-  const opts = [["Kart", "hypothesis", "isim · hipotez"], ["Sözlük", "HYPOTHESIS (isim)", "hipotez"], ["Örnek cümle", "The experiment supports the hypothesis.", "Deney hipotezi destekliyor."], ["Kendini sına", "hipotez", "h _ _ _ _ _ _ _ _ _"]];
+  const opts = [["Kart", "hypothesis", "isim · hipotez"], ["Sözlük", "HYPOTHESIS (isim)", "hipotez"], ["Örnek cümle", "The experiment supports the hypothesis.", "Deney hipotezi destekliyor."], ["Kelime ve cümle", "hypothesis", "The experiment supports the hypothesis."]];
   opts.forEach(([n, a, b], i) => {
     const c = add(root, h("div", "abs card", null, { left: px(90 + (i % 2) * 460), top: px(620 + Math.floor(i / 2) * 330), width: "440px", height: "300px", padding: "36px" }));
     text(c, "kicker", n, { fontSize: "24px" });

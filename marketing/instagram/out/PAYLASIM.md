@@ -41,7 +41,7 @@ yapacağın tek iş paylaşmak. Paylaşırken eklenecek şeyler aşağıda.
   ekle.
 - [ ] 12:30 `hikaye-1-1230-ilk5sn.mp4`
 - [ ] 18:00 `hikaye-2-1800-anket.png` + **Anket** (4 seçenek): Kart / Sözlük / Örnek cümle /
-  Kendini sına
+  Kelime ve cümle
 - [ ] 21:30 `hikaye-3-2130-siradasen.png` + **Sıra sende** çıkartması: "Kilit ekranımdaki kelime"
 
 ## 5. gün · Cuma
