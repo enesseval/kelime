@@ -5,11 +5,28 @@ import GRDB
 public enum WidgetTimelineBuilder {
     /// Reviews per day shown as a full ring. One Quick Review session.
     public static let dailyTarget = 10
-    /// Self-test reveals the answer at `start + min(interval / 2, 30 min)`.
-    public static let maxRevealDelay: TimeInterval = 30 * 60
+    /// Kendini sına repeats inside a slot: the question for 20 minutes, then the answer for 10,
+    /// then the question again. A glance mostly lands on the question, and the answer is never
+    /// more than 20 minutes away. (Showing the question once, for the first 30 minutes of a
+    /// three-hour slot, meant the learner almost always saw only the answer.)
+    public static let selfTestQuestion: TimeInterval = 20 * 60
+    public static let selfTestAnswer: TimeInterval = 10 * 60
+    /// Slots starting within this long get the full cycle; later ones a single question and
+    /// answer, so a timeline stays near a hundred entries.
+    public static let selfTestCycleHorizon: TimeInterval = 24 * 3600
 
+    /// How long the first question of a slot stays (Apple Watch shows one question per slot).
     public static func revealDelay(for interval: RotationInterval) -> TimeInterval {
-        min(interval.seconds / 2, maxRevealDelay)
+        min(interval.seconds * 2 / 3, selfTestQuestion)
+    }
+
+    /// Offsets from a slot's start at which each phase begins, for a slot `length` seconds long.
+    public static func selfTestPhases(slot length: TimeInterval, cycling: Bool = true) -> [(offset: TimeInterval, phase: WidgetSnapshot.Phase)] {
+        let cycle = selfTestQuestion + selfTestAnswer
+        let cycles = cycling ? max(1, Int(length / cycle)) : 1
+        return (0..<cycles).flatMap { k -> [(offset: TimeInterval, phase: WidgetSnapshot.Phase)] in
+            [(Double(k) * cycle, .question), (Double(k) * cycle + min(selfTestQuestion, length * 2 / 3), .answer)]
+        }
     }
 
     /// Snapshots from the current slot onward. Refills the queue first, so this writes.
@@ -41,7 +58,7 @@ public enum WidgetTimelineBuilder {
             return count
         }
 
-        let delay = revealDelay(for: prefs.effectiveRotation)
+        let slotLength = prefs.effectiveRotation.seconds
         var snapshots: [WidgetSnapshot] = []
         for entry in queue {
             guard let card = cards[entry.cardID] else { continue }
@@ -64,13 +81,17 @@ public enum WidgetTimelineBuilder {
                 },
                 theme: prefs.effectiveTheme
             )
-            snapshots.append(base)
-            if resolvedMode == .selfTest {
-                var answer = base
-                answer.date = entry.slotStart.addingTimeInterval(delay)
-                answer.phase = .answer
-                answer.reviewedToday = try reviews(on: answer.date)
-                snapshots.append(answer)
+            guard resolvedMode == .selfTest else {
+                snapshots.append(base)
+                continue
+            }
+            let cycling = entry.slotStart.timeIntervalSince(now) < selfTestCycleHorizon
+            for step in selfTestPhases(slot: slotLength, cycling: cycling) {
+                var snapshot = base
+                snapshot.date = entry.slotStart.addingTimeInterval(step.offset)
+                snapshot.phase = step.phase
+                snapshot.reviewedToday = try reviews(on: snapshot.date)
+                snapshots.append(snapshot)
             }
         }
         return snapshots.isEmpty ? [.empty(at: now)] : snapshots

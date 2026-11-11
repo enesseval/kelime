@@ -53,6 +53,27 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-11 · Kendini sına: soru ve cevap dönüşümlü · iOS [x] Android [ ]
+**Sorun:** Kendini sına görünümünde soru yalnızca dilimin ilk 30 dakikasında görünüyor, sonra
+dilim bitene kadar cevap kalıyordu. 3 saatlik dilimde bu, sürenin 6'da 5'inde cevabın
+görünmesi demek; kullanıcı neredeyse hiç soru görmüyordu.
+
+**Yeni kural:** bir dilimin içinde soru ve cevap dönüşümlü gösterilir.
+- 30 dakikalık döngü: **20 dakika soru, 10 dakika cevap**, sonra yine soru (aynı kelime).
+- Dilim başından dakika olarak: soru 0, cevap 20, soru 30, cevap 50, soru 60… 3 saatlik
+  dilimde 6 döngü, 1 saatlikte 2, 30 dakikalıkta 1.
+- Zaman çizelgesi çok büyümesin diye yalnızca 24 saat içinde başlayan dilimler döngülü kurulur;
+  daha sonraki dilimlerde tek soru (0) ve tek cevap (20) olur.
+- Eski sabitler (`maxRevealDelay` 30 dk, dilimin yarısı) kalktı. Yeni sabitler:
+  `selfTestQuestion` 20 dk, `selfTestAnswer` 10 dk, `selfTestCycleHorizon` 24 saat.
+- Android'de `core/widgets/WidgetTimeline.kt` içindeki `revealDelay` aynı şekilde değişir;
+  kilit ekranı duvar kâğıdı da aynı anlarda yenilenmelidir.
+
+**Test:** `selfTestCyclesQuestionAndAnswerInsideASlot`: ilk dilimde 12 kayıt, dakikalar
+0, 20, 30, 50, …, 170; dilim başından 95 dakika sonra görünen kayıt soru; bir günden uzak
+dilimde yalnızca soru + cevap; 30 dakikalık dilimde soru 0, cevap 20.
+
+
 ### 2026-11-05 · Android paywall ve bulmaca sonu iOS ile aynı · iOS [x] Android [x]
 iOS'ta zaten böyleydi.
 - **Paywall:** gece gökyüzü zemin (yıldızlar, ay), ✦ parıltı, "KİLİT KELİME PRO", başlık ve neden

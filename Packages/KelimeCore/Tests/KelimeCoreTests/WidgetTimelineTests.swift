@@ -46,17 +46,27 @@ struct WidgetTimelineTests {
         #expect(try build(db, mode: .card).allSatisfy { $0.mode == .card })
     }
 
-    @Test func selfTestRevealsTheAnswerHalfwayCappedAt30Minutes() throws {
+    /// Kendini sına cycles inside a slot: question 20 minutes, answer 10, and again. The old
+    /// single question (first 30 minutes of three hours) left the answer on screen most of the day.
+    @Test func selfTestCyclesQuestionAndAnswerInsideASlot() throws {
         let threeHours = try build(try makeDatabase(), mode: .selfTest)
-        #expect(threeHours.count == 50)
-        for pair in stride(from: 0, to: threeHours.count, by: 2) {
-            let q = threeHours[pair], a = threeHours[pair + 1]
-            #expect(q.phase == .question && a.phase == .answer)
-            #expect(q.card == a.card)
-            #expect(a.date.timeIntervalSince(q.date) == 30 * 60)
-        }
+        let firstSlot = threeHours.filter { $0.slotStart == threeHours[0].slotStart }
+        #expect(firstSlot.count == 12)
+        #expect(firstSlot.map { $0.date.timeIntervalSince($0.slotStart) / 60 } == [0, 20, 30, 50, 60, 80, 90, 110, 120, 140, 150, 170])
+        #expect(firstSlot.enumerated().allSatisfy { $0.element.phase == ($0.offset % 2 == 0 ? .question : .answer) })
+        #expect(Set(firstSlot.map(\.card)).count == 1)
+        // 95 minutes into the slot the learner sees the question, not the answer.
+        let at = threeHours[0].slotStart.addingTimeInterval(95 * 60)
+        #expect(threeHours.last { $0.date <= at }?.phase == .question)
+        #expect(threeHours.map(\.date) == threeHours.map(\.date).sorted())
+        // Slots more than a day away keep one question and one answer.
+        let lastSlot = threeHours.filter { $0.slotStart == threeHours.last?.slotStart }
+        #expect(lastSlot.map(\.phase) == [.question, .answer])
+
         let halfHourly = try build(try makeDatabase(Preferences(rotationInterval: .thirtyMinutes, isPro: true)), mode: .selfTest)
-        #expect(halfHourly[1].date.timeIntervalSince(halfHourly[0].date) == 15 * 60)
+        #expect(halfHourly[0].phase == .question && halfHourly[1].phase == .answer)
+        #expect(halfHourly[1].date.timeIntervalSince(halfHourly[0].date) == 20 * 60)
+        #expect(halfHourly[2].slotStart != halfHourly[0].slotStart)
     }
 
     @Test func snapshotsCarryStateQuizAndStruggling() throws {
