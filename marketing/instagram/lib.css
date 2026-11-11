@@ -44,3 +44,7 @@ body { font-family: "Hanken", sans-serif; -webkit-font-smoothing: antialiased; }
 
 .counter { position: absolute; right: 64px; bottom: 56px; font-weight: 700; font-size: 30px; opacity: .55; }
 .swipe { position: absolute; right: 64px; bottom: 56px; font-weight: 700; font-size: 30px; opacity: .7; }
+
+/* A light panel inside a dark root keeps its own card and muted colours. */
+.cream .card, .blue .card { background: var(--card); color: var(--ink); box-shadow: 0 2px 0 rgba(0,0,0,.03), 0 18px 50px rgba(27,25,22,.08); }
+.cream .muted { color: var(--ink2); }

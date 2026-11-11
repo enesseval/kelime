@@ -94,12 +94,13 @@ video("g1-reels", "gun1-pazartesi/reels.mp4", 18, root => {
   const empty = add(root, lock("kilit-bos.png"));
   const shade = add(root, h("div", "fill", null, { background: "rgba(0,0,0,.38)" }));
   const flash = add(root, h("div", "fill", null, { background: "#fff", opacity: 0 }));
-  const words = ["kilit-kart.png", "kilit-2.png", "kilit-3.png", "kilit-4.png"].map(n => add(root, lock(n)));
+  const words = ["kilit-kart.png", "kilit-2.png", "kilit-3.png", "kilit-cumle.png"].map(n => add(root, lock(n)));
   words.forEach(i => { i.style.transformOrigin = "22% 80%"; i.style.opacity = 0; });
   const t1 = text(root, "abs title", "", { left: "90px", right: "90px", top: "300px", fontSize: "84px", color: "#fff", textShadow: "0 4px 30px rgba(0,0,0,.5)" });
   const count = text(root, "abs title", "", { right: "90px", top: "520px", fontSize: "150px", color: "#fff", textShadow: "0 4px 30px rgba(0,0,0,.5)" });
   const black = add(root, h("div", "fill dark center", null, { opacity: 0 }));
   const nothing = text(black, "title", "…hiçbir şey<br>öğrenmiyorsun.", { fontSize: "110px" });
+  const scrim = add(root, h("div", "abs", null, { left: 0, right: 0, top: 0, height: "760px", background: "linear-gradient(rgba(0,0,0,.55), transparent)", opacity: 0 }));
   const t4 = text(root, "abs title", "Ya her bakışta bir<br>kelime görseydin?", { left: "90px", right: "90px", top: "300px", fontSize: "84px", color: "#fff", textShadow: "0 4px 30px rgba(0,0,0,.55)", opacity: 0 });
 
   const sci = add(root, h("div", "fill cream", null, { opacity: 0 }));
@@ -138,6 +139,7 @@ video("g1-reels", "gun1-pazartesi/reels.mp4", 18, root => {
       im.style.transform = `scale(${lerp(1, 1.55, easeInOut(seg(t, a + .2, b)))})`;
     });
     t4.style.opacity = t >= 6 && t < 11 ? rise(t4, t, 6.1, .4) : 0;
+    scrim.style.opacity = t >= 6 && t < 11 ? 1 : 0;
     // 11–15: science
     window_(sci, t, 11, 15, .2);
     rise(sTitle, t, 11.1); rise(card, t, 11.4, .6, 60);
@@ -151,7 +153,7 @@ video("g1-reels", "gun1-pazartesi/reels.mp4", 18, root => {
     // 16.5–18: closing
     if (t >= 16.5) close(t - 16.5);
   };
-}, ["kilit-bos.png", "kilit-kart.png", "kilit-2.png", "kilit-3.png", "kilit-4.png"]);
+}, ["kilit-bos.png", "kilit-kart.png", "kilit-2.png", "kilit-3.png", "kilit-cumle.png"]);
 
 still("g1-h1", "gun1-pazartesi/hikaye-1-1230.png", S, root => {
   theme(root, "cream");
@@ -374,9 +376,8 @@ still("g3-h4", "gun3-carsamba/hikaye-4-2145-android.png", S, root => {
 
 const STEPS = [
   { src: "adim-1.png", n: "1", t: "Kilit ekranına basılı tut,<br>Özelleştir'e dokun" },
-  { src: "adim-2.png", n: "2", t: "Kilit Ekranı'nı seç" },
-  { src: "adim-3.png", n: "3", t: "Widget alanına dokun,<br>Kilit Kelime'yi bul" },
-  { src: "adim-4.png", n: "4", t: "Dikdörtgeni ekle, Bitti" },
+  { src: "adim-3.png", n: "2", t: "Widget alanına dokun,<br>listeden Kilit Kelime'yi seç" },
+  { src: "kilit-3.png", n: "3", t: "Bitti'ye dokun.<br>Kelimen kilit ekranında" },
 ];
 function widgetSteps(root) {
   theme(root, "cream");
@@ -404,10 +405,10 @@ function widgetSteps(root) {
     bR.style.clipPath = `inset(0 0 0 ${split}px)`;
     bar.style.left = px(split - 4);
     rise(bT, t, .05, .4);
-    // 2–11: four steps, 2.25 s each
+    // 2–11: three steps, 3 s each
     steps.forEach((s, i) => {
-      const a = 2 + i * 2.25;
-      window_(s.g, t, a, a + 2.25, .2);
+      const a = 2 + i * 3;
+      window_(s.g, t, a, a + 3, .2);
       s.p.style.transform = `scale(${lerp(.96, 1, easeOut(seg(t, a, a + .5)))})`;
     });
     // 11–13: result
