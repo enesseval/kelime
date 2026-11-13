@@ -23,9 +23,12 @@ enum class PaywallTrigger(val raw: String) {
         }
 }
 
-/** Product ids and the cached Pro entitlement (RevenueCat entitlement "pro"). */
+/**
+ * Product ids and the cached Pro entitlement. The RevenueCat entitlement's identifier is
+ * `kelime_widget_pro` (project "Kelime Widget"); it carries purchases across iOS and Android.
+ */
 object ProEntitlement {
-    const val ENTITLEMENT = "pro"
+    const val ENTITLEMENT = "kelime_widget_pro"
     const val LIFETIME_ID = "pro.lifetime"
     const val YEARLY_ID = "pro.yearly"
     const val MONTHLY_ID = "pro.monthly"

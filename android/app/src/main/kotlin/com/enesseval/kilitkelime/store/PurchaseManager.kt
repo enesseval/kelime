@@ -29,7 +29,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 /**
- * Pro through RevenueCat (port of `PurchaseManager.swift`): entitlement "pro", products
+ * Pro through RevenueCat (port of `PurchaseManager.swift`): entitlement `kelime_widget_pro`, products
  * pro.monthly, pro.yearly (7-day trial) and pro.lifetime. The RevenueCat user id is the Supabase
  * user id when signed in, so a purchase on iOS unlocks Android and the other way round.
  */

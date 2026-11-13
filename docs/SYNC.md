@@ -57,6 +57,15 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-13 · RevenueCat yetki kimliği `kelime_widget_pro` · iOS [ ] Android [x]
+**Sorun:** iki uygulama da RevenueCat'te `pro` adlı yetkiyi arıyor; projedeki tek yetkinin kimliği
+`kelime_widget_pro` ("Kelime Widget Pro"). Aynı platformdaki satın alma ürün kimliğinden yine
+tanınıyordu, ama hesapla giriş yapınca diğer platformda alınan Pro yetkiden gelmiyordu.
+- Android: `ProEntitlement.ENTITLEMENT = "kelime_widget_pro"` (`core/model/Pro.kt`).
+- iOS: `App/Store/PurchaseManager.swift` `entitlement = "kelime_widget_pro"`.
+- RevenueCat'te Play ürünleri (`pro.monthly:monthly`, `pro.yearly:yearly`, `pro.lifetime`) bu
+  yetkiye ve `default` teklifinin `$rc_monthly` / `$rc_annual` / `$rc_lifetime` paketlerine bağlı.
+
 ### 2026-11-13 · Paywall: "ücretsiz" yerine "deneme" · iOS [x] Android [ ]
 Yıllık plandaki deneme metinlerinde "ücretsiz" kelimesi kalktı, yerine "deneme" geldi.
 Metinler aynen:

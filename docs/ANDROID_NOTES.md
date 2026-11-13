@@ -199,17 +199,15 @@ State on 2026-11-13 (Google Play integrations):
   Viewer) invited to Play Console for this app only (view app info, view financial data, manage
   orders and subscriptions); its JSON key is uploaded to RevenueCat and kept outside the repo.
   Supabase's Google provider is enabled.
-- Owner: create the Google Payments merchant account (Play Console › Abonelikler asks for it);
-  then create `pro.monthly` (base plan `monthly`), `pro.yearly` (base plan `yearly`, offer
-  `trial-7d`) and `pro.lifetime`.
-- Owner: Google Cloud › Google Auth Platform › Audience › "Publish app". The consent screen is in
-  Testing with no test users, so Google sign-in fails for everyone until it is published (only
-  openid/email/profile, no verification needed).
-- Owner: add license testers (Play Console › Ayarlar › Lisans testi) for test purchases.
-- After the products exist (and Google has propagated the service account, up to 36 h): in
-  RevenueCat import the three Play products, attach them to the `pro` entitlement and the
-  `default` offering (monthly / annual / lifetime), "Check credentials", then "Connect to Google"
-  for developer notifications.
+- Done (2026-11-13): merchant account; `pro.monthly` (base plan `monthly`, 49,99 TRY),
+  `pro.yearly` (base plan `yearly`, 399,99 TRY, offer `trial-7d` = 7 days free for new
+  subscribers), `pro.lifetime` (purchase option `lifetime`, 699,99 TRY), all active, other
+  countries converted by Play. Türkiye prices were entered tax-inclusive by hand (Play's
+  conversion added 20 % KDV on top). Imported into RevenueCat, attached to the
+  `kelime_widget_pro` entitlement and the `default` offering. RevenueCat credentials valid;
+  real-time developer notifications on (`projects/kelime-widget/topics/Play-Store-Notifications`,
+  subscriptions + one-time products). OAuth consent screen published (In production).
+  License testing list "enes satın alma".
 - Keystore: create it and set `kelime.keystore`, `kelime.keystorePassword`, `kelime.keyAlias`,
   `kelime.keyPassword` in `local.properties`. `./gradlew :app:bundleRelease` then signs the AAB.
 - Digital Asset Links: App Links are verified at the domain root, i.e.
