@@ -66,7 +66,7 @@ tanınıyordu, ama hesapla giriş yapınca diğer platformda alınan Pro yetkide
 - RevenueCat'te Play ürünleri (`pro.monthly:monthly`, `pro.yearly:yearly`, `pro.lifetime`) bu
   yetkiye ve `default` teklifinin `$rc_monthly` / `$rc_annual` / `$rc_lifetime` paketlerine bağlı.
 
-### 2026-11-13 · Paywall: "ücretsiz" yerine "deneme" · iOS [x] Android [ ]
+### 2026-11-13 · Paywall: "ücretsiz" yerine "deneme" · iOS [x] Android [x]
 Yıllık plandaki deneme metinlerinde "ücretsiz" kelimesi kalktı, yerine "deneme" geldi.
 Metinler aynen:
 - Plan notu: "7 gün deneme, sonra yıllık · ayda …" (eski: "7 gün ücretsiz, sonra yıllık")

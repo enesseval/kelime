@@ -196,16 +196,16 @@ fun PaywallScreen(trigger: PaywallTrigger) {
 
     val selected = state.pkg(plan)
     val trial = state.annual?.hasTrial() == true
-    val annualNote = listOfNotNull(if (trial) "7 gün ücretsiz, sonra yıllık" else "Yıllık yenilenir", state.annual?.perMonth()?.let { "ayda $it" }).joinToString(" · ")
+    val annualNote = listOfNotNull(if (trial) "7 gün deneme, sonra yıllık" else "Yıllık yenilenir", state.annual?.perMonth()?.let { "ayda $it" }).joinToString(" · ")
     val cta = when (plan) {
-        Plan.ANNUAL -> if (trial) "7 gün ücretsiz dene" else state.annual?.let { "Abone ol · ${it.price()}/yıl" } ?: "Abone ol"
+        Plan.ANNUAL -> if (trial) "7 gün denemeyi başlat" else state.annual?.let { "Abone ol · ${it.price()}/yıl" } ?: "Abone ol"
         Plan.MONTHLY -> state.monthly?.let { "Abone ol · ${it.price()}/ay" } ?: "Abone ol"
         Plan.LIFETIME -> state.lifetime?.let { "Satın al · ${it.price()}" } ?: "Satın al"
     }
     // Store-specific wording (Google Play), two lines for every plan so the button doesn't move.
     val legal = when {
         plan == Plan.LIFETIME -> "Tek seferlik ödeme; abonelik değildir, yenilenmez. Satın alımın Geri yükle ile her cihazına gelir."
-        plan == Plan.ANNUAL && trial -> "7 gün ücretsiz, sonra yılda ${state.annual?.price() ?: "yıllık ücret"}. Deneme bitmeden iptal edersen ücret alınmaz. Google Play › Abonelikler'den yönetilir."
+        plan == Plan.ANNUAL && trial -> "7 gün deneme, sonra yılda ${state.annual?.price() ?: "yıllık ücret"}. Deneme bitmeden iptal edersen ücret alınmaz. Google Play › Abonelikler'den yönetilir."
         else -> "Abonelik, iptal edene kadar her dönem otomatik yenilenir. Google Play › Ödemeler ve abonelikler › Abonelikler'den istediğin zaman iptal edebilirsin."
     }
     val white = Color.White
