@@ -32,9 +32,9 @@ oturumu buraya yönlendirir.
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.1.0 | 1.1.0 |
-| Build | 32 (TestFlight) | versionCode 1 |
+| Build | 33 (App Store'a gönderilecek) | versionCode 1 |
 | Dal | `v1.1` | `v1.1` |
-| Mağazada | 1.0.0 (28) incelemede, `main` | henüz yok |
+| Mağazada | 1.0.0 (28) yayında (10 Kasım), `main` | henüz yok |
 
 `main` App Store'daki 1.0'dır; reddedilirse düzeltme orada build 30+ ile yapılır. 1.1 işi `v1.1`
 dalında sürer.
