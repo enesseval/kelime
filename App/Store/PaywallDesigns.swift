@@ -126,12 +126,12 @@ extension PurchaseManager {
 
     func price(_ plan: PaywallPlan) -> String? { package(plan)?.storeProduct.localizedPriceString }
 
-    /// Short line under a plan: "ayda …", "7 gün ücretsiz", "tek seferlik".
+    /// Short line under a plan: "ayda …", "7 gün deneme", "tek seferlik".
     func note(_ plan: PaywallPlan) -> String {
         switch plan {
         case .monthly: "Her ay yenilenir"
         case .annual:
-            [trialEligible ? "7 gün ücretsiz" : nil, annual?.storeProduct.localizedPricePerMonth.map { "ayda \($0)" }]
+            [trialEligible ? "7 gün deneme" : nil, annual?.storeProduct.localizedPricePerMonth.map { "ayda \($0)" }]
                 .compactMap { $0 }.joined(separator: " · ")
         case .lifetime: "Tek seferlik ödeme"
         }
@@ -140,7 +140,7 @@ extension PurchaseManager {
     func ctaTitle(_ plan: PaywallPlan) -> String {
         switch plan {
         case .annual:
-            if trialEligible { return "7 gün ücretsiz dene" }
+            if trialEligible { return "7 gün denemeyi başlat" }
             return price(.annual).map { "Abone ol · \($0)/yıl" } ?? "Abone ol"
         case .monthly: return price(.monthly).map { "Abone ol · \($0)/ay" } ?? "Abone ol"
         case .lifetime: return price(.lifetime).map { "Satın al · \($0)" } ?? "Satın al"
@@ -213,7 +213,7 @@ struct PaywallFrame<Content: View>: View {
             return "Tek seferlik ödeme; abonelik değildir, yenilenmez. Satın alımın Geri yükle ile her cihazına gelir."
         case .annual where purchases.trialEligible:
             let price = purchases.price(.annual).map { "yılda \($0)" } ?? "yıllık ücret"
-            return "7 gün ücretsiz, sonra \(price). Deneme bitmeden en az 24 saat önce iptal edersen ücret alınmaz."
+            return "7 gün deneme, sonra \(price). Deneme bitmeden en az 24 saat önce iptal edersen ücret alınmaz."
         case .annual, .monthly:
             return "Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse yenilenir. Ayarlar › Apple Kimliği › Abonelikler'den yönetilir."
         }

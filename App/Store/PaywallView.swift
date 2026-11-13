@@ -226,17 +226,17 @@ struct PaywallView: View {
         }
     }
 
-    /// "7 gün ücretsiz, sonra yıllık · ayda …".
+    /// "7 gün deneme, sonra yıllık · ayda …".
     private var annualNote: String {
         let perMonth = purchases.annual?.storeProduct.localizedPricePerMonth.map { "ayda \($0)" }
-        let lead = purchases.trialEligible ? "7 gün ücretsiz, sonra yıllık" : "Yıllık yenilenir"
+        let lead = purchases.trialEligible ? "7 gün deneme, sonra yıllık" : "Yıllık yenilenir"
         return [lead, perMonth].compactMap { $0 }.joined(separator: " · ")
     }
 
     private var ctaTitle: String {
         switch plan {
         case .annual:
-            if purchases.trialEligible { "7 gün ücretsiz dene" }
+            if purchases.trialEligible { "7 gün denemeyi başlat" }
             else { purchases.annual.map { "Abone ol · \($0.storeProduct.localizedPriceString)/yıl" } ?? "Abone ol" }
         case .monthly: purchases.monthly.map { "Abone ol · \($0.storeProduct.localizedPriceString)/ay" } ?? "Abone ol"
         case .lifetime: purchases.lifetime.map { "Satın al · \($0.storeProduct.localizedPriceString)" } ?? "Satın al"

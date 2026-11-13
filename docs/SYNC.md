@@ -57,6 +57,15 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
+### 2026-11-13 · Paywall: "ücretsiz" yerine "deneme" · iOS [x] Android [ ]
+Yıllık plandaki deneme metinlerinde "ücretsiz" kelimesi kalktı, yerine "deneme" geldi.
+Metinler aynen:
+- Plan notu: "7 gün deneme, sonra yıllık · ayda …" (eski: "7 gün ücretsiz, sonra yıllık")
+- Buton: "7 gün denemeyi başlat" (eski: "7 gün ücretsiz dene")
+- Yasal not: "7 gün deneme, sonra yılda …. Deneme bitmeden …" (eski: "7 gün ücretsiz, sonra …")
+
+Dosyalar: iOS `App/Store/PaywallView.swift`, `App/Store/PaywallDesigns.swift`; Android
+`ui/paywall/PaywallScreen.kt` (199, 201, 208. satırlar).
 ### 2026-11-13 · 1.1.0 yayın öncesi plan kontrolü · iOS [ ] Android [x]
 `docs/V1_1_PLAN.md` Android'de madde madde kontrol edildi. İki fark çıktı:
 - **`share.card` parametresi:** iOS `kind` = paylaşım sayfasının başlığı ("Kartı paylaş",
