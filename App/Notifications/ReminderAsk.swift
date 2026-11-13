@@ -90,8 +90,8 @@ struct ReminderAskSheet: View {
         if granted {
             let c = Calendar.current.dateComponents([.hour, .minute], from: time)
             let minutes = (c.hour ?? 20) * 60 + (c.minute ?? 30)
-            await Reminder.schedule(minutes: minutes)
             await model.setSetting(.reminderTime, String(minutes))
+            await model.rescheduleReminder()
         }
         Analytics.signal("reminder.ask", ["result": granted ? "granted" : "denied"])
         dismiss()

@@ -66,7 +66,7 @@ Metinler aynen:
 
 Dosyalar: iOS `App/Store/PaywallView.swift`, `App/Store/PaywallDesigns.swift`; Android
 `ui/paywall/PaywallScreen.kt` (199, 201, 208. satırlar).
-### 2026-11-13 · 1.1.0 yayın öncesi plan kontrolü · iOS [ ] Android [x]
+### 2026-11-13 · 1.1.0 yayın öncesi plan kontrolü · iOS [x] Android [x]
 `docs/V1_1_PLAN.md` Android'de madde madde kontrol edildi. İki fark çıktı:
 - **`share.card` parametresi:** iOS `kind` = paylaşım sayfasının başlığı ("Kartı paylaş",
   "Bulmaca sonucu", "Sonuç", "Haftalık özet", "Seri") gönderiyor; Android `type` = word/puzzle/…
@@ -77,6 +77,14 @@ Dosyalar: iOS `App/Store/PaywallView.swift`, `App/Store/PaywallDesigns.swift`; A
   eden tek bir bildirim kuruyor ("Tekrar zamanı" / "Günde bir hatırlatma: …"); risk metni ve
   "çalıştıysan gelme" yok. iOS: 1.1.1'de ya da şimdi, planı uygula ya da planı değiştir.
 - Android dosyası: `ui/word/ShareCard.kt`.
+
+**Not (iOS):** hatırlatma plana uyduruldu. iOS bildirim anında kod çalıştıramadığı için
+`Reminder.swift` artık tekrar eden tek bildirim yerine önümüzdeki 14 günün her biri için ayrı
+bildirim kuruyor (`daily-reminder-YYYY-MM-DD`; 1.0'ın `daily-reminder` kaydı da siliniyor) ve
+plan uygulama açıldığında, günün ilk çalışmasında, saat değişince yeniden kuruluyor. Kurallar
+`KelimeCore/Learning/ReminderPlan.swift`: bugün çalışıldıysa bugün bildirim yok, yarın risk
+metni; seri risk altındaysa bugün "Serin bu akşam bitiyor" / "N günlük serin bu akşam bitiyor.
+2 dakikalık bir tur yeter."; diğer günler eski metin. Test: `ReminderPlanTests`. Android'de iş yok.
 
 ### 2026-11-11 · Kendini sına: soru ve cevap dönüşümlü · iOS [x] Android [x]
 **Sorun:** Kendini sına görünümünde soru yalnızca dilimin ilk 30 dakikasında görünüyor, sonra

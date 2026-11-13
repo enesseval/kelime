@@ -37,6 +37,17 @@ final class AppModel {
         dataVersion += 1
         await account.sync()
         await updateContent()
+        await rescheduleReminder()
+    }
+
+    /// Rebuilds the planned daily reminders from the saved time and today's streak. Does nothing
+    /// without a saved time or without notification permission.
+    func rescheduleReminder() async {
+        let clock = clock
+        guard let (minutes, streak) = await read({ db -> (Int?, StreakStatus) in
+            (try Settings.int(.reminderTime, in: db), try Streak.status(db: db, clock: clock))
+        }), let minutes, await Reminder.isAuthorized() else { return }
+        await Reminder.schedule(minutes: minutes, streak: streak, now: clock.now, calendar: clock.calendar)
     }
 
     /// The account sync changed lists: screens and the widget pick them up.
@@ -134,6 +145,8 @@ final class AppModel {
         await write(rebuildQueue: false) { db in try Streak.record(source, on: clock.today, db: db) }
         // Only the day's first study can add the day or spend a freeze.
         if before?.studiedToday == false {
+            // Today counts now: drop today's reminder and warn about tomorrow instead.
+            await rescheduleReminder()
             Analytics.signal("streak.day", ["source": source.rawValue])
             let after = await read { db in try Streak.status(db: db, clock: clock) }
             if let after, after.frozenDays.count > before?.frozenDays.count ?? 0 { Analytics.signal("streak.freezeUsed") }
@@ -284,7 +297,7 @@ final class AppModel {
         await WidgetRefresher.rebuild(database, includingCurrent: true)
         dataVersion += 1
         UsageCounter.count(.onboardingDone)
-        if let minutes = choices.reminderMinutes { await Reminder.schedule(minutes: minutes) }
+        if choices.reminderMinutes != nil { await rescheduleReminder() }
         showOnboarding = false
     }
 

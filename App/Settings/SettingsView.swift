@@ -413,8 +413,8 @@ struct SettingsView: View {
                 toast = "Bildirim izni Ayarlar'dan açılabilir"
                 return
             }
-            await Reminder.schedule(minutes: minutes)
             await app.setSetting(.reminderTime, String(minutes))
+            await app.rescheduleReminder()
         } else {
             Reminder.cancel()
             await app.setSetting(.reminderTime, nil)
