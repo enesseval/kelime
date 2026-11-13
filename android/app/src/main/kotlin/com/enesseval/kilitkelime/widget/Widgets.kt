@@ -194,6 +194,11 @@ private fun RowScope.ActionButton(title: String, background: ColorProvider, ink:
 
 class CardWidgetReceiver : GlanceAppWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = CardWidget()
+
+    override fun onEnabled(context: Context) {
+        super.onEnabled(context)
+        com.enesseval.kilitkelime.analytics.WidgetUsage.check(context)
+    }
 }
 
 class MarkAction : ActionCallback {
@@ -275,6 +280,11 @@ class QuizWidget : GlanceAppWidget() {
 
 class QuizWidgetReceiver : GlanceAppWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = QuizWidget()
+
+    override fun onEnabled(context: Context) {
+        super.onEnabled(context)
+        com.enesseval.kilitkelime.analytics.WidgetUsage.check(context)
+    }
 }
 
 class QuizAnswerAction : ActionCallback {
@@ -395,4 +405,9 @@ class LargeWidget : GlanceAppWidget() {
 
 class LargeWidgetReceiver : GlanceAppWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = LargeWidget()
+
+    override fun onEnabled(context: Context) {
+        super.onEnabled(context)
+        com.enesseval.kilitkelime.analytics.WidgetUsage.check(context)
+    }
 }

@@ -45,6 +45,7 @@ class KilitKelimeApp : Application() {
             purchases.start()
             account.start()
             model.checkForContent()
+            com.enesseval.kilitkelime.analytics.WidgetUsage.check(this@KilitKelimeApp)
         }
     }
 

@@ -92,15 +92,18 @@ fun OnboardingFlow() {
     fun finish() {
         if (finishing) return
         finishing = true
-        scope.launch {
+        // Sent first and synchronously: the save below ends onboarding, this screen leaves the
+        // composition and anything still waiting in its coroutine scope is cancelled.
+        Analytics.send(Analytics.Event.onboardingDone)
+        // The app's scope, not the screen's, so the last step (the prefs update) isn't cut off either.
+        app.model.scope.launch {
+            app.model.prefs.update { it.copy(onboardingLockAsked = true) }
             app.model.write("onboarding") { db ->
                 OnboardingChoices(level, null).save(db)
                 Curriculum.switchLevel(level, db)
                 WidgetQueue.clearCurrentAndFuture(db, app.model.clock)
                 WidgetQueue.refill(db, app.model.clock, SystemRandom())
             }
-            app.model.prefs.update { it.copy(onboardingLockAsked = true) }
-            Analytics.send(Analytics.Event.onboardingDone)
         }
     }
 

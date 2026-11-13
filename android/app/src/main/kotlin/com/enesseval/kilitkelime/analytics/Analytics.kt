@@ -45,3 +45,27 @@ object Analytics {
         runCatching { TelemetryDeck.signal(name, parameters) }
     }
 }
+
+/**
+ * `Usage.widgetInstalled`, once per install, when a Kilit Kelime home-screen widget is first seen
+ * (iOS sends it from Bugün once WidgetCenter reports a widget; key `usage.widgetSeen`). Checked at
+ * launch and when a widget provider gets its first instance (onEnabled).
+ */
+object WidgetUsage {
+    private const val KEY = "usage.widgetSeen"
+
+    fun check(context: android.content.Context) {
+        val prefs = context.getSharedPreferences("usage", android.content.Context.MODE_PRIVATE)
+        if (prefs.getBoolean(KEY, false)) return
+        val manager = android.appwidget.AppWidgetManager.getInstance(context)
+        val installed = listOf(
+            com.enesseval.kilitkelime.widget.CardWidgetReceiver::class.java,
+            com.enesseval.kilitkelime.widget.QuizWidgetReceiver::class.java,
+            com.enesseval.kilitkelime.widget.LargeWidgetReceiver::class.java,
+        ).any { runCatching { manager.getAppWidgetIds(android.content.ComponentName(context, it)).isNotEmpty() }.getOrDefault(false) }
+        if (!installed) return
+        prefs.edit().putBoolean(KEY, true).apply()
+        Analytics.send(Analytics.Event.widgetInstalled)
+    }
+}
+
