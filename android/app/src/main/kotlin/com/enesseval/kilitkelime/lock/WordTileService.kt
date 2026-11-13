@@ -1,5 +1,6 @@
 package com.enesseval.kilitkelime.lock
 
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Intent
 import android.net.Uri
@@ -39,8 +40,12 @@ class WordTileService : TileService() {
         if (Build.VERSION.SDK_INT >= 34) {
             startActivityAndCollapse(PendingIntent.getActivity(this, 20, intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT))
         } else {
-            @Suppress("DEPRECATION")
-            startActivityAndCollapse(intent)
+            collapseAndStartBelow34(intent)
         }
     }
+
+    /** The PendingIntent overload only exists from API 34; below it the Intent one is the only way to close the panel. */
+    @SuppressLint("StartActivityAndCollapseDeprecated")
+    @Suppress("DEPRECATION")
+    private fun collapseAndStartBelow34(intent: Intent) = startActivityAndCollapse(intent)
 }

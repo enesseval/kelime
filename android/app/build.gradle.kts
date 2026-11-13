@@ -48,7 +48,10 @@ android {
         targetSdk = 36
         versionCode = 2
         versionName = "1.1.0"
-        buildConfigField("String", "REVENUECAT_KEY", "\"${local("revenuecat.androidKey")}\"")
+        // RevenueCat's public Android SDK key (Play Store app in the "Kelime Widget" project). Public,
+        // like the OAuth client id below; local.properties `revenuecat.androidKey` can override it.
+        val revenueCatKey = local("revenuecat.androidKey").ifEmpty { "goog_wAWHTSsguZehSEAiNjhzwDVAAfz" }
+        buildConfigField("String", "REVENUECAT_KEY", "\"$revenueCatKey\"")
         // The Google web OAuth client (Supabase's Google provider). A client id is public, so it is
         // kept here; local.properties `google.webClientId` can still override it.
         val googleWebClientId = local("google.webClientId").ifEmpty { "232922246061-kirln0ssb8i4eqe3ull4rdj7roc91369.apps.googleusercontent.com" }

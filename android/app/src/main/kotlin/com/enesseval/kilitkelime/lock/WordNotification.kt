@@ -1,12 +1,16 @@
 package com.enesseval.kilitkelime.lock
 
+import android.Manifest
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 import androidx.work.ForegroundInfo
 import com.enesseval.kilitkelime.KilitKelimeApp
 import com.enesseval.kilitkelime.MainActivity
@@ -23,7 +27,12 @@ import kotlinx.coroutines.launch
 object WordNotification {
     private const val ID = 7
 
-    fun canPost(context: Context) = NotificationManagerCompat.from(context).areNotificationsEnabled()
+    fun canPost(context: Context): Boolean {
+        if (Build.VERSION.SDK_INT >= 33 &&
+            ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+        ) return false
+        return NotificationManagerCompat.from(context).areNotificationsEnabled()
+    }
 
     fun show(context: Context, snapshot: WidgetSnapshot) {
         val card = snapshot.card ?: return
@@ -60,7 +69,11 @@ object WordNotification {
             .setContentIntent(open)
         if (snapshot.state != com.enesseval.kilitkelime.core.model.LearningState.LEARNED) builder.addAction(0, "Biliyorum", action("known", 11))
         if (snapshot.state != com.enesseval.kilitkelime.core.model.LearningState.STRUGGLING) builder.addAction(0, "Zorlanıyorum", action("struggling", 12))
-        runCatching { NotificationManagerCompat.from(context).notify(ID, builder.build()) }
+        try {
+            NotificationManagerCompat.from(context).notify(ID, builder.build())
+        } catch (_: SecurityException) {
+            // The permission was revoked between the check and the post.
+        }
     }
 
     fun cancel(context: Context) = NotificationManagerCompat.from(context).cancel(ID)
