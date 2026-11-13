@@ -32,7 +32,7 @@ oturumu buraya yönlendirir.
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.1.0 | 1.1.0 |
-| Build | 33 (App Store'a gönderilecek) | versionCode 2 (Play'e yüklenecek) |
+| Build | 33 (App Store'a gönderilecek) | versionCode 2 (Play dahili testte; kapalı test incelemeye hazır) |
 | Dal | `v1.1` | `v1.1` |
 | Mağazada | 1.0.0 (28) yayında (10 Kasım), `main` | kapalı test (Play) |
 
