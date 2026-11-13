@@ -57,7 +57,7 @@ dalında sürer.
 
 ## Değişiklik günlüğü
 
-### 2026-11-13 · RevenueCat yetki kimliği `kelime_widget_pro` · iOS [ ] Android [x]
+### 2026-11-13 · RevenueCat yetki kimliği `kelime_widget_pro` · iOS [x] Android [x]
 **Sorun:** iki uygulama da RevenueCat'te `pro` adlı yetkiyi arıyor; projedeki tek yetkinin kimliği
 `kelime_widget_pro` ("Kelime Widget Pro"). Aynı platformdaki satın alma ürün kimliğinden yine
 tanınıyordu, ama hesapla giriş yapınca diğer platformda alınan Pro yetkiden gelmiyordu.

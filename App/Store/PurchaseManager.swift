@@ -3,7 +3,7 @@ import KelimeCore
 import Observation
 import RevenueCat
 
-/// Pro through RevenueCat: the "pro" entitlement, bought with one of the packages of the
+/// Pro through RevenueCat: the "kelime_widget_pro" entitlement, bought with one of the packages of the
 /// current offering (monthly, annual with a 7-day trial, lifetime). The entitlement is cached
 /// in the shared database for the widget and the gates.
 @MainActor
@@ -14,7 +14,7 @@ final class PurchaseManager {
     /// PRO section, with the purchase code kept.
     static let isOnSale = true
     static let apiKey = "appl_JjGFzNpxOuvScWuVgPqyPEzDTeR"
-    static let entitlement = "pro"
+    static let entitlement = "kelime_widget_pro"
 
     enum PurchaseResult {
         case purchased, pending, cancelled
