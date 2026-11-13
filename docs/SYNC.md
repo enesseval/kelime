@@ -36,6 +36,10 @@ oturumu buraya yönlendirir.
 | Dal | `v1.1` | `v1.1` |
 | Mağazada | 1.0.0 (28) yayında (10 Kasım), `main` | kapalı test (Play) |
 
+**Android üretim erişimi:** Play kapalı testinde 12 test kullanıcısı 13 Kasım 2026 itibarıyla 1
+gündür kayıtlı. 12 kişi kayıtlı kalırsa 14 gün koşulu en erken **26 Kasım 2026**'da doluyor;
+o gün Kontrol paneli › "Üretime başvur". Testers Community kendi panosunda 16 gün sayıyor (~28 Kasım).
+
 `main` App Store'daki 1.0'dır; reddedilirse düzeltme orada build 30+ ile yapılır. 1.1 işi `v1.1`
 dalında sürer.
 

@@ -189,11 +189,27 @@ second weekly streak freeze (an addition, nothing is taken from free users).
 
 ## Owner to-do
 
-- Supabase: enable the Google provider and add the Android OAuth client id (Credential Manager).
-  The **web** client id is set in `app/build.gradle.kts` (override with `google.webClientId` in `local.properties`).
-- RevenueCat: create the Android app, add the Play public key, put the key in
-  `local.properties` as `revenuecat.androidKey=goog_…`. Create `pro.monthly`, `pro.yearly`
-  (7-day trial) and `pro.lifetime` in Play Console when ready.
+State on 2026-11-13 (Google Play integrations):
+
+- Done: RevenueCat Android app exists in the "Kelime Widget" project; its public SDK key is the
+  default in `app/build.gradle.kts`. Google Cloud project `kelime-widget`: Android OAuth clients
+  for `com.enesseval.kilitkelime` with the Play App Signing SHA-1 and with the upload key SHA-1
+  (the debug client already existed); Google Play Android Developer API and Pub/Sub enabled;
+  service account `revenuecat@kelime-widget.iam.gserviceaccount.com` (Pub/Sub Editor, Monitoring
+  Viewer) invited to Play Console for this app only (view app info, view financial data, manage
+  orders and subscriptions); its JSON key is uploaded to RevenueCat and kept outside the repo.
+  Supabase's Google provider is enabled.
+- Owner: create the Google Payments merchant account (Play Console › Abonelikler asks for it);
+  then create `pro.monthly` (base plan `monthly`), `pro.yearly` (base plan `yearly`, offer
+  `trial-7d`) and `pro.lifetime`.
+- Owner: Google Cloud › Google Auth Platform › Audience › "Publish app". The consent screen is in
+  Testing with no test users, so Google sign-in fails for everyone until it is published (only
+  openid/email/profile, no verification needed).
+- Owner: add license testers (Play Console › Ayarlar › Lisans testi) for test purchases.
+- After the products exist (and Google has propagated the service account, up to 36 h): in
+  RevenueCat import the three Play products, attach them to the `pro` entitlement and the
+  `default` offering (monthly / annual / lifetime), "Check credentials", then "Connect to Google"
+  for developer notifications.
 - Keystore: create it and set `kelime.keystore`, `kelime.keystorePassword`, `kelime.keyAlias`,
   `kelime.keyPassword` in `local.properties`. `./gradlew :app:bundleRelease` then signs the AAB.
 - Digital Asset Links: App Links are verified at the domain root, i.e.
