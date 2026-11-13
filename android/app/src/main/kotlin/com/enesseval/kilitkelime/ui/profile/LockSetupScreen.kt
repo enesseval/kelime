@@ -215,7 +215,7 @@ fun LockSetupContent(showTitle: Boolean, onboarding: Boolean = false) {
             }
         }
         if (mode == WidgetMode.SELF_TEST) {
-            Text("Anlam ve ilk harf görünür; cevabı bir sonraki kelimede ve Bugün'de görürsün.", style = KelimeType.ui(12.sp), color = c.ink2, modifier = Modifier.padding(top = 6.dp))
+            Text("Anlam ve ilk harf 20 dakika, sonra cevap 10 dakika görünür; dilim boyunca böyle döner.", style = KelimeType.ui(12.sp), color = c.ink2, modifier = Modifier.padding(top = 6.dp))
         }
         if (!RotationScheduler.canScheduleExact(context) && Build.VERSION.SDK_INT >= 31) {
             Gap(10.dp)
