@@ -257,7 +257,8 @@ object ShareCard {
         val bitmap = render(context, content, look)
         file.outputStream().use { bitmap.compress(Bitmap.CompressFormat.PNG, 100, it) }
         bitmap.recycle()
-        Analytics.signal(Analytics.Signal.SHARE_CARD, mapOf("type" to content.type))
+        // Same parameter as iOS: `kind` = the share sheet title ("Seri", "Haftalık özet", "Sonuç", …).
+        Analytics.signal(Analytics.Signal.SHARE_CARD, mapOf("kind" to content.title))
         if (signal != Analytics.Signal.SHARE_CARD) Analytics.signal(signal)
         val uri = FileProvider.getUriForFile(context, "${context.packageName}.files", file)
         val send = Intent(Intent.ACTION_SEND).setType("image/png").putExtra(Intent.EXTRA_STREAM, uri).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)

@@ -131,6 +131,20 @@ Kategori: Eğitim. Etiketler: Dil öğrenme, Kelime, Sınav hazırlığı.
 Moderasyon: listeler ⋯ menüsünden şikayet edilir ve sahibi engellenebilir; 3 şikayet alan liste
 otomatik gizlenir (`supabase/migrations`).
 
+## Sürüm notları
+
+### 1.1.0 (versionCode 2) · Yenilikler, tr-TR (285 / 500 karakter)
+
+```
+Kilit Kelime ile kilit ekranında İngilizce kelime öğren.
+• Seri ve haftada 1 seri koruyucu
+• Haftalık özet ve paylaşım kartı
+• Oyna: Kelime Avı ve Eşleştir
+• Kendini sına: soru ve cevap sırayla
+• Hızlı Ayarlar kutucuğu ve kilit ekranı duvar kâğıdı
+• Kilit Kelime Pro'ya Profil'den ulaş
+```
+
 ## 5. Hedef kitle ve içerik
 
 - Hedef yaş: 13+ (çocuklara yönelik değil; "Aileler için tasarlandı" programına girme).

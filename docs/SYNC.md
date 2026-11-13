@@ -32,9 +32,9 @@ oturumu buraya yönlendirir.
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.1.0 | 1.1.0 |
-| Build | 33 (App Store'a gönderilecek) | versionCode 1 |
+| Build | 33 (App Store'a gönderilecek) | versionCode 2 (Play'e yüklenecek) |
 | Dal | `v1.1` | `v1.1` |
-| Mağazada | 1.0.0 (28) yayında (10 Kasım), `main` | henüz yok |
+| Mağazada | 1.0.0 (28) yayında (10 Kasım), `main` | kapalı test (Play) |
 
 `main` App Store'daki 1.0'dır; reddedilirse düzeltme orada build 30+ ile yapılır. 1.1 işi `v1.1`
 dalında sürer.
@@ -52,6 +52,18 @@ dalında sürer.
   TestFlight'ta duruyor.
 
 ## Değişiklik günlüğü
+
+### 2026-11-13 · 1.1.0 yayın öncesi plan kontrolü · iOS [ ] Android [x]
+`docs/V1_1_PLAN.md` Android'de madde madde kontrol edildi. İki fark çıktı:
+- **`share.card` parametresi:** iOS `kind` = paylaşım sayfasının başlığı ("Kartı paylaş",
+  "Bulmaca sonucu", "Sonuç", "Haftalık özet", "Seri") gönderiyor; Android `type` = word/puzzle/…
+  gönderiyordu. Android iOS'a uyduruldu (`kind`, aynı başlıklar). iOS'ta iş yok.
+- **Hatırlatma metni (iOS'ta eksik):** plan §1 "seri risk altındaysa metni değişir: '12 günlük
+  serin bu akşam bitiyor. 2 dakikalık bir tur yeter.'" diyor. Android böyle yapıyor ve o gün
+  seri günü sayıldıysa hatırlatmayı hiç göndermiyor. iOS `Reminder.swift` sabit, her gün tekrar
+  eden tek bir bildirim kuruyor ("Tekrar zamanı" / "Günde bir hatırlatma: …"); risk metni ve
+  "çalıştıysan gelme" yok. iOS: 1.1.1'de ya da şimdi, planı uygula ya da planı değiştir.
+- Android dosyası: `ui/word/ShareCard.kt`.
 
 ### 2026-11-11 · Kendini sına: soru ve cevap dönüşümlü · iOS [x] Android [x]
 **Sorun:** Kendini sına görünümünde soru yalnızca dilimin ilk 30 dakikasında görünüyor, sonra

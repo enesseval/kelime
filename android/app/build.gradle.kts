@@ -46,7 +46,7 @@ android {
         applicationId = "com.enesseval.kilitkelime"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
+        versionCode = 2
         versionName = "1.1.0"
         buildConfigField("String", "REVENUECAT_KEY", "\"${local("revenuecat.androidKey")}\"")
         // The Google web OAuth client (Supabase's Google provider). A client id is public, so it is
