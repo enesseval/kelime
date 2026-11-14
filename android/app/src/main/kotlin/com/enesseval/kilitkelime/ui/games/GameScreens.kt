@@ -98,7 +98,7 @@ import kotlinx.coroutines.launch
 import kotlin.math.abs
 import kotlin.random.Random
 
-private fun time(seconds: Int) = "%d:%02d".format(seconds / 60, seconds % 60)
+internal fun time(seconds: Int) = "%d:%02d".format(seconds / 60, seconds % 60)
 
 /**
  * Kelime Avı (docs/V1_1_PLAN.md §2a): find the hidden English words from their Turkish meanings by
@@ -508,7 +508,7 @@ private fun MatchTile(text: String?, english: Boolean, selected: Boolean, wrong:
 
 /** The games' bar (iOS): ✕ on the left, the title, a 44 dp trailing value (clock, seconds left). */
 @Composable
-private fun GameFrame(title: String, trailing: @Composable () -> Unit, content: @Composable ColumnScope.() -> Unit) {
+internal fun GameFrame(title: String, trailing: @Composable () -> Unit, content: @Composable ColumnScope.() -> Unit) {
     val c = Palette.current
     val router = LocalRouter.current
     Column(Modifier.fillMaxSize().background(c.background).statusBarsPadding().navigationBarsPadding()) {
@@ -524,7 +524,7 @@ private fun GameFrame(title: String, trailing: @Composable () -> Unit, content: 
 }
 
 @Composable
-private fun NotEnoughWords() {
+internal fun NotEnoughWords() {
     val c = Palette.current
     Column(Modifier.fillMaxSize().padding(32.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
         Text("Yeterli kelime yok", style = KelimeType.ui(20.sp, FontWeight.SemiBold), color = c.ink)
@@ -536,9 +536,10 @@ private fun NotEnoughWords() {
 /** iOS GameResultView: title, headline, two stats, the round's words, share, again and close. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun GameResult(
+internal fun GameResult(
     title: String, headline: String, stats: List<Pair<String, String>>, words: List<com.enesseval.kilitkelime.core.model.Card>,
     wordsTitle: String = "Bu turun kelimeleri", onAgain: () -> Unit, onClose: () -> Unit, share: ShareCard.Content,
+    sentences: List<Pair<String, String>> = emptyList(),
 ) {
     val c = Palette.current
     var sharing by remember { mutableStateOf(false) }
@@ -565,6 +566,17 @@ private fun GameResult(
                             card.word, style = KelimeType.english(18.sp), color = c.ink,
                             modifier = Modifier.clip(CircleShape).background(c.surface2).padding(vertical = 6.dp, horizontal = 12.dp),
                         )
+                    }
+                }
+            }
+        }
+        if (sentences.isNotEmpty()) {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text("Cümleler", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.ink)
+                for ((en, tr) in sentences) {
+                    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                        Text(en, style = KelimeType.english(18.sp), color = c.ink)
+                        Text(tr, style = KelimeType.ui(13.sp), color = c.ink2)
                     }
                 }
             }

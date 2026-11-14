@@ -91,10 +91,10 @@ enum class Tab(val route: String, val label: String) {
 }
 
 /** Screens shown full screen, without the tab bar. */
-private val fullScreen = listOf("review", "puzzle", "paywall", "wordhunt", "match", "feedback", "weekly")
+private val fullScreen = listOf("review", "puzzle", "paywall", "wordhunt", "match", "sentence", "gapfill", "feedback", "weekly")
 
 /** Full-screen rounds that can count a streak day; the reminder card waits until they close. */
-private val rounds = listOf("review", "puzzle", "wordhunt", "match")
+private val rounds = listOf("review", "puzzle", "wordhunt", "match", "sentence", "gapfill")
 
 /** Navigation for the whole app (port of AppRouter). */
 class AppRouter(val nav: NavHostController, private val onPaywall: (PaywallTrigger) -> Unit = {}) {
@@ -151,6 +151,8 @@ class AppRouter(val nav: NavHostController, private val onPaywall: (PaywallTrigg
         nav.navigate("weekly")
     }
     fun openMatch() = nav.navigate("match")
+    fun openSentence() = nav.navigate("sentence")
+    fun openGapFill() = nav.navigate("gapfill")
 
     fun showPaywall(trigger: PaywallTrigger) {
         Analytics.send(Analytics.Event.paywallShown, com.enesseval.kilitkelime.core.model.PaywallSignals.shown(trigger))
@@ -271,6 +273,8 @@ fun MainScaffold() {
                         composable("streak") { com.enesseval.kilitkelime.ui.today.StreakScreen() }
                         composable("weekly") { com.enesseval.kilitkelime.ui.today.WeeklyScreen() }
                         composable("match") { MatchScreen() }
+                        composable("sentence") { com.enesseval.kilitkelime.ui.games.SentenceScreen() }
+                        composable("gapfill") { com.enesseval.kilitkelime.ui.games.GapFillScreen() }
                     }
                 }
                 if (showBar) TabBar(route, router)

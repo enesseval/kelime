@@ -16,6 +16,8 @@ import java.time.LocalDate
  */
 enum class StreakSource(val raw: String) {
     QUICK_REVIEW("quickReview"), PUZZLE("puzzle"), WORD_SEARCH("wordSearch"), MATCH("match"),
+    /** 1.2. */
+    SENTENCE("sentence"), GAP_FILL("gapFill"),
 }
 
 /** The streak as Bugün and the streak page show it. */

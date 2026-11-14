@@ -30,6 +30,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.automirrored.filled.Sort
+import androidx.compose.material.icons.filled.Edit
 import kotlinx.coroutines.launch
 import com.enesseval.kilitkelime.core.model.ArchiveQuota
 import com.enesseval.kilitkelime.core.model.FreeTrial
@@ -69,7 +71,7 @@ import com.enesseval.kilitkelime.ui.today.DailyPuzzleInfo
 import com.enesseval.kilitkelime.ui.today.SAMPLE_GRID
 import com.enesseval.kilitkelime.ui.today.dailyPuzzleInfo
 
-private data class PlayData(val struggling: Int, val puzzle: DailyPuzzleInfo?, val matchBest: Int, val archiveLeft: Int)
+private data class PlayData(val struggling: Int, val puzzle: DailyPuzzleInfo?, val matchBest: Int, val archiveLeft: Int, val gapBest: Int)
 
 /**
  * Oyna (docs/SYNC.md 2026-11-02): the four games as equal cards in a 2 × 2 grid, and below them one
@@ -88,6 +90,7 @@ fun PlayScreen() {
             dailyPuzzleInfo(db, app.model.clock),
             GameResults.best(Game.MATCH, db),
             ArchiveQuota.left(db, app.model.clock.today, false),
+            GameResults.best(Game.GAP_FILL, db),
         )
     }
 
@@ -123,6 +126,18 @@ fun PlayScreen() {
                 icon = { IconBox(Icons.AutoMirrored.Filled.CompareArrows) },
                 unlimited = true,
             ) { router.openMatch() }
+        }
+        Row(Modifier.height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            GameCard(
+                "Cümle Kur", "Karışık kelimelerden cümle yap", modifier = Modifier.weight(1f),
+                icon = { IconBox(Icons.AutoMirrored.Filled.Sort) }, unlimited = true,
+            ) { router.openSentence() }
+            GameCard(
+                "Boşluğu Doldur",
+                if ((d?.gapBest ?: 0) > 0) "60 saniye · en iyi ${d!!.gapBest}" else "60 saniye",
+                modifier = Modifier.weight(1f),
+                icon = { IconBox(Icons.Filled.Edit) }, unlimited = true,
+            ) { router.openGapFill() }
         }
         Column(
             Modifier.fillMaxWidth().clip(RoundedCornerShape(22.dp)).background(c.surface).border(1.dp, c.line, RoundedCornerShape(22.dp)),

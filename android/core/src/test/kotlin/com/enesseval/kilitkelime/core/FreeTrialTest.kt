@@ -187,6 +187,10 @@ class FreeTrialTest {
         com.enesseval.kilitkelime.core.games.GameResults.record(Game.WORD_HUNT, 5, 6, 90, clock, db)
         assertEquals(Game.MATCH, com.enesseval.kilitkelime.core.games.FreeGames.next(db, clock))
         com.enesseval.kilitkelime.core.games.GameResults.record(Game.MATCH, 7, 7, 60, clock, db)
+        assertEquals(Game.SENTENCE, com.enesseval.kilitkelime.core.games.FreeGames.next(db, clock))
+        com.enesseval.kilitkelime.core.games.GameResults.record(Game.SENTENCE, 4, 5, 80, clock, db)
+        com.enesseval.kilitkelime.core.games.GameResults.record(Game.GAP_FILL, 9, 10, 60, clock, db)
+        // All played today: the suggestion starts over.
         assertEquals(Game.WORD_HUNT, com.enesseval.kilitkelime.core.games.FreeGames.next(db, clock))
     }
 }

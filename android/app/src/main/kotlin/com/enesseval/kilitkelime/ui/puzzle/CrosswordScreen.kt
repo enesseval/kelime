@@ -236,6 +236,8 @@ fun CrosswordScreen(dayText: String?, personal: Boolean) {
                     when (game) {
                         com.enesseval.kilitkelime.core.games.Game.WORD_HUNT -> router.openWordHunt()
                         com.enesseval.kilitkelime.core.games.Game.MATCH -> router.openMatch()
+                        com.enesseval.kilitkelime.core.games.Game.SENTENCE -> router.openSentence()
+                        com.enesseval.kilitkelime.core.games.Game.GAP_FILL -> router.openGapFill()
                     }
                 },
             )

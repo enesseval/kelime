@@ -97,6 +97,8 @@ enum class ReviewSource(override val raw: String) : RawValue {
     QUICK_REVIEW("quickReview"), PUZZLE("puzzle"), WIDGET("widget"), WORD_DETAIL("wordDetail"),
     /** 1.1 games. */
     WORD_HUNT("wordHunt"), MATCH("match"),
+    /** 1.2 games. */
+    SENTENCE("sentence"), GAP_FILL("gapFill"),
 }
 
 /** Saved state of a daily or personal crossword (and kept course grids, `…-grid`). */

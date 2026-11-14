@@ -19,6 +19,9 @@ import com.enesseval.kilitkelime.core.review.ReviewQuestion
 enum class Game(val raw: String, val title: String, val signal: String, val source: StreakSource) {
     WORD_HUNT("wordHunt", "Kelime Avı", "game.wordsearch.finished", StreakSource.WORD_SEARCH),
     MATCH("match", "Eşleştir", "game.match.finished", StreakSource.MATCH),
+    /** 1.2 (docs/V1_2_PLAN.md §4). */
+    SENTENCE("sentence", "Cümle Kur", "game.sentence.finished", StreakSource.SENTENCE),
+    GAP_FILL("gapFill", "Boşluğu Doldur", "game.gapfill.finished", StreakSource.GAP_FILL),
 }
 
 /**
@@ -61,7 +64,7 @@ object GameWords {
  * Kelime Avı, Eşleştir, then the new ones. The next one is the first not played today.
  */
 object FreeGames {
-    val order = listOf(Game.WORD_HUNT, Game.MATCH)
+    val order = listOf(Game.WORD_HUNT, Game.MATCH, Game.SENTENCE, Game.GAP_FILL)
 
     fun next(db: SqlDb, clock: AppClock): Game =
         order.firstOrNull { GameResults.playedToday(it, clock, db) == 0 } ?: order.first()
