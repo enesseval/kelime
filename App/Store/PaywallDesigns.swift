@@ -264,8 +264,8 @@ struct PaywallFrame<Content: View>: View {
         working = true
         defer { working = false }
         switch await purchases.purchase(package) {
-        case .purchased:
-            UsageCounter.count(.purchase)
+        case .purchased(let kind, let product):
+            UsageCounter.count(.purchase, parameters: UsageSignal.purchase(kind: kind, product: product).parameters)
             dismiss()
         case .pending: toast = "Satın alma onay bekliyor"
         case .cancelled: if let error = purchases.lastError { toast = error }
@@ -288,7 +288,7 @@ private func orderedFeatures(for trigger: PaywallTrigger) -> [PaywallView.Featur
     case .rotation: "rotation"
     case .personalPuzzle, .archive: "puzzle"
     case .discover: "discover"
-    case .base, .moment: nil
+    case .base, .moment, .trialEnded: nil
     }
     guard let focus else { return PaywallView.features }
     return PaywallView.features.filter { $0.id == focus } + PaywallView.features.filter { $0.id != focus }
@@ -425,6 +425,7 @@ private func subtitle(_ trigger: PaywallTrigger) -> String {
     case .discover: "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında dönsün."
     case .base: "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."
     case .moment: "Birkaç gündür buradasın. Ücretsiz olan her şey öyle kalır; Pro daha fazlasını açar."
+    case .trialEnded: "Ücretsiz olan her şey öyle kalır; Pro denemede kullandıklarını geri açar."
     }
 }
 

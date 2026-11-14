@@ -12,6 +12,8 @@ public enum PaywallTrigger: String, Sendable, CaseIterable, Identifiable {
     case discover
     /// Not a locked feature: offered once the learner has studied on a few days and liked it.
     case moment
+    /// The one-time summary when the 3-day free trial has ended.
+    case trialEnded
 
     public var id: String { rawValue }
 
@@ -26,6 +28,7 @@ public enum PaywallTrigger: String, Sendable, CaseIterable, Identifiable {
         case .examPlan: "Sınav planı"
         case .discover: "Keşfet'ten hazır listeler"
         case .moment: "Güzel gidiyorsun"
+        case .trialEnded: "3 günlük deneme bitti"
         }
     }
 }

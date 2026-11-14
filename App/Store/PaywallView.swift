@@ -45,7 +45,7 @@ struct PaywallView: View {
         case .rotation: "rotation"
         case .personalPuzzle, .archive: "puzzle"
         case .discover: "discover"
-        case .base, .moment: nil
+        case .base, .moment, .trialEnded: nil
         }
     }
 
@@ -215,6 +215,7 @@ struct PaywallView: View {
         case .discover: "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında ve Hızlı Tekrar'da dönsün."
         case .base: "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."
         case .moment: "Birkaç gündür buradasın. Ücretsiz olan her şey öyle kalır; Pro daha fazlasını açar."
+        case .trialEnded: "Ücretsiz olan her şey öyle kalır; Pro denemede kullandıklarını geri açar."
         }
     }
 
@@ -290,8 +291,8 @@ struct PaywallView: View {
         working = true
         defer { working = false }
         switch await purchases.purchase(package) {
-        case .purchased:
-            UsageCounter.count(.purchase)
+        case .purchased(let kind, let product):
+            UsageCounter.count(.purchase, parameters: UsageSignal.purchase(kind: kind, product: product).parameters)
             dismiss()
         case .pending: toast = "Satın alma onay bekliyor"
         case .cancelled: if let error = purchases.lastError { toast = error }

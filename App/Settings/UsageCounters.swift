@@ -24,8 +24,8 @@ enum UsageCounter: String, CaseIterable {
 
     private var key: String { "usage." + String(describing: self) }
 
-    static func count(_ counter: UsageCounter) {
-        Analytics.send(counter)
+    static func count(_ counter: UsageCounter, parameters: [String: String] = [:]) {
+        Analytics.send(counter, parameters: parameters)
         guard DevTools.isAvailable else { return }
         UserDefaults.standard.set(counter.value + 1, forKey: counter.key)
     }

@@ -17,7 +17,9 @@ final class PurchaseManager {
     static let entitlement = "kelime_widget_pro"
 
     enum PurchaseResult {
-        case purchased, pending, cancelled
+        /// `kind` is trial when the purchase started a free trial of the plan, else paid.
+        case purchased(kind: PurchaseKind, product: String)
+        case pending, cancelled
     }
 
     /// The current offering's packages: monthly, annual, lifetime.
@@ -89,7 +91,9 @@ final class PurchaseManager {
             let result = try await Purchases.shared.purchase(package: package)
             if result.userCancelled { return .cancelled }
             await apply(result.customerInfo)
-            return .purchased
+            let product = package.storeProduct.productIdentifier
+            let onTrial = result.customerInfo.entitlements.active.values.contains { $0.productIdentifier == product && $0.periodType == .trial }
+            return .purchased(kind: onTrial ? .trial : .paid, product: product)
         } catch {
             let code = (error as NSError).code
             if code == ErrorCode.paymentPendingError.rawValue { return .pending }

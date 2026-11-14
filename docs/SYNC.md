@@ -88,8 +88,9 @@ Android'de uygulanan ayrıntılar (iOS aynısını yapsın):
 - Paywall sıklığı incelemesi: Android'in `moment` kuralı iOS ile aynı (3 çalışma günü, en çok 2 teklif, 14 gün arayla, herhangi bir paywall'dan sonra 48 saat sessizlik, tur bitince, onboarding'de hiç). Fark yok. 27 gösterim kilitli satırlara dokunuştan geliyor (Oyna'da arşiv ve Sana Özel, Bugün'de sınav planı, Profil kartı, liste/paylaş/döndürme); artık arşivde kilit yok, deneme sırasında hiçbiri açılmaz.
 - Testler: `FreeTrialTest` (deneme, saat geri alma, özet bir kez, kota, salt okunur liste, sıradaki oyun).
 
-### 2026-11-14 · 1.2 §1 Ölçüm: paywall `source`, satın alma `kind` / `product` · iOS [ ] Android [x]
+### 2026-11-14 · 1.2 §1 Ölçüm: paywall `source`, satın alma `kind` / `product` · iOS [x] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §1. Değerler iki platformda aynı yazılır.
 Android: `PaywallSignals` (core), `trialEnded` tetikleyicisi enum'da hazır; `kind` RevenueCat `periodType == TRIAL`'dan, `product` Play taban plan ekisiz (`pro.yearly`). Test: `PaywallSignalsTest`.
+iOS: `UsageSignal` (KelimeCore) kurar; `Usage.paywallShown` → `source`, `Usage.purchase` → `kind` (RevenueCat `periodType == .trial`) + `product` (store ürün kimliği); `trialEnded` tetikleyicisi hazır. Test: `UsageSignalTests`. Dosyalar: `Models/UsageSignal.swift`, `PaywallTrigger.swift`, `App/Settings/Analytics.swift`, `AppRouter.swift`, `PurchaseManager.swift`.
 
 <!-- Yeni maddeler buraya, en yeni en üstte. Kapananlar docs/SYNC_ARCHIVE.md dosyasının başına taşınır. -->
