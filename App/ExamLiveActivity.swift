@@ -26,68 +26,94 @@ enum ExamLiveActivity {
     private static func run(_ database: AppDatabase) async {
         let clock = AppClock.system
         let plan = try? await database.reader.read { db in try ExamCountdownLine.current(db: db, clock: clock) }
-        let existing = Activity<ExamCountdownAttributes>.activities
+        let all = Activity<ExamCountdownAttributes>.activities
+        // Ended and dismissed activities are gone for our purposes; only live ones count.
+        let existing = all.filter { ExamCountdownLifetime.isCurrent(phase(of: $0)) }
         guard let plan else {
+            currentID = nil
             for activity in existing { await end(activity) }
-            startedKey = nil
             return
         }
-        // It was running before and is gone well before its lifetime was up, while the app was
-        // not there to see it: the learner swiped it away, so the switch goes off.
-        if existing.isEmpty, let started = startedKey, ExamCountdownLifetime.dismissedByUser(startedAt: started, now: .now) {
-            startedKey = nil
-            try? await database.writer.write { db in try Settings.set(.examCountdownOn, false, in: db) }
-            return
-        }
+        // No live activity while the switch is on (swiped while the app was closed, ended by the
+        // system, never started): it is simply started again below. Only a live `.dismissed`
+        // seen by `watch` turns the switch off.
         let state = ExamCountdownState(plan)
         // The count changes at midnight and on every answer; mark the content stale at the day's end.
         let stale = Calendar.current.startOfDay(for: .now).addingTimeInterval(86_400)
         let content = ActivityContent(state: state, staleDate: stale)
         let now = Date.now
         if let current = existing.first(where: { !ExamCountdownLifetime.needsRestart(startedAt: $0.attributes.startedAt, now: now) }) {
+            currentID = current.id
             for other in existing where other.id != current.id { await end(other) }
             await current.update(content)
             watch(current, database: database)
             return
         }
+        currentID = nil
         for activity in existing { await end(activity) }
         guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
         do {
             let activity = try Activity.request(attributes: ExamCountdownAttributes(startedAt: now), content: content)
-            startedKey = now
+            currentID = activity.id
             watch(activity, database: database)
         } catch {
             // Not allowed in the background or too many activities: the next sync tries again.
         }
     }
 
-    /// When the running activity was requested, kept across launches to tell a swipe from a timeout.
-    private static var startedKey: Date? {
-        get { UserDefaults.standard.object(forKey: "examActivityStartedAt") as? Date }
-        set { UserDefaults.standard.set(newValue, forKey: "examActivityStartedAt") }
+    /// Called after a swipe turned the switch off, so Ayarlar and Bugün reload.
+    static var onSwitchedOff: (() -> Void)?
+
+    /// The activity the app treats as the running one; the watchers compare against it.
+    private static var currentID: String?
+
+    private static func phase(of activity: Activity<ExamCountdownAttributes>) -> ExamCountdownLifetime.Phase {
+        switch activity.activityState {
+        case .active: .active
+        case .stale: .stale
+        case .dismissed: .dismissed
+        default: .ended
+        }
     }
 
     private static func end(_ activity: Activity<ExamCountdownAttributes>) async {
+        // Forget it first: the `.ended` and `.dismissed` this causes are not a swipe.
+        if currentID == activity.id { currentID = nil }
         watchers[activity.id]?.cancel()
         watchers[activity.id] = nil
         await activity.end(nil, dismissalPolicy: .immediate)
     }
 
-    /// A Live Activity that disappears long before its lifetime is up was swiped away: the switch
-    /// goes off with it (Android: swiping the notification turns it off).
+    /// A live `.dismissed` of the current activity is a swipe: the switch goes off with it
+    /// (Android: swiping the notification turns it off). Everything else is ignored.
     private static func watch(_ activity: Activity<ExamCountdownAttributes>, database: AppDatabase) {
         guard watchers[activity.id] == nil else { return }
-        let startedAt = activity.attributes.startedAt
-        watchers[activity.id] = Task {
+        let id = activity.id
+        watchers[id] = Task {
+            var sawEnded = false
             for await state in activity.activityStateUpdates {
-                guard state == .dismissed || state == .ended else { continue }
-                watchers[activity.id] = nil
-                startedKey = nil
-                if ExamCountdownLifetime.dismissedByUser(startedAt: startedAt, now: .now) {
-                    try? await database.writer.write { db in try Settings.set(.examCountdownOn, false, in: db) }
+                if Task.isCancelled { return }
+                if state == .ended { sawEnded = true; continue }
+                guard ExamCountdownLifetime.isSwipe(phase: phase(of: activity, state), activityID: id, currentID: currentID, sawEnded: sawEnded) else {
+                    if state == .dismissed { break }
+                    continue
                 }
+                watchers[id] = nil
+                currentID = nil
+                try? await database.writer.write { db in try Settings.set(.examCountdownOn, false, in: db) }
+                onSwitchedOff?()
                 return
             }
+            if watchers[id] != nil, !Task.isCancelled { watchers[id] = nil }
+        }
+    }
+
+    private static func phase(of activity: Activity<ExamCountdownAttributes>, _ state: ActivityState) -> ExamCountdownLifetime.Phase {
+        switch state {
+        case .active: .active
+        case .stale: .stale
+        case .dismissed: .dismissed
+        default: .ended
         }
     }
 }

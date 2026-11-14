@@ -117,7 +117,35 @@ struct ExamCountdownLineTests {
         let t = Date(timeIntervalSince1970: 1_800_000_000)
         #expect(!ExamCountdownLifetime.needsRestart(startedAt: t, now: t + 6 * 3600))
         #expect(ExamCountdownLifetime.needsRestart(startedAt: t, now: t + 7 * 3600))
-        #expect(ExamCountdownLifetime.dismissedByUser(startedAt: t, now: t + 3600))
-        #expect(!ExamCountdownLifetime.dismissedByUser(startedAt: t, now: t + 9 * 3600))
+    }
+
+    @Test func onlyLiveActivitiesAreCurrent() {
+        #expect(ExamCountdownLifetime.isCurrent(.active))
+        #expect(ExamCountdownLifetime.isCurrent(.stale))
+        #expect(!ExamCountdownLifetime.isCurrent(.ended))
+        #expect(!ExamCountdownLifetime.isCurrent(.dismissed))
+    }
+
+    @Test func onlyALiveDismissalOfTheCurrentActivityIsASwipe() {
+        func swipe(_ p: ExamCountdownLifetime.Phase, id: String = "a", current: String? = "a", sawEnded: Bool = false) -> Bool {
+            ExamCountdownLifetime.isSwipe(phase: p, activityID: id, currentID: current, sawEnded: sawEnded)
+        }
+        #expect(swipe(.dismissed))
+        #expect(!swipe(.ended)) // ended by the app or by the system
+        #expect(!swipe(.active))
+        #expect(!swipe(.stale))
+        #expect(!swipe(.dismissed, id: "old")) // not the current activity
+        #expect(!swipe(.dismissed, current: nil)) // the app ended it itself
+        #expect(!swipe(.dismissed, sawEnded: true)) // the end being cleared away
+    }
+
+    @Test func clearingTheExamSwitchesTheCountdownOff() throws {
+        let db = try AppDatabase.inMemory()
+        try db.writer.write { db in
+            try ExamCountdown.set(.yds, date: LocalDate(year: 2026, month: 12, day: 1), db: db)
+            try Settings.set(.examCountdownOn, true, in: db)
+            try ExamCountdown.clear(db: db)
+            #expect(try !Settings.bool(.examCountdownOn, in: db))
+        }
     }
 }

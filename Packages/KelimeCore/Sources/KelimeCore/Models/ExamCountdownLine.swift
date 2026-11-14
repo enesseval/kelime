@@ -89,10 +89,22 @@ public enum ExamCountdownLifetime {
         now.timeIntervalSince(startedAt) >= restartAfter
     }
 
-    /// The Live Activity went away on its own before the lifetime was up: the learner swiped it
-    /// off, so the switch goes off too (Android: a swipe turns it off).
-    public static func dismissedByUser(startedAt: Date, now: Date) -> Bool {
-        !needsRestart(startedAt: startedAt, now: now)
+    /// What the app can tell about an activity (a mirror of ActivityKit's `ActivityState`).
+    public enum Phase: Sendable { case active, stale, ended, dismissed }
+
+    /// Only a live activity counts as the current one; ended and dismissed ones are ignored and a
+    /// new one is requested when none is alive.
+    public static func isCurrent(_ phase: Phase) -> Bool {
+        phase == .active || phase == .stale
+    }
+
+    /// Whether a state update seen while the app runs means the learner swiped the activity away,
+    /// so the switch goes off. Only `.dismissed` of the current activity counts. `.ended` never
+    /// does (the app ends activities itself, and the system ends them at their lifetime), and a
+    /// `.dismissed` that follows an `.ended` is the end being cleared away, not a swipe. A missing
+    /// activity found at a later sync is never a swipe: it is simply restarted.
+    public static func isSwipe(phase: Phase, activityID: String, currentID: String?, sawEnded: Bool) -> Bool {
+        phase == .dismissed && !sawEnded && activityID == currentID
     }
 }
 

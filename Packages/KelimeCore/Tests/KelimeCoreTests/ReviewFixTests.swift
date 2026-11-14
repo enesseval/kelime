@@ -158,19 +158,19 @@ struct ReviewFix2Tests {
     let t0 = Date(timeIntervalSince1970: 1_800_000_000)
     let hour: TimeInterval = 3600
 
-    @Test func trialExpiryCountsAsAChangeAgainstTheLastStateSeen() throws {
+    @Test func aTrialThatEndedWhileTheAppWasClosedIsAChangeOnTheNextColdLaunch() throws {
         let db = try AppDatabase.inMemory()
-        var tracker = ProEntitlement.EffectiveTracker()
         try db.writer.write { try ProEntitlement.cacheTrialEnd(t0 + 72 * hour, db: $0) }
-        let during = try db.reader.read { try ProEntitlement.isPro(db: $0, now: t0 + 10 * hour) }
-        let first = tracker.changed(to: during, seed: during)
-        #expect(!first) // first sight: nothing to rebuild
-        // Hours later nothing was written, but the effective state flipped.
-        let after = try db.reader.read { try ProEntitlement.isPro(db: $0, now: t0 + 73 * hour) }
-        let flipped = tracker.changed(to: after, seed: after)
-        let again = tracker.changed(to: after, seed: after)
-        #expect(flipped)
-        #expect(!again)
+        func launch(at offset: TimeInterval) throws -> Bool {
+            try db.writer.write { db in
+                try ProEntitlement.noteEffective(try ProEntitlement.isPro(db: db, now: t0 + offset), db: db)
+            }
+        }
+        #expect(try !launch(at: 10 * hour)) // first sight: only recorded
+        #expect(try !launch(at: 20 * hour)) // unchanged
+        // The app is closed; the trial ends without any write. A new process starts with no memory.
+        #expect(try launch(at: 80 * hour))
+        #expect(try !launch(at: 81 * hour))
     }
 
     @Test func aOneOneBuyerIsKeptOffline() throws {

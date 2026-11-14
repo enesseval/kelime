@@ -88,6 +88,8 @@ public enum ExamCountdown {
     public static func clear(db: Database) throws {
         try Settings.set(.exam, nil as String?, in: db)
         try Settings.set(.examDate, nil as LocalDate?, in: db)
+        // The lock-screen countdown has nothing left to show; a later exam starts with it off.
+        try Settings.set(.examCountdownOn, false, in: db)
     }
 }
 

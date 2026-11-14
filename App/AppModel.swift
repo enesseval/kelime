@@ -129,6 +129,8 @@ final class AppModel {
                 }
             }
             #endif
+            // A swipe on the Live Activity turns the switch off behind the views' back.
+            ExamLiveActivity.onSwitchedOff = { [weak self] in self?.dataVersion += 1 }
             PhoneWatchSync.shared.start(database: db)
             await applySpeechRate()
             ReviewPrompt.noteLaunch()

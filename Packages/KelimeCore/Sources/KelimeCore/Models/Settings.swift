@@ -52,6 +52,8 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case trialEnd = "trial_end"
     /// The exam countdown Live Activity is switched on (default off, `ExamCountdownLine`).
     case examCountdownOn = "exam_countdown_on"
+    /// The effective Pro state (bought or trial) the app last acted on, `"1"` or `"0"`.
+    case lastEffectivePro = "last_effective_pro"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

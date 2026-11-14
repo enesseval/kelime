@@ -24,18 +24,15 @@ public enum ProEntitlement {
         return isTrialOpen(try Settings.int(.trialEnd, in: db), now: now)
     }
 
-    /// Remembers the Pro state the app last acted on. A trial that runs out changes the effective
-    /// state without any write, so "changed" is measured against this, never against the database.
-    public struct EffectiveTracker: Sendable {
-        public private(set) var last: Bool?
-        public init(last: Bool? = nil) { self.last = last }
-
-        /// True when `now` differs from the last state seen; `seed` stands in for the first call.
-        public mutating func changed(to now: Bool, seed: Bool) -> Bool {
-            let before = last ?? seed
-            last = now
-            return before != now
-        }
+    /// Records the effective Pro state (bought or on the trial) the app acts on and tells whether
+    /// it differs from the one recorded before. The record lives in the database, so a trial that
+    /// ended while the app was closed shows up on the next cold launch. The first ever call only
+    /// records.
+    public static func noteEffective(_ now: Bool, db: Database) throws -> Bool {
+        let before = try Settings.string(.lastEffectivePro, in: db)
+        if before != (now ? "1" : "0") { try Settings.set(.lastEffectivePro, now, in: db) }
+        guard let before else { return false }
+        return (before == "1") != now
     }
 
     public static func isTrialOpen(_ trialEnd: Int?, now: Date) -> Bool {

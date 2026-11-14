@@ -117,7 +117,6 @@ struct SettingsView: View {
                             if on && !app.isPro {
                                 app.router.showPaywall(.examPlan)
                             } else {
-                                if on { UsageCounter.count(.examCountdown) }
                                 Task { await app.write(rebuildQueue: false) { db in try Settings.set(.examCountdownOn, on, in: db) } }
                             }
                         }
@@ -424,7 +423,7 @@ struct SettingsView: View {
             if let exam {
                 try ExamCountdown.set(exam.0, date: exam.1, db: db)
             } else {
-                try ExamCountdown.clear(db: db)
+                try ExamCountdown.clear(db: db) // also switches the lock-screen countdown off
             }
         }
     }

@@ -37,7 +37,7 @@ struct TodayData: Sendable {
         return TodayData(
             hero: try heroID.flatMap { try WordQueries.item(id: $0, db: db) },
             stats: stats,
-            examCountdown: exam.map { "\($0.exam.rawValue)\($0.exam == .yds ? "'ye" : "'e") \($0.days) gün" },
+            examCountdown: exam.map { "\(ExamCountdownLine.toExam($0.exam)) \($0.days) gün" },
             widgetSources: sources.joined(separator: " · "),
             bannerDismissed: try Settings.bool(.widgetBannerDismissed, in: db),
             course: try Curriculum.state(db: db),
@@ -248,7 +248,6 @@ struct ExamPlanCard: View {
             // Suggested once there is an exam date (the plan exists) and the learner is Pro.
             if model.isPro && !lockCountdownOn {
                 Button("Kilit ekranında geri sayım göster") {
-                    UsageCounter.count(.examCountdown)
                     Task { await model.write(rebuildQueue: false) { db in try Settings.set(.examCountdownOn, true, in: db) } }
                 }
                 .buttonStyle(OutlineButtonStyle())
