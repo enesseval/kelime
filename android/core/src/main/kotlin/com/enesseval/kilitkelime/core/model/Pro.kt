@@ -65,7 +65,9 @@ object PaywallMoment {
     const val QUIET_AFTER_PAYWALL_MS = 48L * 3600 * 1000
 
     /** Times are epoch ms; 0 = never. */
-    fun shouldOffer(studyDays: Int, offers: Int, lastOffer: Long, lastPaywall: Long, now: Long): Boolean {
+    fun shouldOffer(studyDays: Int, offers: Int, lastOffer: Long, lastPaywall: Long, now: Long, isPro: Boolean = false): Boolean {
+        // Pro includes the running free trial: no unprompted paywall while it lasts (docs/V1_2_PLAN.md §2).
+        if (isPro) return false
         if (studyDays < STUDY_DAYS || offers >= MAX_OFFERS) return false
         if (lastOffer > 0 && now - lastOffer < MS_BETWEEN) return false
         if (lastPaywall > 0 && now - lastPaywall < QUIET_AFTER_PAYWALL_MS) return false

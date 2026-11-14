@@ -29,6 +29,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.foundation.shape.CircleShape
+import kotlinx.coroutines.launch
+import com.enesseval.kilitkelime.core.model.ArchiveQuota
+import com.enesseval.kilitkelime.core.model.FreeTrial
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -65,7 +69,7 @@ import com.enesseval.kilitkelime.ui.today.DailyPuzzleInfo
 import com.enesseval.kilitkelime.ui.today.SAMPLE_GRID
 import com.enesseval.kilitkelime.ui.today.dailyPuzzleInfo
 
-private data class PlayData(val struggling: Int, val puzzle: DailyPuzzleInfo?, val matchBest: Int)
+private data class PlayData(val struggling: Int, val puzzle: DailyPuzzleInfo?, val matchBest: Int, val archiveLeft: Int)
 
 /**
  * Oyna (docs/SYNC.md 2026-11-02): the four games as equal cards in a 2 × 2 grid, and below them one
@@ -77,11 +81,13 @@ fun PlayScreen() {
     val router = LocalRouter.current
     val c = Palette.current
     val pro by app.model.isPro.collectAsState()
-    val data by loadData { db ->
+    val scope = androidx.compose.runtime.rememberCoroutineScope()
+    val data by loadData(pro) { db ->
         PlayData(
             db.int("SELECT COUNT(*) FROM card_state WHERE state = 'struggling'"),
             dailyPuzzleInfo(db, app.model.clock),
             GameResults.best(Game.MATCH, db),
+            ArchiveQuota.left(db, app.model.clock.today, false),
         )
     }
 
@@ -99,6 +105,7 @@ fun PlayScreen() {
                 strong = (d?.struggling ?: 0) > 0,
                 modifier = Modifier.weight(1f),
                 icon = { IconBox(Icons.Filled.Bolt) },
+                unlimited = true,
             ) { router.startQuickReview() }
             GameCard(
                 "Günün Bulmacası",
@@ -108,23 +115,30 @@ fun PlayScreen() {
             ) { router.openPuzzle() }
         }
         Row(Modifier.height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            GameCard("Kelime Avı", "Anlamından bul", modifier = Modifier.weight(1f), icon = { IconBox(Icons.Filled.Search) }) { router.openWordHunt() }
+            GameCard("Kelime Avı", "Anlamından bul", modifier = Modifier.weight(1f), icon = { IconBox(Icons.Filled.Search) }, unlimited = true) { router.openWordHunt() }
             GameCard(
                 "Eşleştir",
                 if ((d?.matchBest ?: 0) > 0) "60 saniye · en iyi ${d!!.matchBest}" else "60 saniye",
                 modifier = Modifier.weight(1f),
                 icon = { IconBox(Icons.AutoMirrored.Filled.CompareArrows) },
+                unlimited = true,
             ) { router.openMatch() }
         }
         Column(
             Modifier.fillMaxWidth().clip(RoundedCornerShape(22.dp)).background(c.surface).border(1.dp, c.line, RoundedCornerShape(22.dp)),
         ) {
-            ProRow("Bulmaca arşivi", "Geçmiş günlerin bulmacaları", pro) {
-                if (pro) router.openArchive() else router.showPaywall(PaywallTrigger.ARCHIVE)
-            }
+            // Free learners get 2 archive puzzles a week (Monday renews); the archive page spends them.
+            ProRow(
+                "Bulmaca arşivi",
+                if (pro) "Geçmiş günlerin bulmacaları" else (d?.archiveLeft ?: 2).let { "Haftada 2 bulmaca · bu hafta $it hakkın var" },
+                true,
+            ) { router.openArchive() }
             Divider()
             ProRow("Sana Özel Bulmaca", "Zorlandığın ve öğrendiğin kelimelerden", pro) {
-                if (pro) router.openPersonalPuzzle() else router.showPaywall(PaywallTrigger.PERSONAL_PUZZLE)
+                if (pro) {
+                    scope.launch { app.model.read { db -> FreeTrial.notePersonal(db, app.model.clock.now.toEpochMilli()) } }
+                    router.openPersonalPuzzle()
+                } else router.showPaywall(PaywallTrigger.PERSONAL_PUZZLE)
             }
         }
     }
@@ -132,14 +146,22 @@ fun PlayScreen() {
 
 /** One game: a 44 dp blue box with the icon, the title (serif 23) and up to two lines; at least 150 dp high. */
 @Composable
-private fun GameCard(title: String, subtitle: String, modifier: Modifier, strong: Boolean = false, icon: @Composable () -> Unit, onClick: () -> Unit) {
+private fun GameCard(title: String, subtitle: String, modifier: Modifier, strong: Boolean = false, unlimited: Boolean = false, icon: @Composable () -> Unit, onClick: () -> Unit) {
     val c = Palette.current
     Column(
         modifier.fillMaxHeight().heightIn(min = 150.dp).clip(RoundedCornerShape(22.dp)).background(c.surface)
             .border(1.dp, c.line, RoundedCornerShape(22.dp)).clickable(role = Role.Button, onClick = onClick).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        icon()
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Top) {
+            icon()
+            Box(Modifier.weight(1f))
+            // Free and without a limit (docs/V1_2_PLAN.md §3).
+            if (unlimited) Text(
+                "Sınırsız", style = KelimeType.ui(11.sp, FontWeight.SemiBold), color = c.greenInk,
+                modifier = Modifier.clip(CircleShape).background(c.greenBackground).padding(horizontal = 8.dp, vertical = 3.dp),
+            )
+        }
         Box(Modifier.weight(1f))
         Text(title, style = KelimeType.english(23.sp), color = c.ink, maxLines = 1, softWrap = false, overflow = TextOverflow.Ellipsis)
         Text(
@@ -197,6 +219,9 @@ fun PuzzleArchiveScreen() {
     val router = LocalRouter.current
     val context = androidx.compose.ui.platform.LocalContext.current
     val c = Palette.current
+    val pro by app.model.isPro.collectAsState()
+    val scope = androidx.compose.runtime.rememberCoroutineScope()
+    val left by loadData(pro) { db -> ArchiveQuota.left(db, app.model.clock.today, pro) }
     val rows by loadData { db ->
         val prefs = Preferences.load(db)
         (1..30).mapNotNull { offset ->
@@ -213,11 +238,32 @@ fun PuzzleArchiveScreen() {
     }
     PushedScreen("Arşiv") {
         val list = rows ?: return@PushedScreen
+        if (!pro) {
+            Text(
+                "Bu hafta ${left ?: 0} bulmaca hakkın var. Her pazartesi 2 hak yenilenir; başladığın bulmacaya tekrar girmek hak harcamaz.",
+                style = KelimeType.ui(13.sp), color = c.ink2, modifier = Modifier.padding(bottom = 12.dp),
+            )
+        }
         Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(c.surface)) {
             list.forEachIndexed { i, row ->
                 if (i > 0) Divider()
                 Row(
-                    Modifier.fillMaxWidth().heightIn(min = 50.dp).clickable { router.openPuzzle(row.day.toString()) }.padding(horizontal = 16.dp, vertical = 8.dp),
+                    Modifier.fillMaxWidth().heightIn(min = 50.dp).clickable {
+                        scope.launch {
+                            val today = app.model.clock.today
+                            val now = app.model.clock.now.toEpochMilli()
+                            val allowed = app.model.write("archive") { db ->
+                                val played = row.solved > 0 || row.completed
+                                val ok = ArchiveQuota.canOpen(db, today, row.day, pro, played)
+                                if (ok) {
+                                    if (!played) ArchiveQuota.consume(db, today, row.day, pro)
+                                    FreeTrial.noteArchive(db, row.day, now)
+                                }
+                                ok
+                            }
+                            if (allowed) router.openPuzzle(row.day.toString()) else router.showPaywall(PaywallTrigger.ARCHIVE)
+                        }
+                    }.padding(horizontal = 16.dp, vertical = 8.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {

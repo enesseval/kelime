@@ -61,7 +61,11 @@ object LearningStore {
  */
 object ProgressReset {
     const val EPOCH = 1
-    private val keptSettings = listOf(SettingKey.CONTENT_VERSION, SettingKey.CONTENT_CHECKED_AT, SettingKey.IS_PRO)
+    private val keptSettings = listOf(
+        SettingKey.CONTENT_VERSION, SettingKey.CONTENT_CHECKED_AT, SettingKey.IS_PRO, SettingKey.PURCHASED,
+        SettingKey.TRIAL_START, SettingKey.TRIAL_SEEN, SettingKey.TRIAL_SUMMARY_SHOWN, SettingKey.TRIAL_ENDED_SENT,
+        SettingKey.TRIAL_ARCHIVE_DAYS, SettingKey.TRIAL_PERSONAL, SettingKey.ARCHIVE_QUOTA,
+    )
 
     fun reset(db: SqlDb) = db.transaction {
         for (table in listOf("card_state", "review_log", "puzzle_progress", "widget_queue", "streak_day", "game_result", "widget_shown")) {

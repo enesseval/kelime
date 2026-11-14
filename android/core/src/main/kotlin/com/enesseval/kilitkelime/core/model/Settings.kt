@@ -33,6 +33,18 @@ enum class SettingKey(val key: String) {
     LONGEST_STREAK("longest_streak"),
     /** 1.1: best Eşleştir score. */
     MATCH_BEST("match_best"),
+    /** 1.2: a store purchase (the entitlement). `IS_PRO` is purchase or running free trial. */
+    PURCHASED("purchased"),
+    /** 1.2: the free trial (docs/V1_2_PLAN.md §2): start and latest time seen, epoch ms; summary and end-signal flags. */
+    TRIAL_START("trial_start"),
+    TRIAL_SEEN("trial_seen"),
+    TRIAL_SUMMARY_SHOWN("trial_summary_shown"),
+    TRIAL_ENDED_SENT("trial_ended_sent"),
+    /** 1.2: what the trial used, for the summary page. */
+    TRIAL_ARCHIVE_DAYS("trial_archive_days"),
+    TRIAL_PERSONAL("trial_personal"),
+    /** 1.2: free archive puzzles opened this week: "monday|day,day". */
+    ARCHIVE_QUOTA("archive_quota"),
 }
 
 /** Typed access to the `settings` table. Values are stored as text. */

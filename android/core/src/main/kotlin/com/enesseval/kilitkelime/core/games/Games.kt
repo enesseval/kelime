@@ -56,6 +56,17 @@ object GameWords {
     }
 }
 
+/**
+ * The free, unlimited games in the order the puzzle's result screen suggests them (docs/V1_2_PLAN.md §3):
+ * Kelime Avı, Eşleştir, then the new ones. The next one is the first not played today.
+ */
+object FreeGames {
+    val order = listOf(Game.WORD_HUNT, Game.MATCH)
+
+    fun next(db: SqlDb, clock: AppClock): Game =
+        order.firstOrNull { GameResults.playedToday(it, clock, db) == 0 } ?: order.first()
+}
+
 /** Finished rounds (`game_result`); finishing a game counts the day for the streak. */
 object GameResults {
     /** Records the round; returns true when it newly counted today for the streak. */

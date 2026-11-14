@@ -68,8 +68,18 @@ Kurallar `docs/V1_2_PLAN.md` §5. iOS Live Activity, Android kalıcı bildirim. 
 Kurallar `docs/V1_2_PLAN.md` §4. Sinyaller `game.sentence.finished`, `game.gapfill.finished`.
 Testler: plan "Test" (uygunluk taraması dahil).
 
-### 2026-11-14 · 1.2 §2–§3 Ters deneme (3 gün), arşivde haftada 2, ücretsiz oyunlar görünür · iOS [ ] Android [ ]
+### 2026-11-14 · 1.2 §2–§3 Ters deneme (3 gün), arşivde haftada 2, ücretsiz oyunlar görünür · iOS [ ] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §2 ve §3. Testler: plan "Test".
+Android'de uygulanan ayrıntılar (iOS aynısını yapsın):
+- Deneme: ilk açılışta başlar (uygulama güncelleyen mevcut kullanıcılar da ilk 1.2 açılışında 3 gün alır), 72 saat. En son görülen zaman saklanır, saat geri alınınca süre uzamaz. `isPro = satın alma || deneme`; ayrı `PURCHASED` kaydı. Paywall yalnızca satın almayla kapanır, deneme sırasında Profil'den açılabilir. İlerleme sıfırlaması denemeyi ve satın almayı silmez.
+- `trial.started` ilk açılışta, `trial.ended` bitiş ilk fark edildiğinde (bir kez). Özet sayfası bitişten sonra bir kez, uygulama açıkken başka tam ekran sayfa yokken (`source: trialEnded`); satın alan görmez.
+- Özet satırları (sıfırlar yazılmaz): "Arşivden N bulmaca", "Sana özel N bulmaca", "N kendi listen" (1'den çoksa), "Sınav planın %X" (sınav listesinde öğrenilen kelime oranı).
+- Arşiv (ücretsiz): haftada 2 hak, pazartesi yenilenir. Bir bulmacayı açmak hakkı harcar; bu hafta açılmış ya da daha önce oynanmış (çözülmüş kelimesi olan) bulmaca hak harcamadan açılır. Hak bitince arşiv satırı `archive` paywall'ı açar. Arşiv satırı herkes için açık, alt yazı "Haftada 2 bulmaca · bu hafta N hakkın var".
+- Kendi listeleri: ücretsizde ikinci ve sonraki liste salt okunur (kelime ekle/çıkar, ad değiştirme kapalı; "Pro ile düzenle"); silme açık, hiçbir şey silinmez. İçe aktarılan listeler etkilenmez.
+- "Sınırsız" etiketi: Hızlı Tekrar, Kelime Avı, Eşleştir kartlarında; Günün Bulmacası'nda yok (günde bir tane, sınırsız değil).
+- Bulmaca sonu: yalnızca Günün Bulmacası'nda "Devam et: <oyun>"; sıra Kelime Avı, Eşleştir, (yeni oyunlar); o gün oynanmamış ilk oyun önerilir, hepsi oynandıysa ilki.
+- Paywall sıklığı incelemesi: Android'in `moment` kuralı iOS ile aynı (3 çalışma günü, en çok 2 teklif, 14 gün arayla, herhangi bir paywall'dan sonra 48 saat sessizlik, tur bitince, onboarding'de hiç). Fark yok. 27 gösterim kilitli satırlara dokunuştan geliyor (Oyna'da arşiv ve Sana Özel, Bugün'de sınav planı, Profil kartı, liste/paylaş/döndürme); artık arşivde kilit yok, deneme sırasında hiçbiri açılmaz.
+- Testler: `FreeTrialTest` (deneme, saat geri alma, özet bir kez, kota, salt okunur liste, sıradaki oyun).
 
 ### 2026-11-14 · 1.2 §1 Ölçüm: paywall `source`, satın alma `kind` / `product` · iOS [ ] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §1. Değerler iki platformda aynı yazılır.

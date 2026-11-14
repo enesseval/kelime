@@ -39,6 +39,7 @@ class KilitKelimeApp : Application() {
         account = AccountManager(this, model, purchases)
         model.scope.launch {
             model.open()
+            model.refreshPro()
             lockScreen.refresh("launch")
             lockScreen.scheduleRotation()
             Reminder.schedule(this@KilitKelimeApp, model.read { db -> Settings.int(db, SettingKey.REMINDER_TIME) })

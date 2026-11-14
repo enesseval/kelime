@@ -117,6 +117,8 @@ fun UserListScreen(listID: String) {
     val pro by app.model.isPro.collectAsState()
     val account by app.account.state.collectAsState()
     val list by loadData(listID) { db -> UserLists.list(listID, db) }
+    val readOnly by loadData(listID, pro) { db -> UserLists.isReadOnly(listID, pro, db) }
+    val locked = readOnly == true
     val words by loadData(listID) { db -> UserLists.cards(listID, db).mapNotNull { WordQueries.item(it.id, db) } }
     var menu by remember { mutableStateOf(false) }
     var renaming by remember { mutableStateOf(false) }
@@ -150,7 +152,7 @@ fun UserListScreen(listID: String) {
                                 app.model.read { db -> UserLists.export(listID, db) }?.let { shareListFile(context, it); Analytics.send(Analytics.Event.listShared) }
                             }
                         })
-                        DropdownMenuItem(text = { Text("Adını değiştir") }, onClick = { menu = false; renaming = true })
+                        DropdownMenuItem(text = { Text("Adını değiştir") }, onClick = { menu = false; if (locked) router.showPaywall(PaywallTrigger.LISTS) else renaming = true })
                         DropdownMenuItem(text = { Text("Listeyi sil", color = c.amberInk) }, onClick = { menu = false; deleting = true })
                     }
                 }
@@ -166,7 +168,12 @@ fun UserListScreen(listID: String) {
                 if (items.isEmpty()) "Kelime ekle; listeyi açınca widget'ta ve Hızlı Tekrar'da görünür." else "${items.size} kelime" + if (current.enabled) " · widget'ta" else "",
                 style = KelimeType.ui(14.sp), color = c.ink2,
             )
-            PrimaryButton("+  Kelime ekle", height = 50.dp) { adding = true }
+            if (locked) {
+                Text("Bu liste salt okunur: ücretsizde yalnızca ilk listen düzenlenir. Hiçbir şey silinmedi; Pro ile yeniden düzenleyebilirsin.", style = KelimeType.ui(13.sp), color = c.amberInk)
+                PrimaryButton("Pro ile düzenle", height = 50.dp) { router.showPaywall(PaywallTrigger.LISTS) }
+            } else {
+                PrimaryButton("+  Kelime ekle", height = 50.dp) { adding = true }
+            }
         }
         Gap(14.dp)
         for (item in items) {
@@ -176,7 +183,7 @@ fun UserListScreen(listID: String) {
                     it == SwipeToDismissBoxValue.EndToStart
                 })
                 SwipeToDismissBox(
-                    state, enableDismissFromStartToEnd = false,
+                    state, enableDismissFromStartToEnd = false, enableDismissFromEndToStart = !locked,
                     backgroundContent = {
                         Box(Modifier.fillMaxSize().background(c.amberInk).padding(horizontal = 16.dp), contentAlignment = Alignment.CenterEnd) {
                             Text("Listeden çıkar", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = Color.White)
@@ -185,7 +192,7 @@ fun UserListScreen(listID: String) {
                 ) { com.enesseval.kilitkelime.ui.words.WordRow(item) { router.openWord(item.id) } }
             }
         }
-        if (items.isNotEmpty()) {
+        if (items.isNotEmpty() && !locked) {
             Gap(8.dp)
             Text("Bir kelimeyi listeden çıkarmak için sola kaydır.", style = KelimeType.ui(12.sp), color = c.ink2, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
         }

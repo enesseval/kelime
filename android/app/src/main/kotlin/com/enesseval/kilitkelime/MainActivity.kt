@@ -36,7 +36,10 @@ class MainActivity : ComponentActivity() {
         val app = application as KilitKelimeApp
         // The slot may have changed while the app was away; also pick up a new day.
         app.model.scope.launch {
-            if (app.model.isOpen) app.model.changed("resume")
+            if (app.model.isOpen) {
+                app.model.refreshPro()
+                app.model.changed("resume")
+            }
             app.account.sync()
         }
     }

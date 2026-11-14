@@ -187,13 +187,17 @@ fun PaywallScreen(trigger: PaywallTrigger) {
     val c = Palette.current
     val scope = rememberCoroutineScope()
     val state by app.purchases.state.collectAsState()
-    val pro by app.model.isPro.collectAsState()
+    // The paywall closes on a purchase, not on the free trial (which also makes isPro true).
+    val purchased by app.model.purchased.collectAsState()
     var plan by remember { mutableStateOf(Plan.ANNUAL) }
     var working by remember { mutableStateOf(false) }
     var appeared by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) { appeared = true; app.purchases.loadProducts() }
-    LaunchedEffect(pro) { if (pro) router.back() }
+    LaunchedEffect(purchased) { if (purchased) router.back() }
+    val trialSummary by com.enesseval.kilitkelime.ui.loadData(trigger) { db ->
+        if (trigger == PaywallTrigger.TRIAL_ENDED) com.enesseval.kilitkelime.core.model.FreeTrial.summary(db, app.model.clock) else null
+    }
 
     val selected = state.pkg(plan)
     val trial = state.annual?.hasTrial() == true
@@ -233,6 +237,7 @@ fun PaywallScreen(trigger: PaywallTrigger) {
                     Text(trigger.headline, style = KelimeType.english(34.sp).copy(letterSpacing = (-0.8).sp), color = white, textAlign = TextAlign.Center)
                     Text(subtitle(trigger), style = KelimeType.ui(15.sp), color = white.copy(alpha = 0.75f), textAlign = TextAlign.Center)
                 }
+                trialSummary?.let { TrialSummaryCard(it) }
                 // Features: two columns of tiles; the reason the paywall opened comes first, in blue.
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     ordered.chunked(2).forEachIndexed { row, pair ->
@@ -284,6 +289,12 @@ fun PaywallScreen(trigger: PaywallTrigger) {
                     else Text(cta, style = KelimeType.ui(16.sp, FontWeight.SemiBold), color = c.onAccent)
                 }
                 Text(legal, style = KelimeType.ui(11.sp), color = white.copy(alpha = 0.6f), textAlign = TextAlign.Center, minLines = 2, maxLines = 3)
+                if (trigger == PaywallTrigger.TRIAL_ENDED) {
+                    Text(
+                        "Ücretsiz devam et", style = KelimeType.ui(15.sp, FontWeight.SemiBold), color = white,
+                        modifier = Modifier.heightIn(min = 44.dp).clickable { router.back() }.wrapContentHeight(),
+                    )
+                }
                 Row(Modifier.heightIn(min = 30.dp), horizontalArrangement = Arrangement.spacedBy(18.dp), verticalAlignment = Alignment.CenterVertically) {
                     Link("Geri yükle") {
                         scope.launch { router.toast = if (app.purchases.restore()) "Pro geri yüklendi" else (app.purchases.state.value.error ?: "Geri yüklenecek satın alma bulunamadı") }
@@ -303,6 +314,29 @@ fun PaywallScreen(trigger: PaywallTrigger) {
                     Icon(Icons.Default.Close, null, tint = white.copy(alpha = 0.9f), modifier = Modifier.size(18.dp))
                 }
             }
+        }
+    }
+}
+
+/** The trial's end: what the 3 days used, in numbers (zero counts left out). */
+@Composable
+private fun TrialSummaryCard(summary: com.enesseval.kilitkelime.core.model.FreeTrial.Summary) {
+    val c = Palette.current
+    val lines = listOfNotNull(
+        summary.archivePuzzles.takeIf { it > 0 }?.let { "Arşivden $it bulmaca" },
+        summary.personalPuzzles.takeIf { it > 0 }?.let { "Sana özel $it bulmaca" },
+        summary.ownLists.takeIf { it > 1 }?.let { "$it kendi listen" },
+        summary.examPercent?.takeIf { it > 0 }?.let { "Sınav planın %$it" },
+    )
+    Column(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(Color.White.copy(alpha = 0.08f)).padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        Text("3 günde kullandıkların", style = KelimeType.ui(13.sp, FontWeight.Bold), color = c.accent)
+        if (lines.isEmpty()) {
+            Text("Pro özelliklerini bu hafta denemedin. Hepsi hâlâ burada.", style = KelimeType.ui(15.sp), color = Color.White.copy(alpha = 0.85f))
+        } else {
+            for (line in lines) Text(line, style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = Color.White)
         }
     }
 }

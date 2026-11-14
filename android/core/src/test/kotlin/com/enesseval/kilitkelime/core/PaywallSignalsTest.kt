@@ -8,7 +8,7 @@ import org.junit.Test
 class PaywallSignalsTest {
     @Test fun everyTriggerSendsItsOwnNameAsSource() {
         val expected = listOf("moment", "archive", "personalPuzzle", "examPlan", "lists", "share", "discover", "rotation", "base", "trialEnded")
-        assertEquals(expected.sorted(), PaywallTrigger.entries.map { PaywallSignals.shown(it)["source"] }.sorted())
+        assertEquals(expected.sorted(), PaywallTrigger.entries.map { PaywallSignals.shown(it).getValue("source") }.sorted())
         PaywallTrigger.entries.forEach { assertEquals(mapOf("source" to it.raw), PaywallSignals.shown(it)) }
     }
 

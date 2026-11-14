@@ -9,7 +9,7 @@ object PaywallMomentStore {
         val p = model.prefs.current()
         if (p.paywallMomentCount >= PaywallMoment.MAX_OFFERS) return false
         val days = model.read { db -> PaywallMoment.studyDays(db) }
-        return PaywallMoment.shouldOffer(days, p.paywallMomentCount, p.paywallMomentLast, p.paywallLast, now)
+        return PaywallMoment.shouldOffer(days, p.paywallMomentCount, p.paywallMomentLast, p.paywallLast, now, model.isPro.value)
     }
 
     /** Called for every paywall; the offer's own count only moves for [PaywallTrigger.MOMENT]. */

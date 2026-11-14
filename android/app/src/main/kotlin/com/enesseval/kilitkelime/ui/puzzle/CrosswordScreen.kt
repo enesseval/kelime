@@ -74,6 +74,7 @@ import com.enesseval.kilitkelime.core.model.Preferences
 import com.enesseval.kilitkelime.core.model.PuzzleProgress
 import com.enesseval.kilitkelime.ui.LocalApp
 import com.enesseval.kilitkelime.ui.LocalRouter
+import com.enesseval.kilitkelime.ui.loadData
 import com.enesseval.kilitkelime.ui.components.EmptyText
 import com.enesseval.kilitkelime.ui.components.Gap
 import com.enesseval.kilitkelime.ui.components.Kicker
@@ -98,6 +99,7 @@ fun CrosswordScreen(dayText: String?, personal: Boolean) {
     val context = LocalContext.current
     val c = Palette.current
     val scope = rememberCoroutineScope()
+    val nextGame by loadData { db -> com.enesseval.kilitkelime.core.games.FreeGames.next(db, app.model.clock) }
     var loaded by remember { mutableStateOf<Loaded?>(null) }
     var failed by remember { mutableStateOf(false) }
     var game by remember { mutableStateOf<CrosswordGame?>(null) }
@@ -226,7 +228,17 @@ fun CrosswordScreen(dayText: String?, personal: Boolean) {
         when {
             failed -> Box(Modifier.padding(20.dp)) { EmptyText("Bulmaca hazırlanamadı") }
             l == null || g == null -> {}
-            completedAt != null -> Completion(g, l, seconds, onAgain = { confirmRestart = true }, onClose = { router.back() })
+            completedAt != null -> Completion(
+                g, l, seconds, onAgain = { confirmRestart = true }, onClose = { router.back() },
+                next = if (l.isDaily) nextGame else null,
+                onNext = { game ->
+                    router.back()
+                    when (game) {
+                        com.enesseval.kilitkelime.core.games.Game.WORD_HUNT -> router.openWordHunt()
+                        com.enesseval.kilitkelime.core.games.Game.MATCH -> router.openMatch()
+                    }
+                },
+            )
             paused -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     Text("Duraklatıldı", style = KelimeType.ui(20.sp, FontWeight.SemiBold), color = c.ink)
@@ -336,7 +348,10 @@ private fun ClueBar(game: CrosswordGame, cards: Map<String, Card>, onStep: (Int)
 /** iOS PuzzleCompletionView: title, "6 kelime, 4 dakika.", time and hints, helped words, the spoiler-free grid. */
 @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
-private fun Completion(game: CrosswordGame, loaded: Loaded, seconds: Int, onAgain: () -> Unit, onClose: () -> Unit) {
+private fun Completion(
+    game: CrosswordGame, loaded: Loaded, seconds: Int, onAgain: () -> Unit, onClose: () -> Unit,
+    next: com.enesseval.kilitkelime.core.games.Game?, onNext: (com.enesseval.kilitkelime.core.games.Game) -> Unit,
+) {
     val c = Palette.current
     val helped = game.puzzle.orderedEntries.filter { it.id in game.helped }.mapNotNull { loaded.cards[it.cardID] }
     val helpedCells = game.puzzle.entries.filter { it.id in game.helped }.flatMap { it.cells }.map { it.row to it.col }.toSet()
@@ -378,6 +393,8 @@ private fun Completion(game: CrosswordGame, loaded: Loaded, seconds: Int, onAgai
         }
         Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
             PrimaryButton("Sonucu paylaş", height = 52.dp) { sharing = true }
+            // The next free game (docs/V1_2_PLAN.md §3); Pro is not pushed here.
+            if (next != null) com.enesseval.kilitkelime.ui.components.OutlineButton("Devam et: ${next.title}", Modifier.fillMaxWidth()) { onNext(next) }
             Row(Modifier.fillMaxWidth().heightIn(min = 44.dp), verticalAlignment = Alignment.CenterVertically) {
                 Text("Yeniden çöz", style = KelimeType.ui(15.sp), color = c.ink2, modifier = Modifier.clickable(onClick = onAgain).padding(vertical = 10.dp))
                 Box(Modifier.weight(1f))

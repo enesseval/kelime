@@ -116,13 +116,13 @@ class PurchaseManager(private val context: Context, private val model: AppModel)
 
     /** "Satın alımları geri yükle". */
     suspend fun restore(): Boolean {
-        if (!configured) return model.isPro.value
+        if (!configured) return model.purchased.value
         try {
             apply(Purchases.sharedInstance.awaitRestore())
         } catch (e: PurchasesException) {
             _state.value = _state.value.copy(error = "Geri yükleme tamamlanamadı")
         }
-        return model.isPro.value
+        return model.purchased.value
     }
 
     suspend fun logIn(userID: String) {
@@ -138,7 +138,7 @@ class PurchaseManager(private val context: Context, private val model: AppModel)
     /** Reads the entitlement again. */
     suspend fun refreshEntitlement() {
         if (!configured) {
-            model.setPro(false)
+            model.setPurchased(false)
             return
         }
         runCatching { apply(Purchases.sharedInstance.awaitCustomerInfo()) }
@@ -148,6 +148,6 @@ class PurchaseManager(private val context: Context, private val model: AppModel)
     private suspend fun apply(info: CustomerInfo) {
         val products = info.activeSubscriptions + info.allPurchasedProductIds.filter { it.startsWith(ProEntitlement.LIFETIME_ID) }
         val active = info.entitlements[ProEntitlement.ENTITLEMENT]?.isActive == true || ProEntitlement.isPro(products)
-        model.setPro(active)
+        model.setPurchased(active)
     }
 }

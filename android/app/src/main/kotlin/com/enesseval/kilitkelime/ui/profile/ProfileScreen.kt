@@ -114,7 +114,8 @@ fun ProfileScreen() {
     val context = LocalContext.current
     val c = Palette.current
     val scope = rememberCoroutineScope()
-    val pro by app.model.isPro.collectAsState()
+    val pro by app.model.purchased.collectAsState()
+    val trial by app.model.trial.collectAsState()
     val account by app.account.state.collectAsState()
     val lock by app.model.prefs.flow.collectAsState(initial = null)
     val data by loadData { db ->
@@ -226,7 +227,10 @@ fun ProfileScreen() {
                 }
                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
                     Text("Kilit Kelime Pro", style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = c.ink)
-                    Text("Sınırsız liste, sınav planı, sana özel bulmaca ve daha fazlası", style = KelimeType.ui(13.sp), color = c.ink2)
+                    Text(
+                        if (trial.active) "Deneme: ${trial.daysLeft} gün kaldı" else "Sınırsız liste, sınav planı, sana özel bulmaca ve daha fazlası",
+                        style = KelimeType.ui(13.sp, if (trial.active) FontWeight.SemiBold else FontWeight.Normal), color = if (trial.active) c.accent else c.ink2,
+                    )
                 }
                 Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = c.ink2.copy(alpha = 0.6f))
             }

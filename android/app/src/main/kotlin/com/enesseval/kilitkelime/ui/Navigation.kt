@@ -209,6 +209,20 @@ fun MainScaffold() {
         }
     }
 
+    // The free trial ended: its one summary page opens once, when the app is up and no other full-screen page is open
+    // (docs/V1_2_PLAN.md §2). Marked shown first, so it never comes twice.
+    val summaryPending by app.model.trialSummaryPending.collectAsState()
+    LaunchedEffect(summaryPending, route) {
+        if (!summaryPending || route.isEmpty() || fullScreen.any { route.startsWith(it) }) return@LaunchedEffect
+        kotlinx.coroutines.delay(600)
+        app.model.trialSummaryPending.value = false
+        val due = app.model.read { db ->
+            val now = app.model.clock.now.toEpochMilli()
+            (com.enesseval.kilitkelime.core.model.FreeTrial.summaryDue(db, now)).also { if (it) com.enesseval.kilitkelime.core.model.FreeTrial.markSummaryShown(db) }
+        }
+        if (due) router.showPaywall(PaywallTrigger.TRIAL_ENDED)
+    }
+
     // Deep links: widgets, notification, tile, shared list links.
     val link by activity.links.collectAsState()
     LaunchedEffect(link) {

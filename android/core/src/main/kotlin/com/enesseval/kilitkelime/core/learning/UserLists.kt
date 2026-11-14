@@ -125,6 +125,17 @@ object UserLists {
 
     fun list(id: String, db: SqlDb): UserList? = UserList.fetch(db, id)
 
+    /**
+     * After the free trial the learner's second and later own lists stay but cannot be changed
+     * (docs/V1_2_PLAN.md §2): nothing is deleted. Pro, imported lists and the first own list are editable.
+     */
+    fun isReadOnly(id: String, isPro: Boolean, db: SqlDb): Boolean {
+        if (isPro) return false
+        val own = db.query("SELECT id FROM user_list WHERE imported = 0 ORDER BY created_at, id") { it.string("id") }
+        val index = own.indexOf(id)
+        return index >= FREE_LIMIT
+    }
+
     fun canCreate(isPro: Boolean, db: SqlDb): Boolean =
         isPro || db.int("SELECT COUNT(*) FROM user_list WHERE imported = 0") < FREE_LIMIT
 

@@ -10,6 +10,7 @@ import com.enesseval.kilitkelime.core.db.SqlDb
 import com.enesseval.kilitkelime.core.learning.ProgressReset
 import com.enesseval.kilitkelime.core.learning.SystemRandom
 import com.enesseval.kilitkelime.core.learning.WidgetQueue
+import com.enesseval.kilitkelime.core.model.FreeTrial
 import com.enesseval.kilitkelime.core.model.ProEntitlement
 import com.enesseval.kilitkelime.core.model.SettingKey
 import com.enesseval.kilitkelime.core.model.Settings
@@ -57,7 +58,19 @@ class AppModel(private val context: Context) {
     val dataVersion: StateFlow<Int> = _dataVersion.asStateFlow()
 
     private val _isPro = MutableStateFlow(false)
+    /** Pro for every rule: a purchase or the running free trial (docs/V1_2_PLAN.md §2). */
     val isPro: StateFlow<Boolean> = _isPro.asStateFlow()
+
+    private val _purchased = MutableStateFlow(false)
+    /** A store purchase only (the paywall closes on this, not on the trial). */
+    val purchased: StateFlow<Boolean> = _purchased.asStateFlow()
+
+    private val _trial = MutableStateFlow(FreeTrial.Status(false, false, 0))
+    val trial: StateFlow<FreeTrial.Status> = _trial.asStateFlow()
+
+    /** The trial just ended and its one-time summary has not been shown (MainScaffold opens it). */
+    val trialSummaryPending = MutableStateFlow(false)
+    private var trialTimer: kotlinx.coroutines.Job? = null
 
     private val _onboardingDone = MutableStateFlow<Boolean?>(null)
     val onboardingDone: StateFlow<Boolean?> = _onboardingDone.asStateFlow()
@@ -85,6 +98,13 @@ class AppModel(private val context: Context) {
                 Curriculum.advance(database)
                 WidgetQueue.refill(database, clock, SystemRandom())
                 CoursePuzzle.keepToday(clock, database)
+            }
+            // 1.2: IS_PRO now means purchase or trial. An install from before it holds the purchase there.
+            if (Settings.string(database, SettingKey.PURCHASED) == null) {
+                Settings.setBool(database, SettingKey.PURCHASED, Settings.bool(database, SettingKey.IS_PRO))
+            }
+            if (FreeTrial.startIfNeeded(database, clock.now.toEpochMilli())) {
+                com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.TRIAL_STARTED)
             }
             _db = database
             _isPro.value = Settings.bool(database, SettingKey.IS_PRO)
@@ -126,10 +146,44 @@ class AppModel(private val context: Context) {
     }
 
     /** RevenueCat told us the entitlement; faster rotation needs a new slot grid. */
-    suspend fun setPro(pro: Boolean) {
-        val changed = withContext(Dispatchers.IO) { ProEntitlement.cache(pro, open()) }
-        _isPro.value = pro
-        if (changed) writeAndRequeue("pro") {}
+    suspend fun setPurchased(purchased: Boolean) {
+        withContext(Dispatchers.IO) { Settings.setBool(open(), SettingKey.PURCHASED, purchased) }
+        refreshPro()
+    }
+
+    /**
+     * Pro = purchase or running trial. Called at launch, on resume, after a purchase and when the
+     * trial's last second passes: updates the cache and the flows, sends `trial.ended` once and raises
+     * the summary page when due.
+     */
+    suspend fun refreshPro() {
+        val now = clock.now.toEpochMilli()
+        val db = open()
+        data class Snapshot(val purchased: Boolean, val status: FreeTrial.Status, val changed: Boolean, val ended: Boolean, val summary: Boolean)
+        val snap = withContext(Dispatchers.IO) {
+            db.transaction {
+                val purchased = Settings.bool(db, SettingKey.PURCHASED)
+                val status = FreeTrial.status(db, now)
+                val changed = ProEntitlement.cache(purchased || status.active, db)
+                Snapshot(purchased, status, changed, FreeTrial.takeEnded(db, now), FreeTrial.summaryDue(db, now))
+            }
+        }
+        _purchased.value = snap.purchased
+        _trial.value = snap.status
+        _isPro.value = snap.purchased || snap.status.active
+        if (snap.ended) com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.TRIAL_ENDED)
+        if (snap.summary) trialSummaryPending.value = true
+        scheduleTrialEnd(snap.status)
+        if (snap.changed) writeAndRequeue("pro") {}
+    }
+
+    private fun scheduleTrialEnd(status: FreeTrial.Status) {
+        trialTimer?.cancel()
+        if (!status.active) return
+        trialTimer = scope.launch {
+            kotlinx.coroutines.delay(status.remainingMs + 1000)
+            refreshPro()
+        }
     }
 
     /**
