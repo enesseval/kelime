@@ -24,13 +24,32 @@ public enum ProEntitlement {
         return isTrialOpen(try Settings.int(.trialEnd, in: db), now: now)
     }
 
+    /// Remembers the Pro state the app last acted on. A trial that runs out changes the effective
+    /// state without any write, so "changed" is measured against this, never against the database.
+    public struct EffectiveTracker: Sendable {
+        public private(set) var last: Bool?
+        public init(last: Bool? = nil) { self.last = last }
+
+        /// True when `now` differs from the last state seen; `seed` stands in for the first call.
+        public mutating func changed(to now: Bool, seed: Bool) -> Bool {
+            let before = last ?? seed
+            last = now
+            return before != now
+        }
+    }
+
     public static func isTrialOpen(_ trialEnd: Int?, now: Date) -> Bool {
         guard let trialEnd else { return false }
         return now.timeIntervalSince1970 < Double(trialEnd)
     }
 
     /// The last known purchase, kept for the next launch.
-    public static func isPurchasedCached(db: Database) throws -> Bool { try Settings.bool(.isPurchased, in: db) }
+    /// A 1.1 install has no `is_purchased` row yet: its cached `is_pro` was the purchase, so it
+    /// seeds the answer and an offline first launch of 1.2 keeps a buyer.
+    public static func isPurchasedCached(db: Database) throws -> Bool {
+        guard let stored = try Settings.string(.isPurchased, in: db) else { return try Settings.bool(.isPro, in: db) }
+        return stored == "1"
+    }
 
     public static func cachePurchased(_ purchased: Bool, db: Database) throws {
         guard try Settings.bool(.isPurchased, in: db) != purchased || (try Settings.string(.isPurchased, in: db)) == nil else { return }

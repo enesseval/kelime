@@ -39,6 +39,7 @@ final class PurchaseManager {
     private(set) var diagnostics = "Henüz okunmadı"
 
     private var updatesTask: Task<Void, Never>?
+    private var effective = ProEntitlement.EffectiveTracker()
     private weak var app: AppModel?
 
     /// "Deneme: N gün kaldı" while the free trial runs and nothing is bought.
@@ -208,13 +209,16 @@ final class PurchaseManager {
         let onSale = Self.isOnSale
         let purchased = isPurchased, trialEnd = onSale ? trial.trial?.endsAt : nil
         let canWriteTrial = trial.trial != nil || !onSale
-        let changed = (try? await database.writer.write { db -> Bool in
+        // Compared with the state last acted on, not with the database: when the trial runs out
+        // nothing is written, so a before/after read of the database would never see it.
+        let states = try? await database.writer.write { db -> (before: Bool, after: Bool) in
             let before = try ProEntitlement.isPro(db: db)
             try ProEntitlement.cache(grant, db: db)
             if info != nil || !onSale { try ProEntitlement.cachePurchased(purchased, db: db) }
             if canWriteTrial { try ProEntitlement.cacheTrialEnd(trialEnd, db: db) }
-            return try ProEntitlement.isPro(db: db) != before
-        }) ?? false
+            return (before, try ProEntitlement.isPro(db: db))
+        }
+        let changed = states.map { effective.changed(to: $0.after, seed: $0.before) } ?? false
         if changed {
             await app.write(rebuildQueue: true) { _ in }
         }

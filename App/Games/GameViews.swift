@@ -307,11 +307,12 @@ struct MatchView: View {
             guard started else { return }
             while remaining > 0 && !finished && !Task.isCancelled {
                 try? await Task.sleep(for: .seconds(1))
-                remaining -= 1
+                if !Task.isCancelled { remaining -= 1 }
             }
-            if !finished { finish() }
+            // Closing the page cancels this task; only a clock that really ran out ends the round.
+            if !finished && !Task.isCancelled && remaining <= 0 { finish() }
         }
-        .sensoryFeedback(.success, trigger: game?.score ?? 0)
+        .sensoryFeedback(.success, trigger: game?.score ?? 0) { old, new in new > old }
         .sensoryFeedback(.error, trigger: shakes)
     }
 
@@ -422,7 +423,7 @@ struct MatchView: View {
 
     private func result(_ game: MatchGame) -> some View {
         GameResultView(
-            title: game.score >= best && game.score > 0 ? "Yeni rekor!" : "Süre doldu",
+            title: game.score > best ? "Yeni rekor!" : "Süre doldu",
             headline: "\(game.score) eşleşme",
             stats: [("en iyi", "\(max(best, game.score))"), ("zorlandığın", "\(game.missed.count)")],
             words: game.missed,
@@ -495,6 +496,8 @@ struct MatchView: View {
         guard let game, !finished else { return }
         withAnimation { finished = true }
         let clock = model.clock, score = game.score
+        // Nothing matched or missed: not a played round, so no study day and no result.
+        guard score + game.missed.count > 0 else { return }
         Task {
             await model.recordStudy(.match)
             await model.write(rebuildQueue: false) { db in
@@ -537,7 +540,7 @@ struct GameResultView<ShareCard: View>: View {
     let words: [Card]
     var wordsTitle = "Bu turun kelimeleri"
     /// English sentence and its Turkish meaning, for Cümle Kur.
-    var sentences: [(String, String)] = []
+    var sentences: [(id: String, en: String, tr: String)] = []
     let onAgain: () -> Void
     let onClose: () -> Void
     @ViewBuilder let share: (ShareCardStyle) -> ShareCard
@@ -577,10 +580,10 @@ struct GameResultView<ShareCard: View>: View {
                 ScrollView {
                   VStack(alignment: .leading, spacing: 10) {
                     Text("Cümleler").font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
-                    ForEach(sentences, id: \.0) { sentence in
+                    ForEach(sentences, id: \.id) { sentence in
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(sentence.0).font(KelimeFont.english(17, relativeTo: .body))
-                            Text(sentence.1).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
+                            Text(sentence.en).font(KelimeFont.english(17, relativeTo: .body))
+                            Text(sentence.tr).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
                         }
                         .accessibilityElement(children: .combine)
                     }

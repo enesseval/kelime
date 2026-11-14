@@ -121,7 +121,7 @@ struct SentenceView: View {
             stats: [("süre", Self.time(seconds)), ("zorlandığın", "\(game.failedCards.count)")],
             words: game.failedCards,
             wordsTitle: "Widget'ında daha sık görünecek",
-            sentences: game.items.map { ($0.sentence, $0.card.exampleTR) },
+            sentences: game.items.map { ($0.card.id, $0.sentence, $0.card.exampleTR) },
             onAgain: { Task { await restart() } },
             onClose: { dismiss() },
             share: { style in
@@ -252,11 +252,12 @@ struct GapFillView: View {
             guard started else { return }
             while remaining > 0 && !finished && !Task.isCancelled {
                 try? await Task.sleep(for: .seconds(1))
-                if !finished { remaining -= 1 }
+                if !finished && !Task.isCancelled { remaining -= 1 }
             }
-            if !finished { finish() }
+            // Closing the page cancels this task; only a clock that really ran out ends the round.
+            if !finished && !Task.isCancelled && remaining <= 0 { finish() }
         }
-        .sensoryFeedback(.success, trigger: game?.score ?? 0)
+        .sensoryFeedback(.success, trigger: game?.score ?? 0) { old, new in new > old }
         .sensoryFeedback(.error, trigger: misses)
     }
 
@@ -326,7 +327,7 @@ struct GapFillView: View {
 
     private func result(_ game: GapFillGame) -> some View {
         GameResultView(
-            title: game.score >= best && game.score > 0 ? "Yeni rekor!" : "Süre doldu",
+            title: game.score > best ? "Yeni rekor!" : "Süre doldu",
             headline: "\(game.score) doğru",
             stats: [("en iyi", "\(max(best, game.score))"), ("zorlandığın", "\(game.missedCards.count)")],
             words: game.missedCards,
@@ -365,6 +366,8 @@ struct GapFillView: View {
         withAnimation { finished = true }
         let clock = model.clock, secs = GapFillGame.seconds - remaining, score = game.score
         let done = game
+        // Nothing answered: not a played round, so no study day and no result.
+        guard done.answered > 0 else { return }
         Task {
             await model.recordStudy(.gapFill)
             await model.write(rebuildQueue: false) { db in try done.record(seconds: secs, clock: clock, db: db) }

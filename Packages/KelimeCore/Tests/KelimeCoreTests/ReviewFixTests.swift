@@ -148,3 +148,68 @@ struct ReviewFixTests {
         #expect(StatsQueries.weekStart(for: sunday).string == "2026-11-16")
     }
 }
+
+/// Fixes from the review of 506f0c5..7dd11c4.
+struct ReviewFix2Tests {
+    func card(_ id: String = "c", en: String) -> Card {
+        Card(id: id, word: "idea", pos: .noun, level: .b1, tr: ["anlam"], exampleEN: en, exampleTR: "Bir cümle.")
+    }
+
+    let t0 = Date(timeIntervalSince1970: 1_800_000_000)
+    let hour: TimeInterval = 3600
+
+    @Test func trialExpiryCountsAsAChangeAgainstTheLastStateSeen() throws {
+        let db = try AppDatabase.inMemory()
+        var tracker = ProEntitlement.EffectiveTracker()
+        try db.writer.write { try ProEntitlement.cacheTrialEnd(t0 + 72 * hour, db: $0) }
+        let during = try db.reader.read { try ProEntitlement.isPro(db: $0, now: t0 + 10 * hour) }
+        let first = tracker.changed(to: during, seed: during)
+        #expect(!first) // first sight: nothing to rebuild
+        // Hours later nothing was written, but the effective state flipped.
+        let after = try db.reader.read { try ProEntitlement.isPro(db: $0, now: t0 + 73 * hour) }
+        let flipped = tracker.changed(to: after, seed: after)
+        let again = tracker.changed(to: after, seed: after)
+        #expect(flipped)
+        #expect(!again)
+    }
+
+    @Test func aOneOneBuyerIsKeptOffline() throws {
+        let db = try AppDatabase.inMemory()
+        try db.writer.write { db in
+            #expect(try !ProEntitlement.isPurchasedCached(db: db))
+            try Settings.set(.isPro, true, in: db) // 1.1 cached the purchase here
+            #expect(try ProEntitlement.isPurchasedCached(db: db))
+            try ProEntitlement.cachePurchased(false, db: db) // once 1.2 knows better, its row wins
+            #expect(try !ProEntitlement.isPurchasedCached(db: db))
+        }
+    }
+
+    @Test func capitalisedFirstWordsStayAsWritten() {
+        func tokens(_ en: String) -> [String]? {
+            SentenceTokens.tokens(card(en: en))
+        }
+        #expect(tokens("TV is on all day.")?.first == "TV")
+        #expect(tokens("DNA tests are very common now.")?.first == "DNA")
+        #expect(tokens("Can I ask you something?")?.first == "can")
+    }
+
+    @Test func noResultAndNoStreakForAnEmptyRound() throws {
+        let db = try AppDatabase.inMemory()
+        let clock = AppClock.fixed(t0, timeZone: TimeZone(identifier: "UTC")!)
+        try db.writer.write { db in
+            try GamePool.recordResult(game: .gapFill, score: 0, total: 0, seconds: 3, clock: clock, db: db)
+            #expect(try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM game_result") == 0)
+            #expect(try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM streak_day") == 0)
+            try GamePool.recordResult(game: .gapFill, score: 0, total: 1, seconds: 3, clock: clock, db: db)
+            #expect(try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM game_result") == 1)
+        }
+    }
+
+    @Test func aRoundNeverShowsTheSameSentenceTwice() throws {
+        let cards = (0..<6).map { i in card("c\(i)", en: i < 3 ? "The cat sat on the mat." : "The dog ran in the park \(i).") }
+        var rng = SystemRandomNumberGenerator()
+        let game = SentenceGame(cards: cards, using: &rng)
+        #expect(Set(game.items.map(\.sentence)).count == game.items.count)
+        #expect(game.items.count == 4)
+    }
+}

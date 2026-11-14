@@ -262,10 +262,10 @@ public enum UserLists {
         try removeOrphans([cardID], db: db)
     }
 
-    /// "Dosya olarak gönder" is Pro, and a read-only list is never exported: a free learner could
-    /// not otherwise send it out and import it back as an editable "imported" copy.
+    /// "Dosya olarak gönder" is Pro (the trial included). A Pro learner's lists are never
+    /// read-only, so there is nothing else to check.
     public static func canExport(_ id: String, isPro: Bool, db: Database) throws -> Bool {
-        try isPro && !isReadOnly(id, isPro: isPro, db: db)
+        isPro
     }
 
     /// The list as a file to share.

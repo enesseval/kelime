@@ -26,8 +26,10 @@ public enum SentenceTokens {
     private static func lowerFirst(_ word: String) -> String {
         guard let first = word.first, first.isUppercase else { return word }
         let rest = word.dropFirst()
-        // "I", "I'm", "I'll": the pronoun is always capital. Every other first word is lowered.
+        // "I", "I'm", "I'll": the pronoun is always capital.
         if first == "I" && (rest.isEmpty || !(rest.first!.isLetter)) { return word }
+        // "TV", "DNA", "McDonald's": a capital past the first letter is part of the word.
+        if rest.contains(where: \.isUppercase) { return word }
         return first.lowercased() + rest
     }
 
@@ -94,8 +96,10 @@ public struct SentenceGame: Sendable {
 
     public init(cards: [Card], count: Int = round, using rng: inout some RandomNumberGenerator) {
         var items: [Item] = []
+        var seen: Set<String> = []
         for card in cards {
-            guard items.count < count, let tokens = SentenceTokens.tokens(card) else { continue }
+            // Two cards may share a sentence; one round never shows it twice.
+            guard items.count < count, let tokens = SentenceTokens.tokens(card), seen.insert(tokens.joined(separator: " ")).inserted else { continue }
             items.append(Item(card: card, tokens: tokens, tileOrder: SentenceTokens.shuffledOrder(tokens, using: &rng)))
         }
         self.items = items
@@ -214,8 +218,8 @@ public enum GapFill {
     public static func distractorPool(for card: Card, db: Database) throws -> [Card] {
         try Card.fetchAll(
             db,
-            sql: "SELECT * FROM card WHERE pos = ? AND level = ? AND id <> ? AND id NOT LIKE 'user-%'",
-            arguments: [card.pos.rawValue, card.level.rawValue, card.id]
+            sql: "SELECT * FROM card WHERE pos = ? AND level = ? AND id <> ? AND id NOT LIKE ?",
+            arguments: [card.pos.rawValue, card.level.rawValue, card.id, UserLists.customPrefix + "%"]
         )
     }
 
@@ -223,6 +227,12 @@ public enum GapFill {
     /// words. A choice is the same `pos` and level, distinct, different from the answer and not
     /// already visible in the sentence.
     public static func question(_ card: Card, pool: [Card], using rng: inout some RandomNumberGenerator) -> Question? {
+        var patterns: [String: NSRegularExpression?] = [:]
+        return question(card, pool: pool, patterns: &patterns, using: &rng)
+    }
+
+    /// `patterns` caches one compiled regex per word, so a round compiles each word once.
+    private static func question(_ card: Card, pool: [Card], patterns: inout [String: NSRegularExpression?], using rng: inout some RandomNumberGenerator) -> Question? {
         guard let blanked = blanked(card) else { return nil }
         let sentenceLower = card.exampleEN.lowercased()
         var taken: Set<String> = [card.word.lowercased()]
@@ -230,7 +240,8 @@ public enum GapFill {
         for candidate in pool.shuffled(using: &rng) {
             let key = candidate.word.lowercased()
             if taken.contains(key) || candidate.pos != card.pos || candidate.level != card.level { continue }
-            if let re = pattern(candidate.word), contains(re, sentenceLower) { continue }
+            if patterns[key] == nil { patterns[key] = .some(pattern(candidate.word)) }
+            if let re = patterns[key] ?? nil, contains(re, sentenceLower) { continue }
             taken.insert(key)
             wrong.append(candidate.word)
             if wrong.count == optionCount - 1 { break }
@@ -244,10 +255,12 @@ public enum GapFill {
     public static func questions(db: Database, cards: [Card], using rng: inout some RandomNumberGenerator) throws -> [Question] {
         var pools: [String: [Card]] = [:]
         var result: [Question] = []
-        for card in cards where usable(card) {
+        var patterns: [String: NSRegularExpression?] = [:]
+        // `question` returns nil for a card that is not usable, so each card is checked once here.
+        for card in cards {
             let key = card.pos.rawValue + "|" + card.level.rawValue
             if pools[key] == nil { pools[key] = try distractorPool(for: card, db: db) }
-            if let q = question(card, pool: pools[key] ?? [], using: &rng) { result.append(q) }
+            if let q = question(card, pool: pools[key] ?? [], patterns: &patterns, using: &rng) { result.append(q) }
         }
         return result
     }

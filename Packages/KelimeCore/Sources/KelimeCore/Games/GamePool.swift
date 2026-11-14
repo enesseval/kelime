@@ -52,6 +52,8 @@ public enum GamePool {
         clock: AppClock,
         db: Database
     ) throws {
+        // A round closed before anything was answered is not a played round: no result, no streak day.
+        guard total > 0 else { return }
         try db.execute(
             sql: "INSERT INTO game_result (game, played_at, played_on, score, total, seconds) VALUES (?, ?, ?, ?, ?, ?)",
             arguments: [game.rawValue, clock.now, clock.today, score, total, seconds]
