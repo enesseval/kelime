@@ -67,6 +67,7 @@ class LockScreenUpdater(private val context: Context, private val model: AppMode
             val settings = model.prefs.current()
             if (settings.wallpaperEnabled) applyWallpaper(now, settings, reason)
             if (settings.notificationEnabled) WordNotification.show(context, now.snapshot) else WordNotification.cancel(context)
+            ExamNotification.sync(context, model, settings.examNotificationEnabled)
             Widgets.updateAll(context)
             if (Build.VERSION.SDK_INT >= 24) {
                 runCatching { TileService.requestListeningState(context, ComponentName(context, WordTileService::class.java)) }

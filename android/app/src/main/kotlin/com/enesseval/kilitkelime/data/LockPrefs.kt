@@ -51,6 +51,8 @@ data class LockSettings(
     val paywallMomentCount: Int = 0,
     val paywallMomentLast: Long = 0,
     val paywallLast: Long = 0,
+    /** 1.2 §5: the exam countdown as a dismissible ongoing notification. Off until the learner turns it on. */
+    val examNotificationEnabled: Boolean = false,
 )
 
 class LockPrefs(private val context: Context) {
@@ -69,6 +71,7 @@ class LockPrefs(private val context: Context) {
         val momentCount = intPreferencesKey("paywall_moment_count")
         val momentLast = longPreferencesKey("paywall_moment_last")
         val paywallLast = longPreferencesKey("paywall_last")
+        val examNotification = booleanPreferencesKey("exam_notification_enabled")
     }
 
     val flow: Flow<LockSettings> = context.store.data.map(::read)
@@ -90,6 +93,7 @@ class LockPrefs(private val context: Context) {
         paywallMomentCount = p[K.momentCount] ?: 0,
         paywallMomentLast = p[K.momentLast] ?: 0,
         paywallLast = p[K.paywallLast] ?: 0,
+        examNotificationEnabled = p[K.examNotification] ?: false,
     )
 
     suspend fun update(change: (LockSettings) -> LockSettings) {
@@ -109,6 +113,7 @@ class LockPrefs(private val context: Context) {
             p[K.momentCount] = next.paywallMomentCount
             p[K.momentLast] = next.paywallMomentLast
             p[K.paywallLast] = next.paywallLast
+            p[K.examNotification] = next.examNotificationEnabled
         }
     }
 }

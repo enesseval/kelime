@@ -92,9 +92,22 @@ object WordNotification {
 /** Biliyorum / Zorlanıyorum from the notification. */
 class NotificationActionReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        val cardID = intent.getStringExtra("card") ?: return
         val kind = intent.getStringExtra("kind") ?: return
         val app = context.applicationContext as KilitKelimeApp
+        if (kind == ExamNotification.OFF) {
+            // "Kapat" or a swipe: the countdown stays off until the learner turns it on again.
+            val pending = goAsync()
+            app.model.scope.launch {
+                try {
+                    app.model.prefs.update { it.copy(examNotificationEnabled = false) }
+                    ExamNotification.cancel(context)
+                } finally {
+                    pending.finish()
+                }
+            }
+            return
+        }
+        val cardID = intent.getStringExtra("card") ?: return
         val pending = goAsync()
         app.model.scope.launch {
             try {

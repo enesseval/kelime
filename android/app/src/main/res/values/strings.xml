@@ -12,4 +12,6 @@
     <string name="channel_word_description">Kelimeyi kilit ekranında sessiz bir bildirim olarak gösterir</string>
     <string name="channel_reminder">Hatırlatma</string>
     <string name="channel_reminder_description">Seçtiğin saatte kısa bir tekrar hatırlatması</string>
+    <string name="channel_exam">Sınav geri sayımı</string>
+    <string name="channel_exam_description">Sınava kaç gün kaldığını ve bugünkü hedefi kilit ekranında gösterir</string>
 </resources>

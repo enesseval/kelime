@@ -27,12 +27,20 @@ import java.util.concurrent.TimeUnit
 object Channels {
     const val WORD = "word"
     const val REMINDER = "reminder"
+    const val EXAM = "exam"
 
     fun create(context: Context) {
         val manager = context.getSystemService(NotificationManager::class.java)
         manager.createNotificationChannel(
             NotificationChannel(WORD, context.getString(R.string.channel_word), NotificationManager.IMPORTANCE_LOW).apply {
                 description = context.getString(R.string.channel_word_description)
+                setShowBadge(false)
+                lockscreenVisibility = android.app.Notification.VISIBILITY_PUBLIC
+            },
+        )
+        manager.createNotificationChannel(
+            NotificationChannel(EXAM, context.getString(R.string.channel_exam), NotificationManager.IMPORTANCE_LOW).apply {
+                description = context.getString(R.string.channel_exam_description)
                 setShowBadge(false)
                 lockscreenVisibility = android.app.Notification.VISIBILITY_PUBLIC
             },

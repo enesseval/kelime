@@ -338,6 +338,8 @@ private fun ExamPlanCard(plan: ExamPlanStatus) {
     val router = LocalRouter.current
     val pro by app.model.isPro.collectAsState()
     val scope = rememberCoroutineScope()
+    val lock by app.model.prefs.flow.collectAsState(null)
+    val setExamCountdown = com.enesseval.kilitkelime.ui.profile.rememberExamCountdownSetter()
     ProCorner(!pro) {
         SurfaceCard(onClick = if (!pro) ({ router.showPaywall(PaywallTrigger.EXAM_PLAN) }) else null) {
             Row {
@@ -368,6 +370,14 @@ private fun ExamPlanCard(plan: ExamPlanStatus) {
                             scope.launch { app.model.writeAndRequeue("exam-deck") { db -> DeckQueries.setEnabled(true, plan.exam, db) } }
                         }
                     }
+                }
+                // The countdown on the lock screen is only offered while the plan has a date (this card exists only then).
+                if (pro && lock?.examNotificationEnabled == false) {
+                    Gap(10.dp)
+                    Text(
+                        "Kilit ekranında geri sayım göster", style = KelimeType.ui(14.sp, FontWeight.SemiBold), color = c.accent,
+                        modifier = Modifier.clickable { setExamCountdown(true) }.padding(vertical = 8.dp),
+                    )
                 }
             }
         }

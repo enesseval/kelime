@@ -115,6 +115,8 @@ fun ProfileScreen() {
     val c = Palette.current
     val scope = rememberCoroutineScope()
     val pro by app.model.purchased.collectAsState()
+    val proNow by app.model.isPro.collectAsState()
+    val setExamCountdown = rememberExamCountdownSetter()
     val trial by app.model.trial.collectAsState()
     val account by app.account.state.collectAsState()
     val lock by app.model.prefs.flow.collectAsState(initial = null)
@@ -250,6 +252,11 @@ fun ProfileScreen() {
             d.exam?.let { (exam, date) ->
                 Divider()
                 SettingsRow("Sınav", exam.raw, onClick = { picker = "exam" })
+                Divider()
+                SettingsToggle(
+                    "Kilit ekranında geri sayım", lock?.examNotificationEnabled == true && proNow,
+                    detail = "Kapatılabilir bildirim: sınava kaç gün kaldığı ve bugünkü hedef. Sınav günü geçince kendiliğinden kapanır." + if (proNow) "" else " Pro özelliği.",
+                ) { on -> setExamCountdown(on) }
                 Divider()
                 SettingsRow("Sınav tarihi", TurkishDate.long(date), onClick = {
                     DatePickerDialog(context, { _, y, m, day ->
