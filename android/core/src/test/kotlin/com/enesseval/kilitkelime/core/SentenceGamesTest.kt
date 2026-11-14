@@ -47,6 +47,17 @@ class SentenceGamesTest {
         assertEquals("TV", SentenceTokens.tokens(card("tv", "TV is on in the room."))!!.first())
     }
 
+    @Test fun everyWordKeepsItsOwnCapitalOnlyTheFirstIsLowered() {
+        fun t(s: String) = SentenceTokens.tokens(card("x", s))
+        assertEquals(listOf("can", "I", "ask", "you", "something?"), t("Can I ask you something?"))
+        assertEquals(listOf("I", "think", "this", "is", "a", "good", "idea."), t("I think this is a good idea."))
+        assertEquals(listOf("try", "this", "cake.", "It's", "very", "good."), t("Try this cake. It's very good."))
+        assertEquals("I'm", t("I'm sure that it works.")!!.first())
+        assertEquals("it's", t("It's very good, I think.")!!.first())
+        assertEquals("Can I ask you something?", SentenceTokens.sentence(t("Can I ask you something?")!!))
+        assertEquals("Try this cake. It's very good.", SentenceTokens.sentence(t("Try this cake. It's very good.")!!))
+    }
+
     @Test fun onlyFourToTenWordSentencesAreUsable() {
         assertNull(SentenceTokens.tokens(card("a", "Too short here.")))
         assertNotNull(SentenceTokens.tokens(card("a", "Just four words here.")))

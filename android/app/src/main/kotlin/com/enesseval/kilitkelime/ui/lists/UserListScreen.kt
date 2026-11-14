@@ -149,7 +149,7 @@ fun UserListScreen(listID: String) {
                         }
                         DropdownMenuItem(text = { Text("Dosya olarak gönder") }, enabled = !words.isNullOrEmpty(), onClick = {
                             menu = false
-                            if (!pro) router.showPaywall(PaywallTrigger.SHARE) else scope.launch {
+                            if (!pro || locked) router.showPaywall(PaywallTrigger.SHARE) else scope.launch {
                                 app.model.read { db -> UserLists.export(listID, db) }?.let { shareListFile(context, it); Analytics.send(Analytics.Event.listShared) }
                             }
                         })

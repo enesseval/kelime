@@ -136,6 +136,12 @@ object UserLists {
         return index >= FREE_LIMIT
     }
 
+    /**
+     * "Dosya olarak gönder" is Pro. A locked (read-only) list is never Pro-editable without Pro, so a free
+     * learner cannot export it and import it back as an editable "imported" copy.
+     */
+    fun canExport(id: String, isPro: Boolean, db: SqlDb): Boolean = isPro && !isReadOnly(id, isPro, db)
+
     fun canCreate(isPro: Boolean, db: SqlDb): Boolean =
         isPro || db.int("SELECT COUNT(*) FROM user_list WHERE imported = 0") < FREE_LIMIT
 

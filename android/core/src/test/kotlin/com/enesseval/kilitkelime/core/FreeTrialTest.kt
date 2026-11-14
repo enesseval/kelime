@@ -180,6 +180,48 @@ class FreeTrialTest {
         assertEquals(3, lists.summaries(db).size)
     }
 
+    @Test fun cachedProStopsCountingOnceTheTrialLapses() {
+        val db = TestSupport.database()
+        FreeTrial.startIfNeeded(db, t0)
+        Settings.setBool(db, SettingKey.IS_PRO, true) // the cache while the trial runs
+        Settings.setBool(db, SettingKey.PURCHASED, false)
+        assertTrue(com.enesseval.kilitkelime.core.model.Preferences.load(db, t0 + 71 * hour).isPro)
+        // The app is never opened again: widgets read the preferences themselves.
+        val lapsed = com.enesseval.kilitkelime.core.model.Preferences.load(db, t0 + 73 * hour)
+        assertFalse(lapsed.isPro)
+        assertEquals(com.enesseval.kilitkelime.core.model.RotationInterval.DEFAULT, lapsed.effectiveRotation)
+        assertEquals(com.enesseval.kilitkelime.core.model.WidgetThemeID.PAPER, lapsed.copy(theme = com.enesseval.kilitkelime.core.model.WidgetThemeID.entries.first { it.isPro }).effectiveTheme)
+        // A turned-back clock does not revive it once the later time was seen.
+        FreeTrial.status(db, t0 + 80 * hour)
+        assertFalse(com.enesseval.kilitkelime.core.model.Preferences.load(db, t0 + hour).isPro)
+        assertEquals(t0 + 72 * hour, FreeTrial.endsAt(db))
+    }
+
+    @Test fun aPurchaseSurvivesAnUnreadableStoreAfterTheTrial() {
+        // RevenueCat could not be read (offline, no cache): the last known purchase stays, no summary.
+        val db = TestSupport.database()
+        FreeTrial.startIfNeeded(db, t0)
+        Settings.setBool(db, SettingKey.PURCHASED, true)
+        Settings.setBool(db, SettingKey.IS_PRO, true)
+        val later = t0 + 200 * hour
+        assertTrue(FreeTrial.isPro(db, later))
+        assertFalse(FreeTrial.summaryDue(db, later))
+        assertFalse(FreeTrial.lapsed(db, later))
+        assertTrue(com.enesseval.kilitkelime.core.model.Preferences.load(db, later).isPro)
+        assertEquals(null, FreeTrial.endsAt(db))
+    }
+
+    @Test fun lockedListsCannotBeExportedWithoutPro() {
+        val db = TestSupport.database()
+        val lists = com.enesseval.kilitkelime.core.learning.UserLists
+        val t = java.time.Instant.parse("2026-11-01T10:00:00Z")
+        val first = lists.create("Bir", true, db, t)
+        val second = lists.create("İki", true, db, t.plusSeconds(60))
+        assertFalse(lists.canExport(first.id, false, db))
+        assertFalse(lists.canExport(second.id, false, db))
+        assertTrue(lists.canExport(second.id, true, db))
+    }
+
     @Test fun nextFreeGameIsTheFirstNotPlayedToday() {
         val db = TestSupport.bundled()
         val clock = com.enesseval.kilitkelime.core.dates.AppClock.fixed(java.time.Instant.parse("2026-11-14T10:00:00Z"), java.time.ZoneId.of("UTC"))

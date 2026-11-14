@@ -10,6 +10,7 @@ import com.enesseval.kilitkelime.core.crossword.CoursePuzzle
 import com.enesseval.kilitkelime.core.learning.SystemRandom
 import com.enesseval.kilitkelime.core.learning.WidgetQueue
 import com.enesseval.kilitkelime.core.learning.WidgetScheduler
+import com.enesseval.kilitkelime.core.model.FreeTrial
 import com.enesseval.kilitkelime.core.model.Preferences
 import com.enesseval.kilitkelime.core.model.WidgetMode
 import com.enesseval.kilitkelime.core.widgets.WidgetLog
@@ -58,6 +59,8 @@ class LockScreenUpdater(private val context: Context, private val model: AppMode
             val change = WidgetTimelineBuilder.nextSelfTestChange(snapshot.slotStart, prefs.effectiveRotation, clock.now)
             if (change != null && change < next) next = change
         }
+        // The trial ending is a slot of its own: widgets and the wallpaper drop Pro speed and themes then.
+        FreeTrial.endsAt(db)?.takeIf { it > clock.now.toEpochMilli() && it < next.toEpochMilli() }?.let { next = Instant.ofEpochMilli(it) }
         Current(snapshot, next, prefs.defaultWidgetMode)
     }
 

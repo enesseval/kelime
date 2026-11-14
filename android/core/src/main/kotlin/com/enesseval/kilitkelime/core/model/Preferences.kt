@@ -119,7 +119,7 @@ data class Preferences(
     }
 
     companion object {
-        fun load(db: SqlDb): Preferences {
+        fun load(db: SqlDb, nowMs: Long = System.currentTimeMillis()): Preferences {
             var p = Preferences()
             CEFRLevel.fromRaw(Settings.string(db, SettingKey.LEVEL))?.let { p = p.copy(level = it) }
             Settings.string(db, SettingKey.ENABLED_DECKS)?.let { raw ->
@@ -129,7 +129,8 @@ data class Preferences(
             WidgetMode.fromRaw(Settings.string(db, SettingKey.DEFAULT_WIDGET_MODE))?.let { p = p.copy(defaultWidgetMode = it) }
             WidgetThemeID.fromRaw(Settings.string(db, SettingKey.THEME))?.let { p = p.copy(theme = it) }
             WidgetContent.fromRaw(Settings.string(db, SettingKey.WIDGET_CONTENT))?.let { p = p.copy(widgetContent = it) }
-            return p.copy(isPro = Settings.bool(db, SettingKey.IS_PRO))
+            // The cached flag is purchase-or-trial; a trial that ran out since it was cached no longer counts.
+            return p.copy(isPro = Settings.bool(db, SettingKey.IS_PRO) && !FreeTrial.lapsed(db, nowMs))
         }
     }
 }

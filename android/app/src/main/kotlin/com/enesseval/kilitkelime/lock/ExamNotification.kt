@@ -9,6 +9,7 @@ import com.enesseval.kilitkelime.MainActivity
 import com.enesseval.kilitkelime.R
 import com.enesseval.kilitkelime.core.model.ExamCountdownLine
 import com.enesseval.kilitkelime.core.model.ExamPlan
+import com.enesseval.kilitkelime.core.model.Preferences
 import com.enesseval.kilitkelime.data.AppModel
 import com.enesseval.kilitkelime.notifications.Channels
 
@@ -26,7 +27,7 @@ object ExamNotification {
     suspend fun sync(context: Context, model: AppModel, enabled: Boolean) {
         val line = if (!enabled) null else {
             val plan = model.read { db -> ExamPlan.status(db, model.clock) }
-            ExamCountdownLine.text(model.isPro.value, plan)
+            ExamCountdownLine.text(model.read { db -> Preferences.load(db).isPro }, plan)
         }
         if (line == null || !WordNotification.canPost(context)) {
             cancel(context)

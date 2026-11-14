@@ -44,6 +44,23 @@ object FreeTrial {
     /** Pro for every rule in the app. */
     fun isPro(db: SqlDb, nowMs: Long): Boolean = Settings.bool(db, SettingKey.PURCHASED) || status(db, nowMs).active
 
+    /** When the trial ends (epoch ms), or null when it never started or a purchase makes it moot. Reads only. */
+    fun endsAt(db: SqlDb): Long? {
+        if (Settings.bool(db, SettingKey.PURCHASED)) return null
+        return Settings.string(db, SettingKey.TRIAL_START)?.toLongOrNull()?.plus(DURATION_MS)
+    }
+
+    /**
+     * The trial has run out and nothing was bought: the cached Pro flag no longer counts. Widgets and the
+     * lock screen read this themselves, so they drop Pro speed and themes even if the app is never opened.
+     * Reads only; the latest time seen keeps a turned-back clock from reviving the trial.
+     */
+    fun lapsed(db: SqlDb, nowMs: Long): Boolean {
+        val end = endsAt(db) ?: return false
+        val seen = Settings.string(db, SettingKey.TRIAL_SEEN)?.toLongOrNull() ?: 0L
+        return maxOf(nowMs, seen) >= end
+    }
+
     /** True once, when the ended trial is first noticed (sends `trial.ended`). */
     fun takeEnded(db: SqlDb, nowMs: Long): Boolean {
         if (!status(db, nowMs).ended || Settings.bool(db, SettingKey.TRIAL_ENDED_SENT)) return false

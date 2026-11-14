@@ -61,7 +61,7 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
-### 2026-11-14 · 1.2 §4 düzeltme: Cümle Kur büyük harf · iOS [ ] Android [ ]
+### 2026-11-14 · 1.2 §4 düzeltme: Cümle Kur büyük harf · iOS [ ] Android [x]
 Kartlarda her kelime cümledeki yazımıyla gösterilir (I, I'm, I'll, özel isimler, ikinci cümlenin
 başı büyük kalır). Yalnızca cümlenin ilk kelimesi küçük harfe çevrilir, çünkü büyük ilk harf
 cevabı ele verir; ilk kelime "I" ya da "I'" ile başlayan bir kısaltmaysa o da olduğu gibi
@@ -70,6 +70,12 @@ ile başlıyor; hepsini küçültmek "can i ask you" gibi yanlış yazım göste
 Test: "Can I ask you something?" → kartlar "can", "I", "ask", "you", "something?";
 "I think this is a good idea." → "I" büyük kalır; "Try this cake. It's very good." → "It's"
 büyük kalır.
+Android: kural zaten böyleydi (yalnız ilk kelime küçülür), üç örnek test olarak eklendi (`SentenceGamesTest`).
+Android'de ilgili üç kontrol (iOS incelemesinden):
+- Salt okunur liste açığı: seçilen yol "dosya olarak gönder" kapalı. Ücretsizde dışa aktarma zaten Pro; `UserLists.canExport` salt okunur listeyi Pro olmadan vermez, menü `share` paywall'ını açar. Kalan boşluk: deneme sırasında dışa aktarılan liste, deneme bitince içe aktarılırsa `imported` olarak düzenlenebilir gelir (içe aktarılan listeler tasarım gereği sınır dışı); bunu kapatmak için dosyanın kaynağını tanımak gerekir, yapılmadı.
+- Deneme bitince uygulama hiç açılmazsa: Android'de de kalıyordu. Düzeltildi: `Preferences.load` önbellekteki Pro'yu deneme bitişine göre kendisi süzer (`FreeTrial.lapsed`, saat geri alınmasına karşı son görülen zamanı da kullanır), böylece widget ve kilit ekranı Pro hızı/temasını bırakır; bitiş anı ayrı bir slot olarak zamanlanır. Sınav bildirimi de aynı süzgeci okur.
+- Satın alan, çevrimdışı, RevenueCat okunamıyor, deneme bitmiş: Android'de Pro kaybolmuyor. `PURCHASED` kaydı veritabanında kalır, RevenueCat hata verirse hiçbir şey değişmez; özet satın alana gösterilmez. Test eklendi.
+Testler: `FreeTrialTest` (lapsed, offline satın alma, dışa aktarma).
 
 ### 2026-11-14 · 1.2 §5 Sınav geri sayımı · iOS [ ] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §5. iOS Live Activity, Android kalıcı bildirim. Testler: plan "Test".
