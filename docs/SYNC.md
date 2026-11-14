@@ -61,6 +61,15 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
+### 2026-11-14 · 1.2 §4 inceleme düzeltmeleri · iOS [ ] Android [x]
+iOS'un §4 kod incelemesinden; Android'de de kontrol edildi, hepsi test edildi (`SentenceGamesTest`, `FreeTrialTest`):
+- Tur ortasında kapatma: Android'de kapatınca kayıt zaten yoktu (kayıt yalnız turun gerçek bitişinde). Eklenen kural: hiç cevap yoksa (süre dolsa bile) çalışma, oyun sonucu, seri günü ve sinyal kaydedilmez (Eşleştir, Boşluğu Doldur, Cümle Kur). Süre sayacı yalnız 60 sn gerçekten dolunca bitirir.
+- Cümle Kur ilk kelime: yalnızca kelimenin geri kalanında büyük harf yoksa ilk harf küçülür (`TV`, `DNA`, `McDonald's` olduğu gibi kalır; `I`, `I'm` zaten kalıyordu).
+- Aynı örnek cümleyi paylaşan iki kart aynı Cümle Kur turuna girmez (küçük harfe çevrilmiş cümleye göre).
+- "Yeni rekor!" yalnızca skor > en iyi (eşitlikte yok; Eşleştir dahil, Android'de `>=` idi, düzeltildi).
+- Göç: 1.1'den gelen kullanıcıda `PURCHASED` yoksa eski Pro önbelleğinden dolar; ağ gerekmez (Android'de zaten öyleydi, çıkarılıp test edildi).
+- Deneme bitince kilit ekranı kuyruğu: Android'de kurulmuyordu (yalnız tercihler okunuyordu); düzeltildi: deneme bitiş slotunda Pro önbelleği temizlenir, gelecek kuyruk silinip yeniden kurulur, uygulama bayrakları (`trial.ended`, özet) arkadan yetişir.
+
 ### 2026-11-14 · 1.2 §5 Sınav geri sayımı · iOS [x] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §5. iOS Live Activity, Android kalıcı bildirim. Testler: plan "Test".
 Metin kuralı (iOS aynısını yazsın; `ExamCountdownLine`): "YDS'ye 23 gün · bugün 12 kelime" (YDS -ye, YÖKDİL ve IELTS -e); 12 = günlük hedef. Bugünkü hedef tamamsa "bugünkü hedef tamam", listedeki her kelime öğrenildiyse "hepsini öğrendin", sınav günü "YDS bugün · …". Pro (deneme dahil) ve sınav tarihi şart; tarih yoksa öneri çıkmaz; sınav günü geçince kendiliğinden kapanır; Pro biterse kapanır.
