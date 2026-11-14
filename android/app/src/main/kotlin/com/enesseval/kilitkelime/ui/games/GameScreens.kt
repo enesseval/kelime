@@ -344,8 +344,10 @@ fun MatchScreen() {
             finished = true
             newBest = g.score > best
             // A round nobody answered leaves nothing behind (no study, result, streak day or signal).
-            if (g.answered > 0) {
-                app.model.studied("match", Game.MATCH.source) { db -> g.record(MatchGame.SECONDS - left, app.model.clock, db) }
+            // On the model's scope: changing `finished` restarts this effect and would cancel a pending write.
+            val secs = MatchGame.SECONDS - left
+            if (g.answered > 0) app.model.scope.launch {
+                app.model.studied("match", Game.MATCH.source) { db -> g.record(secs, app.model.clock, db) }
                 Analytics.signal(Game.MATCH.signal, mapOf("score" to "${g.score}"))
             }
         }
