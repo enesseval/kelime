@@ -1,6 +1,6 @@
-# Kilit Kelime 1.2.0: ortak plan (iOS ve Android) · TASLAK
+# Kilit Kelime 1.2.0: ortak plan (iOS ve Android)
 
-Durum: taslak, kullanıcıyla mutabakat bekliyor. Onaylanınca "TASLAK" kalkar ve iş dağıtılır.
+Durum: kullanıcıyla kararlaştırıldı (2026-11-14). Kurallardaki sayılar ve metinler aynen uygulanır.
 Dal: `v1.1.1` (sürüm adı 1.2.0). Build 33 sonrası düzeltmeler (seriye göre hatırlatma, "deneme"
 metni, `kelime_widget_pro` yetkisi) bu sürümle mağazaya çıkar.
 
@@ -29,7 +29,7 @@ metni, `kelime_widget_pro` yetkisi) bu sürümle mağazaya çıkar.
 
 ## 2. Ücretsiz deneme (ters deneme)
 
-- İlk açılıştan itibaren **7 gün** her şey açık; kart ya da mağaza denemesi gerekmez.
+- İlk açılıştan itibaren **3 gün** (72 saat) her şey açık; kart ya da mağaza denemesi gerekmez.
   Pro kontrolü: `isPro = satın alma || denemeSürüyor`.
 - Deneme başlangıcı cihazda saklanır (iOS: Keychain, yeniden yüklemede sıfırlanmaz;
   Android: uygulama verisi). Mağazadaki "7 gün deneme" (kartlı) aynen kalır, ters deneme
@@ -37,7 +37,7 @@ metni, `kelime_widget_pro` yetkisi) bu sürümle mağazaya çıkar.
 - Deneme sürerken paywall kendiliğinden açılmaz (`moment` yok). Profil'deki Pro satırı
   "Deneme: N gün kaldı" der.
 - Deneme bitince bir kez, uygulama açılışında özet sayfası (`source: trialEnded`): bu hafta
-  kullandığı Pro özellikleri, sayılarla ("Arşivden 4 bulmaca", "Sınav planın %20"), altında
+  3 günde kullandığı Pro özellikleri, sayılarla ("Arşivden 4 bulmaca", "Sınav planın %20"), altında
   Pro'ya geç ve "Ücretsiz devam et". Kullanıcının verisi (listeler, ilerleme) silinmez;
   ikinci ve sonraki kendi listeleri salt okunur kalır.
 - Deneme sonrası ücretsiz kullanıcıya: bulmaca arşivinden **haftada 2** bulmaca
@@ -85,28 +85,42 @@ Doldur'a (kelime cümlede aynen geçiyor) uygun.
 
 Sinyaller: `game.sentence.finished`, `game.gapfill.finished` (`score`, `seconds`).
 
-## 5. Sınav geri sayımı (yer kalırsa)
+## 5. Sınav geri sayımı
 
 - iOS: Live Activity, kilit ekranında ve Dynamic Island'da "YDS'ye 23 gün · bugün 12 kelime".
 - Android: kalıcı bildirim (kapatılabilir), aynı metin.
 - Sınav planı Pro olduğu için deneme süresince ve Pro'da çalışır.
-- 1-4 bitmeden başlanmaz.
+- Sınav tarihi sınav planından gelir; tarih yoksa geri sayım önerilmez. Sınav günü geçince
+  kendiliğinden kapanır.
 
 ## Kapsam dışı
 
 - iPad düzeni: ertelendi.
 - Apple Watch: askıda, kod kalır.
 
-## Açık sorular
+## Test (hata kabul edilmez)
 
-1. Ters deneme 7 gün mü, 3 gün mü?
-2. Deneme sonrası arşivden haftada 2 bulmaca uygun mu?
-3. Oyunlar: Cümle Kur ve Boşluğu Doldur mu, yoksa başka bir oyun mu?
-4. Sınav geri sayımı 1.2'de kalsın mı?
+Her bölüm şu testlerle biter; testi olmayan bölüm bitmiş sayılmaz.
+- Kural testleri (KelimeCore / Android birim testleri):
+  - Deneme: başlangıç, 72. saatin hemen öncesi ve sonrası, saat geri alınması, yeniden
+    açılış; deneme sürerken `moment` yok; özet yalnızca bir kez.
+  - Arşiv kotası: haftada 2, pazartesi yenilenir, Pro'da sınırsız.
+  - Cümle Kur: karıştırılan sıra hiçbir zaman doğru sıra olmaz; noktalama ve büyük harf kuralı;
+    iki hak; cevap kayıtları.
+  - Boşluğu Doldur: çeldiriciler aynı `pos` ve seviyeden, hepsi farklı, doğru cevaptan farklı;
+    cümlede aynen geçmeyen kart girmez; 60 saniye.
+  - Uygunluk taraması: `cards.json` içindeki her kart için iki oyunun üreticisi çalıştırılır,
+    hiçbiri çökmez ve boş tur üretmez.
+  - Sinyaller: her paywall tetikleyicisi doğru `source` ile gider.
+- Mevcut testlerin hepsi geçer; iOS'ta Debug derlemesi, Android'de `testDebugUnitTest` ve
+  `lintRelease` temiz.
+- Bölüm bitince kod, yazan dışında bir gözle hata için gözden geçirilir (iOS: lead
+  `/code-review`; Android: kendi oturumunda inceleme) ve bulunanlar düzeltilir.
+- Cihaz testi kullanıcıda: her bölümün sonunda lead kısa bir test listesi verir.
 
 ## Sıra
 
-1. Ölçüm (§1), iki platform, hemen.
+1. Ölçüm (§1).
 2. Ters deneme ve görünürlük (§2, §3).
 3. Cümle Kur, sonra Boşluğu Doldur (§4).
-4. Sınav geri sayımı (§5), yer kalırsa.
+4. Sınav geri sayımı (§5).

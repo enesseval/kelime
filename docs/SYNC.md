@@ -34,7 +34,7 @@ defteridir. Kök dizindeki `CLAUDE.md` her oturumu buraya yönlendirir. Kapanan 
 
 | | iOS | Android |
 |---|---|---|
-| Sürüm | 1.1.0 | 1.1.0 |
+| Sürüm | 1.1.0 (sıradaki 1.2.0) | 1.1.0 (sıradaki 1.2.0) |
 | Build | 33 (App Store'a gönderilecek) | versionCode 2 (Play dahili testte; kapalı test incelemeye hazır) |
 | Dal | `v1.1.1` | `v1.1.1` |
 | Mağazada | 1.0.0 (28) yayında (10 Kasım), `main` | kapalı test (Play) |
@@ -61,6 +61,17 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
-Açık madde yok.
+### 2026-11-14 · 1.2 §5 Sınav geri sayımı · iOS [ ] Android [ ]
+Kurallar `docs/V1_2_PLAN.md` §5. iOS Live Activity, Android kalıcı bildirim. Testler: plan "Test".
+
+### 2026-11-14 · 1.2 §4 Cümle Kur ve Boşluğu Doldur · iOS [ ] Android [ ]
+Kurallar `docs/V1_2_PLAN.md` §4. Sinyaller `game.sentence.finished`, `game.gapfill.finished`.
+Testler: plan "Test" (uygunluk taraması dahil).
+
+### 2026-11-14 · 1.2 §2–§3 Ters deneme (3 gün), arşivde haftada 2, ücretsiz oyunlar görünür · iOS [ ] Android [ ]
+Kurallar `docs/V1_2_PLAN.md` §2 ve §3. Testler: plan "Test".
+
+### 2026-11-14 · 1.2 §1 Ölçüm: paywall `source`, satın alma `kind` / `product` · iOS [ ] Android [ ]
+Kurallar `docs/V1_2_PLAN.md` §1. Değerler iki platformda aynı yazılır.
 
 <!-- Yeni maddeler buraya, en yeni en üstte. Kapananlar docs/SYNC_ARCHIVE.md dosyasının başına taşınır. -->
