@@ -108,4 +108,11 @@ Tüm paylaşım kartları 1080×1920 (9:16), uygulamanın 3 stili (Açık, Koyu,
 `tile.quickReview` / `wallpaper.enabled` (Android).
 
 ## Kapsam dışı (1.2'ye)
-Live Activity sınav geri sayımı, Cümle Kur oyunu, Apple Watch, iPad düzeni.
+Karar 2026-11-14: 1.1.1 ayrıca çıkmaz; build 33 sonrası düzeltmeler 1.2 ile birlikte gider
+(dal adı `v1.1.1` kalır, sürüm adı 1.2.0 olur).
+
+- 1.2 adayları: Live Activity sınav geri sayımı, Cümle Kur oyunu, ücretsiz kullanıcı için daha
+  uzun deneme (kullanıcı geri bildirimi: "1-2 test çözdüm, sonrası ücretli"). Plan `docs/V1_2_PLAN.md`
+  dosyasında yazılacak.
+- Ertelendi: iPad düzeni (ekran görüntüsü alınamıyor).
+- Askıda: Apple Watch. Kod kalır, yeni iş yapılmaz; eklenecek başka bir şey kalmadığında bakılır.
