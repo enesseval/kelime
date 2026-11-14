@@ -20,4 +20,4 @@ SWIFT_VERSION = 6.0
 // Developer tools (Profil › Geliştirici: Pro unlock, puzzle and limit resets) are off for the
 // App Store: App Review runs with a sandbox receipt and must see the real paywall. Debug builds
 // always have them; for a TestFlight-only build with them, add back:
-SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) DEV_TOOLS
+// SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) DEV_TOOLS
