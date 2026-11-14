@@ -34,8 +34,8 @@ defteridir. Kök dizindeki `CLAUDE.md` her oturumu buraya yönlendirir. Kapanan 
 
 | | iOS | Android |
 |---|---|---|
-| Sürüm | 1.1.0 (sıradaki 1.2.0) | 1.1.0 (sıradaki 1.2.0) |
-| Build | 33 (App Store'a gönderilecek) | versionCode 2 (Play dahili testte; kapalı test incelemeye hazır) |
+| Sürüm | 1.2.0 | 1.2.0 |
+| Build | 34 (TestFlight, 1.2.0; 1.1.0 (33) incelemeye girmeden 1.2 ile değiştirilecek) | versionCode 2 (Play dahili testte; kapalı test incelemeye hazır) |
 | Dal | `v1.1.1` | `v1.1.1` |
 | Mağazada | 1.0.0 (28) yayında (10 Kasım), `main` | kapalı test (Play) |
 
