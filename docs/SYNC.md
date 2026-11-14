@@ -61,46 +61,8 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
-### 2026-11-14 · 1.2 §4 düzeltme: Cümle Kur büyük harf · iOS [x] Android [x]
-Kartlarda her kelime cümledeki yazımıyla gösterilir (I, I'm, I'll, özel isimler, ikinci cümlenin
-başı büyük kalır). Yalnızca cümlenin ilk kelimesi küçük harfe çevrilir, çünkü büyük ilk harf
-cevabı ele verir; ilk kelime "I" ya da "I'" ile başlayan bir kısaltmaysa o da olduğu gibi
-kalır. Neden: `cards.json`'da 228 cümlede ilk kelimeden sonra büyük harf var, 287 cümle "I"
-ile başlıyor; hepsini küçültmek "can i ask you" gibi yanlış yazım gösteriyordu.
-Test: "Can I ask you something?" → kartlar "can", "I", "ask", "you", "something?";
-"I think this is a good idea." → "I" büyük kalır; "Try this cake. It's very good." → "It's"
-büyük kalır.
-Android: kural zaten böyleydi (yalnız ilk kelime küçülür), üç örnek test olarak eklendi (`SentenceGamesTest`).
-Android'de ilgili üç kontrol (iOS incelemesinden):
-- Salt okunur liste açığı: seçilen yol "dosya olarak gönder" kapalı. Ücretsizde dışa aktarma zaten Pro; `UserLists.canExport` salt okunur listeyi Pro olmadan vermez, menü `share` paywall'ını açar. Kalan boşluk: deneme sırasında dışa aktarılan liste, deneme bitince içe aktarılırsa `imported` olarak düzenlenebilir gelir (içe aktarılan listeler tasarım gereği sınır dışı); bunu kapatmak için dosyanın kaynağını tanımak gerekir, yapılmadı.
-- Deneme bitince uygulama hiç açılmazsa: Android'de de kalıyordu. Düzeltildi: `Preferences.load` önbellekteki Pro'yu deneme bitişine göre kendisi süzer (`FreeTrial.lapsed`, saat geri alınmasına karşı son görülen zamanı da kullanır), böylece widget ve kilit ekranı Pro hızı/temasını bırakır; bitiş anı ayrı bir slot olarak zamanlanır. Sınav bildirimi de aynı süzgeci okur.
-- Satın alan, çevrimdışı, RevenueCat okunamıyor, deneme bitmiş: Android'de Pro kaybolmuyor. `PURCHASED` kaydı veritabanında kalır, RevenueCat hata verirse hiçbir şey değişmez; özet satın alana gösterilmez. Test eklendi.
-Testler: `FreeTrialTest` (lapsed, offline satın alma, dışa aktarma).
-
-### 2026-11-14 · 1.2 inceleme düzeltmeleri (§1–§3) · iOS [x] Android [x]
-Android kendi düzeltmelerini e910748'de yaptı; iOS karşılığı:
-- Deneme bitişi önbelleğe yazılır (`trial_end`), `is_pro` yalnızca satın alma/geliştirici anahtarıdır; widget, tercihler, seri hakları ve liste kuralları `ProEntitlement.isPro(db:now:)` ile "satın alma || şimdi < deneme bitişi" hesaplar. Uygulama hiç açılmasa da 72. saatte Pro biter. `Preferences.save` denemeyi kalıcı Pro'ya çevirmez.
-- Son bilinen satın alma saklanır (`is_purchased`); çevrimdışı açılışta ya da RevenueCat okunamazsa alıcı Pro'sunu ve özetsizliğini korur.
-- Satın alma `kind`: yetki yoksa abonelik `periodType`'ına, sonra ücretsiz deneme tanıtım teklifine bakılır.
-- Deneme Keychain'e her `refresh`te yazılmaz: bellekte tutulur, bayrak değişince ya da `lastSeen` 1 saatten fazla ilerleyince yazılır.
-- "Dosya olarak gönder": `UserLists.canExport` (Pro ve salt okunur değil); içe aktarılan liste salt okunur yapılmadı (Android ile aynı; deneme sırasında dışa aktarma boşluğu ikisinde de açık).
-- "Devam et" yarım saniye sonra sayfa (deneme özeti) açıksa oyunu açmaz, öneriyi bırakır. Deneme özeti `await`ten sonra yeniden denetlenir, ancak gerçekten sunulurken işaretlenir.
-Testler: `ReviewFixTests`. Dosyalar: `Models/ProEntitlement.swift`, `ReverseTrial.swift`, `Preferences.swift`, `UserLists.swift`, `App/Store/PurchaseManager.swift`, `App/AppModel.swift`, `App/Puzzle/CrosswordView.swift`.
-
 ### 2026-11-14 · 1.2 §5 Sınav geri sayımı · iOS [ ] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §5. iOS Live Activity, Android kalıcı bildirim. Testler: plan "Test".
 Metin kuralı (iOS aynısını yazsın; `ExamCountdownLine`): "YDS'ye 23 gün · bugün 12 kelime" (YDS -ye, YÖKDİL ve IELTS -e); 12 = günlük hedef. Bugünkü hedef tamamsa "bugünkü hedef tamam", listedeki her kelime öğrenildiyse "hepsini öğrendin", sınav günü "YDS bugün · …". Pro (deneme dahil) ve sınav tarihi şart; tarih yoksa öneri çıkmaz; sınav günü geçince kendiliğinden kapanır; Pro biterse kapanır.
 Android: Profil › Seviye ve sınav altında "Kilit ekranında geri sayım" anahtarı (tarih varken görünür, Pro değilse paywall `examPlan`), Bugün'deki sınav planı kartında "Kilit ekranında geri sayım göster" önerisi (Pro, kapalıyken). Varsayılan kapalı. Bildirim sessiz, kalıcı, "Kapat" düğmesi ya da kaydırma anahtarı kapatır. Android 13+ bildirim izni ister. Testler: `ExamCountdownLineTest`.
-
-### 2026-11-14 · 1.2 §4 Cümle Kur ve Boşluğu Doldur · iOS [x] Android [x]
-Kurallar `docs/V1_2_PLAN.md` §4. Sinyaller `game.sentence.finished`, `game.gapfill.finished`.
-Testler: plan "Test" (uygunluk taraması dahil).
-Android'de plana eklenen ayrıntılar (iOS aynısını yapsın):
-- Adlar: `streak.day` kaynağı `sentence` / `gapFill`; öğrenme kaydı (`review_log.source`) `sentence` / `gapFill`; oyun kaydı `game_result.game` `sentence` / `gapFill`. Sinyallerin parametreleri `score` ve `seconds` (Boşluğu Doldur'da `seconds` 60'a kadar geçen süre).
-- Cümle Kur kelimeleri: İngilizce cümle boşlukla bölünür (4–10 kelime, Türkçe çevirisi var, en az iki farklı kelime). Noktalama bulunduğu kelimede kalır; yalnızca ilk kelimenin baş harfi küçültülür (`I`, `I'm`, kısaltmalar kalır), satırda 1. yerdeki kart büyük harfle gösterilir. Karıştırma doğru sırayı vermez (metne göre karşılaştırılır; aynı kelimeden ikisi varsa yer değiştirmeleri hata sayılmaz). Doğruluk metne göre: aynı iki kelime birbirinin yerine geçebilir.
-- Yanlış kontrolde yanlış yerdeki kartlar sallanır ve yerinde kalır, ikinci yanlışta doğru cümle "Doğrusu" olarak gösterilir. İkinci denemede doğru yapmak da `answered(correct: false)` sayılır (ilk denemede doğru değil). Kayıt tur sonunda.
-- Boşluğu Doldur: kelime cümlede aynen (büyük/küçük harf fark etmez, harfle komşu olmadan, kesme işaretinden önce/sonra değil: `can't` içinde `can` sayılmaz) geçmeli; her geçtiği yer boşaltılır. Çeldirici: aynı `pos` ve seviyeden, kullanıcı kartı olmayan, cümlede görünmeyen, hepsi farklı üç kelime; üçü bulunamazsa kart girmez. Doğru: 0,35 sn yeşil, yanlış: seçilen amber + doğrusu yeşil, 1 sn sonra sıradaki (kırmızı yerine amber: uygulamada "asla kırmızı" kuralı, Eşleştir ile aynı). Cevaplanmayan sorular kaydedilmez.
-- Oyna sekmesi: iki yeni kart (altı oyun kartı), ikisinde de "Sınırsız" etiketi. Bulmaca sonu önerisi sırası: Kelime Avı, Eşleştir, Cümle Kur, Boşluğu Doldur.
-- Testler: `SentenceGamesTest` (uygunluk taraması tüm `cards.json` kartlarında: Cümle Kur ≥ 2100, Boşluğu Doldur ≥ 1700 kart kalmalı).
-iOS (yukarıdakilerin aynısı, fark yok): kurallar KelimeCore'da `Games/SentenceGames.swift` (`SentenceTokens`, `SentenceGame`, `GapFill`, `GapFillGame`); kaynak adları `StreakSource` / `ReviewSource` `.sentence` / `.gapFill`; `game_result.game` aynı adlar; `FreeGame` sırası wordSearch, match, sentence, gapFill; `GamePool.cards(where:)` uygunluk süzgeci, `GamePool.best` oyun en iyisi (Boşluğu Doldur). iOS'ta Cümle Kur'da `shown(_:position:)` satırda 1. yerdeki kartı büyük harfle gösterir. Görünüm: `App/Games/SentenceGameViews.swift` (`SentenceView`, `GapFillView`), sonuç ekranı `GameResultView` (Cümle Kur'da cümle listesi). Testler: `SentenceGamesTests` (taramada Cümle Kur ≥ 2100, Boşluğu Doldur ≥ 1700), `FreeGameOrderTests`.
 
