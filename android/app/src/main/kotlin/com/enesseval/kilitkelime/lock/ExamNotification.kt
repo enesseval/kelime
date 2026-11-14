@@ -25,10 +25,9 @@ object ExamNotification {
 
     /** Posts or removes the notification to match the setting, Pro and the exam plan. */
     suspend fun sync(context: Context, model: AppModel, enabled: Boolean) {
-        val line = if (!enabled) null else {
-            val plan = model.read { db -> ExamPlan.status(db, model.clock) }
-            ExamCountdownLine.text(model.read { db -> Preferences.load(db).isPro }, plan)
-        }
+        val plan = if (enabled) model.read { db -> ExamPlan.status(db, model.clock) } else null
+        if (enabled && !ExamCountdownLine.stayEnabled(true, plan)) model.prefs.update { it.copy(examNotificationEnabled = false) }
+        val line = if (!enabled) null else ExamCountdownLine.text(model.read { db -> Preferences.load(db).isPro }, plan)
         if (line == null || !WordNotification.canPost(context)) {
             cancel(context)
             return

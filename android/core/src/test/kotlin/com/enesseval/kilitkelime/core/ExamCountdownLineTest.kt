@@ -44,6 +44,23 @@ class ExamCountdownLineTest {
         assertFalse(ExamCountdownLine.available(false, plan()))
     }
 
+    @Test fun theSwitchTurnsOffWhenTheDateIsGone() {
+        assertTrue(ExamCountdownLine.stayEnabled(true, plan()))
+        assertFalse(ExamCountdownLine.stayEnabled(true, null))
+        assertFalse(ExamCountdownLine.stayEnabled(false, plan()))
+        // Date deleted, then a new one entered: the plan is back, but the switch stayed off.
+        val db = TestSupport.bundled()
+        val clock = AppClock.fixed(Instant.parse("2026-11-14T10:00:00Z"), ZoneId.of("UTC"))
+        ExamCountdown.set(DeckID.YDS, LocalDate.of(2026, 12, 7), db)
+        var enabled = ExamCountdownLine.stayEnabled(true, ExamPlan.status(db, clock))
+        assertTrue(enabled)
+        ExamCountdown.clear(db)
+        enabled = ExamCountdownLine.stayEnabled(enabled, ExamPlan.status(db, clock))
+        assertFalse(enabled)
+        ExamCountdown.set(DeckID.YDS, LocalDate.of(2027, 1, 20), db)
+        assertFalse(ExamCountdownLine.stayEnabled(enabled, ExamPlan.status(db, clock)))
+    }
+
     @Test fun noDateMeansNoCountdown() {
         val db = TestSupport.bundled()
         val clock = AppClock.fixed(Instant.parse("2026-11-14T10:00:00Z"), ZoneId.of("UTC"))

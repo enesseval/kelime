@@ -9,6 +9,12 @@ object ExamCountdownLine {
     /** Whether the countdown may be on screen: Pro, and an exam date that is today or ahead. */
     fun available(isPro: Boolean, plan: ExamPlanStatus?): Boolean = isPro && plan != null && plan.daysLeft >= 0
 
+    /**
+     * The switch stays on only while the exam plan has a date ahead. Once the date is deleted (or the exam
+     * day has passed) it turns itself off, so a date entered later does not bring the notification back.
+     */
+    fun stayEnabled(enabled: Boolean, plan: ExamPlanStatus?): Boolean = enabled && plan != null
+
     /** "YDS'ye", "YÖKDİL'e", "IELTS'e": YDS is read "ye-de-es", so it takes -ye. */
     fun toExam(exam: DeckID): String = "${exam.raw}${if (exam == DeckID.YDS) "'ye" else "'e"}"
 
