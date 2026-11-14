@@ -190,13 +190,18 @@ struct SettingsView: View {
         if app.isPro {
             SettingsSection("ÜYELİK") {
                 SettingsRow("Kilit Kelime Pro") {
-                    Label(app.purchases.planLabel, systemImage: "checkmark.seal.fill")
+                    Label(app.purchases.planLabel, systemImage: app.purchases.trialDaysLeft == nil ? "checkmark.seal.fill" : "clock")
                         .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
                         .foregroundStyle(Palette.greenInk)
                 }
-                Divider().overlay(Palette.line)
-                linkRow("Aboneliği yönet", systemImage: "creditcard") {
-                    openURL(URL(string: "https://apps.apple.com/account/subscriptions")!)
+                if app.purchases.trialDaysLeft != nil {
+                    Divider().overlay(Palette.line)
+                    linkRow("Pro'ya geç", systemImage: "sparkles") { app.router.showPaywall(.base) }
+                } else {
+                    Divider().overlay(Palette.line)
+                    linkRow("Aboneliği yönet", systemImage: "creditcard") {
+                        openURL(URL(string: "https://apps.apple.com/account/subscriptions")!)
+                    }
                 }
             }
         } else {

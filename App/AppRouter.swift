@@ -27,6 +27,18 @@ enum Route: Hashable {
 enum GameKind: String, Identifiable {
     case wordSearch, match
     var id: String { rawValue }
+
+    init(free: FreeGame) { self = free == .wordSearch ? .wordSearch : .match }
+
+    var title: String { self == .wordSearch ? "Kelime Avı" : "Eşleştir" }
+    var freeGame: FreeGame { self == .wordSearch ? .wordSearch : .match }
+    fileprivate var playedKey: String { "game.playedOn." + rawValue }
+}
+
+struct TrialSummaryRequest: Identifiable {
+    let lines: [String]
+    let ownLists: Int
+    var id: String { "trialSummary" }
 }
 
 struct PuzzleRequest: Identifiable {
@@ -60,6 +72,8 @@ final class AppRouter {
     var puzzle: PuzzleRequest?
     /// Presents a game full screen.
     var game: GameKind?
+    /// The end-of-trial summary, shown once.
+    var trialSummary: TrialSummaryRequest?
     /// Presents last week's summary.
     var weeklySummaryPresented = false
     /// A good moment happened inside a full-screen round; ask for the reminder once it closes.
@@ -72,7 +86,7 @@ final class AppRouter {
     var roundOpen: Bool { reviewPresented || puzzle != nil || game != nil }
 
     /// Another sheet is up; a new one would be refused.
-    var sheetShown: Bool { paywall != nil || weeklySummaryPresented || reminderAskPresented }
+    var sheetShown: Bool { paywall != nil || trialSummary != nil || weeklySummaryPresented || reminderAskPresented }
     /// Set by `openLists`; Kelimelerim shows Listeler and clears it.
     var listsRequested = false
 
@@ -125,6 +139,18 @@ final class AppRouter {
         playPath.append(.puzzleArchive)
     }
 
+    /// Opens a free game and remembers that it was played today (for the next suggestion).
+    func openGame(_ kind: GameKind, today: LocalDate = AppClock.system.today) {
+        UserDefaults.standard.set(today.string, forKey: kind.playedKey)
+        game = kind
+    }
+
+    /// The free game after Günün Bulmacası: the first not played today, else the first.
+    func nextFreeGame(today: LocalDate = AppClock.system.today) -> GameKind {
+        let played = Set(FreeGame.allCases.filter { UserDefaults.standard.string(forKey: GameKind(free: $0).playedKey) == today.string })
+        return GameKind(free: FreeGame.next(playedToday: played))
+    }
+
     func showPaywall(_ trigger: PaywallTrigger, deck: DeckID? = nil) {
         UsageCounter.count(.paywallShown, parameters: UsageSignal.paywallShown(trigger).parameters)
         PaywallMoment.noteShown(trigger)
@@ -171,7 +197,7 @@ final class AppRouter {
         case "game":
             tab = .play
             playPath = []
-            game = GameKind(rawValue: url.lastPathComponent)
+            if let kind = GameKind(rawValue: url.lastPathComponent) { openGame(kind) }
         default:
             break
         }

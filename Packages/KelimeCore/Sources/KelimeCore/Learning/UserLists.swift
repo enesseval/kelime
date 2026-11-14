@@ -107,6 +107,9 @@ public enum UserListError: Error, Equatable {
     case emptyWord
     case duplicateWord
     case unreadableFile
+    /// After the free trial only the first list of their own stays editable; the others can be
+    /// read, used on the widget and deleted, but not changed, until Pro.
+    case readOnly
 }
 
 /// The learner's own lists: create, fill, switch on for the widget, share and import.
@@ -133,6 +136,20 @@ public enum UserLists {
         try UserList.fetchOne(db, key: id)
     }
 
+    /// A free learner's own lists after the first are read-only (their data stays). Pro, the
+    /// free trial (both cached as `is_pro`) and imported lists are never read-only.
+    public static func isReadOnly(_ id: String, isPro: Bool, db: Database) throws -> Bool {
+        if isPro { return false }
+        let own = try UserList.filter(Column("imported") == false).order(Column("created_at"), Column("id")).fetchAll(db)
+        guard let index = own.firstIndex(where: { $0.id == id }) else { return false }
+        return index >= freeLimit
+    }
+
+    /// Throws `readOnly` when the list may not be changed; reads the cached Pro flag.
+    static func requireEditable(_ id: String, db: Database) throws {
+        if try isReadOnly(id, isPro: Settings.bool(.isPro, in: db), db: db) { throw UserListError.readOnly }
+    }
+
     /// Whether a free user may create another list.
     public static func canCreate(isPro: Bool, db: Database) throws -> Bool {
         if isPro { return true }
@@ -149,6 +166,7 @@ public enum UserLists {
     }
 
     public static func rename(_ id: String, to title: String, db: Database) throws {
+        try requireEditable(id, db: db)
         guard var list = try UserList.fetchOne(db, key: id) else { return }
         list.title = try clean(title)
         list.updatedAt = .now
@@ -199,6 +217,7 @@ public enum UserLists {
 
     /// Adds an existing card (a course or exam word, or the learner's own) to the list.
     public static func add(cardID: String, to id: String, db: Database) throws {
+        try requireEditable(id, db: db)
         guard try Card.exists(db, key: cardID) else { return }
         guard try UserListCard.filter(Column("list_id") == id && Column("card_id") == cardID).fetchCount(db) == 0 else {
             throw UserListError.duplicateWord
@@ -215,6 +234,7 @@ public enum UserLists {
         exampleEN: String = "", exampleTR: String = "",
         level: CEFRLevel, to id: String, db: Database
     ) throws -> Card {
+        try requireEditable(id, db: db)
         let word = word.trimmingCharacters(in: .whitespacesAndNewlines)
         let meanings = meaning.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty }
         guard !word.isEmpty, !meanings.isEmpty else { throw UserListError.emptyWord }
@@ -236,6 +256,7 @@ public enum UserLists {
 
     /// Removes a card from the list; the learner's own word goes if no other list holds it.
     public static func remove(cardID: String, from id: String, db: Database) throws {
+        try requireEditable(id, db: db)
         _ = try UserListCard.filter(Column("list_id") == id && Column("card_id") == cardID).deleteAll(db)
         try touch(id, db: db)
         try removeOrphans([cardID], db: db)

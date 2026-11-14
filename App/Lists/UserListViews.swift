@@ -118,6 +118,8 @@ struct UserListView: View {
     let listID: String
     @State private var list: UserList?
     @State private var cards: [WordItem] = []
+    /// After the free trial, a free learner's second and later lists can be read, not changed.
+    @State private var readOnly = false
     @State private var adding = false
     @State private var renaming = false
     @State private var newTitle = ""
@@ -140,14 +142,26 @@ struct UserListView: View {
                         .font(KelimeFont.ui(14, relativeTo: .subheadline))
                         .foregroundStyle(Palette.ink2)
                         .padding(.horizontal, 20)
-                    Button { adding = true } label: {
-                        Label("Kelime ekle", systemImage: "plus")
+                    if readOnly {
+                        Button { model.router.showPaywall(.lists) } label: {
+                            Label("Pro ile düzenle", systemImage: "lock.fill")
+                        }
+                        .buttonStyle(PrimaryButtonStyle(height: 50))
+                        .padding(.horizontal, 20)
+                        Text("Bu liste salt okunur: ücretsizde ilk listen düzenlenir. Hiçbir kelimen silinmedi; Pro ile yeniden düzenleyebilirsin.")
+                            .font(KelimeFont.ui(13, relativeTo: .footnote))
+                            .foregroundStyle(Palette.ink2)
+                            .padding(.horizontal, 20)
+                    } else {
+                        Button { adding = true } label: {
+                            Label("Kelime ekle", systemImage: "plus")
+                        }
+                        .buttonStyle(PrimaryButtonStyle(height: 50))
+                        .padding(.horizontal, 20)
                     }
-                    .buttonStyle(PrimaryButtonStyle(height: 50))
-                    .padding(.horizontal, 20)
                     LazyVStack(spacing: 0) {
                         ForEach(cards) { item in
-                            SwipeRow(id: item.id, actions: [
+                            SwipeRow(id: item.id, actions: readOnly ? [] : [
                                 SwipeRow.Action(title: "Listeden çıkar", systemImage: "trash", ink: .white, background: Palette.amberInk) { remove(item) },
                             ], openRow: $openRow) {
                                 model.router.openWord(item.id)
@@ -157,7 +171,7 @@ struct UserListView: View {
                             Rectangle().fill(Palette.line).frame(height: 1).padding(.leading, 20)
                         }
                     }
-                    if !cards.isEmpty {
+                    if !cards.isEmpty && !readOnly {
                         Text("Bir kelimeyi listeden çıkarmak için sola kaydır.")
                             .font(KelimeFont.ui(12, relativeTo: .caption))
                             .foregroundStyle(Palette.ink2)
@@ -177,9 +191,11 @@ struct UserListView: View {
                     }
                     Button("Dosya olarak gönder", systemImage: "square.and.arrow.up") { Task { await share() } }
                         .disabled(cards.isEmpty)
-                    Button("Adını değiştir", systemImage: "pencil") {
-                        newTitle = list?.title ?? ""
-                        renaming = true
+                    if !readOnly {
+                        Button("Adını değiştir", systemImage: "pencil") {
+                            newTitle = list?.title ?? ""
+                            renaming = true
+                        }
                     }
                     Button("Listeyi sil", systemImage: "trash", role: .destructive) { confirmDelete = true }
                 } label: {
@@ -222,7 +238,9 @@ struct UserListView: View {
 
     private func reload() async {
         let id = listID
+        let pro = model.isPro
         list = await model.read { db in try UserLists.list(id: id, db: db) } ?? nil
+        readOnly = await model.read { db in try UserLists.isReadOnly(id, isPro: pro, db: db) } ?? false
         cards = await model.read { db in
             try UserLists.cards(of: id, db: db).compactMap { try WordQueries.item(id: $0.id, db: db) }
         } ?? []
@@ -345,6 +363,8 @@ struct AddWordSheet: View {
                 try await model.editList { db in try UserLists.add(cardID: card.id, to: id, db: db) }
                 inList.insert(card.id)
                 message = "\(card.word) eklendi"
+            } catch UserListError.readOnly {
+                message = "Bu liste salt okunur"
             } catch {
                 message = "Bu kelime listede var"
             }

@@ -420,7 +420,7 @@ private func subtitle(_ trigger: PaywallTrigger) -> String {
     case .share: "Listeni linkle gönder ya da Keşfet'te herkese aç."
     case .rotation: "Kilit ekranında gün boyu daha çok kelime."
     case .personalPuzzle: "Zorlandığın ve öğrendiğin kelimelerden karışık bir bulmaca."
-    case .archive: "Kaçırdığın günlerin bulmacalarını çöz."
+    case .archive: "Haftada 2 bulmaca ücretsiz. Pro ile kaçırdığın günlerin hepsini çöz."
     case .examPlan: "Sınav gününe kadar her gün kaç kelime çalışman gerektiğini görelim."
     case .discover: "Diğer öğrencilerin hazırladığı listeleri ekle; widget'ında dönsün."
     case .base: "Kurs, sınav listeleri ve Hızlı Tekrar ücretsiz kalır; Pro yenilerini ekler."

@@ -42,6 +42,10 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case matchBest = "match_best"
     /// Last one-time progress reset this install went through (`ProgressReset.epoch`).
     case progressEpoch = "progress_epoch"
+    /// The Monday (`YYYY-MM-DD`) of the week the archive quota counts, and the archive days the
+    /// free learner opened that week, comma-separated (`ArchiveQuota`).
+    case archiveWeek = "archive_week"
+    case archiveOpened = "archive_opened"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

@@ -1,4 +1,5 @@
 import Foundation
+import GRDB
 import KelimeCore
 import Observation
 
@@ -38,6 +39,37 @@ final class AppModel {
         await account.sync()
         await updateContent()
         await rescheduleReminder()
+        await presentTrialSummaryIfDue()
+    }
+
+    /// After the 3-day trial: once, when no other full-screen page is up, a summary of the Pro
+    /// features used (source `trialEnded`). If something is up, it waits for the next chance.
+    func presentTrialSummaryIfDue() async {
+        guard purchases.trialSummaryDue, database != nil, !showOnboarding,
+              router.trialSummary == nil, !router.sheetShown, !router.roundOpen else { return }
+        let clock = clock
+        let usage = purchases.trial.trial?.usage ?? [:]
+        let (own, exam) = await read { db -> (Int, Int?) in
+            (try UserList.filter(Column("imported") == false).fetchCount(db), try ExamPlan.percentLearned(db: db, clock: clock))
+        } ?? (0, nil)
+        purchases.markTrialSummaryShown()
+        UsageCounter.count(.paywallShown, parameters: UsageSignal.paywallShown(.trialEnded).parameters)
+        PaywallMoment.noteShown(.trialEnded)
+        router.trialSummary = TrialSummaryRequest(lines: TrialSummary.lines(usage: usage, ownLists: own, examPercent: exam), ownLists: own)
+    }
+
+    /// Opens an archive puzzle. Free learners spend one of the week's two, unless the puzzle
+    /// was opened this week or played before; with none left the archive paywall opens.
+    func openArchivePuzzle(_ day: LocalDate, played: Bool) async {
+        guard let database else { return }
+        let pro = isPro, today = clock.today
+        let allowed = (try? await database.writer.write { db in
+            try ArchiveQuota.open(day, today: today, isPro: pro, played: played, db: db)
+        }) ?? false
+        guard allowed else { router.showPaywall(.archive); return }
+        if pro { purchases.noteTrialUse(.archive, key: day.string) }
+        dataVersion += 1
+        router.openPuzzle(day: day)
     }
 
     /// Rebuilds the planned daily reminders from the saved time and today's streak. Does nothing
@@ -102,6 +134,8 @@ final class AppModel {
             // The refresh may have moved the learner to the next unit.
             dataVersion += 1
             await updateContent()
+            await purchases.refreshEntitlement()
+            await presentTrialSummaryIfDue()
         } catch {
             phase = .failed(error)
         }
@@ -157,7 +191,7 @@ final class AppModel {
             router.reminderAskPending = true
         } else if !router.reminderAskPending, !isPro, !router.paywallMomentPending,
                   let days = await read({ db in try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM streak_day") ?? 0 }),
-                  PaywallMoment.shouldOffer(studyDays: days) {
+                  PaywallMoment.shouldOffer(isPro: isPro, studyDays: days) {
             router.paywallMomentPending = true
         }
     }

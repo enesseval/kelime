@@ -59,6 +59,9 @@ struct MainTabView: View {
         .sheet(item: $router.paywall) { request in
             WidgetPaywall(request: request).environment(model)
         }
+        .sheet(item: $router.trialSummary) { request in
+            TrialSummaryView(request: request).environment(model)
+        }
         .sheet(item: $router.designPreview) { design in
             PaywallDesignView(design: design, request: AppRouter.PaywallRequest(trigger: .base)).environment(model)
         }
@@ -81,6 +84,7 @@ struct MainTabView: View {
             ReminderAskSheet().environment(model)
         }
         .onChange(of: router.roundOpen) { _, roundOpen in
+            if !roundOpen { Task { await model.presentTrialSummaryIfDue() } }
             // With another sheet up the ask would be refused; it waits for the next round.
             guard !roundOpen, !router.sheetShown, router.reminderAskPending || router.paywallMomentPending else { return }
             // One ask per round: the reminder first; Pro waits for a later good moment.
@@ -97,7 +101,7 @@ struct MainTabView: View {
                 }
                 if reminder {
                     router.reminderAskPresented = true
-                } else {
+                } else if !model.isPro {
                     router.showPaywall(.moment)
                     Analytics.signal("paywall.moment")
                 }
@@ -164,12 +168,15 @@ struct PlayData: Sendable {
     var puzzle: DailyPuzzleInfo?
     var strugglingCount: Int
     var matchBest: Int
+    /// Archive puzzles a free learner can still open this week.
+    var archiveRemaining: Int
 
     static func load(db: Database, clock: AppClock) throws -> PlayData {
         PlayData(
             puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
             strugglingCount: try StatsQueries.week(db: db, clock: clock).strugglingNow,
-            matchBest: try Settings.int(.matchBest, in: db) ?? 0
+            matchBest: try Settings.int(.matchBest, in: db) ?? 0,
+            archiveRemaining: try ArchiveQuota.remaining(today: clock.today, db: db)
         )
     }
 }
@@ -184,7 +191,7 @@ struct PlayView: View {
             VStack(alignment: .leading, spacing: 14) {
                 ScreenTitle(title: "Oyna")
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
-                    gameCard("Hızlı Tekrar", reviewSubtitle, highlight: (data?.strugglingCount ?? 0) > 0) {
+                    gameCard("Hızlı Tekrar", reviewSubtitle, highlight: (data?.strugglingCount ?? 0) > 0, unlimited: true) {
                         icon("bolt.fill")
                     } action: { Task { await model.startQuickReview() } }
                     gameCard("Günün Bulmacası", puzzleSubtitle) {
@@ -194,21 +201,30 @@ struct PlayView: View {
                             .frame(width: 44, height: 44)
                             .background(Palette.accentSoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     } action: { model.router.openPuzzle() }
-                    gameCard("Kelime Avı", "Anlamından bul") {
+                    gameCard("Kelime Avı", "Anlamından bul", unlimited: true) {
                         icon("square.grid.3x3.middle.filled")
-                    } action: { model.router.game = .wordSearch }
-                    gameCard("Eşleştir", (data?.matchBest ?? 0) > 0 ? "60 saniye · en iyi \(data!.matchBest)" : "60 saniye") {
+                    } action: { model.router.openGame(.wordSearch) }
+                    gameCard("Eşleştir", (data?.matchBest ?? 0) > 0 ? "60 saniye · en iyi \(data!.matchBest)" : "60 saniye", unlimited: true) {
                         icon("rectangle.2.swap")
-                    } action: { model.router.game = .match }
+                    } action: { model.router.openGame(.match) }
                 }
 
                 VStack(spacing: 0) {
-                    proRow("Bulmaca arşivi", "Geçmiş günlerin bulmacaları") {
-                        model.isPro ? model.router.openArchive() : model.router.showPaywall(.archive)
+                    proRow("Bulmaca arşivi", archiveSubtitle, locked: false) {
+                        if model.isPro || (data?.archiveRemaining ?? 1) > 0 {
+                            model.router.openArchive()
+                        } else {
+                            model.router.showPaywall(.archive)
+                        }
                     }
                     Rectangle().fill(Palette.line).frame(height: 1).padding(.leading, 20)
                     proRow("Sana Özel Bulmaca", "Zorlandığın ve öğrendiğin kelimelerden") {
-                        model.isPro ? model.router.openPersonalPuzzle() : model.router.showPaywall(.personalPuzzle)
+                        if model.isPro {
+                            model.purchases.noteTrialUse(.personalPuzzle)
+                            model.router.openPersonalPuzzle()
+                        } else {
+                            model.router.showPaywall(.personalPuzzle)
+                        }
                     }
                 }
                 .foregroundStyle(Palette.ink)
@@ -237,11 +253,22 @@ struct PlayView: View {
     }
 
     /// One game: the same size for all four, so none looks like an extra.
-    private func gameCard(_ title: String, _ subtitle: String, highlight: Bool = false,
+    private func gameCard(_ title: String, _ subtitle: String, highlight: Bool = false, unlimited: Bool = false,
                           @ViewBuilder art: () -> some View, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             VStack(alignment: .leading, spacing: 0) {
-                art().frame(height: 44, alignment: .leading)
+                HStack(alignment: .top) {
+                    art().frame(height: 44, alignment: .leading)
+                    Spacer(minLength: 4)
+                    if unlimited {
+                        Text("Sınırsız")
+                            .font(KelimeFont.ui(11, weight: .bold, relativeTo: .caption2))
+                            .foregroundStyle(Palette.greenInk)
+                            .padding(.vertical, 3)
+                            .padding(.horizontal, 7)
+                            .background(Palette.green.opacity(0.18), in: Capsule())
+                    }
+                }
                 Spacer(minLength: 16)
                 Text(title)
                     .font(KelimeFont.english(23, relativeTo: .title2))
@@ -266,7 +293,14 @@ struct PlayView: View {
         return count > 0 ? "\(count) zorlandığın kelime seni bekliyor" : "10 kelime · 2 dakika"
     }
 
-    private func proRow(_ title: String, _ subtitle: String, action: @escaping () -> Void) -> some View {
+    /// Free learners see how many of the week's two archive puzzles are left.
+    private var archiveSubtitle: String {
+        guard !model.isPro, let left = data?.archiveRemaining else { return "Geçmiş günlerin bulmacaları" }
+        return "Haftada \(ArchiveQuota.freePerWeek) bulmaca · bu hafta \(left) hakkın var"
+    }
+
+    /// `locked: false` keeps the row open for everyone (no PRO badge).
+    private func proRow(_ title: String, _ subtitle: String, locked: Bool = true, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack {
                 VStack(alignment: .leading, spacing: 3) {
@@ -274,7 +308,7 @@ struct PlayView: View {
                     Text(subtitle).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
                 }
                 Spacer()
-                if model.isPro {
+                if model.isPro || !locked {
                     Image(systemName: "chevron.right").foregroundStyle(Palette.ink2)
                 } else {
                     ProBadge()

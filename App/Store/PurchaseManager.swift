@@ -24,7 +24,14 @@ final class PurchaseManager {
 
     /// The current offering's packages: monthly, annual, lifetime.
     private(set) var packages: [Package] = []
+    /// Pro = bought or on the free 3-day trial (or the developer switch). Stored so views update.
     private(set) var isPro = false
+    /// Bought: the entitlement or one of our products, without the trial.
+    private(set) var isPurchased = false
+    /// The free trial as last read; the state itself lives in the Keychain.
+    private(set) var trial = TrialSnapshot(trial: nil, now: .now)
+    private let trialManager = ReverseTrialManager(store: KeychainTrialStore())
+    private var trialExpiry: Task<Void, Never>?
     private(set) var trialEligible = true
     private(set) var loadingProducts = false
     private(set) var lastError: String?
@@ -33,6 +40,43 @@ final class PurchaseManager {
 
     private var updatesTask: Task<Void, Never>?
     private weak var app: AppModel?
+
+    /// "Deneme: N gün kaldı" while the free trial runs and nothing is bought.
+    var trialDaysLeft: Int? { !isPurchased && trial.isActive ? trial.daysLeft : nil }
+
+    /// The end-of-trial summary is due: over, not shown yet, nothing bought.
+    var trialSummaryDue: Bool { !isPurchased && trial.summaryDue }
+
+    func markTrialSummaryShown() {
+        trialManager.markSummaryShown()
+        trial = trialManager.refresh(now: .now)
+    }
+
+    /// Counts a use of a Pro feature for the end-of-trial summary (only while the trial runs).
+    func noteTrialUse(_ feature: TrialFeature, key: String? = nil) {
+        guard !isPurchased else { return }
+        trialManager.note(feature, key: key, now: .now)
+    }
+
+    /// Reads the trial, starts it on the first launch ever, sends its signals once and plans a
+    /// re-check for the moment it ends.
+    private func updateTrial() {
+        guard Self.isOnSale else { return }
+        let snapshot = trialManager.refresh(now: .now)
+        if snapshot.justStarted { Analytics.send(.trialStarted) }
+        if snapshot.justEnded { Analytics.send(.trialEnded) }
+        trial = snapshot
+        trialExpiry?.cancel()
+        if snapshot.isActive, let trial = snapshot.trial {
+            let wait = trial.remaining(now: snapshot.now) + 0.5
+            trialExpiry = Task { [weak self] in
+                try? await Task.sleep(for: .seconds(wait))
+                guard !Task.isCancelled else { return }
+                await self?.refreshEntitlement()
+                await self?.app?.presentTrialSummaryIfDue()
+            }
+        }
+    }
 
     var monthly: Package? { packages.first { $0.packageType == .monthly } }
     var annual: Package? { packages.first { $0.packageType == .annual } }
@@ -117,21 +161,26 @@ final class PurchaseManager {
     /// Reads the entitlement again (e.g. after the developer Pro switch).
     func refreshEntitlement() async {
         guard Self.isOnSale else { return await apply(nil) }
-        await apply(try? await Purchases.shared.customerInfo())
+        // No answer (offline) keeps what was known: a buyer is not turned into a free user.
+        if let info = try? await Purchases.shared.customerInfo() { await apply(info) } else { await apply(nil, keepPurchase: true) }
     }
 
     /// Caches the entitlement and rebuilds the widgets when it changes.
-    private func apply(_ info: CustomerInfo?) async {
+    private func apply(_ info: CustomerInfo?, keepPurchase: Bool = false) async {
         // The entitlement, or any of our products owned directly: a product not attached to the
         // entitlement in RevenueCat must not leave a paying learner on the free plan.
         let entitled = info?.entitlements[Self.entitlement]?.isActive ?? false
         let products = (info?.activeSubscriptions ?? []).union(info?.nonSubscriptions.map(\.productIdentifier) ?? [])
-        let active = entitled || ProEntitlement.isPro(activeProductIDs: products)
+        let active = keepPurchase ? isPurchased : (entitled || ProEntitlement.isPro(activeProductIDs: products))
         if let info {
             let entitlements = info.entitlements.active.keys.sorted().joined(separator: ", ")
             diagnostics = "Yetki: \(entitlements.isEmpty ? "yok" : entitlements) · Ürünler: \(products.isEmpty ? "yok" : products.sorted().joined(separator: ", "))"
         }
-        let pro = Self.isOnSale && (active || DevTools.forcePro)
+        updateTrial()
+        isPurchased = Self.isOnSale && active
+        // A buyer never sees the end-of-trial summary.
+        if isPurchased, trial.summaryDue { trialManager.markSummaryShown() }
+        let pro = Self.isOnSale && (active || trial.isActive || DevTools.forcePro)
         isPro = pro
         guard let app, let database = app.database else { return }
         let changed = (try? await database.writer.write { db in try ProEntitlement.cache(pro, db: db) }) ?? false
@@ -142,6 +191,7 @@ final class PurchaseManager {
 
     /// Current plan label for Ayarlar.
     var planLabel: String {
+        if let days = trialDaysLeft { return "Deneme: \(days) gün kaldı" }
         guard isPro else { return "Ücretsiz" }
         return DevTools.forcePro ? "Pro (geliştirici)" : "Pro"
     }

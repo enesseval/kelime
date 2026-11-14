@@ -2,10 +2,11 @@ import KelimeCore
 import KelimeUI
 import SwiftUI
 
-/// Pro archive: past daily puzzles with their completion state.
+/// Archive (free: two puzzles a week; Pro and the trial: all): past daily puzzles with their completion state.
 struct PuzzleArchiveView: View {
     @Environment(AppModel.self) private var app
     @State private var rows: [Row] = []
+    @State private var remaining = ArchiveQuota.freePerWeek
 
     struct Row: Identifiable, Sendable {
         var day: LocalDate
@@ -17,8 +18,19 @@ struct PuzzleArchiveView: View {
     }
 
     var body: some View {
-        List(rows) { row in
-            Button { app.router.openPuzzle(day: row.day) } label: {
+        List {
+            if !app.isPro {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(remaining > 0 ? "Bu hafta \(remaining) bulmaca hakkın var" : "Bu haftaki \(ArchiveQuota.freePerWeek) hakkın bitti")
+                        .font(KelimeFont.ui(15, weight: .semibold, relativeTo: .body))
+                    Text("Haftada \(ArchiveQuota.freePerWeek) bulmaca ücretsiz, pazartesi yenilenir. Oynadığın bulmacayı tekrar açmak hak harcamaz. Pro ile hepsi açık.")
+                        .font(KelimeFont.ui(13, relativeTo: .footnote))
+                        .foregroundStyle(Palette.ink2)
+                }
+                .listRowBackground(Palette.accentSoft)
+            }
+            ForEach(rows) { row in
+            Button { Task { await app.openArchivePuzzle(row.day, played: row.solved > 0) } } label: {
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(TurkishDate.header(row.day.startDate(in: app.clock.calendar)))
@@ -36,6 +48,7 @@ struct PuzzleArchiveView: View {
                 .frame(minHeight: 50)
             }
             .listRowBackground(Palette.surface)
+            }
         }
         .scrollContentBackground(.hidden)
         .screenBackground()
@@ -43,6 +56,7 @@ struct PuzzleArchiveView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task(id: app.dataVersion) {
             let clock = app.clock
+            remaining = await app.read { db in try ArchiveQuota.remaining(today: clock.today, db: db) } ?? ArchiveQuota.freePerWeek
             rows = await app.read { db -> [Row] in
                 let prefs = try Preferences.load(db)
                 return try (1...30).compactMap { offset -> Row? in

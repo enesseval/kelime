@@ -123,6 +123,19 @@ public struct ExamPlanStatus: Sendable, Equatable {
 }
 
 public enum ExamPlan {
+    /// Share of the exam list learned, in percent; nil without an exam plan or an empty list.
+    public static func percentLearned(db: Database, clock: AppClock) throws -> Int? {
+        guard let countdown = try ExamCountdown.daysLeft(db: db, clock: clock),
+              let filter = CardQueries.deckFilter([countdown.exam]) else { return nil }
+        let total = try Int.fetchOne(db, SQLRequest<Int>("SELECT COUNT(*) FROM card c WHERE \(filter)")) ?? 0
+        guard total > 0 else { return nil }
+        let learned = try Int.fetchOne(db, SQLRequest<Int>("""
+            SELECT COUNT(*) FROM card c JOIN card_state s ON s.card_id = c.id
+            WHERE \(filter) AND s.state = 'learned'
+            """)) ?? 0
+        return learned * 100 / total
+    }
+
     public static func status(db: Database, clock: AppClock) throws -> ExamPlanStatus? {
         guard let countdown = try ExamCountdown.daysLeft(db: db, clock: clock),
               let filter = CardQueries.deckFilter([countdown.exam]) else { return nil }
