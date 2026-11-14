@@ -29,6 +29,9 @@ object Analytics {
         const val WALLPAPER_ENABLED = "wallpaper.enabled"
         const val REMINDER_ASK = "reminder.ask"
         const val PAYWALL_MOMENT = "paywall.moment"
+        // 1.2 (docs/V1_2_PLAN.md §2)
+        const val TRIAL_STARTED = "trial.started"
+        const val TRIAL_ENDED = "trial.ended"
     }
 
     fun start(app: Application) {
@@ -37,8 +40,8 @@ object Analytics {
         TelemetryDeck.start(app, builder)
     }
 
-    fun send(event: Event) {
-        runCatching { TelemetryDeck.signal("Usage.${event.name}") }
+    fun send(event: Event, parameters: Map<String, String> = emptyMap()) {
+        runCatching { TelemetryDeck.signal("Usage.${event.name}", parameters) }
     }
 
     fun signal(name: String, parameters: Map<String, String> = emptyMap()) {

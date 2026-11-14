@@ -71,7 +71,8 @@ Testler: plan "Test" (uygunluk taraması dahil).
 ### 2026-11-14 · 1.2 §2–§3 Ters deneme (3 gün), arşivde haftada 2, ücretsiz oyunlar görünür · iOS [ ] Android [ ]
 Kurallar `docs/V1_2_PLAN.md` §2 ve §3. Testler: plan "Test".
 
-### 2026-11-14 · 1.2 §1 Ölçüm: paywall `source`, satın alma `kind` / `product` · iOS [ ] Android [ ]
+### 2026-11-14 · 1.2 §1 Ölçüm: paywall `source`, satın alma `kind` / `product` · iOS [ ] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §1. Değerler iki platformda aynı yazılır.
+Android: `PaywallSignals` (core), `trialEnded` tetikleyicisi enum'da hazır; `kind` RevenueCat `periodType == TRIAL`'dan, `product` Play taban plan ekisiz (`pro.yearly`). Test: `PaywallSignalsTest`.
 
 <!-- Yeni maddeler buraya, en yeni en üstte. Kapananlar docs/SYNC_ARCHIVE.md dosyasının başına taşınır. -->

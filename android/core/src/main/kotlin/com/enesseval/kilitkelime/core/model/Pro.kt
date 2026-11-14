@@ -7,7 +7,9 @@ enum class PaywallTrigger(val raw: String) {
     BASE("base"), LISTS("lists"), SHARE("share"), ROTATION("rotation"),
     PERSONAL_PUZZLE("personalPuzzle"), ARCHIVE("archive"), EXAM_PLAN("examPlan"), DISCOVER("discover"),
     /** Not a locked feature: offered once the learner has studied on a few days and liked it. */
-    MOMENT("moment");
+    MOMENT("moment"),
+    /** The one summary page when the 3-day free trial ends (docs/V1_2_PLAN.md §2). */
+    TRIAL_ENDED("trialEnded");
 
     val headline: String
         get() = when (this) {
@@ -20,6 +22,7 @@ enum class PaywallTrigger(val raw: String) {
             EXAM_PLAN -> "Sınav planı"
             DISCOVER -> "Keşfet'ten hazır listeler"
             MOMENT -> "Güzel gidiyorsun"
+            TRIAL_ENDED -> "Deneme bitti"
         }
 }
 
@@ -72,4 +75,14 @@ object PaywallMoment {
     /** Different days in `streak_day`. */
     fun studyDays(db: SqlDb): Int =
         db.query("SELECT COUNT(DISTINCT day) FROM streak_day") { it.longAt(0) ?: 0 }.firstOrNull()?.toInt() ?: 0
+}
+
+/** Telemetry parameters (docs/V1_2_PLAN.md §1); the values are the same strings on iOS and Android. */
+object PaywallSignals {
+    /** `Usage.paywallShown`: the trigger's name as is. */
+    fun shown(trigger: PaywallTrigger): Map<String, String> = mapOf("source" to trigger.raw)
+
+    /** `Usage.purchase`: `trial` when the store trial started, else `paid`; the product id without a Play base-plan suffix. */
+    fun purchase(isTrial: Boolean, productId: String): Map<String, String> =
+        mapOf("kind" to if (isTrial) "trial" else "paid", "product" to productId.substringBefore(':'))
 }

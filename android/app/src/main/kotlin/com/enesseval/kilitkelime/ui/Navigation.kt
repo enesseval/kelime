@@ -153,7 +153,7 @@ class AppRouter(val nav: NavHostController, private val onPaywall: (PaywallTrigg
     fun openMatch() = nav.navigate("match")
 
     fun showPaywall(trigger: PaywallTrigger) {
-        Analytics.send(Analytics.Event.paywallShown)
+        Analytics.send(Analytics.Event.paywallShown, com.enesseval.kilitkelime.core.model.PaywallSignals.shown(trigger))
         onPaywall(trigger)
         nav.navigate("paywall/${trigger.raw}")
     }

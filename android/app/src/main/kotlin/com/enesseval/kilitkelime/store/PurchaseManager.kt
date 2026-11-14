@@ -4,11 +4,13 @@ import android.app.Activity
 import android.content.Context
 import com.enesseval.kilitkelime.BuildConfig
 import com.enesseval.kilitkelime.analytics.Analytics
+import com.enesseval.kilitkelime.core.model.PaywallSignals
 import com.enesseval.kilitkelime.core.model.ProEntitlement
 import com.enesseval.kilitkelime.data.AppModel
 import com.revenuecat.purchases.CustomerInfo
 import com.revenuecat.purchases.LogLevel
 import com.revenuecat.purchases.Package
+import com.revenuecat.purchases.PeriodType
 import com.revenuecat.purchases.PackageType
 import com.revenuecat.purchases.PurchaseParams
 import com.revenuecat.purchases.Purchases
@@ -97,7 +99,8 @@ class PurchaseManager(private val context: Context, private val model: AppModel)
         return try {
             val result = Purchases.sharedInstance.awaitPurchase(PurchaseParams.Builder(activity, pkg).build())
             apply(result.customerInfo)
-            Analytics.send(Analytics.Event.purchase)
+            val trial = result.customerInfo.entitlements[ProEntitlement.ENTITLEMENT]?.periodType == PeriodType.TRIAL
+            Analytics.send(Analytics.Event.purchase, PaywallSignals.purchase(trial, pkg.product.id))
             Result.PURCHASED
         } catch (e: PurchasesTransactionException) {
             when {
