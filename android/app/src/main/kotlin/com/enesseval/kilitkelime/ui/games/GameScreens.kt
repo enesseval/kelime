@@ -343,8 +343,11 @@ fun MatchScreen() {
         if (g != null && !finished) {
             finished = true
             newBest = g.score > best
-            app.model.studied("match", Game.MATCH.source) { db -> g.record(MatchGame.SECONDS - left, app.model.clock, db) }
-            Analytics.signal(Game.MATCH.signal, mapOf("score" to "${g.score}"))
+            // A round nobody answered leaves nothing behind (no study, result, streak day or signal).
+            if (g.answered > 0) {
+                app.model.studied("match", Game.MATCH.source) { db -> g.record(MatchGame.SECONDS - left, app.model.clock, db) }
+                Analytics.signal(Game.MATCH.signal, mapOf("score" to "${g.score}"))
+            }
         }
     }
     // A wrong pair: both cards shake twice, 7 dp, in 0.4 s, and stay amber for 0.65 s.
@@ -381,7 +384,7 @@ fun MatchScreen() {
         }
         if (finished) {
             GameResult(
-                title = if (g.score >= best && g.score > 0) "Yeni rekor!" else "Süre doldu",
+                title = if (GameResults.isNewBest(g.score, best)) "Yeni rekor!" else "Süre doldu",
                 headline = "${g.score} eşleşme",
                 stats = listOf("en iyi" to "${maxOf(best, g.score)}", "zorlandığın" to "${g.missedCards.size}"),
                 words = g.missedCards,

@@ -38,9 +38,10 @@ object SentenceTokens {
     private fun lowerFirst(word: String): String {
         val first = word.first()
         if (!first.isUpperCase()) return word
-        // "I", "I'm", "I'll": the pronoun is always capital. Acronyms (NASA, TV) stay too.
+        // "I", "I'm", "I'll": the pronoun is always capital.
         if (first == 'I' && (word.length == 1 || !word[1].isLetter())) return word
-        if (word.length > 1 && word[1].isUpperCase()) return word
+        // Only a word whose rest is lowercase loses its first capital: TV, DNA, McDonald's stay as written.
+        if (word.substring(1).any { it.isUpperCase() }) return word
         return first.lowercaseChar() + word.substring(1)
     }
 
@@ -83,7 +84,8 @@ class SentenceGame(cards: List<Card>, private val rng: RandomSource, val count: 
         fun tileText(tile: Int): String = tokens[tileOrder[tile]]
     }
 
-    val items: List<Item> = cards.mapNotNull { card ->
+    /** Two cards sharing one example sentence never meet in a round. */
+    val items: List<Item> = cards.distinctBy { it.exampleEN.trim().lowercase() }.mapNotNull { card ->
         val tokens = SentenceTokens.tokens(card) ?: return@mapNotNull null
         Item(card, tokens, SentenceTokens.shuffledOrder(tokens, rng))
     }.take(count)
@@ -153,6 +155,7 @@ class SentenceGame(cards: List<Card>, private val rng: RandomSource, val count: 
 
     /** First try right: correct; wrong or shown: not correct. The round counts the day for the streak. */
     fun record(seconds: Int, clock: AppClock, db: SqlDb): Boolean = db.transaction {
+        if (firstTry.isEmpty() && failed.isEmpty()) return@transaction false
         for (item in items) {
             val id = item.card.id
             if (id in firstTry) LearningStore.record(LearningEvent.Answered(true), id, ReviewSource.SENTENCE, clock, db)
@@ -261,6 +264,7 @@ class GapFillGame(val questions: List<GapFill.Question>) {
 
     /** Each answered word: correct or not; the round counts the day for the streak. */
     fun record(seconds: Int, clock: AppClock, db: SqlDb): Boolean = db.transaction {
+        if (results.isEmpty()) return@transaction false
         for ((id, right) in results) LearningStore.record(LearningEvent.Answered(right), id, ReviewSource.GAP_FILL, clock, db)
         GameResults.record(Game.GAP_FILL, score, results.size, seconds, clock, db)
     }

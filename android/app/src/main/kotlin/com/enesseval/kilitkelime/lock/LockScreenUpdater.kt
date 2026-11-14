@@ -20,6 +20,7 @@ import com.enesseval.kilitkelime.data.AppModel
 import com.enesseval.kilitkelime.data.LockSettings
 import com.enesseval.kilitkelime.widget.Widgets
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
@@ -46,11 +47,19 @@ class LockScreenUpdater(private val context: Context, private val model: AppMode
     suspend fun current(): Current = withContext(Dispatchers.IO) {
         val db = model.open()
         val clock = model.clock
+        var proDropped = false
         db.transaction {
+            // The trial ran out while the app stayed closed: widgets go back to free speed, so the queue is rebuilt.
+            if (FreeTrial.dropLapsedPro(db, clock.now.toEpochMilli())) {
+                proDropped = true
+                WidgetQueue.clearFuture(db, clock)
+            }
             Curriculum.advance(db)
             WidgetQueue.refill(db, clock, SystemRandom())
             CoursePuzzle.keepToday(clock, db)
         }
+        // The app's own flags (Pro, trial summary, `trial.ended`) catch up too.
+        if (proDropped) model.scope.launch { model.refreshPro() }
         val prefs = Preferences.load(db)
         val snapshot = WidgetTimelineBuilder.current(db, clock, SystemRandom())
         var next = WidgetScheduler.nextSlot(clock.now, prefs.effectiveRotation, clock.zone)

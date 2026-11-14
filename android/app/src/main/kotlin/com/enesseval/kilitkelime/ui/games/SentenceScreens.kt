@@ -270,7 +270,7 @@ fun GapFillScreen() {
             finished = true
             val secs = GapFillGame.SECONDS - left
             // Launched on the model's scope: changing `finished` restarts this effect and would cancel the saving.
-            app.model.scope.launch {
+            if (g.answered > 0) app.model.scope.launch {
                 app.model.studied("gapfill", Game.GAP_FILL.source) { db -> g.record(secs, app.model.clock, db) }
                 Analytics.signal(Game.GAP_FILL.signal, mapOf("score" to "${g.score}", "seconds" to "$secs"))
             }
@@ -302,7 +302,7 @@ fun GapFillScreen() {
         if (finished) {
             val answered = g.answered
             GameResult(
-                title = if (g.score >= best && g.score > 0) "Yeni rekor!" else "Süre doldu",
+                title = if (GameResults.isNewBest(g.score, best)) "Yeni rekor!" else "Süre doldu",
                 headline = "${g.score} doğru",
                 stats = listOf("en iyi" to "${maxOf(best, g.score)}", "zorlandığın" to "${g.missedCards.size}"),
                 words = g.missedCards,

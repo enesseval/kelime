@@ -84,6 +84,9 @@ object GameResults {
     fun playedToday(game: Game, clock: AppClock, db: SqlDb): Int =
         db.int("SELECT COUNT(*) FROM game_result WHERE game = ? AND day = ?", listOf(game.raw, clock.today))
 
+    /** "Yeni rekor!" only for a score above the best so far; a tie is not one. */
+    fun isNewBest(score: Int, best: Int): Boolean = score > best
+
     fun best(game: Game, db: SqlDb): Int = db.int("SELECT COALESCE(MAX(score), 0) FROM game_result WHERE game = ?", listOf(game.raw))
 }
 
@@ -200,6 +203,8 @@ class MatchGame(cards: List<Card>, private val rng: RandomSource, val boardSize:
     }
 
     val score: Int get() = matched.size
+    /** Distinct words the learner answered, right or wrong. */
+    val answered: Int get() = (matched + missed).toSet().size
     val matchedIDs: Set<String> get() = matched.toSet()
     val missedIDs: Set<String> get() = missed.toSet()
     /** Cards matched right on the first try, in order. */
@@ -261,6 +266,8 @@ class MatchGame(cards: List<Card>, private val rng: RandomSource, val boardSize:
 
     /** Missed words become struggling (once); first-try matches count as correct. */
     fun record(seconds: Int, clock: AppClock, db: SqlDb): Boolean = db.transaction {
+        // A round with no answer at all leaves no trace: no study, no result, no streak day.
+        if (answered == 0) return@transaction false
         for (id in missed) LearningStore.record(LearningEvent.Answered(false), id, ReviewSource.MATCH, clock, db)
         for (id in firstTryIDs) LearningStore.record(LearningEvent.Answered(true), id, ReviewSource.MATCH, clock, db)
         GameResults.record(Game.MATCH, score, (matched + missed).toSet().size, seconds, clock, db)

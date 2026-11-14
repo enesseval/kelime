@@ -100,9 +100,7 @@ class AppModel(private val context: Context) {
                 CoursePuzzle.keepToday(clock, database)
             }
             // 1.2: IS_PRO now means purchase or trial. An install from before it holds the purchase there.
-            if (Settings.string(database, SettingKey.PURCHASED) == null) {
-                Settings.setBool(database, SettingKey.PURCHASED, Settings.bool(database, SettingKey.IS_PRO))
-            }
+            FreeTrial.migratePurchase(database)
             if (FreeTrial.startIfNeeded(database, clock.now.toEpochMilli())) {
                 com.enesseval.kilitkelime.analytics.Analytics.signal(com.enesseval.kilitkelime.analytics.Analytics.Signal.TRIAL_STARTED)
             }

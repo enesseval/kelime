@@ -9,6 +9,7 @@ import com.enesseval.kilitkelime.core.games.GapFillGame
 import com.enesseval.kilitkelime.core.games.SentenceCheck
 import com.enesseval.kilitkelime.core.games.SentenceGame
 import com.enesseval.kilitkelime.core.games.SentenceTokens
+import com.enesseval.kilitkelime.core.db.int
 import com.enesseval.kilitkelime.core.learning.LearningStore
 import com.enesseval.kilitkelime.core.learning.SeededGenerator
 import com.enesseval.kilitkelime.core.model.CEFRLevel
@@ -56,6 +57,50 @@ class SentenceGamesTest {
         assertEquals("it's", t("It's very good, I think.")!!.first())
         assertEquals("Can I ask you something?", SentenceTokens.sentence(t("Can I ask you something?")!!))
         assertEquals("Try this cake. It's very good.", SentenceTokens.sentence(t("Try this cake. It's very good.")!!))
+    }
+
+    @Test fun allCapitalFirstWordsStayAsWritten() {
+        fun t(s: String) = SentenceTokens.tokens(card("x", s))!!
+        assertEquals("TV", t("TV is on in the room.").first())
+        assertEquals("DNA", t("DNA tests are quite common now.").first())
+        assertEquals("McDonald's", t("McDonald's is open all night.").first())
+        assertEquals("dogs", t("Dogs are loyal and friendly pets.").first())
+        assertEquals("TV is on in the room.", SentenceTokens.sentence(t("TV is on in the room.")))
+    }
+
+    @Test fun twoCardsWithTheSameSentenceNeverShareARound() {
+        val same = "This is the shared example sentence."
+        val cards = listOf(card("one", same), card("two", same), card("three", "We went to the beach today."), card("four", "She reads a book every night."))
+        val g = SentenceGame(cards, SeededGenerator(1uL), 5)
+        assertEquals(3, g.items.size)
+        assertEquals(3, g.items.map { it.card.exampleEN }.distinct().size)
+    }
+
+    @Test fun aRoundWithoutAnswersLeavesNoTrace() {
+        val db = TestSupport.bundled()
+        val rng = SeededGenerator(5uL)
+        fun traces() = db.int("SELECT COUNT(*) FROM game_result") + db.int("SELECT COUNT(*) FROM streak_day") + db.int("SELECT COUNT(*) FROM review_log")
+        val cards = GameWords.pick(db, rng, 40, clock.today)
+        val gap = GapFillGame(GapFill.questions(db, GameWords.pick(db, rng, 40, clock.today, GapFill::usable), rng))
+        assertFalse(gap.record(60, clock, db))
+        val match = com.enesseval.kilitkelime.core.games.MatchGame(cards, rng)
+        assertEquals(0, match.answered)
+        assertFalse(match.record(60, clock, db))
+        val sentence = SentenceGame(GameWords.pick(db, rng, 12, clock.today, SentenceTokens::usable), rng)
+        assertFalse(sentence.record(10, clock, db))
+        assertEquals(0, traces())
+        // One answer is enough to count.
+        gap.answer(gap.current!!.answerIndex)
+        assertTrue(gap.record(30, clock, db))
+        assertTrue(traces() > 0)
+    }
+
+    @Test fun newRecordNeedsAHigherScore() {
+        assertTrue(GameResults.isNewBest(5, 4))
+        assertFalse(GameResults.isNewBest(4, 4))
+        assertFalse(GameResults.isNewBest(3, 4))
+        assertTrue(GameResults.isNewBest(1, 0))
+        assertFalse(GameResults.isNewBest(0, 0))
     }
 
     @Test fun onlyFourToTenWordSentencesAreUsable() {

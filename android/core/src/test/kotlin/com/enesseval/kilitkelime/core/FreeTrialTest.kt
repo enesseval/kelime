@@ -211,6 +211,39 @@ class FreeTrialTest {
         assertEquals(null, FreeTrial.endsAt(db))
     }
 
+    @Test fun a11BuyerOpeningOfflineKeepsPro() {
+        // 1.1 had only the purchase in the Pro cache and no PURCHASED record.
+        val db = TestSupport.database()
+        Settings.setBool(db, SettingKey.IS_PRO, true)
+        assertEquals(null, Settings.string(db, SettingKey.PURCHASED))
+        FreeTrial.migratePurchase(db)
+        FreeTrial.startIfNeeded(db, t0)
+        assertTrue(Settings.bool(db, SettingKey.PURCHASED))
+        val later = t0 + 100 * hour
+        assertTrue(FreeTrial.isPro(db, later))
+        assertFalse(FreeTrial.summaryDue(db, later))
+        assertFalse(FreeTrial.dropLapsedPro(db, later))
+        assertTrue(Settings.bool(db, SettingKey.IS_PRO))
+        // A free 1.1 user stays free; an existing record is never overwritten.
+        val free = TestSupport.database()
+        FreeTrial.migratePurchase(free)
+        assertFalse(Settings.bool(free, SettingKey.PURCHASED))
+        Settings.setBool(free, SettingKey.IS_PRO, true)
+        FreeTrial.migratePurchase(free)
+        assertFalse(Settings.bool(free, SettingKey.PURCHASED))
+    }
+
+    @Test fun lapsedTrialDropsTheCachedProOnceSoTheQueueCanBeRebuilt() {
+        val db = TestSupport.database()
+        FreeTrial.startIfNeeded(db, t0)
+        Settings.setBool(db, SettingKey.PURCHASED, false)
+        Settings.setBool(db, SettingKey.IS_PRO, true)
+        assertFalse(FreeTrial.dropLapsedPro(db, t0 + 10 * hour))
+        assertTrue(FreeTrial.dropLapsedPro(db, t0 + 73 * hour))
+        assertFalse(Settings.bool(db, SettingKey.IS_PRO))
+        assertFalse(FreeTrial.dropLapsedPro(db, t0 + 74 * hour))
+    }
+
     @Test fun lockedListsCannotBeExportedWithoutPro() {
         val db = TestSupport.database()
         val lists = com.enesseval.kilitkelime.core.learning.UserLists

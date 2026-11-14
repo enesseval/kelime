@@ -61,6 +61,19 @@ object FreeTrial {
         return maxOf(nowMs, seen) >= end
     }
 
+    /**
+     * An install from 1.1 has no `PURCHASED` yet: it takes the old Pro cache, which then held the purchase
+     * alone. Needs no network, so a buyer opening 1.2 offline for the first time keeps Pro.
+     */
+    fun migratePurchase(db: SqlDb) {
+        if (Settings.string(db, SettingKey.PURCHASED) == null) {
+            Settings.setBool(db, SettingKey.PURCHASED, Settings.bool(db, SettingKey.IS_PRO))
+        }
+    }
+
+    /** Clears the cached Pro flag once the trial lapsed without a purchase; true when it changed (the queue then needs a rebuild). */
+    fun dropLapsedPro(db: SqlDb, nowMs: Long): Boolean = lapsed(db, nowMs) && ProEntitlement.cache(false, db)
+
     /** True once, when the ended trial is first noticed (sends `trial.ended`). */
     fun takeEnded(db: SqlDb, nowMs: Long): Boolean {
         if (!status(db, nowMs).ended || Settings.bool(db, SettingKey.TRIAL_ENDED_SENT)) return false
