@@ -75,7 +75,7 @@ Android'de plana eklenen ayrıntılar (iOS aynısını yapsın):
 - Oyna sekmesi: iki yeni kart (altı oyun kartı), ikisinde de "Sınırsız" etiketi. Bulmaca sonu önerisi sırası: Kelime Avı, Eşleştir, Cümle Kur, Boşluğu Doldur.
 - Testler: `SentenceGamesTest` (uygunluk taraması tüm `cards.json` kartlarında: Cümle Kur ≥ 2100, Boşluğu Doldur ≥ 1700 kart kalmalı).
 
-### 2026-11-14 · 1.2 §2–§3 Ters deneme (3 gün), arşivde haftada 2, ücretsiz oyunlar görünür · iOS [ ] Android [x]
+### 2026-11-14 · 1.2 §2–§3 Ters deneme (3 gün), arşivde haftada 2, ücretsiz oyunlar görünür · iOS [x] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §2 ve §3. Testler: plan "Test".
 Android'de uygulanan ayrıntılar (iOS aynısını yapsın):
 - Deneme: ilk açılışta başlar (uygulama güncelleyen mevcut kullanıcılar da ilk 1.2 açılışında 3 gün alır), 72 saat. En son görülen zaman saklanır, saat geri alınınca süre uzamaz. `isPro = satın alma || deneme`; ayrı `PURCHASED` kaydı. Paywall yalnızca satın almayla kapanır, deneme sırasında Profil'den açılabilir. İlerleme sıfırlaması denemeyi ve satın almayı silmez.
@@ -87,6 +87,7 @@ Android'de uygulanan ayrıntılar (iOS aynısını yapsın):
 - Bulmaca sonu: yalnızca Günün Bulmacası'nda "Devam et: <oyun>"; sıra Kelime Avı, Eşleştir, (yeni oyunlar); o gün oynanmamış ilk oyun önerilir, hepsi oynandıysa ilki.
 - Paywall sıklığı incelemesi: Android'in `moment` kuralı iOS ile aynı (3 çalışma günü, en çok 2 teklif, 14 gün arayla, herhangi bir paywall'dan sonra 48 saat sessizlik, tur bitince, onboarding'de hiç). Fark yok. 27 gösterim kilitli satırlara dokunuştan geliyor (Oyna'da arşiv ve Sana Özel, Bugün'de sınav planı, Profil kartı, liste/paylaş/döndürme); artık arşivde kilit yok, deneme sırasında hiçbiri açılmaz.
 - Testler: `FreeTrialTest` (deneme, saat geri alma, özet bir kez, kota, salt okunur liste, sıradaki oyun).
+iOS (yukarıdakilerin aynısı): deneme durumu Keychain'de (`ReverseTrial`, `KeychainTrialStore`; yeniden yüklemede ve ilerleme sıfırlamasında silinmez, okunamazsa yeni deneme başlatmaz); `PurchaseManager.isPro = satın alma || deneme`; kota `settings` tablosunda (`ArchiveQuota`, `archive_week`/`archive_opened`, ilerleme sıfırlaması dokunmaz); salt okunur liste `UserLists.isReadOnly` (ilk kendi listesi açık, `.readOnly` hatası); özet `TrialSummary.lines`; sıradaki oyun `FreeGame.next`; `moment` kuralı `PaywallMomentRule`. Testler: `ReverseTrialTests`, `ArchiveQuotaTests` (kota, salt okunur liste, oyun sırası), `UsageSignalTests`. Dosyalar: `Models/ReverseTrial.swift`, `ArchiveQuota.swift`, `TrialSummary.swift`, `PaywallMomentRule.swift`, `App/Store/TrialSummaryView.swift`, `PurchaseManager.swift`, `MainTabView.swift`, `PuzzleArchiveView.swift`, `PuzzleCompletionView.swift`.
 
 ### 2026-11-14 · 1.2 §1 Ölçüm: paywall `source`, satın alma `kind` / `product` · iOS [x] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §1. Değerler iki platformda aynı yazılır.

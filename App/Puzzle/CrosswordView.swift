@@ -18,7 +18,7 @@ struct CrosswordView: View {
         Group {
             if let game = model.game {
                 if model.isComplete {
-                    PuzzleCompletionView(model: model, onDone: close) { Task { await model.restart() } }
+                    PuzzleCompletionView(model: model, nextGame: nextGame, onDone: close, onNext: openNextGame) { Task { await model.restart() } }
                 } else {
                     playScreen(game)
                 }
@@ -48,6 +48,21 @@ struct CrosswordView: View {
         .onDisappear {
             model.isVisible = false
             Task { await model.save(announce: true) }
+        }
+    }
+
+    /// After today's Günün Bulmacası only: the next free game.
+    private var nextGame: GameKind? {
+        guard case .daily(let day) = model.source, day == app.clock.today else { return nil }
+        return app.router.nextFreeGame(today: app.clock.today)
+    }
+
+    private func openNextGame(_ kind: GameKind) {
+        close()
+        Task {
+            // Let this cover go away before the game's cover comes up.
+            try? await Task.sleep(for: .milliseconds(500))
+            app.router.openGame(kind)
         }
     }
 

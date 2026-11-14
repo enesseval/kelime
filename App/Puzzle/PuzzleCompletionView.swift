@@ -4,7 +4,10 @@ import SwiftUI
 
 struct PuzzleCompletionView: View {
     let model: PuzzleModel
+    /// The free game to suggest (Günün Bulmacası only).
+    var nextGame: GameKind?
     let onDone: () -> Void
+    var onNext: (GameKind) -> Void = { _ in }
     let onRestart: () -> Void
     @State private var sharing = false
 
@@ -38,8 +41,15 @@ struct PuzzleCompletionView: View {
                 }
                 ShareGrid(game: game, cell: 14)
                 Spacer()
-                Button("Sonucu paylaş") { sharing = true }
-                    .buttonStyle(PrimaryButtonStyle(height: 52))
+                if let nextGame {
+                    Button("Devam et: \(nextGame.title)") { onNext(nextGame) }
+                        .buttonStyle(PrimaryButtonStyle(height: 52))
+                    Button("Sonucu paylaş") { sharing = true }
+                        .buttonStyle(OutlineButtonStyle())
+                } else {
+                    Button("Sonucu paylaş") { sharing = true }
+                        .buttonStyle(PrimaryButtonStyle(height: 52))
+                }
                 HStack {
                     Button("Yeniden çöz", action: onRestart)
                     Spacer()
