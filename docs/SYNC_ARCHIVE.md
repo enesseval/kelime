@@ -4,6 +4,50 @@
 açık maddeleri tutar; bir kuralın ayrıntısı (sayılar, metinler, taşınan testler) gerektiğinde burada
 tarihle ya da başlıkla ara. Kod yorumlarındaki `docs/SYNC.md <tarih>` atıfları buradaki maddelerdir.
 
+### 2026-11-14 · 1.2 cihaz testi: deneme özeti, Cümle Kur düzeni, Boşluğu Doldur animasyonu · iOS [x] Android [x]
+
+Kullanıcının TestFlight 1.2.0 (34) testinden üç düzeltme. Üçü de görsel; kurallar, sinyaller ve
+cevap kayıtları değişmez.
+
+**A. Deneme bitti özeti daha zengin.** Şu an tek satır ("2 kendi listen") ve boş bir sayfa.
+- Üstte uygulamanın vurgu renginde büyük bir simge (mühür/yıldız), "DENEME BİTTİ" etiketi ve
+  "3 günde şunları denedin" başlığı kalır.
+- Altında 2 sütunlu sayı kutuları (her kutu: büyük sayı + kısa etiket, kart zemini, yuvarlak köşe).
+  Sırasıyla, değeri 0 olan kutu gösterilmez:
+  "Çalışılan kelime", "Gün seri", "Arşivden bulmaca", "Sana Özel Bulmaca", "Kendi listen",
+  "Sınav planı %N". En az ilk iki kutu her zaman var (0 olsa da), sayfa hiç boş kalmaz.
+- Ardından iki küçük bölüm, her satır onay ya da kilit simgeli:
+  - "Ücretsiz devam eden": "Kilit ekranı widget'ı", "Günün Bulmacası", "Sınırsız oyunlar",
+    "Arşivden haftada 2 bulmaca", "İlk listen".
+  - "Pro ile açılan": "Bulmaca arşivi sınırsız", "Sana Özel Bulmaca", "Sınav planı ve geri sayım",
+    "Sınırsız liste".
+- En altta "Verilerin yerinde, hiçbir şey silinmedi." notu küçük ve soluk.
+- İçerik kaydırılabilir; "Pro'ya geç" ve "Ücretsiz devam et" altta sabit kalır.
+- Açılışta kutular kısa bir gecikmeyle sırayla belirir (0,05 sn arayla, sistemde hareketi azalt
+  açıksa animasyonsuz).
+
+**B. Cümle Kur düzeni.**
+- Hata: alttaki kartlar ikinci satıra taşınca "Kontrol et" düğmesi kartların üstüne biniyor.
+  Düğme ekranın altına sabitlenir (güvenli alanın üstünde), kartlar hiçbir zaman altında kalmaz.
+- Alttaki havuzda bir kart yukarı gidince yerindeki boşluk kalır: aynı boyutta, kesikli çizgili
+  (1 pt, soluk) boş bir yer tutucu. Diğer kartlar kaymaz. Kart geri dönünce kendi yerine oturur.
+- Üstteki cevap satırı eskisi gibi soldan dolar (orada kayma doğal).
+
+**C. Boşluğu Doldur animasyonu.**
+- Seçenek seçilince kelime boşluğa harf harf yazılır (daktilo, toplam en fazla 0,4 sn, harf başı
+  eşit süre), sonra renk geri bildirimi (doğru yeşil / yanlış amber, doğrusu yeşil) gelir ve 1 sn
+  sonra sıradaki soru. Yanlışta boşlukta seçilen kelime amber kalır, doğru seçenek yeşil yanar.
+- Yazılırken seçenekler kilitli (çift dokunma yok). 60 sn sayaç yazılma sırasında da işler.
+- Hareketi azalt açıksa kelime tek seferde, solarak gelir.
+
+Testler: mevcut testler geçer; Boşluğu Doldur'da cevap kaydı yazılma bitmeden alınır, oyundan
+çıkılırsa cevap kaybolmaz.
+
+iOS: sayılar `TrialSummary.tiles` (KelimeCore, test `summaryTilesHideZerosExceptFirstTwo`); "Çalışılan kelime" = `review_log`
+içinde farklı kart sayısı, "Gün seri" = güncel seri. Dosyalar: `App/Store/TrialSummaryView.swift`, `App/Games/SentenceGameViews.swift`,
+`App/AppModel.swift`. Boşluğu Doldur'da doğru cevap sonrası sıradaki soru 350 ms, yanlışta 1 sn (eskisi gibi).
+
+
 ### 2026-11-14 · 1.2 §4 inceleme düzeltmeleri · iOS [x] Android [x]
 iOS'un §4 kod incelemesinden; Android'de de kontrol edildi, hepsi test edildi (`SentenceGamesTest`, `FreeTrialTest`):
 - Tur ortasında kapatma: Android'de kapatınca kayıt zaten yoktu (kayıt yalnız turun gerçek bitişinde). Eklenen kural: hiç cevap yoksa (süre dolsa bile) çalışma, oyun sonucu, seri günü ve sinyal kaydedilmez (Eşleştir, Boşluğu Doldur, Cümle Kur). Süre sayacı yalnız 60 sn gerçekten dolunca bitirir.

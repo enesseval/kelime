@@ -44,8 +44,7 @@ enum GameKind: String, Identifiable {
 }
 
 struct TrialSummaryRequest: Identifiable {
-    let lines: [String]
-    let ownLists: Int
+    let tiles: [TrialTile]
     var id: String { "trialSummary" }
 }
 

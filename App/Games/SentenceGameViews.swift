@@ -60,18 +60,34 @@ struct SentenceView: View {
     }
 
     private func play(_ game: SentenceGame) -> some View {
-        ScrollView {
-            if let item = game.current {
-                VStack(alignment: .leading, spacing: 18) {
-                    Text(item.card.exampleTR).font(KelimeFont.ui(20, weight: .medium, relativeTo: .title3))
-                    rowBox(game, item)
-                    FlowLayout(spacing: 8) {
-                        ForEach(Array(item.tileOrder.indices), id: \.self) { tile in
-                            if !game.placed(tile) {
-                                tileView(item.tileText(tile), tint: .plain) { place(tile) }
+        VStack(spacing: 0) {
+            ScrollView {
+                if let item = game.current {
+                    VStack(alignment: .leading, spacing: 18) {
+                        Text(item.card.exampleTR).font(KelimeFont.ui(20, weight: .medium, relativeTo: .title3))
+                        rowBox(game, item)
+                        FlowLayout(spacing: 8) {
+                            ForEach(Array(item.tileOrder.indices), id: \.self) { tile in
+                                if game.placed(tile) {
+                                    // Same-size empty slot: the other cards never shift.
+                                    tileView(item.tileText(tile), tint: .plain) {}
+                                        .hidden()
+                                        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                            .strokeBorder(Palette.line, style: StrokeStyle(lineWidth: 1, dash: [4, 3])))
+                                        .accessibilityHidden(true)
+                                } else {
+                                    tileView(item.tileText(tile), tint: .plain) { place(tile) }
+                                }
                             }
                         }
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 12)
+                    .padding(.bottom, 20)
+                }
+            }
+            if game.current != nil {
+                Group {
                     if game.revealed {
                         Button(game.index + 1 >= game.items.count ? "Bitir" : "Sıradaki cümle") { advance() }
                             .buttonStyle(PrimaryButtonStyle(height: 52))
@@ -83,8 +99,8 @@ struct SentenceView: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, 12)
-                .padding(.bottom, 20)
+                .padding(.top, 8)
+                .padding(.bottom, 12)
             }
         }
     }
@@ -224,7 +240,13 @@ struct GapFillView: View {
     @State private var remaining = GapFillGame.seconds
     @State private var started = false
     @State private var finished = false
-    @State private var picked: Int?
+    /// The option tapped; set at once, it locks the options while the word types into the gap.
+    @State private var chosen: Int?
+    /// What the gap shows while typing and afterwards; nil before an answer.
+    @State private var typed: String?
+    /// The colour feedback shows once the typing is done.
+    @State private var colored = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var best = 0
     @State private var failed = false
     @State private var misses = 0
@@ -308,13 +330,17 @@ struct GapFillView: View {
                 .frame(maxWidth: .infinity)
             if let q = game.current {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(q.sentence).font(KelimeFont.english(26, relativeTo: .title2))
+                    Text(gapSentence(q))
+                        .font(KelimeFont.english(26, relativeTo: .title2))
+                        .contentTransition(.opacity)
+                        .animation(reduceMotion ? .easeIn(duration: 0.25) : nil, value: typed)
                     Text(q.translation).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2.opacity(0.7))
                 }
                 .id(q.card.id)
                 VStack(spacing: 10) {
                     ForEach(Array(q.options.enumerated()), id: \.offset) { i, option in
-                        let tint: TileTint = picked == nil ? .plain : i == q.answerIndex ? .right : i == picked ? .wrong : .plain
+                        let shownPick = colored ? chosen : nil
+                        let tint: TileTint = shownPick == nil ? .plain : i == q.answerIndex ? .right : i == shownPick ? .wrong : .plain
                         tileView((tint == .right ? "✓ " : tint == .wrong ? "✕ " : "") + option, tint: tint, fill: true) { choose(i) }
                     }
                 }
@@ -323,6 +349,26 @@ struct GapFillView: View {
         }
         .padding(.horizontal, 20)
         .padding(.top, 12)
+    }
+
+    /// The sentence with the typed word in the gap: amber when wrong, green when right (after the typing).
+    private func gapSentence(_ q: GapFill.Question) -> AttributedString {
+        guard let typed else { return AttributedString(q.sentence) }
+        var out = AttributedString()
+        let parts = q.sentence.components(separatedBy: GapFill.blank)
+        for (i, part) in parts.enumerated() {
+            out += AttributedString(part)
+            if i < parts.count - 1 {
+                var word = AttributedString(typed)
+                if colored {
+                    word.foregroundColor = chosen == q.answerIndex ? Palette.greenInk : Palette.amberInk
+                } else {
+                    word.foregroundColor = Palette.accent
+                }
+                out += word
+            }
+        }
+        return out
     }
 
     private func result(_ game: GapFillGame) -> some View {
@@ -344,19 +390,36 @@ struct GapFillView: View {
     // MARK: Actions
 
     private func choose(_ option: Int) {
-        guard picked == nil, var g = game, let q = g.current else { return }
-        picked = option
+        guard chosen == nil, var g = game, let q = g.current else { return }
+        chosen = option
+        // The answer is recorded now, not after the animation: leaving mid-typing loses nothing.
         let right = g.answer(option)
         game = g
         if !right { misses += 1 }
+        let word = q.options[option]
         Task {
+            if reduceMotion {
+                typed = word
+            } else {
+                // Typewriter: at most 0.4 s in all, equal time per letter.
+                let letters = Array(word)
+                let step = 0.4 / Double(max(letters.count, 1))
+                for n in 1...max(letters.count, 1) {
+                    typed = String(letters.prefix(n))
+                    try? await Task.sleep(for: .seconds(step))
+                }
+            }
+            guard !finished, game?.current?.card.id == q.card.id else { return }
+            colored = true
             // Right: a short green flash. Wrong: amber, the right word green, one second.
             try? await Task.sleep(for: .milliseconds(right ? 350 : 1000))
             guard !finished, game?.current?.card.id == q.card.id else { return }
             var next = g
             next.next()
             game = next
-            picked = nil
+            chosen = nil
+            typed = nil
+            colored = false
             if next.isOutOfQuestions { finish() }
         }
     }
@@ -397,7 +460,9 @@ struct GapFillView: View {
         remaining = GapFillGame.seconds
         finished = false
         started = false
-        picked = nil
+        chosen = nil
+        typed = nil
+        colored = false
         await load()
         started = game != nil
     }

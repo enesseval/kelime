@@ -160,6 +160,14 @@ struct ReverseTrialTests {
         #expect(TrialSummary.lines(usage: [:], ownLists: 1, examPercent: nil).isEmpty)
     }
 
+    @Test func summaryTilesHideZerosExceptFirstTwo() {
+        let empty = TrialSummary.tiles(wordsStudied: 0, streakDays: 0, usage: [:], ownLists: 1, examPercent: nil)
+        #expect(empty.map(\.label) == ["Çalışılan kelime", "Gün seri"])
+        let full = TrialSummary.tiles(wordsStudied: 12, streakDays: 3, usage: ["archive": 4, "personalPuzzle": 2], ownLists: 3, examPercent: 20)
+        #expect(full.map(\.value) == ["12", "3", "4", "2", "3", "%20"])
+        #expect(full.last?.label == "Sınav planı")
+    }
+
     // MARK: Moment paywall
 
     @Test func noMomentPaywallWhilePro() {

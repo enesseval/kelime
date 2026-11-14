@@ -49,15 +49,18 @@ final class AppModel {
               router.trialSummary == nil, !router.sheetShown, !router.roundOpen else { return }
         let clock = clock
         let usage = purchases.trial.trial?.usage ?? [:]
-        let (own, exam) = await read { db -> (Int, Int?) in
-            (try UserList.filter(Column("imported") == false).fetchCount(db), try ExamPlan.percentLearned(db: db, clock: clock))
-        } ?? (0, nil)
+        let (own, exam, words, streak) = await read { db -> (Int, Int?, Int, Int) in
+            (try UserList.filter(Column("imported") == false).fetchCount(db),
+             try ExamPlan.percentLearned(db: db, clock: clock),
+             try Int.fetchOne(db, sql: "SELECT COUNT(DISTINCT card_id) FROM review_log") ?? 0,
+             try Streak.status(db: db, clock: clock).current)
+        } ?? (0, nil, 0, 0)
         // The read took time: something else may have come up, or the learner bought Pro.
         guard purchases.trialSummaryDue, !showOnboarding, router.trialSummary == nil, !router.sheetShown, !router.roundOpen else { return }
         purchases.markTrialSummaryShown()
         UsageCounter.count(.paywallShown, signal: UsageSignal.paywallShown(.trialEnded))
         PaywallMoment.noteShown(.trialEnded)
-        router.trialSummary = TrialSummaryRequest(lines: TrialSummary.lines(usage: usage, ownLists: own, examPercent: exam), ownLists: own)
+        router.trialSummary = TrialSummaryRequest(tiles: TrialSummary.tiles(wordsStudied: words, streakDays: streak, usage: usage, ownLists: own, examPercent: exam))
     }
 
     /// Opens an archive puzzle. Free learners spend one of the week's two, unless the puzzle
