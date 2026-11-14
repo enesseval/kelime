@@ -22,7 +22,7 @@ Ortak hafıza repodur: `docs/SYNC.md` (açık eşitlemeler), `docs/SYNC_ARCHIVE.
 1. `claude --version` yaz; 2.1.225 ya da üstü olmalı. Eskiyse `claude update`.
 2. Repo klasöründe: `git fetch origin && git checkout v1.1.1 && git pull`.
 3. `claude --remote-control` ile oturumu aç, içinde `/rename kelime-lead` yaz.
-4. `/agents` yaz: `ios-dev`, `content` ve `researcher` listede görünmeli.
+4. Lead'e "Hangi alt ajanların var?" diye sor: `ios-dev`, `content` ve `researcher` sayılmalı.
 
 ### Windows
 1. `claude --version` yaz; 2.1.234 ya da üstü olmalı. Eskiyse `claude update`.
