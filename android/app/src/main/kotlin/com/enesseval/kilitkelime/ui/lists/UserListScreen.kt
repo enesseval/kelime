@@ -118,7 +118,8 @@ fun UserListScreen(listID: String) {
     val account by app.account.state.collectAsState()
     val list by loadData(listID) { db -> UserLists.list(listID, db) }
     val readOnly by loadData(listID, pro) { db -> UserLists.isReadOnly(listID, pro, db) }
-    val locked = readOnly == true
+    // Locked until the check says otherwise, so a locked list is never editable for a frame.
+    val locked = readOnly != false
     val words by loadData(listID) { db -> UserLists.cards(listID, db).mapNotNull { WordQueries.item(it.id, db) } }
     var menu by remember { mutableStateOf(false) }
     var renaming by remember { mutableStateOf(false) }

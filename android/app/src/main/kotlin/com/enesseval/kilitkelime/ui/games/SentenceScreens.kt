@@ -269,8 +269,11 @@ fun GapFillScreen() {
         if (!finished) {
             finished = true
             val secs = GapFillGame.SECONDS - left
-            app.model.studied("gapfill", Game.GAP_FILL.source) { db -> g.record(secs, app.model.clock, db) }
-            Analytics.signal(Game.GAP_FILL.signal, mapOf("score" to "${g.score}", "seconds" to "$secs"))
+            // Launched on the model's scope: changing `finished` restarts this effect and would cancel the saving.
+            app.model.scope.launch {
+                app.model.studied("gapfill", Game.GAP_FILL.source) { db -> g.record(secs, app.model.clock, db) }
+                Analytics.signal(Game.GAP_FILL.signal, mapOf("score" to "${g.score}", "seconds" to "$secs"))
+            }
         }
     }
 

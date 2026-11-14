@@ -151,7 +151,7 @@ fun PlayScreen() {
             Divider()
             ProRow("Sana Özel Bulmaca", "Zorlandığın ve öğrendiğin kelimelerden", pro) {
                 if (pro) {
-                    scope.launch { app.model.read { db -> FreeTrial.notePersonal(db, app.model.clock.now.toEpochMilli()) } }
+                    scope.launch { app.model.write("trial-personal") { db -> FreeTrial.notePersonal(db, app.model.clock.now.toEpochMilli()) } }
                     router.openPersonalPuzzle()
                 } else router.showPaywall(PaywallTrigger.PERSONAL_PUZZLE)
             }

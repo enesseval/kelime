@@ -18,7 +18,8 @@ import com.enesseval.kilitkelime.notifications.Channels
  * counts), an exam date from the exam plan, and goes by itself once the exam day has passed.
  */
 object ExamNotification {
-    private const val ID = 9
+    // 7 word, 8 worker, 9 daily reminder.
+    private const val ID = 10
     const val OFF = "exam-off"
 
     /** Posts or removes the notification to match the setting, Pro and the exam plan. */

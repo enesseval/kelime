@@ -218,7 +218,7 @@ fun MainScaffold() {
         if (!summaryPending || route.isEmpty() || fullScreen.any { route.startsWith(it) }) return@LaunchedEffect
         kotlinx.coroutines.delay(600)
         app.model.trialSummaryPending.value = false
-        val due = app.model.read { db ->
+        val due = app.model.write("trial-summary") { db ->
             val now = app.model.clock.now.toEpochMilli()
             (com.enesseval.kilitkelime.core.model.FreeTrial.summaryDue(db, now)).also { if (it) com.enesseval.kilitkelime.core.model.FreeTrial.markSummaryShown(db) }
         }

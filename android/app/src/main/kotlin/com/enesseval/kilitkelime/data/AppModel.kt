@@ -182,6 +182,8 @@ class AppModel(private val context: Context) {
         if (!status.active) return
         trialTimer = scope.launch {
             kotlinx.coroutines.delay(status.remainingMs + 1000)
+            // refreshPro() schedules again and cancels the old timer: this one must not cancel itself.
+            trialTimer = null
             refreshPro()
         }
     }

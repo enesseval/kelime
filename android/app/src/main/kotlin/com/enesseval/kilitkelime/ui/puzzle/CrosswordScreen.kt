@@ -99,13 +99,13 @@ fun CrosswordScreen(dayText: String?, personal: Boolean) {
     val context = LocalContext.current
     val c = Palette.current
     val scope = rememberCoroutineScope()
-    val nextGame by loadData { db -> com.enesseval.kilitkelime.core.games.FreeGames.next(db, app.model.clock) }
     var loaded by remember { mutableStateOf<Loaded?>(null) }
     var failed by remember { mutableStateOf(false) }
     var game by remember { mutableStateOf<CrosswordGame?>(null) }
     var version by remember { mutableIntStateOf(0) }
     var seconds by remember { mutableIntStateOf(0) }
     var completedAt by remember { mutableStateOf<Instant?>(null) }
+    val nextGame by loadData(completedAt) { db -> com.enesseval.kilitkelime.core.games.FreeGames.next(db, app.model.clock) }
     var paused by remember { mutableStateOf(false) }
     var visible by remember { mutableStateOf(true) }
     var menu by remember { mutableStateOf(false) }
