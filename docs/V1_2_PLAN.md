@@ -78,7 +78,7 @@ Doldur'a (kelime cümlede aynen geçiyor) uygun.
   seviyeden üç çeldirici.
 - Cümledeki çekimli biçim kartın kelimesiyle aynı değilse (thought / think) kart bu oyuna
   girmez.
-- 60 saniyelik tur, Eşleştir gibi. Doğru: yeşil, sıradaki. Yanlış: kırmızı, doğrusu yeşil
+- 60 saniyelik tur, Eşleştir gibi. Doğru: yeşil, sıradaki. Yanlış: amber (uygulamada kırmızı yok, Eşleştir gibi), doğrusu yeşil
   gösterilir, 1 saniye sonra sıradaki.
 - Puan: doğru sayısı, en iyi skor saklanır. Sinyal, cevap kuralları ve sonuç ekranı Eşleştir ile
   aynı.
