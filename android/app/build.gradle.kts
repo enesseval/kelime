@@ -46,8 +46,8 @@ android {
         applicationId = "com.enesseval.kilitkelime"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2
-        versionName = "1.1.0"
+        versionCode = 3
+        versionName = "1.2.0"
         // RevenueCat's public Android SDK key (Play Store app in the "Kelime Widget" project). Public,
         // like the OAuth client id below; local.properties `revenuecat.androidKey` can override it.
         val revenueCatKey = local("revenuecat.androidKey").ifEmpty { "goog_wAWHTSsguZehSEAiNjhzwDVAAfz" }
