@@ -141,9 +141,12 @@ struct ReadOnlyListsTests {
 
 struct FreeGameOrderTests {
     @Test func nextFreeGameFollowsTheOrder() {
+        #expect(FreeGame.allCases == [.wordSearch, .match, .sentence, .gapFill])
         #expect(FreeGame.next(playedToday: []) == .wordSearch)
         #expect(FreeGame.next(playedToday: [.wordSearch]) == .match)
         #expect(FreeGame.next(playedToday: [.match]) == .wordSearch)
-        #expect(FreeGame.next(playedToday: [.wordSearch, .match]) == .wordSearch)
+        #expect(FreeGame.next(playedToday: [.wordSearch, .match]) == .sentence)
+        #expect(FreeGame.next(playedToday: [.wordSearch, .match, .sentence]) == .gapFill)
+        #expect(FreeGame.next(playedToday: [.wordSearch, .match, .sentence, .gapFill]) == .wordSearch)
     }
 }

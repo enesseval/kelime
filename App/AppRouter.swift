@@ -25,13 +25,21 @@ enum Route: Hashable {
 
 /// The games that open full screen from Oyna.
 enum GameKind: String, Identifiable {
-    case wordSearch, match
+    case wordSearch, match, sentence, gapFill
     var id: String { rawValue }
 
-    init(free: FreeGame) { self = free == .wordSearch ? .wordSearch : .match }
+    /// `FreeGame` and `GameKind` share their raw values.
+    init(free: FreeGame) { self = GameKind(rawValue: free.rawValue) ?? .wordSearch }
 
-    var title: String { self == .wordSearch ? "Kelime Avı" : "Eşleştir" }
-    var freeGame: FreeGame { self == .wordSearch ? .wordSearch : .match }
+    var title: String {
+        switch self {
+        case .wordSearch: "Kelime Avı"
+        case .match: "Eşleştir"
+        case .sentence: "Cümle Kur"
+        case .gapFill: "Boşluğu Doldur"
+        }
+    }
+
     fileprivate var playedKey: String { "game.playedOn." + rawValue }
 }
 
@@ -152,7 +160,7 @@ final class AppRouter {
     }
 
     func showPaywall(_ trigger: PaywallTrigger, deck: DeckID? = nil) {
-        UsageCounter.count(.paywallShown, parameters: UsageSignal.paywallShown(trigger).parameters)
+        UsageCounter.count(.paywallShown, signal: UsageSignal.paywallShown(trigger))
         PaywallMoment.noteShown(trigger)
         paywall = PaywallRequest(trigger: trigger, deck: deck)
     }

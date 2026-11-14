@@ -536,6 +536,8 @@ struct GameResultView<ShareCard: View>: View {
     let stats: [(String, String)]
     let words: [Card]
     var wordsTitle = "Bu turun kelimeleri"
+    /// English sentence and its Turkish meaning, for Cümle Kur.
+    var sentences: [(String, String)] = []
     let onAgain: () -> Void
     let onClose: () -> Void
     @ViewBuilder let share: (ShareCardStyle) -> ShareCard
@@ -571,7 +573,23 @@ struct GameResultView<ShareCard: View>: View {
                     }
                 }
             }
-            Spacer()
+            if !sentences.isEmpty {
+                ScrollView {
+                  VStack(alignment: .leading, spacing: 10) {
+                    Text("Cümleler").font(KelimeFont.ui(14, weight: .semibold, relativeTo: .subheadline))
+                    ForEach(sentences, id: \.0) { sentence in
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(sentence.0).font(KelimeFont.english(17, relativeTo: .body))
+                            Text(sentence.1).font(KelimeFont.ui(13, relativeTo: .footnote)).foregroundStyle(Palette.ink2)
+                        }
+                        .accessibilityElement(children: .combine)
+                    }
+                  }
+                  .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .scrollBounceBehavior(.basedOnSize)
+            }
+            Spacer(minLength: 0)
             Button("Sonucu paylaş") { sharing = true }
                 .buttonStyle(PrimaryButtonStyle(height: 52))
             HStack {

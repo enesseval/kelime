@@ -61,7 +61,7 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
-### 2026-11-14 · 1.2 §4 düzeltme: Cümle Kur büyük harf · iOS [ ] Android [x]
+### 2026-11-14 · 1.2 §4 düzeltme: Cümle Kur büyük harf · iOS [x] Android [x]
 Kartlarda her kelime cümledeki yazımıyla gösterilir (I, I'm, I'll, özel isimler, ikinci cümlenin
 başı büyük kalır). Yalnızca cümlenin ilk kelimesi küçük harfe çevrilir, çünkü büyük ilk harf
 cevabı ele verir; ilk kelime "I" ya da "I'" ile başlayan bir kısaltmaysa o da olduğu gibi
@@ -82,7 +82,7 @@ Kurallar `docs/V1_2_PLAN.md` §5. iOS Live Activity, Android kalıcı bildirim. 
 Metin kuralı (iOS aynısını yazsın; `ExamCountdownLine`): "YDS'ye 23 gün · bugün 12 kelime" (YDS -ye, YÖKDİL ve IELTS -e); 12 = günlük hedef. Bugünkü hedef tamamsa "bugünkü hedef tamam", listedeki her kelime öğrenildiyse "hepsini öğrendin", sınav günü "YDS bugün · …". Pro (deneme dahil) ve sınav tarihi şart; tarih yoksa öneri çıkmaz; sınav günü geçince kendiliğinden kapanır; Pro biterse kapanır.
 Android: Profil › Seviye ve sınav altında "Kilit ekranında geri sayım" anahtarı (tarih varken görünür, Pro değilse paywall `examPlan`), Bugün'deki sınav planı kartında "Kilit ekranında geri sayım göster" önerisi (Pro, kapalıyken). Varsayılan kapalı. Bildirim sessiz, kalıcı, "Kapat" düğmesi ya da kaydırma anahtarı kapatır. Android 13+ bildirim izni ister. Testler: `ExamCountdownLineTest`.
 
-### 2026-11-14 · 1.2 §4 Cümle Kur ve Boşluğu Doldur · iOS [ ] Android [x]
+### 2026-11-14 · 1.2 §4 Cümle Kur ve Boşluğu Doldur · iOS [x] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §4. Sinyaller `game.sentence.finished`, `game.gapfill.finished`.
 Testler: plan "Test" (uygunluk taraması dahil).
 Android'de plana eklenen ayrıntılar (iOS aynısını yapsın):
@@ -92,4 +92,5 @@ Android'de plana eklenen ayrıntılar (iOS aynısını yapsın):
 - Boşluğu Doldur: kelime cümlede aynen (büyük/küçük harf fark etmez, harfle komşu olmadan, kesme işaretinden önce/sonra değil: `can't` içinde `can` sayılmaz) geçmeli; her geçtiği yer boşaltılır. Çeldirici: aynı `pos` ve seviyeden, kullanıcı kartı olmayan, cümlede görünmeyen, hepsi farklı üç kelime; üçü bulunamazsa kart girmez. Doğru: 0,35 sn yeşil, yanlış: seçilen amber + doğrusu yeşil, 1 sn sonra sıradaki (kırmızı yerine amber: uygulamada "asla kırmızı" kuralı, Eşleştir ile aynı). Cevaplanmayan sorular kaydedilmez.
 - Oyna sekmesi: iki yeni kart (altı oyun kartı), ikisinde de "Sınırsız" etiketi. Bulmaca sonu önerisi sırası: Kelime Avı, Eşleştir, Cümle Kur, Boşluğu Doldur.
 - Testler: `SentenceGamesTest` (uygunluk taraması tüm `cards.json` kartlarında: Cümle Kur ≥ 2100, Boşluğu Doldur ≥ 1700 kart kalmalı).
+iOS (yukarıdakilerin aynısı, fark yok): kurallar KelimeCore'da `Games/SentenceGames.swift` (`SentenceTokens`, `SentenceGame`, `GapFill`, `GapFillGame`); kaynak adları `StreakSource` / `ReviewSource` `.sentence` / `.gapFill`; `game_result.game` aynı adlar; `FreeGame` sırası wordSearch, match, sentence, gapFill; `GamePool.cards(where:)` uygunluk süzgeci, `GamePool.best` oyun en iyisi (Boşluğu Doldur). iOS'ta Cümle Kur'da `shown(_:position:)` satırda 1. yerdeki kartı büyük harfle gösterir. Görünüm: `App/Games/SentenceGameViews.swift` (`SentenceView`, `GapFillView`), sonuç ekranı `GameResultView` (Cümle Kur'da cümle listesi). Testler: `SentenceGamesTests` (taramada Cümle Kur ≥ 2100, Boşluğu Doldur ≥ 1700), `FreeGameOrderTests`.
 

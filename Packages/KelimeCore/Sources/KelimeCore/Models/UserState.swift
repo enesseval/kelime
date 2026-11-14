@@ -98,6 +98,8 @@ public enum ReviewSource: String, Codable, Sendable, DatabaseValueConvertible {
     case widget
     case wordDetail
     case game
+    case sentence
+    case gapFill
 }
 
 /// One answered question. Feeds "this week" stats and the free daily limit.

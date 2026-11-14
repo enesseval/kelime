@@ -18,7 +18,7 @@ public enum TrialSummary {
 
 /// The free games, in the order Günün Bulmacası's result suggests them.
 public enum FreeGame: String, Sendable, CaseIterable {
-    case wordSearch, match
+    case wordSearch, match, sentence, gapFill
 
     /// The next free game after the daily puzzle: the first one not played today, else the first.
     public static func next(playedToday: Set<FreeGame>) -> FreeGame {

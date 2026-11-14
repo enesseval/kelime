@@ -75,6 +75,8 @@ struct MainTabView: View {
             switch game {
             case .wordSearch: WordSearchView().environment(model)
             case .match: MatchView().environment(model)
+            case .sentence: SentenceView().environment(model)
+            case .gapFill: GapFillView().environment(model)
             }
         }
         .sheet(isPresented: $router.weeklySummaryPresented) {
@@ -168,6 +170,7 @@ struct PlayData: Sendable {
     var puzzle: DailyPuzzleInfo?
     var strugglingCount: Int
     var matchBest: Int
+    var gapFillBest: Int
     /// Archive puzzles a free learner can still open this week.
     var archiveRemaining: Int
 
@@ -176,12 +179,13 @@ struct PlayData: Sendable {
             puzzle: try DailyPuzzleInfo.load(db: db, clock: clock),
             strugglingCount: try StatsQueries.week(db: db, clock: clock).strugglingNow,
             matchBest: try Settings.int(.matchBest, in: db) ?? 0,
+            gapFillBest: try GamePool.best(.gapFill, db: db),
             archiveRemaining: try ArchiveQuota.remaining(today: clock.today, db: db)
         )
     }
 }
 
-/// Oyna: the four games as equal cards, then the Pro crossword extras.
+/// Oyna: the six games as equal cards, then the Pro crossword extras.
 struct PlayView: View {
     @Environment(AppModel.self) private var model
     @State private var data: PlayData?
@@ -207,6 +211,12 @@ struct PlayView: View {
                     gameCard("Eşleştir", (data?.matchBest ?? 0) > 0 ? "60 saniye · en iyi \(data!.matchBest)" : "60 saniye", unlimited: true) {
                         icon("rectangle.2.swap")
                     } action: { model.router.openGame(.match) }
+                    gameCard("Cümle Kur", "Karışık kelimelerden cümle yap", unlimited: true) {
+                        icon("text.word.spacing")
+                    } action: { model.router.openGame(.sentence) }
+                    gameCard("Boşluğu Doldur", (data?.gapFillBest ?? 0) > 0 ? "60 saniye · en iyi \(data!.gapFillBest)" : "60 saniye", unlimited: true) {
+                        icon("square.and.pencil")
+                    } action: { model.router.openGame(.gapFill) }
                 }
 
                 VStack(spacing: 0) {
@@ -252,7 +262,7 @@ struct PlayView: View {
             .background(Palette.accentSoft, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 
-    /// One game: the same size for all four, so none looks like an extra.
+    /// One game: the same size for all six, so none looks like an extra.
     private func gameCard(_ title: String, _ subtitle: String, highlight: Bool = false, unlimited: Bool = false,
                           @ViewBuilder art: () -> some View, action: @escaping () -> Void) -> some View {
         Button(action: action) {

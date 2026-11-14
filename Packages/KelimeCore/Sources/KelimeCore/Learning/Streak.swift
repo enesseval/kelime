@@ -7,6 +7,8 @@ public enum StreakSource: String, Sendable, CaseIterable {
     case puzzle
     case wordSearch
     case match
+    case sentence
+    case gapFill
 }
 
 /// The study streak: local days in a row on which the learner finished a Quick Review, solved

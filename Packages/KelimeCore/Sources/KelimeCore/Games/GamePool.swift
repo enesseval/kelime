@@ -9,6 +9,7 @@ public enum GamePool {
         singleWords: Bool,
         lengths: ClosedRange<Int> = 1...40,
         excluding: Set<String> = [],
+        where isEligible: (Card) -> Bool = { _ in true },
         db: Database,
         today: LocalDate,
         using rng: inout some RandomNumberGenerator
@@ -27,6 +28,7 @@ public enum GamePool {
             let byID = Dictionary(uniqueKeysWithValues: cards.map { ($0.id, $0) })
             for id in window.shuffled(using: &rng) {
                 guard picked.count < count, let card = byID[id] else { continue }
+                if !isEligible(card) { continue }
                 if singleWords && !(card.isSingleWord && lengths.contains(card.word.count)) { continue }
                 let key = card.word.lowercased()
                 guard seenWords.insert(key).inserted else { continue }
@@ -34,6 +36,11 @@ public enum GamePool {
             }
         }
         return picked
+    }
+
+    /// The best score of a game, from its stored results (Eşleştir keeps its own setting).
+    public static func best(_ game: StreakSource, db: Database) throws -> Int {
+        try Int.fetchOne(db, sql: "SELECT MAX(score) FROM game_result WHERE game = ?", arguments: [game.rawValue]) ?? 0
     }
 
     /// Records a finished round for the streak and the best scores.
