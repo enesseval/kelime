@@ -14,6 +14,8 @@ struct TodayData: Sendable {
     var bannerDismissed: Bool
     var course: CourseState?
     var examPlan: ExamPlanStatus?
+    /// The lock-screen countdown (Live Activity) is switched on.
+    var lockCountdownOn: Bool
     var streak: StreakStatus
     /// Last week's summary, when it's a new week and the learner hasn't opened it yet.
     var weeklySummary: WeeklySummary?
@@ -40,6 +42,7 @@ struct TodayData: Sendable {
             bannerDismissed: try Settings.bool(.widgetBannerDismissed, in: db),
             course: try Curriculum.state(db: db),
             examPlan: try ExamPlan.status(db: db, clock: clock),
+            lockCountdownOn: try Settings.bool(.examCountdownOn, in: db),
             streak: try Streak.status(db: db, clock: clock),
             weeklySummary: try WeeklySummary.isNew(db: db, clock: clock)
                 ? try WeeklySummary.lastWeek(db: db, clock: clock).nonEmpty : nil
@@ -87,7 +90,7 @@ struct TodayView: View {
                         CurrentUnitCard(course: course)
                     }
                     if let plan = data.examPlan {
-                        ExamPlanCard(plan: plan)
+                        ExamPlanCard(plan: plan, lockCountdownOn: data.lockCountdownOn)
                     }
                     WeekStatsRow(stats: data.stats)
                 }
@@ -208,6 +211,7 @@ struct HeroCard: View {
 struct ExamPlanCard: View {
     @Environment(AppModel.self) private var model
     let plan: ExamPlanStatus
+    var lockCountdownOn = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -240,6 +244,14 @@ struct ExamPlanCard: View {
                             .buttonStyle(OutlineButtonStyle())
                     }
                 }
+            }
+            // Suggested once there is an exam date (the plan exists) and the learner is Pro.
+            if model.isPro && !lockCountdownOn {
+                Button("Kilit ekranında geri sayım göster") {
+                    UsageCounter.count(.examCountdown)
+                    Task { await model.write(rebuildQueue: false) { db in try Settings.set(.examCountdownOn, true, in: db) } }
+                }
+                .buttonStyle(OutlineButtonStyle())
             }
         }
         .foregroundStyle(Palette.ink)

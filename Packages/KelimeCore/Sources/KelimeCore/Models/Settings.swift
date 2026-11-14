@@ -50,6 +50,8 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case isPurchased = "is_purchased"
     /// When the free trial ends, seconds since 1970; widgets and gates compare it to now.
     case trialEnd = "trial_end"
+    /// The exam countdown Live Activity is switched on (default off, `ExamCountdownLine`).
+    case examCountdownOn = "exam_countdown_on"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

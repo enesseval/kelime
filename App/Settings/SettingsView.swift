@@ -8,6 +8,8 @@ struct SettingsData: Sendable {
     var levels: [CEFRLevel]
     /// The optional exam countdown.
     var exam: (exam: DeckID, date: LocalDate)?
+    /// The lock-screen countdown (Live Activity).
+    var lockCountdown: Bool
     var reminderMinutes: Int?
     var speechRate: Float
 
@@ -16,6 +18,7 @@ struct SettingsData: Sendable {
             prefs: try Preferences.load(db),
             levels: try Curriculum.levels(db: db),
             exam: try ExamCountdown.load(db: db),
+            lockCountdown: try Settings.bool(.examCountdownOn, in: db),
             reminderMinutes: try Settings.int(.reminderTime, in: db),
             speechRate: try Settings.string(.speechRate, in: db).flatMap(Float.init) ?? 0.9
         )
@@ -105,6 +108,22 @@ struct SettingsView: View {
                     ), in: Date.now..., displayedComponents: .date)
                     .labelsHidden()
                     .environment(\.locale, Locale(identifier: "tr_TR"))
+                }
+                Divider().overlay(Palette.line)
+                SettingsRow("Kilit ekranında geri sayım") {
+                    Toggle("", isOn: Binding(
+                        get: { data.lockCountdown && app.isPro },
+                        set: { on in
+                            if on && !app.isPro {
+                                app.router.showPaywall(.examPlan)
+                            } else {
+                                if on { UsageCounter.count(.examCountdown) }
+                                Task { await app.write(rebuildQueue: false) { db in try Settings.set(.examCountdownOn, on, in: db) } }
+                            }
+                        }
+                    ))
+                    .labelsHidden()
+                    .tint(Palette.green)
                 }
             }
         }

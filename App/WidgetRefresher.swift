@@ -21,6 +21,7 @@ enum WidgetRefresher {
             // The widget refills on its own next reload; nothing to surface here.
         }
         WidgetCenter.shared.reloadAllTimelines()
+        await ExamLiveActivity.sync(database)
         await PhoneWatchSync.shared.push()
     }
 
