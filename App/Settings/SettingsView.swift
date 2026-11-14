@@ -379,6 +379,18 @@ struct SettingsView: View {
                 toast = "Bulmacalar sıfırlandı"
             }
             Divider().overlay(Palette.line)
+            if PurchaseManager.isOnSale {
+                devButton("Denemeyi yeniden başlat") {
+                    await app.purchases.devSetTrial(expired: false)
+                    toast = "Deneme şimdi başladı"
+                }
+                Divider().overlay(Palette.line)
+                devButton("Denemeyi bitir") {
+                    await app.purchases.devSetTrial(expired: true)
+                    toast = "Deneme bitti, özet hazır"
+                }
+                Divider().overlay(Palette.line)
+            }
             devButton("Tanıtımı yeniden göster") {
                 await app.restartOnboarding()
             }

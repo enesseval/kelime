@@ -52,6 +52,12 @@ final class PurchaseManager {
         trial = trialManager.refresh(now: .now)
     }
 
+    /// Geliştirici: restarts or ends the trial, then applies the Pro state as at launch.
+    func devSetTrial(expired: Bool) async {
+        if expired { trialManager.devExpire(now: .now) } else { trialManager.devRestart(now: .now) }
+        await refreshEntitlement()
+    }
+
     /// Counts a use of a Pro feature for the end-of-trial summary (only while the trial runs).
     func noteTrialUse(_ feature: TrialFeature, key: String? = nil) {
         guard !isPurchased else { return }

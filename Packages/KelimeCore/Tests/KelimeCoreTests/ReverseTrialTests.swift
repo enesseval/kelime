@@ -191,6 +191,38 @@ struct ReverseTrialTests {
         #expect(!isPro(purchased: false, at: 72))
         #expect(isPro(purchased: true, at: 72))
     }
+
+    // MARK: Developer tools
+
+    @Test func devRestartStartsAFreshTrial() {
+        var old = ReverseTrial(startedAt: t0 - 100 * hour)
+        old.summaryShown = true
+        old.usage = ["archive": 3]
+        let store = MemoryTrialStore(old)
+        let (m, _) = manager(store)
+        m.devRestart(now: t0)
+        let snap = m.refresh(now: t0)
+        #expect(snap.isActive)
+        #expect(snap.trial?.startedAt == t0)
+        #expect(snap.trial?.summaryShown == false)
+        #expect(snap.trial?.usage.isEmpty == true)
+        #expect(store.trial?.startedAt == t0)
+    }
+
+    @Test func devExpireEndsTheTrialAndKeepsUsage() {
+        var old = ReverseTrial(startedAt: t0)
+        old.summaryShown = true
+        old.usage = ["archive": 2]
+        let store = MemoryTrialStore(old)
+        let (m, _) = manager(store)
+        let now = t0 + 5 * hour
+        m.devExpire(now: now)
+        let snap = m.refresh(now: now)
+        #expect(snap.hasEnded)
+        #expect(snap.summaryDue)
+        #expect(snap.trial?.uses(.archive) == 2)
+        #expect(snap.trial?.endsAt == now - 60)
+    }
 }
 
 private extension ReverseTrialManager {

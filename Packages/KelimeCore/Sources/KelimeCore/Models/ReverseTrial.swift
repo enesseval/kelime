@@ -173,6 +173,26 @@ public final class ReverseTrialManager: @unchecked Sendable {
     }
 }
 
+extension ReverseTrialManager {
+    /// Debug and TestFlight only: a fresh trial starting at `now`, summary not shown, no usage.
+    public func devRestart(now: Date) {
+        lock.lock(); defer { lock.unlock() }
+        persist(ReverseTrial(startedAt: now))
+    }
+
+    /// Debug and TestFlight only: the trial ended one minute ago (start moved back 72 hours plus
+    /// one minute), summary due. Usage counts are kept; with no trial yet, an empty one is made.
+    public func devExpire(now: Date) {
+        lock.lock(); defer { lock.unlock() }
+        var trial = loaded() ?? ReverseTrial(startedAt: now)
+        trial.startedAt = now.addingTimeInterval(-ReverseTrial.duration - 60)
+        trial.lastSeen = max(trial.lastSeen, now)
+        trial.endedReported = true
+        trial.summaryShown = false
+        persist(trial)
+    }
+}
+
 /// Holds the state in memory. For tests and previews.
 public final class MemoryTrialStore: TrialStore, @unchecked Sendable {
     public var trial: ReverseTrial?
