@@ -61,6 +61,16 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
+### 2026-11-14 · 1.2 §4 düzeltme: Cümle Kur büyük harf · iOS [ ] Android [ ]
+Kartlarda her kelime cümledeki yazımıyla gösterilir (I, I'm, I'll, özel isimler, ikinci cümlenin
+başı büyük kalır). Yalnızca cümlenin ilk kelimesi küçük harfe çevrilir, çünkü büyük ilk harf
+cevabı ele verir; ilk kelime "I" ya da "I'" ile başlayan bir kısaltmaysa o da olduğu gibi
+kalır. Neden: `cards.json`'da 228 cümlede ilk kelimeden sonra büyük harf var, 287 cümle "I"
+ile başlıyor; hepsini küçültmek "can i ask you" gibi yanlış yazım gösteriyordu.
+Test: "Can I ask you something?" → kartlar "can", "I", "ask", "you", "something?";
+"I think this is a good idea." → "I" büyük kalır; "Try this cake. It's very good." → "It's"
+büyük kalır.
+
 ### 2026-11-14 · 1.2 §5 Sınav geri sayımı · iOS [ ] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §5. iOS Live Activity, Android kalıcı bildirim. Testler: plan "Test".
 Metin kuralı (iOS aynısını yazsın; `ExamCountdownLine`): "YDS'ye 23 gün · bugün 12 kelime" (YDS -ye, YÖKDİL ve IELTS -e); 12 = günlük hedef. Bugünkü hedef tamamsa "bugünkü hedef tamam", listedeki her kelime öğrenildiyse "hepsini öğrendin", sınav günü "YDS bugün · …". Pro (deneme dahil) ve sınav tarihi şart; tarih yoksa öneri çıkmaz; sınav günü geçince kendiliğinden kapanır; Pro biterse kapanır.
