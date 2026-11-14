@@ -63,7 +63,7 @@ kelimeler, sonra öğrenilenlerden tekrar zamanı gelenler. Ücretsiz, günde s�
 - 60 saniyelik tur. Ekranda solda 5 İngilizce, sağda 5 Türkçe kart; hiçbir kelimenin iki yarısı
   aynı satırda başlamaz. Doğru çift yavaşça kaybolur, yeri boş kalır. Her tarafta 3 yer
   boşalınca sıradaki 3 kelime boş yerlere rastgele dağıtılır (yine aynı satırda eş yok).
-  Yanlış eşleşmede iki kart kısa sallanır. Ayrıntı: docs/SYNC.md.
+  Yanlış eşleşmede iki kart kısa sallanır. Ayrıntı: docs/SYNC_ARCHIVE.md (2026-11-02).
 - Puan: doğru eşleşme sayısı; en iyi skor saklanır.
 - Yanlış eşleştirilen kelime `answered(correct: false)` → zorlanılan; doğru ilk denemede
   eşleşen `answered(correct: true)`.

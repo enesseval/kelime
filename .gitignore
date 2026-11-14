@@ -25,3 +25,6 @@ site/content/
 docs/store-shots/video/raw.mp4
 node_modules/
 marketing/instagram/frames/
+
+# Claude Code: personal settings stay local; .claude/agents is shared
+.claude/settings.local.json
