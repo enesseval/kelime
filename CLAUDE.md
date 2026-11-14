@@ -57,6 +57,8 @@ Version names move together on both platforms. Build numbers do not.
 - For each task: `git pull --rebase`, do the work, tick or add the `docs/SYNC.md` entry, commit,
   `git pull --rebase`, push. Then answer the lead in at most five lines: done or not, the commit,
   tests run, and anything the user must do.
+- Every answer to the lead, even a one-line one, goes out with `SendMessage` to `kelime-lead`.
+  Text written only in this session's own chat never reaches the lead.
 
 ## Working rules
 
