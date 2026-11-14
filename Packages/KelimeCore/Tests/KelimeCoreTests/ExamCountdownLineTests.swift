@@ -148,4 +148,29 @@ struct ExamCountdownLineTests {
             #expect(try !Settings.bool(.examCountdownOn, in: db))
         }
     }
+
+    @Test func aPassedExamDaySwitchesItOffAndANewDateKeepsItOff() throws {
+        let db = try setUp(pro: true)
+        func off(_ day: String) throws -> Bool {
+            try db.writer.write { try ExamCountdownLine.switchOffIfExamPassed(db: $0, clock: clock(day)) }
+        }
+        func on() throws -> Bool { try db.reader.read { try Settings.bool(.examCountdownOn, in: $0) } }
+        #expect(try !off("2026-12-07")) // exam day itself
+        #expect(try on())
+        #expect(try off("2026-12-08"))
+        #expect(try !on())
+        try db.writer.write { try ExamCountdown.set(.yds, date: LocalDate(year: 2027, month: 3, day: 1), db: $0) }
+        #expect(try !off("2026-12-09"))
+        #expect(try !on())
+        #expect(try current(db, "2026-12-09", now: .now) == nil)
+    }
+
+    @Test func aLapsedProLeavesTheSwitchOn() throws {
+        let t0 = Date(timeIntervalSince1970: 1_800_000_000)
+        let db = try setUp(trialEnd: t0 - 3600)
+        #expect(try current(db, "2026-11-14", now: t0) == nil)
+        let switched = try db.writer.write { try ExamCountdownLine.switchOffIfExamPassed(db: $0, clock: clock("2026-11-14")) }
+        #expect(!switched)
+        #expect(try db.reader.read { try Settings.bool(.examCountdownOn, in: $0) })
+    }
 }

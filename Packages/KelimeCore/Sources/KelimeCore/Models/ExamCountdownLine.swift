@@ -45,6 +45,18 @@ public enum ExamCountdownLine {
         return "\(head) · \(tail)"
     }
 
+    /// Switches the countdown off once the exam day has passed (daysLeft < 0), so a later exam date
+    /// does not bring it back unless the user turns it on again. A write: call it from a write
+    /// transaction, never from `current`. Pro and the trial do not matter here. True when it switched.
+    @discardableResult
+    public static func switchOffIfExamPassed(db: Database, clock: AppClock) throws -> Bool {
+        guard try Settings.bool(.examCountdownOn, in: db),
+              let exam = try ExamCountdown.load(db: db),
+              exam.date.days(since: clock.today) < 0 else { return false }
+        try Settings.set(.examCountdownOn, false, in: db)
+        return true
+    }
+
     /// The plan the Live Activity should show now, or nil when it must not run: switched off, not
     /// Pro (a trial that ended without a purchase included), no exam date, or the exam day is over.
     public static func current(db: Database, clock: AppClock, now: Date = .now) throws -> ExamPlanStatus? {

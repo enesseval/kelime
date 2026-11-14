@@ -25,6 +25,9 @@ enum ExamLiveActivity {
 
     private static func run(_ database: AppDatabase) async {
         let clock = AppClock.system
+        // A passed exam day switches the countdown off for good (a write, so not inside `current`).
+        let switched = (try? await database.writer.write { db in try ExamCountdownLine.switchOffIfExamPassed(db: db, clock: clock) }) ?? false
+        if switched { onSwitchedOff?() }
         let plan = try? await database.reader.read { db in try ExamCountdownLine.current(db: db, clock: clock) }
         let all = Activity<ExamCountdownAttributes>.activities
         // Ended and dismissed activities are gone for our purposes; only live ones count.
