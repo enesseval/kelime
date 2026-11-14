@@ -62,7 +62,7 @@ dokunulur.
 ## Değişiklik günlüğü
 
 ### 2026-11-14 · 1.2 cihaz testi: deneme özeti, Cümle Kur düzeni, Boşluğu Doldur animasyonu
-iOS [ ] Android [ ]
+iOS [ ] Android [x]
 
 Kullanıcının TestFlight 1.2.0 (34) testinden üç düzeltme. Üçü de görsel; kurallar, sinyaller ve
 cevap kayıtları değişmez.

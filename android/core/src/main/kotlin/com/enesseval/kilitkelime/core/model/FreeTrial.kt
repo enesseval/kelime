@@ -4,6 +4,7 @@ import com.enesseval.kilitkelime.core.dates.AppClock
 import com.enesseval.kilitkelime.core.db.Sql
 import com.enesseval.kilitkelime.core.db.SqlDb
 import com.enesseval.kilitkelime.core.db.int
+import com.enesseval.kilitkelime.core.games.Streak
 import com.enesseval.kilitkelime.core.learning.CardQueries
 import com.enesseval.kilitkelime.core.queries.StatsQueries
 import java.time.LocalDate
@@ -104,7 +105,25 @@ object FreeTrial {
         Settings.string(db, SettingKey.TRIAL_ARCHIVE_DAYS)?.split(',')?.filter { it.isNotEmpty() } ?: emptyList()
 
     /** What the learner used in the 3 days, with numbers; zero counts are left out by the screen. */
-    data class Summary(val archivePuzzles: Int, val personalPuzzles: Int, val ownLists: Int, val examPercent: Int?)
+    data class Summary(
+        val archivePuzzles: Int, val personalPuzzles: Int, val ownLists: Int, val examPercent: Int?,
+        /** Different words answered so far ("Çalışılan kelime"). */
+        val studiedWords: Int = 0,
+        /** The streak now ("Gün seri"). */
+        val streak: Int = 0,
+    ) {
+        data class Tile(val value: String, val label: String)
+
+        /** The number boxes in order; a zero box is left out, except the first two, which always show. */
+        fun tiles(): List<Tile> = buildList {
+            add(Tile("$studiedWords", "Çalışılan kelime"))
+            add(Tile("$streak", "Gün seri"))
+            if (archivePuzzles > 0) add(Tile("$archivePuzzles", "Arşivden bulmaca"))
+            if (personalPuzzles > 0) add(Tile("$personalPuzzles", "Sana Özel Bulmaca"))
+            if (ownLists > 0) add(Tile("$ownLists", "Kendi listen"))
+            if ((examPercent ?: 0) > 0) add(Tile("%$examPercent", "Sınav planı"))
+        }
+    }
 
     fun summary(db: SqlDb, clock: AppClock): Summary {
         val plan = ExamPlan.status(db, clock)
@@ -118,6 +137,8 @@ object FreeTrial {
             Settings.int(db, SettingKey.TRIAL_PERSONAL) ?: 0,
             db.int("SELECT COUNT(*) FROM user_list WHERE imported = 0"),
             percent,
+            db.int("SELECT COUNT(DISTINCT card_id) FROM review_log"),
+            Streak.status(db, clock, false).current,
         )
     }
 }

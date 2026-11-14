@@ -112,6 +112,19 @@ class FreeTrialTest {
         assertEquals(null, summary.examPercent)
     }
 
+    @Test fun summaryTilesHideZerosButKeepTheFirstTwo() {
+        val empty = FreeTrial.Summary(0, 0, 0, null)
+        assertEquals(listOf("Çalışılan kelime", "Gün seri"), empty.tiles().map { it.label })
+        assertEquals(listOf("0", "0"), empty.tiles().map { it.value })
+        val full = FreeTrial.Summary(2, 1, 3, 40, studiedWords = 57, streak = 3)
+        assertEquals(
+            listOf("Çalışılan kelime", "Gün seri", "Arşivden bulmaca", "Sana Özel Bulmaca", "Kendi listen", "Sınav planı"),
+            full.tiles().map { it.label },
+        )
+        assertEquals(listOf("57", "3", "2", "1", "3", "%40"), full.tiles().map { it.value })
+        assertEquals(listOf("Çalışılan kelime", "Gün seri", "Kendi listen"), FreeTrial.Summary(0, 0, 1, 0, 5, 1).tiles().map { it.label })
+    }
+
     @Test fun progressResetKeepsTheTrial() {
         val db = TestSupport.database()
         FreeTrial.startIfNeeded(db, t0)

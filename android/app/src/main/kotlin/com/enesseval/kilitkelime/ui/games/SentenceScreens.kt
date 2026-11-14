@@ -23,7 +23,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -32,6 +36,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
@@ -77,6 +86,23 @@ private fun WordTile(text: String, tint: Tint, modifier: Modifier = Modifier, on
 }
 
 private enum class Tint { PLAIN, PICKED, RIGHT, WRONG }
+
+/** The empty place of a card that moved up: same size as the card (its text is laid out invisibly), dashed 1 dp, faint. */
+@Composable
+private fun TilePlaceholder(text: String) {
+    val c = Palette.current
+    val line = c.line
+    val shape = RoundedCornerShape(12.dp)
+    Box(
+        Modifier.heightIn(min = 44.dp).clip(shape).drawBehind {
+            drawRoundRect(
+                line.copy(alpha = 0.7f), cornerRadius = CornerRadius(12.dp.toPx()),
+                style = Stroke(1.dp.toPx(), pathEffect = PathEffect.dashPathEffect(floatArrayOf(6.dp.toPx(), 4.dp.toPx()))),
+            )
+        }.padding(horizontal = 14.dp, vertical = 8.dp),
+        contentAlignment = Alignment.Center,
+    ) { Text(text, style = KelimeType.english(19.sp), color = Color.Transparent) }
+}
 
 /**
  * Cümle Kur (docs/V1_2_PLAN.md §4a): the Turkish sentence on top, the English words as cards below;
@@ -160,8 +186,10 @@ fun SentenceScreen() {
             }
         }
 
+        // The button is pinned below the scrolling content, so the cards never run under it.
+        Column(Modifier.fillMaxSize()) {
         Column(
-            Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(top = 12.dp, bottom = 20.dp),
+            Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(top = 12.dp, bottom = 12.dp),
             verticalArrangement = Arrangement.spacedBy(18.dp),
         ) {
             Text(item.card.exampleTR, style = KelimeType.ui(20.sp, FontWeight.Medium), color = c.ink)
@@ -195,11 +223,13 @@ fun SentenceScreen() {
             // The cards left to pick, shuffled.
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 item.tileOrder.indices.forEach { tile ->
-                    if (!g.placed(tile)) {
-                        WordTile(item.tileText(tile), Tint.PLAIN) { if (!busy && !g.solved && !g.revealed) { g.place(tile); version++ } }
-                    }
+                    // A card that went up leaves a dashed hole of the same size: the others do not move.
+                    if (g.placed(tile)) TilePlaceholder(item.tileText(tile))
+                    else WordTile(item.tileText(tile), Tint.PLAIN) { if (!busy && !g.solved && !g.revealed) { g.place(tile); version++ } }
                 }
             }
+        }
+        Box(Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(top = 8.dp, bottom = 16.dp)) {
             if (g.revealed) {
                 PrimaryButton(if (g.index + 1 >= g.items.size) "Bitir" else "Sıradaki cümle", height = 52.dp) { advance() }
             } else {
@@ -228,6 +258,7 @@ fun SentenceScreen() {
                 }
             }
         }
+        }
     }
 }
 
@@ -251,6 +282,10 @@ fun GapFillScreen() {
     var finished by remember { mutableStateOf(false) }
     var best by remember { mutableIntStateOf(0) }
     var picked by remember { mutableStateOf<Int?>(null) }
+    // Letters of the picked word typed into the blank so far, and the fade of the word (reduced motion).
+    var typed by remember { mutableIntStateOf(0) }
+    var fade by remember { mutableFloatStateOf(1f) }
+    val reduceMotion = com.enesseval.kilitkelime.ui.components.rememberReduceMotion()
 
     LaunchedEffect(round) {
         val rng = SeededGenerator(Random.nextLong().toULong())
@@ -314,17 +349,43 @@ fun GapFillScreen() {
             return@GameFrame
         }
         val q = g.current ?: return@GameFrame
+        val chosen = picked
+        // The picked word types itself into the blank (at most 0.4 s in all); the options are locked meanwhile.
+        // The answer is already recorded when the typing starts, so leaving the game loses nothing.
+        val typing = chosen != null && typed < q.options[chosen].length
         Column(Modifier.fillMaxSize().padding(horizontal = 20.dp).padding(top = 12.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
             Text("${g.score} doğru", style = KelimeType.ui(13.sp, FontWeight.SemiBold), color = c.ink2, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                Text(q.sentence, style = KelimeType.english(26.sp), color = c.ink)
+                val word = chosen?.let { q.options[it] }
+                val feedback = when {
+                    word == null || typing -> c.ink
+                    chosen == q.answerIndex -> c.greenInk
+                    else -> c.amberInk
+                }
+                // While typing, the letters not yet typed stay as underscores so the line keeps its width.
+                val shownWord = when {
+                    word == null -> GapFill.BLANK
+                    typing -> word.take(typed).padEnd(word.length, '_')
+                    else -> word
+                }
+                val sentence = buildAnnotatedString {
+                    val parts = q.sentence.split(GapFill.BLANK)
+                    parts.forEachIndexed { i, part ->
+                        append(part)
+                        if (i < parts.lastIndex) {
+                            if (word == null) append(GapFill.BLANK)
+                            else withStyle(SpanStyle(color = feedback.copy(alpha = feedback.alpha * fade), fontWeight = FontWeight.Bold)) { append(shownWord) }
+                        }
+                    }
+                }
+                Text(sentence, style = KelimeType.english(26.sp), color = c.ink)
                 Text(q.translation, style = KelimeType.ui(13.sp), color = c.ink2.copy(alpha = 0.7f))
             }
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 q.options.forEachIndexed { i, option ->
-                    val chosen = picked
+                    // Colour feedback only once the word is typed.
                     val tint = when {
-                        chosen == null -> Tint.PLAIN
+                        chosen == null || typing -> if (i == chosen) Tint.PICKED else Tint.PLAIN
                         i == q.answerIndex -> Tint.RIGHT
                         i == chosen -> Tint.WRONG
                         else -> Tint.PLAIN
@@ -335,6 +396,8 @@ fun GapFillScreen() {
                     ) {
                         if (picked != null) return@WordTile
                         picked = i
+                        typed = 0
+                        // Recorded at once: the score and the saved answers do not wait for the typing.
                         val right = g.answer(i)
                         haptics.performHapticFeedback(if (right) HapticFeedbackType.Confirm else HapticFeedbackType.Reject)
                         version++
@@ -342,13 +405,24 @@ fun GapFillScreen() {
                 }
             }
         }
-        // After an answer: right moves on at once (a short green flash), wrong after 1 s with the right word shown.
-        val chosen = picked
+        // Typing, then the colour; right moves on after a short green flash, wrong after 1 s with the right word shown.
         LaunchedEffect(chosen, q) {
             if (chosen == null) return@LaunchedEffect
+            val length = q.options[chosen].length
+            if (reduceMotion) {
+                typed = length
+                fade = 0f
+                androidx.compose.animation.core.animate(0f, 1f, animationSpec = tween(200)) { value, _ -> fade = value }
+            } else {
+                fade = 1f
+                val each = maxOf(1L, 400L / length)
+                while (typed < length) { delay(each); typed++ }
+            }
             delay(if (chosen == q.answerIndex) 350 else 1000)
             g.next()
             picked = null
+            typed = 0
+            fade = 1f
             version++
         }
     }

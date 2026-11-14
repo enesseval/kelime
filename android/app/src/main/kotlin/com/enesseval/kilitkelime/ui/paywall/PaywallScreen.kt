@@ -199,6 +199,15 @@ fun PaywallScreen(trigger: PaywallTrigger) {
         if (trigger == PaywallTrigger.TRIAL_ENDED) com.enesseval.kilitkelime.core.model.FreeTrial.summary(db, app.model.clock) else null
     }
 
+    // After the trial: the summary page first; "Pro'ya geç" opens the plans below.
+    var plansOpen by remember { mutableStateOf(trigger != PaywallTrigger.TRIAL_ENDED) }
+    if (!plansOpen) {
+        val summary = trialSummary
+        if (summary != null) TrialEndedPage(summary, onPro = { plansOpen = true }, onContinue = { router.back() })
+        else Box(Modifier.fillMaxSize().background(Color(0xFF080D24)))
+        return
+    }
+
     val selected = state.pkg(plan)
     val trial = state.annual?.hasTrial() == true
     val annualNote = listOfNotNull(if (trial) "7 gün deneme, sonra yıllık" else "Yıllık yenilenir", state.annual?.perMonth()?.let { "ayda $it" }).joinToString(" · ")
@@ -237,7 +246,6 @@ fun PaywallScreen(trigger: PaywallTrigger) {
                     Text(trigger.headline, style = KelimeType.english(34.sp).copy(letterSpacing = (-0.8).sp), color = white, textAlign = TextAlign.Center)
                     Text(subtitle(trigger), style = KelimeType.ui(15.sp), color = white.copy(alpha = 0.75f), textAlign = TextAlign.Center)
                 }
-                trialSummary?.let { TrialSummaryCard(it) }
                 // Features: two columns of tiles; the reason the paywall opened comes first, in blue.
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     ordered.chunked(2).forEachIndexed { row, pair ->
@@ -314,29 +322,6 @@ fun PaywallScreen(trigger: PaywallTrigger) {
                     Icon(Icons.Default.Close, null, tint = white.copy(alpha = 0.9f), modifier = Modifier.size(18.dp))
                 }
             }
-        }
-    }
-}
-
-/** The trial's end: what the 3 days used, in numbers (zero counts left out). */
-@Composable
-private fun TrialSummaryCard(summary: com.enesseval.kilitkelime.core.model.FreeTrial.Summary) {
-    val c = Palette.current
-    val lines = listOfNotNull(
-        summary.archivePuzzles.takeIf { it > 0 }?.let { "Arşivden $it bulmaca" },
-        summary.personalPuzzles.takeIf { it > 0 }?.let { "Sana özel $it bulmaca" },
-        summary.ownLists.takeIf { it > 1 }?.let { "$it kendi listen" },
-        summary.examPercent?.takeIf { it > 0 }?.let { "Sınav planın %$it" },
-    )
-    Column(
-        Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(Color.White.copy(alpha = 0.08f)).padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-    ) {
-        Text("3 günde kullandıkların", style = KelimeType.ui(13.sp, FontWeight.Bold), color = c.accent)
-        if (lines.isEmpty()) {
-            Text("Pro özelliklerini bu hafta denemedin. Hepsi hâlâ burada.", style = KelimeType.ui(15.sp), color = Color.White.copy(alpha = 0.85f))
-        } else {
-            for (line in lines) Text(line, style = KelimeType.ui(17.sp, FontWeight.SemiBold), color = Color.White)
         }
     }
 }
