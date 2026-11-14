@@ -54,7 +54,7 @@ extension WeeklySummary {
             GROUP BY r.card_id ORDER BY COUNT(*) DESC, r.card_id LIMIT 1
             """, arguments: [end, LearningState.learned, start, end])
         let days = try Set(LocalDate.fetchAll(db, sql: "SELECT day FROM streak_day WHERE day <= ?", arguments: [end]))
-        let streak = Streak.compute(days: days, today: end, freezesPerWeek: Streak.freezes(isPro: try Settings.bool(.isPro, in: db))).current
+        let streak = Streak.compute(days: days, today: end, freezesPerWeek: Streak.freezes(isPro: try ProEntitlement.isPro(db: db, now: clock.now))).current
         return WeeklySummary(
             weekStart: start,
             learned: learned,

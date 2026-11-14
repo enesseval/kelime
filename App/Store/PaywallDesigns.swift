@@ -265,7 +265,7 @@ struct PaywallFrame<Content: View>: View {
         defer { working = false }
         switch await purchases.purchase(package) {
         case .purchased(let kind, let product):
-            UsageCounter.count(.purchase, parameters: UsageSignal.purchase(kind: kind, product: product).parameters)
+            UsageCounter.count(.purchase, signal: UsageSignal.purchase(kind: kind, product: product))
             dismiss()
         case .pending: toast = "Satın alma onay bekliyor"
         case .cancelled: if let error = purchases.lastError { toast = error }

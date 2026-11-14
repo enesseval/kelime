@@ -52,8 +52,10 @@ final class AppModel {
         let (own, exam) = await read { db -> (Int, Int?) in
             (try UserList.filter(Column("imported") == false).fetchCount(db), try ExamPlan.percentLearned(db: db, clock: clock))
         } ?? (0, nil)
+        // The read took time: something else may have come up, or the learner bought Pro.
+        guard purchases.trialSummaryDue, !showOnboarding, router.trialSummary == nil, !router.sheetShown, !router.roundOpen else { return }
         purchases.markTrialSummaryShown()
-        UsageCounter.count(.paywallShown, parameters: UsageSignal.paywallShown(.trialEnded).parameters)
+        UsageCounter.count(.paywallShown, signal: UsageSignal.paywallShown(.trialEnded))
         PaywallMoment.noteShown(.trialEnded)
         router.trialSummary = TrialSummaryRequest(lines: TrialSummary.lines(usage: usage, ownLists: own, examPercent: exam), ownLists: own)
     }
@@ -294,7 +296,8 @@ final class AppModel {
 
     /// Writes the list to a temporary `.kelimelist` file to share.
     func exportList(_ id: String) async -> URL? {
-        guard let shared = await read({ db in try UserLists.export(id, db: db) }) ?? nil,
+        let pro = isPro
+        guard let shared = await read({ db in try UserLists.canExport(id, isPro: pro, db: db) ? try UserLists.export(id, db: db) : nil }) ?? nil,
               let data = try? shared.encoded() else { return nil }
         let name = shared.title.replacingOccurrences(of: "/", with: "-")
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("\(name).\(SharedList.fileExtension)")

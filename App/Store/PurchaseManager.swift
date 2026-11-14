@@ -94,6 +94,12 @@ final class PurchaseManager {
     /// Configures RevenueCat and listens for entitlement changes. Call once at launch.
     func start(app: AppModel) {
         self.app = app
+        // The last known purchase, so an offline first launch does not turn a buyer into a free
+        // learner (or show them the end-of-trial summary).
+        if let database = app.database, (try? database.reader.read { db in try ProEntitlement.isPurchasedCached(db: db) }) == true {
+            isPurchased = Self.isOnSale
+            isPro = Self.isOnSale
+        }
         guard Self.isOnSale else {
             Task { await apply(nil) }
             return
@@ -131,12 +137,13 @@ final class PurchaseManager {
 
     func purchase(_ package: Package) async -> PurchaseResult {
         lastError = nil
+        let eligibleBefore = trialEligible
         do {
             let result = try await Purchases.shared.purchase(package: package)
             if result.userCancelled { return .cancelled }
             await apply(result.customerInfo)
             let product = package.storeProduct.productIdentifier
-            let onTrial = result.customerInfo.entitlements.active.values.contains { $0.productIdentifier == product && $0.periodType == .trial }
+            let onTrial = startedTrial(package: package, info: result.customerInfo, eligibleBefore: eligibleBefore)
             return .purchased(kind: onTrial ? .trial : .paid, product: product)
         } catch {
             let code = (error as NSError).code
@@ -145,6 +152,18 @@ final class PurchaseManager {
             lastError = "Satın alma tamamlanamadı"
             return .cancelled
         }
+    }
+
+    /// Whether the purchase began a free trial of the plan. The entitlement's period type answers
+    /// it; a product not attached to the entitlement falls back to the subscription's own period
+    /// type, then to the product's free-trial introductory offer the learner was eligible for.
+    private func startedTrial(package: Package, info: CustomerInfo, eligibleBefore: Bool) -> Bool {
+        let product = package.storeProduct.productIdentifier
+        if let entitlement = info.entitlements.all.values.first(where: { $0.productIdentifier == product }) {
+            return entitlement.periodType == .trial
+        }
+        if let subscription = info.subscriptionsByProductIdentifier[product] { return subscription.periodType == .trial }
+        return eligibleBefore && package.storeProduct.introductoryDiscount?.paymentMode == .freeTrial
     }
 
     /// "Satın alımları geri yükle".
@@ -165,12 +184,15 @@ final class PurchaseManager {
         if let info = try? await Purchases.shared.customerInfo() { await apply(info) } else { await apply(nil, keepPurchase: true) }
     }
 
-    /// Caches the entitlement and rebuilds the widgets when it changes.
+    /// Caches the entitlement and rebuilds the widgets when what they see changes. The cache holds
+    /// the grant (`is_pro`: bought, or the developer switch), the last known purchase and the
+    /// trial's end date; widgets and gates work out "bought or before the end" themselves.
     private func apply(_ info: CustomerInfo?, keepPurchase: Bool = false) async {
         // The entitlement, or any of our products owned directly: a product not attached to the
         // entitlement in RevenueCat must not leave a paying learner on the free plan.
         let entitled = info?.entitlements[Self.entitlement]?.isActive ?? false
         let products = (info?.activeSubscriptions ?? []).union(info?.nonSubscriptions.map(\.productIdentifier) ?? [])
+        // No answer keeps what was last known (kept across launches in the database).
         let active = keepPurchase ? isPurchased : (entitled || ProEntitlement.isPro(activeProductIDs: products))
         if let info {
             let entitlements = info.entitlements.active.keys.sorted().joined(separator: ", ")
@@ -180,10 +202,19 @@ final class PurchaseManager {
         isPurchased = Self.isOnSale && active
         // A buyer never sees the end-of-trial summary.
         if isPurchased, trial.summaryDue { trialManager.markSummaryShown() }
-        let pro = Self.isOnSale && (active || trial.isActive || DevTools.forcePro)
-        isPro = pro
+        let grant = Self.isOnSale && (active || DevTools.forcePro)
+        isPro = grant || (Self.isOnSale && trial.isActive)
         guard let app, let database = app.database else { return }
-        let changed = (try? await database.writer.write { db in try ProEntitlement.cache(pro, db: db) }) ?? false
+        let onSale = Self.isOnSale
+        let purchased = isPurchased, trialEnd = onSale ? trial.trial?.endsAt : nil
+        let canWriteTrial = trial.trial != nil || !onSale
+        let changed = (try? await database.writer.write { db -> Bool in
+            let before = try ProEntitlement.isPro(db: db)
+            try ProEntitlement.cache(grant, db: db)
+            if info != nil || !onSale { try ProEntitlement.cachePurchased(purchased, db: db) }
+            if canWriteTrial { try ProEntitlement.cacheTrialEnd(trialEnd, db: db) }
+            return try ProEntitlement.isPro(db: db) != before
+        }) ?? false
         if changed {
             await app.write(rebuildQueue: true) { _ in }
         }

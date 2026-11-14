@@ -77,6 +77,16 @@ Android'de ilgili üç kontrol (iOS incelemesinden):
 - Satın alan, çevrimdışı, RevenueCat okunamıyor, deneme bitmiş: Android'de Pro kaybolmuyor. `PURCHASED` kaydı veritabanında kalır, RevenueCat hata verirse hiçbir şey değişmez; özet satın alana gösterilmez. Test eklendi.
 Testler: `FreeTrialTest` (lapsed, offline satın alma, dışa aktarma).
 
+### 2026-11-14 · 1.2 inceleme düzeltmeleri (§1–§3) · iOS [x] Android [x]
+Android kendi düzeltmelerini e910748'de yaptı; iOS karşılığı:
+- Deneme bitişi önbelleğe yazılır (`trial_end`), `is_pro` yalnızca satın alma/geliştirici anahtarıdır; widget, tercihler, seri hakları ve liste kuralları `ProEntitlement.isPro(db:now:)` ile "satın alma || şimdi < deneme bitişi" hesaplar. Uygulama hiç açılmasa da 72. saatte Pro biter. `Preferences.save` denemeyi kalıcı Pro'ya çevirmez.
+- Son bilinen satın alma saklanır (`is_purchased`); çevrimdışı açılışta ya da RevenueCat okunamazsa alıcı Pro'sunu ve özetsizliğini korur.
+- Satın alma `kind`: yetki yoksa abonelik `periodType`'ına, sonra ücretsiz deneme tanıtım teklifine bakılır.
+- Deneme Keychain'e her `refresh`te yazılmaz: bellekte tutulur, bayrak değişince ya da `lastSeen` 1 saatten fazla ilerleyince yazılır.
+- "Dosya olarak gönder": `UserLists.canExport` (Pro ve salt okunur değil); içe aktarılan liste salt okunur yapılmadı (Android ile aynı; deneme sırasında dışa aktarma boşluğu ikisinde de açık).
+- "Devam et" yarım saniye sonra sayfa (deneme özeti) açıksa oyunu açmaz, öneriyi bırakır. Deneme özeti `await`ten sonra yeniden denetlenir, ancak gerçekten sunulurken işaretlenir.
+Testler: `ReviewFixTests`. Dosyalar: `Models/ProEntitlement.swift`, `ReverseTrial.swift`, `Preferences.swift`, `UserLists.swift`, `App/Store/PurchaseManager.swift`, `App/AppModel.swift`, `App/Puzzle/CrosswordView.swift`.
+
 ### 2026-11-14 · 1.2 §5 Sınav geri sayımı · iOS [ ] Android [x]
 Kurallar `docs/V1_2_PLAN.md` §5. iOS Live Activity, Android kalıcı bildirim. Testler: plan "Test".
 Metin kuralı (iOS aynısını yazsın; `ExamCountdownLine`): "YDS'ye 23 gün · bugün 12 kelime" (YDS -ye, YÖKDİL ve IELTS -e); 12 = günlük hedef. Bugünkü hedef tamamsa "bugünkü hedef tamam", listedeki her kelime öğrenildiyse "hepsini öğrendin", sınav günü "YDS bugün · …". Pro (deneme dahil) ve sınav tarihi şart; tarih yoksa öneri çıkmaz; sınav günü geçince kendiliğinden kapanır; Pro biterse kapanır.

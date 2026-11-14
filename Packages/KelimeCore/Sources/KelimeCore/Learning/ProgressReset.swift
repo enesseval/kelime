@@ -7,7 +7,7 @@ public enum ProgressReset {
     /// fits (1: units replace word decks, build 13). Installs below it are reset once.
     public static let epoch = 1
 
-    static let keptSettings: [SettingKey] = [.contentVersion, .contentCheckedAt, .isPro, .archiveWeek, .archiveOpened]
+    static let keptSettings: [SettingKey] = [.contentVersion, .contentCheckedAt, .isPro, .isPurchased, .trialEnd, .archiveWeek, .archiveOpened]
 
     public static func reset(db: Database) throws {
         for table in ["card_state", "review_log", "puzzle_progress", "widget_queue"] {

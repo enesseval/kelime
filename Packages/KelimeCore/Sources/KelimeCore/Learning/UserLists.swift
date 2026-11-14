@@ -137,7 +137,7 @@ public enum UserLists {
     }
 
     /// A free learner's own lists after the first are read-only (their data stays). Pro, the
-    /// free trial (both cached as `is_pro`) and imported lists are never read-only.
+    /// free trial (`ProEntitlement.isPro`) and imported lists are never read-only.
     public static func isReadOnly(_ id: String, isPro: Bool, db: Database) throws -> Bool {
         if isPro { return false }
         let own = try UserList.filter(Column("imported") == false).order(Column("created_at"), Column("id")).fetchAll(db)
@@ -147,7 +147,7 @@ public enum UserLists {
 
     /// Throws `readOnly` when the list may not be changed; reads the cached Pro flag.
     static func requireEditable(_ id: String, db: Database) throws {
-        if try isReadOnly(id, isPro: Settings.bool(.isPro, in: db), db: db) { throw UserListError.readOnly }
+        if try isReadOnly(id, isPro: ProEntitlement.isPro(db: db), db: db) { throw UserListError.readOnly }
     }
 
     /// Whether a free user may create another list.
@@ -260,6 +260,12 @@ public enum UserLists {
         _ = try UserListCard.filter(Column("list_id") == id && Column("card_id") == cardID).deleteAll(db)
         try touch(id, db: db)
         try removeOrphans([cardID], db: db)
+    }
+
+    /// "Dosya olarak gönder" is Pro, and a read-only list is never exported: a free learner could
+    /// not otherwise send it out and import it back as an editable "imported" copy.
+    public static func canExport(_ id: String, isPro: Bool, db: Database) throws -> Bool {
+        try isPro && !isReadOnly(id, isPro: isPro, db: db)
     }
 
     /// The list as a file to share.

@@ -62,6 +62,9 @@ struct CrosswordView: View {
         Task {
             // Let this cover go away before the game's cover comes up.
             try? await Task.sleep(for: .milliseconds(500))
+            // A sheet that opened meanwhile (the trial summary) would swallow the game's cover
+            // and leave `router.game` set: the suggestion is dropped instead.
+            guard !app.router.sheetShown else { return }
             app.router.openGame(kind)
         }
     }

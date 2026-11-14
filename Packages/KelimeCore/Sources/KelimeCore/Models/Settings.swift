@@ -46,6 +46,10 @@ public enum SettingKey: String, CaseIterable, Sendable {
     /// free learner opened that week, comma-separated (`ArchiveQuota`).
     case archiveWeek = "archive_week"
     case archiveOpened = "archive_opened"
+    /// The last known purchase (a paid plan, not the trial), so an offline launch keeps a buyer.
+    case isPurchased = "is_purchased"
+    /// When the free trial ends, seconds since 1970; widgets and gates compare it to now.
+    case trialEnd = "trial_end"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

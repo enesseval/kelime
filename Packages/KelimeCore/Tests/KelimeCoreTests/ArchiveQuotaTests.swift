@@ -8,12 +8,12 @@ struct ArchiveQuotaTests {
 
     @Test func weeksStartOnMonday() {
         // 2026-11-16 is a Monday.
-        #expect(d("2026-11-16").weekStart == d("2026-11-16"))
-        #expect(d("2026-11-17").weekStart == d("2026-11-16"))
-        #expect(d("2026-11-22").weekStart == d("2026-11-16")) // Sunday
-        #expect(d("2026-11-23").weekStart == d("2026-11-23"))
-        #expect(d("2026-11-14").weekStart == d("2026-11-09")) // Saturday
-        #expect(d("2026-01-01").weekStart == d("2025-12-29")) // across the year
+        #expect(StatsQueries.weekStart(for: d("2026-11-16")) == d("2026-11-16"))
+        #expect(StatsQueries.weekStart(for: d("2026-11-17")) == d("2026-11-16"))
+        #expect(StatsQueries.weekStart(for: d("2026-11-22")) == d("2026-11-16")) // Sunday
+        #expect(StatsQueries.weekStart(for: d("2026-11-23")) == d("2026-11-23"))
+        #expect(StatsQueries.weekStart(for: d("2026-11-14")) == d("2026-11-09")) // Saturday
+        #expect(StatsQueries.weekStart(for: d("2026-01-01")) == d("2025-12-29")) // across the year
     }
 
     @Test func freeLearnersGetTwoAWeek() throws {
@@ -26,7 +26,7 @@ struct ArchiveQuotaTests {
             #expect(try ArchiveQuota.open(d("2026-11-11"), today: today, isPro: false, db: db))
             #expect(try ArchiveQuota.remaining(today: today, db: db) == 0)
             // The third is refused and nothing is recorded.
-            #expect(try !ArchiveQuota.canOpen(d("2026-11-12"), today: today, isPro: false, db: db))
+            #expect(try !ArchiveQuota.open(d("2026-11-12"), today: today, isPro: false, db: db))
             #expect(try !ArchiveQuota.open(d("2026-11-12"), today: today, isPro: false, db: db))
             #expect(try ArchiveQuota.opened(today: today, db: db) == ["2026-11-10", "2026-11-11"])
         }
@@ -50,7 +50,7 @@ struct ArchiveQuotaTests {
             try ArchiveQuota.open(d("2026-11-10"), today: today, isPro: false, db: db)
             try ArchiveQuota.open(d("2026-11-11"), today: today, isPro: false, db: db)
             #expect(try ArchiveQuota.open(d("2026-11-05"), today: today, isPro: false, played: true, db: db))
-            #expect(try ArchiveQuota.canOpen(d("2026-11-05"), today: today, isPro: false, played: true, db: db))
+            #expect(try ArchiveQuota.open(d("2026-11-05"), today: today, isPro: false, played: true, db: db))
             #expect(try ArchiveQuota.opened(today: today, db: db).count == 2)
         }
     }
@@ -79,7 +79,7 @@ struct ArchiveQuotaTests {
                 #expect(try ArchiveQuota.open(d("2026-11-\(String(format: "%02d", n))"), today: today, isPro: true, db: db))
             }
             #expect(try ArchiveQuota.remaining(today: today, db: db) == 2)
-            #expect(try ArchiveQuota.canOpen(d("2026-11-01"), today: today, isPro: true, db: db))
+            #expect(try ArchiveQuota.open(d("2026-11-01"), today: today, isPro: true, db: db))
         }
     }
 

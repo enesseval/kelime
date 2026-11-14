@@ -1,3 +1,4 @@
+import KelimeCore
 import KelimeUI
 import SwiftUI
 
@@ -26,6 +27,18 @@ enum UsageCounter: String, CaseIterable {
 
     static func count(_ counter: UsageCounter, parameters: [String: String] = [:]) {
         Analytics.send(counter, parameters: parameters)
+        guard DevTools.isAvailable else { return }
+        UserDefaults.standard.set(counter.value + 1, forKey: counter.key)
+    }
+
+    /// The signal name this event goes under; rule-built signals (`UsageSignal`) must match it.
+    var signalName: String { "Usage." + String(describing: self) }
+
+    /// Counts an event whose signal the rules built (`UsageSignal`): the signal's own name and
+    /// parameters are what is sent.
+    static func count(_ counter: UsageCounter, signal: UsageSignal) {
+        assert(signal.name == counter.signalName, "\(signal.name) is not \(counter.signalName)")
+        Analytics.send(signal)
         guard DevTools.isAvailable else { return }
         UserDefaults.standard.set(counter.value + 1, forKey: counter.key)
     }

@@ -84,11 +84,35 @@ public struct TrialSnapshot: Equatable, Sendable {
 }
 
 /// Starts, reads and updates the trial state in a `TrialStore`.
+///
+/// The state is kept in memory after the first read. The store (the Keychain) is written when a
+/// flag changes, when the trial starts, on a use of a Pro feature, and when `lastSeen` has moved
+/// more than `lastSeenWriteInterval` past what is stored, so `refresh` is cheap to call often.
 public final class ReverseTrialManager: @unchecked Sendable {
+    public static let lastSeenWriteInterval: TimeInterval = 3600
+
     private let store: TrialStore
     private let lock = NSLock()
+    private var cached: ReverseTrial?
+    /// `lastSeen` as stored.
+    private var savedLastSeen: Date?
 
     public init(store: TrialStore) { self.store = store }
+
+    /// The trial from memory or the store; nil when nothing is stored (or it cannot be read).
+    private func loaded() -> ReverseTrial? {
+        if let cached { return cached }
+        guard case .found(let found) = store.load() else { return nil }
+        cached = found
+        savedLastSeen = found.lastSeen
+        return found
+    }
+
+    private func persist(_ trial: ReverseTrial) {
+        store.save(trial)
+        cached = trial
+        savedLastSeen = trial.lastSeen
+    }
 
     /// Reads the state at `now`, starting the trial on the first call ever, and moves
     /// `lastSeen` forward. Call at launch and whenever the app comes to the foreground.
@@ -97,21 +121,30 @@ public final class ReverseTrialManager: @unchecked Sendable {
         lock.lock(); defer { lock.unlock() }
         var trial: ReverseTrial
         var snapshot = TrialSnapshot(trial: nil, now: now)
-        switch store.load() {
-        case .unavailable:
-            return snapshot
-        case .absent:
-            trial = ReverseTrial(startedAt: now)
-            snapshot.justStarted = true
-        case .found(let found):
-            trial = found
+        var mustSave = false
+        if let cached {
+            trial = cached
+        } else {
+            switch store.load() {
+            case .unavailable:
+                return snapshot
+            case .absent:
+                trial = ReverseTrial(startedAt: now)
+                snapshot.justStarted = true
+                mustSave = true
+            case .found(let found):
+                trial = found
+                savedLastSeen = found.lastSeen
+            }
         }
         trial.lastSeen = max(trial.lastSeen, now)
         if !trial.isActive(now: now), !trial.endedReported {
             trial.endedReported = true
             snapshot.justEnded = true
+            mustSave = true
         }
-        store.save(trial)
+        if let saved = savedLastSeen, trial.lastSeen.timeIntervalSince(saved) > Self.lastSeenWriteInterval { mustSave = true }
+        if mustSave { persist(trial) } else { cached = trial }
         snapshot.trial = trial
         return snapshot
     }
@@ -120,7 +153,7 @@ public final class ReverseTrialManager: @unchecked Sendable {
     /// With a `key`, the same key counts once (for example an archive puzzle's day).
     public func note(_ feature: TrialFeature, key: String? = nil, by count: Int = 1, now: Date) {
         lock.lock(); defer { lock.unlock() }
-        guard case .found(var trial) = store.load(), trial.isActive(now: now) else { return }
+        guard var trial = loaded(), trial.isActive(now: now) else { return }
         if let key {
             let id = "\(feature.rawValue):\(key)"
             guard !trial.countedKeys.contains(id) else { return }
@@ -128,15 +161,15 @@ public final class ReverseTrialManager: @unchecked Sendable {
         }
         trial.usage[feature.rawValue, default: 0] += count
         trial.lastSeen = max(trial.lastSeen, now)
-        store.save(trial)
+        persist(trial)
     }
 
     /// The summary will not be shown again.
     public func markSummaryShown() {
         lock.lock(); defer { lock.unlock() }
-        guard case .found(var trial) = store.load() else { return }
+        guard var trial = loaded() else { return }
         trial.summaryShown = true
-        store.save(trial)
+        persist(trial)
     }
 }
 
@@ -144,6 +177,8 @@ public final class ReverseTrialManager: @unchecked Sendable {
 public final class MemoryTrialStore: TrialStore, @unchecked Sendable {
     public var trial: ReverseTrial?
     public var unavailable = false
+    /// How many times `save` ran, for tests.
+    public private(set) var saves = 0
 
     public init(_ trial: ReverseTrial? = nil) { self.trial = trial }
 
@@ -152,7 +187,10 @@ public final class MemoryTrialStore: TrialStore, @unchecked Sendable {
         return trial.map(TrialStoreResult.found) ?? .absent
     }
 
-    public func save(_ trial: ReverseTrial) { self.trial = trial }
+    public func save(_ trial: ReverseTrial) {
+        saves += 1
+        self.trial = trial
+    }
 }
 
 /// The Keychain: survives deleting and reinstalling the app. Readable after the first unlock,

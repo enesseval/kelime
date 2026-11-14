@@ -83,6 +83,15 @@ public struct Preferences: Sendable, Equatable {
     public var theme: WidgetThemeID
     public var widgetContent: WidgetContent
     public var isPro: Bool
+    /// `isPro` as `load` read it (bought, developer switch or a running trial). `save` leaves the
+    /// stored grant alone while `isPro` is unchanged, so a trial never turns into a grant.
+    private var loadedPro: Bool?
+
+    public static func == (a: Preferences, b: Preferences) -> Bool {
+        a.level == b.level && a.enabledDecks == b.enabledDecks && a.rotationInterval == b.rotationInterval
+            && a.defaultWidgetMode == b.defaultWidgetMode && a.theme == b.theme && a.widgetContent == b.widgetContent
+            && a.isPro == b.isPro
+    }
 
     public init(
         level: CEFRLevel = .b1,
@@ -128,7 +137,8 @@ public struct Preferences: Sendable, Equatable {
         if let raw = try Settings.string(.widgetContent, in: db), let content = WidgetContent(rawValue: raw) {
             p.widgetContent = content
         }
-        p.isPro = try Settings.bool(.isPro, in: db)
+        p.isPro = try ProEntitlement.isPro(db: db)
+        p.loadedPro = p.isPro
         return p
     }
 
@@ -139,6 +149,6 @@ public struct Preferences: Sendable, Equatable {
         try Settings.set(.defaultWidgetMode, defaultWidgetMode.rawValue, in: db)
         try Settings.set(.theme, theme.rawValue, in: db)
         try Settings.set(.widgetContent, widgetContent.rawValue, in: db)
-        try Settings.set(.isPro, isPro, in: db)
+        if loadedPro != isPro { try Settings.set(.isPro, isPro, in: db) }
     }
 }

@@ -48,14 +48,14 @@ public enum Streak {
         )
         // A source added to a day already studied can't lengthen the streak.
         guard existing == nil else { return }
-        let status = try self.status(db: db, today: day, isPro: try Settings.bool(.isPro, in: db))
+        let status = try self.status(db: db, today: day, isPro: try ProEntitlement.isPro(db: db))
         if status.current > (try Settings.int(.longestStreak, in: db) ?? 0) {
             try Settings.set(.longestStreak, status.current, in: db)
         }
     }
 
     public static func status(db: Database, clock: AppClock) throws -> StreakStatus {
-        try status(db: db, today: clock.today, isPro: try Settings.bool(.isPro, in: db))
+        try status(db: db, today: clock.today, isPro: try ProEntitlement.isPro(db: db, now: clock.now))
     }
 
     static func status(db: Database, today: LocalDate, isPro: Bool) throws -> StreakStatus {
