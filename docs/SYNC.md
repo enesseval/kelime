@@ -61,4 +61,27 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
-Açık madde yok.
+### 2026-11-17 · Hızlı Tekrar: noktalama cevabı ele vermesin (1.3.0)
+iOS [ ] Android [ ]
+
+Kullanıcı bildirdi: Hızlı Tekrar'da üstte soru işaretiyle biten Türkçe cümle çıktı; 4 seçenekten
+yalnız birinin sonunda "?" vardı, diğer üçünde başka noktalama. Cevap noktalamadan bilinebiliyor.
+Aynı açık ifade/kalıp/cümle seçenekli her oyunda olabilir (Hızlı Tekrar, Eşleştir, Kelime Avı ipucu
+değil; Boşluğu Doldur tek kelime olduğu için etkilenmez).
+
+Kural:
+- Seçenekler aynı "cümle türünden" seçilir: doğru cevabın son karakteri `?` ise çeldiriciler de
+  `?` ile biten adaylardan; `!` ise `!`; `.` ya da noktalamasız ise onlardan. Tür = son anlamlı
+  karakter (sondaki boşluk, tırnak, parantez atlanır).
+- Aynı türden yeterli aday yoksa (3'ten az): dört seçeneğin hepsinin **sonundaki** noktalama
+  (`. , ! ? ; : …` ve tekrarları) kaldırılır ve hepsi öyle gösterilir. Ortadaki noktalama kalır.
+- Büyük harf de ipucu olmasın: seçenekler cümle ise hepsi aynı kuralla (ilk harf büyük) ya da
+  kelime/kalıp ise hepsi küçük gösterilir. ("I" ve özel isimler korunur, Cümle Kur kuralı gibi.)
+- Tek kelime seçeneklerde değişiklik yok.
+- Kural tüm seçenekli üreticilere uygulanır; hangileri olduğunu iki taraf kendi kodunda tarar ve
+  "Not"a yazar.
+
+Testler: `cards.json` üzerinden her seçenekli soru üretilir; hiçbir soruda doğru cevap sondaki
+noktalama ya da büyük harfle diğer üç seçenekten ayrılamaz (dört seçeneğin "son karakter türü" ve
+"ilk harf büyük mü" değerleri aynı).
+
