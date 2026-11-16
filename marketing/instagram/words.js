@@ -363,5 +363,124 @@ const W = {
    "yokdil"
   ],
   "note": ""
+ },
+ "thirsty": {
+  "word": "thirsty",
+  "pos": "sıfat",
+  "tr": "susamış",
+  "tr1": "susamış",
+  "ex": "I'm very thirsty now.",
+  "exTr": "Şu an çok susadım.",
+  "level": "A1",
+  "decks": [
+   "general"
+  ],
+  "note": "Türkçede 'Susadım' dense de İngilizcede sıfattır: 'I'm thirsty'."
+ },
+ "abroad": {
+  "word": "abroad",
+  "pos": "zarf",
+  "tr": "yurt dışında, yurt dışına",
+  "tr1": "yurt dışında",
+  "ex": "She wants to go abroad.",
+  "exTr": "Yurt dışına gitmek istiyor.",
+  "level": "A2",
+  "decks": [
+   "general"
+  ],
+  "note": "Önüne 'to' gelmez: 'go to abroad' değil, 'go abroad'."
+ },
+ "pretend": {
+  "word": "pretend",
+  "pos": "fiil",
+  "tr": "gibi davranmak",
+  "tr1": "gibi davranmak",
+  "ex": "Don't pretend you are sleeping!",
+  "exTr": "Uyuyormuş gibi yapma!",
+  "level": "B1",
+  "decks": [
+   "general"
+  ],
+  "note": ""
+ },
+ "ambiguous": {
+  "word": "ambiguous",
+  "pos": "sıfat",
+  "tr": "belirsiz",
+  "tr1": "belirsiz",
+  "ex": "The ending of the novel was ambiguous.",
+  "exTr": "Romanın sonu belirsizdi.",
+  "level": "C1",
+  "decks": [
+   "general",
+   "yds",
+   "yokdil"
+  ],
+  "note": ""
+ },
+ "cold": {
+  "word": "cold",
+  "pos": "sıfat",
+  "tr": "soğuk",
+  "tr1": "soğuk",
+  "ex": "I'm cold.",
+  "exTr": "Üşüyorum.",
+  "level": "A1",
+  "decks": [
+   "general"
+  ],
+  "note": "'I'm cold' Türkçede 'Üşüyorum' olur. 'I have a cold' ise 'Nezleyim'."
+ },
+ "quiet": {
+  "word": "quiet",
+  "pos": "sıfat",
+  "tr": "sessiz, sakin",
+  "tr1": "sessiz",
+  "ex": "Our village is very quiet.",
+  "exTr": "Köyümüz çok sessiz.",
+  "level": "A2",
+  "decks": [
+   "general"
+  ],
+  "note": "'quite' (oldukça) sözcüğüyle karıştırmayın."
+ },
+ "causal": {
+  "word": "causal",
+  "pos": "sıfat",
+  "tr": "nedensel",
+  "tr1": "nedensel",
+  "ex": "A causal relationship between the events is unlikely.",
+  "exTr": "Olaylar arasında nedensel bir ilişki olması zor.",
+  "level": "C1",
+  "decks": [
+   "general"
+  ],
+  "note": "'Casual' (gündelik) ile karıştırmayın."
+ },
+ "subsequently": {
+  "word": "subsequently",
+  "pos": "zarf",
+  "tr": "sonradan, ardından",
+  "tr1": "sonradan",
+  "ex": "He subsequently lost his job.",
+  "exTr": "Ardından işini kaybetti.",
+  "level": "C1",
+  "decks": [
+   "yds"
+  ],
+  "note": "Sıralama bildirir, 'consequently' (sonuç olarak) ile karıştırmayın."
+ },
+ "morbidity": {
+  "word": "morbidity",
+  "pos": "isim",
+  "tr": "hastalık oranı, morbidite",
+  "tr1": "hastalık oranı",
+  "ex": "Obesity increases the risk of morbidity.",
+  "exTr": "Obezite hastalık riskini artırır.",
+  "level": "C2",
+  "decks": [
+   "yokdil"
+  ],
+  "note": "mortality (ölüm oranı) ile karıştırılmamalıdır."
  }
 };

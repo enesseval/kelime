@@ -55,10 +55,10 @@ ikinci kanca. Her paylaşımda önerisi var.
 |---|---|---|---|---|
 | 1 | Sal 17 Kas | S1 Reels: 5 kelimeyi yanlış biliyorsun | S2 Reels: defteri açmana gerek yok | **hazır** |
 | 2 | Çar 18 Kas | S3 Carousel: YDS bağlaçları | S4 Reels: 4 cümle 4 hata | **hazır** |
-| 3 | Per 19 Kas |  | S5 Reels: seviyeni 6 kelimede bul | üretilecek (yeni ekran görüntüsü gerekmez) |
-| 4 | Cum 20 Kas | S6 Reels: "I have a cold" | S7 Carousel: karıştırılan 6 çift | üretilecek |
-| 5 | Cmt 21 Kas |  | S8 Reels: YDS sorusu, 8 saniyen var | üretilecek |
-| 6 | Paz 22 Kas |  | S9 Reels: bildiğin kelimeyi yine unuttun | ekran görüntüleri var |
+| 3 | Per 19 Kas |  | S5 Reels: seviyeni 6 kelimede bul | **hazır** |
+| 4 | Cum 20 Kas | S6 Reels: "I have a cold" | S7 Carousel: karıştırılan 6 çift | **hazır** |
+| 5 | Cmt 21 Kas |  | S8 Reels: YDS sorusu, 8 saniyen var | **hazır** |
+| 6 | Paz 22 Kas |  | S9 Reels: bildiğin kelimeyi yine unuttun | **hazır** |
 | 7 | Pzt 23 Kas | S10 Reels: kilit ekranın boşa açılıyor | S11 Reels: bulmaca Türkçe ipucu | S10 var; **S11 çekim gerekli** |
 | 8 | Sal 24 Kas |  | S12 Carousel: "important" yerine 6 kelime | üretilecek |
 | 9 | Çar 25 Kas |  | S13 Reels: Cümle Kur | **çekim gerekli** |
@@ -137,34 +137,39 @@ Dosya: `out/h2-gun2-carsamba/p4-4-cumle-4-hata.mp4`, kapak `p4-kapak.png`.
 - **Arama:** "ingilizce öğren". **Sabit yorum:** `Cevaplar: go abroad · near our hotel · at night · during + isim (the lesson). İlk kaçını buldun?`
 - **Kanıt:** doğru cümleler Content örnekleri (abroad, near, night, during); yanlış hâller kartların `note` alanındaki hatalardan türetildi (dördüncüsü "during"in arkasına cümle gelmeyeceği notundan).
 
-## S5 · Per 19 Kas 20:30 · Reels ~16 sn · seviyeni bul
+## S5 · Per 19 Kas 20:30 · Reels 18,3 sn · seviyeni bul **(hazır)**
+Dosya: `out/h2-gun3-persembe/p5-seviyeni-bul.mp4`, kapak `p5-kapak.png`. Üretimde: kanca 2,4 sn (altı rozet), her kelime 2,2 sn, 15,6–16,8 "Kaçıncıda takıldın?", kapanış 1,5 sn.
 - **Kanca (0–2,5):** altı rozet A1…C2. Söz: "Altı kelime, A1'den C2'ye. Kaçında takılıyorsun?" Yazı: **"6 kelime. A1'den C2'ye. Kaçında takılırsın?"**
 - **Akış:** her kelime 2,2 sn: kelime + seviye rozeti, 1 sn düşünme çubuğu, anlam yeşil: thirsty A1 susamış · abroad A2 yurt dışında · pretend B1 gibi davranmak · sensitive B2 hassas · ambiguous C1 belirsiz · ineffable C2 tarif edilemez. Son: "Kaçıncıda takıldın?" + kapanış.
 - **Açıklama:** `İngilizce kelime seviyeni 15 saniyede ölç: A1'den C2'ye 6 kelime.` / `Kaçıncı kelimede takıldın? Seviye etiketleri uygulamadaki kelime kartlarından.` / `Takılacağını düşündüğün arkadaşına gönder.` / `Bu kelimeyi kilit ekranında görmek için profildeki linke dokun.`
 - **CTA:** gönder. **Gönderme nedeni:** arkadaşını sınamak. **Arama:** "ingilizce kelime".
 - **Kanıt:** seviye ve anlamlar Content (`level` alanı).
 
-## S6 · Cum 20 Kas 12:30 · Reels ~13 sn · Türkçe düşünerek hata
+## S6 · Cum 20 Kas 12:30 · Reels 14 sn · Türkçe düşünerek hata **(hazır)**
+Dosya: `out/h2-gun4-cuma/p6-i-have-a-cold.mp4`, kapak `p6-kapak.png`. "I have thirsty" kartta yok; thirsty notundaki ("Susadım" dense de sıfattır) hatadan türetildi.
 - **Kanca (0–3):** Söz: "'I'm cold' üşüyorum demek. Peki 'I have a cold'?" Yazı: **"'I have a cold' = üşüyorum?"**
 - **Akış:** 3–6 şıklar: A) Üşüyorum B) Nezleyim (düşünme çubuğu); 6–8 "Nezleyim." yeşil, "I'm cold = Üşüyorum" (örnek Content: *I'm cold.* → Üşüyorum.); 8–12 ikinci tuzak: "Susadım" → "I have thirsty" ✗ / "I'm thirsty" ✓ (örnek: *I'm very thirsty now.* → Şu an çok susadım.); kapanış.
 - **Açıklama:** `İngilizce öğren derken Türkçe düşünmek 2 yerde ele veriyor: cold ve thirsty.` / `İkisinin doğrusu ve örnek cümleler videoda.` / `Nezle olup "üşüyorum" diyen arkadaşına gönder.` / `Bu kelimeyi kilit ekranında görmek için profildeki linke dokun.`
 - **CTA:** gönder. **Gönderme nedeni:** komik, tanıdık hata. **Arama:** "ingilizce öğren".
 - **Kanıt:** cold ve thirsty kartı + `note` alanları.
 
-## S7 · Cum 20 Kas 20:30 · Carousel 8 slayt · karıştırılan 6 çift
+## S7 · Cum 20 Kas 20:30 · Carousel 8 slayt · karıştırılan 6 çift **(hazır)**
+Dosya: `out/h2-gun4-cuma/p7-carousel-1.png … 8.png`. Karşı kelimeler yalnız notun verdiği anlamla yazıldı, ek örnek cümle yok.
 - **Kanca (slayt 1):** **"6 çift, 6 tuzak"** + "Hangisini karıştırıyorsun?".
 - **Akış:** her slayt bir çift, kart + örnek cümle + kısa uyarı: dessert/desert (çöl), quiet/quite (oldukça), sensitive/sensible (mantıklı), causal/casual (gündelik), subsequently/consequently (sonuç olarak), morbidity/mortality (ölüm oranı). Son slayt özet, "Kaydet".
 - **Açıklama:** `İngilizce kelime karıştırma listesi: 6 çift, hepsinin örnek cümlesiyle.` / `Hangisini yanlış biliyordun? Kaydet, sınavdan önce bak.` / `Bu kelimeleri kilit ekranında görmek için profildeki linke dokun.`
 - **CTA:** kaydet. **Arama:** "ingilizce kelime".
 - **Kanıt:** altı kartın `note` alanı (dessert, quiet, sensitive, causal, subsequently, morbidity). Karşı kelimeler (desert, quite, sensible, casual) kartlarda yok, yalnız notta geçiyor: slaytlarda **anlamı notun verdiği kadar** yaz, ayrı örnek cümle uydurma.
 
-## S8 · Cmt 21 Kas 20:30 · Reels ~14 sn · YDS sorusu
+## S8 · Cmt 21 Kas 20:30 · Reels 15,5 sn · YDS sorusu **(hazır)**
+Dosya: `out/h2-gun5-cumartesi/p8-yds-sorusu.mp4`, kapak `p8-kapak.png`. İki soru, her biri 4 sn geri sayım (toplam 8 sn), cevap 2 sn.
 - **Kanca (0–2):** Söz: "YDS sorusu. Sekiz saniyen var." Yazı: **"YDS sorusu: 8 saniyen var"**
 - **Akış:** 2–6,5 *It was hard; ____, I tried.* şıklar therefore / nevertheless / consequently, 4 sn geri sayım; 6,5–8 cevap **nevertheless** + "Zordu; yine de denedim." 8–12 *I was ill; ____, I stayed home.* (therefore / nevertheless) → **therefore** "Hastaydım; bu nedenle evde kaldım."; kapanış.
 - **Açıklama:** `YDS kelimeleri: "yine de" mi "bu yüzden" mi? 8 saniyede çöz.` / `Cevaplar ve çevirileri videoda.` / `Bu videoyu YDS'ye hazırlanan arkadaşına gönder.` / `Bu kelimeleri kilit ekranında görmek için profildeki linke dokun.`
 - **CTA:** gönder. **Gönderme nedeni:** sınav arkadaşına "sen çöz". **Kanıt:** iki cümle Content (nevertheless, therefore örnekleri).
 
-## S9 · Paz 22 Kas 20:30 · Reels ~14 sn · bildiğin kelimeyi unuttun
+## S9 · Paz 22 Kas 20:30 · Reels 14,5 sn · bildiğin kelimeyi unuttun **(hazır)**
+Dosya: `out/h2-gun6-pazar/p9-bildigin-kelimeyi-unuttun.mp4`, kapak `p9-kapak.png`. Değişiklik yok (yedek senaryo gerekmedi). Not: `yeni/IMG_0127.PNG` widget düzenleme modunda (kenarlarda "−" düğmeleri görünür); yenisi çekilirse değiştir.
 - **Kanca (0–3):** Söz: "Bildiğin kelimeyi yine yanlış bildin." Yazı: **"Bildiğin kelimeyi yine unuttun."**
 - **Akış:** 3–7 Hızlı Tekrar yanlış cevap ekranı (`shots/tekrar-yanlis.png`: "Doğru cevap: go", altında "Bu kelimeyi widget'ında daha sık göreceksin") yakınlaşır; 7–11 widget görüntüsü "Bugün zorlandıkların" (`shots/yeni/IMG_0127.PNG`); 11–13 "Yanlış bildiğin kelime, widget'ında daha sık." kapanış.
 - **Açıklama:** `İngilizce kelime öğren: yanlış bildiğin kelime widget'ında daha sık görünüyor.` / `Gerçek uygulama ekranı; Hızlı Tekrar'da yanlış cevap verince olan şey bu.` / `Hep aynı kelimeyi unutan arkadaşına gönder.` / `Bu kelimeyi kilit ekranında görmek için profildeki linke dokun.`

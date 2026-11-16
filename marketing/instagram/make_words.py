@@ -5,7 +5,8 @@ cards = {c["word"]: c for c in json.load(open(root / "Content/cards.json"))["car
 POS = {"adj": "sıfat", "n": "isim", "v": "fiil", "adv": "zarf", "conj": "bağlaç", "prep": "edat", "phrase": "kalıp"}
 WORDS = """hypothesis reluctant resilient entail significant consequence inevitable comprehensive
 substantial plausible curious ineffable
-market apartment actually dessert sensitive foster intrinsic therefore consequently hence thus nevertheless nonetheless""".split()
+market apartment actually dessert sensitive foster intrinsic therefore consequently hence thus nevertheless nonetheless
+thirsty abroad pretend ambiguous cold quiet causal subsequently morbidity""".split()
 out = {}
 for w in WORDS:
     c = cards[w]
