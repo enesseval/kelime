@@ -21,6 +21,14 @@ first 3 seconds), `viral-captions-and-ctas` (on-screen text, caption, CTA, pinne
 their promotion of the Vyral product. Priority (user, 2026-11-16): hook-driven Reels aimed at
 non-followers; no stories for now, since the few followers are friends.
 
+## Where files go
+
+`marketing/instagram/out` is a local symlink to iCloud Drive › Kilit Kelime Instagram (the user
+picks files up on the phone from there). It is gitignored: rendered posts, covers, captions and
+PAYLASIM.md never go into git. If the symlink is missing, recreate it:
+`ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Kilit Kelime Instagram" marketing/instagram/out`.
+Commit only plans (`docs/INSTAGRAM_*.md`) and pipeline code.
+
 ## Scope
 
 - You write only in `marketing/` and `docs/INSTAGRAM_*.md`. Never touch app code.
