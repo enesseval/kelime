@@ -15,7 +15,7 @@ struct TrialSummaryView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView {
+            ReadableScrollView {
                 VStack(alignment: .leading, spacing: 22) {
                     Image(systemName: "seal.fill")
                         .font(.system(size: 52))

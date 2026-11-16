@@ -64,7 +64,7 @@ struct WordDetailView: View {
     }
 
     private func content(_ item: WordItem) -> some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 18) {
                 VStack(alignment: .leading, spacing: 14) {
                     HStack(spacing: 6) {

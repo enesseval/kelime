@@ -32,6 +32,7 @@ struct CrosswordView: View {
                 ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .readableWidth(760)
         .screenBackground()
         .task { await model.load(app: app) }
         .task(id: model.isComplete) {
@@ -245,12 +246,15 @@ struct CrosswordView: View {
 struct CrosswordGrid: View {
     let game: CrosswordGame
     let onTap: (GridPoint) -> Void
+    /// A regular-width screen (iPad) gets bigger cells; a phone, or an iPad in a narrow Split View, keeps 40 pt.
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
     var body: some View {
-        GeometryReader { proxy in
+        let regular = sizeClass == .regular
+        return GeometryReader { proxy in
             let puzzle = game.puzzle
             let gap: CGFloat = 3
-            let cell = min(40, (proxy.size.width - gap * CGFloat(puzzle.width - 1)) / CGFloat(puzzle.width))
+            let cell = min(regular ? 62 : 40, (proxy.size.width - gap * CGFloat(puzzle.width - 1)) / CGFloat(puzzle.width))
             let solution = puzzle.solution
             let numbers = puzzle.numbers
             let active = Set(game.activeEntry.cells)
@@ -281,7 +285,7 @@ struct CrosswordGrid: View {
             .frame(maxWidth: .infinity)
         }
         .aspectRatio(CGFloat(game.puzzle.width) / CGFloat(game.puzzle.height), contentMode: .fit)
-        .frame(maxHeight: 400)
+        .frame(maxHeight: regular ? 640 : 400)
     }
 
     private func state(_ point: GridPoint, active: Set<GridPoint>) -> CrosswordCell.State {
@@ -365,7 +369,7 @@ struct ClueListSheet: View {
     let onPick: (CrosswordEntry) -> Void
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 6) {
                 Text("İpuçları")
                     .font(KelimeFont.ui(20, weight: .bold, relativeTo: .title3))

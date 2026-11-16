@@ -31,7 +31,7 @@ struct StreakView: View {
     @State private var sharing = false
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 if let status {
                     VStack(alignment: .leading, spacing: 4) {
@@ -185,7 +185,7 @@ struct WeeklySummaryView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
+            ReadableScrollView {
                 if let summary {
                     VStack(alignment: .leading, spacing: 18) {
                         Text(WeeklySummaryView.range(summary.weekStart))

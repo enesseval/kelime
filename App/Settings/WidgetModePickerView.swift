@@ -9,7 +9,7 @@ struct WidgetModePickerView: View {
     @State private var selected: WidgetMode?
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Kilit ekranındaki dikdörtgen widget'ın nasıl görüneceğini seç. Her widget'ı ayrıca kendi düzenleme menüsünden değiştirebilirsin.")
                     .font(KelimeFont.ui(14, relativeTo: .subheadline))

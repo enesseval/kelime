@@ -19,7 +19,7 @@ struct WidgetLogView: View {
     private static let triggerWindow: TimeInterval = 120
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 controls
                 tapSummary

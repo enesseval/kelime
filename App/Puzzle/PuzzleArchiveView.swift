@@ -51,6 +51,7 @@ struct PuzzleArchiveView: View {
             }
         }
         .scrollContentBackground(.hidden)
+        .readableWidth(700)
         .screenBackground()
         .navigationTitle("Arşiv")
         .navigationBarTitleDisplayMode(.inline)

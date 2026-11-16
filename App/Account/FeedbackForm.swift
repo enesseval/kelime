@@ -29,7 +29,7 @@ struct FeedbackForm: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
+            ReadableScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     if let card {
                         VStack(alignment: .leading, spacing: 4) {

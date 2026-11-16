@@ -29,6 +29,7 @@ struct QuickReviewView: View {
                 ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .readableWidth(700)
         .screenBackground()
         .task { await load() }
     }

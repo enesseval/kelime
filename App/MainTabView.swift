@@ -46,6 +46,7 @@ struct MainTabView: View {
         }
         .tint(Palette.accent)
         .modifier(GlassTabBarBehavior())
+        .modifier(AdaptiveTabStyle())
         .onOpenURL { url in
             // A shared .kelimelist file opens the list import.
             if url.isFileURL {
@@ -143,6 +144,18 @@ private struct GlassTabBarBehavior: ViewModifier {
     }
 }
 
+/// On iPadOS 18 and later the tabs sit in a bar at the top that the learner can fold out into
+/// a sidebar; on an iPhone this is the ordinary bottom tab bar. iOS 17 keeps the plain tabs.
+private struct AdaptiveTabStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 18, *) {
+            content.tabViewStyle(.sidebarAdaptable)
+        } else {
+            content
+        }
+    }
+}
+
 extension View {
     /// Destinations reachable from any tab.
     func withRoutes() -> some View {
@@ -191,7 +204,7 @@ struct PlayView: View {
     @State private var data: PlayData?
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 ScreenTitle(title: "Oyna")
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {

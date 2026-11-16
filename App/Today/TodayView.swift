@@ -57,7 +57,7 @@ struct TodayView: View {
     @State private var showGuide = false
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 header
                 if let data {

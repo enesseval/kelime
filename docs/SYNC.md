@@ -60,3 +60,15 @@ dokunulur.
   TestFlight'ta duruyor.
 
 ## Değişiklik günlüğü
+
+### 2026-11-17 · iPad desteği (1.3.0, yalnız iOS)
+iOS [x] Android —
+
+iOS uygulaması ve widget uzantısı evrensel oldu (`TARGETED_DEVICE_FAMILY = 1,2`; Watch aynı).
+Dört iPad yönü ve Split View / Slide Over açık (`UIRequiresFullScreen` yok). Sekme çubuğu
+iPadOS 18'de kenar çubuğuna açılabilir (`.sidebarAdaptable`), iOS 17'de düz sekmeler. İçerik
+sütunları 700 pt (onboarding 600, oyunlar 640-700) ile ortalanır (`readableWidth`,
+`ReadableScrollView`); bulmaca hücreleri geniş ekranda 40 yerine 62 pt. Davranış, kural ve metin
+değişmedi; iPhone aynı. Android tablet düzeni ayrı bir iş, bu madde onu gerektirmez.
+Dosyalar: `Config/Shared.xcconfig`, `Config/App-Info.plist`, `App/Components/Components.swift`,
+`App/MainTabView.swift` ve ekran dosyaları.

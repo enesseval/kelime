@@ -131,7 +131,7 @@ struct UserListView: View {
     @State private var toast: String?
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 if let list {
                     Text(list.title)

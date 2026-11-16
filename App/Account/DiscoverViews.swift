@@ -14,7 +14,7 @@ struct DiscoverView: View {
     @State private var hasMore = true
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 ScreenTitle(title: "Keşfet")
                 HStack(spacing: 8) {
@@ -136,7 +136,7 @@ struct SharedListView: View {
     enum LoadState { case loading, ready, missing, failed }
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 switch state {
                 case .loading:

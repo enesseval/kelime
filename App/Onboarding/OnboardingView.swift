@@ -114,11 +114,13 @@ struct OnboardingView: View {
             .padding(.top, 12)
             .padding(.bottom, 20)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .readableWidth(600)
         }
         .scrollIndicators(.hidden)
         // The buttons sit in the bottom inset: the content scrolls above them, never under.
         .safeAreaInset(edge: .bottom, spacing: 0) {
             VStack(spacing: 8) { footer() }
+                .readableWidth(600)
                 .padding(.horizontal, 20)
                 .padding(.top, 28)
                 .padding(.bottom, 16)
@@ -151,6 +153,7 @@ struct OnboardingView: View {
             }
             HStack(spacing: 12) { footer() }
         }
+        .readableWidth(600)
         .padding(.horizontal, 20)
         .padding(.top, 8)
         .padding(.bottom, 12)

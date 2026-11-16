@@ -151,7 +151,7 @@ struct UnitView: View {
     @State private var toast: String?
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             if let unit {
                 VStack(alignment: .leading, spacing: 18) {
                     Text(unit.goal)
@@ -286,7 +286,7 @@ struct StoryView: View {
     @State private var showTurkish = false
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             if let story {
                 VStack(alignment: .leading, spacing: 16) {
                     VStack(alignment: .leading, spacing: 4) {

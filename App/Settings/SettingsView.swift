@@ -35,7 +35,7 @@ struct SettingsView: View {
     @State private var sendingFeedback = false
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 ScreenTitle(title: "Profil")
                 AccountSection()

@@ -13,7 +13,7 @@ struct RotationPickerView: View {
     private var isPro: Bool { app.isPro || storedPro }
 
     var body: some View {
-        ScrollView {
+        ReadableScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Kilit ekranındaki kelimenin ne sıklıkla yenileneceğini seç. Widget'ın ne zaman yenileneceğine iOS karar verir; kelime bazen birkaç dakika geç değişebilir.")
                     .font(KelimeFont.ui(14, relativeTo: .subheadline))

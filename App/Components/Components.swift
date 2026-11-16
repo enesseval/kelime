@@ -12,6 +12,15 @@ extension View {
             .overlay(RoundedRectangle(cornerRadius: radius, style: .continuous).strokeBorder(Palette.line))
     }
 
+    /// Keeps a column of content at a readable width, centered. On an iPhone the screen is
+    /// narrower than `maxWidth`, so nothing changes; on an iPad lists and settings stop
+    /// stretching across the whole screen.
+    func readableWidth(_ maxWidth: CGFloat = 700) -> some View {
+        self
+            .frame(maxWidth: maxWidth)
+            .frame(maxWidth: .infinity)
+    }
+
     /// Page background and default text color.
     func screenBackground() -> some View {
         self
@@ -190,5 +199,18 @@ extension View {
     /// taps at the top of the screen.
     func hiddenNavigationBar() -> some View {
         navigationBarHidden(true)
+    }
+}
+
+/// A vertical `ScrollView` whose content keeps a readable width, centered; the scrolling area
+/// itself spans the screen. The same as `ScrollView` on an iPhone.
+struct ReadableScrollView<Content: View>: View {
+    var maxWidth: CGFloat = 700
+    @ViewBuilder var content: () -> Content
+
+    var body: some View {
+        ScrollView {
+            content().readableWidth(maxWidth)
+        }
     }
 }

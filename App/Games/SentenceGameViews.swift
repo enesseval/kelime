@@ -29,6 +29,7 @@ struct SentenceView: View {
                 ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .readableWidth(700)
         .screenBackground()
         .task { await load() }
         .task(id: finished) {
@@ -268,6 +269,7 @@ struct GapFillView: View {
                 ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .readableWidth(700)
         .screenBackground()
         .task { await load() }
         .task(id: started) {

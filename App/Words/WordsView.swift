@@ -31,7 +31,7 @@ struct WordsView: View {
     var body: some View {
         // One page: title, controls and words scroll together on the same background.
         ScrollViewReader { proxy in
-            ScrollView {
+            ReadableScrollView {
                 VStack(alignment: .leading, spacing: 14) {
                     header.padding(.horizontal, 20)
                     if showDecks {
