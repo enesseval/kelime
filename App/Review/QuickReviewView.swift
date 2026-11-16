@@ -136,7 +136,7 @@ struct QuickReviewView: View {
         VStack(spacing: 10) {
             ForEach(options, id: \.self) { option in
                 let answered = picked != nil
-                let right = option == question.card.word
+                let right = OptionStyle.isAnswer(option, word: question.card.word)
                 let chosen = option == picked
                 Button {
                     guard picked == nil, !isSaving else { return }

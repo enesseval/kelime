@@ -184,7 +184,7 @@ public enum WidgetActions {
               entry.quizAnswer == nil,
               let card = try Card.fetchOne(db, key: cardID)
         else { return nil }
-        let correct = option == card.word
+        let correct = OptionStyle.isAnswer(option, word: card.word)
         try WidgetQueue.recordQuizAnswer(option, slotStart: entry.slotStart, db: db)
         try Settings.set(.quizAnsweredAt, String(clock.now.timeIntervalSince1970), in: db)
         try LearningStore.record(.answered(correct: correct), cardID: cardID, source: .widget, clock: clock, db: db)
@@ -201,7 +201,7 @@ public enum WidgetActions {
             guard entry.cardID == cardID, entry.quizAnswer == nil else { return nil }
             try WidgetQueue.recordQuizAnswer(option, slotStart: slotStart, db: db)
         }
-        let correct = option == card.word
+        let correct = OptionStyle.isAnswer(option, word: card.word)
         try LearningStore.record(.answered(correct: correct), cardID: cardID, source: .widget, clock: clock, db: db)
         return correct
     }

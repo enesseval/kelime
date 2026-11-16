@@ -78,6 +78,22 @@ public enum CardQueries {
         db: Database,
         using rng: inout some RandomNumberGenerator
     ) throws -> [String] {
+        // Same sentence type as the answer first (see OptionStyle); with fewer than `count`
+        // such words, any type, and `quizOptions` strips the endings.
+        for minimum in [2, 1] {
+            let picked = try distractors(for: card, count: count, minimumLikeness: minimum, db: db, using: &rng)
+            if picked.count >= count { return picked }
+        }
+        return try distractors(for: card, count: count, minimumLikeness: 0, db: db, using: &rng)
+    }
+
+    private static func distractors(
+        for card: Card,
+        count: Int,
+        minimumLikeness: Int,
+        db: Database,
+        using rng: inout some RandomNumberGenerator
+    ) throws -> [String] {
         var chosen: [String] = []
         var seen: Set<String> = [card.word]
         let meanings = Card.normalizedMeanings(card.tr)
@@ -90,6 +106,7 @@ public enum CardQueries {
         for tier in tiers where chosen.count < count {
             let cards = try Card.fetchAll(db, SQLRequest<Card>("SELECT * FROM card WHERE \(tier) AND id <> \(card.id) ORDER BY id"))
             for other in cards.shuffled(using: &rng) where chosen.count < count && !seen.contains(other.word) {
+                if OptionStyle.likeness(of: other.word, to: card.word) < minimumLikeness { continue }
                 guard Card.normalizedMeanings(other.tr).isDisjoint(with: meanings) else { continue }
                 chosen.append(other.word)
                 seen.insert(other.word)
@@ -106,6 +123,7 @@ public enum CardQueries {
         using rng: inout some RandomNumberGenerator
     ) throws -> [String] {
         let wrong = try distractors(for: card, count: optionCount - 1, db: db, using: &rng)
-        return ([card.word] + wrong).shuffled(using: &rng)
+        let styled = OptionStyle.styled(answer: card.word, wrong: wrong)
+        return ([styled.answer] + styled.wrong).shuffled(using: &rng)
     }
 }

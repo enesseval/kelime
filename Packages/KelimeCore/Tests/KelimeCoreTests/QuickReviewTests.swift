@@ -126,3 +126,59 @@ struct PlacementTestTests {
         #expect(PlacementTest.result([(.a1, 2), (.a2, 2), (.b1, 2), (.b2, 2), (.c1, 2), (.c2, 2)], available: all) == .c2)
     }
 }
+
+/// docs/SYNC.md "Hızlı Tekrar: noktalama cevabı ele vermesin (1.3.0)": over all of cards.json,
+/// no multiple-choice question gives its answer away by its ending or its capital letter.
+struct OptionLeakTests {
+    func database() throws -> AppDatabase {
+        let db = try AppDatabase.inMemory()
+        let file = try ContentImporter.decode(Data(contentsOf: TestSupport.bundledCardsURL))
+        try db.writer.write { db in try ContentImporter.apply(file, in: db, progress: { _ in }) }
+        return db
+    }
+
+    func check(_ options: [String], _ label: String) {
+        #expect(Set(options.map { OptionStyle.ending(of: $0) }).count == 1, "ending leak: \(label) \(options)")
+        // Capital letters: compared among multi-word options; single words stay as they are.
+        let multi = options.filter { $0.split(separator: " ").count > 1 && $0.first?.isLetter == true }
+        if multi.count >= 2 {
+            #expect(Set(multi.map { $0.first?.isUppercase ?? false }).count == 1, "capital leak: \(label) \(options)")
+        }
+    }
+
+    @Test func quizOptionsOfEveryCardHideTheAnswer() throws {
+        let db = try database()
+        var rng = SeededGenerator(seed: 7)
+        let cards = try db.reader.read { try Card.fetchAll($0) }
+        try db.reader.read { db in
+            for card in cards {
+                let options = try CardQueries.quizOptions(for: card, optionCount: 4, db: db, using: &rng)
+                #expect(options.count == 4 && Set(options).count == 4, "\(card.id)")
+                #expect(options.contains { OptionStyle.isAnswer($0, word: card.word) }, "\(card.id)")
+                check(options, card.id)
+            }
+        }
+    }
+
+    @Test func gapFillOptionsOfEveryCardHideTheAnswer() throws {
+        let db = try database()
+        var rng = SeededGenerator(seed: 11)
+        let cards = try db.reader.read { try Card.fetchAll($0) }
+        let questions = try db.reader.read { try GapFill.questions(db: $0, cards: cards, using: &rng) }
+        #expect(!questions.isEmpty)
+        for q in questions {
+            #expect(q.options.count == 4)
+            #expect(OptionStyle.isAnswer(q.answer, word: q.card.word))
+            check(q.options, q.card.id)
+        }
+    }
+
+    @Test func fallbackStripsEndings() {
+        let s = OptionStyle.styled(answer: "What happened?", wrong: ["Go home.", "Hello!", "I think…"])
+        #expect(Set(([s.answer] + s.wrong).map { OptionStyle.ending(of: $0) }).count == 1)
+        #expect(s.answer == "What happened")
+        let t = OptionStyle.styled(answer: "Take care!", wrong: ["I'm moving to…", "look up", "Good luck."])
+        #expect(t.wrong.contains("I'm moving to"))
+        #expect(t.wrong.contains("Look up"))
+    }
+}

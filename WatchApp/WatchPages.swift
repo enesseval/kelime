@@ -98,7 +98,7 @@ struct WatchReviewPage: View {
                         HStack {
                             Text(option).font(KelimeFont.english(19))
                             Spacer()
-                            if chosen != nil && option == slot.card.word { Image(systemName: "checkmark") }
+                            if chosen != nil && OptionStyle.isAnswer(option, word: slot.card.word) { Image(systemName: "checkmark") }
                         }
                     }
                     .tint(tint(option, slot: slot))
@@ -115,13 +115,13 @@ struct WatchReviewPage: View {
 
     private func tint(_ option: String, slot: WatchPayload.Slot) -> Color? {
         guard let chosen else { return nil }
-        if option == slot.card.word { return Palette.green }
+        if OptionStyle.isAnswer(option, word: slot.card.word) { return Palette.green }
         return option == chosen ? Palette.amber : nil
     }
 
     private func answer(_ option: String, for slot: WatchPayload.Slot) {
         chosen = option
-        let correct = option == slot.card.word
+        let correct = OptionStyle.isAnswer(option, word: slot.card.word)
         if correct { score += 1 }
         WatchSession.shared.send(.practice(cardID: slot.card.id, correct: correct))
         WKInterfaceDeviceHaptic.play(correct ? .success : .failure)

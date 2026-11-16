@@ -235,20 +235,27 @@ public enum GapFill {
     private static func question(_ card: Card, pool: [Card], patterns: inout [String: NSRegularExpression?], using rng: inout some RandomNumberGenerator) -> Question? {
         guard let blanked = blanked(card) else { return nil }
         let sentenceLower = card.exampleEN.lowercased()
-        var taken: Set<String> = [card.word.lowercased()]
         var wrong: [String] = []
-        for candidate in pool.shuffled(using: &rng) {
-            let key = candidate.word.lowercased()
-            if taken.contains(key) || candidate.pos != card.pos || candidate.level != card.level { continue }
-            if patterns[key] == nil { patterns[key] = .some(pattern(candidate.word)) }
-            if let re = patterns[key] ?? nil, contains(re, sentenceLower) { continue }
-            taken.insert(key)
-            wrong.append(candidate.word)
+        // Same sentence type as the answer first; too few of them: any type, endings stripped.
+        for minimum in [2, 1, 0] {
+            var taken: Set<String> = [card.word.lowercased()]
+            wrong = []
+            for candidate in pool.shuffled(using: &rng) {
+                let key = candidate.word.lowercased()
+                if taken.contains(key) || candidate.pos != card.pos || candidate.level != card.level { continue }
+                if OptionStyle.likeness(of: candidate.word, to: card.word) < minimum { continue }
+                if patterns[key] == nil { patterns[key] = .some(pattern(candidate.word)) }
+                if let re = patterns[key] ?? nil, contains(re, sentenceLower) { continue }
+                taken.insert(key)
+                wrong.append(candidate.word)
+                if wrong.count == optionCount - 1 { break }
+            }
             if wrong.count == optionCount - 1 { break }
         }
         guard wrong.count == optionCount - 1 else { return nil }
-        let options = (wrong + [card.word]).shuffled(using: &rng)
-        guard let answerIndex = options.firstIndex(of: card.word) else { return nil }
+        let styled = OptionStyle.styled(answer: card.word, wrong: wrong)
+        let options = ([styled.answer] + styled.wrong).shuffled(using: &rng)
+        guard let answerIndex = options.firstIndex(of: styled.answer) else { return nil }
         return Question(card: card, sentence: blanked, translation: card.exampleTR, options: options, answerIndex: answerIndex)
     }
 

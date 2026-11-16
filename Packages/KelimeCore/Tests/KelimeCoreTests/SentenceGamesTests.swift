@@ -355,7 +355,7 @@ struct SentenceGamesTests {
         for q in questions {
             #expect(q.sentence.contains(GapFill.blank), Comment(stringLiteral: q.card.id))
             #expect(q.options.count == 4 && Set(q.options.map { $0.lowercased() }).count == 4, Comment(stringLiteral: q.card.id))
-            #expect(q.options[q.answerIndex] == q.card.word)
+            #expect(OptionStyle.isAnswer(q.options[q.answerIndex], word: q.card.word))
         }
         // A round drawn from the pool has questions.
         let round = Array(questions.prefix(GapFillGame.pool))
