@@ -14,7 +14,10 @@ public struct MatchGame: Sendable {
         public var card: Card
         public var side: Side
         public var id: String { card.id + (side == .english ? "-en" : "-tr") }
-        public var text: String { side == .english ? card.word : card.primaryMeaning }
+        /// What the tile shows: the round's cards share one ending and capital-letter style
+        /// (`OptionStyle.display`), so punctuation never pairs a tile with its partner.
+        public var text: String { shown ?? (side == .english ? card.word : card.primaryMeaning) }
+        var shown: String?
     }
 
     public enum Outcome: Sendable, Equatable {
@@ -31,15 +34,26 @@ public struct MatchGame: Sendable {
     public private(set) var firstTry: [Card] = []
     public private(set) var missed: [Card] = []
     private var queue: [Card]
+    private let shownEnglish: [String: String]
+    private let shownTurkish: [String: String]
     private var missedIDs = Set<String>()
     private var rng: SeededGenerator
 
     public init(cards: [Card], seed: UInt64 = UInt64.random(in: 0...UInt64.max)) {
         rng = SeededGenerator(seed: seed)
+        let englishShown = OptionStyle.display(cards.map(\.word))
+        let turkishShown = OptionStyle.display(cards.map(\.primaryMeaning), changeCase: false)
+        let shownEnglish = Dictionary(zip(cards.map(\.id), englishShown), uniquingKeysWith: { first, _ in first })
+        let shownTurkish = Dictionary(zip(cards.map(\.id), turkishShown), uniquingKeysWith: { first, _ in first })
+        self.shownEnglish = shownEnglish
+        self.shownTurkish = shownTurkish
+        let tile = { (card: Card, side: Tile.Side) in
+            Tile(card: card, side: side, shown: side == .english ? shownEnglish[card.id] : shownTurkish[card.id])
+        }
         let board = Array(cards.prefix(Self.boardSize))
         queue = Array(cards.dropFirst(Self.boardSize))
-        english = board.map { Tile(card: $0, side: .english) }.shuffled(using: &rng)
-        turkish = board.map { Tile(card: $0, side: .turkish) }.shuffled(using: &rng)
+        english = board.map { tile($0, .english) }.shuffled(using: &rng)
+        turkish = board.map { tile($0, .turkish) }.shuffled(using: &rng)
         // No pair starts on the same row.
         if turkish.count > 1 {
             for i in turkish.indices where turkish[i]?.card.id == english[i]?.card.id {
@@ -49,6 +63,10 @@ public struct MatchGame: Sendable {
                 turkish.swapAt(i, (i + turkish.count - 1) % turkish.count)
             }
         }
+    }
+
+    private func tile(_ card: Card, _ side: Tile.Side) -> Tile {
+        Tile(card: card, side: side, shown: side == .english ? shownEnglish[card.id] : shownTurkish[card.id])
     }
 
     public var isOutOfCards: Bool { english.allSatisfy { $0 == nil } && turkish.allSatisfy { $0 == nil } }
@@ -103,8 +121,8 @@ public struct MatchGame: Sendable {
             turkishSlots.shuffle(using: &rng)
         }
         for (i, card) in cards.enumerated() {
-            english[englishSlots[i]] = Tile(card: card, side: .english)
-            turkish[turkishSlots[i]] = Tile(card: card, side: .turkish)
+            english[englishSlots[i]] = tile(card, .english)
+            turkish[turkishSlots[i]] = tile(card, .turkish)
         }
     }
 }

@@ -34,8 +34,8 @@ defteridir. Kök dizindeki `CLAUDE.md` her oturumu buraya yönlendirir. Kapanan 
 
 | | iOS | Android |
 |---|---|---|
-| Sürüm | 1.2.0 | 1.3.0 (Android; iOS 1.3.0 yolda) |
-| Build | 36 yayında (1.2.0; 37 yalnızca TestFlight, Geliştirici açık; 38 aynı kod, yüklenmedi) | versionCode 4 (1.3.0; Play'e yüklenmedi; 3 = 1.2.0 AAB, yüklendiyse atlandı) |
+| Sürüm | 1.3.0 | 1.3.0 |
+| Build | 39 (1.3.0, iPad desteği; 36 = 1.2.0 yayında, 37 en yüksek yüklenen, 38 yüklenmedi) | versionCode 4 (1.3.0; Play'e yüklenmedi; 3 = 1.2.0 AAB, yüklendiyse atlandı) |
 | Dal | `v1.1.1` | `v1.1.1` |
 | Mağazada | 1.2.0 (36) yayında (16 Kasım; 1.0.0 `main` 10 Kasım) | kapalı test (Play) |
 
@@ -60,39 +60,3 @@ dokunulur.
   TestFlight'ta duruyor.
 
 ## Değişiklik günlüğü
-
-### 2026-11-17 · Hızlı Tekrar: noktalama cevabı ele vermesin (1.3.0)
-iOS [ ] Android [x]
-
-Kullanıcı bildirdi: Hızlı Tekrar'da üstte soru işaretiyle biten Türkçe cümle çıktı; 4 seçenekten
-yalnız birinin sonunda "?" vardı, diğer üçünde başka noktalama. Cevap noktalamadan bilinebiliyor.
-Aynı açık ifade/kalıp/cümle seçenekli her oyunda olabilir (Hızlı Tekrar, Eşleştir, Kelime Avı ipucu
-değil; Boşluğu Doldur tek kelime olduğu için etkilenmez).
-
-Kural:
-- Seçenekler aynı "cümle türünden" seçilir: doğru cevabın son karakteri `?` ise çeldiriciler de
-  `?` ile biten adaylardan; `!` ise `!`; `.` ya da noktalamasız ise onlardan. Tür = son anlamlı
-  karakter (sondaki boşluk, tırnak, parantez atlanır).
-- Aynı türden yeterli aday yoksa (3'ten az): dört seçeneğin hepsinin **sonundaki** noktalama
-  (`. , ! ? ; : …` ve tekrarları) kaldırılır ve hepsi öyle gösterilir. Ortadaki noktalama kalır.
-- Büyük harf de ipucu olmasın: seçenekler cümle ise hepsi aynı kuralla (ilk harf büyük) ya da
-  kelime/kalıp ise hepsi küçük gösterilir. ("I" ve özel isimler korunur, Cümle Kur kuralı gibi.)
-- Tek kelime seçeneklerde değişiklik yok.
-- Kural tüm seçenekli üreticilere uygulanır; hangileri olduğunu iki taraf kendi kodunda tarar ve
-  "Not"a yazar.
-
-Testler: `cards.json` üzerinden her seçenekli soru üretilir; hiçbir soruda doğru cevap sondaki
-noktalama ya da büyük harfle diğer üç seçenekten ayrılamaz (dört seçeneğin "son karakter türü" ve
-"ilk harf büyük mü" değerleri aynı).
-
-Not (Android): Etkilenen üreticiler: `CardQueries.quizOptions` (Hızlı Tekrar anlam sorusu + Quiz
-widget, 4 ve 2 seçenek) ve Eşleştir tahtası; Yerleştirme testi Türkçe tek kelime anlamı
-seçenekleri olduğu için değişmedi, Boşluğu Doldur tek kelime, Kelime Avı seçenek değil. Çeldirici
-önce cevapla aynı son karakter türünden seçilir (`?` / `!` / diğer: `.` ya da noktalamasız);
-3 aday yoksa havuz açılır ve gösterimde (`OptionStyle.display`) dört seçeneğin sonundaki
-noktalama silinir. Seçenek değerleri gerçek kelime olarak kalır (cevap karşılaştırması
-değişmez), yalnızca ekranda yazılışı eşitlenir. Büyük harf: yalnızca birden çok sözcüklü
-seçeneklerde eşitlenir (cümleyse hepsi büyük, ifadeyse hepsi küçük; "I", TV gibi kısaltmalar
-korunur); tek kelimeler (Monday gibi özel isimler) olduğu gibi kalır. Eşleştir'de tur başında
-tüm kartlar için bir kez aynı kural uygulanır. Test: `OptionStyleTest` (tüm cards.json).
-

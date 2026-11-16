@@ -65,26 +65,23 @@ public enum OptionStyle {
         return first.lowercased() + rest
     }
 
-    /// The answer and the wrong options as they are shown. All four share one ending type, or
-    /// else all lose their trailing punctuation; multi-word options all start with a capital
-    /// letter (the answer is a sentence) or all with a small one. Single words stay as they are.
-    public static func styled(answer: String, wrong: [String]) -> (answer: String, wrong: [String]) {
-        var all = [answer] + wrong
-        let kind = ending(of: answer)
-        if all.contains(where: { ending(of: $0) != kind }) {
-            all = all.map(strippingEnd)
+    /// How a group of options is shown. The option values stay the real words (answers are
+    /// compared with them); only the text on screen changes. When the endings differ, every
+    /// option loses its trailing punctuation. Multi-word options all start with a capital letter
+    /// (most of them are sentences) or all with a small one; single words, proper names
+    /// included, keep their case.
+    public static func display(_ options: [String], changeCase: Bool = true) -> [String] {
+        var shown = options
+        if Set(options.map(ending(of:))).count > 1 {
+            shown = shown.map(strippingEnd)
         }
-        let sentence = isSentence(answer)
-        all = all.map { option in
-            guard isMultiWord(option) else { return option }
-            return sentence ? capitalized(option) : lowered(option)
+        guard changeCase else { return shown }
+        let multi = options.filter(isMultiWord)
+        let sentences = multi.filter(isSentence).count
+        let asSentence = !multi.isEmpty && sentences * 2 >= multi.count
+        return zip(options, shown).map { original, text in
+            guard isMultiWord(original) else { return text }
+            return asSentence ? capitalized(text) : lowered(text)
         }
-        return (all[0], Array(all.dropFirst()))
-    }
-
-    /// Whether a shown `option` is the card's `word`, however it was styled.
-    public static func isAnswer(_ option: String, word: String) -> Bool {
-        func key(_ s: String) -> String { strippingEnd(s).lowercased() }
-        return option == word || key(option) == key(word)
     }
 }

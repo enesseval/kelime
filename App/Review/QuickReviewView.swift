@@ -133,10 +133,11 @@ struct QuickReviewView: View {
     }
 
     private func options_(_ options: [String], question: ReviewQuestion) -> some View {
-        VStack(spacing: 10) {
-            ForEach(options, id: \.self) { option in
+        let shown = OptionStyle.display(options)
+        return VStack(spacing: 10) {
+            ForEach(Array(options.enumerated()), id: \.element) { index, option in
                 let answered = picked != nil
-                let right = OptionStyle.isAnswer(option, word: question.card.word)
+                let right = option == question.card.word
                 let chosen = option == picked
                 Button {
                     guard picked == nil, !isSaving else { return }
@@ -144,7 +145,7 @@ struct QuickReviewView: View {
                     Task { await submit(option, question: question) }
                 } label: {
                     HStack {
-                        Text(option).font(KelimeFont.english(24, relativeTo: .title2))
+                        Text(shown[index]).font(KelimeFont.english(24, relativeTo: .title2))
                         Spacer()
                         if answered && right {
                             Text("✓").font(KelimeFont.ui(16, weight: .bold)).foregroundStyle(Palette.greenInk)

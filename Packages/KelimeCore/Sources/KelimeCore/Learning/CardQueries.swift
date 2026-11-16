@@ -115,7 +115,8 @@ public enum CardQueries {
         return chosen
     }
 
-    /// The answer plus distractors, shuffled. Used by the medium quiz widget and Quick Review.
+    /// The answer plus distractors, shuffled. The values are real words; screens show them
+    /// through `OptionStyle.display`. Used by the medium quiz widget and Quick Review.
     public static func quizOptions(
         for card: Card,
         optionCount: Int,
@@ -123,7 +124,6 @@ public enum CardQueries {
         using rng: inout some RandomNumberGenerator
     ) throws -> [String] {
         let wrong = try distractors(for: card, count: optionCount - 1, db: db, using: &rng)
-        let styled = OptionStyle.styled(answer: card.word, wrong: wrong)
-        return ([styled.answer] + styled.wrong).shuffled(using: &rng)
+        return ([card.word] + wrong).shuffled(using: &rng)
     }
 }

@@ -260,9 +260,10 @@ public struct MediumQuizWidgetView: View {
                 .minimumScaleFactor(0.7)
             Spacer(minLength: 0)
             HStack(spacing: 8) {
-                ForEach(entry.quizOptions, id: \.self) { option in
+                let shown = OptionStyle.display(entry.quizOptions)
+                ForEach(Array(entry.quizOptions.enumerated()), id: \.element) { index, option in
                     makeButton(.answer(cardID: card.id, option: option), AnyView(
-                        Text(option)
+                        Text(shown[index])
                             .font(KelimeFont.english(20))
                             .foregroundStyle(c.ink)
                             .lineLimit(1)

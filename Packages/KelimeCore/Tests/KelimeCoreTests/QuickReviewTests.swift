@@ -137,12 +137,12 @@ struct OptionLeakTests {
         return db
     }
 
-    func check(_ options: [String], _ label: String) {
-        #expect(Set(options.map { OptionStyle.ending(of: $0) }).count == 1, "ending leak: \(label) \(options)")
-        // Capital letters: compared among multi-word options; single words stay as they are.
-        let multi = options.filter { $0.split(separator: " ").count > 1 && $0.first?.isLetter == true }
+    /// What the learner sees: one ending type and, among multi-word options, one capital style.
+    func check(_ shown: [String], _ label: String) {
+        #expect(Set(shown.map { OptionStyle.ending(of: $0) }).count == 1, "ending leak: \(label) \(shown)")
+        let multi = shown.filter { $0.split(separator: " ").count > 1 && $0.first?.isLetter == true }
         if multi.count >= 2 {
-            #expect(Set(multi.map { $0.first?.isUppercase ?? false }).count == 1, "capital leak: \(label) \(options)")
+            #expect(Set(multi.map { $0.first?.isUppercase ?? false }).count == 1, "capital leak: \(label) \(shown)")
         }
     }
 
@@ -151,34 +151,38 @@ struct OptionLeakTests {
         var rng = SeededGenerator(seed: 7)
         let cards = try db.reader.read { try Card.fetchAll($0) }
         try db.reader.read { db in
-            for card in cards {
-                let options = try CardQueries.quizOptions(for: card, optionCount: 4, db: db, using: &rng)
-                #expect(options.count == 4 && Set(options).count == 4, "\(card.id)")
-                #expect(options.contains { OptionStyle.isAnswer($0, word: card.word) }, "\(card.id)")
-                check(options, card.id)
+            for count in [4, 2] {
+                for card in cards {
+                    let options = try CardQueries.quizOptions(for: card, optionCount: count, db: db, using: &rng)
+                    #expect(options.count == count && Set(options).count == count, "\(card.id)")
+                    // The values stay the real words.
+                    #expect(options.contains(card.word), "\(card.id)")
+                    check(OptionStyle.display(options), "\(card.id) x\(count)")
+                }
             }
         }
     }
 
-    @Test func gapFillOptionsOfEveryCardHideTheAnswer() throws {
+    @Test func matchBoardShowsOneStyle() throws {
         let db = try database()
-        var rng = SeededGenerator(seed: 11)
-        let cards = try db.reader.read { try Card.fetchAll($0) }
-        let questions = try db.reader.read { try GapFill.questions(db: $0, cards: cards, using: &rng) }
-        #expect(!questions.isEmpty)
-        for q in questions {
-            #expect(q.options.count == 4)
-            #expect(OptionStyle.isAnswer(q.answer, word: q.card.word))
-            check(q.options, q.card.id)
-        }
+        let cards = try db.reader.read { try Card.fetchAll($0) }.filter(\.isPhrase).prefix(40)
+        let game = MatchGame(cards: Array(cards), seed: 3)
+        let shown = game.english.compactMap { $0?.text }
+        check(shown, "match english")
+        check(game.turkish.compactMap { $0?.text }, "match turkish")
+        // Taps still work on the real cards.
+        var g = game
+        let en = g.english[0]!
+        let tr = g.turkish.compactMap { $0 }.first { $0.card.id == en.card.id }!
+        g.tap(en)
+        #expect(g.tap(tr) == .match(en.card))
     }
 
-    @Test func fallbackStripsEndings() {
-        let s = OptionStyle.styled(answer: "What happened?", wrong: ["Go home.", "Hello!", "I think…"])
-        #expect(Set(([s.answer] + s.wrong).map { OptionStyle.ending(of: $0) }).count == 1)
-        #expect(s.answer == "What happened")
-        let t = OptionStyle.styled(answer: "Take care!", wrong: ["I'm moving to…", "look up", "Good luck."])
-        #expect(t.wrong.contains("I'm moving to"))
-        #expect(t.wrong.contains("Look up"))
+    @Test func differentEndingsAreStrippedAndValuesKept() {
+        let options = ["What happened?", "Go home.", "Hello!", "I think…"]
+        let shown = OptionStyle.display(options)
+        #expect(shown == ["What happened", "Go home", "Hello", "I think"])
+        #expect(OptionStyle.display(["Take care!", "I'm moving to…", "look up", "Good luck."]).allSatisfy { $0.first?.isUppercase == true })
+        #expect(OptionStyle.display(["Monday", "tree", "river"]) == ["Monday", "tree", "river"])
     }
 }

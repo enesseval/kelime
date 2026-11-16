@@ -77,7 +77,7 @@ public struct WidgetSnapshot: Sendable, Equatable {
     /// Quiz result for the medium quiz widget: nil until answered.
     public var quizCorrect: Bool? {
         guard let quizAnswer, let card else { return nil }
-        return OptionStyle.isAnswer(quizAnswer, word: card.word)
+        return quizAnswer == card.word
     }
 
     public static func empty(at date: Date) -> WidgetSnapshot {
