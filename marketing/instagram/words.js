@@ -12,7 +12,8 @@ const W = {
    "ielts",
    "yds",
    "yokdil"
-  ]
+  ],
+  "note": ""
  },
  "reluctant": {
   "word": "reluctant",
@@ -24,7 +25,8 @@ const W = {
   "level": "B2",
   "decks": [
    "general"
-  ]
+  ],
+  "note": ""
  },
  "resilient": {
   "word": "resilient",
@@ -37,7 +39,8 @@ const W = {
   "decks": [
    "general",
    "yokdil"
-  ]
+  ],
+  "note": ""
  },
  "entail": {
   "word": "entail",
@@ -50,7 +53,8 @@ const W = {
   "decks": [
    "general",
    "yds"
-  ]
+  ],
+  "note": ""
  },
  "significant": {
   "word": "significant",
@@ -65,7 +69,8 @@ const W = {
    "ielts",
    "yds",
    "yokdil"
-  ]
+  ],
+  "note": ""
  },
  "consequence": {
   "word": "consequence",
@@ -80,7 +85,8 @@ const W = {
    "ielts",
    "yds",
    "yokdil"
-  ]
+  ],
+  "note": "Genellikle olumsuz sonuçlar için kullanılır."
  },
  "inevitable": {
   "word": "inevitable",
@@ -94,7 +100,8 @@ const W = {
    "general",
    "yds",
    "yokdil"
-  ]
+  ],
+  "note": ""
  },
  "comprehensive": {
   "word": "comprehensive",
@@ -108,7 +115,8 @@ const W = {
    "general",
    "yds",
    "yokdil"
-  ]
+  ],
+  "note": ""
  },
  "substantial": {
   "word": "substantial",
@@ -123,7 +131,8 @@ const W = {
    "ielts",
    "yds",
    "yokdil"
-  ]
+  ],
+  "note": ""
  },
  "plausible": {
   "word": "plausible",
@@ -137,7 +146,8 @@ const W = {
    "general",
    "yds",
    "yokdil"
-  ]
+  ],
+  "note": ""
  },
  "curious": {
   "word": "curious",
@@ -149,7 +159,8 @@ const W = {
   "level": "B1",
   "decks": [
    "general"
-  ]
+  ],
+  "note": ""
  },
  "ineffable": {
   "word": "ineffable",
@@ -161,6 +172,196 @@ const W = {
   "level": "C2",
   "decks": [
    "general"
-  ]
+  ],
+  "note": ""
+ },
+ "market": {
+  "word": "market",
+  "pos": "isim",
+  "tr": "pazar, çarşı",
+  "tr1": "pazar",
+  "ex": "The market is very big.",
+  "exTr": "Pazar çok büyük.",
+  "level": "A1",
+  "decks": [
+   "general"
+  ],
+  "note": "Türkçedeki 'market' (bakkal/süpermarket) için İngilizcede 'supermarket' veya 'grocery store' denir."
+ },
+ "apartment": {
+  "word": "apartment",
+  "pos": "isim",
+  "tr": "daire, apartman dairesi",
+  "tr1": "daire",
+  "ex": "We have a small apartment.",
+  "exTr": "Küçük bir dairemiz var.",
+  "level": "A1",
+  "decks": [
+   "general"
+  ],
+  "note": "Türkçedeki 'apartman' (bina) değildir; binadaki tek dairedir. İngiliz İngilizcesinde 'flat' denir."
+ },
+ "actually": {
+  "word": "actually",
+  "pos": "zarf",
+  "tr": "aslında",
+  "tr1": "aslında",
+  "ex": "He seems angry, but actually he is very friendly.",
+  "exTr": "Kızgın görünüyor ama aslında çok cana yakın.",
+  "level": "B1",
+  "decks": [
+   "general"
+  ],
+  "note": "'Şu an' (aktüel) demek değildir; 'aslında' demektir."
+ },
+ "dessert": {
+  "word": "dessert",
+  "pos": "isim",
+  "tr": "tatlı",
+  "tr1": "tatlı",
+  "ex": "What do you want for dessert?",
+  "exTr": "Tatlı olarak ne istersin?",
+  "level": "A2",
+  "decks": [
+   "general"
+  ],
+  "note": "Çöl anlamına gelen 'desert' ile karıştırmayın."
+ },
+ "sensitive": {
+  "word": "sensitive",
+  "pos": "sıfat",
+  "tr": "hassas, duyarlı",
+  "tr1": "hassas",
+  "ex": "He is very sensitive about his weight.",
+  "exTr": "Kilosu konusunda çok hassas.",
+  "level": "B2",
+  "decks": [
+   "general"
+  ],
+  "note": "İngilizcede mantıklı/makul anlamındaki 'sensible' ile sıkça karıştırılır."
+ },
+ "foster": {
+  "word": "foster",
+  "pos": "fiil",
+  "tr": "teşvik etmek, geliştirmek",
+  "tr1": "teşvik etmek",
+  "ex": "The government wants to foster innovation.",
+  "exTr": "Hükümet inovasyonu teşvik etmek istiyor.",
+  "level": "C1",
+  "decks": [
+   "general",
+   "ielts",
+   "yds",
+   "yokdil"
+  ],
+  "note": "foster family: koruyucu aile."
+ },
+ "intrinsic": {
+  "word": "intrinsic",
+  "pos": "sıfat",
+  "tr": "içsel, özünde olan",
+  "tr1": "içsel",
+  "ex": "Freedom has intrinsic value.",
+  "exTr": "Özgürlüğün içsel bir değeri vardır.",
+  "level": "C1",
+  "decks": [
+   "general",
+   "yds"
+  ],
+  "note": ""
+ },
+ "therefore": {
+  "word": "therefore",
+  "pos": "zarf",
+  "tr": "bu nedenle, dolayısıyla",
+  "tr1": "bu nedenle",
+  "ex": "I was ill; therefore, I stayed home.",
+  "exTr": "Hastaydım; bu nedenle evde kaldım.",
+  "level": "B2",
+  "decks": [
+   "general",
+   "ielts",
+   "yds",
+   "yokdil"
+  ],
+  "note": ""
+ },
+ "consequently": {
+  "word": "consequently",
+  "pos": "zarf",
+  "tr": "sonuç olarak, bu nedenle",
+  "tr1": "sonuç olarak",
+  "ex": "Prices rose; consequently, sales fell.",
+  "exTr": "Fiyatlar arttı; sonuç olarak satışlar düştü.",
+  "level": "B2",
+  "decks": [
+   "yds",
+   "ielts"
+  ],
+  "note": "Genellikle cümle başında veya ortasında bağlaç gibi kullanılır."
+ },
+ "hence": {
+  "word": "hence",
+  "pos": "zarf",
+  "tr": "bundan dolayı, bu yüzden",
+  "tr1": "bundan dolayı",
+  "ex": "She lost the election; hence, her career is over.",
+  "exTr": "Seçimi kaybetti; bu yüzden kariyeri bitti.",
+  "level": "C1",
+  "decks": [
+   "general",
+   "ielts",
+   "yds",
+   "yokdil"
+  ],
+  "note": ""
+ },
+ "thus": {
+  "word": "thus",
+  "pos": "zarf",
+  "tr": "böylece, bu nedenle",
+  "tr1": "böylece",
+  "ex": "He was tired, and thus he went to bed early.",
+  "exTr": "Yorgundu, bu yüzden yatağa erken gitti.",
+  "level": "C2",
+  "decks": [
+   "general",
+   "ielts",
+   "yds",
+   "yokdil"
+  ],
+  "note": ""
+ },
+ "nevertheless": {
+  "word": "nevertheless",
+  "pos": "zarf",
+  "tr": "yine de, buna rağmen",
+  "tr1": "yine de",
+  "ex": "It was hard; nevertheless, I tried.",
+  "exTr": "Zordu; yine de denedim.",
+  "level": "B2",
+  "decks": [
+   "general",
+   "ielts",
+   "yds",
+   "yokdil"
+  ],
+  "note": ""
+ },
+ "nonetheless": {
+  "word": "nonetheless",
+  "pos": "zarf",
+  "tr": "yine de, buna rağmen",
+  "tr1": "yine de",
+  "ex": "The work is tedious; nonetheless, it is viable.",
+  "exTr": "İş sıkıcı; yine de uygulanabilir.",
+  "level": "C1",
+  "decks": [
+   "general",
+   "ielts",
+   "yds",
+   "yokdil"
+  ],
+  "note": ""
  }
 };

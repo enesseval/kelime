@@ -1,4 +1,43 @@
-# 1. hafta paylaşım listesi
+# Paylaşım listesi
+
+**1. haftanın kalanı paylaşılmayacak** (16 Kasım kararı). Aşağıdaki "Eski: 1. hafta" bölümü
+yalnız arşiv. Yeni yön: takipçi olmayanlara kancalı Reels, günde en fazla 2 paylaşım, hikâye yok.
+Plan ve tüm senaryolar: `docs/INSTAGRAM_HAFTA2.md`.
+
+## 2. hafta: ilk iki gün (hazır)
+
+**Reels yüklerken:** Videolar sessiz. İstersen kendi sesinle seslendir (Instagram'da yüklerken
+**Ses kaydı**); yapay ses ya da trend şarkı kullanma. **Kapak:** Kapak düzenle › Galeriden ekle ›
+dosyanın yanındaki `…-kapak.png`. **Açıklama:** `aciklama.txt` içindeki ilgili bölümü olduğu gibi
+yapıştır (son satır "profildeki linke dokun" kalsın; açıklamaya link koyma). Paylaştıktan hemen sonra
+**sabit yorumu** yaz ve sabitle. **Yapay zekâ etiketi gerekmiyor** (bkz. `docs/INSTAGRAM_HAFTA2.md`).
+"Deneme" seçeneği varsa kullanabilirsin, yoksa normal paylaş.
+
+### Salı 17 Kasım · klasör `h2-gun1-sali/`
+- [ ] **12:30** Reels `p1-yanlis-5-kelime.mp4`, kapak `p1-kapak.png`. Kanca: "5 İngilizce kelimeyi yanlış biliyorsun. Hangileri?"
+  Açıklama + sabit yorum: `aciklama.txt` 1. bölüm.
+- [ ] **20:30** Reels `p2-defter-kilit-ekrani.mp4`, kapak `p2-kapak.png`. Kanca: "Kelime defterini 3 gündür açmadın."
+  Açıklama + sabit yorum: `aciklama.txt` 2. bölüm.
+
+### Çarşamba 18 Kasım · klasör `h2-gun2-carsamba/`
+- [ ] **12:30** Carousel `p3-carousel-1.png` … `p3-carousel-8.png` (sırayla seç; 4:5, kırpma yok).
+  Kanca (1. slayt): "6 kelime, 2 anlam". Açıklama + sabit yorum: `aciklama.txt` 1. bölüm.
+- [ ] **20:30** Reels `p4-4-cumle-4-hata.mp4`, kapak `p4-kapak.png`. Kanca: "Bu 4 cümlenin hepsinde hata var. Bulabilir misin?"
+  Açıklama + sabit yorum: `aciklama.txt` 2. bölüm.
+
+### Ölçüm (her paylaşım için)
+- 24. saat: takipçi olmayan oranı **%60 ve üstü** ise devam.
+- 72. saat: erişim **80'in altı** ve gönderme **0** ise formatı bırak; erişim **300'ün üstü** ya da gönderme **3+** ise aynı yapıda 2 varyant (lead'e söyle).
+- Pazartesi: en iyi ve en kötü 2 paylaşımın Insights ekran görüntüsünü gönder.
+
+**Senden gerekenler (sonraki günler için):** Günün Bulmacası, Cümle Kur, Boşluğu Doldur, seviye
+belirleme testi, kilit ekranı sınav geri sayımı (+ Dynamic Island) ve 3 günlük deneme ekranı için kısa
+ekran kayıtları (10–15 sn her biri). Yoksa o günlerin Reels'leri üretilemez (bkz. `docs/INSTAGRAM_HAFTA2.md`).
+
+---
+
+# Eski: 1. hafta (paylaşılmayacak, arşiv)
+
 
 Her şey hazır: videolar, slaytlar, hikâyeler ve açıklamalar (`aciklama.txt`). Instagram'da senin
 yapacağın tek iş paylaşmak. Paylaşırken eklenecek şeyler aşağıda.

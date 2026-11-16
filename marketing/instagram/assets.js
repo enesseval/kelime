@@ -567,3 +567,194 @@ still("g7-h3", "gun7-pazar/hikaye-3-2130.png", S, root => {
   add(root, h("div", "abs", null, { left: 0, right: 0, bottom: 0, height: "620px", background: "linear-gradient(transparent, var(--cream) 50%)" }));
   add(root, brand(170));
 });
+
+// ======================================================================
+// Hafta 2 (docs/INSTAGRAM_HAFTA2.md): kancalı Reels, takipçi olmayanlara.
+// Ortak kural: ilk karede kanca tam görünür (daktilo yok), ekran yazısı IG arayüzünün
+// (altta ~400 px, sağda ~140 px) altında kalmaz.
+// ======================================================================
+
+const OUT2 = "h2-";
+
+/** Reels kapağı: 3-4 kelime + kilit ekranı. Telefon 3:4 ızgara kırpmasının (y 240-1680) içinde, üst 2/3'te. */
+function cover(root, { bg, lines, shotName, kicker, rot = 5, dark = false }) {
+  theme(root, bg);
+  if (kicker) text(root, "abs kicker", kicker, { left: "90px", top: "290px" });
+  text(root, "abs title", lines, { left: "90px", right: "90px", top: kicker ? "350px" : "300px", fontSize: "122px", lineHeight: 1.02 });
+  const p = add(root, phone(shotName, 330, 770, 420));
+  p.style.transform = `rotate(${rot}deg)`;
+  p.style.height = px(420 * 1792 / 828);
+}
+
+/** Reels'in son 1,5 sn'si; 'closing' ile aynı. */
+
+// ---------- 1. gün / ilk paylaşım: 5 kelimeyi yanlış biliyorsun ----------
+
+const FF = () => [
+  { w: W.market, wrong: "market (bakkal)", right: W.market.tr, small: "Bakkal için: supermarket, grocery store" },
+  { w: W.apartment, wrong: "apartman (bina)", right: "daire", small: "Bina değil, binadaki tek daire" },
+  { w: W.actually, wrong: "aktüel, şu an", right: W.actually.tr, small: "Şu an değil, 'gerçekte' demek" },
+  { w: W.dessert, wrong: "çöl (desert)", right: W.dessert.tr, small: "Çöl: desert · Tatlı: dessert" },
+  { w: W.sensitive, wrong: "mantıklı (sensible)", right: W.sensitive.tr, small: "Mantıklı: sensible" },
+];
+still(OUT2 + "g1-p1-kapak", "h2-gun1-sali/p1-kapak.png", S, root =>
+  cover(root, { bg: "blue", lines: "5 kelimeyi<br>yanlış<br>biliyorsun", shotName: "kilit-kart.png", rot: 4 }), ["kilit-kart.png"]);
+
+video(OUT2 + "g1-p1", "h2-gun1-sali/p1-yanlis-5-kelime.mp4", 17.5, root => {
+  theme(root, "cream");
+  const hook = add(root, h("div", "fill dark", null));
+  text(hook, "abs title", "5 İngilizce kelimeyi<br>yanlış biliyorsun.", { left: "90px", right: "90px", top: "520px", fontSize: "104px" });
+  text(hook, "abs title", "Hangileri?", { left: "90px", top: "1020px", fontSize: "150px", color: "var(--orange)" });
+  const cards = FF().map((f, i) => {
+    const g = add(root, h("div", "fill cream", null, { opacity: 0 }));
+    text(g, "abs pill", `${i + 1}/5`, { left: "90px", top: "250px", background: "var(--amberBg)", color: "var(--amber)" });
+    text(g, "abs en", f.w.word, { left: "90px", top: "330px", fontSize: "190px", lineHeight: 1 });
+    text(g, "abs en it muted", f.w.pos, { left: "94px", top: "560px", fontSize: "46px" });
+    const a = add(g, h("div", "abs", null, { left: "90px", top: "680px", width: "800px", padding: "34px 40px", borderRadius: "36px", background: "var(--amberBg)", color: "var(--amber)" }));
+    text(a, "kicker", "Sandığın", { fontSize: "26px" }); text(a, "title", f.wrong, { fontSize: "62px", marginTop: "8px" });
+    const b = add(g, h("div", "abs", null, { left: "90px", top: "930px", width: "800px", padding: "34px 40px", borderRadius: "36px", background: "var(--greenBg)", color: "var(--green)" }));
+    text(b, "kicker", "Gerçeği", { fontSize: "26px" }); text(b, "title", f.right, { fontSize: "78px", marginTop: "8px" });
+    const ex = add(g, h("div", "abs", null, { left: "90px", top: "1210px", width: "800px" }));
+    text(ex, "en it", f.w.ex, { fontSize: "50px", lineHeight: 1.25 });
+    text(ex, "body muted", f.w.exTr, { fontSize: "38px", marginTop: "12px" });
+    text(ex, "body", f.small, { fontSize: "34px", marginTop: "26px", color: "var(--blue)", fontWeight: 700 });
+    return { g, a, b, ex };
+  });
+  const end = add(root, h("div", "fill blue center", null, { opacity: 0 }));
+  text(end, "title", "Kaçını<br>yanlış bildin?", { fontSize: "120px", color: "#fff" });
+  const close = closing(root);
+  return t => {
+    hook.style.opacity = t < 2.5 ? 1 : 0;
+    cards.forEach((c, i) => {
+      const a = 2.5 + i * 2.5;
+      c.g.style.opacity = t < a ? 0 : seg(t, a, a + .12);
+      rise(c.a, t, a + .15, .3, 24);
+      rise(c.b, t, a + .8, .3, 24);
+      rise(c.ex, t, a + 1.35, .3, 24);
+    });
+    window_(end, t, 15, 16, .15);
+    if (t >= 16) close(t - 16);
+  };
+});
+
+// ---------- 1. gün / ikinci paylaşım: defter yerine kilit ekranı ----------
+
+still(OUT2 + "g1-p2-kapak", "h2-gun1-sali/p2-kapak.png", S, root =>
+  cover(root, { bg: "cream", lines: "Defteri açmana<br>gerek yok", shotName: "kilit-2.png", rot: -4 }), ["kilit-2.png"]);
+
+video(OUT2 + "g1-p2", "h2-gun1-sali/p2-defter-kilit-ekrani.mp4", 16.1, root => {
+  theme(root, "cream");
+  const nbWords = [["reluctant", W.reluctant.tr1], ["resilient", W.resilient.tr1], ["entail", W.entail.tr1], ["hypothesis", W.hypothesis.tr1], ["foster", "teşvik etmek"], ["intrinsic", W.intrinsic.tr1]];
+  const head = text(root, "abs title", "Kelime defterini<br>3 gündür açmadın.", { left: "90px", right: "90px", top: "300px", fontSize: "100px" });
+  const head2 = text(root, "abs title", "Açmana gerek yok.", { left: "90px", right: "90px", top: "300px", fontSize: "100px", opacity: 0 });
+  const { nb } = notebook(root, 90, 700, 900, nbWords, -3);
+  const shots = ["kilit-kart.png", "kilit-2.png", "kilit-3.png"];
+  const labels = [W.hypothesis, W.foster, W.intrinsic];
+  const locks = shots.map((n, i) => {
+    const g = add(root, h("div", "fill dark", null, { opacity: 0 }));
+    const im = add(g, img(n, "abs", { left: 0, top: "-208px", width: "1080px", height: "2337px", transformOrigin: "86px 2128px" }));
+    add(g, h("div", "fill", null, { background: "linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.35) 30%, transparent 46%)" }));
+    text(g, "abs kicker", `Bakış ${i + 1}/3`, { left: "90px", top: "300px", color: "#fff", opacity: .9 });
+    text(g, "abs title", i === 0 ? "Kilit ekranına baktın." : i === 1 ? "Yine baktın." : "Bir daha.", { left: "90px", right: "90px", top: "360px", fontSize: "88px", color: "#fff", textShadow: "0 4px 30px rgba(0,0,0,.5)" });
+    const chip = text(g, "abs en", `${labels[i].word} <span class="body" style="font-size:54px;opacity:.85">· ${labels[i].tr1}</span>`, { left: "90px", right: "90px", top: "560px", fontSize: "120px", lineHeight: 1, color: "#fff", textShadow: "0 4px 30px rgba(0,0,0,.6)", opacity: 0 });
+    return { g, im, chip };
+  });
+  const end = add(root, h("div", "fill dark center", null, { opacity: 0 }));
+  text(end, "title", "3 bakış,<br>3 kelime.", { fontSize: "140px" });
+  text(end, "body", "Defteri açmadan.", { fontSize: "56px", marginTop: "30px", opacity: .85 });
+  const close = closing(root);
+  return t => {
+    window_(head, t, 0, 2.8, .2); head.style.opacity = t < 2.6 ? 1 : 1 - seg(t, 2.6, 2.9);
+    nb.style.transform = `rotate(-3deg) translateY(${easeIn(seg(t, 2.8, 4.2)) * 700}px)`;
+    nb.style.opacity = 1 - seg(t, 3.6, 4.4);
+    head2.style.opacity = seg(t, 3.0, 3.3) * (1 - seg(t, 4.3, 4.6));
+    locks.forEach((l, i) => {
+      const a = 4.6 + i * 2.8;
+      window_(l.g, t, a, a + 2.8, .15);
+      const z = easeInOut(seg(t, a + .5, a + 1.6));
+      l.im.style.transform = `translateY(${-230 * z}px) scale(${lerp(1, 1.55, z)})`;
+      l.chip.style.opacity = seg(t, a + 1.2, a + 1.6);
+    });
+    window_(end, t, 13, 14.6, .15);
+    if (t >= 14.6) close(t - 14.6);
+  };
+}, ["kilit-kart.png", "kilit-2.png", "kilit-3.png"]);
+
+// ---------- 2. gün / ilk paylaşım: carousel, YDS bağlaçları ----------
+
+const YB = [
+  ["therefore", "SONUÇ · bu yüzden"], ["consequently", "SONUÇ · bu yüzden"], ["hence", "SONUÇ · bu yüzden"], ["thus", "SONUÇ · bu yüzden"],
+  ["nevertheless", "KARŞITLIK · yine de"], ["nonetheless", "KARŞITLIK · yine de"],
+];
+const D8 = [
+  root => { theme(root, "blue");
+    text(root, "abs kicker", "YDS · Bağlaçlar", { left: "90px", top: "110px", color: "#fff" });
+    text(root, "abs title", "6 kelime,<br>2 anlam", { left: "90px", top: "190px", fontSize: "150px", lineHeight: 1 });
+    text(root, "abs body", "Hangisi 'bu yüzden',<br>hangisi 'yine de'? →", { left: "90px", top: "560px", fontSize: "52px", opacity: .9 });
+    const p = add(root, phone("kilit-kart.png", 560, 800, 400)); p.style.height = px(400 * 1792 / 828); p.style.transform = "rotate(5deg)"; },
+  ...YB.map(([w, lab], i) => root => { theme(root, "cream");
+    text(root, "abs pill", "YDS", { left: "90px", top: "110px", background: "var(--amberBg)", color: "var(--amber)" });
+    text(root, "abs kicker", lab, { left: "230px", top: "122px", color: i < 4 ? "var(--green)" : "var(--blue)", opacity: 1 });
+    const wrap = add(root, h("div", "fill center", null, { padding: "0 90px" }));
+    const c = add(wrap, wordCard(W[w], { size: w.length > 10 ? 100 : 150, width: "900px", pad: "80px 72px" }));
+    c.style.transform = "translateY(20px)";
+    text(root, "counter", `${i + 2}/8`); }),
+  root => { theme(root, "dark");
+    text(root, "abs kicker", "Özet", { left: "90px", top: "130px" });
+    text(root, "abs title", "Bu yüzden", { left: "90px", top: "220px", fontSize: "84px", color: "#7CC49A" });
+    text(root, "abs en", "therefore · consequently<br>hence · thus", { left: "90px", top: "340px", fontSize: "64px", lineHeight: 1.3 });
+    text(root, "abs title", "Yine de", { left: "90px", top: "640px", fontSize: "84px", color: "var(--orange)" });
+    text(root, "abs en", "nevertheless · nonetheless", { left: "90px", top: "760px", fontSize: "64px" });
+    text(root, "abs body", "Kaydet, sınavdan önce bak 🔖", { left: "90px", top: "980px", fontSize: "50px", color: "var(--orange)" });
+    text(root, "abs body", "Bilmediğini kilit ekranına koy:<br>Kilit Kelime › Listeler › YDS", { left: "90px", top: "1090px", fontSize: "42px", opacity: .85 });
+    add(root, brand(56, true)); },
+];
+D8.forEach((b, i) => still(`h2-g2-p3-c${i + 1}`, `h2-gun2-carsamba/p3-carousel-${i + 1}.png`, C, b, i === 0 ? ["kilit-kart.png"] : []));
+
+// ---------- 2. gün / ikinci paylaşım: 4 cümle 4 hata ----------
+
+still(OUT2 + "g2-p4-kapak", "h2-gun2-carsamba/p4-kapak.png", S, root =>
+  cover(root, { bg: "orange", lines: "4 cümle,<br>4 hata", shotName: "kilit-3.png", rot: 4 }), ["kilit-3.png"]);
+
+const SENT = [
+  { pre: "She wants to go ", bad: "to ", post: "abroad.", right: "She wants to go abroad.", why: "'abroad'un önüne 'to' gelmez." },
+  { pre: "The station is near ", bad: "to ", post: "our hotel.", right: "The station is near our hotel.", why: "'near to' değil, doğrudan 'near'." },
+  { pre: "I don't work ", bad: "in", post: " night.", right: "I don't work at night.", why: "'in night' değil, 'at night'." },
+  { pre: "Nobody spoke during ", bad: "the teacher talked", post: ".", right: "Nobody spoke during the lesson.", why: "'during'den sonra cümle değil, isim gelir." },
+];
+video(OUT2 + "g2-p4", "h2-gun2-carsamba/p4-4-cumle-4-hata.mp4", 19.3, root => {
+  theme(root, "cream");
+  const hook = add(root, h("div", "fill dark", null));
+  text(hook, "abs title", "Bu 4 cümlenin<br>hepsinde hata var.", { left: "90px", right: "90px", top: "520px", fontSize: "104px" });
+  text(hook, "abs title", "Bulabilir misin?", { left: "90px", top: "1000px", fontSize: "100px", color: "var(--orange)" });
+  const ps = SENT.map((s, i) => {
+    const g = add(root, h("div", "fill cream", null, { opacity: 0 }));
+    text(g, "abs pill", `${i + 1}/4`, { left: "90px", top: "250px", background: "var(--amberBg)", color: "var(--amber)" });
+    text(g, "abs kicker", "Hata nerede?", { left: "90px", top: "360px" });
+    const sent = text(g, "abs en it", `${s.pre}<span class="bad" style="border-radius:12px;padding:0 10px">${s.bad}</span>${s.post}`,
+      { left: "90px", top: "430px", width: "880px", fontSize: "76px", lineHeight: 1.25 });
+    const fix = add(g, h("div", "abs", null, { left: "90px", top: "800px", width: "880px", padding: "40px", borderRadius: "36px", background: "var(--greenBg)", color: "var(--green)" }));
+    text(fix, "kicker", "Doğrusu", { fontSize: "26px" });
+    text(fix, "en it", s.right, { fontSize: "64px", marginTop: "10px", lineHeight: 1.2 });
+    const why = text(g, "abs body", s.why, { left: "90px", top: "1130px", width: "880px", fontSize: "46px", color: "var(--ink)" });
+    return { g, bad: sent.querySelector(".bad"), fix, why };
+  });
+  const end = add(root, h("div", "fill blue center", null, { opacity: 0 }));
+  text(end, "title", "Kaç tanesini<br>buldun?", { fontSize: "120px", color: "#fff" });
+  const close = closing(root);
+  return t => {
+    hook.style.opacity = t < 3 ? 1 : 0;
+    ps.forEach((p, i) => {
+      const a = 3 + i * 3.4;
+      p.g.style.opacity = t < a ? 0 : seg(t, a, a + .12);
+      const r = t >= a + 1.9;
+      p.bad.style.textDecoration = r ? "line-through" : "none";
+      p.bad.style.background = r ? "var(--amberBg)" : "transparent";
+      p.bad.style.color = r ? "var(--amber)" : "inherit";
+      rise(p.fix, t, a + 1.9, .3, 24); if (t < a + 1.9) p.fix.style.opacity = 0;
+      rise(p.why, t, a + 2.4, .3, 24); if (t < a + 2.4) p.why.style.opacity = 0;
+    });
+    window_(end, t, 16.6, 17.8, .15);
+    if (t >= 17.8) close(t - 17.8);
+  };
+});
