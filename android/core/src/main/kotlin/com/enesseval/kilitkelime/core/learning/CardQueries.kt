@@ -75,21 +75,32 @@ object CardQueries {
      * of speech first, then same part of speech, then anything. Never a word sharing a meaning.
      */
     fun distractors(card: Card, count: Int, db: SqlDb, rng: RandomSource): List<String> {
-        val chosen = mutableListOf<String>()
-        val seen = mutableSetOf(card.word)
-        val meanings = Card.normalizedMeanings(card.tr)
         val phrase = PartOfSpeech.PHRASE.raw
         val tiers = listOf(
             Sql("level = ? AND pos = ?", listOf(card.level, card.pos)),
             Sql("pos = ?", listOf(card.pos)),
             if (card.isPhrase) Sql("pos = ?", listOf(phrase)) else Sql("pos <> ?", listOf(phrase)),
         )
-        for (tier in tiers) {
+        // The choices come from the answer's own sentence type ("?", "!" or plain). Too few of them:
+        // the pool opens up and the screen then shows every choice without its ending punctuation.
+        val pools = tiers.map { tier -> lazy {
+            db.query(Sql("SELECT * FROM card WHERE ") + tier + Sql(" AND id <> ? ORDER BY id", listOf(card.id)), Card::from) }
+        }
+        val sameType = pick(card, count, pools, rng, OptionStyle.ending(card.word))
+        if (sameType.size >= count) return sameType
+        return pick(card, count, pools, rng, null)
+    }
+
+    private fun pick(card: Card, count: Int, pools: List<Lazy<List<Card>>>, rng: RandomSource, ending: OptionStyle.Ending?): List<String> {
+        val chosen = mutableListOf<String>()
+        val seen = mutableSetOf(card.word)
+        val meanings = Card.normalizedMeanings(card.tr)
+        for (cards in pools) {
             if (chosen.size >= count) break
-            val cards = db.query(Sql("SELECT * FROM card WHERE ") + tier + Sql(" AND id <> ? ORDER BY id", listOf(card.id)), Card::from)
-            for (other in cards.shuffledWith(rng)) {
+            for (other in cards.value.shuffledWith(rng)) {
                 if (chosen.size >= count) break
                 if (other.word in seen) continue
+                if (ending != null && OptionStyle.ending(other.word) != ending) continue
                 if (Card.normalizedMeanings(other.tr).intersect(meanings).isNotEmpty()) continue
                 chosen += other.word
                 seen += other.word

@@ -5,6 +5,7 @@ import com.enesseval.kilitkelime.core.db.SqlDb
 import com.enesseval.kilitkelime.core.db.int
 import com.enesseval.kilitkelime.core.learning.CardQueries
 import com.enesseval.kilitkelime.core.learning.LearningEvent
+import com.enesseval.kilitkelime.core.learning.OptionStyle
 import com.enesseval.kilitkelime.core.learning.LearningStore
 import com.enesseval.kilitkelime.core.learning.RandomSource
 import com.enesseval.kilitkelime.core.learning.intUntil
@@ -210,6 +211,16 @@ class MatchGame(cards: List<Card>, private val rng: RandomSource, val boardSize:
     /** Cards matched right on the first try, in order. */
     val firstTry: List<String> get() = firstTryIDs
     private val byID = cards.associateBy { it.id }
+
+    // How each card is written on the board, decided once for the whole round (docs/SYNC.md, 2026-11-17):
+    // the same ending punctuation and first-letter case on every card, so a "?" phrase does not pair by its look.
+    private val englishShown: Map<String, String> =
+        cards.map { it.id }.zip(OptionStyle.display(cards.map { it.word })).toMap()
+    private val turkishShown: Map<String, String> =
+        cards.map { it.id }.zip(OptionStyle.display(cards.map { it.primaryMeaning }, turkish = true)).toMap()
+
+    fun englishText(card: Card): String = englishShown[card.id] ?: card.word
+    fun turkishText(card: Card): String = turkishShown[card.id] ?: card.primaryMeaning
     /** The words paired right on the first try, for the result and the share card (iOS `firstTry`). */
     val firstTryCards: List<Card> get() = firstTryIDs.mapNotNull { byID[it] }
     /** The words mixed up at least once (iOS `missed`). */

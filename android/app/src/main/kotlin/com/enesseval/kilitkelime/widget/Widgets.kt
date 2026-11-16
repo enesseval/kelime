@@ -246,6 +246,7 @@ class QuizWidget : GlanceAppWidget() {
                 Text(card.meaning, maxLines = 2, style = TextStyle(color = c.ink, fontSize = 22.sp, fontWeight = FontWeight.Medium))
                 Spacer(GlanceModifier.defaultWeight())
                 Row(modifier = GlanceModifier.fillMaxWidth()) {
+                    val shownOptions = com.enesseval.kilitkelime.core.learning.OptionStyle.display(snapshot.quizOptions)
                     snapshot.quizOptions.forEachIndexed { i, option ->
                         if (i > 0) Spacer(GlanceModifier.width(8.dp))
                         Box(
@@ -253,7 +254,7 @@ class QuizWidget : GlanceAppWidget() {
                                 .clickable(actionRunCallback<QuizAnswerAction>(actionParametersOf(QuizAnswerAction.card to card.id, QuizAnswerAction.option to option))),
                             contentAlignment = Alignment.Center,
                         ) {
-                            Text(option, maxLines = 1, style = TextStyle(color = c.ink, fontSize = 19.sp, fontFamily = serif))
+                            Text(shownOptions[i], maxLines = 1, style = TextStyle(color = c.ink, fontSize = 19.sp, fontFamily = serif))
                         }
                     }
                 }

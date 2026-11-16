@@ -423,7 +423,7 @@ fun MatchScreen() {
                     g.left.forEachIndexed { i, card ->
                         val shaking = miss?.first == i
                         val green = correct?.first == i
-                        MatchSlot(card, "-en", card?.word, english = true, selected = picked == i, wrong = shaking, right = green,
+                        MatchSlot(card, "-en", card?.let { g.englishText(it) }, english = true, selected = picked == i, wrong = shaking, right = green,
                             modifier = if (shaking) Modifier.offset { IntOffset(shake.value.dp.roundToPx(), 0) } else Modifier) {
                             if (green) return@MatchSlot // green cards do nothing
                             commitCorrect()
@@ -437,7 +437,7 @@ fun MatchScreen() {
                     g.right.forEachIndexed { j, card ->
                         val shaking = miss?.second == j
                         val green = correct?.second == j
-                        MatchSlot(card, "-tr", card?.primaryMeaning, english = false, selected = pickedRight == j, wrong = shaking, right = green,
+                        MatchSlot(card, "-tr", card?.let { g.turkishText(it) }, english = false, selected = pickedRight == j, wrong = shaking, right = green,
                             modifier = if (shaking) Modifier.offset { IntOffset(shake.value.dp.roundToPx(), 0) } else Modifier) {
                             if (green) return@MatchSlot
                             commitCorrect()

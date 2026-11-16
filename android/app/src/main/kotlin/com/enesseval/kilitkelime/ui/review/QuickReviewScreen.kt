@@ -196,8 +196,10 @@ fun QuickReviewScreen(deck: DeckID?) {
 private fun Options(options: List<String>, q: ReviewQuestion, picked: String?, onPick: (String) -> Unit) {
     val c = Palette.current
     val answered = picked != null
+    // Every choice is written alike (ending punctuation, capitals), so the look never gives the answer away.
+    val shown = com.enesseval.kilitkelime.core.learning.OptionStyle.display(options)
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        for (option in options) {
+        for ((index, option) in options.withIndex()) {
             val right = option == q.card.word
             val chosen = option == picked
             val (bg, border) = when {
@@ -211,7 +213,7 @@ private fun Options(options: List<String>, q: ReviewQuestion, picked: String?, o
                     .clickable(enabled = !answered) { onPick(option) }.padding(horizontal = 18.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text(option, style = KelimeType.english(24.sp), color = c.ink, modifier = Modifier.weight(1f))
+                Text(shown[index], style = KelimeType.english(24.sp), color = c.ink, modifier = Modifier.weight(1f))
                 if (answered && right) Text("✓", style = KelimeType.ui(16.sp, FontWeight.Bold), color = c.greenInk)
             }
         }
