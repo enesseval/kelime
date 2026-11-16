@@ -35,9 +35,9 @@ defteridir. Kök dizindeki `CLAUDE.md` her oturumu buraya yönlendirir. Kapanan 
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.2.0 | 1.2.0 |
-| Build | 36 incelemede (1.2.0, 2026-11-15; 37 yalnızca TestFlight, Geliştirici açık; 38 aynı kod, yüklenmedi) | versionCode 3 (1.2.0; AAB hazır, Play'e henüz yüklenmedi) |
+| Build | 36 yayında (1.2.0; 37 yalnızca TestFlight, Geliştirici açık; 38 aynı kod, yüklenmedi) | versionCode 3 (1.2.0; AAB hazır, Play'e henüz yüklenmedi) |
 | Dal | `v1.1.1` | `v1.1.1` |
-| Mağazada | 1.0.0 (28) yayında (10 Kasım), `main` | kapalı test (Play) |
+| Mağazada | 1.2.0 (36) yayında (16 Kasım; 1.0.0 `main` 10 Kasım) | kapalı test (Play) |
 
 **Android üretim erişimi:** Play kapalı testinde 12 test kullanıcısı 13 Kasım 2026 itibarıyla 1
 gündür kayıtlı. 12 kişi kayıtlı kalırsa 14 gün koşulu en erken **26 Kasım 2026**'da doluyor;
