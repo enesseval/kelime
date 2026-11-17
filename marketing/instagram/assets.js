@@ -982,3 +982,65 @@ video(OUT2 + "g6-p9", "h2-gun6-pazar/p9-bildigin-kelimeyi-unuttun.mp4", 14.5, ro
     if (t >= 13) close(t - 13);
   };
 }, ["tekrar-yanlis.png", "yeni/IMG_0127.PNG"]);
+
+// ---------- S21 · iPad geldi (yüzen yuva; yayın günü 20:30 ya da 12:30) ----------
+// Ekran görüntüleri henüz yok: shots/ipad/ klasörüne bu adlarla PNG koyunca `node render.mjs h2-s21` yeter.
+// Yoksa render.mjs atlar ve eksik dosyayı söyler; yerine el çizimi yapılmaz.
+const IPAD = {
+  bugun: "ipad/bugun-yatay.png",     // Bugün sekmesi, yatay
+  kilit: "ipad/kilit-widget.png",    // Kilit ekranı widget'ı, dikey
+  bulmaca: "ipad/bulmaca.png",       // Günün Bulmacası, dikey
+  tekrar: "ipad/hizli-tekrar.png",   // Hızlı Tekrar, dikey
+  oyna: "ipad/oyna-yatay.png",       // Oyna sekmesi, yatay
+  detay: "ipad/kelime-detay.png",    // Kelime detayı, dikey
+};
+
+/** iPad ekran görüntüsü çerçevesi; dikey 3:4, yatay 4:3 (en-boy oranı görüntüden gelir). */
+function ipadFrame(parent, src, { top, w = 900, left = null }) {
+  const box = add(parent, h("div", "abs", null, { left: px(left ?? (1080 - w) / 2), top: px(top), width: px(w), borderRadius: "36px", overflow: "hidden",
+    background: "#000", boxShadow: "0 0 0 14px #1B1916, 0 40px 90px rgba(0,0,0,.3)" }));
+  const im = add(box, img(src, null, { display: "block", width: px(w), height: "auto" }));
+  return { box, im };
+}
+
+still(OUT2 + "s21-kapak", "h2-s21-ipad/s21-kapak.png", S, root => {
+  theme(root, "blue");
+  text(root, "abs title", "İngilizce<br>kelime<br>iPad'de", { left: "90px", right: "90px", top: "300px", fontSize: "122px", lineHeight: 1.02 });
+  text(root, "abs pill", "İndirmesi ücretsiz", { left: "90px", top: "790px", background: "#fff", color: "var(--blue)", fontSize: "40px" });
+  ipadFrame(root, IPAD.kilit, { top: "930px", w: 560, left: 260 });
+}, [IPAD.kilit]);
+
+video(OUT2 + "s21", "h2-s21-ipad/s21-ipad-geldi.mp4", 16, root => {
+  theme(root, "cream");
+  // 0-2.5 kanca: Bugün (yatay) + yazı + "İndirmesi ücretsiz"
+  const hook = add(root, h("div", "fill blue", null));
+  text(hook, "abs title", "İngilizce kelime<br>artık iPad'de.", { left: "90px", right: "90px", top: "230px", fontSize: "112px", lineHeight: 1.04, color: "#fff" });
+  text(hook, "abs pill", "İndirmesi ücretsiz", { left: "90px", top: "600px", background: "#fff", color: "var(--blue)", fontSize: "44px" });
+  const hf = ipadFrame(hook, IPAD.bugun, { top: "820px", w: 920, left: 80 });
+  // 2.5-14.5: beş sahne, her biri 2,4 sn
+  const SC = [
+    { src: IPAD.kilit, kicker: "Kilit ekranı", title: "Kilit ekranında da.", w: 700, top: 560 },
+    { src: IPAD.bulmaca, kicker: "Günün Bulmacası", title: "İpucu Türkçe,<br>cevap İngilizce.", w: 700, top: 560 },
+    { src: IPAD.tekrar, kicker: "Hızlı Tekrar", title: "Yanlışı hemen<br>tekrar et.", w: 700, top: 560 },
+    { src: IPAD.oyna, kicker: "Oyna · yatay ekran", title: "Büyük ekranda<br>oyna.", w: 940, top: 720 },
+    { src: IPAD.detay, kicker: "Kelime detayı", title: "Anlam, örnek,<br>not.", w: 700, top: 560 },
+  ];
+  const sc = SC.map(s => {
+    const g = add(root, h("div", "fill cream", null, { opacity: 0 }));
+    text(g, "abs kicker", s.kicker, { left: "90px", top: "190px" });
+    text(g, "abs title", s.title, { left: "90px", right: "90px", top: "250px", fontSize: "84px", lineHeight: 1.06 });
+    const f = ipadFrame(g, s.src, { top: s.top, w: s.w });
+    return { g, f };
+  });
+  const close = closing(root);
+  return t => {
+    hook.style.opacity = t < 2.5 ? 1 : 0;
+    hf.box.style.transform = `translateY(${lerp(30, 0, easeOut(seg(t, 0, .5)))}px)`;
+    sc.forEach((c, i) => {
+      const a = 2.5 + i * 2.4;
+      window_(c.g, t, a, a + 2.4, .12);
+      c.f.box.style.transform = `scale(${lerp(.97, 1.02, easeInOut(seg(t, a, a + 2.4)))})`;
+    });
+    if (t >= 14.5) close(t - 14.5);
+  };
+}, Object.values(IPAD));

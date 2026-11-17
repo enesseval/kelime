@@ -68,7 +68,17 @@ ikinci kanca. Her paylaşımda önerisi var.
 | 13 | Paz 29 Kas |  | S18 Reels: varyant yuvası | 72 saatlik karara göre |
 | 14 | Pzt 30 Kas |  | S19 Reels: 3 gün ücretsiz | **çekim gerekli** |
 
-Arama ifadesiyle bağlı olanlar (≥5): S1, S2, S4, S5, S6, S7, S10, S11, S12 (her birinde "Arama:").
+**Yüzen yuva: S21 · iPad geldi.** Tarihi App Store yayın gününe bağlı (1.3.0, build 39 şu an TestFlight'ta; yayın
+tarihi belli değil). Yayın günü **20:30**'da çıkar; o günün 20:30'u boşsa olduğu gibi, doluysa o günün **en zayıf**
+planlı paylaşımı **yedek yuvaya** kayar (ertesi günün boş 12:30'u, o da yoksa S20 yuvası). Gün içinde 12:30 boşsa
+S21 **12:30**'a alınır ve kimse kaymaz. Yerine geçebilecekler, zayıftan güçlüye: **S17** (Boşluğu Doldur), **S14** (seviye
+belirleme testi), **S13** (Cümle Kur), **S11** (bulmaca; ancak S21 zaten bulmacayı gösteriyorsa), **S19 hariç**
+(30 Kasım'a bağlı). Dokunulmaz: S1, S4, S5 ve 72. saat eşiğini geçen her paylaşım; carousel'ler (S3, S7, S12, S16) kaydetme
+getirdiği için yerinde kalır. Aynı gün S21 ile bir Reels daha çıkıyorsa aradaki fark en az 5 saat. Sürüm
+tablosunda iPad 1.3.0 "App Store'da yayında" görünene kadar **paylaşma**; yayın öncesinde "geliyor" dilinde bir
+şey yazma (kanca "artık iPad'de" diyor).
+
+Arama ifadesiyle bağlı olanlar (≥5): S1, S2, S4, S5, S6, S7, S10, S11, S12, S21 (her birinde "Arama:").
 S18, 72 saat kararına göre S1/S4 gibi kazananın ikinci varyantıdır; yoksa yedek S20 devreye girer.
 
 ---
@@ -227,6 +237,41 @@ Dosya: `out/h2-gun6-pazar/p9-bildigin-kelimeyi-unuttun.mp4`, kapak `p9-kapak.png
 - **Akış:** denemeyi başlatma ekranı + "3 günde şunları denedin" özeti ekran kaydı (deneme özeti 1.2'de var).
 - **Açıklama:** `İngilizce kelime öğren: 3 gün her şey ücretsiz, kart bilgisi istemiyoruz.` / ... linke dokun. **CTA:** gönder değil, link. **Gerekli:** deneme ekranı kaydı; **kart yok** ve **3 gün** mağaza metninden/uygulamadan teyit edilmeli (aşağıda).
 
+## S21 · iPad geldi · yayın günü 20:30 (ya da 12:30) · Reels 16 sn **(yüzen yuva; iPad ekran görüntüleri gerekli)**
+Dosya: `out/h2-s21-ipad/s21-ipad-geldi.mp4`, kapak `s21-kapak.png`. Tanım: `assets.js` sonu (`h2-s21`, `h2-s21-kapak`); ekran
+görüntüleri `shots/ipad/` altına aşağıdaki adlarla konunca `cd marketing/instagram && node render.mjs h2-s21`. Eksikse
+render atlanır, el çizimi yapılmaz. Yalnız iPad 1.3.0 App Store'da yayına girince çıkar (iPhone için zaten yayında).
+
+**Gerekli ekran görüntüleri (6, App Store iPad setiyle aynı, bir kez çek):**
+
+| Dosya (`shots/ipad/`) | Ekran | Yön | Görünmesi gereken |
+|---|---|---|---|
+| `kilit-widget.png` | Kilit ekranı | dikey | Kilit Kelime widget'ı kelime + anlamla, saat; düzenleme modu yok (S9'daki "−" düğmeleri gibi) |
+| `bugun-yatay.png` | Bugün | yatay | Sekme/kenar çubuğu ve içerik tam; günün kelimesi okunur |
+| `bulmaca.png` | Günün Bulmacası | dikey | Türkçe ipucu görünür, harf kutuları yarı dolu (cevap henüz yok) |
+| `hizli-tekrar.png` | Hızlı Tekrar | dikey | Soru ve şıklar; mümkünse cevap öncesi |
+| `oyna-yatay.png` | Oyna | yatay | Oyun listesi/seçimi tam ekran, hiçbir şey kesik değil |
+| `kelime-detay.png` | Kelime detayı | dikey | Kelime, anlam, örnek cümle ve not birlikte |
+
+Hepsi tam ekran, ilk sürümde kişisel veri/bildirim yok, saat yaklaşık 9:41 ya da gerçek saat. Aynı PNG'ler App Store iPad
+setinde de kullanılır.
+
+- **Kanca (0–2,5 sn):** mavi zemin, altta iPad'de Bugün (yatay) yukarı kayarak girer. Söz: "iPad'inle ders çalışıyorsun ama kelime uygulaman hep telefonda mı? Artık iPad'de, indirmesi ücretsiz." Yazı: **"İngilizce kelime artık iPad'de."** + beyaz etiket **"İndirmesi ücretsiz"** (ilk karede tam görünür). Hedef: iPad sahibi, tabletten ders çalışan öğrenci. Arama: "ipad ingilizce", "ingilizce kelime".
+- **Akış:** her sahne 2,4 sn, üstte etiket + 2 satır başlık, altta ekran, hafif yakınlaşma:
+  2,5–4,9 Kilit ekranı: **"Kilit ekranında da."** (`kilit-widget.png`) ·
+  4,9–7,3 Günün Bulmacası: **"İpucu Türkçe, cevap İngilizce."** (`bulmaca.png`) ·
+  7,3–9,7 Hızlı Tekrar: **"Yanlışı hemen tekrar et."** (`hizli-tekrar.png`) ·
+  9,7–12,1 Oyna: **"Büyük ekranda oyna."** (`oyna-yatay.png`) ·
+  12,1–14,5 Kelime detayı: **"Anlam, örnek, not."** (`kelime-detay.png`) ·
+  14,5–16 kapanış (ikon, "Profildeki linkten · App Store").
+- **Yazılar:** sahne başına kısa başlık (yukarıda), hepsi ekranda gerçekten görünen şey; "yeni", "ilk" ya da "tek" deme.
+- **Açıklama:** `iPad'de İngilizce kelime öğren: Kilit Kelime artık iPad'de, indirmesi ücretsiz.` / `Kilit ekranı widget'ı, Günün Bulmacası, Hızlı Tekrar ve Oyna büyük ekranda; videodaki hepsi gerçek iPad ekranı.` / `iPad'inde ders çalışan arkadaşına gönder.` / `Bu kelimeyi kilit ekranında görmek için profildeki linke dokun.` `#ipadingilizce #ingilizcekelime #ingilizceöğren #kilitkelime`
+- **CTA:** gönder (iPad'li arkadaş). Tek istek. **Gönderme nedeni:** iPad'inde ders çalışan, defter/PDF arasında kaybolan arkadaş; "Sende iPad var, bunu dene" doğal bir mesaj.
+- **Sabit yorum:** `iPad'de de aynı hesapla çalışır; iPhone'daki kelimelerin burada da. İndirmesi ücretsiz, App Store'da "Kilit Kelime" ara.` (iPhone ile ilerleme eşitlemesi yalnız doğrulanırsa yaz: aşağıya bak.)
+- **Gönderme tetikleyicisi:** "iPad'li arkadaşına gönder" + sabit yorumda ikinci kanca "Hangisini iPad'de önce denerdin: bulmaca mı, oyun mu?" (soru değil, bilgi: yorum isteme; yalnız ilk yorum olarak koy, CTA'ya ekleme).
+- **Varyant B (opsiyonel, carousel 6 slayt, 1080×1350):** 1: **"İngilizce kelime iPad'de"** + "İndirmesi ücretsiz" + `kilit-widget.png`; 2: Bugün (yatay); 3: Günün Bulmacası; 4: Hızlı Tekrar; 5: Oyna (yatay); 6: Kelime detayı + "Kaydet, iPad'inden bak" + Kilit Kelime. Aynı 6 PNG; render tanımı yalnız Reels kazanırsa (72 saat eşiği) eklenir. CTA: kaydet. Açıklama aynı ilk satır.
+- **Kanıt:** yalnız gerçek iPad ekran görüntüleri; "iPad'de" iddiası `docs/SYNC.md` sürüm tablosunda iPad 1.3.0 yayında olunca geçerli. Kelimeler ekranlardaki uygulama içeriği.
+
 ## S20 (yedek) · Reels · "actually" tek kelime
 Hook: **"'Actually' aktüel demek değil."** Kart + örnek, 8 sn; ayrıca S1'in tek kelimelik kısa kesiti. Bir paylaşım düşerse bunu kullan.
 
@@ -255,6 +300,7 @@ duvar kâğıdının kaynağını kullanıcı doğrulasın (depoda yapay zekâ i
 
 ## Doğrulanacak kaynaklar
 
+- S21: iPad 1.3.0'ın App Store yayın tarihi ve `docs/SYNC.md` sürüm tablosundaki durumu (yayından önce paylaşma). "İndirmesi ücretsiz" mağazadaki fiyatla teyit edilsin (uygulama ücretsiz indirilir; Pro uygulama içi). Kilit ekranı widget'ının iPad'de (iPadOS sürümü) gerçekten çalıştığı ve iPhone ile ilerleme eşitlemesi (sabit yorumdaki ek cümle) uygulamadan doğrulanmadan yazılmaz. `#ipadingilizce` etiketinin kullanımda olup olmadığına Instagram aramasında bak.
 - Kelimeler, anlamlar, örnek cümleler, seviye ve notlar: `Content/cards.json` (kart `word` alanı: market, apartment, actually, dessert, sensitive, foster, intrinsic, therefore, consequently, hence, thus, nevertheless, nonetheless, thirsty, abroad, pretend, ambiguous, ineffable, cold, quiet, causal, subsequently, morbidity, significant, substantial, crucial, essential, fundamental, pivotal, hinder, impede, mitigate, alleviate, exacerbate, undermine). Yayından önce kartın metni ile görselin birebir olduğuna göz at.
 - S4'teki yanlış cümleler kartların `note` alanındaki hatalı kalıplardan **türetildi** (örnek cümle değil); eğitmen/öğretmen gözüyle bir kez oku.
 - Meta'nın AI etiketi kuralı kullanıcının özetine dayanıyor; Meta Yardım Merkezi'ndeki güncel metinle teyit et.
