@@ -10,3 +10,6 @@
 # Supabase / Ktor
 -dontwarn org.slf4j.**
 -dontwarn io.ktor.**
+
+# Play In-App Review (review-ktx) refers to an annotation that is not packaged
+-dontwarn com.google.android.gms.common.annotation.NoNullnessRewrite
