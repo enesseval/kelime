@@ -95,3 +95,19 @@ function slideX(t, a, b, d = .35, w = 1080) {
   if (t < b - d) return 0;
   return -w * easeIn(seg(t, b - d, b));
 }
+
+/** In-video CTA end card (2.2 s): arrow up toward the profile link, "Profildeki linkten ücretsiz indir",
+ *  app icon, "iPhone · Kilit Kelime". Everything sits between y 300 and y 1300 (Reels UI-safe). */
+function ctaCard(root) {
+  const c = add(root, h("div", "fill blue", null, { opacity: 0 }));
+  const arrow = add(c, h("div", "abs", null, { left: "0", right: "0", top: "290px", display: "flex", justifyContent: "center" }));
+  arrow.innerHTML = `<svg width="170" height="200" viewBox="0 0 170 200" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"><path d="M85 185V25"/><path d="M28 80L85 23L142 80"/></svg>`;
+  const t1 = add(c, h("div", "abs title", "Profildeki linkten<br>ücretsiz indir", { left: "60px", right: "60px", top: "560px", textAlign: "center", fontSize: "96px", color: "#fff", lineHeight: 1.08 }));
+  const icon = add(c, img("icon.png", "abs", { width: "240px", height: "240px", borderRadius: "54px", left: "420px", top: "890px", boxShadow: "0 30px 70px rgba(0,0,0,.25)" }));
+  const t2 = add(c, h("div", "abs body", "iPhone · Kilit Kelime", { left: "0", right: "0", top: "1190px", textAlign: "center", fontSize: "46px", color: "rgba(255,255,255,.85)", fontWeight: 600 }));
+  return (t) => {
+    c.style.opacity = easeOut(seg(t, 0, .2));
+    arrow.style.transform = `translateY(${-Math.abs(Math.sin(t * 5.2)) * 38}px)`;
+    rise(t1, t, .08, .35, 30); rise(icon, t, .2, .4, 30); rise(t2, t, .3, .35, 24);
+  };
+}

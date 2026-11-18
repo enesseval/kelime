@@ -779,7 +779,7 @@ still(OUT2 + "g3-p5-kapak", "h2-gun3-persembe/p5-kapak.png", S, root =>
   cover(root, { bg: "blue", lines: "6 kelime<br>A1'den C2'ye", shotName: "kilit-kart.png", rot: 4 }), ["kilit-kart.png"]);
 
 const LV = ["thirsty", "abroad", "pretend", "sensitive", "ambiguous", "ineffable"];
-video(OUT2 + "g3-p5", "h2-gun3-persembe/p5-seviyeni-bul.mp4", 18.3, root => {
+video(OUT2 + "g3-p5", "h2-gun3-persembe/p5-seviyeni-bul.mp4", 15.4, root => {
   theme(root, "cream");
   const hook = add(root, h("div", "fill dark", null));
   text(hook, "abs title", "6 kelime.<br>A1'den C2'ye.", { left: "90px", right: "90px", top: "480px", fontSize: "110px" });
@@ -801,17 +801,17 @@ video(OUT2 + "g3-p5", "h2-gun3-persembe/p5-seviyeni-bul.mp4", 18.3, root => {
   });
   const end = add(root, h("div", "fill blue center", null, { opacity: 0 }));
   text(end, "title", "Kaçıncıda<br>takıldın?", { fontSize: "130px", color: "#fff" });
-  const close = closing(root);
+  const close = ctaCard(root);
   return t => {
-    hook.style.opacity = t < 2.4 ? 1 : 0;
+    hook.style.opacity = t < 2 ? 1 : 0;
     ws.forEach((w, i) => {
-      const a = 2.4 + i * 2.2;
+      const a = 2 + i * 1.7;
       w.g.style.opacity = t < a ? 0 : seg(t, a, a + .12);
-      w.fb.style.width = (100 * (1 - seg(t, a + .2, a + 1.2))) + "%";
-      rise(w.m, t, a + 1.3, .3, 24); if (t < a + 1.3) w.m.style.opacity = 0;
+      w.fb.style.width = (100 * (1 - seg(t, a + .15, a + .9))) + "%";
+      rise(w.m, t, a + .95, .25, 24); if (t < a + .95) w.m.style.opacity = 0;
     });
-    window_(end, t, 15.6, 16.8, .15);
-    if (t >= 16.8) close(t - 16.8);
+    window_(end, t, 12.2, 13.2, .12);
+    if (t >= 13.2) close(t - 13.2);
   };
 });
 
@@ -820,7 +820,7 @@ video(OUT2 + "g3-p5", "h2-gun3-persembe/p5-seviyeni-bul.mp4", 18.3, root => {
 still(OUT2 + "g4-p6-kapak", "h2-gun4-cuma/p6-kapak.png", S, root =>
   cover(root, { bg: "orange", lines: "I have a cold<br>ne demek?", shotName: "kilit-2.png", rot: -4 }), ["kilit-2.png"]);
 
-video(OUT2 + "g4-p6", "h2-gun4-cuma/p6-i-have-a-cold.mp4", 14, root => {
+video(OUT2 + "g4-p6", "h2-gun4-cuma/p6-i-have-a-cold.mp4", 13.4, root => {
   theme(root, "cream");
   const hook = add(root, h("div", "fill dark", null));
   text(hook, "abs en it", "'I have a cold'", { left: "90px", right: "90px", top: "560px", fontSize: "116px" });
@@ -850,17 +850,17 @@ video(OUT2 + "g4-p6", "h2-gun4-cuma/p6-i-have-a-cold.mp4", 14, root => {
   text(good, "en it", "I'm thirsty", { fontSize: "86px" });
   const ex2 = add(a2, h("div", "abs", null, { left: "90px", top: "1150px", width: "900px" }));
   text(ex2, "en it", W.thirsty.ex, { fontSize: "50px" }); text(ex2, "body muted", W.thirsty.exTr, { fontSize: "38px", marginTop: "10px" });
-  const close = closing(root);
+  const close = ctaCard(root);
   return t => {
-    hook.style.opacity = t < 3 ? 1 : 0;
-    window_(q, t, 3, 6, .12);
-    fb.style.width = (100 * (1 - seg(t, 3.2, 5.8))) + "%";
-    window_(a1, t, 6, 8.8, .12);
-    window_(a2, t, 8.8, 12.5, .12);
-    rise(bad, t, 9.3, .3, 24); if (t < 9.3) bad.style.opacity = 0;
-    rise(good, t, 10.2, .3, 24); if (t < 10.2) good.style.opacity = 0;
-    rise(ex2, t, 10.9, .3, 24); if (t < 10.9) ex2.style.opacity = 0;
-    if (t >= 12.5) close(t - 12.5);
+    hook.style.opacity = t < 2.6 ? 1 : 0;
+    window_(q, t, 2.6, 5.4, .12);
+    fb.style.width = (100 * (1 - seg(t, 2.8, 5.2))) + "%";
+    window_(a1, t, 5.4, 8, .12);
+    window_(a2, t, 8, 11.2, .12);
+    rise(bad, t, 8.4, .3, 24); if (t < 8.4) bad.style.opacity = 0;
+    rise(good, t, 9.1, .3, 24); if (t < 9.1) good.style.opacity = 0;
+    rise(ex2, t, 9.7, .3, 24); if (t < 9.7) ex2.style.opacity = 0;
+    if (t >= 11.2) close(t - 11.2);
   };
 });
 
@@ -896,14 +896,14 @@ D9.forEach((b, i) => still(`h2-g4-p7-c${i + 1}`, `h2-gun4-cuma/p7-carousel-${i +
 
 // ---------- 5. gün · S8: YDS sorusu, 8 saniyen var ----------
 
-still(OUT2 + "g5-p8-kapak", "h2-gun5-cumartesi/p8-kapak.png", S, root =>
+still(OUT2 + "g5-p8-kapak", "h2-gun3-persembe/p8-kapak.png", S, root =>
   cover(root, { bg: "cream", lines: "YDS sorusu<br>8 saniyen<br>var", shotName: "kilit-3.png", rot: 4 }), ["kilit-3.png"]);
 
 const YQ = [
   { pre: "It was hard; ", post: ", I tried.", opts: ["therefore", "nevertheless", "consequently"], ans: 1, tr: "Zordu; yine de denedim." },
   { pre: "I was ill; ", post: ", I stayed home.", opts: ["therefore", "nevertheless"], ans: 0, tr: "Hastaydım; bu nedenle evde kaldım." },
 ];
-video(OUT2 + "g5-p8", "h2-gun5-cumartesi/p8-yds-sorusu.mp4", 15.5, root => {
+video(OUT2 + "g5-p8", "h2-gun3-persembe/p8-yds-sorusu.mp4", 15, root => {
   theme(root, "cream");
   const hook = add(root, h("div", "fill dark", null));
   text(hook, "abs title", "YDS sorusu.", { left: "90px", top: "560px", fontSize: "130px" });
@@ -911,20 +911,20 @@ video(OUT2 + "g5-p8", "h2-gun5-cumartesi/p8-yds-sorusu.mp4", 15.5, root => {
   const qs = YQ.map((q, i) => {
     const g = add(root, h("div", "fill cream", null, { opacity: 0 }));
     text(g, "abs pill", `Soru ${i + 1}/2`, { left: "90px", top: "250px", background: "var(--amberBg)", color: "var(--amber)" });
-    const s = text(g, "abs en it", `${q.pre}<span class="blk" style="border-bottom:6px solid var(--ink);display:inline-block;min-width:260px;text-align:center"> </span>${q.post}`,
-      { left: "90px", top: "380px", width: "900px", fontSize: "76px", lineHeight: 1.25 });
+    const s = text(g, "abs en it", `${q.pre}<span class="blk" style="border-bottom:6px solid var(--ink);display:inline-block;min-width:240px;text-align:center"> </span>${q.post}`,
+      { left: "90px", top: "380px", width: "920px", fontSize: "58px", lineHeight: 1.25 });
     const os = q.opts.map((o, k) => { const e = add(g, h("div", "abs", o, { left: "90px", top: px(760 + k * 150), width: "900px", padding: "28px 44px", borderRadius: "30px",
       background: "#fff", border: "3px solid var(--line)", fontFamily: "News, serif", fontStyle: "italic", fontSize: "60px" })); return e; });
     const cd = countdown(g, 1250);
     const tr = text(g, "abs body", q.tr, { left: "90px", top: "1250px", width: "900px", fontSize: "54px", color: "var(--green)", fontWeight: 700 });
     return { g, s, os, cd, tr, q };
   });
-  const close = closing(root);
+  const close = ctaCard(root);
   return t => {
     hook.style.opacity = t < 2 ? 1 : 0;
     qs.forEach((c, i) => {
-      const a = 2 + i * 6;
-      window_(c.g, t, a, a + 6, .12);
+      const a = 2 + i * 5.4;
+      window_(c.g, t, a, a + 5.4, .12);
       const rev = t >= a + 4;
       const blk = c.s.querySelector(".blk");
       blk.textContent = rev ? c.q.opts[c.q.ans] : " ";
@@ -939,13 +939,13 @@ video(OUT2 + "g5-p8", "h2-gun5-cumartesi/p8-yds-sorusu.mp4", 15.5, root => {
       c.cd.els.forEach(e => { e.style.opacity = rev ? 0 : 1; });
       c.tr.style.opacity = rev ? easeOut(seg(t, a + 4, a + 4.3)) : 0;
     });
-    if (t >= 14) close(t - 14);
+    if (t >= 12.8) close(t - 12.8);
   };
 });
 
 // ---------- 6. gün · S9: bildiğin kelimeyi yine unuttun ----------
 
-still(OUT2 + "g6-p9-kapak", "h2-gun6-pazar/p9-kapak.png", S, root =>
+still(OUT2 + "g6-p9-kapak", "h2-gun4-cuma/p9-kapak.png", S, root =>
   cover(root, { bg: "dark", lines: "Bildiğin<br>kelimeyi yine<br>unuttun", shotName: "tekrar-yanlis.png", rot: 4 }), ["tekrar-yanlis.png"]);
 
 /** Ekran görüntüsünü bir kutuda gösterir; img'i dikey kaydırır. */
@@ -955,7 +955,7 @@ function scroller(parent, src, top, boxH = 1100, w = 900) {
   const im = add(box, img(src, null, { position: "absolute", left: 0, top: 0, width: px(w), transformOrigin: "50% 0%" }));
   return { box, im };
 }
-video(OUT2 + "g6-p9", "h2-gun6-pazar/p9-bildigin-kelimeyi-unuttun.mp4", 14.5, root => {
+video(OUT2 + "g6-p9", "h2-gun4-cuma/p9-bildigin-kelimeyi-unuttun.mp4", 14.4, root => {
   theme(root, "cream");
   const hook = add(root, h("div", "fill dark", null));
   text(hook, "abs title", "Bildiğin<br>kelimeyi yine<br>unuttun.", { left: "90px", right: "90px", top: "520px", fontSize: "120px" });
@@ -969,17 +969,17 @@ video(OUT2 + "g6-p9", "h2-gun6-pazar/p9-bildigin-kelimeyi-unuttun.mp4", 14.5, ro
   const sc2 = scroller(s2, "yeni/IMG_0127.PNG", 520, 900);
   const s3 = add(root, h("div", "fill blue center", null, { opacity: 0 }));
   text(s3, "title", "Yanlış bildiğin<br>kelime, widget'ında<br>daha sık.", { fontSize: "100px", color: "#fff", padding: "0 90px" });
-  const close = closing(root);
+  const close = ctaCard(root);
   return t => {
-    hook.style.opacity = t < 3 ? 1 : 0;
-    window_(s1, t, 3, 7, .12);
-    const p1 = easeInOut(seg(t, 3.4, 5.6));
+    hook.style.opacity = t < 2.6 ? 1 : 0;
+    window_(s1, t, 2.6, 6.4, .12);
+    const p1 = easeInOut(seg(t, 3, 5.2));
     sc1.im.style.transform = `translateY(${-p1 * 950 - 20 * (1 - p1)}px)`;
-    window_(s2, t, 7, 11.2, .12);
-    const p2 = easeInOut(seg(t, 7.2, 10.6));
+    window_(s2, t, 6.4, 10.2, .12);
+    const p2 = easeInOut(seg(t, 6.6, 9.8));
     sc2.im.style.transform = `translateY(${-130}px) scale(${lerp(1, 1.12, p2)})`;
-    window_(s3, t, 11.2, 13, .15);
-    if (t >= 13) close(t - 13);
+    window_(s3, t, 10.2, 12.2, .15);
+    if (t >= 12.2) close(t - 12.2);
   };
 }, ["tekrar-yanlis.png", "yeni/IMG_0127.PNG"]);
 
