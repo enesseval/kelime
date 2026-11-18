@@ -13,6 +13,8 @@ import com.enesseval.kilitkelime.core.model.CardState
 import com.enesseval.kilitkelime.core.model.DeckID
 import com.enesseval.kilitkelime.core.model.LearningState
 import com.enesseval.kilitkelime.core.model.Preferences
+import com.enesseval.kilitkelime.core.model.SettingKey
+import com.enesseval.kilitkelime.core.model.Settings
 import java.time.LocalDate
 import java.util.Locale
 import java.util.UUID
@@ -77,12 +79,85 @@ object QuickReview {
     const val QUESTION_COUNT = 10
     const val OPTION_COUNT = 4
     const val MAX_WRITE_LENGTH = 9
+    /** At most this many cards of the last round may come again, and never among the first [FRESH_HEAD] questions. */
+    const val MAX_REPEATS = 3
+    const val FRESH_HEAD = 4
+
+    private fun ids(db: SqlDb, key: SettingKey): List<String> =
+        Settings.string(db, key)?.split(',')?.filter { it.isNotEmpty() } ?: emptyList()
+
+    fun lastRound(db: SqlDb): List<String> = ids(db, SettingKey.REVIEW_LAST_ROUND)
+    fun lastWrong(db: SqlDb): List<String> = ids(db, SettingKey.REVIEW_LAST_WRONG)
+
+    /** The round's cards are remembered (it survives closing the app); nothing is wrong yet. */
+    fun remember(db: SqlDb, questions: List<ReviewQuestion>) {
+        Settings.set(db, SettingKey.REVIEW_LAST_ROUND, questions.joinToString(",") { it.id })
+        Settings.set(db, SettingKey.REVIEW_LAST_WRONG, "")
+    }
+
+    /** A wrong answer in the round makes the card eligible to come back once in the next one. */
+    fun noteAnswer(db: SqlDb, cardID: String, correct: Boolean) {
+        if (correct) return
+        val wrong = lastWrong(db)
+        if (cardID in wrong || cardID !in lastRound(db)) return
+        Settings.set(db, SettingKey.REVIEW_LAST_WRONG, (wrong + cardID).joinToString(","))
+    }
+
+    /** Builds a round and remembers it; the screen calls this inside one write. */
+    fun start(db: SqlDb, rng: RandomSource, deck: DeckID? = null, today: LocalDate? = null): List<ReviewQuestion> =
+        makeQuestions(db, rng, deck, today).also { if (it.isNotEmpty()) remember(db, it) }
+
+    /**
+     * The 10 ids of a round from [ordered] (best first). Cards of the last round are left out, except up
+     * to [MAX_REPEATS] of the ones answered wrong; a small pool is filled up with the rest so the round is
+     * not short. The round is then shuffled, the cards of the last round never among the first [FRESH_HEAD].
+     */
+    fun pickRound(ordered: List<String>, last: List<String>, lastWrong: List<String>, rng: RandomSource): List<String> {
+        val lastSet = last.toSet()
+        val picked = mutableListOf<String>()
+        var repeats = 0
+        val skipped = mutableListOf<String>()
+        for (id in ordered) {
+            if (picked.size >= QUESTION_COUNT) break
+            if (id !in lastSet) { picked += id; continue }
+            if (id in lastWrong && repeats < MAX_REPEATS) { picked += id; repeats++ } else skipped += id
+        }
+        // A pool too small for the rules: the last round's cards fill the gaps (wrong ones first).
+        if (picked.size < QUESTION_COUNT) {
+            for (id in skipped.sortedBy { if (it in lastWrong) 0 else 1 }) {
+                if (picked.size >= QUESTION_COUNT) break
+                picked += id
+            }
+        }
+        val fresh = picked.filter { it !in lastSet }.shuffledWith(rng)
+        val again = picked.filter { it in lastSet }
+        val head = fresh.take(FRESH_HEAD)
+        return head + (fresh.drop(FRESH_HEAD) + again).shuffledWith(rng)
+    }
 
     /**
      * Up to 10 cards: struggling first, then learned words due for review (with [today]), then new
      * words the lock screen has shown, then other new words; learned words if the source runs short.
      */
     fun makeQuestions(db: SqlDb, rng: RandomSource, deck: DeckID? = null, today: LocalDate? = null): List<ReviewQuestion> {
+        val ordered = orderedIds(db, rng, deck, today)
+        val ids = pickRound(ordered, lastRound(db), lastWrong(db), rng)
+        val cards = CardQueries.cards(ids, db).associateBy { it.id }
+
+        val questions = mutableListOf<ReviewQuestion>()
+        ids.forEachIndexed { index, id ->
+            val card = cards[id] ?: return@forEachIndexed
+            if (index % 3 == 1 && card.isSingleWord && card.word.length <= MAX_WRITE_LENGTH) {
+                questions += ReviewQuestion(card, ReviewQuestion.Kind.Write)
+            } else {
+                questions += ReviewQuestion(card, ReviewQuestion.Kind.Meaning(CardQueries.quizOptions(card, OPTION_COUNT, db, rng)))
+            }
+        }
+        return questions
+    }
+
+    /** Every card of the source, best first: the priority above, equal days shuffled within a group. */
+    fun orderedIds(db: SqlDb, rng: RandomSource, deck: DeckID? = null, today: LocalDate? = null): List<String> {
         val prefs = Preferences.load(db)
         val filter = (if (deck != null) CardQueries.deckFilter(listOf(deck)) else CardQueries.sourceFilter(prefs.entitledDecks, db))
             ?: return emptyList()
@@ -112,24 +187,10 @@ object QuickReview {
                 }
             }
         }
-        val ordered = struggling.sortedBy { it.second }.map { it.first } +
-            due.sortedBy { it.second }.map { it.first } +
-            shownNew.shuffledWith(rng) +
-            otherNew.shuffledWith(rng) +
-            learned.sortedBy { it.second }.map { it.first }
-        val ids = ordered.take(QUESTION_COUNT)
-        val cards = CardQueries.cards(ids, db).associateBy { it.id }
-
-        val questions = mutableListOf<ReviewQuestion>()
-        ids.forEachIndexed { index, id ->
-            val card = cards[id] ?: return@forEachIndexed
-            if (index % 3 == 1 && card.isSingleWord && card.word.length <= MAX_WRITE_LENGTH) {
-                questions += ReviewQuestion(card, ReviewQuestion.Kind.Write)
-            } else {
-                questions += ReviewQuestion(card, ReviewQuestion.Kind.Meaning(CardQueries.quizOptions(card, OPTION_COUNT, db, rng)))
-            }
-        }
-        return questions
+        // Within a group the day is all there is to sort by, so equal days are shuffled first (the sort is stable);
+        // otherwise the same words came in the same order every round.
+        fun byDay(group: List<Pair<String, String>>) = group.shuffledWith(rng).sortedBy { it.second }.map { it.first }
+        return byDay(struggling) + byDay(due) + shownNew.shuffledWith(rng) + otherNew.shuffledWith(rng) + byDay(learned)
     }
 }
 

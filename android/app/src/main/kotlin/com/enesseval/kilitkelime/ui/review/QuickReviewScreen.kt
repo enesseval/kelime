@@ -96,7 +96,7 @@ fun QuickReviewScreen(deck: DeckID?) {
     var saving by remember { mutableStateOf(false) }
 
     suspend fun start() {
-        val questions = app.model.read { db -> QuickReview.makeQuestions(db, SystemRandom(), deck, app.model.clock.today) }
+        val questions = app.model.write("review-start") { db -> QuickReview.start(db, SystemRandom(), deck, app.model.clock.today) }
         if (questions.isEmpty()) { router.back(); return }
         session = ReviewSession(questions)
         picked = null; typed = ""; lastCorrect = null
@@ -112,6 +112,7 @@ fun QuickReviewScreen(deck: DeckID?) {
         scope.launch {
             val (before, after) = app.model.write("review") { db ->
                 val before = LearningStore.state(question.card.id, db).state
+                QuickReview.noteAnswer(db, question.card.id, correct)
                 val after = LearningStore.record(LearningEvent.Answered(correct), question.card.id, ReviewSource.QUICK_REVIEW, app.model.clock, db, s.id).state
                 before to after
             }

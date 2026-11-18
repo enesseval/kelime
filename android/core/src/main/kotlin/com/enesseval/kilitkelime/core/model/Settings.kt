@@ -45,6 +45,9 @@ enum class SettingKey(val key: String) {
     TRIAL_PERSONAL("trial_personal"),
     /** 1.2: free archive puzzles opened this week: "monday|day,day". */
     ARCHIVE_QUOTA("archive_quota"),
+    /** The last Quick Review round's card ids (comma separated), and the ones answered wrong in it. */
+    REVIEW_LAST_ROUND("review_last_round"),
+    REVIEW_LAST_WRONG("review_last_wrong"),
 }
 
 /** Typed access to the `settings` table. Values are stored as text. */

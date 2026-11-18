@@ -35,7 +35,7 @@ class QuickReviewTest {
         CardState("b1-quite", LearningState.STRUGGLING, lastAnsweredOn = LocalDate.of(2026, 10, 10)).save(db)
         CardState("b1-nearly", LearningState.NEW, timesShown = 2).save(db)
         CardState("b1-proud", LearningState.LEARNED).save(db)
-        val ids = questions(db).map { it.id }
+        val ids = QuickReview.orderedIds(db, SeededGenerator(1u))
         assertEquals(listOf("b1-quite", "b1-avoid", "b1-nearly"), ids.take(3))
         assertFalse("b1-proud" in ids)
     }
@@ -45,7 +45,7 @@ class QuickReviewTest {
         val today = LocalDate.of(2026, 10, 20)
         CardState("b1-avoid", LearningState.STRUGGLING, lastAnsweredOn = today.minusDays(1)).save(db)
         CardState("b1-nearly", LearningState.LEARNED, 1, lastAnsweredOn = today.minusDays(5)).save(db)
-        val ids = QuickReview.makeQuestions(db, SeededGenerator(1u), today = today).map { it.id }
+        val ids = QuickReview.orderedIds(db, SeededGenerator(1u), today = today)
         assertEquals(listOf("b1-avoid", "b1-nearly"), ids.take(2))
     }
 

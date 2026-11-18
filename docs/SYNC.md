@@ -35,7 +35,7 @@ defteridir. Kök dizindeki `CLAUDE.md` her oturumu buraya yönlendirir. Kapanan 
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.3.0 | 1.3.0 |
-| Build | 39 (1.3.0, iPad desteği; 36 = 1.2.0 yayında, 37 en yüksek yüklenen, 38 yüklenmedi) | versionCode 4 (1.3.0; Play'e yüklenmedi; 3 = 1.2.0 AAB, yüklendiyse atlandı) |
+| Build | 39 (1.3.0, iPad desteği; 36 = 1.2.0 yayında, 37 en yüksek yüklenen, 38 yüklenmedi) | versionCode 5 (1.3.0; Play'e yüklenmedi; 4 = ilk 1.3.0 AAB'si, 3 = 1.2.0 AAB) |
 | Dal | `v1.1.1` | `v1.1.1` |
 | Mağazada | 1.2.0 (36) yayında (16 Kasım; 1.0.0 `main` 10 Kasım) | kapalı test (Play) |
 
@@ -93,7 +93,7 @@ paywall aynı oturumda hayır, 119. gün hayır, 120. gün evet, 3 istekten sonr
 dokunduktan sonra hayır.
 
 ### 2026-11-18 · Hızlı Tekrar: her tur aynı kelimeler, aynı sırayla (1.3.0)
-iOS [ ] Android [ ]
+iOS [ ] Android [x]
 
 Kullanıcı geri bildirimi: Hızlı Tekrar'da sürekli aynı kelimeler çıkıyor ve sıraları değişmiyor;
 yeni turun ilk 3-4 sorusu bir önceki turun kelimeleri.
@@ -121,6 +121,14 @@ Testler: aynı veritabanıyla art arda 5 tur: (a) hiçbir turun ilk 4 sorusu ön
 (b) önceki turdan en fazla 3 kart, ve bunlar önceki turda yanlış cevaplananlar, (c) aynı gün
 cevaplanmış 20 zorlanılan kelimeyle iki tur aynı sırayı vermez (sabit tohumlu rng ile), (d) 6
 kelimelik havuzda tur yine 6 soru üretir.
+
+Not (Android): Kök neden aynıydı (`QuickReview.makeQuestions`: zorlanılan/tekrarı gelen/öğrenilmiş
+grupları `sortedBy { gün }`, eşitler veritabanı sırasında; tur sonunda karıştırma yok). Düzeltme
+`QuickReview.orderedIds` (eşitler karıştırılıp sonra gün sırası) + `pickRound` (son turdan en fazla 3
+yanlış cevaplı kart, ilk 4'te yok, sonra sıra karıştırılır, küçük havuzda önceki turun kartları
+doldurur). Son tur ayarlarda: `review_last_round`, `review_last_wrong`; ekran turu
+`QuickReview.start` ile açar, her cevapta `noteAnswer` çağırır. Oyunlar (`GameWords.pick`) bu
+sıralamayı kullanmıyor, değişmedi. Testler: `QuickReviewRotationTest` (a, b, c, d + hafıza).
 
 ### 2026-11-17 · iPad desteği (1.3.0, yalnız iOS)
 iOS [x] Android —
