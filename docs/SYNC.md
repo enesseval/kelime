@@ -62,7 +62,7 @@ dokunulur.
 ## Değişiklik günlüğü
 
 ### 2026-11-18 · Uygulamayı değerlendir ve Arkadaşına öner (1.3.0)
-iOS [ ] Android [ ]
+iOS [ ] Android [x]
 
 Testers Community raporu ve büyüme için. Puan/yorum sayısı mağaza sıralamasını etkiler; şu an
 neredeyse yok.
@@ -91,6 +91,15 @@ Sinyaller: `review.prompted` (otomatik istek gösterildi), `review.opened` (sat�
 Testler: kural fonksiyonu için birim testleri: 2. gün hayır, 3. gün ve %80 evet, %79 hayır,
 paywall aynı oturumda hayır, 119. gün hayır, 120. gün evet, 3 istekten sonra hayır, satıra
 dokunduktan sonra hayır.
+
+Not (Android): Kural `ReviewPrompt` (core, `ReviewPromptTest`); sayaç/tarih/satır bayrağı ayarlarda
+(`review_prompt_count`, `review_prompt_last`, `review_row_tapped`) ve "İlerlemeyi sıfırla" bunları
+silmez. "Çalışılan gün" = `streak_day` satır sayısı. Otomatik istek `AppReview.afterGoodMoment`:
+Hızlı Tekrar, Kelime Avı, Eşleştir, Cümle Kur, Boşluğu Doldur turu biterken (doğru/cevap) ve bugünün
+Günün Bulmacası tamamlanınca (1/1; arşiv ve kişisel bulmaca sayılmaz); 1 sn sonra, paywall açıldıysa
+(deneme özeti de `showPaywall`'dan açılır) hayır. Play In-App Review (`review-ktx` 2.0.2); satırda
+pencere açılamazsa mağaza sayfası. Play kotası pencereyi sessizce göstermeyebilir, satırda bu
+durumda ekranda bir şey olmaz (API bildirmiyor).
 
 ### 2026-11-18 · Hızlı Tekrar: her tur aynı kelimeler, aynı sırayla (1.3.0)
 iOS [ ] Android [x]

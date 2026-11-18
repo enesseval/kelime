@@ -107,6 +107,7 @@ internal fun time(seconds: Int) = "%d:%02d".format(seconds / 60, seconds % 60)
 @Composable
 fun WordHuntScreen() {
     val app = LocalApp.current
+    val activity = com.enesseval.kilitkelime.ui.LocalActivity.current
     val router = LocalRouter.current
     val c = Palette.current
     val haptics = LocalHapticFeedback.current
@@ -136,6 +137,7 @@ fun WordHuntScreen() {
             recorded = true
             app.model.studied("word-hunt", Game.WORD_HUNT.source) { db -> h.record(found, hinted, seconds, app.model.clock, db) }
             Analytics.signal(Game.WORD_HUNT.signal, mapOf("seconds" to "$seconds", "hints" to "${hinted.size}"))
+            com.enesseval.kilitkelime.store.AppReview.afterGoodMoment(app, activity, found.size, h.words.size)
         }
     }
 
@@ -296,6 +298,7 @@ private fun line(a: Pair<Int, Int>?, b: Pair<Int, Int>?): List<Pair<Int, Int>> {
 @Composable
 fun MatchScreen() {
     val app = LocalApp.current
+    val activity = com.enesseval.kilitkelime.ui.LocalActivity.current
     val router = LocalRouter.current
     val c = Palette.current
     val haptics = LocalHapticFeedback.current
@@ -349,6 +352,7 @@ fun MatchScreen() {
             if (g.answered > 0) app.model.scope.launch {
                 app.model.studied("match", Game.MATCH.source) { db -> g.record(secs, app.model.clock, db) }
                 Analytics.signal(Game.MATCH.signal, mapOf("score" to "${g.score}"))
+                com.enesseval.kilitkelime.store.AppReview.afterGoodMoment(app, activity, g.score, g.answered)
             }
         }
     }

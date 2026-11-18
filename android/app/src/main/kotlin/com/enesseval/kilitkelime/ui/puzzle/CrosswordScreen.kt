@@ -95,6 +95,7 @@ private class Loaded(val key: String, val puzzle: Crossword, val saved: PuzzleSt
 @Composable
 fun CrosswordScreen(dayText: String?, personal: Boolean) {
     val app = LocalApp.current
+    val activity = com.enesseval.kilitkelime.ui.LocalActivity.current
     val router = LocalRouter.current
     val context = LocalContext.current
     val c = Palette.current
@@ -190,6 +191,8 @@ fun CrosswordScreen(dayText: String?, personal: Boolean) {
                 completedAt = app.model.clock.now
                 save(true)
                 app.model.write("puzzle-done") { db -> PuzzleStore.recordCompletion(g, app.model.clock, db) }
+                // Today's daily puzzle finished counts as a good moment (the archive and the personal one do not).
+                if (!personal && (dayText == null || LocalDates.parse(dayText) == app.model.clock.today)) com.enesseval.kilitkelime.store.AppReview.afterGoodMoment(app, activity, 1, 1)
             } else {
                 save(g.solvedCount != announced)
             }

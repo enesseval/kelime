@@ -87,6 +87,8 @@ import androidx.compose.material.icons.outlined.ChatBubbleOutline
 import androidx.compose.material.icons.outlined.PanTool
 import androidx.compose.material.icons.outlined.Description
 import androidx.compose.material.icons.outlined.Refresh
+import androidx.compose.material.icons.outlined.StarBorder
+import androidx.compose.material.icons.outlined.IosShare
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.heightIn
 import com.enesseval.kilitkelime.notifications.ReminderAsk
@@ -320,6 +322,10 @@ fun ProfileScreen() {
 
         SettingsSection("UYGULAMA") {
             AppIconRow()
+            Divider()
+            LinkRow("Uygulamayı değerlendir", Icons.Outlined.StarBorder) { scope.launch { com.enesseval.kilitkelime.store.AppReview.rateFromRow(app, activity) } }
+            Divider()
+            LinkRow("Arkadaşına öner", Icons.Outlined.IosShare) { com.enesseval.kilitkelime.store.AppReview.shareApp(context) }
             Divider()
             LinkRow("Öneri gönder", Icons.Outlined.ChatBubbleOutline) { router.openFeedback() }
             Divider()

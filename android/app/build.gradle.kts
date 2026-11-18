@@ -153,6 +153,7 @@ dependencies {
     implementation(libs.ktor.client.okhttp)
 
     implementation(libs.revenuecat)
+    implementation(libs.play.review)
     implementation(libs.telemetrydeck)
 
     testImplementation(libs.junit)

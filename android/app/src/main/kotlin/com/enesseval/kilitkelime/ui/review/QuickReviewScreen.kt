@@ -83,6 +83,7 @@ import com.enesseval.kilitkelime.ui.components.TR
 @Composable
 fun QuickReviewScreen(deck: DeckID?) {
     val app = LocalApp.current
+    val activity = com.enesseval.kilitkelime.ui.LocalActivity.current
     val router = LocalRouter.current
     val c = Palette.current
     val scope = rememberCoroutineScope()
@@ -130,6 +131,7 @@ fun QuickReviewScreen(deck: DeckID?) {
         picked = null; typed = ""; lastCorrect = null
         tick++
         // A finished round counts today for the streak (docs/V1_1_PLAN.md §1).
+        if (s.isFinished && s.questions.isNotEmpty()) com.enesseval.kilitkelime.store.AppReview.afterGoodMoment(app, activity, s.score, s.questions.size)
         if (s.isFinished && s.questions.isNotEmpty()) scope.launch {
             app.model.studied("review-finished", com.enesseval.kilitkelime.core.games.StreakSource.QUICK_REVIEW) { db ->
                 LearningStore.markStudied(app.model.clock.today, com.enesseval.kilitkelime.core.games.StreakSource.QUICK_REVIEW, db)

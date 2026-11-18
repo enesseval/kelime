@@ -65,6 +65,7 @@ object ProgressReset {
         SettingKey.CONTENT_VERSION, SettingKey.CONTENT_CHECKED_AT, SettingKey.IS_PRO, SettingKey.PURCHASED,
         SettingKey.TRIAL_START, SettingKey.TRIAL_SEEN, SettingKey.TRIAL_SUMMARY_SHOWN, SettingKey.TRIAL_ENDED_SENT,
         SettingKey.TRIAL_ARCHIVE_DAYS, SettingKey.TRIAL_PERSONAL, SettingKey.ARCHIVE_QUOTA,
+        SettingKey.REVIEW_PROMPT_COUNT, SettingKey.REVIEW_PROMPT_LAST, SettingKey.REVIEW_ROW_TAPPED,
     )
 
     fun reset(db: SqlDb) = db.transaction {

@@ -70,6 +70,9 @@ class AppModel(private val context: Context) {
 
     /** The trial just ended and its one-time summary has not been shown (MainScaffold opens it). */
     val trialSummaryPending = MutableStateFlow(false)
+
+    /** A paywall (or the trial summary) was opened in this app session: no automatic rating request then. */
+    @Volatile var paywallShownThisSession = false
     private var trialTimer: kotlinx.coroutines.Job? = null
 
     private val _onboardingDone = MutableStateFlow<Boolean?>(null)

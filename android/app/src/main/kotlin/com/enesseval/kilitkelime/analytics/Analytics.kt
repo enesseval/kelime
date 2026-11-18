@@ -32,6 +32,10 @@ object Analytics {
         // 1.2 (docs/V1_2_PLAN.md §2)
         const val TRIAL_STARTED = "trial.started"
         const val TRIAL_ENDED = "trial.ended"
+        // 1.3 (docs/SYNC.md, 2026-11-18)
+        const val REVIEW_PROMPTED = "review.prompted"
+        const val REVIEW_OPENED = "review.opened"
+        const val SHARE_APP = "share.app"
     }
 
     fun start(app: Application) {

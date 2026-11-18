@@ -48,6 +48,10 @@ enum class SettingKey(val key: String) {
     /** The last Quick Review round's card ids (comma separated), and the ones answered wrong in it. */
     REVIEW_LAST_ROUND("review_last_round"),
     REVIEW_LAST_WRONG("review_last_wrong"),
+    /** The automatic rating request: how often, when last, and whether the learner used the row (docs/SYNC.md, 2026-11-18). */
+    REVIEW_PROMPT_COUNT("review_prompt_count"),
+    REVIEW_PROMPT_LAST("review_prompt_last"),
+    REVIEW_ROW_TAPPED("review_row_tapped"),
 }
 
 /** Typed access to the `settings` table. Values are stored as text. */

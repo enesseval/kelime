@@ -175,7 +175,7 @@ fun MainScaffold() {
     val app = LocalApp.current
     val activity = LocalActivity.current
     val nav = rememberNavController()
-    val router = remember(nav) { AppRouter(nav) { trigger -> app.model.scope.launch { com.enesseval.kilitkelime.data.PaywallMomentStore.noteShown(app.model, trigger) } } }
+    val router = remember(nav) { AppRouter(nav) { trigger -> app.model.paywallShownThisSession = true; app.model.scope.launch { com.enesseval.kilitkelime.data.PaywallMomentStore.noteShown(app.model, trigger) } } }
     val c = Palette.current
     val entry by nav.currentBackStackEntryAsState()
     val route = entry?.destination?.route ?: ""

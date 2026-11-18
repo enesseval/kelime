@@ -113,6 +113,7 @@ private fun TilePlaceholder(text: String) {
 @Composable
 fun SentenceScreen() {
     val app = LocalApp.current
+    val activity = com.enesseval.kilitkelime.ui.LocalActivity.current
     val router = LocalRouter.current
     val c = Palette.current
     val haptics = LocalHapticFeedback.current
@@ -182,6 +183,7 @@ fun SentenceScreen() {
                 scope.launch {
                     app.model.studied("sentence", Game.SENTENCE.source) { db -> g.record(secs, app.model.clock, db) }
                     Analytics.signal(Game.SENTENCE.signal, mapOf("score" to "$score", "seconds" to "$secs"))
+                    com.enesseval.kilitkelime.store.AppReview.afterGoodMoment(app, activity, score, g.items.size)
                 }
             }
         }
@@ -270,6 +272,7 @@ fun SentenceScreen() {
 @Composable
 fun GapFillScreen() {
     val app = LocalApp.current
+    val activity = com.enesseval.kilitkelime.ui.LocalActivity.current
     val router = LocalRouter.current
     val c = Palette.current
     val haptics = LocalHapticFeedback.current
@@ -308,6 +311,7 @@ fun GapFillScreen() {
             if (g.answered > 0) app.model.scope.launch {
                 app.model.studied("gapfill", Game.GAP_FILL.source) { db -> g.record(secs, app.model.clock, db) }
                 Analytics.signal(Game.GAP_FILL.signal, mapOf("score" to "${g.score}", "seconds" to "$secs"))
+                com.enesseval.kilitkelime.store.AppReview.afterGoodMoment(app, activity, g.score, g.answered)
             }
         }
     }
