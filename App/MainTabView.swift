@@ -1,11 +1,13 @@
 import KelimeCore
 import KelimeUI
+import StoreKit
 import SwiftUI
 
 /// The five tabs, each with its own navigation stack.
 struct MainTabView: View {
     @Environment(AppModel.self) private var model
     @State private var importMessage: String?
+    @Environment(\.requestReview) private var requestReview
 
     init() {
         Self.configureTabBarAppearance()
@@ -86,6 +88,7 @@ struct MainTabView: View {
         .sheet(isPresented: $router.reminderAskPresented) {
             ReminderAskSheet().environment(model)
         }
+        .onChange(of: router.reviewAskToken) { _, _ in requestReview() }
         .onChange(of: router.roundOpen) { _, roundOpen in
             if !roundOpen { Task { await model.presentTrialSummaryIfDue() } }
             // With another sheet up the ask would be refused; it waits for the next round.

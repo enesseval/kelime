@@ -33,8 +33,12 @@ struct QuickReviewTests {
             try CardState(cardID: "b1-nearly", state: .new, timesShown: 2).insert(db)
             try CardState(cardID: "b1-proud", state: .learned).insert(db)
         }
+        var rng = SeededGenerator(seed: 1)
+        let order = try db.reader.read { db in try QuickReview.orderedCardIDs(db: db, using: &rng) }
+        #expect(Array(order.prefix(3)) == ["b1-quite", "b1-avoid", "b1-nearly"])
+        // The round itself is shuffled, but holds the same first picks.
         let ids = try questions(db).map(\.id)
-        #expect(Array(ids.prefix(3)) == ["b1-quite", "b1-avoid", "b1-nearly"])
+        #expect(Set(ids).isSuperset(of: order.prefix(3)))
         #expect(!ids.contains("b1-proud"))
     }
 
@@ -95,6 +99,78 @@ struct QuickReviewTests {
         #expect(s.newlyLearned.map(\.word) == ["reluctant"])
         #expect(s.newlyStruggling.map(\.word) == ["reliable"])
         #expect(s.progress == 1)
+    }
+}
+
+struct QuickReviewRotationTests {
+    func makeDatabase() throws -> AppDatabase {
+        let db = try AppDatabase.inMemory()
+        let file = try ContentImporter.decode(Data(contentsOf: TestSupport.bundledCardsURL))
+        try db.writer.write { db in try ContentImporter.apply(file, in: db, progress: { _ in }) }
+        return db
+    }
+
+    func strugglingSameDay(_ db: AppDatabase, count: Int) throws -> [String] {
+        let ids = try db.reader.read { db in
+            try String.fetchAll(db, sql: "SELECT id FROM card WHERE level IN ('A2','B1') ORDER BY id LIMIT \(count)")
+        }
+        try db.writer.write { db in
+            for id in ids {
+                try CardState(cardID: id, state: .struggling, lastAnsweredOn: LocalDate(year: 2026, month: 10, day: 13)).insert(db)
+            }
+        }
+        return ids
+    }
+
+    /// One round as the app plays it: build, remember, answer every question wrong.
+    func playRound(_ db: AppDatabase, rng: inout SeededGenerator, deck: DeckID? = nil) throws -> [String] {
+        let ids = try db.reader.read { db in try QuickReview.makeQuestions(db: db, deck: deck, using: &rng) }.map(\.id)
+        try db.writer.write { db in try QuickReview.rememberRound(db: db, ids: ids, wrong: Set(ids)) }
+        return ids
+    }
+
+    @Test func fiveRoundsKeepTheRepeatRules() throws {
+        let db = try makeDatabase()
+        _ = try strugglingSameDay(db, count: 40)
+        var rng = SeededGenerator(seed: 11)
+        var previous = try playRound(db, rng: &rng)
+        for _ in 0..<4 {
+            let round = try playRound(db, rng: &rng)
+            #expect(round.count == 10)
+            #expect(Set(round.prefix(4)).isDisjoint(with: previous))
+            #expect(Set(round).intersection(previous).count <= 3)
+            previous = round
+        }
+    }
+
+    @Test func onlyWrongAnswersComeBack() throws {
+        let db = try makeDatabase()
+        _ = try strugglingSameDay(db, count: 40)
+        var rng = SeededGenerator(seed: 5)
+        let first = try db.reader.read { db in try QuickReview.makeQuestions(db: db, using: &rng) }.map(\.id)
+        let wrong = Set(first.prefix(2))
+        try db.writer.write { db in try QuickReview.rememberRound(db: db, ids: first, wrong: wrong) }
+        let second = try db.reader.read { db in try QuickReview.makeQuestions(db: db, using: &rng) }.map(\.id)
+        #expect(Set(second).intersection(first).isSubset(of: wrong))
+    }
+
+    @Test func sameDayTiesAreShuffledAcrossRounds() throws {
+        let db = try makeDatabase()
+        _ = try strugglingSameDay(db, count: 20)
+        var rng = SeededGenerator(seed: 2)
+        let a = try db.reader.read { db in try QuickReview.orderedCardIDs(db: db, using: &rng) }
+        let b = try db.reader.read { db in try QuickReview.orderedCardIDs(db: db, using: &rng) }
+        #expect(Array(a.prefix(20)) != Array(b.prefix(20)))
+    }
+
+    @Test func smallPoolStillGivesAFullRound() throws {
+        // A pool of six words: the picker is tested directly.
+        let ordered = ["a", "b", "c", "d", "e", "f"]
+        var rng = SeededGenerator(seed: 4)
+        let round = QuickReview.pickRound(from: ordered, memory: .init(ids: ordered, wrong: Set(ordered)), using: &rng)
+        #expect(round.count == 6 && Set(round) == Set(ordered))
+        let none = QuickReview.pickRound(from: ordered, memory: .init(ids: ordered, wrong: []), using: &rng)
+        #expect(none.count == 6)
     }
 }
 

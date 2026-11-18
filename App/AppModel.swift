@@ -164,6 +164,13 @@ final class AppModel {
         return try? await database.reader.read(body)
     }
 
+    /// Remembers the Quick Review round (ids, and the ones answered wrong) so the next round
+    /// avoids it. A plain settings write: no screen or widget reload.
+    func rememberReviewRound(ids: [String], wrong: Set<String>) async {
+        guard let database else { return }
+        try? await database.writer.write { db in try QuickReview.rememberRound(db: db, ids: ids, wrong: wrong) }
+    }
+
     /// Starts a Quick Review, or shows the paywall when today's free session is used.
     func startQuickReview() async {
         router.startQuickReview()
@@ -180,7 +187,7 @@ final class AppModel {
 
     /// Marks today as studied (Quick Review finished, a crossword word solved, a game finished).
     /// Sends `streak.day` once a day and `streak.freezeUsed` when today saved a missed day.
-    func recordStudy(_ source: StreakSource) async {
+    func recordStudy(_ source: StreakSource, accuracy: Double? = nil) async {
         let clock = clock
         let before = await read { db in try Streak.status(db: db, clock: clock) }
         await write(rebuildQueue: false) { db in try Streak.record(source, on: clock.today, db: db) }
@@ -192,6 +199,7 @@ final class AppModel {
             let after = await read { db in try Streak.status(db: db, clock: clock) }
             if let after, after.frozenDays.count > before?.frozenDays.count ?? 0 { Analytics.signal("streak.freezeUsed") }
         }
+        if let accuracy { await askForReviewIfGood(accuracy: accuracy) }
         // The asks wait for the round to close; if it already closed, the next round asks.
         guard router.roundOpen else { return }
         if !router.reminderAskPending, await ReminderAsk.shouldAsk() {
@@ -201,6 +209,19 @@ final class AppModel {
                   PaywallMoment.shouldOffer(isPro: isPro, studyDays: days) {
             router.paywallMomentPending = true
         }
+    }
+
+    /// After a good round result: the system rating prompt, about a second after the result
+    /// screen opened (`ReviewAskRule`). `reviewAskToken` is what the main view answers to.
+    private func askForReviewIfGood(accuracy: Double) async {
+        guard router.roundOpen, !showOnboarding,
+              let days = await read({ db in try Int.fetchOne(db, sql: "SELECT COUNT(*) FROM streak_day") ?? 0 }),
+              ReviewAsk.shouldAsk(studyDays: days, accuracy: accuracy) else { return }
+        try? await Task.sleep(for: .seconds(1))
+        guard router.roundOpen, !router.sheetShown else { return }
+        ReviewAsk.noteAsked()
+        router.reviewAskToken += 1
+        Analytics.signal("review.prompted")
     }
 
     /// Records a Quick Review answer and returns the card's state before and after it.

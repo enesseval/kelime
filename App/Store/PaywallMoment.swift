@@ -20,6 +20,7 @@ enum PaywallMoment {
 
     /// Called for every paywall; the offer's own count only moves for `.moment`.
     static func noteShown(_ trigger: PaywallTrigger, now: Date = .now) {
+        ReviewAsk.paywallThisSession = true
         let defaults = UserDefaults.standard
         if trigger == .moment {
             defaults.set(defaults.integer(forKey: countKey) + 1, forKey: countKey)

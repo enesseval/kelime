@@ -54,6 +54,10 @@ public enum SettingKey: String, CaseIterable, Sendable {
     case examCountdownOn = "exam_countdown_on"
     /// The effective Pro state (bought or trial) the app last acted on, `"1"` or `"0"`.
     case lastEffectivePro = "last_effective_pro"
+    /// Card ids of the last Quick Review round, comma separated (next round avoids them).
+    case lastReviewRound = "last_review_round"
+    /// The ones of those answered wrong; only these may come back, at most 3.
+    case lastReviewWrong = "last_review_wrong"
 }
 
 struct SettingRow: Codable, FetchableRecord, PersistableRecord {

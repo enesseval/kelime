@@ -88,6 +88,8 @@ final class AppRouter {
     var reminderAskPresented = false
     /// The learner has studied on enough days; offer Pro once the round closes.
     var paywallMomentPending = false
+    /// Bumped when the system rating prompt should appear (`ReviewAsk`).
+    var reviewAskToken = 0
 
     /// A full-screen round (Quick Review, crossword or game) is on screen.
     var roundOpen: Bool { reviewPresented || puzzle != nil || game != nil }

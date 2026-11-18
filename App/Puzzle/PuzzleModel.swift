@@ -268,7 +268,7 @@ final class PuzzleModel {
             let solvedMore = game.solvedCount > (announcedSolved ?? 0)
             announcedSolved = game.solvedCount
             await app.write(rebuildQueue: false, body)
-            if solvedMore { await app.recordStudy(.puzzle) }
+            if solvedMore { await app.recordStudy(.puzzle, accuracy: game.isComplete ? 1 : nil) }
         } else {
             try? await database.writer.write(body)
         }

@@ -202,7 +202,7 @@ struct SentenceView: View {
         let clock = model.clock, secs = seconds, score = g.firstTryCount
         let done = g
         Task {
-            await model.recordStudy(.sentence)
+            await model.recordStudy(.sentence, accuracy: Double(score) / Double(max(1, done.items.count)))
             await model.write(rebuildQueue: false) { db in try done.record(seconds: secs, clock: clock, db: db) }
             Analytics.signal("game.sentence.finished", ["score": "\(score)", "seconds": "\(secs)"])
         }
@@ -434,7 +434,7 @@ struct GapFillView: View {
         // Nothing answered: not a played round, so no study day and no result.
         guard done.answered > 0 else { return }
         Task {
-            await model.recordStudy(.gapFill)
+            await model.recordStudy(.gapFill, accuracy: Double(score) / Double(max(1, done.answered)))
             await model.write(rebuildQueue: false) { db in try done.record(seconds: secs, clock: clock, db: db) }
             Analytics.signal("game.gapfill.finished", ["score": "\(score)", "seconds": "\(secs)"])
         }

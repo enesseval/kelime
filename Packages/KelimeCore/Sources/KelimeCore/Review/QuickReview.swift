@@ -114,12 +114,89 @@ public enum QuickReview {
             }
         }
         // Least recently answered first within the ordered groups; shuffle within the new groups.
-        let ordered: [String] = struggling.sorted { $0.1 < $1.1 }.map(\.0)
-            + due.sorted { $0.1 < $1.1 }.map(\.0)
+        // `last_answered_on` is a day, so words answered on the same day tie: shuffle first, then
+        // sort by day (the sort keeps the shuffled order of ties).
+        func byDay(_ items: [(String, String)]) -> [String] {
+            let shuffled = items.shuffled(using: &rng)
+            return shuffled.enumerated().sorted { ($0.element.1, $0.offset) < ($1.element.1, $1.offset) }.map(\.element.0)
+        }
+        let ordered: [String] = byDay(struggling)
+            + byDay(due)
             + shownNew.shuffled(using: &rng)
             + otherNew.shuffled(using: &rng)
-            + learned.sorted { $0.1 < $1.1 }.map(\.0)
+            + byDay(learned)
         return ordered
+    }
+
+    /// The previous round: its card ids, and which of them were answered wrong.
+    public struct RoundMemory: Sendable, Equatable {
+        public var ids: [String]
+        public var wrong: Set<String>
+        public init(ids: [String] = [], wrong: Set<String> = []) {
+            self.ids = ids
+            self.wrong = wrong
+        }
+    }
+
+    /// Most cards of the last round that may come back, and positions at the start of a round
+    /// they may not take.
+    public static let maxRepeats = 3
+    public static let protectedStart = 4
+
+    public static func lastRound(db: Database) throws -> RoundMemory {
+        func split(_ raw: String?) -> [String] { (raw ?? "").split(separator: ",").map(String.init) }
+        return RoundMemory(ids: split(try Settings.string(.lastReviewRound, in: db)),
+                           wrong: Set(split(try Settings.string(.lastReviewWrong, in: db))))
+    }
+
+    /// Stores the round just built (and which of its cards were answered wrong so far), so the
+    /// next round can avoid it. Survives relaunch.
+    public static func rememberRound(db: Database, ids: [String], wrong: Set<String>) throws {
+        try Settings.set(.lastReviewRound, ids.joined(separator: ","), in: db)
+        try Settings.set(.lastReviewWrong, ids.filter { wrong.contains($0) }.joined(separator: ","), in: db)
+    }
+
+    /// Chooses and orders one round from the study order: at most 3 cards of the last round
+    /// (only ones answered wrong), none in the first 4 positions, the rest shuffled. A pool too
+    /// small for that fills up with last-round cards anyway.
+    static func pickRound(from ordered: [String], memory: RoundMemory, using rng: inout some RandomNumberGenerator) -> [String] {
+        let last = Set(memory.ids)
+        var fresh: [String] = [], carried: [String] = [], skippedWrong: [String] = [], skippedOther: [String] = []
+        for id in ordered {
+            guard fresh.count + carried.count < questionCount else { break }
+            if !last.contains(id) {
+                fresh.append(id)
+            } else if memory.wrong.contains(id) {
+                if carried.count < maxRepeats { carried.append(id) } else { skippedWrong.append(id) }
+            } else {
+                skippedOther.append(id)
+            }
+        }
+        // Small pool: the loop ended without 10; let last-round cards fill the gap.
+        for id in skippedWrong + skippedOther where fresh.count + carried.count < questionCount {
+            carried.append(id)
+        }
+        // Fresh cards fill the front; carried ones go into random later slots.
+        var result = fresh.shuffled(using: &rng)
+        let total = result.count + carried.count
+        let slots = Array(min(protectedStart, total)..<max(total, min(protectedStart, total)))
+        var chosen = Set(slots.shuffled(using: &rng).prefix(carried.count))
+        // Too few late slots (tiny pool): the rest take the earliest free ones.
+        var early = 0
+        while chosen.count < carried.count {
+            if !chosen.contains(early) { chosen.insert(early) }
+            early += 1
+        }
+        var carriedLeft = carried.shuffled(using: &rng)[...]
+        var merged: [String] = []
+        for position in 0..<total {
+            if chosen.contains(position), let next = carriedLeft.popFirst() {
+                merged.append(next)
+            } else {
+                merged.append(result.removeFirst())
+            }
+        }
+        return merged
     }
 
     /// Picks up to 10 cards: struggling first, then new words the widget has already shown,
@@ -134,7 +211,8 @@ public enum QuickReview {
         using rng: inout some RandomNumberGenerator
     ) throws -> [ReviewQuestion] {
         let ordered = try orderedCardIDs(db: db, deck: deck, today: today, using: &rng)
-        let ids = Array(ordered.prefix(questionCount))
+        let memory = try lastRound(db: db)
+        let ids = pickRound(from: ordered, memory: memory, using: &rng)
         let cards = Dictionary(uniqueKeysWithValues: try Card.fetchAll(db, keys: ids).map { ($0.id, $0) })
 
         var questions: [ReviewQuestion] = []

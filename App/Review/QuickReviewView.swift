@@ -21,7 +21,7 @@ struct QuickReviewView: View {
                     ReviewSummaryView(session: session) { dismiss() } onMore: {
                         Task { await startAnotherRound() }
                     }
-                    .task(id: session.id) { await model.recordStudy(.quickReview) }
+                    .task(id: session.id) { await model.recordStudy(.quickReview, accuracy: Double(session.score) / Double(max(1, session.questions.count))) }
                 } else if let question = session.current {
                     questionScreen(question, session: session)
                 }
@@ -45,6 +45,7 @@ struct QuickReviewView: View {
         } ?? []
         if questions.isEmpty { dismiss(); return }
         session = ReviewSession(questions: questions)
+        await model.rememberReviewRound(ids: questions.map(\.id), wrong: [])
     }
 
     private func startAnotherRound() async {
@@ -291,6 +292,7 @@ struct QuickReviewView: View {
             lastAnswer = answer
         }
         isSaving = false
+        await model.rememberReviewRound(ids: current.questions.map(\.id), wrong: Set(current.results.filter { !$0.correct }.map(\.card.id)))
     }
 
     private func next() {

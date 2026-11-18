@@ -233,7 +233,7 @@ struct WordSearchView: View {
         withAnimation { finished = true }
         let clock = model.clock, seconds = seconds, total = game.placements.count, score = total - hinted.count
         Task {
-            await model.recordStudy(.wordSearch)
+            await model.recordStudy(.wordSearch, accuracy: Double(score) / Double(max(1, total)))
             await model.write(rebuildQueue: false) { db in
                 try GamePool.recordResult(game: .wordSearch, score: score, total: total, seconds: seconds, clock: clock, db: db)
             }
@@ -501,7 +501,7 @@ struct MatchView: View {
         // Nothing matched or missed: not a played round, so no study day and no result.
         guard score + game.missed.count > 0 else { return }
         Task {
-            await model.recordStudy(.match)
+            await model.recordStudy(.match, accuracy: Double(score) / Double(score + game.missed.count))
             await model.write(rebuildQueue: false) { db in
                 try GamePool.recordResult(game: .match, score: score, total: score + game.missed.count, seconds: Int(MatchGame.duration), clock: clock, db: db)
             }

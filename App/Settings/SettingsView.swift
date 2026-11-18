@@ -33,6 +33,7 @@ struct SettingsView: View {
     @State private var toast: String?
     @State private var confirmReset = false
     @State private var sendingFeedback = false
+    @State private var sharingApp = false
 
     var body: some View {
         ReadableScrollView {
@@ -61,6 +62,7 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $showGuide) { WidgetGuideView() }
         .sheet(isPresented: $sendingFeedback) { FeedbackForm(card: nil).environment(app) }
+        .sheet(isPresented: $sharingApp) { ShareSheet(items: [ReviewAsk.shareText]).presentationDetents([.medium, .large]) }
         .toast($toast)
     }
 
@@ -255,6 +257,17 @@ struct SettingsView: View {
     private var appSection: some View {
         SettingsSection("UYGULAMA") {
             AppIconRow()
+            Divider().overlay(Palette.line)
+            linkRow("Uygulamayı değerlendir", systemImage: "star") {
+                ReviewAsk.noteRateRowTapped()
+                Analytics.signal("review.opened")
+                openURL(ReviewAsk.writeReviewURL)
+            }
+            Divider().overlay(Palette.line)
+            linkRow("Arkadaşına öner", systemImage: "square.and.arrow.up") {
+                Analytics.signal("share.app")
+                sharingApp = true
+            }
             Divider().overlay(Palette.line)
             linkRow("Öneri gönder", systemImage: "bubble.left") { sendingFeedback = true }
             Divider().overlay(Palette.line)
