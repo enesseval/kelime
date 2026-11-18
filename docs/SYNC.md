@@ -61,6 +61,37 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
+### 2026-11-18 · Uygulamayı değerlendir ve Arkadaşına öner (1.3.0)
+iOS [ ] Android [ ]
+
+Testers Community raporu ve büyüme için. Puan/yorum sayısı mağaza sıralamasını etkiler; şu an
+neredeyse yok.
+
+**Profil › Uygulama bölümü** ("Öneri gönder"in hemen üstüne iki satır):
+- "Uygulamayı değerlendir" (yıldız simgesi): iOS'ta
+  `https://apps.apple.com/app/id6823302964?action=write-review` açılır; Android'de Play In-App
+  Review akışı, olmazsa Play mağaza sayfası.
+- "Arkadaşına öner" (paylaş simgesi): sistem paylaşım sayfası, metin aynen:
+  "Kilit ekranında her gün İngilizce kelime öğreniyorum: Kilit Kelime. Ücretsiz indir: <link>"
+  Link: iOS `https://apps.apple.com/tr/app/id6823302964`, Android
+  `https://play.google.com/store/apps/details?id=com.enesseval.kilitkelime`.
+
+**Otomatik puanlama isteği** (iOS `requestReview`, Android In-App Review API; metin yok, sistem
+penceresi):
+- Yalnız iyi bir anın sonunda: Hızlı Tekrar ya da bir oyun turu biter ve doğru oranı en az %80'dir
+  (Günün Bulmacası tamamlanınca da sayılır).
+- En erken farklı **3. çalışma gününde** (seri günü sayısı değil, çalışılan gün sayısı).
+- Aynı oturumda paywall ya da deneme özeti açıldıysa gösterilmez; onboarding'de asla.
+- Kendi sınırımız: iki istek arası en az **120 gün**, toplamda en fazla 3 (Apple da yılda 3 ile
+  sınırlar). Kullanıcı "Uygulamayı değerlendir" satırına dokunduysa otomatik istek bir daha sorulmaz.
+- Sonuç ekranı açıldıktan ~1 sn sonra, kullanıcı bir şeye dokunmadan önce.
+
+Sinyaller: `review.prompted` (otomatik istek gösterildi), `review.opened` (satır), `share.app`.
+
+Testler: kural fonksiyonu için birim testleri: 2. gün hayır, 3. gün ve %80 evet, %79 hayır,
+paywall aynı oturumda hayır, 119. gün hayır, 120. gün evet, 3 istekten sonra hayır, satıra
+dokunduktan sonra hayır.
+
 ### 2026-11-18 · Hızlı Tekrar: her tur aynı kelimeler, aynı sırayla (1.3.0)
 iOS [ ] Android [ ]
 
