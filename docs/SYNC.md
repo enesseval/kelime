@@ -61,6 +61,36 @@ dokunulur.
 
 ## Değişiklik günlüğü
 
+### 2026-11-18 · Hızlı Tekrar: her tur aynı kelimeler, aynı sırayla (1.3.0)
+iOS [ ] Android [ ]
+
+Kullanıcı geri bildirimi: Hızlı Tekrar'da sürekli aynı kelimeler çıkıyor ve sıraları değişmiyor;
+yeni turun ilk 3-4 sorusu bir önceki turun kelimeleri.
+
+Neden (iOS'ta bulundu, `QuickReview.orderedCardIDs`): "zorlanılan" ve "tekrarı gelen" kelimeler
+`last_answered_on` (yalnız GÜN) ile sıralanıyor. Aynı gün cevaplananların hepsi eşit, sıra her
+seferinde veritabanı sırası. Turda yanlış yapılan kelime zorlanılan kalıp bir sonraki turun başına
+dönüyor. Android'de aynı mantık varsa aynı hata vardır; kontrol et.
+
+Kural (iki platform aynı):
+1. Seçim önceliği aynı kalır (zorlanılan → tekrarı gelen → widget'ın gösterdiği yeni → diğer yeni →
+   öğrenilmiş). Her grubun içinde eşitler (aynı gün) **karıştırılır**, sonra gün sırasına konur.
+2. Son tur hafızası: biten turun 10 kart kimliği saklanır (ayarlarda, uygulama kapanınca da kalır).
+   Bir sonraki turda bu kartlar **en fazla 3** tane olabilir ve **ilk 4 soruda yer almaz**. Boşalan
+   yerler önceliğe göre sonraki kartlarla dolar. Önceki turdan gelecek 3 kart, o turda yanlış
+   cevaplananlardan seçilir (doğru cevaplananlar bir sonraki turda hiç çıkmaz).
+3. Tur seçildikten sonra 10 sorunun **sırası karıştırılır** (yukarıdaki "ilk 4'te değil" kuralı
+   korunarak).
+4. Havuz 10'dan küçükse (ör. tek liste, az kelime) kurallar uygulanabildiği kadar uygulanır; tur boş
+   ya da 10'dan kısa kalmaz, gerekirse önceki turun kartları da girer.
+5. Sınav planı turu (`deck` ile) da aynı kurallar.
+6. Oyunlar (`GamePool`) bu sıralamayı kullanıyorsa 1. kural onlara da yansır; 2-3 yalnız Hızlı Tekrar.
+
+Testler: aynı veritabanıyla art arda 5 tur: (a) hiçbir turun ilk 4 sorusu önceki turdan değil,
+(b) önceki turdan en fazla 3 kart, ve bunlar önceki turda yanlış cevaplananlar, (c) aynı gün
+cevaplanmış 20 zorlanılan kelimeyle iki tur aynı sırayı vermez (sabit tohumlu rng ile), (d) 6
+kelimelik havuzda tur yine 6 soru üretir.
+
 ### 2026-11-17 · iPad desteği (1.3.0, yalnız iOS)
 iOS [x] Android —
 
