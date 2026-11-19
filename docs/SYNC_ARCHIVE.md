@@ -3,6 +3,27 @@
 İki platformda da `[x]` olan, yani kapanmış maddeler. En yeni en üstte. `docs/SYNC.md` yalnızca
 açık maddeleri tutar; bir kuralın ayrıntısı (sayılar, metinler, taşınan testler) gerektiğinde burada
 tarihle ya da başlıkla ara. Kod yorumlarındaki `docs/SYNC.md <tarih>` atıfları buradaki maddelerdir.
+### 2026-11-19 · Keşfet: aşağı çekip yenileyince "Keşfet'e ulaşılamadı" (hata düzeltmesi)
+iOS [x] Android [x]
+
+Kullanıcı bildirdi: Keşfet'te aşağı çekip yenileyince liste kayboluyor, "İnternet bağlantını
+kontrol edip tekrar dene" çıkıyor; "Tekrar dene" ile listeler geri geliyor.
+
+Neden (iOS): yenileme görevi, yükleme sırasında görünüm güncellenince iptal ediliyor; ağ isteği
+`URLError.cancelled` ile bitiyor, kod bunu bağlantı hatası sayıp listeyi boşaltıyordu.
+
+Kural: iptal edilen bir istek (dil düzeyinde ya da ağ katmanında) hata değildir: liste olduğu gibi
+kalır, hata ekranı çıkmaz. Yalnız gerçek ağ/sunucu hatası "Keşfet'e ulaşılamadı" gösterir.
+Yenileme isteği görünüm güncellemesiyle iptal edilmemeli (iOS'ta yükleme ayrı bir `Task` içinde).
+Android: pull-to-refresh varsa aynı durumu dene; `CancellationException` hata ekranına düşüyorsa
+aynı kural.
+
+Dosyalar: iOS `App/Account/DiscoverViews.swift` (`DiscoverView.load`, `.refreshable`).
+
+Not (Android, 1fd4da3): Android'de pull-to-refresh yok; arama/sıralama değişince yarım kalan
+istek iptal edilince `CancellationException` hata ekranına düşebiliyordu (`DiscoverScreens.kt`,
+2 yer). İptal artık yeniden fırlatılıyor. versionCode 6 ile gider.
+
 ### 2026-11-18 · Uygulamayı değerlendir ve Arkadaşına öner (1.3.0)
 iOS [x] Android [x]
 
