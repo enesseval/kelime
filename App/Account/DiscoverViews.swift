@@ -71,7 +71,9 @@ struct DiscoverView: View {
         .scrollDismissesKeyboard(.immediately)
         .screenBackground()
         .hiddenNavigationBar()
-        .refreshable { await load(reset: true) }
+        // Pull-to-refresh cancels its task when the view updates mid-load; run the load in its own
+        // task so the request finishes instead of failing as "no connection".
+        .refreshable { await Task { await load(reset: true) }.value }
         .task(id: "\(search)|\(sort.rawValue)") {
             try? await Task.sleep(for: .milliseconds(search.isEmpty ? 0 : 300))
             guard !Task.isCancelled else { return }
@@ -94,8 +96,10 @@ struct DiscoverView: View {
             page += 1
             failed = false
         } catch {
+            // A cancelled request (Swift or URLSession) is not a connection problem: keep the list.
+            if error is CancellationError || (error as? URLError)?.code == .cancelled { return }
             if reset { items = [] }
-            failed = !(error is CancellationError)
+            failed = true
         }
     }
 }
