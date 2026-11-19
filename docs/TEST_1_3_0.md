@@ -2,11 +2,11 @@
 
 | Platform | Build | Durum |
 |---|---|---|
-| iOS (iPhone + iPad) | 1.3.0 (40) | Transporter'da, TestFlight'tan kurulur |
-| Android | 1.3.0 (versionCode 5) | AAB hazır, Play kapalı teste yüklenecek |
+| iOS (iPhone + iPad) | 1.3.0 (41) | Transporter'da, TestFlight'tan kurulur |
+| Android | 1.3.0 (versionCode 6) | AAB hazır, Play kapalı teste yüklenecek |
 
-Not: Keşfet'teki "aşağı çekince internet yok" düzeltmesi (19.11) bu build'lerde **yok**. Testten
-sonra iOS 41 ve Android versionCode 6 ile girer. Bu testte o hatayı görürsen not etmen yeterli.
+Keşfet düzeltmesi (19.11) bu build'lerde var: Keşfet'te aşağı çekip yenile, "Keşfet'e ulaşılamadı"
+çıkmamalı, liste yerinde kalmalı (D bölümünde).
 
 İşaretleme: `[x]` geçti, `[!]` sorun var (yanına kısa not).
 
@@ -52,26 +52,27 @@ sonra iOS 41 ve Android versionCode 6 ile girer. Bu testte o hatayı görürsen 
 - [ ] Günün Bulmacası açılıyor ve bitiyor.
 - [ ] Dört oyun (Kelime Avı, Eşleştir, Cümle Kur, Boşluğu Doldur) birer tur bitiyor.
 - [ ] Kelimelerim › Listeler: liste oluştur, kelime ekle, sil.
-- [ ] Keşfet açılıyor, örnek listeler görünüyor, bir liste "Listelerime ekle" ile ekleniyor.
+- [ ] Keşfet açılıyor, örnek listeler görünüyor (SQL çalıştıysa 18), bir liste "Listelerime ekle" ile ekleniyor.
+- [ ] Keşfet'te aşağı çekip yenile (birkaç kez, arama yazıp silerek de): hata ekranı çıkmıyor.
 - [ ] Bildirim/hatırlatıcı ayarı çalışıyor.
 - [ ] Profil'de "Geliştirici" bölümü **yok** (App Store build'i).
 - [ ] Koyu/açık mod geçişinde bozuk ekran yok.
 
 ---
 
-## Yalnız iPhone (iOS 40)
+## Yalnız iPhone (iOS 41)
 - [ ] Dikey kullanımda ekranlar 1.2.0 ile aynı görünüyor (iPad değişikliği iPhone'u bozmamış).
 - [ ] Sekme çubuğu altta, eskisi gibi.
 - [ ] Widget galerisinde tüm kilit ekranı widget'ları duruyor.
 
-## Yalnız Android (1.3.0 (5))
+## Yalnız Android (1.3.0 (6))
 - [ ] Release build açılışta çökmüyor (In-App Review için R8 kuralı eklendi).
 - [ ] "Uygulamayı değerlendir"e art arda basınca çökme yok.
 - [ ] Hızlı Ayarlar kutucuğu ve kilit ekranı/duvar kâğıdı eskisi gibi.
 
 ---
 
-## iPad (iOS 40)
+## iPad (iOS 41)
 - [ ] Uygulama iPad'de tam ekran açılıyor (iPhone penceresi gibi küçük ve ortada değil).
 - [ ] Dört yönde de dönüyor: dikey, ters dikey, iki yatay.
 - [ ] Yatayda sekmeler kenar çubuğu olarak açılabiliyor; dikeyde üstte sekme çubuğu.
@@ -96,5 +97,5 @@ sonra iOS 41 ve Android versionCode 6 ile girer. Bu testte o hatayı görürsen 
 
 ## Testten sonra
 - Hepsi geçti → "gönder" de. iOS'u App Store Connect'ten incelemeye ben gönderiyorum (yenilik
-  notları tr/en-US/en-AU, iPad görselleri, build 40 ya da Keşfet düzeltmesiyle 41).
+  notları tr/en-US/en-AU, iPad görselleri, build 41).
 - Android AAB'sini Play kapalı teste sen yüklüyorsun.
