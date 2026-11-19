@@ -46,7 +46,7 @@ android {
         applicationId = "com.enesseval.kilitkelime"
         minSdk = 26
         targetSdk = 36
-        versionCode = 5
+        versionCode = 6
         versionName = "1.3.0"
         // RevenueCat's public Android SDK key (Play Store app in the "Kelime Widget" project). Public,
         // like the OAuth client id below; local.properties `revenuecat.androidKey` can override it.

@@ -35,7 +35,7 @@ defteridir. Kök dizindeki `CLAUDE.md` her oturumu buraya yönlendirir. Kapanan 
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.3.0 | 1.3.0 |
-| Build | 41 (1.3.0: iPad + Hızlı Tekrar + Keşfet yenileme düzeltmesi; 40 = Keşfet düzeltmesi öncesi; 39 = iPad, TestFlight'ta; 36 = 1.2.0 yayında) | versionCode 5 (1.3.0; Play'e yüklenmedi; 4 = ilk 1.3.0 AAB'si, 3 = 1.2.0 AAB) |
+| Build | 41 (1.3.0: iPad + Hızlı Tekrar + Keşfet yenileme düzeltmesi; 40 = Keşfet düzeltmesi öncesi; 39 = iPad, TestFlight'ta; 36 = 1.2.0 yayında) | versionCode 6 (1.3.0; Play'e yüklenmedi; 5 = Keşfet düzeltmesi öncesi) |
 | Dal | `v1.1.1` | `v1.1.1` |
 | Mağazada | 1.2.0 (36) yayında (16 Kasım; 1.0.0 `main` 10 Kasım) | kapalı test (Play) |
 
