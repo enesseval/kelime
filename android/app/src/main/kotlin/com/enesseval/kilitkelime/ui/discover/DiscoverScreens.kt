@@ -89,6 +89,8 @@ fun DiscoverScreen() {
             page = next
             more = result.size == 30
             error = false
+        } catch (e: kotlinx.coroutines.CancellationException) {
+            throw e // a newer search replaced this one: not a connection error
         } catch (e: Exception) {
             error = true
         } finally {
@@ -155,6 +157,8 @@ fun SharedListScreen(listID: String) {
         state = try {
             item = app.account.sharedList(listID)
             if (item == null) 2 else 1
+        } catch (e: kotlinx.coroutines.CancellationException) {
+            throw e
         } catch (e: Exception) {
             3
         }
