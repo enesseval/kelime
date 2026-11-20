@@ -127,8 +127,80 @@ Pirinç referansından türeterek üret; her biri 9:16.
 > cinematic, shallow depth of field, soft film grain, vertical 9:16, front view, centered,
 > neutral expression. Pixar-like but realistic metal texture. No text, no logo, no watermark.
 
-Diğer kareler (R2-R8) için aynı karakter cümlesi + değişen poz/açı eklenir. Kareler çıktıktan
-sonra göz kontrolü: Pirinç'in rengi, patina ve göz oranı aynı mı?
+### R2-R8 nasıl üretilir (adım adım)
+
+1. ChatGPT ya da Gemini'de **yeni bir sohbet** aç, **R1 görselini yükle**.
+2. Aşağıdaki promptlardan birini yapıştır. Her biri R1'e bakarak aynı karakteri ve aynı mekânı
+   yeniden çizer (sıfırdan üretmek yerine "düzenleme" gibi çalışır; tutarlılık buradan gelir).
+3. Çıkan görseli indir, `R2.png` … `R8.png` diye adlandır. Beğenmezsen aynı sohbette
+   "aynısını yap ama …" diye düzelt.
+4. Her yeni görselde yine **R1'i yükleyerek** başla (zincirleme bozulmasın diye R2'den R3
+   türetme). Yalnız R6 (Minik) için R1 ve R5'i birlikte yükleyebilirsin.
+5. Kontrol: pirinç rengi, yeşil patina, göz büyüklüğü, kulp eğimi R1 ile aynı mı? Değilse
+   tekrar üret.
+
+Her promptun sonu aynı: *Vertical 9:16. Same lighting, same art style and same materials as the
+reference. No text, no logo, no watermark.*
+
+**R2 (Pirinç, korkmuş/utanmış yakın plan):**
+> Use the padlock character from the attached image exactly as it is: same brass colour, same
+> green patina spots, same eyes, same mouth. Close-up of its face only, filling the frame. Its
+> eyebrows are pressed together and raised in fear, the eyes look down and away in shame, the
+> mouth is a small worried line, the steel shackle droops lower than in the reference. Same dark
+> wooden door and warm side light behind it, softly out of focus. Vertical 9:16. Same lighting,
+> same art style and same materials as the reference. No text, no logo, no watermark.
+
+**R3 (Elif arkadan, telefon ışığıyla kapıya yaklaşıyor):**
+> Same basement corridor and same wooden door with the same padlock character from the attached
+> image, seen from further back. In the foreground, a young woman seen only from behind, over the
+> shoulder (her face is never visible): dark hair in a loose bun, an oversized beige hoodie,
+> holding a smartphone with its flashlight on, pointing at the door. The flashlight beam lights up
+> the padlock, which looks at her suspiciously with one eyebrow raised. Vertical 9:16. Same
+> lighting, same art style and same materials as the reference. No text, no logo, no watermark.
+
+**R4 (anahtar deliği makro):**
+> Extreme macro close-up of the keyhole of the padlock character from the attached image: the
+> same weathered brass, the same green patina and the small rust drip under the keyhole. Deep
+> inside the dark keyhole, a tiny golden glint of a brass key tip catches the light. The bottom
+> of the padlock's mouth is just visible at the top edge of the frame. Vertical 9:16. Same
+> lighting, same art style and same materials as the reference. No text, no logo, no watermark.
+
+**R5 (kapı aralık, içeride karanlık oda ve yerde Minik):**
+> The same wooden door from the attached image, now half open into a dark small storage room.
+> The padlock character from the reference hangs open on the hasp, its shackle unlocked, looking
+> into the room in surprise. On the dusty stone floor inside the room, in a soft beam of light,
+> sits a much smaller padlock character (palm-sized, the same brass style but shinier and newer,
+> big round eyes, a thin crack on its tiny shackle) looking up toward the door. Vertical 9:16.
+> Same lighting, same art style and same materials as the reference. No text, no logo, no
+> watermark.
+
+**R6 (Minik yakın plan):**
+> Close-up of the small padlock character from the second attached image (palm-sized little
+> brother of the padlock in the first image): the same brass style but shinier and less worn,
+> very large round shiny eyes, a tiny mouth, and a visible thin crack on its small steel shackle.
+> It sits on dusty stone floor, looking up at the camera with hope. Low camera angle, soft warm
+> light from above. Vertical 9:16. Same lighting, same art style and same materials as the
+> reference. No text, no logo, no watermark.
+
+**R7 (merdiven boşluğu, duvarda el gölgesi ve anahtar halkası):**
+> The far end of the same dim stone basement corridor from the attached image: old stone stairs
+> going up into darkness. On the stone wall beside the stairs, the large shadow of an old hand
+> holding a heavy ring of many old keys, cast by a lantern out of frame. No person visible, only
+> the shadow. The corridor lamp flickers. Moody, cinematic, slightly cold light mixed with warm
+> lantern glow. Vertical 9:16. Same lighting, same art style and same materials as the
+> reference. No text, no logo, no watermark.
+
+**R8 (Elif'in eli ve katlanmış not):**
+> Close-up at floor level in front of the same wooden door from the attached image. A young
+> woman's hand (sleeve of an oversized beige hoodie visible) is picking up a small folded piece of
+> old paper from the stone floor; the paper has slipped out from under the door. The writing on
+> the paper is hidden by the fold and not readable. The bottom of the door and a sliver of warm
+> light under it are visible. Vertical 9:16. Same lighting, same art style and same materials
+> as the reference. No text, no logo, no watermark.
+
+**İpucu:** Kapıcı (5-6. bölüm) için ayrı referans yok; yüzü hiç görünmüyor. Klipte R7 ya da R1
+başlangıç karesi olur, eller ve gölge Kling promptuyla gelir. Görselde yazı çıkarsa (nota harf,
+duvara yazı) "remove all text" diye düzelt; yazılar montajda eklenir.
 
 ## Kling promptu nasıl yazılır (image-to-video)
 
