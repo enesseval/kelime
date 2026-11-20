@@ -551,3 +551,19 @@ Ayrıca 5 ve 6. bölümün 24.11 sabahı yalnız 12-20 saatlik verisi olur; yuva
 
 **Yorum davranışı:** "yoruma yaz" isteği yok. Tahmin soruları ("kapının arkasında kim var?")
 izleyicinin kendiliğinden yazdığı yorumlarsa yanıtla, kendin sorma.
+
+## Düşük kredi planı (2026-11-20, kullanıcı kararı: en düşük maliyet)
+
+Eldeki kredi 670 (720p 5 sn klip = 50 kredi). Kurgu Instagram **Edits** ile.
+- Bölüm başına **en fazla 2 hareketli Kling klibi** (kanca anı + cliffhanger ya da fiziksel eylem).
+  Diğer klipler **durağan görsel** (ChatGPT/Gemini, ücretsiz) + Edits'te yavaş yakınlaşma
+  (keyframe) + seslendirme + efekt. 6 × 2 × 50 = 600 kredi, ~70 kredi tekrar payı.
+- 1. bölüm: hareketli = klip 1 (vuruş, gözler açılır) ve klip 4 (eller vurur, kilit sallanır);
+  durağan = klip 2 (R3), klip 3 (R1 yakın), klip 5 (R4, yavaş yakınlaşma).
+- 2. bölüm: hareketli = klip 2 (kulp düşer, R2) ve klip 5 (not kapının altından kayar, R8);
+  durağan = klip 1 (R4), klip 3 (R1), klip 4 (R2 yakın, yağ damlası görselde çizili).
+- 3-6. bölümde aynı kural: kapı açılması, düşen anahtar, gölgenin kayması gibi eylemler
+  hareketli; konuşma ve tepki sahneleri durağan.
+- Tekrar kuralı: bir klip ikinci denemede de bozuksa durağan görsele çevir, üçüncü kez üretme.
+- **Ek 1.200 kredi** yalnız 1-2. bölüm sinyal verirse alınır (24 saatte bölüm başına 500+
+  görüntülenme ya da dışarıdan ilk yorum/takip). Artan bütçe Meta reklamına gider.
