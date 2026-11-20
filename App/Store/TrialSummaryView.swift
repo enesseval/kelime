@@ -63,7 +63,7 @@ struct TrialSummaryView: View {
         }
         .onAppear { shown = true }
         .background(Palette.background.ignoresSafeArea())
-        .sheet(isPresented: $showingPaywall) {
+        .paywallPresentation(isPresented: $showingPaywall) {
             WidgetPaywall(request: AppRouter.PaywallRequest(trigger: .trialEnded)).environment(app)
         }
         .onChange(of: app.purchases.isPurchased) { _, bought in if bought { dismiss() } }

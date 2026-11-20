@@ -59,13 +59,13 @@ struct MainTabView: View {
             router.handle(url)
         }
         .toast($importMessage)
-        .sheet(item: $router.paywall) { request in
+        .paywallPresentation(item: $router.paywall) { request in
             WidgetPaywall(request: request).environment(model)
         }
         .sheet(item: $router.trialSummary) { request in
             TrialSummaryView(request: request).environment(model)
         }
-        .sheet(item: $router.designPreview) { design in
+        .paywallPresentation(item: $router.designPreview) { design in
             PaywallDesignView(design: design, request: AppRouter.PaywallRequest(trigger: .base)).environment(model)
         }
         .fullScreenCover(isPresented: $router.reviewPresented) {

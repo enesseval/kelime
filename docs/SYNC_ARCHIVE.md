@@ -3,6 +3,20 @@
 İki platformda da `[x]` olan, yani kapanmış maddeler. En yeni en üstte. `docs/SYNC.md` yalnızca
 açık maddeleri tutar; bir kuralın ayrıntısı (sayılar, metinler, taşınan testler) gerektiğinde burada
 tarihle ya da başlıkla ara. Kod yorumlarındaki `docs/SYNC.md <tarih>` atıfları buradaki maddelerdir.
+### 2026-11-20 · iPad: ödeme ekranı büyük sayfa olarak açılır (yalnız iOS)
+iOS [x] Android —
+
+iPad testinde paywall ortada küçük bir form olarak açılıyor, arkadaki içerik yeterince
+kararmıyordu. Yalnız iPad; iPhone aynı.
+
+Kural: iPad'de paywall iOS 18+ için `.presentationSizing(.page)` ile büyük sayfa, iOS 17 iPad'de
+tam ekran (`fullScreenCover`); arka plan opak (`presentationBackground`). İçerik, planlar ve alt
+düğmeler en çok 700 pt okunur genişlikte ortalanır. Tüm paywall açılışları tek değiştiriciden
+geçer (`paywallPresentation`). Android'de karşılığı yok (tablet düzeni ayrı konu).
+
+Dosyalar: `App/Store/PaywallDesigns.swift` (`PaywallFrame`, `paywallPresentation`),
+`App/MainTabView.swift`, `App/Store/TrialSummaryView.swift`.
+
 ### 2026-11-19 · Keşfet: aşağı çekip yenileyince "Keşfet'e ulaşılamadı" (hata düzeltmesi)
 iOS [x] Android [x]
 

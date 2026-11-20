@@ -176,6 +176,7 @@ struct PaywallFrame<Content: View>: View {
                             .padding(.horizontal, 20)
                             .padding(.top, 46)
                             .padding(.bottom, 10)
+                            .readableWidth(700)
                             .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                     } else {
                         scrolling
@@ -225,6 +226,7 @@ struct PaywallFrame<Content: View>: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 56)
                 .padding(.bottom, 12)
+                .readableWidth(700)
         }
         .scrollIndicators(.hidden)
     }
@@ -255,6 +257,7 @@ struct PaywallFrame<Content: View>: View {
         .padding(.horizontal, 20)
         .padding(.top, 12)
         .padding(.bottom, 6)
+        .readableWidth(700)
         .background(Palette.background.opacity(0.97).ignoresSafeArea())
         .overlay(alignment: .top) { Rectangle().fill(Palette.line).frame(height: 1) }
     }
@@ -836,5 +839,47 @@ struct PuzzlePaywall: View {
         }
         .frame(width: 42, height: 42)
         .accessibilityHidden(true)
+    }
+}
+
+// MARK: - Presentation
+
+private struct PaywallSheetStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 18.0, *) {
+            // iPad: a page-size sheet (the system dims what is behind it); iPhone: unchanged.
+            content
+                .presentationSizing(.page)
+                .presentationBackground(Palette.background)
+        } else {
+            content
+        }
+    }
+}
+
+extension View {
+    /// Presents the paywall. iPhone: the usual sheet. iPad: a large page sheet on iOS 18 and
+    /// later, a full-screen cover on iOS 17 (where a sheet would be a small form). The
+    /// paywall's own content keeps a readable width and an opaque background.
+    @ViewBuilder
+    func paywallPresentation<Item: Identifiable, Content: View>(
+        item: Binding<Item?>, @ViewBuilder content: @escaping (Item) -> Content
+    ) -> some View {
+        if UIDevice.current.userInterfaceIdiom == .pad, #unavailable(iOS 18.0) {
+            fullScreenCover(item: item, content: content)
+        } else {
+            sheet(item: item) { content($0).modifier(PaywallSheetStyle()) }
+        }
+    }
+
+    @ViewBuilder
+    func paywallPresentation<Content: View>(
+        isPresented: Binding<Bool>, @ViewBuilder content: @escaping () -> Content
+    ) -> some View {
+        if UIDevice.current.userInterfaceIdiom == .pad, #unavailable(iOS 18.0) {
+            fullScreenCover(isPresented: isPresented, content: content)
+        } else {
+            sheet(isPresented: isPresented) { content().modifier(PaywallSheetStyle()) }
+        }
     }
 }
