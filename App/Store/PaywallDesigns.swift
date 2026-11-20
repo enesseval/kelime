@@ -844,31 +844,53 @@ struct PuzzlePaywall: View {
 
 // MARK: - Presentation
 
-private struct PaywallSheetStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        if #available(iOS 18.0, *) {
-            // iPad: a page-size sheet (the system dims what is behind it); iPhone: unchanged.
-            content
-                .presentationSizing(.page)
-                .presentationBackground(Palette.background)
-        } else {
-            content
+/// iPad: the paywall is a phone-sized card centred on a dimmed, blurred app (a screen within the
+/// screen), in both orientations and on iOS 17 and 18. It sits in a full-screen cover with a
+/// clear background; the dim layer fades in and the card rises a little.
+private struct PaywallCardCover<Content: View>: View {
+    @ViewBuilder let content: Content
+    @State private var shown = false
+
+    var body: some View {
+        GeometryReader { geo in
+            let margin: CGFloat = 24
+            let width = min(520, max(320, geo.size.width - margin * 2))
+            let height = min(860, geo.size.height * 0.88, geo.size.height - margin * 2)
+            ZStack {
+                // Swallows taps: tapping outside the card does nothing (the x closes it).
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+                    .overlay(Color.black.opacity(0.5))
+                    .ignoresSafeArea()
+                    .contentShape(Rectangle())
+                    .onTapGesture {}
+                    .opacity(shown ? 1 : 0)
+                content
+                    .frame(width: width, height: height)
+                    .background(Palette.background)
+                    .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
+                    .shadow(color: .black.opacity(0.35), radius: 30, y: 10)
+                    .offset(y: shown ? 0 : 24)
+                    .opacity(shown ? 1 : 0)
+            }
+            .frame(width: geo.size.width, height: geo.size.height)
         }
+        .presentationBackground(.clear)
+        .onAppear { withAnimation(.easeOut(duration: 0.3)) { shown = true } }
     }
 }
 
 extension View {
-    /// Presents the paywall. iPhone: the usual sheet. iPad: a large page sheet on iOS 18 and
-    /// later, a full-screen cover on iOS 17 (where a sheet would be a small form). The
-    /// paywall's own content keeps a readable width and an opaque background.
+    /// Presents the paywall. iPhone: the usual sheet. iPad: a centred card over a dimmed,
+    /// blurred background (see `PaywallCardCover`), the same on iOS 17 and 18.
     @ViewBuilder
     func paywallPresentation<Item: Identifiable, Content: View>(
         item: Binding<Item?>, @ViewBuilder content: @escaping (Item) -> Content
     ) -> some View {
-        if UIDevice.current.userInterfaceIdiom == .pad, #unavailable(iOS 18.0) {
-            fullScreenCover(item: item, content: content)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            fullScreenCover(item: item) { value in PaywallCardCover { content(value) } }
         } else {
-            sheet(item: item) { content($0).modifier(PaywallSheetStyle()) }
+            sheet(item: item) { content($0) }
         }
     }
 
@@ -876,10 +898,10 @@ extension View {
     func paywallPresentation<Content: View>(
         isPresented: Binding<Bool>, @ViewBuilder content: @escaping () -> Content
     ) -> some View {
-        if UIDevice.current.userInterfaceIdiom == .pad, #unavailable(iOS 18.0) {
-            fullScreenCover(isPresented: isPresented, content: content)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            fullScreenCover(isPresented: isPresented) { PaywallCardCover { content() } }
         } else {
-            sheet(isPresented: isPresented) { content().modifier(PaywallSheetStyle()) }
+            sheet(isPresented: isPresented, content: content)
         }
     }
 }

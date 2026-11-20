@@ -3,6 +3,22 @@
 İki platformda da `[x]` olan, yani kapanmış maddeler. En yeni en üstte. `docs/SYNC.md` yalnızca
 açık maddeleri tutar; bir kuralın ayrıntısı (sayılar, metinler, taşınan testler) gerektiğinde burada
 tarihle ya da başlıkla ara. Kod yorumlarındaki `docs/SYNC.md <tarih>` atıfları buradaki maddelerdir.
+### 2026-11-21 · iPad: ödeme ekranı ortada telefon boyunda kart (yalnız iOS)
+iOS [x] Android —
+
+Önceki "büyük sayfa" iPad'de yatayda tüm ekranı kaplıyor, dikeyde boşluklu duruyordu; widget
+önizlemesi yarım ekran boş kutu oluyordu. Yalnız iPad; iPhone aynı.
+
+Kural: iPad'de (iOS 17 ve 18 aynı) paywall, şeffaf arka planlı `fullScreenCover` içinde ortada
+kart olarak açılır: genişlik en çok 520 pt, yükseklik min(ekranın %88'i, 860 pt), köşe 28 pt,
+her kenarda en az 24 pt boşluk. Arka plan: ultraThinMaterial bulanıklığı + %50 siyah; dim katmanı
+fade-in, kart 24 pt aşağıdan yükselir. Dim alanına dokunmak bir şey yapmaz; ×  kapatır. İçerik
+kart genişliğinde iPhone düzeniyle yerleşir (widget önizlemesi kalan yüksekliği alır, kart
+860 pt ile sınırlı olduğundan iPhone oranlarında kalır). Önceki `presentationSizing(.page)` ve
+700 pt okunur genişlik düzeni iPad'de artık kullanılmaz.
+
+Dosya: `App/Store/PaywallDesigns.swift` (`PaywallCardCover`, `paywallPresentation`).
+
 ### 2026-11-20 · iPad: ödeme ekranı büyük sayfa olarak açılır (yalnız iOS)
 iOS [x] Android —
 
