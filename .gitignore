@@ -29,3 +29,5 @@ marketing/instagram/frames/
 # Claude Code: personal settings stay local; .claude/agents is shared
 .claude/settings.local.json
 marketing/instagram/out
+marketing/instagram/kilitli-kapi/
+marketing/instagram/shots/ipad/
