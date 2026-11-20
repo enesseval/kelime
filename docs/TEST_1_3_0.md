@@ -2,7 +2,7 @@
 
 | Platform | Build | Durum |
 |---|---|---|
-| iOS (iPhone + iPad) | 1.3.0 (41) | Transporter'da, TestFlight'tan kurulur |
+| iOS (iPhone + iPad) | 1.3.0 (41) | TestFlight'ta (20.11), incelemeye gönderilmedi |
 | Android | 1.3.0 (versionCode 6) | AAB hazır, Play kapalı teste yüklenecek |
 
 Keşfet düzeltmesi (19.11) bu build'lerde var: Keşfet'te aşağı çekip yenile, "Keşfet'e ulaşılamadı"
