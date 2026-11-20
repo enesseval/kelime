@@ -151,12 +151,34 @@ extension PurchaseManager {
     var savingBadge: String? { annualSaving.map { "%\($0) tasarruf" } }
 }
 
+/// Set by the iPad card presentation: the paywall sits in a compact card (content-sized,
+/// fixed-height widget preview) and closes through `paywallClose` (fade out, then dismiss).
+private struct PaywallCardKey: EnvironmentKey { static let defaultValue = false }
+private struct PaywallCloseKey: EnvironmentKey { nonisolated(unsafe) static let defaultValue: (() -> Void)? = nil }
+private struct PaywallContentHeightKey: PreferenceKey {
+    nonisolated(unsafe) static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = max(value, nextValue()) }
+}
+extension EnvironmentValues {
+    fileprivate var paywallCard: Bool {
+        get { self[PaywallCardKey.self] }
+        set { self[PaywallCardKey.self] = newValue }
+    }
+    fileprivate var paywallClose: (() -> Void)? {
+        get { self[PaywallCloseKey.self] }
+        set { self[PaywallCloseKey.self] = newValue }
+    }
+}
+
 /// What every design shares: the close button, the buy button with its fixed two-line note and
 /// the restore and legal links, the purchase itself and closing once Pro.
 struct PaywallFrame<Content: View>: View {
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
+    @Environment(\.paywallCard) private var card
+    @Environment(\.paywallClose) private var paywallClose
+    @State private var contentHeight: CGFloat = 0
     @Binding var plan: PaywallPlan
     /// Lays the content out on one screen without scrolling; a flexible part (the widget
     /// preview) takes what is left. Very short screens still scroll.
@@ -169,7 +191,7 @@ struct PaywallFrame<Content: View>: View {
 
     var body: some View {
         Group {
-            if fitsScreen {
+            if fitsScreen && !card {
                 GeometryReader { geo in
                     if geo.size.height >= 560 {
                         VStack(spacing: 14) { content }
@@ -188,7 +210,7 @@ struct PaywallFrame<Content: View>: View {
         }
         .safeAreaInset(edge: .bottom, spacing: 0) { footer }
         .overlay(alignment: .topTrailing) {
-            Button { dismiss() } label: {
+            Button { closePaywall() } label: {
                 Image(systemName: "xmark")
                     .font(.system(size: 14, weight: .bold))
                     .foregroundStyle(Palette.ink2)
@@ -203,7 +225,7 @@ struct PaywallFrame<Content: View>: View {
         .screenBackground()
         .toast($toast)
         .task { await purchases.loadProducts() }
-        .onChange(of: purchases.isPro) { _, pro in if pro { dismiss() } }
+        .onChange(of: purchases.isPro) { _, pro in if pro { closePaywall() } }
     }
 
     /// Under the button: what is billed and when (App Store guideline 3.1.2), two lines for
@@ -220,6 +242,10 @@ struct PaywallFrame<Content: View>: View {
         }
     }
 
+    private func closePaywall() {
+        if let paywallClose { paywallClose() } else { dismiss() }
+    }
+
     private var scrolling: some View {
         ScrollView {
             VStack(spacing: 20) { content }
@@ -227,8 +253,12 @@ struct PaywallFrame<Content: View>: View {
                 .padding(.top, 56)
                 .padding(.bottom, 12)
                 .readableWidth(700)
+                .background(GeometryReader { Color.clear.preference(key: PaywallContentHeightKey.self, value: $0.size.height) })
         }
         .scrollIndicators(.hidden)
+        // In the iPad card the scroll area is as tall as its content (up to the card's maximum).
+        .frame(maxHeight: card && contentHeight > 0 ? contentHeight : .infinity)
+        .onPreferenceChange(PaywallContentHeightKey.self) { contentHeight = $0 }
     }
 
     private var footer: some View {
@@ -574,6 +604,7 @@ struct WidgetPaywall: View {
     let request: AppRouter.PaywallRequest
     @State private var plan: PaywallPlan = .annual
     @State private var tick = 0
+    @Environment(\.paywallCard) private var card
     private let words = [("resilient", "dayanıklı"), ("eager", "istekli"), ("thrive", "gelişmek"), ("subtle", "ince, belli belirsiz"), ("vivid", "canlı")]
 
     var body: some View {
@@ -622,7 +653,8 @@ struct WidgetPaywall: View {
             }
             .foregroundStyle(Palette.ink)
             .padding(.vertical, 14)
-            .frame(maxWidth: .infinity, minHeight: 190, maxHeight: .infinity)
+            .frame(maxWidth: .infinity, minHeight: 190, maxHeight: card ? 230 : .infinity)
+            .frame(height: card ? 230 : nil)
             .background(
                 LinearGradient(colors: [Palette.accentSoft, Palette.surface], startPoint: .top, endPoint: .bottom),
                 in: RoundedRectangle(cornerRadius: 28, style: .continuous)
@@ -846,8 +878,10 @@ struct PuzzlePaywall: View {
 
 /// iPad: the paywall is a phone-sized card centred on a dimmed, blurred app (a screen within the
 /// screen), in both orientations and on iOS 17 and 18. It sits in a full-screen cover with a
-/// clear background; the dim layer fades in and the card rises a little.
+/// clear background. The system slide is switched off (see `paywallPresentation`); the dim
+/// layer fades in and the card rises, and both reverse on close.
 private struct PaywallCardCover<Content: View>: View {
+    let close: () -> Void
     @ViewBuilder let content: Content
     @State private var shown = false
 
@@ -866,7 +900,10 @@ private struct PaywallCardCover<Content: View>: View {
                     .onTapGesture {}
                     .opacity(shown ? 1 : 0)
                 content
-                    .frame(width: width, height: height)
+                    .environment(\.paywallCard, true)
+                    .environment(\.paywallClose, closeAnimated)
+                    .frame(width: width)
+                    .frame(maxHeight: height)
                     .background(Palette.background)
                     .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
                     .shadow(color: .black.opacity(0.35), radius: 30, y: 10)
@@ -878,17 +915,35 @@ private struct PaywallCardCover<Content: View>: View {
         .presentationBackground(.clear)
         .onAppear { withAnimation(.easeOut(duration: 0.3)) { shown = true } }
     }
+
+    private func closeAnimated() {
+        withAnimation(.easeIn(duration: 0.22)) { shown = false }
+        Task {
+            try? await Task.sleep(for: .milliseconds(230))
+            close()
+        }
+    }
 }
 
 extension View {
     /// Presents the paywall. iPhone: the usual sheet. iPad: a centred card over a dimmed,
-    /// blurred background (see `PaywallCardCover`), the same on iOS 17 and 18.
+    /// blurred background (see `PaywallCardCover`), the same on iOS 17 and 18. The cover is
+    /// presented and dismissed without the system animation (the binding is set with animations
+    /// disabled); the card animates itself.
     @ViewBuilder
     func paywallPresentation<Item: Identifiable, Content: View>(
         item: Binding<Item?>, @ViewBuilder content: @escaping (Item) -> Content
     ) -> some View {
         if UIDevice.current.userInterfaceIdiom == .pad {
-            fullScreenCover(item: item) { value in PaywallCardCover { content(value) } }
+            let quiet = Binding<Item?>(
+                get: { item.wrappedValue },
+                set: { value in
+                    var t = Transaction(); t.disablesAnimations = true
+                    withTransaction(t) { item.wrappedValue = value }
+                })
+            fullScreenCover(item: quiet) { value in
+                PaywallCardCover(close: { quiet.wrappedValue = nil }) { content(value) }
+            }
         } else {
             sheet(item: item) { content($0) }
         }
@@ -899,7 +954,15 @@ extension View {
         isPresented: Binding<Bool>, @ViewBuilder content: @escaping () -> Content
     ) -> some View {
         if UIDevice.current.userInterfaceIdiom == .pad {
-            fullScreenCover(isPresented: isPresented) { PaywallCardCover { content() } }
+            let quiet = Binding<Bool>(
+                get: { isPresented.wrappedValue },
+                set: { value in
+                    var t = Transaction(); t.disablesAnimations = true
+                    withTransaction(t) { isPresented.wrappedValue = value }
+                })
+            fullScreenCover(isPresented: quiet) {
+                PaywallCardCover(close: { quiet.wrappedValue = false }) { content() }
+            }
         } else {
             sheet(isPresented: isPresented, content: content)
         }

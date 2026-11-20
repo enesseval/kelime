@@ -17,6 +17,12 @@ kart genişliğinde iPhone düzeniyle yerleşir (widget önizlemesi kalan yükse
 860 pt ile sınırlı olduğundan iPhone oranlarında kalır). Önceki `presentationSizing(.page)` ve
 700 pt okunur genişlik düzeni iPad'de artık kullanılmaz.
 
+Ek: sistem kaydırma animasyonu kapalı (binding animasyonsuz Transaction ile set edilir); dim
+fade-in + kart yükselmesini kart kendisi yapar, kapanışta önce ters animasyon (0,22 sn), sonra
+animasyonsuz dismiss (`paywallClose`). Kart içeriğe göre küçülür (en çok min(%88, 860)); iPad'de
+widget önizlemesi sabit 230 pt yüksekliktedir (iPhone 6,1" düzeninde kalan yükseklik civarı),
+sayfa kaydırmalı düzene geçer.
+
 Dosya: `App/Store/PaywallDesigns.swift` (`PaywallCardCover`, `paywallPresentation`).
 
 ### 2026-11-20 · iPad: ödeme ekranı büyük sayfa olarak açılır (yalnız iOS)
