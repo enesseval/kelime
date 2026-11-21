@@ -3,6 +3,21 @@
 İki platformda da `[x]` olan, yani kapanmış maddeler. En yeni en üstte. `docs/SYNC.md` yalnızca
 açık maddeleri tutar; bir kuralın ayrıntısı (sayılar, metinler, taşınan testler) gerektiğinde burada
 tarihle ya da başlıkla ara. Kod yorumlarındaki `docs/SYNC.md <tarih>` atıfları buradaki maddelerdir.
+### 2026-11-21 · Kaynak açılıp kapanınca widget'taki kelime hemen değişir
+iOS [x] Android [x]
+
+Kurs kartı kapatılınca widget ekrandaki kurs kelimesini bir sonraki değişime kadar tutuyordu;
+seviye değişince ise hemen değişiyordu. Kullanıcı "kursu kapattım, hâlâ kurs kelimesi var" dedi.
+
+Kural: Kelimelerim › Listeler'de şunlardan biri olunca widget yalnız sıradaki slotları değil,
+**ekrandaki kelimeyi de** yeni havuzdan hemen yeniden seçer (seviye değişimiyle aynı yol):
+kurs kartı açma/kapama, sınav listesi açma/kapama, kendi listesini açma/kapama, kendi listesini
+silme, kendi listesinden kelime çıkarma. Listeye kelime eklemek, liste adı değiştirmek, görünürlük
+değiştirmek ekrandaki kelimeye dokunmaz (sıradaki slotlar yine yeniden seçilir).
+
+Dosyalar: iOS `App/AppModel.swift` (`write(rebuildQueue:replaceCurrent:)`, `editList(replaceCurrent:)`,
+`setCourse`, `setDeck`), `App/Lists/UserListViews.swift`; `WidgetRefresher.rebuild(includingCurrent: true)`.
+
 ### 2026-11-21 · iPad: ödeme ekranı ortada telefon boyunda kart (yalnız iOS)
 iOS [x] Android —
 

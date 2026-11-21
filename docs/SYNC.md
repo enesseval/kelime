@@ -35,7 +35,7 @@ defteridir. Kök dizindeki `CLAUDE.md` her oturumu buraya yönlendirir. Kapanan 
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.3.0 | 1.3.0 |
-| Build | 44 (1.3.0; kaynak kapanınca widget kelimesi hemen değişir; 43 incelemeden çekildi 21.11; iPad ödeme ekranı ortada kart; 42 = büyük sayfa, beğenilmedi; 41 = TestFlight'ta test edildi, iPhone sorunsuz; 40 = Keşfet düzeltmesi öncesi; 39 = iPad, TestFlight'ta; 36 = 1.2.0 yayında) | versionCode 6 (1.3.0; AAB hazır, kullanıcı Play'e yükleyecek; 5 = Keşfet düzeltmesi öncesi) |
+| Build | 44 (1.3.0; kaynak kapanınca widget kelimesi hemen değişir; 43 incelemeden çekildi 21.11; iPad ödeme ekranı ortada kart; 42 = büyük sayfa, beğenilmedi; 41 = TestFlight'ta test edildi, iPhone sorunsuz; 40 = Keşfet düzeltmesi öncesi; 39 = iPad, TestFlight'ta; 36 = 1.2.0 yayında) | versionCode 7 (1.3.0; kaynak kapanınca widget kelimesi hemen değişir, AAB hazır, kullanıcı Play'e yükleyecek; 6 = Keşfet düzeltmesi, 5 öncesi) |
 | Dal | `v1.1.1` | `v1.1.1` |
 | Mağazada | 1.2.0 (36) yayında (16 Kasım; 1.0.0 `main` 10 Kasım) | kapalı test (Play) |
 
@@ -60,19 +60,4 @@ dokunulur.
   TestFlight'ta duruyor.
 
 ## Değişiklik günlüğü
-
-### 2026-11-21 · Kaynak açılıp kapanınca widget'taki kelime hemen değişir
-iOS [x] Android [ ]
-
-Kurs kartı kapatılınca widget ekrandaki kurs kelimesini bir sonraki değişime kadar tutuyordu;
-seviye değişince ise hemen değişiyordu. Kullanıcı "kursu kapattım, hâlâ kurs kelimesi var" dedi.
-
-Kural: Kelimelerim › Listeler'de şunlardan biri olunca widget yalnız sıradaki slotları değil,
-**ekrandaki kelimeyi de** yeni havuzdan hemen yeniden seçer (seviye değişimiyle aynı yol):
-kurs kartı açma/kapama, sınav listesi açma/kapama, kendi listesini açma/kapama, kendi listesini
-silme, kendi listesinden kelime çıkarma. Listeye kelime eklemek, liste adı değiştirmek, görünürlük
-değiştirmek ekrandaki kelimeye dokunmaz (sıradaki slotlar yine yeniden seçilir).
-
-Dosyalar: iOS `App/AppModel.swift` (`write(rebuildQueue:replaceCurrent:)`, `editList(replaceCurrent:)`,
-`setCourse`, `setDeck`), `App/Lists/UserListViews.swift`; `WidgetRefresher.rebuild(includingCurrent: true)`.
 

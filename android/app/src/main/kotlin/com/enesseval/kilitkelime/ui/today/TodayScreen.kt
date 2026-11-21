@@ -367,7 +367,7 @@ private fun ExamPlanCard(plan: ExamPlanStatus) {
                     }
                     if (pro && !plan.listOnWidget) {
                         OutlineButton("Widget'a ekle") {
-                            scope.launch { app.model.writeAndRequeue("exam-deck") { db -> DeckQueries.setEnabled(true, plan.exam, db) } }
+                            scope.launch { app.model.writeAndRequeue("exam-deck", keepCurrent = false) { db -> DeckQueries.setEnabled(true, plan.exam, db) } }
                         }
                     }
                 }

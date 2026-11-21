@@ -127,8 +127,8 @@ fun UserListScreen(listID: String) {
     var adding by remember { mutableStateOf(false) }
     var visibility by remember { mutableStateOf(false) }
 
-    fun edit(reason: String, block: (com.enesseval.kilitkelime.core.db.SqlDb) -> Unit) = scope.launch {
-        app.model.writeAndRequeue(reason) { db -> block(db) }
+    fun edit(reason: String, keepCurrent: Boolean = true, block: (com.enesseval.kilitkelime.core.db.SqlDb) -> Unit) = scope.launch {
+        app.model.writeAndRequeue(reason, keepCurrent) { db -> block(db) }
         app.account.sync()
     }
 
@@ -180,7 +180,7 @@ fun UserListScreen(listID: String) {
         for (item in items) {
             androidx.compose.runtime.key(item.id) {
                 val state = rememberSwipeToDismissBoxState(confirmValueChange = {
-                    if (it == SwipeToDismissBoxValue.EndToStart) edit("list-remove") { db -> UserLists.remove(item.id, listID, db) }
+                    if (it == SwipeToDismissBoxValue.EndToStart) edit("list-remove", keepCurrent = false) { db -> UserLists.remove(item.id, listID, db) }
                     it == SwipeToDismissBoxValue.EndToStart
                 })
                 SwipeToDismissBox(
@@ -215,7 +215,7 @@ fun UserListScreen(listID: String) {
                 Text("Sil", color = c.amberInk, style = KelimeType.ui(15.sp, FontWeight.SemiBold), modifier = Modifier.clickable {
                     deleting = false
                     scope.launch {
-                        app.model.writeAndRequeue("list-delete") { db -> UserLists.delete(listID, db) }
+                        app.model.writeAndRequeue("list-delete", keepCurrent = false) { db -> UserLists.delete(listID, db) }
                         app.account.sync()
                         router.back()
                     }

@@ -405,7 +405,7 @@ private fun ListsView() {
     val listsOn = d.lists.count { it.list.enabled && it.total > 0 }
     val onCount = if (d.course != null) (if (d.courseOn) 1 else 0) + examsOn + listsOn else d.decks.count { it.enabled } + listsOn
     fun setDeck(deck: DeckProgress, on: Boolean) {
-        scope.launch { app.model.writeAndRequeue("deck-${deck.deck.raw}") { db -> DeckQueries.setEnabled(on, deck.deck, db) } }
+        scope.launch { app.model.writeAndRequeue("deck-${deck.deck.raw}", keepCurrent = false) { db -> DeckQueries.setEnabled(on, deck.deck, db) } }
     }
 
     Column(
@@ -420,7 +420,7 @@ private fun ListsView() {
                     UserListCard(
                         summary, keepOn = summary.list.enabled && summary.total > 0 && onCount == 1,
                         onOpen = { router.openList(summary.id) }, onDelete = { deleting = summary },
-                    ) { on -> scope.launch { app.model.writeAndRequeue("list-$on") { db -> UserLists.setEnabled(on, summary.id, db) } } }
+                    ) { on -> scope.launch { app.model.writeAndRequeue("list-$on", keepCurrent = false) { db -> UserLists.setEnabled(on, summary.id, db) } } }
                 }
                 val ownCount = d.lists.count { !it.list.imported }
                 ProCorner(!pro && ownCount > 0) {
@@ -449,7 +449,7 @@ private fun ListsView() {
             Caption("KURS")
             d.decks.firstOrNull { it.deck.level == course.level }?.let { deck ->
                 DeckCard(deck.copy(enabled = d.courseOn), "${course.level.raw} kursu", keepOn = d.courseOn && onCount == 1) { on ->
-                    scope.launch { app.model.writeAndRequeue("course-$on") { db -> DeckQueries.setCourse(on, db) } }
+                    scope.launch { app.model.writeAndRequeue("course-$on", keepCurrent = false) { db -> DeckQueries.setCourse(on, db) } }
                 }
             }
             Text(
@@ -476,7 +476,7 @@ private fun ListsView() {
         ) {
             deleting = null
             scope.launch {
-                app.model.writeAndRequeue("list-delete") { db ->
+                app.model.writeAndRequeue("list-delete", keepCurrent = false) { db ->
                     UserLists.delete(summary.id, db)
                     // The widget needs a source: the course comes back.
                     if (last) DeckQueries.setCourse(true, db)
