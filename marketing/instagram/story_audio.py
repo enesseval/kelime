@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
 """Kilitli Kapı: voice.mp3 -> RMS envelope (env.json, 100 Hz) and a mixed wav (voice + synthesized SFX).
-usage: python3 story_audio.py <ep-dir> <total-seconds>   (needs numpy; afconvert on macOS)"""
+usage: python3 story_audio.py <ep-dir> <total-seconds> [cfg.json]   (needs numpy; afconvert on macOS)
+With cfg (story_eps/epN.json) the voice is built from per-line files placed at their "at" times, and knocks/riser come from the cfg."""
 import sys, json, subprocess, wave, os
 import numpy as np
 
 ep, total = sys.argv[1], float(sys.argv[2])
+cfg = json.load(open(sys.argv[3])) if len(sys.argv) > 3 else None
 SR = 44100
-tmp = os.path.join(ep, "voice44.wav")
-subprocess.check_call(["afconvert", "-f", "WAVE", "-d", f"LEI16@{SR}", "-c", "1", os.path.join(ep, "voice.mp3"), tmp])
-w = wave.open(tmp); v = np.frombuffer(w.readframes(w.getnframes()), dtype="<i2").astype(np.float32) / 32768
+def load(name):
+    tmp = os.path.join(ep, "voice44.wav")
+    subprocess.check_call(["afconvert", "-f", "WAVE", "-d", f"LEI16@{SR}", "-c", "1", os.path.join(ep, name), tmp])
+    w = wave.open(tmp); return np.frombuffer(w.readframes(w.getnframes()), dtype="<i2").astype(np.float32) / 32768
+if cfg:
+    v = np.zeros(int(total * SR), np.float32)
+    for ln in cfg["voice"]:
+        x = load(ln["file"]); x = x / max(1e-6, np.abs(x).max())   # each line peak-normalised so voices match
+        i = int(ln["at"] * SR); j = min(len(v), i + len(x)); v[i:j] += x[:j - i]
+else:
+    v = load("voice.mp3")
 hop = SR // 100
 env = [float(np.sqrt(np.mean(v[i:i + hop] ** 2))) for i in range(0, len(v) - hop, hop)]
 json.dump(env, open(os.path.join(ep, "env.json"), "w"))
@@ -32,15 +42,17 @@ def knock(a=1.0):
     th = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-k * 14)
     cl = rng.standard_normal(len(k)) * np.exp(-k * 90); cl = np.convolve(cl, np.ones(20) / 20, "same")
     return a * (th + 0.5 * cl)
-for kt, ka in [(0.12, 1.0), (0.57, 0.85), (1.52, 1.0), (10.55, 1.0), (11.05, 0.9), (11.4, 0.8), (12.58, 0.7)]:
+KN = cfg["knocks"] if cfg else [(0.12, 1.0), (0.57, 0.85), (1.52, 1.0), (10.55, 1.0), (11.05, 0.9), (11.4, 0.8), (12.58, 0.7)]
+for kt, ka in KN:
     at(knock(ka), kt, 1.6)
-# suspense: riser 14.6 -> 15.95, hit at 15.97, long low tail
-r0 = 14.6; rl = 15.95 - r0; k = np.arange(int(rl * SR)) / SR
+# suspense: riser r0 -> hit, long low tail
+r0, h0 = cfg["riser"] if cfg else (14.6, 15.97)
+rl = h0 - 0.02 - r0; k = np.arange(int(rl * SR)) / SR
 rise = np.sin(2 * np.pi * np.cumsum(70 + 180 * (k / rl) ** 2) / SR) * (k / rl) ** 2 + 0.4 * rng.standard_normal(len(k)) * (k / rl) ** 3
 at(rise.astype(np.float32), r0, 0.55)
 k = np.arange(int(2.6 * SR)) / SR
 hit = np.sin(2 * np.pi * np.cumsum(38 + 60 * np.exp(-k * 9)) / SR) * np.exp(-k * 1.6) + 0.25 * np.sin(2 * np.pi * 93 * k) * np.exp(-k * 2.5)
-at(hit.astype(np.float32), 15.97, 1.9)
+at(hit.astype(np.float32), h0, 1.9)
 # end-card tail: fade ambience slightly
 out *= np.clip((total - t) / 0.6, 0, 1)
 out /= np.abs(out).max(); out *= 0.5   # sfx bed peaks at 0.5; mixed at ~ -14 dB under the voice

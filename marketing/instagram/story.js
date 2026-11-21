@@ -11,22 +11,30 @@ const easeOut = p => 1 - Math.pow(1 - p, 3);
 const rnd = n => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
 
 // ---- timeline (seconds, from the voice's silence gaps) ----
-const KNOCKS = [0.12, 0.57, 1.52, 10.55, 12.58];
-const BLINKS = [2.45, 5.35, 9.0, 13.3];
-const LINES = [ // [start, end, text, who]  P = Pirinç, E = Elif (same voice file)
+let KNOCKS = [0.12, 0.57, 1.52, 10.55, 12.58];
+let BLINKS = [2.45, 5.35, 9.0, 13.3];
+let LINES = [ // [start, end, text, who]  P = Pirinç, E = Elif (same voice file)
   [0.03, 1.71, "Bu kapı üç gündür kilitli", "P"], [2.00, 3.41, "ve içeriden biri sesleniyor.", "P"],
   [3.86, 4.53, "Sen kimsin?", "P"], [4.83, 6.16, "Bu koridora kimse inmez.", "P"], [6.64, 7.38, "Sesi duydum.", "E"],
   [7.65, 8.02, "Dinle.", "P"], [8.46, 9.31, "Üç kere vurur,", "P"], [9.62, 10.33, "sonra susar.", "P"],
   [10.70, 11.66, "Anahtarı nerede?", "E"], [11.98, 12.41, "Bulalım!", "E"], [12.74, 13.16, "Hmm.", "P"], [13.55, 14.29, "Bulamazsın.", "P"],
   [14.79, 15.49, "Anahtar...", "P"], [15.99, 16.97, "kilidin içinde.", "P"]];
-const CARDS = [[0.55, 3.45, "door", "kapı"], [4.9, 7.45, "listen", "dinlemek"], [8.5, 10.45, "lock", "kilit"], [10.75, 11.95, "key", "anahtar"], [12.0, 14.4, "find", "bulmak"]];
-const SHOTS = [ // img, start, end, zoom a->b, focus a->b (image px), lipsync on Pirinç lines
+let CARDS = [[0.55, 3.45, "door", "kapı"], [4.9, 7.45, "listen", "dinlemek"], [8.5, 10.45, "lock", "kilit"], [10.75, 11.95, "key", "anahtar"], [12.0, 14.4, "find", "bulmak"]];
+let SHOTS = [ // img, start, end, zoom a->b, focus a->b (image px), lipsync on Pirinç lines
   { img: "R1", a: 0.0, b: 3.7, z: [1.12, 1.34], f: [[392, 780], [390, 764]], geo: "R1" },
   { img: "R3", a: 3.7, b: 7.5, z: [1.04, 1.30], f: [[384, 690], [452, 650]], geo: "R3" },
   { img: "R1", a: 7.5, b: 10.55, z: [1.55, 1.78], f: [[386, 806], [388, 796]], geo: "R1" },
   { img: "R3", a: 10.55, b: 14.55, z: [1.45, 1.85], f: [[500, 700], [520, 676]], geo: "R3" },
   { img: "R4", a: 14.55, b: 99, z: [1.22, 1.62], f: [[392, 520], [392, 640]], geo: "R4" }];
-const DIPS = [3.7, 7.5, 14.55];
+let DIPS = [3.7, 7.5, 14.55];
+// Episode config (story_eps/epN.json) replaces the ep1 timeline above.
+const CFG = window.STORY.cfg || null;
+let JOLTS = [], HOOK = { text: "3 GÜNDÜR KİLİTLİ", end: 3.75, prev: null }, END_AT = 16.75, MOUTH_REF = 0.2;
+if (CFG) {
+  KNOCKS = CFG.knocks.map(k => k[0]); BLINKS = CFG.blinks || []; CARDS = CFG.cards; SHOTS = CFG.shots; DIPS = CFG.dips;
+  LINES = CFG.voice.flatMap(v => v.chunks.map(c => [v.at + c[0], v.at + c[1], c[2], v.who]));
+  JOLTS = CFG.jolts || []; HOOK = CFG.hook; END_AT = CFG.endAt; MOUTH_REF = CFG.mouthRef || 0.28;
+}
 // Kling stretches (muted, from kling_frames/): [out start, out end, Kling source start] in seconds. Final cut only.
 window.KLING = (window.STORY.kling || []);
 window.kimg = null; // 0.2 s dip to black centred on the cut
@@ -37,7 +45,11 @@ const R1 = { seam: [[316, 780], [346, 777], [376, 774], [400, 776], [420, 779], 
   eyes: [{ c: [300, 678], r: 54, face: [390, 700] }, { c: [481, 682], r: 56, face: [390, 700] }] };
 const mapGeo = (g, o, k, d) => { const m = p => [o[0] + k * (p[0] - 386), o[1] + k * (p[1] - 781)];
   return { seam: g.seam.map(m), bottom: g.bottom.map(m), maxD: g.maxD * k, eyes: g.eyes.map(e => ({ c: m(e.c), r: e.r * k, face: m(e.face) })) }; };
-const GEO = { R1, R3: mapGeo(R1, [527, 682], 0.43), R4: null };
+const GEO = { R1, R3: mapGeo(R1, [527, 682], 0.43), R4: null,
+  // R2: sad face, lips droop at the corners
+  R2: { seam: [[312, 791], [340, 787], [370, 785], [390, 784], [410, 785], [440, 787], [463, 791]],
+    bottom: [[315, 797], [345, 809], [385, 815], [425, 812], [455, 802], [463, 795]], maxD: 13,
+    eyes: [{ c: [300, 690], r: 58, face: [390, 640] }, { c: [480, 690], r: 58, face: [390, 640] }] } };
 // R4 macro: lips run off both edges, seam is a shallow smile, the lower lip is deep
 GEO.R4 = { seam: [[0, 244], [90, 226], [200, 208], [300, 199], [400, 197], [500, 201], [600, 211], [700, 227], [768, 243]],
   bottom: [[0, 300], [100, 318], [250, 331], [400, 334], [550, 329], [700, 313], [768, 299]], maxD: 28, eyes: [] };
@@ -54,7 +66,7 @@ function mouthOpen(t, whisper) { // smoothed (attack fast, release slower) avera
   if (!L || L[3] !== "P") return 0;
   let s = 0, ws = 0;
   for (let k = -6; k <= 2; k++) { const w = k < 0 ? Math.exp(k * .25) : 1.2; s += rmsAt(t + k * .01) * w; ws += w; }
-  const ref = whisper ? 0.045 : 0.2;
+  const ref = whisper ? 0.045 : MOUTH_REF;
   return clamp(Math.pow(clamp(s / ws / ref), .8), 0, 1) * (whisper ? .8 : 1);
 }
 
@@ -128,14 +140,15 @@ function camera(sh, t) {
   fx += 2.2 * Math.sin(t * .9 + sh.a) + 1.1 * Math.sin(t * 2.3); fy += 2.0 * Math.sin(t * .7 + 2) + 1.0 * Math.sin(t * 1.9);
   let rot = .0022 * Math.sin(t * .6 + sh.a);
   let z = z0, sx = 0, sy = 0, shear = 0;
-  for (const k of KNOCKS) { const q = t - k; if (q >= 0 && q < 1) {
+  for (const k of [...KNOCKS, ...JOLTS]) { const q = t - k; if (q >= 0 && q < 1) {
     const a = Math.exp(-q * 11); const ph = Math.sin(q * 52);
     sx += 16 * a * ph * (rnd(k * 9) > .5 ? 1 : -1); sy += 20 * a * Math.cos(q * 44); z += .035 * Math.exp(-q * 13); rot += .006 * a * ph; shear += 9 * Math.exp(-q * 8) * Math.sin(q * 38); } }
   return { z, fx, fy, rot, sx, sy, shear };
 }
 
 function glint(t) { // growing glint on the brass key tip inside the R4 keyhole
-  const g = easeOut(seg(t, 14.9, 17.2)), hit = Math.exp(-Math.max(0, t - 15.97) * 4) * (t >= 15.97 ? 1 : 0);
+  let g = easeOut(seg(t, 14.9, 17.2)), hit = Math.exp(-Math.max(0, t - 15.97) * 4) * (t >= 15.97 ? 1 : 0);
+  if (CFG) { g = .85 * (1 - easeIO(seg(t, 0.6, 3.6))); hit = 0; }
   const fl = 1 + .12 * Math.sin(t * 17) + .08 * Math.sin(t * 29);
   const R = (22 + 120 * g + 150 * hit) * fl;
   const x = 392, y = 672;
@@ -173,14 +186,15 @@ function shadowText(txt, x, y, font, fill, o = {}) {
 }
 const CX = 540; // true centre; 800 px max line width keeps text clear of the Reels buttons
 function hook(t) {
-  const a = 1 - seg(t, 3.45, 3.75);
+  const a = 1 - seg(t, HOOK.end - .3, HOOK.end);
   if (a <= 0) return;
   ctx.save(); ctx.globalAlpha = a;
   const y = 225;
   ctx.font = "800 84px Hanken"; ctx.letterSpacing = "3px";
-  const w = ctx.measureText("3 GÜNDÜR KİLİTLİ").width;
-  shadowText("3 GÜNDÜR KİLİTLİ", 540, y, "800 84px Hanken", "#F6EFE0", { spacing: "3px", blur: 22 });
+  const w = ctx.measureText(HOOK.text).width;
+  shadowText(HOOK.text, 540, y, "800 84px Hanken", "#F6EFE0", { spacing: "3px", blur: 22 });
   ctx.fillStyle = "#E49839"; ctx.fillRect(540 - w * .5, y + 58, w, 7);
+  if (HOOK.prev) { ctx.globalAlpha = a * seg(t, .4, .8); shadowText(HOOK.prev, 540, y + 120, "600 38px Hanken", "rgba(244,241,235,.85)", { blur: 12 }); }
   ctx.restore();
 }
 function wordCard(t) {
@@ -230,7 +244,7 @@ function subtitle(t) {
   ctx.restore();
 }
 function endCard(t) {
-  const a = easeOut(seg(t, 16.75, 17.35)); if (a <= 0) return;
+  const a = easeOut(seg(t, END_AT, END_AT + .6)); if (a <= 0) return;
   ctx.fillStyle = `rgba(6,4,2,${.5 * a})`; ctx.fillRect(0, 0, W, H);
   ctx.save(); ctx.globalAlpha = a; ctx.translate(0, (1 - a) * 24);
   shadowText("KİLİTLİ KAPI", CX, 1330, "700 36px Hanken", "rgba(244,241,235,.75)", { spacing: "6px" });
@@ -240,7 +254,7 @@ function endCard(t) {
 
 function finishAll(t, fi, sh) {
   // torch / lamp flicker + dips to black
-  const flick = sh.img === "R3" ? .06 * (.5 + .5 * Math.sin(t * 23) * Math.sin(t * 7.3)) : .02 * (.5 + .5 * Math.sin(t * 11));
+  const flick = (sh.img === "R3" || sh.img === "R8") ? .06 * (.5 + .5 * Math.sin(t * 23) * Math.sin(t * 7.3)) : .02 * (.5 + .5 * Math.sin(t * 11));
   let dip = 0; for (const d of DIPS) dip = Math.max(dip, 1 - seg(Math.abs(t - d), 0, .1));
   finish(t, fi, flick + dip * .98);
   endCard(t); hook(t); wordCard(t); subtitle(t);
@@ -261,19 +275,19 @@ window.draw = (t) => {
   const fx = clamp(cam.fx, hx, 768 - hx), fy = clamp(cam.fy, hy, 1376 - hy);
   ctx.translate(-fx, -fy);
   ctx.imageSmoothingQuality = "high";
-  const swing = sh.img === "R4" ? null : { a: cam.shear, y0: sh.img === "R1" ? 420 : 470, y1: sh.img === "R1" ? 760 : 700 };
+  const swing = (sh.img === "R4" || !g) ? null : { a: cam.shear, y0: sh.img === "R1" ? 420 : 470, y1: sh.img === "R1" ? 760 : 700 };
   drawBase(img, swing);
   // eyes: snap on knocks / line starts, occasional blink
-  if (g.eyes.length) {
+  if (g && g.eyes.length) {
     let pop = 0;
     for (const kn of KNOCKS) { const q = t - kn; if (q >= 0 && q < .5) pop = Math.max(pop, q < .06 ? q / .06 : Math.exp(-(q - .06) * 7)); }
     for (const e of g.eyes) if (pop > .02) patch(img, e.c[0], e.c[1], e.r * 1.55, 1 + .13 * pop, .16 * pop);
     let bl = 0; for (const b of BLINKS) { const q = t - b; if (q >= 0 && q < .2) bl = Math.max(bl, q < .07 ? q / .07 : q < .11 ? 1 : 1 - (q - .11) / .09); }
     if (bl > 0) for (const e of g.eyes) eyelid(img, e, easeIO(bl));
   }
-  mouth(img, g, mouthOpen(t, sh.img === "R4"));
+  if (g) mouth(img, g, mouthOpen(t, sh.img === "R4"));
   if (sh.img === "R4") glint(t);
-  if (window.DEBUG_GEO) { ctx.lineWidth = 1.5; for (const [pts, c] of [[g.seam, "#f00"], [g.bottom, "#0f0"]]) { ctx.strokeStyle = c; ctx.beginPath(); pts.forEach(p => ctx.lineTo(p[0], p[1])); ctx.stroke(); } }
+  if (window.DEBUG_GEO && g) { ctx.lineWidth = 1.5; for (const [pts, c] of [[g.seam, "#f00"], [g.bottom, "#0f0"]]) { ctx.strokeStyle = c; ctx.beginPath(); pts.forEach(p => ctx.lineTo(p[0], p[1])); ctx.stroke(); } }
   ctx.restore();
   finishAll(t, fi, sh);
 };

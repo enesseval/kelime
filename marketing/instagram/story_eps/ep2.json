@@ -1,0 +1,30 @@
+{
+  "total": 27.0, "mouthRef": 0.28,
+  "voice": [
+    { "file": "01_elif.mp3", "at": 0.40, "who": "E", "chunks": [[0.08, 1.52, "Anahtar hiç kaybolmamış."], [2.07, 3.25, "Sen onu saklamışsın!"]] },
+    { "file": "02_pirinc.mp3", "at": 3.90, "who": "P", "chunks": [[0.12, 2.32, "Evet... sakladım."], [3.07, 4.72, "Üç gece önce biri geldi."]] },
+    { "file": "03_pirinc.mp3", "at": 10.10, "who": "P", "chunks": [[0.08, 2.54, "İçeride biri var."], [3.09, 4.22, "Dışarısı güvenli değil."]] },
+    { "file": "04_pirinc.mp3", "at": 14.65, "who": "P", "chunks": [[0.31, 1.76, "Korkuyorum."], [2.76, 3.39, "Açarsam..."], [3.83, 5.18, "bir daha kapatamam."]] },
+    { "file": "05_elif.mp3", "at": 20.20, "who": "E", "chunks": [[0.09, 1.20, "Kapının altından..."], [2.32, 3.20, "bir not çıktı."]] },
+    { "file": "06_pirinc.mp3", "at": 23.70, "who": "P", "chunks": [[0.05, 0.88, "Okuma onu!"]] }
+  ],
+  "knocks": [[9.05, 1.0], [9.42, 0.9], [9.80, 1.0]],
+  "jolts": [23.72],
+  "riser": [24.6, 25.0],
+  "blinks": [6.2, 13.0, 17.6],
+  "hook": { "text": "KİLİT YALAN SÖYLEDİ", "end": 3.6, "prev": "Önceki bölümde: anahtar kilidin içindeydi" },
+  "cards": [[1.0, 3.6, "key", "anahtar"], [4.6, 6.9, "hide", "saklamak"], [12.9, 14.4, "safe", "güvenli"], [14.9, 17.2, "afraid", "korkmuş"]],
+  "shots": [
+    { "img": "R4", "a": 0.0, "b": 3.85, "z": [1.62, 1.22], "f": [[392, 640], [392, 520]], "geo": "R4" },
+    { "img": "R2", "a": 3.85, "b": 8.9, "z": [1.12, 1.36], "f": [[390, 760], [390, 770]], "geo": "R2" },
+    { "img": "R1", "a": 8.9, "b": 14.45, "z": [1.25, 1.6], "f": [[392, 760], [388, 790]], "geo": "R1" },
+    { "img": "R2", "a": 14.45, "b": 20.0, "z": [1.75, 2.0], "f": [[390, 740], [390, 760]], "geo": "R2" },
+    { "img": "R8", "a": 20.0, "b": 23.6, "z": [1.1, 1.45], "f": [[384, 560], [400, 760]], "geo": null },
+    { "img": "R1", "a": 23.6, "b": 24.75, "z": [1.9, 2.05], "f": [[388, 760], [388, 770]], "geo": "R1" },
+    { "img": "R8", "a": 24.75, "b": 99, "z": [1.45, 1.75], "f": [[400, 760], [400, 770]], "geo": null }
+  ],
+  "dips": [3.85, 8.9, 14.45, 20.0, 23.6, 24.75],
+  "glint": [0.0, 0.0, 2.5],
+  "endAt": 25.0,
+  "endText": "Devamı gelecek..."
+}
