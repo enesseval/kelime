@@ -46,10 +46,8 @@ Bölüm 1'de özet satırı yok.
 **Profil.** 1. bölüm profilde sabitlenir (Reels'i profile sabitle) ki 4-6. bölüme gelen yeni
 izleyici başa dönebilsin. Menü adı telefondan doğrulanacak.
 
-**AI etiketi.** Her bölümde Instagram'da yapay zekâ etiketi açılır (Paylaşım ayarları > Daha
-fazla seçenek > Yapay zekâ etiketi; menü adı telefondan doğrulanacak). Açıklamaya "Yapay zekâ ile
-üretildi" yazılır. Görseller ve klipler gerçek kişi içermez. Telefon görüntüsü (3. ve 6. bölüm)
-gerçek ekran görüntüsüdür; etiket tüm Reels'e uygulanır, ayrıca belirtmek gerekmez.
+**Yapay zekâ ibaresi yok (kullanıcı kararı, 21.11).** Videoda, ekran yazısında, açıklamada ve
+etiketlerde yapay zekâdan söz edilmez. Instagram'ın AI etiketi anahtarı kullanıcının kararıdır.
 
 ## Kelime kaynağı
 
@@ -239,10 +237,10 @@ kilitli ve içeriden biri sesleniyor."
 **Açıklama:**
 > Bu kapı üç gündür kilitli ve içeriden biri sesleniyor.
 >
-> Kilit konuşuyor ama anahtarın nerede olduğunu söylemiyor. Yapay zekâ ile üretildi. 1/6.
+> Kilit konuşuyor ama anahtarın nerede olduğunu söylemiyor. 1/6.
 > Devamı bu akşam 20:30.
 >
-> #kilitlikapı #yapayzeka #ingilizcekelime #minidizi
+> #kilitlikapı #ingilizcekelime #minidizi
 
 **Kapak:** Pirinç'in gözleri açık, kapı aralığından sarı ışık sızıyor; üstte "3 GÜNDÜR KİLİTLİ";
 altta küçük "1/6". **AI etiketi:** açık.
@@ -268,9 +266,9 @@ hiç kaybolmamıştı."
 **Açıklama:**
 > Kilit bana yalan söyledi: anahtar hiç kaybolmamıştı.
 >
-> Pirinç korkuyor ve içerideki biri not gönderdi. Yapay zekâ ile üretildi. 2/6. Devamı yarın 12:30.
+> Pirinç korkuyor ve içerideki biri not gönderdi. 2/6. Devamı yarın 12:30.
 >
-> #kilitlikapı #yapayzeka #ingilizcekelime #minidizi
+> #kilitlikapı #ingilizcekelime #minidizi
 
 **Kapak:** Pirinç'in gözleri yaşlı, altında yerdeki katlanmış not; üstte "YALAN SÖYLEDİ"; altta "2/6".
 **AI etiketi:** açık.
@@ -304,9 +302,9 @@ güvenmiyorum."), open (`a1-open`). **Cliffhanger:** kapı açılır, içeride M
 **Açıklama:**
 > Notta tek bir kelime vardı ve ben o kelimeyi bilmiyordum.
 >
-> Kapı açıldı ve içeride ikinci bir kilit vardı. Yapay zekâ ile üretildi. 3/6. Devamı bu akşam 20:30.
+> Kapı açıldı ve içeride ikinci bir kilit vardı. 3/6. Devamı bu akşam 20:30.
 >
-> #kilitlikapı #yapayzeka #ingilizcekelime #minidizi
+> #kilitlikapı #ingilizcekelime #minidizi
 
 **Kapak:** telefonun parlak ekranı Pirinç'in şaşkın yüzünde yansıyor; üstte "TRUST?"; altta "3/6".
 **AI etiketi:** açık.
@@ -333,9 +331,9 @@ kullanılır), small (`a1-small`), remember (`a2-remember`), wait (`a2-wait`), l
 **Açıklama:**
 > Pirinç kardeşini kendi eliyle kilitledi. Sebebi hâlâ belli değil.
 >
-> Üç gece önce biri anahtar halkasıyla gelmiş. Yapay zekâ ile üretildi. 4/6. Devamı yarın 12:30.
+> Üç gece önce biri anahtar halkasıyla gelmiş. 4/6. Devamı yarın 12:30.
 >
-> #kilitlikapı #yapayzeka #ingilizcekelime #minidizi
+> #kilitlikapı #ingilizcekelime #minidizi
 
 **Kapak:** Pirinç ve Minik yan yana, ikisinin de gözleri merdivene dönük; üstte "KARDEŞİNİ KİLİTLEDİ";
 altta "4/6". **AI etiketi:** açık.
@@ -364,9 +362,9 @@ bring (`a2-bring`; "Can you bring some water?" / "Biraz su getirebilir misin?").
 **Açıklama:**
 > Karanlıkta kapıya yaklaşan elin her kilidin anahtarı var.
 >
-> Elif saklandığı yerden çıktı. Yapay zekâ ile üretildi. 5/6. Devamı bu akşam 20:30.
+> Elif saklandığı yerden çıktı. 5/6. Devamı bu akşam 20:30.
 >
-> #kilitlikapı #yapayzeka #ingilizcekelime #minidizi
+> #kilitlikapı #ingilizcekelime #minidizi
 
 **Kapak:** karanlık koridor, yalnız fener ışığında anahtar halkası ve Pirinç'in iri gözleri; üstte
 "HER KİLİDİN ANAHTARI ONDA"; altta "5/6". **AI etiketi:** açık.
@@ -400,9 +398,9 @@ unutmuş. **2. sezon kancası:** duvarın içinden 4 kere vurulur (1. bölümde 
 **Açıklama:**
 > Pirinç üç gündür yanlış kişiden korkuyormuş.
 >
-> Kapı açıldı, ama duvarın ardından yeni bir ses geliyor. Yapay zekâ ile üretildi. 6/6.
+> Kapı açıldı, ama duvarın ardından yeni bir ses geliyor. 6/6.
 >
-> #kilitlikapı #yapayzeka #ingilizcekelime #minidizi
+> #kilitlikapı #ingilizcekelime #minidizi
 
 **Kapak:** Pirinç gülümsemeye yakın, arkada yarı karanlık duvar; üstte "YANLIŞ KİŞİ"; altta "6/6".
 **AI etiketi:** açık.
