@@ -35,7 +35,7 @@ defteridir. Kök dizindeki `CLAUDE.md` her oturumu buraya yönlendirir. Kapanan 
 | | iOS | Android |
 |---|---|---|
 | Sürüm | 1.3.0 | 1.3.0 |
-| Build | 43 (1.3.0: iPad ödeme ekranı ortada kart; 42 = büyük sayfa, beğenilmedi; 41 = TestFlight'ta test edildi, iPhone sorunsuz; 40 = Keşfet düzeltmesi öncesi; 39 = iPad, TestFlight'ta; 36 = 1.2.0 yayında) | versionCode 6 (1.3.0; AAB hazır, kullanıcı Play'e yükleyecek; 5 = Keşfet düzeltmesi öncesi) |
+| Build | 43 (1.3.0 incelemede, 21.11; iPad ödeme ekranı ortada kart; 42 = büyük sayfa, beğenilmedi; 41 = TestFlight'ta test edildi, iPhone sorunsuz; 40 = Keşfet düzeltmesi öncesi; 39 = iPad, TestFlight'ta; 36 = 1.2.0 yayında) | versionCode 6 (1.3.0; AAB hazır, kullanıcı Play'e yükleyecek; 5 = Keşfet düzeltmesi öncesi) |
 | Dal | `v1.1.1` | `v1.1.1` |
 | Mağazada | 1.2.0 (36) yayında (16 Kasım; 1.0.0 `main` 10 Kasım) | kapalı test (Play) |
 

@@ -9,7 +9,9 @@ Kilit Kelime: İngilizce
 Kilit ekranında kelime ezberle
 
 ## Anahtar kelimeler (100, virgülle, boşluksuz)
-widget,sözlük,yds,yökdil,ielts,sınav,toefl,yabancı,dil,kurs,bulmaca,tekrar,kart,a1,b1,c1,öğren
+öğren,öğrenme,kelimeler,ezberleme,kartı,kart,widget,sözlük,günlük,tekrar,bulmaca,yabancı,dil,kurs
+1.3.0'dan beri (21.11): Apple Ads'te indirme getiren aramalara göre seçildi ([ingilizce kelime] 14, [ingilizce öğren] 9,
+[ingilizce kelime öğren] 7, [ingilizce kelime ezberleme] 5 indirme). Sınav adları (yds, ielts…) reklamda çalışmadı, çıkarıldı.
 Adda ve alt başlıkta geçen kelimeler (kilit, kelime, ingilizce, ekran, ezber) burada tekrar edilmez;
 App Store ad, alt başlık ve anahtar kelimeleri birlikte eşleştirir ("ingilizce kelime" araması tutar).
 
@@ -18,7 +20,7 @@ Türkiye mağazası İngilizce (ABD) sayfasının ad, alt başlık ve anahtar ke
 ikinci bir anahtar kelime alanı. Avustralya sayfası aynı metinle (Avustralya mağazası için).
 - Ad: `Kilit Kelime: Vocabulary`
 - Alt başlık: `Learn English on Lock Screen`
-- Anahtar kelimeler: `widget,flashcards,words,ielts,yds,yokdil,toefl,exam,dictionary,turkish,crossword,quiz,b2,c1,daily`
+- Anahtar kelimeler: `widget,flashcards,words,daily,turkish,dictionary,quiz,crossword,öğrenmek,sözlük,kelimeleri,ezber`
 - Açıklama ve tanıtım metni: Türkçesinin İngilizcesi (App Store Connect'te).
 Ekran görüntüleri Türkçe sayfadakiler kullanılır.
 
