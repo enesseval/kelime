@@ -167,11 +167,11 @@ function finish(t, fi, flick) {
 // ---- text ----
 function shadowText(txt, x, y, font, fill, o = {}) {
   ctx.save(); ctx.font = font; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillStyle = fill;
-  if (o.spacing) ctx.letterSpacing = o.spacing;
+  if (o.spacing) { ctx.letterSpacing = o.spacing; x += parseFloat(o.spacing) / 2; } // canvas adds spacing after the last letter too
   ctx.shadowColor = "rgba(0,0,0,.85)"; ctx.shadowBlur = o.blur ?? 14; ctx.shadowOffsetY = 3;
   ctx.fillText(txt, x, y); ctx.restore();
 }
-const CX = 480; // text column centre (clear of the right-hand Reels buttons)
+const CX = 540; // true centre; 800 px max line width keeps text clear of the Reels buttons
 function hook(t) {
   const a = 1 - seg(t, 3.45, 3.75);
   if (a <= 0) return;
