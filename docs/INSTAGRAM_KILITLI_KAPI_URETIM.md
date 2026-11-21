@@ -3,6 +3,14 @@
 Ep1 21.11 19:30'da yayınlandı. Elimizde R1, R3, R4 var. Promptlarda R1'i yükle; başka görsel yazıyorsa onu da yükle.
 Ses: her satır ayrı mp3, adı tablodaki gibi.
 
+**Ses stilleri (ElevenLabs; her karakter için bir kez seç, "My Voices"a kaydet, hep aynı ses ve ayar)**
+| Karakter | Ses | Stability | Similarity | Style |
+|---|---|---|---|---|
+| Pirinç | 1. bölümdeki ses (Carpathian Elder): yaşlı, hırıltılı, huysuz erkek; alçak perde | 35-45 | 75 | 20-30 |
+| Elif | Sakin, meraklı genç kadın; yumuşak, orta perde | 50 | 75 | 10 |
+| Minik | Genç, oyuncu, ince erkek sesi (küçük kardeş); hızlı ve neşeli | 40 | 75 | 20 |
+| Kapıcı | Yaşlı, yorgun, sıcak ve yumuşak erkek sesi; yavaş tempo; Pirinç'ten belirgin farklı (hırıltısız) | 55 | 75 | 10 |
+
 ## Ep2
 **Görseller**
 - `R2` (R1 yükle): "Same padlock character, close-up of its face. Eyebrows raised in fear, eyes looking down in shame, shackle drooping. Same door and light. Vertical 9:16, no text."
