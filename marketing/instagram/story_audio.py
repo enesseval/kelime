@@ -32,7 +32,7 @@ def knock(a=1.0):
     th = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-k * 14)
     cl = rng.standard_normal(len(k)) * np.exp(-k * 90); cl = np.convolve(cl, np.ones(20) / 20, "same")
     return a * (th + 0.5 * cl)
-for kt, ka in [(0.12, 1.0), (0.57, 0.85), (1.52, 1.0), (10.55, 1.0), (12.58, 0.9)]:
+for kt, ka in [(0.12, 1.0), (0.57, 0.85), (1.52, 1.0), (10.55, 1.0), (11.05, 0.9), (11.4, 0.8), (12.58, 0.7)]:
     at(knock(ka), kt, 1.6)
 # suspense: riser 14.6 -> 15.95, hit at 15.97, long low tail
 r0 = 14.6; rl = 15.95 - r0; k = np.arange(int(rl * SR)) / SR

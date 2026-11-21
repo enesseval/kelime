@@ -26,7 +26,10 @@ const SHOTS = [ // img, start, end, zoom a->b, focus a->b (image px), lipsync on
   { img: "R1", a: 7.5, b: 10.55, z: [1.55, 1.78], f: [[386, 806], [388, 796]], geo: "R1" },
   { img: "R3", a: 10.55, b: 14.55, z: [1.45, 1.85], f: [[500, 700], [520, 676]], geo: "R3" },
   { img: "R4", a: 14.55, b: 99, z: [1.22, 1.62], f: [[392, 520], [392, 640]], geo: "R4" }];
-const DIPS = [3.7, 7.5, 14.55]; // 0.2 s dip to black centred on the cut
+const DIPS = [3.7, 7.5, 14.55];
+// Kling stretches (muted, from kling_frames/): [out start, out end, Kling source start] in seconds. Final cut only.
+window.KLING = (window.STORY.kling || []);
+window.kimg = null; // 0.2 s dip to black centred on the cut
 
 // ---- geometry (image px). R1 is measured; R3 is the same face mapped by an affine (lips centre + scale) ----
 const R1 = { seam: [[316, 780], [346, 777], [376, 774], [400, 776], [420, 779], [440, 783], [456, 787]],
@@ -231,8 +234,16 @@ function endCard(t) {
   ctx.fillStyle = `rgba(6,4,2,${.5 * a})`; ctx.fillRect(0, 0, W, H);
   ctx.save(); ctx.globalAlpha = a; ctx.translate(0, (1 - a) * 24);
   shadowText("KİLİTLİ KAPI · 1/6", CX, 1330, "700 36px Hanken", "rgba(244,241,235,.75)", { spacing: "6px" });
-  shadowText("Devamı bu akşam 20:30", CX, 1408, "800 74px Hanken", "#F6EFE0", { blur: 20 });
+  shadowText(STORY.endText || "Devamı bu akşam 20:30", CX, 1408, "800 74px Hanken", "#F6EFE0", { blur: 20 });
   ctx.restore();
+}
+
+function finishAll(t, fi, sh) {
+  // torch / lamp flicker + dips to black
+  const flick = sh.img === "R3" ? .06 * (.5 + .5 * Math.sin(t * 23) * Math.sin(t * 7.3)) : .02 * (.5 + .5 * Math.sin(t * 11));
+  let dip = 0; for (const d of DIPS) dip = Math.max(dip, 1 - seg(Math.abs(t - d), 0, .1));
+  finish(t, fi, flick + dip * .98);
+  endCard(t); hook(t); wordCard(t); subtitle(t);
 }
 
 // ---- frame ----
@@ -243,6 +254,7 @@ window.draw = (t) => {
   if (hcFor !== sh.img) { hcCanvas.width = img.width; hcCanvas.height = img.height; hc.drawImage(img, 0, 0); hcFor = sh.img; }
   const cam = camera(sh, t - 0); if (window.DEBUG_GEO) { cam.z = sh.img === "R4" ? 1.2 : 2.2; cam.fx = cam.fy = 0; cam.sx = cam.sy = cam.rot = 0; cam.fx = sh.img === "R4" ? 384 : 386; cam.fy = sh.img === "R4" ? 330 : 780; }
   ctx.save(); ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+  if (window.kimg) { ctx.drawImage(window.kimg, 0, 0, W, H); ctx.restore(); finishAll(t, fi, sh); return; }
   const k = S0 * cam.z;
   ctx.translate(W / 2 + cam.sx, H / 2 + cam.sy); ctx.rotate(cam.rot); ctx.scale(k, k);
   const hx = 384 / cam.z, hy = 960 / (S0 * cam.z);
@@ -263,10 +275,6 @@ window.draw = (t) => {
   if (sh.img === "R4") glint(t);
   if (window.DEBUG_GEO) { ctx.lineWidth = 1.5; for (const [pts, c] of [[g.seam, "#f00"], [g.bottom, "#0f0"]]) { ctx.strokeStyle = c; ctx.beginPath(); pts.forEach(p => ctx.lineTo(p[0], p[1])); ctx.stroke(); } }
   ctx.restore();
-  // torch / lamp flicker + dips to black
-  const flick = sh.img === "R3" ? .06 * (.5 + .5 * Math.sin(t * 23) * Math.sin(t * 7.3)) : .02 * (.5 + .5 * Math.sin(t * 11));
-  let dip = 0; for (const d of DIPS) dip = Math.max(dip, 1 - seg(Math.abs(t - d), 0, .1));
-  finish(t, fi, flick + dip * .98);
-  endCard(t); hook(t); wordCard(t); subtitle(t);
+  finishAll(t, fi, sh);
 };
 window.storyReady = Promise.all([...loads, document.fonts.load("800 80px Hanken"), document.fonts.load("italic 600 70px News"), document.fonts.load("700 60px Hanken"), document.fonts.ready]);
