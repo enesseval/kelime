@@ -230,7 +230,7 @@ function subtitle(t) {
   const lines = [], widths = []; let cur = []; // wrap at 800 px
   words.forEach(w => { const test = [...cur, w].join(" "); if (cur.length && ctx.measureText(test).width > 800) { lines.push(cur); cur = [w]; } else cur.push(w); });
   lines.push(cur);
-  const lh = 78, y0 = 1262 - (lines.length - 1) * lh / 2; let idx = 0;
+  const lh = 78, y0 = (window.subLow ? 1700 : 1262) - (lines.length - 1) * lh / 2; // below the widget on phone shots let idx = 0;
   lines.forEach((ln, li) => {
     const lw = ctx.measureText(ln.join(" ")).width; let x = CX - lw / 2;
     ln.forEach(w => {
@@ -267,7 +267,12 @@ function drawPhone(t, sh) { // lock-screen screenshot over a blurred, darkened s
   ctx.filter = "blur(22px) brightness(.4)"; ctx.drawImage(bg, -60, -60, W + 120, H + 120); ctx.filter = "none";
   const p = easeOut(seg(t, sh.a, sh.a + .55)), h = 1560 * (1 + .05 * seg(t, sh.a, sh.b)), w = ph.width * h / ph.height;
   const x = (W - w) / 2, y = (H - h) / 2 - 30 + (1 - p) * 70;
-  ctx.save(); ctx.globalAlpha = p; ctx.shadowColor = "rgba(0,0,0,.7)"; ctx.shadowBlur = 50;
+  ctx.save(); ctx.globalAlpha = p;
+  if (sh.pz) { // push in on the widget: point (fraction of the screenshot) drifts toward the frame centre
+    const q = easeIO(seg(t, sh.a + .7, sh.b - .2)), z = 1 + (sh.pz[2] - 1) * q;
+    const px = x + sh.pz[0] * w, py = y + sh.pz[1] * h;
+    ctx.translate(lerp(px, W / 2, q), lerp(py, 880, q)); ctx.scale(z, z); ctx.translate(-px, -py);
+  } ctx.shadowColor = "rgba(0,0,0,.7)"; ctx.shadowBlur = 50;
   ctx.beginPath(); ctx.roundRect(x, y, w, h, 56); ctx.fillStyle = "#000"; ctx.fill(); ctx.shadowBlur = 0; ctx.clip();
   ctx.drawImage(ph, x, y, w, h); ctx.restore();
 }
@@ -280,6 +285,7 @@ window.draw = (t) => {
   if (hcFor !== sh.img) { hcCanvas.width = img.width; hcCanvas.height = img.height; hc.drawImage(img, 0, 0); hcFor = sh.img; }
   const cam = camera(sh, t - 0); if (window.DEBUG_GEO) { cam.z = sh.img === "R4" ? 1.2 : 2.2; cam.fx = cam.fy = 0; cam.sx = cam.sy = cam.rot = 0; cam.fx = sh.img === "R4" ? 384 : 386; cam.fy = sh.img === "R4" ? 330 : 780; }
   ctx.save(); ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+  window.subLow = !!sh.phone;
   if (sh.phone) { drawPhone(t, sh); ctx.restore(); finishAll(t, fi, sh); return; }
   if (window.kimg) { ctx.drawImage(window.kimg, 0, 0, W, H); ctx.restore(); finishAll(t, fi, sh); return; }
   const k = S0 * cam.z;
