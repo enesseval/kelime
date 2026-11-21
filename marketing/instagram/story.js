@@ -53,6 +53,7 @@ const GEO = { R1, R3: mapGeo(R1, [527, 682], 0.43), R4: null,
 // R4 macro: lips run off both edges, seam is a shallow smile, the lower lip is deep
 GEO.R4 = { seam: [[0, 244], [90, 226], [200, 208], [300, 199], [400, 197], [500, 201], [600, 211], [700, 227], [768, 243]],
   bottom: [[0, 300], [100, 318], [250, 331], [400, 334], [550, 329], [700, 313], [768, 299]], maxD: 28, eyes: [] };
+if (CFG && CFG.geo) Object.assign(GEO, CFG.geo); // per-episode faces: { R13: { seam, bottom, maxD, eyes } }
 
 const IMG = {};
 const loads = Object.entries(STORY.imgs).map(([k, src]) => new Promise(r => { const i = new Image(); i.onload = () => { IMG[k] = i; r(); }; i.src = src; }));
@@ -61,9 +62,9 @@ const lerpPts = (pts, x) => { if (x <= pts[0][0]) return pts[0][1]; for (let i =
 // ---- voice -> mouth openness ----
 const env = STORY.env;
 const rmsAt = t => { const i = clamp(Math.round(t * 100), 0, env.length - 1); return env[i]; };
-function mouthOpen(t, whisper) { // smoothed (attack fast, release slower) average around t, Pirinç lines only
+function mouthOpen(t, whisper, talk) { // smoothed (attack fast, release slower) average around t; only lines of the shot's speaker (default Pirinç)
   const L = LINES.find(l => t >= l[0] - .03 && t <= l[1] + .08);
-  if (!L || L[3] !== "P") return 0;
+  if (!L || L[3] !== (talk || "P")) return 0;
   let s = 0, ws = 0;
   for (let k = -6; k <= 2; k++) { const w = k < 0 ? Math.exp(k * .25) : 1.2; s += rmsAt(t + k * .01) * w; ws += w; }
   const ref = whisper ? 0.045 : MOUTH_REF;
@@ -220,7 +221,8 @@ function subtitle(t) {
   const [a, b, txt, who] = LINES[i];
   const words = txt.split(" "), tot = txt.replace(/ /g, "").length; let acc = 0;
   const o = Math.min(seg(t, a - .06, a + .04), 1 - seg(t, b + .12, b + .28));
-  const E = who === "E";
+  const E = who === "E", M = who === "M", K = who === "K"; // Elif italic blue, Minik green, Kapıcı lantern orange
+  const col = E ? [207, 224, 255] : M ? [214, 245, 196] : K ? [255, 214, 170] : [255, 244, 214];
   ctx.save(); ctx.globalAlpha = o; ctx.textBaseline = "middle";
   const font = (E ? "italic 600 " : "800 ") + "62px " + (E ? "News" : "Hanken");
   ctx.font = font;
@@ -236,7 +238,7 @@ function subtitle(t) {
       const spoken = t >= lerp(a, b, startP) - .02;
       ctx.save(); ctx.textAlign = "left"; ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 16; ctx.shadowOffsetY = 3;
       ctx.lineWidth = 9; ctx.strokeStyle = "rgba(10,6,3,.55)"; ctx.lineJoin = "round"; ctx.font = font; ctx.strokeText(w, x, y0 + li * lh);
-      ctx.fillStyle = spoken ? (E ? "#CFE0FF" : "#FFF4D6") : (E ? "rgba(207,224,255,.45)" : "rgba(255,244,214,.45)");
+      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${spoken ? 1 : .45})`;
       ctx.fillText(w, x, y0 + li * lh); ctx.restore();
       x += ctx.measureText(w).width + sp;
     });
@@ -254,10 +256,20 @@ function endCard(t) {
 
 function finishAll(t, fi, sh) {
   // torch / lamp flicker + dips to black
-  const flick = (sh.img === "R3" || sh.img === "R8") ? .06 * (.5 + .5 * Math.sin(t * 23) * Math.sin(t * 7.3)) : .02 * (.5 + .5 * Math.sin(t * 11));
+  const flick = (sh.img === "R3" || sh.img === "R8" || (CFG && (CFG.flicker || []).includes(sh.img))) ? .06 * (.5 + .5 * Math.sin(t * 23) * Math.sin(t * 7.3)) : .02 * (.5 + .5 * Math.sin(t * 11));
   let dip = 0; for (const d of DIPS) dip = Math.max(dip, 1 - seg(Math.abs(t - d), 0, .1));
   finish(t, fi, flick + dip * .98);
   endCard(t); hook(t); wordCard(t); subtitle(t);
+}
+
+function drawPhone(t, sh) { // lock-screen screenshot over a blurred, darkened still
+  const bg = IMG[sh.img], ph = IMG[sh.phone];
+  ctx.filter = "blur(22px) brightness(.4)"; ctx.drawImage(bg, -60, -60, W + 120, H + 120); ctx.filter = "none";
+  const p = easeOut(seg(t, sh.a, sh.a + .55)), h = 1560 * (1 + .05 * seg(t, sh.a, sh.b)), w = ph.width * h / ph.height;
+  const x = (W - w) / 2, y = (H - h) / 2 - 30 + (1 - p) * 70;
+  ctx.save(); ctx.globalAlpha = p; ctx.shadowColor = "rgba(0,0,0,.7)"; ctx.shadowBlur = 50;
+  ctx.beginPath(); ctx.roundRect(x, y, w, h, 56); ctx.fillStyle = "#000"; ctx.fill(); ctx.shadowBlur = 0; ctx.clip();
+  ctx.drawImage(ph, x, y, w, h); ctx.restore();
 }
 
 // ---- frame ----
@@ -268,6 +280,7 @@ window.draw = (t) => {
   if (hcFor !== sh.img) { hcCanvas.width = img.width; hcCanvas.height = img.height; hc.drawImage(img, 0, 0); hcFor = sh.img; }
   const cam = camera(sh, t - 0); if (window.DEBUG_GEO) { cam.z = sh.img === "R4" ? 1.2 : 2.2; cam.fx = cam.fy = 0; cam.sx = cam.sy = cam.rot = 0; cam.fx = sh.img === "R4" ? 384 : 386; cam.fy = sh.img === "R4" ? 330 : 780; }
   ctx.save(); ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+  if (sh.phone) { drawPhone(t, sh); ctx.restore(); finishAll(t, fi, sh); return; }
   if (window.kimg) { ctx.drawImage(window.kimg, 0, 0, W, H); ctx.restore(); finishAll(t, fi, sh); return; }
   const k = S0 * cam.z;
   ctx.translate(W / 2 + cam.sx, H / 2 + cam.sy); ctx.rotate(cam.rot); ctx.scale(k, k);
@@ -278,14 +291,14 @@ window.draw = (t) => {
   const swing = (sh.img === "R4" || !g) ? null : { a: cam.shear, y0: sh.img === "R1" ? 420 : 470, y1: sh.img === "R1" ? 760 : 700 };
   drawBase(img, swing);
   // eyes: snap on knocks / line starts, occasional blink
-  if (g && g.eyes.length) {
+  if (g && g.eyes && g.eyes.length) {
     let pop = 0;
     for (const kn of KNOCKS) { const q = t - kn; if (q >= 0 && q < .5) pop = Math.max(pop, q < .06 ? q / .06 : Math.exp(-(q - .06) * 7)); }
     for (const e of g.eyes) if (pop > .02) patch(img, e.c[0], e.c[1], e.r * 1.55, 1 + .13 * pop, .16 * pop);
     let bl = 0; for (const b of BLINKS) { const q = t - b; if (q >= 0 && q < .2) bl = Math.max(bl, q < .07 ? q / .07 : q < .11 ? 1 : 1 - (q - .11) / .09); }
     if (bl > 0) for (const e of g.eyes) eyelid(img, e, easeIO(bl));
   }
-  if (g) mouth(img, g, mouthOpen(t, sh.img === "R4"));
+  if (g && g.seam) mouth(img, g, mouthOpen(t, sh.img === "R4", sh.talk));
   if (sh.img === "R4") glint(t);
   if (window.DEBUG_GEO && g) { ctx.lineWidth = 1.5; for (const [pts, c] of [[g.seam, "#f00"], [g.bottom, "#0f0"]]) { ctx.strokeStyle = c; ctx.beginPath(); pts.forEach(p => ctx.lineTo(p[0], p[1])); ctx.stroke(); } }
   ctx.restore();
