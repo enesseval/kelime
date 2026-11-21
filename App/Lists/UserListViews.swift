@@ -33,7 +33,7 @@ struct OwnListsSection: View {
                     Button("\(summary.list.title) listesini sil", role: .destructive) {
                         let id = summary.id, last = keepOn(summary)
                         Task {
-                            try? await model.editList { db in try UserLists.delete(id, db: db) }
+                            try? await model.editList(replaceCurrent: true) { db in try UserLists.delete(id, db: db) }
                             // The widget needs a source: the course comes back.
                             if last { await model.setCourse(enabled: true) }
                         }
@@ -99,7 +99,7 @@ struct UserListCard: View {
             ThinProgressBar(fraction: summary.fraction)
             Toggle(isOn: Binding(
                 get: { summary.list.enabled },
-                set: { on in Task { try? await model.editList { db in try UserLists.setEnabled(on, list: summary.id, db: db) } } }
+                set: { on in Task { try? await model.editList(replaceCurrent: true) { db in try UserLists.setEnabled(on, list: summary.id, db: db) } } }
             )) {
                 Text("Widget'ta").font(KelimeFont.ui(12, relativeTo: .caption)).foregroundStyle(Palette.ink2)
             }
@@ -225,7 +225,7 @@ struct UserListView: View {
         .confirmationDialog("Liste silinsin mi?", isPresented: $confirmDelete, titleVisibility: .visible) {
             Button("Sil", role: .destructive) {
                 Task {
-                    try? await model.editList { db in try UserLists.delete(listID, db: db) }
+                    try? await model.editList(replaceCurrent: true) { db in try UserLists.delete(listID, db: db) }
                     dismiss()
                 }
             }
@@ -248,7 +248,7 @@ struct UserListView: View {
 
     private func remove(_ item: WordItem) {
         let id = listID, card = item.id
-        Task { try? await model.editList { db in try UserLists.remove(cardID: card, from: id, db: db) } }
+        Task { try? await model.editList(replaceCurrent: true) { db in try UserLists.remove(cardID: card, from: id, db: db) } }
     }
 
     /// Link and Keşfet sharing go through the account.

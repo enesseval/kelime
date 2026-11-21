@@ -247,11 +247,11 @@ final class AppModel {
 
     /// Kelimelerim › Listeler › kurs: the whole course on or off for the widget.
     func setCourse(enabled: Bool) async {
-        await write(rebuildQueue: true) { db in try DeckQueries.setCourse(enabled, db: db) }
+        await write(rebuildQueue: true, replaceCurrent: true) { db in try DeckQueries.setCourse(enabled, db: db) }
     }
 
     func setDeck(_ deck: DeckID, enabled: Bool) async {
-        await write(rebuildQueue: true) { db in
+        await write(rebuildQueue: true, replaceCurrent: true) { db in
             try DeckQueries.setEnabled(enabled, deck: deck, db: db)
         }
     }
@@ -277,12 +277,13 @@ final class AppModel {
         return nil
     }
 
-    /// Runs a list change; the widget rebuilds because its pool may have changed.
-    func editList(_ body: @escaping @Sendable (Database) throws -> Void) async throws {
+    /// Runs a list change; the widget rebuilds because its pool may have changed. `replaceCurrent`
+    /// (a list switched off, deleted or a word removed) also swaps the word on screen now.
+    func editList(replaceCurrent: Bool = false, _ body: @escaping @Sendable (Database) throws -> Void) async throws {
         guard let database else { return }
         try await database.writer.write(body)
         dataVersion += 1
-        await WidgetRefresher.rebuild(database)
+        await WidgetRefresher.rebuild(database, includingCurrent: replaceCurrent)
         Task { await account.sync() }
     }
 
@@ -439,8 +440,9 @@ final class AppModel {
     }
 
     /// Runs `body` in a write transaction, then reloads screens and widgets. Settings that change
-    /// the card pool or slot grid pass `rebuildQueue` so upcoming widget slots are re-picked.
-    func write(rebuildQueue: Bool, _ body: @escaping @Sendable (Database) throws -> Void) async {
+    /// the card pool or slot grid pass `rebuildQueue` so upcoming widget slots are re-picked;
+    /// `replaceCurrent` also swaps the word on screen now (a source switched on or off).
+    func write(rebuildQueue: Bool, replaceCurrent: Bool = false, _ body: @escaping @Sendable (Database) throws -> Void) async {
         guard let database else { return }
         do {
             try await database.writer.write(body)
@@ -449,7 +451,7 @@ final class AppModel {
         }
         dataVersion += 1
         if rebuildQueue {
-            await WidgetRefresher.rebuild(database)
+            await WidgetRefresher.rebuild(database, includingCurrent: replaceCurrent)
         } else {
             await WidgetRefresher.refresh(database)
         }
