@@ -233,7 +233,7 @@ function endCard(t) {
   const a = easeOut(seg(t, 16.75, 17.35)); if (a <= 0) return;
   ctx.fillStyle = `rgba(6,4,2,${.5 * a})`; ctx.fillRect(0, 0, W, H);
   ctx.save(); ctx.globalAlpha = a; ctx.translate(0, (1 - a) * 24);
-  shadowText("KİLİTLİ KAPI · 1/6", CX, 1330, "700 36px Hanken", "rgba(244,241,235,.75)", { spacing: "6px" });
+  shadowText("KİLİTLİ KAPI", CX, 1330, "700 36px Hanken", "rgba(244,241,235,.75)", { spacing: "6px" });
   shadowText(STORY.endText || "Devamı bu akşam 20:30", CX, 1408, "800 74px Hanken", "#F6EFE0", { blur: 20 });
   ctx.restore();
 }
