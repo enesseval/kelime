@@ -97,3 +97,28 @@ Ses: her satır ayrı mp3, adı tablodaki gibi.
 | 09_kapici | Kapıcı | Bu binada üç kilit vardı. Üçüncüsü... hâlâ kayıp. |
 
 **Başka:** kilit ekranında widget "promise" gösterirken ekran görüntüsü (`promise.png`).
+
+## Ep7 (1. sezon finali)
+Kancayı ekrana yazılı hâliyle: "ÜÇÜNCÜ KİLİT NEREDE?" (önceki bölümde: Kapıcı söz verdi). Kapıcı daha ilk saniyede cevabı söyler; merak "sandık içinde ne var" ve "etikette kimin adı" olur.
+Olay örgüsü: Kapıcı üçüncü kilidin merdiven altında olduğunu söyler. Elif sandığı bulur; kilit "unutulmuş" olduğu için kimse açamaz. Kilit ekranındaki kelime **remember** kilidi açar (Kapıcı sandığı kendi kilitleyip unutmuştu, Ep6'daki "Unuttum"un karşılığı). İçindeki eski anahtarın etiketinde Elif'in adı yazar. Son kart: "Devamı gelecek...".
+Kullanılan eski görseller: R7, R1, R6, R12, R3. Yeni: R14, R15.
+
+**Görseller**
+- `R14` (R7 yükle): "At the end of the same basement corridor under the stone stairs, a small old iron-bound wooden chest covered in dust and cobwebs. On it hangs a big old padlock, eyes closed, sleeping, a faint worn face. Warm dim lantern light. No people. Vertical 9:16, no text."
+- `R15` (R14 yükle): "The same chest with the padlock now open and hanging, awake, eyes open in surprise, lid slightly ajar with warm golden light spilling out. On top lies an old brass key with a small paper tag, the writing on the tag blurred and unreadable. Vertical 9:16, no text."
+
+**Ses** (Minik/Elif/Pirinç/Kapıcı için yukarıdaki sabit ses ayarları)
+| Dosya | Kim | Metin |
+|---|---|---|
+| 01_kapici | Kapıcı | Üçüncü kilit bu merdivenin altında. |
+| 02_elif | Elif | Bir sandık! |
+| 03_pirinc | Pirinç | Açılmaz. Onu kimse hatırlamıyor. |
+| 04_minik | Minik | Bir kelime lazım, değil mi abi? |
+| 05_elif | Elif | Bugün kilit ekranımda... remember. |
+| 06_kapici | Kapıcı | Hatırladım. Bu sandığı ben kilitlemiştim. |
+| 07_elif | Elif | Remember. |
+| 08_kapici | Kapıcı | Bu anahtar bu binanın değil. |
+| 09_elif | Elif | Etikette... benim adım yazıyor. |
+
+"remember" İngilizce okunur; ses üretiminde "Remember" diye yaz.
+**Başka:** kilit ekranında widget "remember" gösterirken ekran görüntüsü (`remember.png`). Süreler (`story_eps/ep7.json`) tahmindir; mp3'ler gelince chunk zamanları gerçek süreye göre güncellenecek.
