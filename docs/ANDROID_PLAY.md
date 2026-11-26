@@ -133,6 +133,33 @@ otomatik gizlenir (`supabase/migrations`).
 
 ## Sürüm notları
 
+### 1.3.0 (versionCode 7) · Üretim, ilk herkese açık sürüm (26.11.2026)
+
+Üretim erişimi 26.11.2026'da onaylandı. Ülkeler: tüm ülkeler (asıl kitle Türkiye). Paket: kapalı
+testteki versionCode 7.
+
+tr-TR:
+```
+Kilit Kelime artık Google Play'de!
+• Kilit ekranında ve ana ekran widget'ında her gün yeni İngilizce kelimeler
+• A1'den C2'ye seviyeler ve YDS kelime listeleri
+• Hızlı Tekrar ve aralıklı tekrar
+• Oyunlar: Eşleştir, Kelime Avı, Bulmaca, Cümle Kur, Boşluğu Doldur
+• Kendi listelerini oluştur, Keşfet'te paylaşılan listeleri bul
+• Seri, haftalık özet ve sınav geri sayımı
+```
+
+en-US:
+```
+Kilit Kelime is now on Google Play!
+• New English words every day on your lock screen and home screen widget
+• Levels from A1 to C2, plus YDS exam word lists
+• Quick Review with spaced repetition
+• Games: Match, Word Search, Crossword, Build a Sentence, Fill the Gap
+• Create your own lists and discover shared ones
+• Streaks, weekly summary and exam countdown
+```
+
 ### 1.1.0 (versionCode 2) · Yenilikler, tr-TR (285 / 500 karakter)
 
 ```
